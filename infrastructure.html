@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DevOps Carpentry - 7&nbsp; Infrastructure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./automation.html" rel="next">
+<link href="./data-management.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">DevOps Carpentry</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./staying-in-touch.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Staying Connected</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-go-beyond-a-local-notebook" id="toc-why-go-beyond-a-local-notebook" class="nav-link active" data-scroll-target="#why-go-beyond-a-local-notebook"> <span class="header-section-number">7.1</span> Why Go Beyond a Local Notebook?</a></li>
+  <li><a href="#where-to-go-with-your-computation-or-blog" id="toc-where-to-go-with-your-computation-or-blog" class="nav-link" data-scroll-target="#where-to-go-with-your-computation-or-blog"> <span class="header-section-number">7.2</span> Where to Go With Your Computation or Blog?</a>
+  <ul class="collapse">
+  <li><a href="#hosting-approaches" id="toc-hosting-approaches" class="nav-link" data-scroll-target="#hosting-approaches"> <span class="header-section-number">7.2.1</span> Hosting Approaches</a></li>
+  <li><a href="#your-localhost" id="toc-your-localhost" class="nav-link" data-scroll-target="#your-localhost"> <span class="header-section-number">7.2.2</span> Your Localhost</a></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines"> <span class="header-section-number">7.2.3</span> Virtual Machines</a></li>
+  <li><a href="#container-environments" id="toc-container-environments" class="nav-link" data-scroll-target="#container-environments"> <span class="header-section-number">7.2.4</span> Container Environments</a></li>
+  </ul></li>
+  <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance"> <span class="header-section-number">7.3</span> Performance</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"> <span class="header-section-number">7.4</span> </a></li>
+  <li><a href="#benchmarking" id="toc-benchmarking" class="nav-link" data-scroll-target="#benchmarking"> <span class="header-section-number">7.5</span> Benchmarking</a></li>
+  <li><a href="#your-local-machine-localhost-its-not-always-about-computing-power" id="toc-your-local-machine-localhost-its-not-always-about-computing-power" class="nav-link" data-scroll-target="#your-local-machine-localhost-its-not-always-about-computing-power"> <span class="header-section-number">7.6</span> Your Local Machine / localhost (It’s NOT always about Computing Power!)</a></li>
+  <li><a href="#where-should-i-host" id="toc-where-should-i-host" class="nav-link" data-scroll-target="#where-should-i-host"> <span class="header-section-number">7.7</span> Where Should I Host?</a>
+  <ul class="collapse">
+  <li><a href="#cloud-computing" id="toc-cloud-computing" class="nav-link" data-scroll-target="#cloud-computing"> <span class="header-section-number">7.7.1</span> Cloud Computing</a></li>
+  </ul></li>
+  <li><a href="#software-as-a-service-saas" id="toc-software-as-a-service-saas" class="nav-link" data-scroll-target="#software-as-a-service-saas"> <span class="header-section-number">7.8</span> Software as a Service (SaaS)</a></li>
+  <li><a href="#virtual-machines-1" id="toc-virtual-machines-1" class="nav-link" data-scroll-target="#virtual-machines-1"> <span class="header-section-number">7.9</span> Virtual Machines</a></li>
+  <li><a href="#docker-containers" id="toc-docker-containers" class="nav-link" data-scroll-target="#docker-containers"> <span class="header-section-number">7.10</span> Docker (Containers)</a></li>
+  <li><a href="#publication" id="toc-publication" class="nav-link" data-scroll-target="#publication"> <span class="header-section-number">7.11</span> Publication</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Yes, there is a third area besides your research and carpentry level programming that I suppose you should get an idea of. Again, you do not have to master hosting servers or even clusters, but a decent overview and an idea of when to use what will help you tremendously to plan ahead. Admittedly, unless your favorite superhero is Inspector Gadget or you just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead.</p>
+<section id="why-go-beyond-a-local-notebook" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="why-go-beyond-a-local-notebook"><span class="header-section-number">7.1</span> Why Go Beyond a Local Notebook?</h2>
+<p>So why leave the peaceful, well-known shire of our local environment for the uncharted, rocky terroritory of unwelcoming technical documentations and time consuming rabbit holes? It turns out, often we do not have to thanks to the remarkable computing power of modern notebook or desktop computers.</p>
+<p>Yet, there are good reasons to shoot for the stars (or the cloud in this case). Performance, particularly in terms of throughput is one of these reasons. To figure out whether one’s own computation problem is such a case, benchmarking is almost always a good idea. For example some problems benefit much less than others from multiple cores or even graphical chips (GPUs) that can run many independent processes in parallel. Though experienced researchers can often classify computation problems ex ante benchmark can help to plan the resources (and budget) needed for computation. The case study chapter shows an in-depth example of benchmarking performance gains from parallelization of a seasonal adjustment processes vs.&nbsp;the single core process.</p>
+<p>Even if performance gains are not always great, running computation on remote machines may be a good idea. Running computations elsewhere keeps your local computer clean and stable for office work as well as your computations independent of side effects caused by a crashing MS Word let alone a good old fashioned virus.</p>
+<p>If you work with sensitive data that are subject to strict security policies, working on a local notebook may not even be an option. From the perspective of a person responsible for security a server adds security at multiple layers. First, it cannot be stolen physically they way a notebook can be grabbed and carried away. In addition admins can control enforcement of security layers such as file encryption more easily in a central as opposed to distributed system. Also, more visible to the enduser, it is easier to control which authentication procedures are allowed.</p>
+<p>Yet, the most common reason to go beyond the own local computer is to publish, i.e., put content out on a machine that is online 24/7. To host a website, blog or data visualization has become easier and cheaper than ever before. It requires rather minimal technical skill and no money to publish a simple static website on a platform like GitHub or Netlify. Simply use a website renderer to locally create HTML / CSS / JS files from a markdown document and upload the artifacts (generated content). The publication chapter shows an elaborate hands-on example to web host projects from a simple report, to a personal blog or a book like this one.</p>
+</section>
+<section id="where-to-go-with-your-computation-or-blog" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="where-to-go-with-your-computation-or-blog"><span class="header-section-number">7.2</span> Where to Go With Your Computation or Blog?</h2>
+<p>So, if one of the above motivations apply where should we go with our project? That has actually become a tough question because technical advances, almost unparalleled scalability and large profits for the bigges players made modern infrastructure providers offer an incredible variety of products to choose from.</p>
+<section id="hosting-approaches" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="hosting-approaches"><span class="header-section-number">7.2.1</span> Hosting Approaches</h3>
+<p>First, there are essentially three hosting approaches (business models) to choose from: <strong>on premise</strong>, <strong>software-as-a-service</strong>, <strong>self-host a cluster</strong>. On premise basically means in-house. That is, researchers hosts their servers on their own either as virtual machines or on bare metal. Virtual machines are virtual computers running on powerful hardware that allows to run multiple virtual computers with an own operating system completely distinct from one another. Bare metal refers to physical hardware.</p>
+<ul>
+<li>what’s around in general: localhost, cloud, on prem, SaaS</li>
+<li>depends on what you wanna do</li>
+</ul>
+</section>
+<section id="your-localhost" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="your-localhost"><span class="header-section-number">7.2.2</span> Your Localhost</h3>
+</section>
+<section id="virtual-machines" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="virtual-machines"><span class="header-section-number">7.2.3</span> Virtual Machines</h3>
+</section>
+<section id="container-environments" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="container-environments"><span class="header-section-number">7.2.4</span> Container Environments</h3>
+<ul>
+<li>single hosting nodes, docker, docker compose</li>
+<li>clusters</li>
+</ul>
+<p>When data analysts and data scientists speak of infrastructure they discuss where to run their analysis, store their data or publish their reports and visualizations. Fostered by technical advances and almost unparalleled scalability of their business, modern infrastructure providers offer an incredible variety of products to choose from.</p>
+<p><a href="illustration_from_the_lecture.png">a server is program that listens</a></p>
+<p>In principle, data science software can run <strong>locally</strong>, <strong>on premise</strong>, <strong>as a service (SaaS)</strong> or in a cluster in the cloud. Locally refers to a person’s notebook, desktop computer, mobile phone or smart watch. Keep in mind that a server is just a program that continuously listens to incoming requests and <em>serves</em> content accordingly – not necessarily an oversized computer that looks like a fridge.</p>
+<p>On premise basically means in-house. That is, a company hosts its servers on its own either as virtual machines or on bare metal<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Software as a service (SaaS) offers provide a single specific service with the aim to abstract the hosting burden and technical decision making from its users. A popular pattern often referred to as microservice architecture is to put applications together by combining different single purpose software-as-a-service products. The ubiquituos term cloud computing is much more fuzzy. Some refer to the entire product offering of the big hyperscalers, often limited to the big three of AWS (Amazon), GCP (Google) and Azure (Microsoft), as <em>in-the-cloud</em>. Essentially, many software-as-a-service products are backed by these clouds, even if they are offered by smaller third parties. The debate about <a href="https://gdpr-info.eu/">GDPR</a> compliance<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, privacy in general and hosting outside the U.S. continues support smaller cloud providers and self-hosted approaches, though these alternatives have a hard time keeping up with the big three in terms of technical innovation and scaling.</p>
+</section>
+</section>
+<section id="performance" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="performance"><span class="header-section-number">7.3</span> Performance</h2>
+<p>Once I was trouble shooting a case in which a colleague was unhappy with the speed gain of using the university’s heralded cluster. It turned out he had passed his behemoth of a computation problem on to the login node of the university cluster. Unsuprisingly, the bouncer was not particularly good at maths.</p>
+<p>Before you laugh: Do you know how many cores, how much disk space or RAM your local notebook has? I have seen many bright researchers who were not able to tell. Note, I am not writing this to make you feel bad or to put you in front of another fat rock. There is a reason why we have sysadmins, database admins and other specialists. I am not asking researchers to become one of those. A lot of developers are lacking a decent understanding of infrastructure, too.</p>
+<p>While specialization has been the story of the last decades, there is a strong case for hybrid profiles. In software development, <em>DevOps</em> is such a sought after hybrid profile: A software <em>developer</em> with knowledge of <em>operations</em> or a server <em>operator</em> who is able to <em>develop</em> a program.</p>
+<p>The following section intends to share insights that help you set up a playground for trying out new things, to get a rough idea of computation hours needed or simply to put you in better position to discuss your needs with your organization’s High Performance Computing (HPC) group.</p>
+<ul>
+<li>GPU</li>
+<li>Parallel</li>
+<li></li>
+</ul>
+<p>Some computing challenges ask for more resources than available from a common notebook or desktop computer.</p>
+<ul>
+<li>hyperscalers / big three</li>
+<li>basic options
+<ul>
+<li>bare metal</li>
+<li>VM on premise</li>
+<li>SaaS</li>
+<li>Cloud computing.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="section"><span class="header-section-number">7.4</span> </h2>
+<ul>
+<li>what you do
+<ul>
+<li>access</li>
+<li>expose data results</li>
+</ul></li>
+<li>benchmarking</li>
+</ul>
+<p>But what if you do not want to run your stuff locally? Maybe because you want to expose a web application or site which has to be online 24/7. Maybe because you do not more additional computing power.</p>
+<p>In principle there are four options.</p>
+<ol type="1">
+<li><p>Bare Metal. Buy hardware, hook it up with the internet, install your software, have fun. If you have a consistantly high usage rate and can maintain the server efficiently, this is likely the cheapest computing hour. You saw that <em>if</em>, didn’t you?</p></li>
+<li><p>Either use physical or virtual hardware and make your local IT department host your service <strong>on-premise</strong> (inhouse). You will give up a little bit of your flexible in exchange for help with maintenance and server administration.</p></li>
+<li><p>Cloud Computing.</p></li>
+<li><p>Software-as-a-Service</p></li>
+</ol>
+</section>
+<section id="benchmarking" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="benchmarking"><span class="header-section-number">7.5</span> Benchmarking</h2>
+<p>Benchmarking refers to observation of computation performance in order to evaluate the efficiency of a program or simply to assess the computation hours needed. Also some programs benefit from parallel computing a lot more than others and the effect of speed gains is not always linear. Being able to set up a basic toy example and get a rough idea how long a computation might take is a very valuable skill for an empirical researcher. And it’s up for grabs. Really.</p>
+</section>
+<section id="your-local-machine-localhost-its-not-always-about-computing-power" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="your-local-machine-localhost-its-not-always-about-computing-power"><span class="header-section-number">7.6</span> Your Local Machine / localhost (It’s NOT always about Computing Power!)</h2>
+<p>A simple benchmark can help to assess whether your local machine, i.e., your desktop or notebook computer may be sufficient for your ‘big’ data project. Maybe some overnight computation with home court advantage is the better solution than an away game in a cloud environment you never worked with before.</p>
+<p>Also, it’s important to understand that it is not always about computing power. Your local computer can be a great testing and development environment for many things, e.g., a report rendering service, a website and many other things that might run elsewhere in production. Many of today’s applications run on some kind of webserver or in a web based architecture. Remember: a server does not necessarily look like a fridge with emergency power supply. It’s just a program that listens. Such a program can run on a fat rack and your little notebook alike which allows you to test an application locally. The popular blog software <em>hugo</em> for example, ships with a little webserver to test things at home before going public.</p>
+<pre><code>hugo serve</code></pre>
+<p>When run inside a folder with a <em>hugo</em> based website, the command spins up a local webserver and exposes the current state of the <em>hugo</em> based website through a specific port (1313). This allows the developer to visit the site using their favorite web browser while its running on their local machine.</p>
+</section>
+<section id="where-should-i-host" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="where-should-i-host"><span class="header-section-number">7.7</span> Where Should I Host?</h2>
+<p>But what if you do not want to run your stuff locally. Maybe because you want to expose a web application or site which has to be online 24/7. Maybe because you do not more additional computing power.</p>
+<p>In principle there are four options.</p>
+<ol type="1">
+<li><p>Bare Metal. Buy hardware, hook it up with the internet, install your software, have fun. If you have a consistantly high usage rate and can maintain the server efficiently, this is likely the cheapest computing hour. You saw that <em>if</em>, didn’t you?</p></li>
+<li><p>Either use physical or virtual hardware and make your local IT department host your service <strong>on-premise</strong> (inhouse). You will give up a little bit of your flexible in exchange for help with maintenance and server administration.</p></li>
+<li><p>Cloud Computing.</p></li>
+<li><p>Software-as-a-Service</p></li>
+</ol>
+<section id="cloud-computing" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="cloud-computing"><span class="header-section-number">7.7.1</span> Cloud Computing</h3>
+<p>Cloud computing is the on-demand of hosting. It continues to be popular with users looking for storage and computing power, particularly when users have high peaks of usage and low and long valleys of idle time.</p>
+<p>From a business perspective, cloud computing is one of the most compelling business cases of the past few decades. Economies of scale are just tremendous for companies with right (=massive) infrastructure. Amazon who happened to have the infrastructure due to its global retail business developed into one of the leading cloud computing companies turning hosting into one of its fastest growing an most profitable branches.</p>
+<p>For the users, cloud computing is just convenient. Yet, pound-for-pound, if used 24/7 cloud computing ressources are more expensive than traditional hosting. Also, limiting your budget is not trivial especially if you a sharing the costs with multiple stakeholders inside your organization.</p>
+</section>
+</section>
+<section id="software-as-a-service-saas" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="software-as-a-service-saas"><span class="header-section-number">7.8</span> Software as a Service (SaaS)</h2>
+</section>
+<section id="virtual-machines-1" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="virtual-machines-1"><span class="header-section-number">7.9</span> Virtual Machines</h2>
+<p>Just like any software, tools like <em>hugo</em> have their dependencies. Depending on your operating system and the software you want to run, dependencies may become an issue. Dependencies may cause conflicts with other software or dependencies, e.g., some software might depend on Python 2 while another piece depends on Python 3 and so forth. The more stuff you install, the higher the chances you run into a conflict or some hard to install piece of software.</p>
+<p>One good solution to these issues are Virtual Machines. Virtual Machines can either run locally using software like Oracle’s Virtual Box which allows to run a Virtual Windows or Linux inside Mac OS and vice versa. Running a virtual box locally may not be the most performant solution but it allows to have several test environments without altering one’s main environment. In the meantime though, Virtual Machines are mostly known as flexible computation nodes offered by (cloud) hosting providers. Automated, scripted procedures to set and spin up these virtual servers make Virtual Machines a very powerful, reproducible and scaleable approach.</p>
+</section>
+<section id="docker-containers" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="docker-containers"><span class="header-section-number">7.10</span> Docker (Containers)</h2>
+<p>At the first glimpse containers look very much like Virtual Machines to the practitioner. The difference is that every Virtual Machine has its own operating system while containers use the the host OS to run a container engine on to top of the OS. By doing so containers can be very light weight and may take only a few seconds to spin up while spinning up Virtual Machines can take up to a few minutes - just like booting physical computers. Hence docker containers are often used as single purpose environments: Fire up a container, run a task in that environment, store the results outside of the container and shut down the container again. Docker the most popular containerized solution quickly became the synonym to environments configured in a file. So called docker images are build layer by layer based on other less specific docker images and a DOCKERFILE that holds the ingredients and set up for the next image. The platform dockerhub hosts a plethora of pre-built docker images vom ready-to-go database to Python ML environments or minimal Linux containers to a simple shell script.</p>
+<p>Though a bit out of fashion and somewhat different, virtual machines are good starting point to explain single purpose container environments such as <a href="https://www.docker.com/why-docker">docker</a>. A virtual machine (VM) is basically a computer in a computer, like a Linux environment running on your Windows notebook. Oracle’s free <a href="https://www.virtualbox.org/">Virtual Box</a> is the most popular piece of free software to easily install another operating system inside your local computer’s host OS.</p>
+<p>While VMs are still common and one can potentially have lots of images for different purposes, images are too heavyweight and take to long to boot to be the go-to solution for many application developers. Hence so-called containers that run within a container host and fire up within seconds have become popular as single purpose environments.</p>
+<p>The most popular of them all is <em>docker</em> which allows users to configure an environment in a <em>Dockerfile</em> (essentially a text file) including the operating system and software packages installed in the container. The text file can either be used to create a <em>docker image</em> which is kind of a blueprint for a container. Containers run inside a docker host and can either be used interactively or in a batch which executes a single task in an environment specifically built for this task.</p>
+<p>One of the reasons why docker is attractive to researchers is its open character: Dockerfiles are a good way to share a configuration in a simple, reproducible script, making it easy to reproduce. Less experienced researchers can benefit from <a href="https://hub.docker.com/">Dockerhub</a> which shares images for a plethora of purposes from mixed data science setups to database configuration. Side Effect free working environments for all sorts of task can especially be appealing to developers with limited experience in system administration.</p>
+<p>Beside simplification of system administration, <em>docker</em> is known for its ability to work in the cloud. All major cloud hosters offer docker hosts and the ability to deploy docker containers that were previously developed and tested locally. You can also use docker to tackle <a href="appendix.html#glossary">throughput problems</a> using container orchestration tools like <a href="https://docs.docker.com/engine/swarm/swarm-tutorial/">Docker Swarm</a> or <a href="https://kubernetes.io/">K8 (say: Kubernetes)</a> to run hundreds of containers (depending on your virtual resources).</p>
+</section>
+<section id="publication" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="publication"><span class="header-section-number">7.11</span> Publication</h2>
+<p>Communication is an essentially part of building an (academic) career. Part of it is a neat online profile. Do not relax on the excuse that your department’s website does not offer the flexibility. The legal and technical situation in many places should allow you to spin up your own website or even run a blog if you find the time. For free. Including the web hosting.</p>
+<p>A popular approach to do so is to work with a <em>static website generator</em>. Generators like blogdown, pkgdown or bookdown are flavors of the same approach to create a website: Write markdown first, render it and then upload rendered HTML + CSS + Javascript to a host like GitHub Pages or Netlify that allow you host your site for free. The <em>static website generator</em> approach has become so popular that the aforementioned hosters even offer to run the render process for you.</p>
+<p>The idea of engines like the <a href="https://golang.org/">Go</a> based <a href="https://gohugo.io/">Hugo</a> or the <a href="https://www.ruby-lang.org/en/">Ruby</a> based <a href="https://jekyllrb.com/">Jekyll</a> which are behind the above packages is a counter approach to what content management systems do: There is no database or template that is brought together dynamically when a user visits the website. The rendering is done locally on the creator’s local computer (or netlify’s environment). Whenever a change is made, the website is rendered entirely (ok, minus caching) and uploaded (pushed) again to the host. Therefore no database is needed which cuts down the costs of hosting to zero. (FWIW: this book is made with such a generator.)</p>
+
+
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Virtual machines are virtual computers running on powerful hardware that allows to run multiple virtual computers with an own operating system completely distinct from one another. Bare metal refers to physical hardware.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>General Data Protection Regulation of the EU.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./data-management.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./automation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

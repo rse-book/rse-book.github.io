@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DevOps Carpentry - 2&nbsp; Stack - A Developer’s Toolkit</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./programming.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">DevOps Carpentry</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./staying-in-touch.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Staying Connected</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#programming-language" id="toc-programming-language" class="nav-link active" data-scroll-target="#programming-language"> <span class="header-section-number">2.1</span> Programming Language</a></li>
+  <li><a href="#interaction-environment" id="toc-interaction-environment" class="nav-link" data-scroll-target="#interaction-environment"> <span class="header-section-number">2.2</span> Interaction Environment</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"> <span class="header-section-number">2.3</span> Version Control</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"> <span class="header-section-number">2.4</span> Data Management</a></li>
+  <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure"> <span class="header-section-number">2.5</span> Infrastructure</a></li>
+  <li><a href="#automation" id="toc-automation" class="nav-link" data-scroll-target="#automation"> <span class="header-section-number">2.6</span> Automation</a></li>
+  <li><a href="#communication-tools" id="toc-communication-tools" class="nav-link" data-scroll-target="#communication-tools"> <span class="header-section-number">2.7</span> Communication Tools</a></li>
+  <li><a href="#publishing-and-reporting" id="toc-publishing-and-reporting" class="nav-link" data-scroll-target="#publishing-and-reporting"> <span class="header-section-number">2.8</span> Publishing and Reporting</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>The goal of this chapter (and probably the most important goal of this entire book) is to help you with the big picture of which tool does what. The following sections will group common programming-with-data components by purpose. All of the resulting groups represent aspects of programming with data and I will move on to discuss these groups in a dedicated chapter each.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dr_egghead_panics.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Aaaaaaah! Don’t panic, Dr.&nbsp;Egghead! All these components are here to help you and you won’t need all of them from the start.</figcaption><p></p>
+</figure>
+</div>
+<p>Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project’s <em>stack</em> is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in <em>programming with data</em> stacks. Below are some of the components I use most often. Of course this is a personal choice. Obviously, I do not use <em>all</em> of these components in every single small project. <em>Git, R</em> and <em>R Studio</em> would be a good minimal version.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Component </th>
+   <th style="text-align:left;"> Choice </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Interpreter / Language </td>
+   <td style="text-align:left;"> <a href="https://r-project.org">R</a>, <a href="https://www.python.org/">Python</a>, <a href="">Javascript</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> IDE / Editor </td>
+   <td style="text-align:left;"> <a href="https://rstudio.com">R Studio</a>,<a href="https://code.visualstudio.com/">VS Code</a>, <a href="https://www.sublimetext.com/">Sublime</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Version Control </td>
+   <td style="text-align:left;"> <a href="https://git-scm.com/">Git</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Project Management </td>
+   <td style="text-align:left;"> <a href="https://github.com/features/project-management/">GitHub</a>, <a href="https://about.gitlab.com/solutions/project-management/">GitLab</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Database </td>
+   <td style="text-align:left;"> <a href="https://www.postgresql.org/">PostgreSQL</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 'Virtual' Environments </td>
+   <td style="text-align:left;"> <a href="https://www.docker.com/">Docker</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Communication (Visualization, Web) </td>
+   <td style="text-align:left;"> <a href="https://nodejs.org/en/">Node</a>, <a href="https://quasar.dev/">Quasar (vue.js)</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Website Hosting </td>
+   <td style="text-align:left;"> <a href="https://netlify.com/">Netlify</a>, <a href="https://pages.github.com/">GitHub Pages</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Workflow Automation </td>
+   <td style="text-align:left;"> <a href="https://airflow.apache.org/">Apache Airflow</a> </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Continous Integration </td>
+   <td style="text-align:left;"> <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>Throughout this book, often a choice for one piece of software needs to be made in order to illustrate things. To get the most out of the book, keep in mind that these choices are examples and try to focus on the role of an item in the big picture.</p>
+<section id="programming-language" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="programming-language"><span class="header-section-number">2.1</span> Programming Language</h2>
+<p>In Statistical Computing the interface between the researcher and the computation node is almost always an interpreted progamming language as opposed to a compiled one. Compiled languages like C++ require the developer to write source code and compile, i.e., translate source code into what a machine can work with <em>before</em> runtime. The result of the compilation process is a binary which is specific to an operating system. Hence you will need one version for Windows, one for OSX and one for Linux if you intend to reach a truly broad audience with your program. The main advantage of a compiled language is speed in terms of computing performance because the translation into machine language does not happen during runtime. A reduction of development speed and increase in required developer skills are the downside of using compiled languages.</p>
+<blockquote class="blockquote">
+<p>Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it. <br><br> – Dan Ariely, Professor of Psychology and Behavioral Economics, <a href="https://twitter.com/danariely/status/287952257926971392">on twitter</a></p>
+</blockquote>
+<p>The above quote became famous in the hacking data community, not only because of the provocative, fun part of it, but also because of the implicit advice behind it. Given the enormous gain in computing power in recent decades, but also methodological advances, interpreted languages are often fast enough for many social science problems. And even if it turns out, your data grow out of your setup, a well written proof of concept written in an interpreted language can be a formidable blueprint. <strong>Source code is turning into an important scientific communication channel.</strong> Put your money on it, your interdisciplinary collaborator from the High Performance Computing (HPC) group, will prefer some Python code as a briefing for their C++ or FORTRAN program over a wordy description out of your field’s ivory tower.</p>
+<p>Interpreted languages are a bit like pocket calculators, you can look at intermediate results, line by line. R and Python are the most popular <a href="appendix.html#glossary">OSS</a> choices in hacking with data, <a href="https://julialang.org/">Julia</a> is an up and coming, perfomance focused language with a much slimmer ecosystem. A bit of Javascript can’t hurt for advanced customization of graphics and online communication of your results.</p>
+<!-- Julia screenshot with caption -->
+</section>
+<section id="interaction-environment" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="interaction-environment"><span class="header-section-number">2.2</span> Interaction Environment</h2>
+<p>While the fact that a software developer needs to choose a programming language to work with is rather obvious, the need to compose and customize an environment to interact with the computer is much less obvious to many. Understandably so, because outside of programming, software such as word processors, video or image editors presents itself to the user as a single program. That single program<br>
+takes the user’s input, processes the input (in memory) and stores a results on disk for persistence – often in a proprietary, program specific format.</p>
+<p>Yet, despite all the understanding for nonchalantly saying we keep documents <strong>in</strong> Word or data <strong>in</strong> R Studio, it’s beyond nerdy nitpicking when I insist that data are kept in files (or databases) – NOT in a program. And that R is NOT R Studio: This sloppy terminology is contributes to making us implicitly accept that our office documents live in one single program. (And that there is only one way to find and edit theses files: through said program).</p>
+<p>It is important to understand that source code of essentially any programming languages is a just a plain text file and therefore can be edited in any editor. Editors come in all shades of gray: from lean, minimal code highlighting support to full fledged integrated development environments (IDE) with everything from version control integration to sophisticated debugging.</p>
+<p>Which way of interaction the developer likes better is partly a matter of personal taste, but it also depends on the programming language, the team’s form of collaboration and size of the project. In addition a customized editor, most developers use some form of a console to communicate with their operating system. The ability to send commands instead of clicking is not only reproducible and shareable it also outpaces mouse movement by lot when commands come in batches. Admittedly configuration, practice and getting up to speed takes its time but once you have properly customized the way you interact with your computer when writing code you will never look back.</p>
+<p>In any case, make sure to customize your development environment: choose the themes you like, make sure the cockpit you spent your day in is configured properly and feels comfy.</p>
+</section>
+<section id="version-control" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="version-control"><span class="header-section-number">2.3</span> Version Control</h2>
+<p>To buy into the importance of managing one’s code professionally may be the single most important take away from this book. Being able to work with version control will help you fit into a lot of different teams that have contact points with data science and programming, let alone if you become part of a programming or data science team.</p>
+<p>While version control has a long history dating back to CVS and SVN, the good news for the learner is, that there is a single dominant approach when it comes to version control in the data analysis world. Despite the fact that its predecessors and alternatives such as mercurial are stil around, <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">git</a> is the one you have to learn. To learn more about the history of version control and approaches other than git, <a href="https://ericsink.com/vcbe/index.html">Eric Sink’s Version Control by Example</a> is for you.</p>
+<p>So what does git do for us as researchers? How is it different from dropbox?</p>
+<pre><code>git does not work like dropbox. git does not work like dropbox.
+git does not work like dropbox. git does not work like dropbox. 
+git does not work like dropbox. git does not work like dropbox.
+git does not work like dropbox. git does not work like dropbox. 
+git does not work like dropbox. git does not work like dropbox.
+git does not work like dropbox. git does not work like dropbox. 
+</code></pre>
+<p>The idea of thinking of a sync, is what interferes with comprehension of the benefit of version control (which why I hate that git <a href="appendix.html#glossary">GUI</a>s call it ‘sync’ anyway to avoid irritation of user’s initial believes.). Git is a decentralized version control system that keeps track of a history of semantic commits. Those commits may consist of changes to multiple files. A commit message summarizes the gist of a contribution. <em>Diffs</em> allow to compare different versions.</p>
+<img src="images/diff.png" width="300px">
+<div class="caption-half">
+The <em>diff</em> output shows an edit during the writing of this book. The line preceeded by ‘-’ was replaced with the line preceeded by ‘+’.
+</div>
+<p>Git is well suited for any kind of text file. May it be source code from Python or C++, or some text written in markdown or LaTeX. Binaries like .pdfs or Word documents are possible, too, but certainly not the type of file for which git is really useful. This book contains a detailed, applied introduction tailed to researchers as part of the <a href="developer-practices-workflows.html">Programmers’ Practices and Workflows</a> chapter, so let’s dwell with the above contextualization for a bit.</p>
+</section>
+<section id="data-management" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="data-management"><span class="header-section-number">2.4</span> Data Management</h2>
+<p>One implication of bigger datasets and/or bigger teams is the need to manage data. Particularly when projects establish themselves or update their data on a regularly basis, well defined processes, consistent storage and possibly access management become relevant. But even if you worked alone, it can be very helpful to have an idea about data storage in files systems, memory consumption and archiving data for good.</p>
+<p>Data come in various forms and dimensions, potentially deeply nested. Yet researchers and analysts are mostly trained to work with one-row-one-observation formats in which columns typically represent different variables. In other words two dimensional representation of data remains the most common and intuitive form of data to many. Hence office software offers different, text based and proprietary spreadsheet file formats. On disk, comma separated files (.csv)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are probably the purest representation of two dimensional data that can processed comfortably by any programming language and be read by many programs. Other formats such as .xml or .json allow to store even deeply nested data.</p>
+<p>In-memory, that is when working interactively with a programming languages such as R or Python, data.frames are the most common represenation of two dimensional data. Data.frames, their progressive relatives like tibbles or data.tables and the ability to manipulate them in reproducible, shareable and discussible fashion is is the first superpower upgrade over pushing spreadsheets. Plus, other representation such as arrays, dictionaries or lists represent nested data in memory. Though in memory data manipulation is very appealing, memory is limited and needs to be managed. Making the most of the memory available is one of the driving forces behind extensions of the original data.frame concept.</p>
+<p>The other obvious limitation of data in memory is the lack of persistent storage. Therefore in-memory data processing needs to be combined with with file based storage are a database. The good news is, languages like R and Python are well equipped to interface with a plethora of file based approaches as well as databases. So well, that I often recommend these languages to researchers who work with other less equipped tools, solely as an intermediate layer.</p>
+<p>To evaluate which relational (essentially SQL) or non-relational database to pick up just seems like the next daunting task of stack choice. Luckily, in research first encounters with a database are usually passive, in the sense that you want to query data from a source. In other words the choice has been made for you. So unless you want to start your own data collection from scratch, simply sit back, relax and let the internet battle out another conceptual war. For now, let’s just be aware of the fact that a data managemnt game plan should be part of any analysis project.</p>
+</section>
+<section id="infrastructure" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="infrastructure"><span class="header-section-number">2.5</span> Infrastructure</h2>
+<p>For researchers and business analysts who want to program with data the starting infrastructure is very likely their own desktop or notebook computer. Nowadays this already means access to remarkable computing power suited for many tasks.</p>
+<p>Yet, it is good to be aware of the many reasons that can turn the infrastructure choice from a no-brainer into a question with many options and consequences. Computing power, repeated or scheduled tasks, hard-to-configure or non-compatible runtime environment, online publication or high availability may be some of the needs that make you think about infrastructure beyond your own notebook.</p>
+<p>Today, thanks to software-as-a-service (SaaS) offers and cloud computing, none of the above needs imply running a server let alone a computing center on your own. Computing has not only become more powerful over the last decade but also more accessible. Entry hurdles are lower than ever. Many needs are covered by services that do not require serious upfront investment. It has become convenient to try and let the infrastructure grow with the project.</p>
+<p>From a researchers’ and analysts’ perspective one of the most noteworthy infrastructure developments of recent may be the arrival of <em>containers</em> in data analysis. Containers are isolated, single purpose environments that run either on a single container host or with an orchestrator in a cluster. Albeit technically different from virtual machines we can regard containers as virtual computers running on a computer for now. With containers data analysts can create isolated, single purpose environments that allow to reproduce analysis even after one’s system was upgraded and with it all the libraries used to run the analysis. Or think of some exotic LaTeX configuration, Python environment or database drivers that just can’t manage to run on your local machine. Bet there is container blueprint (aka image) around online for exactly this purpose.</p>
+<blockquote class="blockquote">
+<p>“Premature optimization is the root of all evil.” – Donald Knuth.</p>
+</blockquote>
+<p>On the flipside, product offerings and therefore our options have become a fast growing, evolving digital jungle. So rather than trying to keep track (and eventually loosing it) of the very latest gadgets, this book intends to show a big picture overview and pass on a strategy to evaluate the need to add to your infrastructure. Computing power, availability, specific services and collaboration are the main drivers for researcher to look beyond their own hardware. Plus, public exposure, i.e., running a website as discussed in the publishing section asks for a web host beyond our local notebooks.</p>
+</section>
+<section id="automation" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="automation"><span class="header-section-number">2.6</span> Automation</h2>
+<p>“Make repetitive work fun again!” could be the claim of this section. Yet, it’s not just the typical intern’s or student assistant’s job that we would love to automate. Regular ingestion of data from an API or a web scraping process are one form of reocurring tasks, often called cron jobs after the Linux cron command which is often used to schedule execution of any Linux command. Regular computation of an index, triggered by incoming data would be a less time focused, but more event triggered example of an automated task.</p>
+<p>The one trending form of automation though, is <em>continuous integration / continuous development (CI/CD)</em>. <em>CI/CD</em> processes are typically closely linked to a git version control repository and are triggered by a particular action done to the repository. For example, in case some pre-defined part (branch) of a git repository gets updated, an event is triggered and some process starts to run on some machine (usually some container). Builds of software packages are very common use cases of such a <em>CI/CD</em> process. Imagine your developing an R package and want to run all the tests you’ve written, create the documentation and test whether the package can be installed. Once you’ve made your changes and push to your remote git repository. Your push triggers the tests, the check, the documentation rendering and the installation. Potentially a push to the main branch of your repository could even deploy a package that cleared all of the above to your production server.</p>
+<p>Rendering documentation, e.g., from markdown to HTML into a website or presentation or a book like this one is a very similar example of CI/CD process. Major git providers like Gitlab (Gitlab CI/CD) or GiTHub (GitHub Actions) offer CI/CD tool integration. In addition, standalone services like circle-ci can be used as well open source, self-hosted software like drone.</p>
+</section>
+<section id="communication-tools" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="communication-tools"><span class="header-section-number">2.7</span> Communication Tools</h2>
+<p>Its community is one of the reasons for the rise of open source software over the last decades. Particularly newcomers would miss a great chance for a kickstart into programming if they did not connect with the community. Admittedly, not all of the community’s communication habits are for everyone, yet it is important to make your choices and pick up a few channels.</p>
+<p>Chat clients like Slack, Discord or the Internet Relay Chat (IRC) (for the pre-millenials among readers) are the most direct form of asynchronous communication. Though many of the modern alternative are not opensource themselves, they offer free options and remain popular in the community despite self-hosted approaches such as <a href="">matrix</a> along with <a href="">element</a>. Many international groups around data science and statistical computing such as RLadies or the Research Software Enginnering society have Slack space that are busy 24/7 around the world.</p>
+<p>Social media is less directed and more easily consumed in passive fashion than chat space. Twitter is a very active resource to find and exchange good reads or online tutorials. LinkedIn is another good option to connect and find input, particularly in parts of the world where Twitter is less popular. Due to its activity social media is also a great way to stay up-to-date with the latest development.</p>
+<p>Mailing lists are another more old fashioned form to discuss things. They do not require a special client but just an email address to subscribe to their regular updates. If you intend to avoid social media as well as signing up at knowledge sharing platforms such as <a href="https://stackoverflow.com">stackoverflow.com</a> or <a href="reddit.com">reddit</a> mailing lists are a good way to get help from experienced developers.</p>
+<p>Issue trackers are one form of communication that is often underestimated by newcomers. Remotely hosted git repositories, e.g., repositories hosted at GitHub or Gitlab, typically come with an integrated issue trackers to report bugs. The community discusses a lot more than problems on issue trackers: feature requests are common use case and even the future direction of an open source project may be affected substantially by discussions in its issue tracker.</p>
+</section>
+<section id="publishing-and-reporting" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="publishing-and-reporting"><span class="header-section-number">2.8</span> Publishing and Reporting</h2>
+<p>Data analysis hopefully yields results that the analyst intends to report internally within their organisation or share with the broader public. This has lead to a plethora of options on the reporting end. Actually data visualization and reproducible, automated reporting is one of the main drivers researchers and analysts turn to programming for their data analysis.</p>
+<p>In general we can distinguish between two forms of output: pdf-like, print oriented output and HTML-centered web content. Recent toolchains have enabled analysts without strong backgrounds in web frontend development (HTML/CSS/Javascript) to create nifty reports and impressive, interactive visualizations. Frameworks like R Shiny or Python Dash even allow to create complex interactive websites with data science environment.</p>
+<p>Notebooks that came out of the Python world established themselves in many other languages implementing the idea of combining text with code chunks that get executed when the text is rendered to HTML or PDF. This allows researchers to describe, annotate and discuss results while sharing the code that produced the results described. In academia, progressive scholars and journals embrace this form of creating manuscripts as <em>reproducible research</em> that improves trust in the presented findings.</p>
+<p>Besides academic journals that start to require researchers to hand in their results in reproducible fashion, reporting based on so called static website generators<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> has taken data blogs and reporting outlet including presentations by storm. Platforms like GitHub render markdown files to HTML automatically, displaying formatted plain text as a decent website. Services such as netlify allow to use a broad variety of build tools to render input that contains text and code.</p>
+<p>Centered around web browsers to display the output, HTML reporting allows to create simple reports, blogs, entire books (like this one) or presentation slides for talks. But thanks to documented converters like pandoc and a typesetting juggernaut called LaTeX, rendering sophisticated .pdf is possible, too. Some environments even allow to render to propietary word processesor formats.</p>
+
+
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Some dialects use different separators like ‘;’ or tabs, partly because of regional differences like the use of commas as decimal delimiters.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>As opposed to content management systems (CMS) that keep content in a database and put content and layout template together when users visit a website, static website generators render a website once triggered by an event. If users want to update a static website, they simply re-run the render process and push the HTML output of said process online.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./programming.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

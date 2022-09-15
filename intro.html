@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>DevOps Carpentry - 1&nbsp; Introduction</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./stack-developer-toolkit.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">DevOps Carpentry</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./staying-in-touch.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Staying Connected</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-work-like-a-software-engineer" id="toc-why-work-like-a-software-engineer" class="nav-link active" data-scroll-target="#why-work-like-a-software-engineer"> <span class="header-section-number">1.1</span> Why Work Like a Software Engineer?</a></li>
+  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book"> <span class="header-section-number">1.2</span> How to Read this Book?</a></li>
+  <li><a href="#why-work-like-an-operations-engineer" id="toc-why-work-like-an-operations-engineer" class="nav-link" data-scroll-target="#why-work-like-an-operations-engineer"> <span class="header-section-number">1.3</span> Why Work Like an Operations Engineer ?</a></li>
+  <li><a href="#backlog" id="toc-backlog" class="nav-link" data-scroll-target="#backlog"> <span class="header-section-number">1.4</span> Backlog</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"> <span class="header-section-number">1.5</span> Requirements</a></li>
+  <li><a href="#backlog-1" id="toc-backlog-1" class="nav-link" data-scroll-target="#backlog-1"> <span class="header-section-number">1.6</span> Backlog</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="why-work-like-a-software-engineer" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="why-work-like-a-software-engineer"><span class="header-section-number">1.1</span> Why Work Like a Software Engineer?</h2>
+<p>First of all, because everybody and their grandmothers seem to do it. Statistical computing continues to be on the rise in many branches of research.</p>
+<!-- The below graph shows monthly accumulated extension package downloads for the R Language of Statistical Computing grouped by fields of research^[proxied this and that].
+Econometrics, Psychometrics, National Language Processing, Official Statistics, Social Sciences
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# add CRAN TASK VIEW Download 
+# Statistics graph here
+library(tstools)
+```
+
+::: {.cell-output .cell-output-stderr}
+```
+Loading required package: zoo
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+
+Attaching package: 'zoo'
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+The following objects are masked from 'package:base':
+
+    as.Date, as.Date.numeric
+```
+:::
+
+```{.r .cell-code}
+rnorm(10)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+ [1]  0.18826407  0.37233787  0.02229412 -0.92508731 -1.05296807 -0.04992706
+ [7] -0.73702412  0.54081119 -0.25819103 -2.15427608
+```
+:::
+:::
+
+
+-->
+<div class="caption-left">
+Source code can be a tremendously sharp, unambiguous and international communication channel.
+</div>
+<p>Second because it’s reproducible. Code has become a tremendous communication channel. Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours on platforms like <a href="https://stackoverflow.com">Stackoverflow</a> or <a href="https://crossvalidated.com">Crossvalidated</a>. Or think of feature requests: After a little code ping pong with the package author your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. Academic journals have found that out, too in the meantime. Many outlets require you to make the data and source code behind your work available. <a href="https://social-science-data-editors.github.io/guidance/template-README.html">Social Science Data Editors</a> is a bleeding edge project at the time of writing this, but is already referred to by top notch journals like American Economic Review (AER).</p>
+<p>Third, because it scales and automates. Automation is not only convenient. Like when you want to download data, process and create the same visualization and put it on your website any given Sunday. Automation is inevitable. Like when you have to gather daily updates from different outlets or work through thousands of .pdfs.</p>
+<p>Last but not least because of things you couldn’t do w/o being an absolute guru (if at all) if wasn’t for programming. Take visualization. Go, check <a href="https://d3js.org/">these D3 Examples</a>. Now, try to do that in Excel. If you do these things in Excel it’d make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Moral of the story is, with decent, carpentry level programming skills – that’d be the upfront investment – you can already do so many spectular things while not really specializing and staying very flexible.</p>
+</section>
+<section id="how-to-read-this-book" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="how-to-read-this-book"><span class="header-section-number">1.2</span> How to Read this Book?</h2>
+<p>The focal goal of this book is to map out the open source ecosystem, identify neuralgic components and give you an idea of how to improve not only in programming but also in navigating the wonderful but vast open source world. Chapter 2 is the roadmap for this book: it describes and classifies the different parts of the open source stack and explains how these pieces relate to each other. Subsequent chapters highlight core elements of the open source toolbox one at a time and walk through applied examples mostly written in the R language.</p>
+<p>This book is a companion. The companion I wish I had when I started an empirical, data intensive PhD in economics. Yet, the book is written years after said PhD was completed and with the hindsight of 10+ years in academia. <em>Programming with Data</em> is written based on the experience of helping students and seasoned researchers of different fields with their data management, processing and communication of results.</p>
+<p>If you are confident in your ambition to amp up your programming to at least <a href="">solid software carpentry level</a> within the next few months, I suggest to get an idea of your starting point relative to this book.The upcoming <em>backlog</em> section is essentially a list of suggested to-dos on your way to solid software carpentry. Obviously, you may have cleared a few tasks of this backlog item before reading this book which is fine. On the other hand you might not know about some of the things that are listed in the <em>requirement</em> section which is fine, too. The backlog and requirements section just mean to give you some orientation.</p>
+<p>If you do not feel committed, revisit the previous section, discuss the need for programming with peers from your domain and possibly talk to a seasoned R or Python programmer. Motivation and commitment are key to the endurance needed to develop programming into a skill that truly leverages your domain specific expertise.</p>
+</section>
+<section id="why-work-like-an-operations-engineer" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="why-work-like-an-operations-engineer"><span class="header-section-number">1.3</span> Why Work Like an Operations Engineer ?</h2>
+<p>Why even think about Operations? In recent years the devOps approach has taken software engineering by storm. The combination of <em>dev</em>elopment and <em>op</em>eration<em>s</em> promises greater agility and better quality compared to a more traditional, strict distinction between IT system administration and product minded development.</p>
+<!-- 
+
+schematic images
+
+
+-->
+<p>Automation is key to the devOps approach and the main reason why devOps thinking is also very well suited for academic researchers and business analysts who use programming for their analyses. So called <em>continuous integration</em> is suitable to enforce a battery of quality checks such as unit tests or installation checks. Let’s say a push to certain branch of a git repository leads to the checks described above. In a typical workflow, succesfull completion of quality checks triggers continuous deployment to a blog, rendering into a paper or interactive data visualization.</p>
+<p>By embracing a devOps approach researchers do not only gain extra efficiency, but more importantly improve reproducibility and therefore accountability and quality of their work. Similar to the well established term <em>software carpentry</em> that advocates a solid, application minded understanding of programming with data, I suggest a <em>devOps carpentry</em> level understanding of development and operations is desirable for the programming data analyst.</p>
+<p>The effect of a devOps approach on quality control is not limited to reproducible research in a publication sense, but also enforces rules during collaboration: no matter who contributes, contribution gets gut checked and only deployed if checks passed. Simply put, the devOps carpentry is the art of making our work deployable to other machines.</p>
+</section>
+<section id="backlog" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="backlog"><span class="header-section-number">1.4</span> Backlog</h2>
+<p>Other than the classification and overview that <em>Programming with Data</em> provides, its introduction to <strong>git version control</strong> and the <strong>collaboration workflow associated with git</strong> are likely the most impactful items on your backlog. If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, <em>Programming with Data</em> will open up a new world for you. by introducing you to industry standard collaboration. A solid <em>git</em> foundation makes you fit into plethora of (software) teams around the globe – in academia in beyond.</p>
+<p>Your backlog en route to a researcher who is comfortable programming with data obviously contains a <strong>strategy to improve your programming</strong> itself and is complemented by a solid understanding of the <strong>challenges of data management</strong> from persistent storage to access restrictions. Plus, modern data driven science often has to handles datasets so large, <strong>infrastructure</strong> other than local desktops come into play. Yet, high performance computing (HPC) is by far not the only reason why its handy for a researcher to have a basic understanding of <strong>infrastructure</strong>. <strong>Communication</strong> of results including data dissemination or interactive online reports require the content to be served from a server with permanent online access. Basic workflow <strong>automation</strong> of regular procedures, e.g., for a repeated extract-transform-load (ETL) process to update data, is a low hanging (and very useful) fruit for a programming researcher.</p>
+<p>The case studies at the end of the book are not exactly a backlog item like the above but still a recommended read. The case studies in this book are hands-on programming examples – mostly written in R – to showcase tasks from API usage to geospatial visualization in reproducible fashion. Reading and actually running other developer’s code does not only improve one’s own code, but helps to see what makes code inclusive and what hampers comprehensibility.</p>
+</section>
+<section id="requirements" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="requirements"><span class="header-section-number">1.5</span> Requirements</h2>
+<p>Essentially, the requirements in this section just extend the list of backlog items suggested above with a few things not covered in this book. This does not mean that every single item is strictly required as a prerequisite to make sense of this <em>Programming with Data</em>. The requirments are more to say that</p>
+<ul>
+<li>initial steps with a scripting language such as R or Python</li>
+<li>console / terminal basics (moving around the filesystem, ssh)</li>
+</ul>
+<p>are explained more comprehensively elsewhere: (<a href="">Big Book of R</a>, <a href="">R for Data Science</a>, <a href="">The Carpentries</a>)</p>
+<p>like backlog, but rather before you should go on this journey.</p>
+<p>What You Need to Know to Make the Most of This Book</p>
+<p>Though the book offers many entry points and strives to make advanced considerations accessible, <em>Programming with Data</em> provides the most value for readers whose prior knowledge is beyond certain threshold. The book is <strong>not</strong> an introduction to R nor Python. It’s <strong>not</strong> an introduction to data science or machine learning either. Neither knowledge is strictly required to follow the book, but a basic understanding of statistical methods and the challenges applied statisticians face certainly helps to motivate getting invested into programming. Likewise, prior knowledge of a <em>scripting language</em> like <em>R, Python</em> or <em>Javascript</em>, <em>git version control</em>, as well as familiarity with <em>console / terminal basics</em> will help the reader sail smoothly. Still though, to self-reflect on one’s starting point remains the most important requirement to leverage the book.</p>
+<p><em>Programming with Data</em> willingly accepts to be overwhelming at times. Given the variety of topics touched in an effort to show the big picture, I encourage the reader to remain relaxed about a few blanks even when it comes to fundamentals. The open source community offers plenty of great resources to selectively upgrade skills and this books intends to show how to evaluate the need for help and how to find the right sources.</p>
+<p><em>Programming with Data</em> was written with the idea in mind that well maintained open source projects are the best to document themselves. Therefore I rather reference to existing documentation as opposed to rewriting it. Because even if my wording was better than the original, it is only a matter of time before my documentation is outdated. The bigger the stack the harder to keep track. So whenever, you stumble upon something you do not understand, make sure to look it up. (I tried hard to provide good a glossary and reference wherever possible, but if not - still push yourself to look things up).</p>
+<p>That being said, to have an idea about following technologies and ideas will certainly help to get the most out of spending time with <em>Programming with Data</em>:</p>
+<ul>
+<li>Basic R or Python</li>
+<li>basic understanding of git version control</li>
+<li>basic understanding of GitHub based workflows, e.g., issue tracker, kanban boards…</li>
+<li>Terminal / Console and Shell and a shell, e.g., bash, fish</li>
+</ul>
+<p>In other words: if none of the above means something to you, I recommend to make yourself comfortable with the basics of 2-3 of the above fields before you start to read this book or just cherry pick single topics.</p>
+</section>
+<section id="backlog-1" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="backlog-1"><span class="header-section-number">1.6</span> Backlog</h2>
+<p>What you need to know to become comfortable programming with data…</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./stack-developer-toolkit.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
