@@ -1,0 +1,38 @@
+project:
+  type: book
+
+book:
+  title: "DevOps Carpentry"
+  subtitle: "A Researcher's Guide to the Open Source Ecosystem"
+  author: "Matthias Bannert"
+  date: "7/12/2022"
+  search: true
+  sharing: [twitter]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - stack-developer-toolkit.qmd
+    - programming.qmd
+    - interaction.qmd
+    - version-control.qmd
+    - data-management.qmd
+    - infrastructure.qmd
+    - automation.qmd
+    - staying-in-touch.qmd
+    - case-studies.qmd
+    - appendix.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    keep-tex: true
+    documentclass: scrbook
+    cls: krantz
+
+
+

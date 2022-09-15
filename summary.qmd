@@ -1,0 +1,3 @@
+# Summary
+
+In summary, this book has no content whatsoever^[FWIW, Dr. Egghead was born after Colin Gillespie's hilarious talk on [Security in Academia](https://www.youtube.com/watch?v=5odJxZj9LE4) at useR! 2019]..
