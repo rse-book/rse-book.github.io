@@ -1,4 +1,4 @@
-# Staying Connected 
+# Community
 
 Besides the fact that it is free of license costs most of the time, open source communities may be the most popular argument in favor of open source software. In academia, free quality online resources and support can be extremely helpful, particularly when one's curriculum did not contain an applied form of programming with data. 
 

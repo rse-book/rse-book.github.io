@@ -62,5 +62,5 @@ Because Kubernetes is quite some overhead to manage, the big three and their alt
 - manage nodes in line with resource
 - HA mode
 - management features
-
+- minikube
 

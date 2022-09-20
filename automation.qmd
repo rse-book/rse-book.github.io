@@ -2,36 +2,32 @@
 
 >Make repetitive work fun again!
 
-In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier it also helps to make a setting reproducible and shareable. 
-
+In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 
 
 ## Infrastructure as Code
 
+Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with. 
 
+DOCKERFILE definitions as described in the previous chapter are a recipe to build docker images using some build environment, e.g., a local docker runtime environment such as Docker Desktop or a build tool like [drone](https://www.drone.io/). Just like many automation tools, docker has a console based client interface (CLI) to communicate with the user efficiently. A simple docker command issued in the directory that contains the DOCKERFILE triggers the build of an image. 
 
-- docker files
-- terraform
-- ansible
-- helm 
+```sh
+docker build .
+```
+
+Usually the next step is to push the resulting image into a public or private registry. This step as well as the sequence of commands, often referred to as pipeline oder build chain, can be automated, too. 
+It is also possible to build an application that uses multiple single purpose containers, e.g., an online survey that stores its results in database. In such a case one container could serve a web frontend using node while another PostgreSQL container provides a database backend. Without going immediately going for a cluster, [docker compose](https://docs.docker.com/compose/) can bundle multiple containers and deploy them jointly so they can smoothly interact with each other. Shell scripts can help to automate simpler processes and put several steps after one another, but if your can invest a bit more time, I highly recommend to use the more powerful, Red Hat backed [ansible](https://docs.ansible.com/ansible/latest/index.html) automation tool. Ansible also comes with a client interface, defines playbooks and role using .yaml files in declarative, human-read-friendly fashion. 
+
+```yaml
+some: 
+    yaml: "example"
+
+```
+
+Automation is more complex for cluster setups, because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in *high availability* mode. On Kubernetes clusters, [helm](https://helm.sh/), Kubernetes' package manager, is part of the solution to tackle this added complexity. Helm is "the best way to find share and use software built for Kubernetes". [Terraform](https://www.terraform.io/) can manage Kubernetes clusters on clouds like Amazon's AWS, Google's GPC, Microsoft's Azure and many other cloud systems using declarative configuration files. Again, a console based client interface is used to apply 
+a declarative confiugration plan to a particular cloud. 
 
 
 ## CI/CD 
-
-Automation of your development workflow
-
-
-## Workflow Scheduling: Apache Airflow
-
-- cronjobs
-- MWAA
-
-
-## Make, target & co.
-
-task automation, caching.. monitoring etc. 
-
-
-
 
 The first type of automation described here refers to automation of your development workflow. That it is, you standardize your path from draft to program to deployment to production. Modern version control software accompanies this process with a toolchain that is often fuzzily called [CI/CD](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment). While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
 
@@ -82,9 +78,15 @@ The other automation tool I would like to mention is [Apache Airflow](https://ai
 
 
 
-## CI CD, Github Actions
+## Workflow Scheduling: Apache Airflow
+
+- cronjobs
+- MWAA
 
 
-## Ansible 
+## Make, target & co.
 
-## target, etc. 
+task automation, caching.. monitoring etc. 
+
+
+

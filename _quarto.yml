@@ -18,10 +18,9 @@ book:
     - data-management.qmd
     - infrastructure.qmd
     - automation.qmd
-    - staying-in-touch.qmd
+    - community.qmd
     - case-studies.qmd
     - appendix.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
