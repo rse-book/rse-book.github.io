@@ -1,5 +1,38 @@
 # Automation
 
+>Make repetitive work fun again!
+
+In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier it also helps to make a setting reproducible and shareable. 
+
+
+## Infrastructure as Code
+
+
+
+- docker files
+- terraform
+- ansible
+- helm 
+
+
+## CI/CD 
+
+Automation of your development workflow
+
+
+## Workflow Scheduling: Apache Airflow
+
+- cronjobs
+- MWAA
+
+
+## Make, target & co.
+
+task automation, caching.. monitoring etc. 
+
+
+
+
 The first type of automation described here refers to automation of your development workflow. That it is, you standardize your path from draft to program to deployment to production. Modern version control software accompanies this process with a toolchain that is often fuzzily called [CI/CD](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment). While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
 
 However, in practice the entire toolchain referred to as *CI/CD* has become broadly available in well documented fashion when git hosting powerhouses GitHub and GitLab introduced their flavors of it: [GitHub Actions])(https://docs.github.com/en/actions) and [GitLab CI](https://docs.gitlab.com/ee/ci/). In addition services like [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/) offer this toolchain independently of hosting git repositories.
