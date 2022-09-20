@@ -19,6 +19,7 @@ book:
     - infrastructure.qmd
     - automation.qmd
     - community.qmd
+    - publishing.qmd
     - case-studies.qmd
     - appendix.qmd
     - references.qmd

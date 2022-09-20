@@ -1,0 +1,10 @@
+# Publishing & Reporting
+
+- think about the channel
+- visualization libs
+- data publications (opendata, link to data management chapter)
+- conduct surveys (DGPs)
+- static websites GitHub Pages & Netlify (maybe case study)
+- quarto (importance of a decent preview)
+
+
