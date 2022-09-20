@@ -201,22 +201,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./staying-in-touch.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Staying Connected</span></a>
+  <a href="./community.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -325,16 +325,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Var1      Var2     Var3
-2000 Q1  1.14087635  9.083429 29.75529
-2000 Q2  0.07079201  8.991895 30.49774
-2000 Q3  0.11562235 10.861370 30.59713
-2000 Q4  1.97163647 10.472615 30.24510
-2001 Q1  1.14606985 10.222130 29.72201
-2001 Q2 -0.07497076  9.478131 32.50793
-2001 Q3 -0.36072307 10.963308 30.27163
-2001 Q4  0.35464616 10.633606 31.15976
-2002 Q1  0.06785793 11.088915 30.51849
-2002 Q2 -0.95435816  9.995232 29.97708</code></pre>
+2000 Q1  1.11594031 10.395852 31.27696
+2000 Q2  0.27249418 10.205317 28.87961
+2000 Q3  1.06438024  8.325836 29.74026
+2000 Q4 -0.90896621  9.203972 29.92917
+2001 Q1  0.94085782  9.569591 29.43400
+2001 Q2 -0.13110833  8.403811 31.03062
+2001 Q3  0.52972829  9.982281 28.30725
+2001 Q4  0.58650462 11.083993 27.01632
+2002 Q1 -1.59492728 10.316113 31.18406
+2002 Q2 -0.07991805 10.357641 30.02679</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -346,28 +346,28 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id       time       value
- 1: Var1 2000-01-01  1.14087635
- 2: Var1 2000-04-01  0.07079201
- 3: Var1 2000-07-01  0.11562235
- 4: Var1 2000-10-01  1.97163647
- 5: Var1 2001-01-01  1.14606985
- 6: Var1 2001-04-01 -0.07497076
- 7: Var1 2001-07-01 -0.36072307
- 8: Var1 2001-10-01  0.35464616
- 9: Var1 2002-01-01  0.06785793
-10: Var1 2002-04-01 -0.95435816
-11: Var2 2000-01-01  9.08342888
-12: Var2 2000-04-01  8.99189455
-13: Var2 2000-07-01 10.86137023
-14: Var2 2000-10-01 10.47261521
-15: Var2 2001-01-01 10.22212980</code></pre>
+ 1: Var1 2000-01-01  1.11594031
+ 2: Var1 2000-04-01  0.27249418
+ 3: Var1 2000-07-01  1.06438024
+ 4: Var1 2000-10-01 -0.90896621
+ 5: Var1 2001-01-01  0.94085782
+ 6: Var1 2001-04-01 -0.13110833
+ 7: Var1 2001-07-01  0.52972829
+ 8: Var1 2001-10-01  0.58650462
+ 9: Var1 2002-01-01 -1.59492728
+10: Var1 2002-04-01 -0.07991805
+11: Var2 2000-01-01 10.39585204
+12: Var2 2000-04-01 10.20531713
+13: Var2 2000-07-01  8.32583618
+14: Var2 2000-10-01  9.20397206
+15: Var2 2001-01-01  9.56959067</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>The ability to transform data from one format into the other and to manipulate both formats is an essential skill for any data scientist or data engineer. It is important to point out that the ability to do the above transformations effortlessly is an absolute go-to skill for people who want to use programming to run analysis. (Different analyses or visualizations may require one form or the other and ask for quick transformation).</p>
 </blockquote>
 <p>Hence popular data science programming languages offer great toolsets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how.</p>
-<p>Yet, not all information suits a two dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data, let’s take a look at the map file and code example case study in <a href="case-studies.html#sec-map"><span>Section&nbsp;10.6</span></a>. In memory, i.e., in our R session the data is represented in a list that contains multiple list may contain more lists nested inside.</p>
+<p>Yet, not all information suits a two dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data, let’s take a look at the map file and code example case study in <a href="case-studies.html#sec-map"><span>Section&nbsp;11.6</span></a>. In memory, i.e., in our R session the data is represented in a list that contains multiple list may contain more lists nested inside.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>

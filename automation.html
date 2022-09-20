@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -25,7 +88,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./staying-in-touch.html" rel="next">
+<link href="./community.html" rel="next">
 <link href="./infrastructure.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -138,22 +201,22 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./staying-in-touch.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Staying Connected</span></a>
+  <a href="./community.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -170,9 +233,10 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ci-cd-github-actions" id="toc-ci-cd-github-actions" class="nav-link active" data-scroll-target="#ci-cd-github-actions"> <span class="header-section-number">8.1</span> CI CD, Github Actions</a></li>
-  <li><a href="#ansible" id="toc-ansible" class="nav-link" data-scroll-target="#ansible"> <span class="header-section-number">8.2</span> Ansible</a></li>
-  <li><a href="#target-etc." id="toc-target-etc." class="nav-link" data-scroll-target="#target-etc."> <span class="header-section-number">8.3</span> target, etc.</a></li>
+  <li><a href="#infrastructure-as-code" id="toc-infrastructure-as-code" class="nav-link active" data-scroll-target="#infrastructure-as-code"> <span class="header-section-number">8.1</span> Infrastructure as Code</a></li>
+  <li><a href="#cicd" id="toc-cicd" class="nav-link" data-scroll-target="#cicd"> <span class="header-section-number">8.2</span> CI/CD</a></li>
+  <li><a href="#workflow-scheduling-apache-airflow" id="toc-workflow-scheduling-apache-airflow" class="nav-link" data-scroll-target="#workflow-scheduling-apache-airflow"> <span class="header-section-number">8.3</span> Workflow Scheduling: Apache Airflow</a></li>
+  <li><a href="#make-target-co." id="toc-make-target-co." class="nav-link" data-scroll-target="#make-target-co."> <span class="header-section-number">8.4</span> Make, target &amp; co.</a></li>
   </ul>
 </nav>
     </div>
@@ -195,6 +259,22 @@ ul.task-list{list-style: none;}
 
 </header>
 
+<blockquote class="blockquote">
+<p>Make repetitive work fun again!</p>
+</blockquote>
+<p>In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable.</p>
+<section id="infrastructure-as-code" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="infrastructure-as-code"><span class="header-section-number">8.1</span> Infrastructure as Code</h2>
+<p>Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with.</p>
+<p>DOCKERFILE definitions as described in the previous chapter are a recipe to build docker images using some build environment, e.g., a local docker runtime environment such as Docker Desktop or a build tool like <a href="https://www.drone.io/">drone</a>. Just like many automation tools, docker has a console based client interface (CLI) to communicate with the user efficiently. A simple docker command issued in the directory that contains the DOCKERFILE triggers the build of an image.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Usually the next step is to push the resulting image into a public or private registry. This step as well as the sequence of commands, often referred to as pipeline oder build chain, can be automated, too. It is also possible to build an application that uses multiple single purpose containers, e.g., an online survey that stores its results in database. In such a case one container could serve a web frontend using node while another PostgreSQL container provides a database backend. Without going immediately going for a cluster, <a href="https://docs.docker.com/compose/">docker compose</a> can bundle multiple containers and deploy them jointly so they can smoothly interact with each other. Shell scripts can help to automate simpler processes and put several steps after one another, but if your can invest a bit more time, I highly recommend to use the more powerful, Red Hat backed <a href="https://docs.ansible.com/ansible/latest/index.html">ansible</a> automation tool. Ansible also comes with a client interface, defines playbooks and role using .yaml files in declarative, human-read-friendly fashion.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">some</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">yaml</span><span class="kw">:</span><span class="at"> </span><span class="st">"example"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Automation is more complex for cluster setups, because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in <em>high availability</em> mode. On Kubernetes clusters, <a href="https://helm.sh/">helm</a>, Kubernetes’ package manager, is part of the solution to tackle this added complexity. Helm is “the best way to find share and use software built for Kubernetes”. <a href="https://www.terraform.io/">Terraform</a> can manage Kubernetes clusters on clouds like Amazon’s AWS, Google’s GPC, Microsoft’s Azure and many other cloud systems using declarative configuration files. Again, a console based client interface is used to apply a declarative confiugration plan to a particular cloud.</p>
+</section>
+<section id="cicd" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="cicd"><span class="header-section-number">8.2</span> CI/CD</h2>
 <p>The first type of automation described here refers to automation of your development workflow. That it is, you standardize your path from draft to program to deployment to production. Modern version control software accompanies this process with a toolchain that is often fuzzily called <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">CI/CD</a>. While CI stands for <em>continuous integration</em> and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either <em>continuous delivery</em> or <em>continuous deployment</em>.</p>
 <p>However, in practice the entire toolchain referred to as <em>CI/CD</em> has become broadly available in well documented fashion when git hosting powerhouses GitHub and GitLab introduced their flavors of it: [GitHub Actions])(https://docs.github.com/en/actions) and <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>. In addition services like <a href="https://travis-ci.org/">Travis CI</a> or <a href="https://circleci.com/">Circle CI</a> offer this toolchain independently of hosting git repositories.</p>
 <p>Users of these platforms can upload a simple textfile that follows a name convention and structure to trigger a step based toolchain based on an event. An example of an event may be the push to a repository’s main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server – all triggered by simple push to master. One particularly cool thing is, that there multiple services who allow to run the testing on their servers using container technologies. This leads to great variety of setups for testing. That way software can easily be tested on different operating systems / environments. Also the mentioned website rendering approach mentioning in the previous section as a potential CI/CD application.</p>
@@ -231,14 +311,17 @@ script:
 </code></pre>
 <p>For more in depth examples of the above, <a href="https://www.jimhester.com/talk/2020-rsc-github-actions/">Jim Hester’s talk on GitHub Actions for R</a> is a very good starting point.</p>
 <p>The other automation tool I would like to mention is <a href="https://airflow.apache.org/">Apache Airflow</a> because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to it as <a href="https://en.wikipedia.org/wiki/Cron">cronjobs</a> on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other log and reporting features worth a lot when maintaining reocurring processes.</p>
-<section id="ci-cd-github-actions" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="ci-cd-github-actions"><span class="header-section-number">8.1</span> CI CD, Github Actions</h2>
 </section>
-<section id="ansible" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="ansible"><span class="header-section-number">8.2</span> Ansible</h2>
+<section id="workflow-scheduling-apache-airflow" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="workflow-scheduling-apache-airflow"><span class="header-section-number">8.3</span> Workflow Scheduling: Apache Airflow</h2>
+<ul>
+<li>cronjobs</li>
+<li>MWAA</li>
+</ul>
 </section>
-<section id="target-etc." class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="target-etc."><span class="header-section-number">8.3</span> target, etc.</h2>
+<section id="make-target-co." class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="make-target-co."><span class="header-section-number">8.4</span> Make, target &amp; co.</h2>
+<p>task automation, caching.. monitoring etc.</p>
 
 
 </section>
@@ -348,8 +431,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./staying-in-touch.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Staying Connected</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./community.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
