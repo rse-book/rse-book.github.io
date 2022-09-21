@@ -1,5 +1,44 @@
 # Publishing & Reporting
 
+Business analysts are used to report to management and/or clients on a regular basis. Academia has a lively debate about science communication. So what does a researcher need to know about publishing and reporting in order to make right choices? 
+The key term about modern reporting in both cases is *regular*. Data might get revised or otherwise updated, journals, reviewers and readers will ask for reproducible research. Dissemination of datasets and results in visually appealing as well as machine readable communication are equally important in modern publishing and reporting. 
+
+Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, markdown based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn markdown into HTML/CSS/Javascript output for flexible use in a standard web browser. Likewise, markdown renders to PDF or even Microsoft Word. 
+
+Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dynamically rendered code chunks that create tables or figures and embedd these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
+
+## Static Website Generators
+
+Let's limit our look at content renderers to outlets for the web for now. We do so to see how the result of a rendering process goes online in fully automated fashion. Unlike in the case of printed output, processing of web output is very standardized: web browser can display content from the HTML/CSS/Javascript combination. 
+
+
+The distribution follows in line after chain and automated as well. 
+
+
+
+## Hosting Static Website
+
+netlify, ghpages, anywhere, a note on self-contained 
+
+## Visualization Libraries
+
+- apache echarts
+    - highcharts
+    - dygraphs (very specific)
+
+
+
+## Data Publications
+
+
+    
+
+- visualization libraries
+    
+
+- web applications
+
+
 - think about the channel
 - visualization libs
 - data publications (opendata, link to data management chapter)
