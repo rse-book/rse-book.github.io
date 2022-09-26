@@ -325,16 +325,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Var1      Var2     Var3
-2000 Q1  1.11594031 10.395852 31.27696
-2000 Q2  0.27249418 10.205317 28.87961
-2000 Q3  1.06438024  8.325836 29.74026
-2000 Q4 -0.90896621  9.203972 29.92917
-2001 Q1  0.94085782  9.569591 29.43400
-2001 Q2 -0.13110833  8.403811 31.03062
-2001 Q3  0.52972829  9.982281 28.30725
-2001 Q4  0.58650462 11.083993 27.01632
-2002 Q1 -1.59492728 10.316113 31.18406
-2002 Q2 -0.07991805 10.357641 30.02679</code></pre>
+2000 Q1  0.50698212 10.288059 31.31941
+2000 Q2 -1.11485679  9.546368 31.31825
+2000 Q3 -0.12471858  8.620920 30.29396
+2000 Q4 -0.03882427 11.156562 28.65296
+2001 Q1 -0.17037577 11.003888 29.51677
+2001 Q2 -0.10470289 10.264431 29.47286
+2001 Q3  0.13737082  9.672068 30.97682
+2001 Q4  0.06864695  9.574343 31.18210
+2002 Q1  0.82583225  8.693272 29.23426
+2002 Q2 -0.15744300 11.113646 29.77724</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -346,21 +346,21 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id       time       value
- 1: Var1 2000-01-01  1.11594031
- 2: Var1 2000-04-01  0.27249418
- 3: Var1 2000-07-01  1.06438024
- 4: Var1 2000-10-01 -0.90896621
- 5: Var1 2001-01-01  0.94085782
- 6: Var1 2001-04-01 -0.13110833
- 7: Var1 2001-07-01  0.52972829
- 8: Var1 2001-10-01  0.58650462
- 9: Var1 2002-01-01 -1.59492728
-10: Var1 2002-04-01 -0.07991805
-11: Var2 2000-01-01 10.39585204
-12: Var2 2000-04-01 10.20531713
-13: Var2 2000-07-01  8.32583618
-14: Var2 2000-10-01  9.20397206
-15: Var2 2001-01-01  9.56959067</code></pre>
+ 1: Var1 2000-01-01  0.50698212
+ 2: Var1 2000-04-01 -1.11485679
+ 3: Var1 2000-07-01 -0.12471858
+ 4: Var1 2000-10-01 -0.03882427
+ 5: Var1 2001-01-01 -0.17037577
+ 6: Var1 2001-04-01 -0.10470289
+ 7: Var1 2001-07-01  0.13737082
+ 8: Var1 2001-10-01  0.06864695
+ 9: Var1 2002-01-01  0.82583225
+10: Var1 2002-04-01 -0.15744300
+11: Var2 2000-01-01 10.28805943
+12: Var2 2000-04-01  9.54636785
+13: Var2 2000-07-01  8.62092029
+14: Var2 2000-10-01 11.15656183
+15: Var2 2001-01-01 11.00388817</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -700,12 +700,6 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <section id="databases" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="databases"><span class="header-section-number">6.3</span> Databases</h2>
 <p>Given the options that file based approaches provide, what is a) the difference and b) the added value of going for database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src=".png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">PostgreSQL client</figcaption><p></p>
-</figure>
-</div>
 <p>The above figure shows a terminal client which users use to send queries written in a query language. The client sends these queries to a database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). This leads to a standard way of interaction with the data no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself and continue to be inevitable as application backends and data archives for many use cases.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> myschema.demotable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
