@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -166,18 +171,18 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-git-version-control" id="toc-what-is-git-version-control" class="nav-link active" data-scroll-target="#what-is-git-version-control"> <span class="header-section-number">5.1</span> What is Git Version Control?</a></li>
-  <li><a href="#why-use-version-control-in-research" id="toc-why-use-version-control-in-research" class="nav-link" data-scroll-target="#why-use-version-control-in-research"> <span class="header-section-number">5.2</span> Why Use Version Control in Research?</a></li>
-  <li><a href="#how-does-git-work" id="toc-how-does-git-work" class="nav-link" data-scroll-target="#how-does-git-work"> <span class="header-section-number">5.3</span> How Does Git Work ?</a></li>
-  <li><a href="#moving-around" id="toc-moving-around" class="nav-link" data-scroll-target="#moving-around"> <span class="header-section-number">5.4</span> Moving Around</a></li>
-  <li><a href="#collaboration-workflow" id="toc-collaboration-workflow" class="nav-link" data-scroll-target="#collaboration-workflow"> <span class="header-section-number">5.5</span> Collaboration Workflow</a>
+  <li><a href="#what-is-git-version-control" id="toc-what-is-git-version-control" class="nav-link active" data-scroll-target="#what-is-git-version-control"><span class="toc-section-number">5.1</span>  What is Git Version Control?</a></li>
+  <li><a href="#why-use-version-control-in-research" id="toc-why-use-version-control-in-research" class="nav-link" data-scroll-target="#why-use-version-control-in-research"><span class="toc-section-number">5.2</span>  Why Use Version Control in Research?</a></li>
+  <li><a href="#how-does-git-work" id="toc-how-does-git-work" class="nav-link" data-scroll-target="#how-does-git-work"><span class="toc-section-number">5.3</span>  How Does Git Work ?</a></li>
+  <li><a href="#moving-around" id="toc-moving-around" class="nav-link" data-scroll-target="#moving-around"><span class="toc-section-number">5.4</span>  Moving Around</a></li>
+  <li><a href="#collaboration-workflow" id="toc-collaboration-workflow" class="nav-link" data-scroll-target="#collaboration-workflow"><span class="toc-section-number">5.5</span>  Collaboration Workflow</a>
   <ul class="collapse">
-  <li><a href="#feature-branches" id="toc-feature-branches" class="nav-link" data-scroll-target="#feature-branches"> <span class="header-section-number">5.5.1</span> Feature Branches</a></li>
-  <li><a href="#prs-and-forks" id="toc-prs-and-forks" class="nav-link" data-scroll-target="#prs-and-forks"> <span class="header-section-number">5.5.2</span> PRs and Forks</a></li>
+  <li><a href="#feature-branches" id="toc-feature-branches" class="nav-link" data-scroll-target="#feature-branches"><span class="toc-section-number">5.5.1</span>  Feature Branches</a></li>
+  <li><a href="#prs-and-forks" id="toc-prs-and-forks" class="nav-link" data-scroll-target="#prs-and-forks"><span class="toc-section-number">5.5.2</span>  PRs and Forks</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -410,10 +415,10 @@ Github pull request dialog: Select the <em>pull request</em>, choose which branc
 
 </section>
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p><a href="https://desktop.github.com/">GitHub Desktop</a>, Atlassian’s <a href="https://www.sourcetreeapp.com/">Source Tree</a> and <a href="https://tortoisegit.org/">Tortoise</a> are some of the most popular choices if you are not a console person.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://desktop.github.com/">GitHub Desktop</a>, Atlassian’s <a href="https://www.sourcetreeapp.com/">Source Tree</a> and <a href="https://tortoisegit.org/">Tortoise</a> are some of the most popular choices if you are not a console person.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -487,7 +492,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

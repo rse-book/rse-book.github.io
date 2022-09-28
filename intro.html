@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -166,16 +171,16 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-work-like-a-software-engineer" id="toc-why-work-like-a-software-engineer" class="nav-link active" data-scroll-target="#why-work-like-a-software-engineer"> <span class="header-section-number">1.1</span> Why Work Like a Software Engineer?</a></li>
-  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book"> <span class="header-section-number">1.2</span> How to Read this Book?</a></li>
-  <li><a href="#why-work-like-an-operations-engineer" id="toc-why-work-like-an-operations-engineer" class="nav-link" data-scroll-target="#why-work-like-an-operations-engineer"> <span class="header-section-number">1.3</span> Why Work Like an Operations Engineer ?</a></li>
-  <li><a href="#backlog" id="toc-backlog" class="nav-link" data-scroll-target="#backlog"> <span class="header-section-number">1.4</span> Backlog</a></li>
-  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"> <span class="header-section-number">1.5</span> Requirements</a></li>
-  <li><a href="#backlog-1" id="toc-backlog-1" class="nav-link" data-scroll-target="#backlog-1"> <span class="header-section-number">1.6</span> Backlog</a></li>
+  <li><a href="#why-work-like-a-software-engineer" id="toc-why-work-like-a-software-engineer" class="nav-link active" data-scroll-target="#why-work-like-a-software-engineer"><span class="toc-section-number">1.1</span>  Why Work Like a Software Engineer?</a></li>
+  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book"><span class="toc-section-number">1.2</span>  How to Read this Book?</a></li>
+  <li><a href="#why-work-like-an-operations-engineer" id="toc-why-work-like-an-operations-engineer" class="nav-link" data-scroll-target="#why-work-like-an-operations-engineer"><span class="toc-section-number">1.3</span>  Why Work Like an Operations Engineer ?</a></li>
+  <li><a href="#backlog" id="toc-backlog" class="nav-link" data-scroll-target="#backlog"><span class="toc-section-number">1.4</span>  Backlog</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"><span class="toc-section-number">1.5</span>  Requirements</a></li>
+  <li><a href="#backlog-1" id="toc-backlog-1" class="nav-link" data-scroll-target="#backlog-1"><span class="toc-section-number">1.6</span>  Backlog</a></li>
   </ul>
 </nav>
     </div>
@@ -240,8 +245,8 @@ rnorm(10)
 
 ::: {.cell-output .cell-output-stdout}
 ```
- [1] -0.04276843  1.24537980  0.24600724  0.41777113  0.74844338  0.67802853
- [7]  0.77935799  0.35324106 -0.05484512 -0.47438808
+ [1] -1.72649188  1.14553828  0.26180019 -1.02314368 -0.55359633  0.06047868
+ [7] -0.96873538 -0.98590962 -1.21731043 -1.30605971
 ```
 :::
 :::
@@ -380,7 +385,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

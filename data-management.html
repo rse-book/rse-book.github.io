@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -229,29 +234,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#forms-of-data" id="toc-forms-of-data" class="nav-link active" data-scroll-target="#forms-of-data"> <span class="header-section-number">6.1</span> Forms of Data</a></li>
-  <li><a href="#representing-data-in-files" id="toc-representing-data-in-files" class="nav-link" data-scroll-target="#representing-data-in-files"> <span class="header-section-number">6.2</span> Representing Data in Files</a>
+  <li><a href="#forms-of-data" id="toc-forms-of-data" class="nav-link active" data-scroll-target="#forms-of-data"><span class="toc-section-number">6.1</span>  Forms of Data</a></li>
+  <li><a href="#representing-data-in-files" id="toc-representing-data-in-files" class="nav-link" data-scroll-target="#representing-data-in-files"><span class="toc-section-number">6.2</span>  Representing Data in Files</a>
   <ul class="collapse">
-  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link" data-scroll-target="#spreadsheets"> <span class="header-section-number">6.2.1</span> Spreadsheets</a></li>
-  <li><a href="#file-formats-for-nested-information" id="toc-file-formats-for-nested-information" class="nav-link" data-scroll-target="#file-formats-for-nested-information"> <span class="header-section-number">6.2.2</span> File Formats for Nested Information</a></li>
-  <li><a href="#a-word-on-binaries" id="toc-a-word-on-binaries" class="nav-link" data-scroll-target="#a-word-on-binaries"> <span class="header-section-number">6.2.3</span> A Word on Binaries</a></li>
-  <li><a href="#interoperable-file-formats" id="toc-interoperable-file-formats" class="nav-link" data-scroll-target="#interoperable-file-formats"> <span class="header-section-number">6.2.4</span> Interoperable File Formats</a></li>
+  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link" data-scroll-target="#spreadsheets"><span class="toc-section-number">6.2.1</span>  Spreadsheets</a></li>
+  <li><a href="#file-formats-for-nested-information" id="toc-file-formats-for-nested-information" class="nav-link" data-scroll-target="#file-formats-for-nested-information"><span class="toc-section-number">6.2.2</span>  File Formats for Nested Information</a></li>
+  <li><a href="#a-word-on-binaries" id="toc-a-word-on-binaries" class="nav-link" data-scroll-target="#a-word-on-binaries"><span class="toc-section-number">6.2.3</span>  A Word on Binaries</a></li>
+  <li><a href="#interoperable-file-formats" id="toc-interoperable-file-formats" class="nav-link" data-scroll-target="#interoperable-file-formats"><span class="toc-section-number">6.2.4</span>  Interoperable File Formats</a></li>
   </ul></li>
-  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"> <span class="header-section-number">6.3</span> Databases</a>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="toc-section-number">6.3</span>  Databases</a>
   <ul class="collapse">
-  <li><a href="#relational-database-management-systems-rdbms" id="toc-relational-database-management-systems-rdbms" class="nav-link" data-scroll-target="#relational-database-management-systems-rdbms"> <span class="header-section-number">6.3.1</span> Relational Database Management Systems (RDBMS)</a></li>
-  <li><a href="#a-word-on-non-relational-databases" id="toc-a-word-on-non-relational-databases" class="nav-link" data-scroll-target="#a-word-on-non-relational-databases"> <span class="header-section-number">6.3.2</span> A Word on Non-Relational Databases</a></li>
+  <li><a href="#relational-database-management-systems-rdbms" id="toc-relational-database-management-systems-rdbms" class="nav-link" data-scroll-target="#relational-database-management-systems-rdbms"><span class="toc-section-number">6.3.1</span>  Relational Database Management Systems (RDBMS)</a></li>
+  <li><a href="#a-word-on-non-relational-databases" id="toc-a-word-on-non-relational-databases" class="nav-link" data-scroll-target="#a-word-on-non-relational-databases"><span class="toc-section-number">6.3.2</span>  A Word on Non-Relational Databases</a></li>
   </ul></li>
-  <li><a href="#non-technical-aspects-of-managing-data" id="toc-non-technical-aspects-of-managing-data" class="nav-link" data-scroll-target="#non-technical-aspects-of-managing-data"> <span class="header-section-number">6.4</span> Non Technical Aspects of Managing Data</a>
+  <li><a href="#non-technical-aspects-of-managing-data" id="toc-non-technical-aspects-of-managing-data" class="nav-link" data-scroll-target="#non-technical-aspects-of-managing-data"><span class="toc-section-number">6.4</span>  Non Technical Aspects of Managing Data</a>
   <ul class="collapse">
-  <li><a href="#etiquette" id="toc-etiquette" class="nav-link" data-scroll-target="#etiquette"> <span class="header-section-number">6.4.1</span> Etiquette</a></li>
-  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy"> <span class="header-section-number">6.4.2</span> Privacy</a></li>
-  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"> <span class="header-section-number">6.4.3</span> Security</a></li>
-  <li><a href="#open-data" id="toc-open-data" class="nav-link" data-scroll-target="#open-data"> <span class="header-section-number">6.4.4</span> Open Data</a></li>
+  <li><a href="#etiquette" id="toc-etiquette" class="nav-link" data-scroll-target="#etiquette"><span class="toc-section-number">6.4.1</span>  Etiquette</a></li>
+  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy"><span class="toc-section-number">6.4.2</span>  Privacy</a></li>
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="toc-section-number">6.4.3</span>  Security</a></li>
+  <li><a href="#open-data" id="toc-open-data" class="nav-link" data-scroll-target="#open-data"><span class="toc-section-number">6.4.4</span>  Open Data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -325,16 +330,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Var1      Var2     Var3
-2000 Q1  0.50698212 10.288059 31.31941
-2000 Q2 -1.11485679  9.546368 31.31825
-2000 Q3 -0.12471858  8.620920 30.29396
-2000 Q4 -0.03882427 11.156562 28.65296
-2001 Q1 -0.17037577 11.003888 29.51677
-2001 Q2 -0.10470289 10.264431 29.47286
-2001 Q3  0.13737082  9.672068 30.97682
-2001 Q4  0.06864695  9.574343 31.18210
-2002 Q1  0.82583225  8.693272 29.23426
-2002 Q2 -0.15744300 11.113646 29.77724</code></pre>
+2000 Q1 -0.95812039  9.809821 30.56300
+2000 Q2 -0.47905972 10.452139 29.18442
+2000 Q3 -0.09013447 10.213467 28.83408
+2000 Q4  0.02037621  8.742563 31.12212
+2001 Q1  0.80859069  8.471578 32.33726
+2001 Q2 -1.67660903  9.549131 29.81753
+2001 Q3 -1.45508750  8.474534 29.45970
+2001 Q4  0.42578759 11.106771 31.18459
+2002 Q1 -0.08264207  9.614163 29.68234
+2002 Q2  1.95618970  9.790820 29.38392</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -346,21 +351,21 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id       time       value
- 1: Var1 2000-01-01  0.50698212
- 2: Var1 2000-04-01 -1.11485679
- 3: Var1 2000-07-01 -0.12471858
- 4: Var1 2000-10-01 -0.03882427
- 5: Var1 2001-01-01 -0.17037577
- 6: Var1 2001-04-01 -0.10470289
- 7: Var1 2001-07-01  0.13737082
- 8: Var1 2001-10-01  0.06864695
- 9: Var1 2002-01-01  0.82583225
-10: Var1 2002-04-01 -0.15744300
-11: Var2 2000-01-01 10.28805943
-12: Var2 2000-04-01  9.54636785
-13: Var2 2000-07-01  8.62092029
-14: Var2 2000-10-01 11.15656183
-15: Var2 2001-01-01 11.00388817</code></pre>
+ 1: Var1 2000-01-01 -0.95812039
+ 2: Var1 2000-04-01 -0.47905972
+ 3: Var1 2000-07-01 -0.09013447
+ 4: Var1 2000-10-01  0.02037621
+ 5: Var1 2001-01-01  0.80859069
+ 6: Var1 2001-04-01 -1.67660903
+ 7: Var1 2001-07-01 -1.45508750
+ 8: Var1 2001-10-01  0.42578759
+ 9: Var1 2002-01-01 -0.08264207
+10: Var1 2002-04-01  1.95618970
+11: Var2 2000-01-01  9.80982056
+12: Var2 2000-04-01 10.45213932
+13: Var2 2000-07-01 10.21346683
+14: Var2 2000-10-01  8.74256280
+15: Var2 2001-01-01  8.47157774</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -421,18 +426,15 @@ On the programming side the ubiquity of spreadsheets leads to a wide variety of 
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
-* `` -&gt; ...1</code></pre>
+Rows: 2 Columns: 3
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: ";" dbl
+(3): ...1, column1, column2
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...1`</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 2 Columns: 3
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ";"
-dbl (3): ...1, column1, column2
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
    ...1 column1 column2
@@ -446,14 +448,14 @@ dbl (3): ...1, column1, column2
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="file-formats-for-nested-information"><span class="header-section-number">6.2.2</span> File Formats for Nested Information</h3>
 <p>For many data engineers and developers. <a href="https://json.org">Javascript Object Notation (JSON)</a> has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and de-serialize JSON (read and write). Though harder to read for humans than .csv, pretty-fied JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>li <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_1 =</span> <span class="fu">head</span>(mtcars, <span class="dv">2</span>),</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_2 =</span> <span class="fu">head</span>(iris, <span class="dv">2</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">toJSON</span>(li, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>li <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_1 =</span> <span class="fu">head</span>(mtcars, <span class="dv">2</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_2 =</span> <span class="fu">head</span>(iris, <span class="dv">2</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">toJSON</span>(li, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
   "element_1": [
@@ -508,33 +510,33 @@ dbl (3): ...1, column1, column2
 <p>The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but is more flexible than the former.</p>
 <p>Besides JSON, <strong>XML</strong> is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more light weight and close to ‘the web’ while XML is the traditional, very explicit no-nonsense format. XML has a <strong>Document Type Defintion (DTD)</strong> that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach for as XML based defintion. <a href="https://sdmx.org/">SDMX</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, a world-wide effort to provide a format for exchange statistical data and meta data, is an example of such a higher level format build on XML.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">CompactData</span><span class="ot"> xmlns:c=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/compact"</span><span class="ot"> xmlns:sdds=</span><span class="st">"urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:msg=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message"</span>&gt;</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Header</span>&gt;</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ID</span>&gt;kofbarometer&lt;/<span class="kw">ID</span>&gt;</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Test</span>&gt;false&lt;/<span class="kw">Test</span>&gt;</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Prepared</span>&gt;2022-07-27 23:19:15&lt;/<span class="kw">Prepared</span>&gt;</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Sender</span><span class="ot"> id=</span><span class="st">"KOF"</span>&gt;</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Name</span><span class="ot"> xml:lang=</span><span class="st">"en"</span>&gt;KOF Swiss Economic Institute&lt;/<span class="kw">Name</span>&gt;</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Contact</span>&gt;</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Name</span>&gt;KOF Swiss Economic Institute&lt;/<span class="kw">Name</span>&gt;</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">URI</span>&gt;http://www.kof.ethz.ch/prognosen-indikatoren/indikatoren/kof-konjunkturbarometer.html&lt;/<span class="kw">URI</span>&gt;</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Contact</span>&gt;</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Sender</span>&gt;</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Header</span>&gt;</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:DataSet</span>&gt;</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Series</span><span class="ot"> DATA_DOMAIN=</span><span class="st">"FLI"</span><span class="ot"> REF_AREA=</span><span class="st">"CH"</span><span class="ot"> INDICATOR=</span><span class="st">"AL"</span><span class="ot"> COUNTERPART_AREA=</span><span class="st">"_Z"</span><span class="ot"> FREQ=</span><span class="st">"M"</span><span class="ot"> UNIT_MULT=</span><span class="st">"0"</span><span class="ot"> TIME_FORMAT=</span><span class="st">"P3M"</span>&gt;</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"1991-01"</span><span class="ot"> OBS_VALUE=</span><span class="st">"79.7534465342489"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"1991-02"</span><span class="ot"> OBS_VALUE=</span><span class="st">"71.8659035408967"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>....</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-05"</span><span class="ot"> OBS_VALUE=</span><span class="st">"96.4419659191275"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-06"</span><span class="ot"> OBS_VALUE=</span><span class="st">"95.1748194208808"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-07"</span><span class="ot"> OBS_VALUE=</span><span class="st">"90.08821804515"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sdds:Series</span>&gt;</span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sdds:DataSet</span>&gt;</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CompactData</span>&gt;</span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  i: 1403 : 1660204311  --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">CompactData</span><span class="ot"> xmlns:c=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/compact"</span><span class="ot"> xmlns:sdds=</span><span class="st">"urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:msg=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message"</span>&gt;</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Header</span>&gt;</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ID</span>&gt;kofbarometer&lt;/<span class="kw">ID</span>&gt;</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Test</span>&gt;false&lt;/<span class="kw">Test</span>&gt;</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Prepared</span>&gt;2022-07-27 23:19:15&lt;/<span class="kw">Prepared</span>&gt;</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Sender</span><span class="ot"> id=</span><span class="st">"KOF"</span>&gt;</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Name</span><span class="ot"> xml:lang=</span><span class="st">"en"</span>&gt;KOF Swiss Economic Institute&lt;/<span class="kw">Name</span>&gt;</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Contact</span>&gt;</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Name</span>&gt;KOF Swiss Economic Institute&lt;/<span class="kw">Name</span>&gt;</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">URI</span>&gt;http://www.kof.ethz.ch/prognosen-indikatoren/indikatoren/kof-konjunkturbarometer.html&lt;/<span class="kw">URI</span>&gt;</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Contact</span>&gt;</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Sender</span>&gt;</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Header</span>&gt;</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:DataSet</span>&gt;</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Series</span><span class="ot"> DATA_DOMAIN=</span><span class="st">"FLI"</span><span class="ot"> REF_AREA=</span><span class="st">"CH"</span><span class="ot"> INDICATOR=</span><span class="st">"AL"</span><span class="ot"> COUNTERPART_AREA=</span><span class="st">"_Z"</span><span class="ot"> FREQ=</span><span class="st">"M"</span><span class="ot"> UNIT_MULT=</span><span class="st">"0"</span><span class="ot"> TIME_FORMAT=</span><span class="st">"P3M"</span>&gt;</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"1991-01"</span><span class="ot"> OBS_VALUE=</span><span class="st">"79.7534465342489"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"1991-02"</span><span class="ot"> OBS_VALUE=</span><span class="st">"71.8659035408967"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-05"</span><span class="ot"> OBS_VALUE=</span><span class="st">"96.4419659191275"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-06"</span><span class="ot"> OBS_VALUE=</span><span class="st">"95.1748194208808"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-07"</span><span class="ot"> OBS_VALUE=</span><span class="st">"90.08821804515"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sdds:Series</span>&gt;</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sdds:DataSet</span>&gt;</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CompactData</span>&gt;</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  i: 1403 : 1660204311  --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The above example shows and excerpt of the main economic forward looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like <em>Contact</em> or <em>ID</em> in the very same file. Note that modern browser often provide code folding for nodes and highlighting to improve readability.</p>
 </section>
@@ -543,20 +545,20 @@ dbl (3): ...1, column1, column2
 <p>Unlike all file formats discussed above, binaries cannot be read by humans using a simple text editor. In other words, you will need the software that wrote the binary to read it again. If that software was expensive and/or exotic, your work is much less accessible, more difficult to share and harder to reproduce. Though this disadvantage of binaries is mitigated when you use freely available open source software, storing data in binaries can still be a hurdle.</p>
 <p>But of course binaries do have advantages, too: binaries can compress their content and save space. Binaries can take on all sorts of in-memory objects including functions, not just datasets. In other words, binaries can bundle stuff. Consider the following load/save operation in R:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>bogus <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b){</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  a <span class="sc">+</span> b</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Airpassengers)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">summary</span>(mtcars)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="st">"bogus"</span>, <span class="st">"Airpassengers"</span>,<span class="st">"s"</span>, <span class="at">file=</span><span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bogus <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b){</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  a <span class="sc">+</span> b</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Airpassengers)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">summary</span>(mtcars)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="st">"bogus"</span>, <span class="st">"Airpassengers"</span>,<span class="st">"s"</span>, <span class="at">file=</span><span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In memory, <em>bogus</em> is a <em>function</em>, Airpassengers is an R <em>time series</em> object and <em>s</em> is a <em>list</em> based summary object. All of these objects can be stored in a single binary RData file using <em>save()</em>. A fresh R session can now <em>load()</em> everything stored in that file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>Notice that unlike reading a .csv or .json file, the call does not make any assignments into a target object. This is because all objects are loaded into an R environment (<em>.globalEnv</em> by default) with their original names.</p>
@@ -567,16 +569,16 @@ dbl (3): ...1, column1, column2
 <p>Interoperable file formats cover some middle ground between the options described above. The <em>cross-language in-memory development platform</em> <a href="https://arrow.apache.org/">Apache Arrow</a> is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow to share in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless if you’re interested in a modern, yet established cross environment data science project, diggin deeper into Apache Arrow is certainly a fun experience.</p>
 <p>From the Apache Arrow documentation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"starwars"</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>file_path_sw <span class="ot">&lt;-</span> <span class="st">"starwars.parquet"</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(starwars, file_path_sw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"starwars"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>file_path_sw <span class="ot">&lt;-</span> <span class="st">"starwars.parquet"</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(starwars, file_path_sw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The above R code writes the <em>starwars</em> demo dataset from the <em>dplyr</em> R package to a temporary .parquet file. The arrow R packages comes with the necessary toolset to write the open source columnar<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyarrow.parquet <span class="im">as</span> pa</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pa.read_table(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyarrow.parquet <span class="im">as</span> pa</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pa.read_table(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>pyarrow.Table
 name: string
@@ -612,8 +614,8 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 </div>
 <p>Here’s Julia reading our Parquet file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Parquet</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sw <span class="op">=</span> Parquet.<span class="fu">File</span>(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Parquet</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>sw <span class="op">=</span> Parquet.<span class="fu">File</span>(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Parquet file: starwars.parquet
     version: 2
@@ -621,7 +623,7 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
     created by: parquet-cpp-arrow version 9.0.0
     cached: 0 column chunks</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>sw.schema.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sw.schema.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>21-element Vector{Parquet.PAR2.SchemaElement}:
  required schema {
@@ -671,24 +673,24 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <h4 data-number="6.2.4.1" class="anchored" data-anchor-id="columnar"><span class="header-section-number">6.2.4.1</span> A Note on Overhead {.unnumbered}</h4>
 <p>The <em>parquet</em> format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that parquet comes with some overhead which may eat up gains if datasets are small. Consider our <em>starwars</em> dataset. At 87 rows and 14 columns the dataset is rather small.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(starwars, <span class="at">file =</span> <span class="st">"starwars.csv"</span>)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(starwars, <span class="at">file =</span> <span class="st">"starwars.csv"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 87 14</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"starwars.parquet"</span>) <span class="sc">/</span> <span class="fu">file.size</span>(<span class="st">"starwars.csv"</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"starwars.parquet"</span>) <span class="sc">/</span> <span class="fu">file.size</span>(<span class="st">"starwars.csv"</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.47</code></pre>
 </div>
 </div>
 <p>Hence the overhead of a schema implementation and other meta information outweighs parquet’s compression for such a small dataset leading to a parquet file that is almost 1.5 times larger than the corresponding csv file. Yet, parquet already turns the tables for the <em>diamonds</em> demo dataset from the <em>ggplot2</em> R package which is by no means a large dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(diamonds, <span class="at">file =</span> <span class="st">"diamonds.csv"</span>)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(diamonds, <span class="st">"diamonds.parquet"</span> )</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"diamonds.parquet"</span>) <span class="sc">/</span> <span class="fu">file.size</span>(<span class="st">"diamonds.csv"</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(diamonds, <span class="at">file =</span> <span class="st">"diamonds.csv"</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(diamonds, <span class="st">"diamonds.parquet"</span> )</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"diamonds.parquet"</span>) <span class="sc">/</span> <span class="fu">file.size</span>(<span class="st">"diamonds.csv"</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.21</code></pre>
 </div>
@@ -702,25 +704,25 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <p>Given the options that file based approaches provide, what is a) the difference and b) the added value of going for database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.</p>
 <p>The above figure shows a terminal client which users use to send queries written in a query language. The client sends these queries to a database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). This leads to a standard way of interaction with the data no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself and continue to be inevitable as application backends and data archives for many use cases.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> myschema.demotable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> myschema.demotable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The above query would return all rows and all columns from a table called <em>demotable</em> in a schema called <em>myschema</em>. Such a query can easier be send from a standalone database client, a database specific IDE with a built in client such as <a href="">DataGrid</a> or a programming language. Given the ubiquity of database most basically any programming language has native interfaces to the most common database. And if that is not the case there is the database management system agnostic ODBC standard that is supported by all major SQL database. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgres)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"localhost"</span>,</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"bugsbunny"</span>,</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">passwd =</span> <span class="fu">.rs.AskForPassword</span>(<span class="st">"Enter Pw"</span>), <span class="co"># only works within RStudio,</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"some_db_name"</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># the result is an R data.frame</span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT * FROM myschema.demotable"</span>)</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can do R things with it</span></span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="co"># such as show the first 6 lines.</span></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgres)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"localhost"</span>,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"bugsbunny"</span>,</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">passwd =</span> <span class="fu">.rs.AskForPassword</span>(<span class="st">"Enter Pw"</span>), <span class="co"># only works within RStudio,</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"some_db_name"</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># the result is an R data.frame</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT * FROM myschema.demotable"</span>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can do R things with it</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co"># such as show the first 6 lines.</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Obviously the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend to get a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form.</p>
 <section id="relational-database-management-systems-rdbms" class="level3" data-number="6.3.1">
@@ -732,15 +734,15 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 </blockquote>
 <p><em>SQLite</em> data lives in a single file that the user queries through the <em>SQLite</em> engine. Here is an example using that engine from R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"devopscarpentry.sqlite3"</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), db_path)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"mtcars"</span>), mtcars, <span class="at">overwrite =</span> T)</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"flowers"</span>), iris, <span class="at">overwrite =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"devopscarpentry.sqlite3"</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), db_path)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"mtcars"</span>), mtcars, <span class="at">overwrite =</span> T)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"flowers"</span>), iris, <span class="at">overwrite =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The above code initiates a <em>SQLite</em> database and continues to write the built-in R demo datasets into separate tables in that newly created database. Now we can use SQL to query the data. Return the first three rows of <em>flowers</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM flowers LIMIT 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM flowers LIMIT 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
@@ -750,7 +752,7 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 </div>
 <p>Return cars that are more fuel efficient than 30 miles per gallon:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars WHERE mpg &gt; 30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars WHERE mpg &gt; 30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   mpg cyl disp  hp drat    wt  qsec vs am gear carb
 1 32.4   4 78.7  66 4.08 2.200 19.47  1  1    4    1
@@ -803,12 +805,12 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 
 </section>
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>Note that commas are not always necessarily the seperator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>SDMX.org about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardising and modernising (“industrialising”) the mechanisms and processes for the exchange of statistical data and metadata among international organisations and their member countries. SDMX is sponsored by seven international organisations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>see also<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Note that commas are not always necessarily the seperator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>SDMX.org about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardising and modernising (“industrialising”) the mechanisms and processes for the exchange of statistical data and metadata among international organisations and their member countries. SDMX is sponsored by seven international organisations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>see also<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -882,7 +884,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

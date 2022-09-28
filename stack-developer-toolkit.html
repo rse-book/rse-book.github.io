@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -166,18 +171,18 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#programming-language" id="toc-programming-language" class="nav-link active" data-scroll-target="#programming-language"> <span class="header-section-number">2.1</span> Programming Language</a></li>
-  <li><a href="#interaction-environment" id="toc-interaction-environment" class="nav-link" data-scroll-target="#interaction-environment"> <span class="header-section-number">2.2</span> Interaction Environment</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"> <span class="header-section-number">2.3</span> Version Control</a></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"> <span class="header-section-number">2.4</span> Data Management</a></li>
-  <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure"> <span class="header-section-number">2.5</span> Infrastructure</a></li>
-  <li><a href="#automation" id="toc-automation" class="nav-link" data-scroll-target="#automation"> <span class="header-section-number">2.6</span> Automation</a></li>
-  <li><a href="#communication-tools" id="toc-communication-tools" class="nav-link" data-scroll-target="#communication-tools"> <span class="header-section-number">2.7</span> Communication Tools</a></li>
-  <li><a href="#publishing-and-reporting" id="toc-publishing-and-reporting" class="nav-link" data-scroll-target="#publishing-and-reporting"> <span class="header-section-number">2.8</span> Publishing and Reporting</a></li>
+  <li><a href="#programming-language" id="toc-programming-language" class="nav-link active" data-scroll-target="#programming-language"><span class="toc-section-number">2.1</span>  Programming Language</a></li>
+  <li><a href="#interaction-environment" id="toc-interaction-environment" class="nav-link" data-scroll-target="#interaction-environment"><span class="toc-section-number">2.2</span>  Interaction Environment</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="toc-section-number">2.3</span>  Version Control</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="toc-section-number">2.4</span>  Data Management</a></li>
+  <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure"><span class="toc-section-number">2.5</span>  Infrastructure</a></li>
+  <li><a href="#automation" id="toc-automation" class="nav-link" data-scroll-target="#automation"><span class="toc-section-number">2.6</span>  Automation</a></li>
+  <li><a href="#communication-tools" id="toc-communication-tools" class="nav-link" data-scroll-target="#communication-tools"><span class="toc-section-number">2.7</span>  Communication Tools</a></li>
+  <li><a href="#publishing-and-reporting" id="toc-publishing-and-reporting" class="nav-link" data-scroll-target="#publishing-and-reporting"><span class="toc-section-number">2.8</span>  Publishing and Reporting</a></li>
   </ul>
 </nav>
     </div>
@@ -346,11 +351,11 @@ The <em>diff</em> output shows an edit during the writing of this book. The line
 
 
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>Some dialects use different separators like ‘;’ or tabs, partly because of regional differences like the use of commas as decimal delimiters.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>As opposed to content management systems (CMS) that keep content in a database and put content and layout template together when users visit a website, static website generators render a website once triggered by an event. If users want to update a static website, they simply re-run the render process and push the HTML output of said process online.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Some dialects use different separators like ‘;’ or tabs, partly because of regional differences like the use of commas as decimal delimiters.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>As opposed to content management systems (CMS) that keep content in a database and put content and layout template together when users visit a website, static website generators render a website once triggered by an event. If users want to update a static website, they simply re-run the render process and push the HTML output of said process online.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -424,7 +429,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

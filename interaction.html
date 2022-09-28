@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -229,21 +234,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#integrated-development-environments-ide" id="toc-integrated-development-environments-ide" class="nav-link active" data-scroll-target="#integrated-development-environments-ide"> <span class="header-section-number">4.1</span> Integrated Development Environments (IDE)</a>
+  <li><a href="#integrated-development-environments-ide" id="toc-integrated-development-environments-ide" class="nav-link active" data-scroll-target="#integrated-development-environments-ide"><span class="toc-section-number">4.1</span>  Integrated Development Environments (IDE)</a>
   <ul class="collapse">
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"> <span class="header-section-number">4.1.1</span> RStudio</a></li>
-  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code"> <span class="header-section-number">4.1.2</span> Visual Studio Code</a></li>
-  <li><a href="#others" id="toc-others" class="nav-link" data-scroll-target="#others"> <span class="header-section-number">4.1.3</span> Others</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="toc-section-number">4.1.1</span>  RStudio</a></li>
+  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code"><span class="toc-section-number">4.1.2</span>  Visual Studio Code</a></li>
+  <li><a href="#others" id="toc-others" class="nav-link" data-scroll-target="#others"><span class="toc-section-number">4.1.3</span>  Others</a></li>
   </ul></li>
-  <li><a href="#the-console-terminal" id="toc-the-console-terminal" class="nav-link" data-scroll-target="#the-console-terminal"> <span class="header-section-number">4.2</span> The Console / Terminal</a>
+  <li><a href="#the-console-terminal" id="toc-the-console-terminal" class="nav-link" data-scroll-target="#the-console-terminal"><span class="toc-section-number">4.2</span>  The Console / Terminal</a>
   <ul class="collapse">
-  <li><a href="#remote-connections-ssh-scp" id="toc-remote-connections-ssh-scp" class="nav-link" data-scroll-target="#remote-connections-ssh-scp"> <span class="header-section-number">4.2.1</span> Remote Connections SSH, SCP</a></li>
-  <li><a href="#git-through-the-console" id="toc-git-through-the-console" class="nav-link" data-scroll-target="#git-through-the-console"> <span class="header-section-number">4.2.2</span> Git through the Console</a></li>
-  <li><a href="#a-word-on-cron-jobs" id="toc-a-word-on-cron-jobs" class="nav-link" data-scroll-target="#a-word-on-cron-jobs"> <span class="header-section-number">4.2.3</span> A Word On Cron Jobs</a></li>
+  <li><a href="#remote-connections-ssh-scp" id="toc-remote-connections-ssh-scp" class="nav-link" data-scroll-target="#remote-connections-ssh-scp"><span class="toc-section-number">4.2.1</span>  Remote Connections SSH, SCP</a></li>
+  <li><a href="#git-through-the-console" id="toc-git-through-the-console" class="nav-link" data-scroll-target="#git-through-the-console"><span class="toc-section-number">4.2.2</span>  Git through the Console</a></li>
+  <li><a href="#a-word-on-cron-jobs" id="toc-a-word-on-cron-jobs" class="nav-link" data-scroll-target="#a-word-on-cron-jobs"><span class="toc-section-number">4.2.3</span>  A Word On Cron Jobs</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -409,10 +414,10 @@ Screenshot of the coverpage of the R Studio <a href="https://rstudio.com">websit
 
 </section>
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>Many coding conventions recommend to have no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Many coding conventions recommend to have no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -486,7 +491,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

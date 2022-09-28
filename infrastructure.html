@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.32">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -166,21 +171,21 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-go-beyond-a-local-notebook" id="toc-why-go-beyond-a-local-notebook" class="nav-link active" data-scroll-target="#why-go-beyond-a-local-notebook"> <span class="header-section-number">7.1</span> Why Go Beyond a Local Notebook?</a></li>
-  <li><a href="#where-to-go" id="toc-where-to-go" class="nav-link" data-scroll-target="#where-to-go"> <span class="header-section-number">7.2</span> Where to Go?</a>
+  <li><a href="#why-go-beyond-a-local-notebook" id="toc-why-go-beyond-a-local-notebook" class="nav-link active" data-scroll-target="#why-go-beyond-a-local-notebook"><span class="toc-section-number">7.1</span>  Why Go Beyond a Local Notebook?</a></li>
+  <li><a href="#where-to-go" id="toc-where-to-go" class="nav-link" data-scroll-target="#where-to-go"><span class="toc-section-number">7.2</span>  Where to Go?</a>
   <ul class="collapse">
-  <li><a href="#software-as-a-service-saas" id="toc-software-as-a-service-saas" class="nav-link" data-scroll-target="#software-as-a-service-saas"> <span class="header-section-number">7.2.1</span> Software-as-a-Service (SaaS)</a></li>
-  <li><a href="#self-hosted" id="toc-self-hosted" class="nav-link" data-scroll-target="#self-hosted"> <span class="header-section-number">7.2.2</span> Self Hosted</a></li>
+  <li><a href="#software-as-a-service-saas" id="toc-software-as-a-service-saas" class="nav-link" data-scroll-target="#software-as-a-service-saas"><span class="toc-section-number">7.2.1</span>  Software-as-a-Service (SaaS)</a></li>
+  <li><a href="#self-hosted" id="toc-self-hosted" class="nav-link" data-scroll-target="#self-hosted"><span class="toc-section-number">7.2.2</span>  Self Hosted</a></li>
   </ul></li>
-  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"> <span class="header-section-number">7.3</span> Building Blocks</a>
+  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"><span class="toc-section-number">7.3</span>  Building Blocks</a>
   <ul class="collapse">
-  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines"> <span class="header-section-number">7.3.1</span> Virtual Machines</a></li>
-  <li><a href="#containers-images" id="toc-containers-images" class="nav-link" data-scroll-target="#containers-images"> <span class="header-section-number">7.3.2</span> Containers &amp; Images</a></li>
-  <li><a href="#kubernetets-k8s" id="toc-kubernetets-k8s" class="nav-link" data-scroll-target="#kubernetets-k8s"> <span class="header-section-number">7.3.3</span> Kubernetets (K8s)</a></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines"><span class="toc-section-number">7.3.1</span>  Virtual Machines</a></li>
+  <li><a href="#containers-images" id="toc-containers-images" class="nav-link" data-scroll-target="#containers-images"><span class="toc-section-number">7.3.2</span>  Containers &amp; Images</a></li>
+  <li><a href="#kubernetets-k8s" id="toc-kubernetets-k8s" class="nav-link" data-scroll-target="#kubernetets-k8s"><span class="toc-section-number">7.3.3</span>  Kubernetets (K8s)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -329,7 +334,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
