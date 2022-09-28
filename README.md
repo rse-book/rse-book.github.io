@@ -1,2 +1,3 @@
-# devops-for-data-analysis
-DevOps for Data Analysis
+# devOps Carpentry
+
+A Researcher's Guide to the Open Source Ecosystem
