@@ -29,14 +29,14 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: krantz
-    pdf-engine: pdflatex
-    toc: false
-    keep-tex: true
-    lof: true
-    lot: true
-    fontsize: 12pt
+  # pdf:
+  #   documentclass: krantz
+  #   pdf-engine: pdflatex
+  #   toc: false
+  #   keep-tex: true
+  #   lof: true
+  #   lot: true
+  #   fontsize: 12pt
     
 
 
