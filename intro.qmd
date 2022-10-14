@@ -1,34 +1,88 @@
 # Introduction
 
+>Simply put, the *devOps* carpentry is the art of making our work deployable and functional on other machines. 
+
 ## Why Work Like a Software Engineer? 
 
-First of all, because everybody and their grandmothers seem to do it. Statistical computing continues to be on the rise in many branches of research. 
+First of all, because everybody and their grandmothers seem to do it.
+Statistical computing continues to be on the rise in many branches of research. 
+The below chart shows the obvious trend in the sum of total R package downloads per month since 2015. 
 
 
-<!-- The below graph shows monthly accumulated extension package downloads for the R Language of Statistical Computing grouped by fields of research^[proxied this and that].
-Econometrics, Psychometrics, National Language Processing, Official Statistics, Social Sciences
+```{r, eval=TRUE, echo=FALSE, message=FALSE, warnings=FALSE}
+library(cranlogs)
+library(dplyr)
+library(lubridate)
+library(tsbox)
+top <- cranlogs::cran_top_downloads()
 
-```{r, eval=TRUE}
-# add CRAN TASK VIEW Download 
-# Statistics graph here
-library(tstools)
-rnorm(10)
+packs <- cranlogs::cran_downloads(
+                               from = "2015-01-01",
+                               to = "2022-09-30")
+
+packs |> 
+  group_by(floor_date(date, "month")) |> 
+  summarize(m = sum(count)) |> 
+  ts_plot(title = "Sum of Monthly R Package Downloads",
+          subtitle = "source: RStudio CRAN mirror")
+
 ```
 
--->
+
+```{r, eval=FALSE, message=FALSE, warnings=FALSE}
+#| code-fold: true
+
+library(cranlogs)
+library(dplyr)
+library(lubridate)
+library(tsbox)
+top <- cranlogs::cran_top_downloads()
+
+packs <- cranlogs::cran_downloads(
+                               from = "2015-01-01",
+                               to = "2022-09-30")
+
+packs |> 
+  group_by(floor_date(date, "month")) |> 
+  summarize(m = sum(count)) |> 
+  ts_plot(title = "Sum of Monthly R Package Downloads",
+          subtitle = "source: RStudio CRAN mirror")
+
+```
 
 
+Bandwagonism aside, source code can be a tremendously sharp, unambiguous and international communication channel.
+Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours. Platforms like [Stackoverflow](https://stackoverflow.com) or [Crossvalidated](https://crossvalidated.com) do not only store millions of questions and answers, they also gather a huge and active community to discuss issues. Or think of feature requests: After a little code ping pong with the package author your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. 
+Academic journals have found that out, too. Many outlets require you to make the data and source code behind your work available. [Social Science Data Editors](https://social-science-data-editors.github.io/guidance/template-README.html) is a bleeding edge project at the time of writing this, but is already referred to by top notch journals like American Economic Review (AER). 
 
-<div class="caption-left">Source code can be a tremendously sharp, unambiguous and international communication channel.</div>
+![](images/communication.png)
 
+In addition to the above reproducibility and ability to share, code scales and automates. Automation is not only convenient. Like when you want to download data, process and create the same visualization and put it on your website any given Sunday. Automation is inevitable. Like when you have to gather daily updates from different outlets or work through thousands of .pdfs. 
 
+Last but not least programming enables you to many things you couldn't do w/o being an absolute guru (if at all) if wasn't for programming. Take visualization. Go, check [these D3 Examples](https://d3js.org/). Now, try to do that in Excel. If you did these things in Excel it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Yet, with decent, carpentry level programming skills you can already do so many spectular things while not really specializing and staying very flexible. 
 
-Second because it's reproducible. Code has become a tremendous communication channel. Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours on platforms like [Stackoverflow](https://stackoverflow.com) or [Crossvalidated](https://crossvalidated.com). Or think of feature requests: After a little code ping pong with the package author your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. 
-Academic journals have found that out, too in the meantime. Many outlets require you to make the data and source code behind your work available. [Social Science Data Editors](https://social-science-data-editors.github.io/guidance/template-README.html) is a bleeding edge project at the time of writing this, but is already referred to by top notch journals like American Economic Review (AER). 
+## Why Work Like an Operations Engineer?
 
-Third, because it scales and automates. Automation is not only convenient. Like when you want to download data, process and create the same visualization and put it on your website any given Sunday. Automation is inevitable. Like when you have to gather daily updates from different outlets or work through thousands of .pdfs. 
+While software *development* became closer to many researcher, *operations* the second part of the term *devOps* is much further away from the average researcher or business analyst. 
+Why even think about Operations? 
+Because we can afford to do so. 
+Operations have become so much more accessible in recent years, that many applications can be dealt with single handedly. 
+Even one's production applications may still be administered by operations professionals, the ability to create and run a proof of concept from scratch is an invaluable skill. 
+A running example says more than a 15 page specification that fails to translate business talk into tech talk. 
+The other way around, something to look at in early stage helps to acquire funds and convince managers and other collaborators. 
 
-Last but not least because of things you couldn't do w/o being an absolute guru (if at all) if wasn't for programming. Take  visualization. Go, check [these D3 Examples](https://d3js.org/). Now, try to do that in Excel. If you do these things in Excel it'd make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Moral of the story is, with decent, carpentry level programming skills -- that'd be the upfront investment -- you can already do so many spectular things while not really specializing and staying very flexible. 
+But people without a computer engineering background are by no means limited to proof of concepts these days.
+Trends like Cloud computing and software-as-a-service products help developers focus on their expertise and limit the amount of knowledge needed to host a service in secure and highly available fashion. 
+
+Also, automation is automation is key to the devOps approach and an important reason why devOps thinking is also very well suited for academic researchers and business analysts.
+So called *continuous integration* can help to enforce a battery of quality checks such as unit tests or installation checks.  Let's say a push to certain branch of a git repository leads to the checks and tests.
+In a typical workflow, succesfull completion of quality checks triggers continuous deployment to a blog, rendering into a paper or interactive data visualization.
+
+By embracing both parts of the *devOps* approach researchers do not only gain extra efficiency, but more importantly
+improve reproducibility and therefore accountability and quality of their work.
+The effect of a devOps approach on quality control is not limited to reproducible research in a publication sense, but also enforces rules during collaboration: no matter who contributes, contribution gets gut checked and only deployed if checks passed. 
+Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a *devOps carpentry* level understanding of development and operations is desirable for the programming data analyst. 
+
 
 
 
@@ -38,79 +92,54 @@ The focal goal of this book is to map out the open source ecosystem, identify ne
 
 This book is a companion. The companion I wish I had when I started an empirical, data intensive PhD in economics. Yet, the book is written years after said PhD was completed and with the hindsight of 10+ years in academia. *Programming with Data* is written based on the experience of helping students and seasoned researchers of different fields with their data management, processing and communication of results.
 
-If you are confident in your ambition to amp up your programming to at least [solid software carpentry level]() within the next few months, I suggest to get an idea of your starting point relative to this book.The upcoming *backlog* section is essentially a list of suggested to-dos on your way to solid software carpentry. Obviously, you may have cleared a few tasks of this backlog item before reading this book which is fine.  On the other hand you might not know about some of the things that are listed in the *requirement* section which is fine, too. The backlog and requirements section just mean to give you some orientation. 
+If you are confident in your ambition to amp up your programming to at least [solid software carpentry level](https://software-carpentry.org/) within the next few months, I suggest to get an idea of your starting point relative to this book.
+The upcoming *backlog* section is essentially a list of suggested to-dos on your way to solid software carpentry.
+Obviously, you may have cleared a few tasks of this backlog item before reading this book which is fine.
+On the other hand you might not know about some of the things that are listed in the *requirement* section which is fine, too.
+The backlog and requirements section just mean to give you some orientation. 
  
-If you do not feel committed, revisit the previous section, discuss the need for programming with peers from your domain and possibly talk to a seasoned R or Python programmer. Motivation and commitment are key to the endurance needed to develop programming into a skill that truly leverages your domain specific expertise. 
-
-## Why Work Like an Operations Engineer ?
-
-Why even think about Operations? In recent years the devOps approach has taken software engineering by storm. The combination of *dev*elopment and *op*eration*s* promises greater agility and better quality compared to a more traditional, strict distinction between IT system administration and product minded development. 
-
-<!-- 
-
-schematic images
-
-
--->
-
-Automation is key to the devOps approach and the main reason why devOps thinking is also very well suited for academic researchers and business analysts who use programming for their analyses. So called *continuous integration* is suitable to enforce a battery of quality checks such as unit tests or installation checks.  Let's say a push to certain branch of a git repository leads to the checks described above. In a typical workflow, succesfull completion of quality checks triggers continuous deployment to a blog, rendering into a paper or interactive data visualization.
-
-By embracing a devOps approach researchers do not only gain extra efficiency, but more importantly
-improve reproducibility and therefore accountability and quality of their work. Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a *devOps carpentry* level understanding of development and operations is 
-desirable for the programming data analyst. 
-
-The effect of a devOps approach on quality control is not limited to reproducible research in a publication sense, but also enforces rules during collaboration: no matter who contributes, contribution gets gut checked and only deployed if checks passed. Simply put, the devOps carpentry is the art of making our work deployable to other machines. 
-
+If you do not feel committed, revisit the previous section, discuss the need for programming with peers from your domain and possibly talk to a seasoned R or Python programmer.
+Motivation and commitment are key to the endurance needed to develop programming into a skill that truly leverages your domain specific expertise. 
 
 
 ## Backlog
 
-Other than the classification and overview that *Programming with Data* provides, its introduction to **git version control** and the **collaboration workflow associated with git** are likely the most impactful items on your backlog. If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, *Programming with Data* will open up a new world for you.
-by introducing you to industry standard collaboration. A solid *git* foundation makes you fit into plethora of (software) teams around the globe -- in academia in beyond.
+If you can confidently say you can check all or most of the below, you have reached *carpentry* level in developing and running your applications.
+Even if this level is your starting point you might find a few useful tips or simply may come to cherry pick. 
+In case you are rather unfamiliar with most of the below, the classification, overview and contextualization *devOps carpentry* provides is likely this reads most valuable help to you. 
 
-Your backlog en route to a researcher who is comfortable programming with data obviously contains a **strategy to improve your programming** itself and is complemented by a solid understanding of the **challenges of data management** from persistent storage to access restrictions. Plus, modern data driven science often has to handles datasets so large, **infrastructure** other than local desktops come into play. Yet, high performance computing (HPC) is by far not the only reason why its handy for a researcher to have a basic understanding of **infrastructure**. **Communication** of results including data dissemination or interactive online reports require the content to be served from a server with permanent online access. Basic workflow **automation** of regular procedures, e.g., for a repeated extract-transform-load (ETL) process to update data, is a low hanging (and very useful) fruit for a programming researcher. 
+A solid, applied understanding of **git version control** and the **collaboration workflow associated with git** does not only help you stay ahead of your own code. Git proficiency makes you a team player. 
+If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, *devOps carpentry* will open up a new world for you.
+An introduction to industry standard collaboration makes you fit into plethora of (software) teams around the globe -- in academia and beyond.
+
+Your backlog en route to a researcher who is comfortable in devOps carpentry obviously contains a **strategy to improve your programming** itself.
+To work with data in the long run, an idea of the **challenges of data management** from persistent storage to access restrictions should complement your programming.
+Plus, modern data driven science often has to handles datasets so large, **infrastructure** other than local desktops come into play.
+Yet, high performance computing (HPC) is by far not the only reason why its handy for a researcher to have a basic understanding of **infrastructure**.
+**Communication** of results including data dissemination or interactive online reports require the content to be served from a server with permanent online access.
+Basic workflow **automation** of regular procedures, e.g., for a repeated extract-transform-load (ETL) process to update data, is a low hanging (and very useful) fruit for a programming researcher. 
 
 The case studies at the end of the book are not exactly a backlog item like the above but still a recommended read. The case studies in this book are hands-on programming examples -- mostly written in R -- to showcase tasks from API usage to geospatial visualization in reproducible fashion. Reading and actually running other developer's code does not only improve one's own code, but helps to see what makes code inclusive and what hampers comprehensibility. 
 
 
-
 ## Requirements
 
-Essentially, the requirements in this section just extend the list of backlog items suggested above with a few things not covered in this book. This does not mean that every single item is strictly required as a prerequisite to make sense of this *Programming with Data*. The requirments are more to say that 
+Even though *devOps carpentry* aims to be inclusive and open to a broad audience with different starting points, several prerequisites exist to get the most out of this book. 
+I recommend you have made your first experiences with an interpreted programming language like R or Python. 
+Be aware though that experience from stats or math course does not automatically make you a programmer as these course are rightfully focused on their own domain. Books like [R for Data Science]() or websites like the [The Carpentries]() help to solidify your data science minded, applied programming. [Advanced R](), despite its daunting title, is a very good read to get past the superficial kind of understanding of R that we might acquire from a first encounter in stats course. 
 
-- initial steps with a scripting language such as R or Python
-- console / terminal basics (moving around the filesystem, ssh)
+A certain familiarity with  *console / terminal basics* will help the reader sail smoothly. 
+At the end of the day there are no real must-have requirements to benefit from this book. 
+The ability to self-reflect on one's starting point remains the most important requirement to leverage the book. 
 
-are explained more comprehensively elsewhere: ([Big Book of R](), [R for Data Science](), [The Carpentries]())  
-
-
-
-like backlog, but rather before you should go on this journey. 
-
-What You Need to Know to Make the Most of This Book
-
-Though the book offers many entry points and strives to make advanced considerations accessible, 
-*Programming with Data* provides the most value for readers whose prior knowledge is beyond certain threshold. The book is **not** an introduction to R nor Python. It's **not** an introduction to data science or machine learning either. Neither knowledge is strictly required to follow the book, but a basic understanding of statistical methods and the challenges applied statisticians face certainly helps to motivate getting invested into programming. Likewise, prior knowledge of a *scripting language* like *R, Python* or *Javascript*, *git version control*, as well as familiarity with  *console / terminal basics* will help the reader sail smoothly. Still though, to self-reflect on one's starting point remains the most important requirement to leverage the book. 
-
-*Programming with Data* willingly accepts to be overwhelming at times. Given the variety of topics touched in an effort to show the big picture, I encourage the reader to remain relaxed about a few blanks even when it comes to fundamentals. The open source community offers plenty of great resources to selectively upgrade skills and this books intends to show how to evaluate the need for help and how to find the right sources. 
-
-*Programming with Data* was written with the idea in mind that well maintained open source projects are the best to document themselves. Therefore I rather reference to existing documentation as opposed to rewriting it. Because even if my wording was better than the original, it is only a matter of time before my documentation is outdated. The bigger the stack the harder to keep track. So whenever, you stumble upon something you do not understand, make sure to look it up. (I tried hard to provide good a glossary and reference wherever possible, but if not - still push yourself to look things up). 
-
-That being said, to have an idea about following technologies and ideas will certainly help to get the most out of spending time with *Programming with Data*: 
-
-- Basic R or Python 
-- basic understanding of git version control 
-- basic understanding of GitHub based workflows, e.g., issue tracker, kanban boards... 
-- Terminal / Console and Shell and a shell, e.g., bash, fish
-
-In other words: if none of the above means something to you, I recommend to make yourself comfortable with the basics of 2-3 of the above fields before you start to read this book or just cherry pick single topics.
+*devOps carpentry* willingly accepts to be overwhelming at times. Given the variety of topics touched in an effort to show the big picture, I encourage the reader to remain relaxed about a few blanks even when it comes to fundamentals.
+The open source community offers plenty of great resources to selectively upgrade skills.
+This books intends to show how to evaluate the need for help and how to find the right sources. 
+If none of the above means something to you though, I recommend to make yourself comfortable with the basics of some the above  fields before you start to read this book.
 
 
 
 
-## Backlog
-
-What you need to know to become comfortable programming with data... 
 
 
 

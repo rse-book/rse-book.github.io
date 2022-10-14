@@ -25,7 +25,8 @@ book:
     - references.qmd
 
 bibliography: references.bib
-
+execute: 
+  freeze: true
 format:
   html:
     theme: cosmo
