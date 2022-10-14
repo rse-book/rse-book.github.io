@@ -215,3 +215,6 @@ Once the merge is done, all your changes are in the main branch and you and ever
 
 ### PRs and Forks
 
+### add a basic note on rebase vs. merge
+
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
