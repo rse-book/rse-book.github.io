@@ -206,6 +206,8 @@ write_parquet(starwars, file_path_sw)
 The above R code writes the *starwars* demo dataset from the *dplyr* R package to a temporary .parquet file. 
 The arrow R packages comes with the necessary toolset to write the open source columnar^[see also] .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R. 
 
+
+
 ```{python}
 import pyarrow.parquet as pa
 pa.read_table("starwars.parquet")
@@ -216,7 +218,6 @@ Here's Julia reading our Parquet file:
 ```{julia}
 using Parquet
 sw = Parquet.File("starwars.parquet")
-sw.schema.schema
 ```
 
 >When I composed this example reading and writing parquet files in different environments I ran into several compatibility issues. This shows that the level of interoperability is not at the same level as the interoperability of text files. 
