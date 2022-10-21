@@ -182,8 +182,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#collaboration-workflow" id="toc-collaboration-workflow" class="nav-link" data-scroll-target="#collaboration-workflow"><span class="toc-section-number">5.5</span>  Collaboration Workflow</a>
   <ul class="collapse">
   <li><a href="#feature-branches" id="toc-feature-branches" class="nav-link" data-scroll-target="#feature-branches"><span class="toc-section-number">5.5.1</span>  Feature Branches</a></li>
-  <li><a href="#prs-and-forks" id="toc-prs-and-forks" class="nav-link" data-scroll-target="#prs-and-forks"><span class="toc-section-number">5.5.2</span>  PRs and Forks</a></li>
-  <li><a href="#add-a-basic-note-on-rebase-vs.-merge" id="toc-add-a-basic-note-on-rebase-vs.-merge" class="nav-link" data-scroll-target="#add-a-basic-note-on-rebase-vs.-merge"><span class="toc-section-number">5.5.3</span>  add a basic note on rebase vs.&nbsp;merge</a></li>
+  <li><a href="#pull-requests-from-forks" id="toc-pull-requests-from-forks" class="nav-link" data-scroll-target="#pull-requests-from-forks"><span class="toc-section-number">5.5.2</span>  Pull Requests from Forks</a></li>
+  <li><a href="#rebase-vs.-merge" id="toc-rebase-vs.-merge" class="nav-link" data-scroll-target="#rebase-vs.-merge"><span class="toc-section-number">5.5.3</span>  Rebase vs.&nbsp;Merge</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -207,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>As stated before, version control may be the single most important thing to take away from <em>Hacking for Social Sciences</em>. In this chapter about the way developers work, I will stick to version control with <em>git</em>. The stack discussion of the previous chapter features a few more version control systems, but given git’s dominant position, we will stick solely to git in this introduction to version control.</p>
+<p>As stated before, version control may be the single most important thing to take away from <em>DevOps Carpentry</em> if you have not used it before. In this chapter about the way developers work and collaborate, I will stick to version control with <em>git</em>. The stack discussion of the previous chapter features a few more version control systems, but given git’s dominant position, we will stick solely to git in this introduction to version control.</p>
 <section id="what-is-git-version-control" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="what-is-git-version-control"><span class="header-section-number">5.1</span> What is Git Version Control?</h2>
 <p>Git is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git programm itself is a small console programm that creates and manages a hidden folder inside the folder you put under version control (you know those folders with a leading dot in their foldername, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one.</p>
@@ -387,35 +387,45 @@ In VS Code you can even click the option.
 <p>The broad acceptance of git as a framework for collaboration has certainly played an important role in git’s establishment as an industry standard.</p>
 <section id="feature-branches" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="feature-branches"><span class="header-section-number">5.5.1</span> Feature Branches</h3>
-<p>This section discusses real world collaboration workflows of modern open source software developers. Hence the prerequisites are a bit different in order to benefit the most from this section. Make sure you are past being able to describe and explain git basics, be able to create and handle your own repositories.</p>
-<p>If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each others feet. This is reasonable because it is not useful to work asynchronously on exact the same lines of code anyway. Nevertheless, there is a reason why <em>feature-branch-based</em> workflows became very popular among developers: Imagine you collaborate less synchronously, maybe with someone in another timezone. Or with a colleague who works on your project, but in a totally different month during the year. Or, most obviously, we someone you have never met. Forks and <em>feature-branch-based</em> workflows is the way a lot of modern open source projects are organized.</p>
-<p>Forks are just a way to contribute via feature branches even in case you do not have write access to a repository. But let’s just have look at the basic case in which you are part of the team first. Assume there is already some work done, some version of the project is already up on GitHub. You join as a collaborator and are allowed to push changes now. It’s certainly not a good idea to simply add things without review to a project’s production. Like if you got access to modify the institute’s website and you made your first changes and all of a sudden the website looks like this:</p>
+<p>This section discusses real world collaboration workflows of modern open source software developers. Hence the prerequisites are a bit different in order to benefit the most from this section. Make sure you are past the mere ability to describe and explain git basics, make sure you are able to create and handle your own repositories.</p>
+<p>If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each others feet. This is reasonable because, git aside, it is rarely efficient to work asynchronously on exact the same lines of code anyway. Nevertheless, there is a reason why <em>feature-branch-based</em> workflows became very popular among developers: Imagine you collaborate in async fashion, maybe with someone in another timezone. Or with a colleague who works on your project, but in a totally different month during the year. Or, most obviously, with someone you have never met. Forks and <em>feature-branch-based</em> workflows is the way a lot of modern open source projects tackle the above situations.</p>
+<p>Forks are just a way to contribute via feature branches even in case you do not have write access to a repository. But let’s just have look at the basic feature branch case in which you are part of the team first with full access to the repository. Assume there is already some work done, some version of the project is already up on a some remote GitHub account. You join as a collaborator and are allowed to push changes now. It’s certainly not a good idea to simply add things without review to a project’s production. Like if you got access to modify the institute’s website and you made your first changes and all your changes go straight to production. Like this:</p>
 <div class="yellow">
 &nbsp;
 </div>
 <div id="pink">
 <p>It used to be subtle and light gray. I swear!</p>
 </div>
-<p>Bet everybody on the team took notice of the new team member by then. In a feature branch workflow you would start from the latest production version. Remember, git is decentralized and you have all versions of your team’s project. Right at your fingertips on your local machine. Create a new branch named indicative of the feature you are looking to work on.</p>
+<p>Bet everybody on the team took notice of the new team member by then. In a feature branch workflow you would start from the latest production version. Remember, git is decentralized and you have all versions of your team’s project on your local machine. Create a new branch named indicative of the feature you are looking to work on.</p>
 <pre><code>git checkout -b colorways</code></pre>
 <p>You are automatically being switched to the freshly created branch. Do your thing now. It could be just a single commit, or several commits by different persons. Once you are done, i.e., commited all changes, add your branch to the remote repository by pushing.</p>
 <pre><code>git push -u origin colorways</code></pre>
-<p>This will add a your branch called <em>colorways</em> to the remote repository. If you are on any major git platform with your project, it will come with a decent web GUI. Such a GUI is the most straight forward way to do the next step: get your Pull Request (PR) going.</p>
+<p>This will add a your branch called <em>colorways</em> to the remote repository. If you are on any major git platform with your project, it will come with a decent web GUI. Such a GUI is the most straight forward way to do the next step: get your Pull Request (PR) out.</p>
 <img src="images/pr.png" width="700px">
 <div class="caption-left">
 Github pull request dialog: Select the <em>pull request</em>, choose which branch you merge into which target branch.
 </div>
 <p>As you can see, git will check whether it is possible to merge automatically w/o interaction. Even if that is not possible, you can still issue the pull request. When you create the request you can also assign reviewers, but you could also do so at a later stage.</p>
-<p><strong>Note</strong>, even after a PR was issued you can continue to add commits to the branch about to be merged. As long as you do not merge the branch through the Pull Request, commits are added to the branch. In other words your existing PR gets updated. This is a very natural way to account for reviewer comments.</p>
+<blockquote class="blockquote">
+<p>Even after a PR was issued you can continue to add commits to the branch about to be merged. As long as you do not merge the branch through the Pull Request, commits are added to the branch. In other words your existing PR gets updated. This is a very natural way to account for reviewer comments.</p>
+</blockquote>
 <p><strong>Pro-Tipp</strong>: Use commit messages like ‘added join to SQL query, closes #3’. The key word ‘closes’ or ‘fixes’, will automatically close issues referred to when merged into the main branch.</p>
 <p>Once the merge is done, all your changes are in the main branch and you and everyone else can pull the main branch that now contains your new feature. Yay!</p>
 </section>
-<section id="prs-and-forks" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="prs-and-forks"><span class="header-section-number">5.5.2</span> PRs and Forks</h3>
+<section id="pull-requests-from-forks" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="pull-requests-from-forks"><span class="header-section-number">5.5.2</span> Pull Requests from Forks</h3>
+<p>Now let’s assume you are using an open source software created by someone else. At some point you miss a feature that you feel is not to hard to implement. After googling and reading up a bit, you realize others would like to have these feature, too but the orginal authors did not find the time to implement it yet. Hence you get to work yourself. Luckily the project is open source and up on GitHub, so you can simply get you version of, i.e., <em>fork</em> the project to your own GitHub account (just click the <em>fork</em> button and follow the instructions) .</p>
+<p>Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository your remote git platform will still remmeber where you got it from and allows you to issue a pull request to original author. The original authors can now review the pull request, see the changes and decide whether they are fine with the feature and its implementation.</p>
+<p>There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussion are very context aware and sooner or later you will get your first pull request approved and merged. In that case congratulations - you have turned yourself into a team-oriented open source collaborator!</p>
 </section>
-<section id="add-a-basic-note-on-rebase-vs.-merge" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="add-a-basic-note-on-rebase-vs.-merge"><span class="header-section-number">5.5.3</span> add a basic note on rebase vs.&nbsp;merge</h3>
-<p>https://www.atlassian.com/git/tutorials/merging-vs-rebasing</p>
+<section id="rebase-vs.-merge" class="level3" data-number="5.5.3">
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="rebase-vs.-merge"><span class="header-section-number">5.5.3</span> Rebase vs.&nbsp;Merge</h3>
+<p>Powerful systems often provide more than one way to achieve your goals. In the case of git, putting together two branches of work – a very vital task, is exactly such a case: we can either <em>merge</em> or <em>rebase</em> branches.</p>
+<p>While <em>merge</em> keeps the history intact, <em>rebase</em> is a history altering command. Though most people are happy with the more straight forward <em>merge</em> approach, a bit of context is certainly helpful.</p>
+<p>Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories becomes out of sync because someone else adds to the main branch while you keep adding to feature branch you can either merge oder rebase to put the two together.</p>
+<p>Sitting on a checkout of the feature branch, a merge of the main branch would simply create an additional merge commit sequentially after the last commit of the feature branch. This merge commit contains the changes of both branches, no matter if they were automatically merged using the standard recursive strategy or through resolving a merge conflict.</p>
+<p>As opposed to that, rebase would move all changes to main to before the feature branch started then sequentially add all commits of the feature branch. That way the remains linear, history looks cleaner and does not contain those artificial merge commits.</p>
+<p>So when should we merge and when should rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main, because you would have a different main branch than other developers than. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. The following <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atlassian tutorial</a> offers more insights an illustrations to deepen your understanding of the matter.</p>
 
 
 </section>
