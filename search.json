@@ -375,28 +375,35 @@
     "href": "publishing.html#static-website-generators",
     "title": "10  Publishing & Reporting",
     "section": "10.1 Static Website Generators",
-    "text": "10.1 Static Website Generators\nLet’s limit our look at content renderers to outlets for the web for now. We do so to see how the result of a rendering process goes online in fully automated fashion. Unlike in the case of printed output, processing of web output is very standardized: web browser can display content from the HTML/CSS/Javascript combination.\nThe distribution follows in line after chain and automated as well."
+    "text": "10.1 Static Website Generators\nLet’s take a deeper look at how a report goes online in fully automated fashion from computation to a website. In a nutshell, static website generators turn markdown code into a combination of HTML, CSS and Javascript, so a web browser can display the result. The Go based hugo or the classic Jekyll are popular static website generator approaches to run a website or blog. A static website generator would turn the following markdown code\n## This a level two header\n\nThis is plain text *this is italic* and **this is bold**\n\n### This is a level three header \n\nmore text\ninto this output, stored in HTML and CSS files."
   },
   {
-    "objectID": "publishing.html#hosting-static-website",
-    "href": "publishing.html#hosting-static-website",
+    "objectID": "publishing.html#this-a-level-two-header",
+    "href": "publishing.html#this-a-level-two-header",
     "title": "10  Publishing & Reporting",
-    "section": "10.2 Hosting Static Website",
-    "text": "10.2 Hosting Static Website\nnetlify, ghpages, anywhere, a note on self-contained"
+    "section": "This a level two header",
+    "text": "This a level two header\nThis is plain text this is italic and this is bold\n\nThis is a level three header\nmore text\nApproaches such as the {distill} R package or quarto, the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allows to run analytics’ code at render time. Quarto documents, for example, are text files that contain markdown text and possibly code chunks in the same documents. When rendered, the analytics code runs first, potentially creating output such as tables or figures. If necessary, this output is stored in separate files and smoothly integrated into main document that is about to be rendered afterwards.\n\nRendered output often consists of multiple files such as HTML documents, CSS style information, javascript code or images. Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics minded renderes such as quarto offer a self-contained option. When enabled, quarto renders a single self-contained, encoded HTML file that contains everything from javscript to images."
   },
   {
-    "objectID": "publishing.html#visualization-libraries",
-    "href": "publishing.html#visualization-libraries",
+    "objectID": "publishing.html#hosting-static-websites",
+    "href": "publishing.html#hosting-static-websites",
     "title": "10  Publishing & Reporting",
-    "section": "10.3 Visualization Libraries",
-    "text": "10.3 Visualization Libraries\n\napache echarts\n\nhighcharts\ndygraphs (very specific)"
+    "section": "10.2 Hosting Static Websites",
+    "text": "10.2 Hosting Static Websites\nBecause the requirements of a static website are minimal, we can essentially use the simplest website host possible to host our static site. Unlike with content management system approaches such as Wordpress, static websites do not need server side scripting languages or databases. This simplicity allows to host static websites on a plethora of cheap hosters, including many free plans.\n\n10.2.1 GitHub Pages\nOne very good and simple solution to host blogs, personal websites, online documentation or presentations is to use offerings of major git providers such as Github’s Github Pages. Though originally meant to be used with themes provided by GitHub and markdown rendered by Jekyll on GitHub’s servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.\nAll you need is a repository on GitHub to host the static files. You can activate GitHub Pages for your repository and choose whether you rather want the rendered files to be on a separate branch named gh-pages or in a subfolder of your root directory (mostly docs). Personally, I favor to use a seperate gh-pages branch, because git would track every single change made to the automatically rendered content, leading to a messy git history.\nBy convention the corresponding static website of a git repository is exposed at <username>.github.io/<repository-name>. For GitHub organizations which are popular to group repositories, the exposed URL would be <orgname>.github.io/<repository-name>.\n\nNote that the online version of the book you are currently reading is hosted in very same fashion: devops-carpentry.github.io/book\n\n\n\n10.2.2 GitHub Actions\nHosting a website on a modern git platform comes with an intriguing option: the use of continous integration tools as discussed in the automation chapter. CI/CD is capable of not only rendering markdown, but can even run computations and virtually any pre-requisite step thanks to the underlying docker technology. CI/CD certainly introduces a setup hurdle, but allows to integrate users who do not have the necessary stack installed to execute the render process locally.\n\n\n10.2.3 Netlify\nThe Netlify platform does not host git repositories like GitHub or Bitbucket, but rather focuses on the build part. Netlify supports the user in setting up the build process and offers a few add-ons such as Netlify forms to allow for website feature that can process user interaction such as online forms. Also, unlike git platforms, Netlify integrates domain purchase into its own platflorm. Note that Netlify and git are complementary, not mutually exclusive approaches. Platflorms like Netlify and GitHub use APIs to communicate with each other allowing to trigger Netlify builds based on changes to a GitHub repositories.\n\nBasic GitHub pages setups are good enough for online documentation of most software or other sites that simply display static content. Netlify cannot only improve convenience when using advanced features, it can also extend possibilities for static websites when needed."
+  },
+  {
+    "objectID": "publishing.html#visualization",
+    "href": "publishing.html#visualization",
+    "title": "10  Publishing & Reporting",
+    "section": "10.3 Visualization",
+    "text": "10.3 Visualization\n\nimportance of data visualization in communication of results\ndistinction between approaches\n\npng/pdf/pring -> ggplot2, matplotlib\njavascript/web\n\napache echarts\nhigh charts\nd3 / SVG\nspecific libraries like dygraphs"
   },
   {
     "objectID": "publishing.html#data-publications",
     "href": "publishing.html#data-publications",
     "title": "10  Publishing & Reporting",
     "section": "10.4 Data Publications",
-    "text": "10.4 Data Publications\n\nvisualization libraries\nweb applications\nthink about the channel\nvisualization libs\ndata publications (opendata, link to data management chapter)\nconduct surveys (DGPs)\nstatic websites GitHub Pages & Netlify (maybe case study)\nquarto (importance of a decent preview)"
+    "text": "10.4 Data Publications\n\nalongside papers\nopendata, open research data"
   },
   {
     "objectID": "case-studies.html",
