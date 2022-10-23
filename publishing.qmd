@@ -11,8 +11,8 @@ Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dy
 
 Let's take a deeper look at how a report goes online in fully automated fashion from computation to a website.
 In a nutshell, static website generators turn markdown code 
-into a combination of HTML / CSS and Javascript, so a web browser can display the result. 
-The Go based [hugo](https://gohugo.io/) or the established classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
+into a combination of HTML, CSS and Javascript, so a web browser can display the result. 
+The Go based [hugo](https://gohugo.io/) or the classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
 A static website generator would turn the following markdown code
 
 ```md
@@ -49,7 +49,7 @@ When enabled, quarto renders a single self-contained, encoded HTML file that con
 
 
 
-## Hosting Static Website
+## Hosting Static Websites
 
 Because the requirements of a static website are minimal, we can essentially use the simplest website host possible to host our static site.
 Unlike with content management system approaches such as Wordpress, static websites do not need server side scripting languages or databases. 
@@ -77,34 +77,38 @@ CI/CD certainly introduces a setup hurdle, but allows to integrate users who do 
 
 ### Netlify
 
+The [Netlify](https://netlify.app/) platform does not host git repositories like GitHub or Bitbucket, but rather focuses on the *build* part.
+Netlify supports the user in setting up the build process and offers a few add-ons such as Netlify forms to allow for website feature that can process user interaction such as online forms. 
+Also, unlike git platforms, Netlify integrates domain purchase into its own platflorm. 
+Note that Netlify and git are complementary, not mutually exclusive approaches. 
+Platflorms like Netlify and GitHub use APIs to communicate with each other allowing to trigger Netlify builds based on changes to a GitHub repositories. 
+
+>Basic GitHub pages setups are good enough for online documentation of most software or other sites that simply display static content. 
+Netlify cannot only improve convenience when using advanced features, it can also extend possibilities for static websites when needed. 
 
 
+## Visualization
 
-
-## Visualization Libraries
-
-- apache echarts
-    - highcharts
-    - dygraphs (very specific)
-
-
+- importance of data visualization in communication of results
+- distinction between approaches
+    - png/pdf/pring -> ggplot2, matplotlib
+    - javascript/web
+        - apache echarts
+        - high charts
+        - d3 / SVG
+        - specific libraries like dygraphs
 
 ## Data Publications
 
+- alongside papers
+- opendata, open research data
+
+
 
     
 
-- visualization libraries
-    
-
-- web applications
 
 
-- think about the channel
-- visualization libs
-- data publications (opendata, link to data management chapter)
-- conduct surveys (DGPs)
-- static websites GitHub Pages & Netlify (maybe case study)
-- quarto (importance of a decent preview)
+
 
 
