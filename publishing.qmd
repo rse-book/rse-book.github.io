@@ -9,16 +9,77 @@ Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dy
 
 ## Static Website Generators
 
-Let's limit our look at content renderers to outlets for the web for now. We do so to see how the result of a rendering process goes online in fully automated fashion. Unlike in the case of printed output, processing of web output is very standardized: web browser can display content from the HTML/CSS/Javascript combination. 
+Let's take a deeper look at how a report goes online in fully automated fashion from computation to a website.
+In a nutshell, static website generators turn markdown code 
+into a combination of HTML / CSS and Javascript, so a web browser can display the result. 
+The Go based [hugo](https://gohugo.io/) or the established classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
+A static website generator would turn the following markdown code
+
+```md
+## This a level two header
+
+This is plain text *this is italic* and **this is bold**
+
+### This is a level three header 
+
+more text
+
+```
+
+into this output, stored in HTML and CSS files. 
+
+## This a level two header {.unnumbered}
+
+This is plain text *this is italic* and **this is bold**
+
+### This is a level three header {.unnumbered}
+
+more text
 
 
-The distribution follows in line after chain and automated as well. 
+
+Approaches such as the {distill} R package or [quarto](https://quarto.org), the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allows to run analytics' code at render time. 
+Quarto documents, for example, are text files that contain markdown text and possibly code chunks in the same documents. 
+When rendered, the analytics code runs first, potentially creating output such as tables or figures.
+If necessary, this output is stored in separate files and smoothly integrated into main document that is about to be rendered afterwards.  
+
+>Rendered output often consists of multiple files such as HTML documents, CSS style information, javascript code or images.
+Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics minded renderes such as quarto offer a **self-contained** option. 
+When enabled, quarto renders a single self-contained, encoded HTML file that contains everything from javscript to images. 
 
 
 
 ## Hosting Static Website
 
-netlify, ghpages, anywhere, a note on self-contained 
+Because the requirements of a static website are minimal, we can essentially use the simplest website host possible to host our static site.
+Unlike with content management system approaches such as Wordpress, static websites do not need server side scripting languages or databases. 
+This simplicity allows to host static websites on a plethora of cheap hosters, including many free plans.
+
+### GitHub Pages
+
+One very good and simple solution to host blogs, personal websites, online documentation or presentations is to use offerings of major git providers such as Github's [Github Pages]().
+Though originally meant to be used with themes provided by GitHub and markdown rendered by Jekyll on GitHub's servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.    
+
+All you need is a repository on GitHub to host the static files. You can activate GitHub Pages for your repository and choose whether you rather want the rendered files to be on a separate branch named *gh-pages* or in a subfolder of your root directory (mostly docs).
+Personally, I favor to use a seperate *gh-pages* branch, because git would track every single change made to the automatically rendered content, leading to a messy git history. 
+
+By convention the corresponding static website of a git repository is exposed at `<username>.github.io/<repository-name>`.
+For GitHub organizations which are popular to group repositories, the exposed URL would be
+`<orgname>.github.io/<repository-name>`. 
+
+>Note that the online version of the book you are currently reading is hosted in very same fashion: `devops-carpentry.github.io/book`
+
+### GitHub Actions
+
+Hosting a website on a modern git platform comes with an intriguing option: the use of continous integration tools as discussed in the automation chapter. 
+CI/CD is capable of not only rendering markdown, but can even run computations and virtually any pre-requisite step thanks to the underlying docker technology. 
+CI/CD certainly introduces a setup hurdle, but allows to integrate users who do not have the necessary stack installed to execute the render process locally. 
+
+### Netlify
+
+
+
+
 
 ## Visualization Libraries
 
