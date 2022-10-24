@@ -89,6 +89,19 @@ Netlify cannot only improve convenience when using advanced features, it can als
 
 ## Visualization
 
+Visualization is a powerful tool to communicate insights derived from data analysis. 
+Good visual communication can not only summarize large datasets, it has the ability to make your report -- and therefore your insights -- accessible to a wider audience. 
+No matter whether you are working on an online outlet or a printed publication of your analysis, it is safe to say that either channel benefits from aesthetically pleaseant and concise visualization. 
+Long story short, proficiency in data visualization is an indispensable part of a researcher or analyst's toolbox. 
+
+
+### Rendered Graphs
+
+Albeit plots may look similar, there is quite an implementation difference between plots optimized for online use and traditional printed figures. Obviously, the beholder cannot interactively adjust parameters in printed images while online visualisation can be very interactive. 
+
+
+
+
 - importance of data visualization in communication of results
 - distinction between approaches
     - png/pdf/pring -> ggplot2, matplotlib
