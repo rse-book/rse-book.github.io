@@ -94,22 +94,52 @@ Good visual communication can not only summarize large datasets, it has the abil
 No matter whether you are working on an online outlet or a printed publication of your analysis, it is safe to say that either channel benefits from aesthetically pleaseant and concise visualization. 
 Long story short, proficiency in data visualization is an indispensable part of a researcher or analyst's toolbox. 
 
-
-### Rendered Graphs
-
-Albeit plots may look similar, there is quite an implementation difference between plots optimized for online use and traditional printed figures. Obviously, the beholder cannot interactively adjust parameters in printed images while online visualisation can be very interactive. 
-
+Albeit plots may look similar across channels, opportunities and challenges plots optimized for online use and traditional printed figures are substantially different.
+Obviously, the beholder cannot interactively adjust parameters in printed images while online visualization can be interactive and needs to adapt to varying screens and devices. 
+Hence the visualization toolbox offers libraries with very different approaches. 
 
 
+### Rendered Graphs 
 
-- importance of data visualization in communication of results
-- distinction between approaches
-    - png/pdf/pring -> ggplot2, matplotlib
-    - javascript/web
-        - apache echarts
-        - high charts
-        - d3 / SVG
-        - specific libraries like dygraphs
+The idea of visualization libraries that create rendered graphs is straight forward to understand. 
+Libraries such as R's [ggplot2]() or Python's [matplotlib]() fix the dots per inch (dpi) at render time. 
+When writing to disk, such a graph is typically saved as a .png or .jpg file^[When file size does not matter, .png is usually preferred because it allows for transparent backgrounds]. 
+To the end user handling such graphs is rather intuitive as it feels similar to handling photos or screenshots:
+We have to handle single image files that we can easily preview with onboard tools of all major operating systems.
+But just like with a photo, if the resolution of an existing image is too small for our next use case, scaling the image up will lead to interpolation, i.e., a loss in quality. 
+To see the effect, take a closer look at the two .png files below: The second image doubles the width of the first image.
+Because of interpolation, the text looks blurred, particularly in its curves. 
+
+![](images/rendered.png)
+
+
+![](images/rendered.png){width=700}
+
+
+A streamlined publication workflow such as the quarto based approach described above, mitigates the problem, because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 
+Further mitigation comes from extensions packages such as R's [gganimate]() that allows to animate graphs created with ggplot2.
+Though you might miss out on bleeding edge interaction and the maximum flexibility of libraries with an online focus, rendered graphs created with a powerful library such as ggplot or matplotlib are a solid way to go for most people's use cases. 
+The likes of ggplot2 have home court advantage in all things printed and still look decent in most online outlets. 
+
+
+### Javascript Visualization Libraries
+
+- people think of it as they think of a Japanese Games convention at night: colorfully blinking. 
+- libraries can do so much more
+- good aesthetical guide lines
+- unparalleled types of charts
+- APIs 
+- larger community
+- specific libs, dygraphs
+
+
+
+### SVG
+
+D3
+
+
+
 
 ## Data Publications
 
