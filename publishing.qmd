@@ -7,13 +7,16 @@ Because of frequent updates and reproducibility, manually composed outlets becom
 
 Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dynamically rendered code chunks that create tables or figures and embedd these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
 
-## Static Website Generators
+## Getting Started With a Simple Report
 
-Let's take a deeper look at how a report goes online in fully automated fashion from computation to a website.
-In a nutshell, static website generators turn markdown code 
-into a combination of HTML, CSS and Javascript, so a web browser can display the result. 
-The Go based [hugo](https://gohugo.io/) or the classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
-A static website generator would turn the following markdown code
+The simplest form of such a markdown based output, is a simple HTML report.  
+With web development somewhere in the back of their minds, HTML may rather sound daunting than simple. 
+But hear me out: HTML is a) a lot more useful and flexible than newcomers might think and b) simple indeed: 
+HTML is text, does not need LaTeX to be rendered from markdown like PDF and can displayed by web browsers on a plethore of devices. 
+Plus, based on HTML you can create (fancy) presentations, websites or simple reports. 
+With the self-contained option you can even embedd included files such as images into one single HTML document using byte encoding.
+That way you can easily share a report that can be viewed on any device with a web browser across different operating systems and setups.  
+To see a markdown process in action, consider the following basic example: 
 
 ```md
 ## This a level two header
@@ -37,6 +40,13 @@ This is plain text *this is italic* and **this is bold**
 more text
 
 
+
+## Static Website Generators
+
+Once that we understood how the output files are created, let's take a deeper look at how a report goes online in fully automated fashion from computation to a website.
+In a nutshell, static website generators turn markdown code 
+into a combination of HTML, CSS and Javascript, so a web browser can display the result. 
+The Go based [hugo](https://gohugo.io/) or the classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
 
 Approaches such as the {distill} R package or [quarto](https://quarto.org), the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allows to run analytics' code at render time. 
 Quarto documents, for example, are text files that contain markdown text and possibly code chunks in the same documents. 
@@ -124,19 +134,43 @@ The likes of ggplot2 have home court advantage in all things printed and still l
 
 ### Javascript Visualization Libraries
 
-- people think of it as they think of a Japanese Games convention at night: colorfully blinking. 
-- libraries can do so much more
-- good aesthetical guide lines
-- unparalleled types of charts
-- APIs 
-- larger community
-- specific libs, dygraphs
+That being said, online visualization can take your visual communication to another level. 
+To those old enough to remember, javascript visualization may be reminiscant of a Japanese game convention at night: colorful and blinking. 
+But libraries like [Apache echarts](), [Data Driven Documents (d3js.org)]() or [Highcharts]() have very little in common with the javascript of the web of the late 90s. 
+The amount of chart types and configuration options offered is just off the charts (pun intended): 
+from basic bar charts, scatter plots, candle stick and radar charts to heatmaps, treemaps, 3D and spatial charts, there is hardly anything data visualzation you cannot do. 
+And if you really needed special treatment, there is an API to extend your possibilities even. 
+
+And in fact, one can leverage the opportunities of a screen medium (compared to print) to add value. 
+Consider an interactive time series chart of a long term economic indicator. 
+Depending on the question at hand you may be interested in the indicator's development over decades or rather look at last couple of years or months. 
+Add a zoom window to interactively to not only switch between to views, but to continously zoom in or out on some crisis or boom or drawn an intertemporal comparison between different peaks and lows. 
+
+```{r, message=FALSE, warnings=FALSE}
+library(echarts4r)
+library(kofdata)
+library(tsbox)
+
+tsl <- get_time_series('ch.kof.barometer')
+t_df <- ts_df(tsl$ch.kof.barometer)
+t_df |>
+   e_charts(time) |>
+   e_line(value, symbol = "none") |>
+   e_datazoom(type = "slider") |>
+   e_title("Demo: Interactivity Adds Value")
 
 
 
-### SVG
+```
 
-D3
+Besides the universal libraries such as echarts, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused to make that one thing as convenient and inclusive as possibility. 
+While many libraries use HTML5 canvas elements to provide a stage for graphics, some use SVG vector graphics. 
+
+
+
+
+
+
 
 
 
