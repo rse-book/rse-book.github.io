@@ -134,14 +134,25 @@ The likes of ggplot2 have home court advantage in all things printed and still l
 
 ### Javascript Visualization Libraries
 
-That being said, online visualization can take your visual communication to another level. 
 To those old enough to remember, javascript visualization may be reminiscant of a Japanese game convention at night: colorful and blinking. 
-But libraries like [Apache echarts](), [Data Driven Documents (d3js.org)]() or [Highcharts]() have very little in common with the javascript of the web of the late 90s. 
-The amount of chart types and configuration options offered is just off the charts (pun intended): 
+But the visualization knowledge embedded in modern javascript libraries and the maximum out-of-the-box opportunities of libraries like [Apache echarts](), [Data Driven Documents (d3js.org)]() or [Highcharts]() have very little in common with the javascript of the web of the late 90s.
+In 2022, online communication can take your data visualization to another level.  
+
+Today, there are basically two popular Javascript based approaches to data visualiation: SVG manipulation and HTML5 drawing.
+No matter whether which one you choose the opportunities are just off the charts (pun intended): 
 from basic bar charts, scatter plots, candle stick and radar charts to heatmaps, treemaps, 3D and spatial charts, there is hardly anything data visualzation you cannot do. 
 And if you really needed special treatment, there is an API to extend your possibilities even. 
+Let us quickly dive into both options...
 
-And in fact, one can leverage the opportunities of a screen medium (compared to print) to add value. 
+
+With the advent of wide spread Scalable Vector Graphics (SVG) support in mainstream web browsers about a decade ago, the online ecosystem enabled a lot of options to add channel specific value to visualization. 
+Unlike formats with fixed resolutions like .gif, .jpg or .png formats, vector graphics are not only scalable without  loss, they are also defined inside your HTML document.
+This opens up the possibility to manipulate them easily using Javascript as if they were objects of the DOM^[The Document Object Model (DOM) is the hierarchical definition of an HTML website which in today's web is modified by Javascript]. 
+Mapping data to SVG aesthetics is the exact idea of the [Data Driven Documents (D3)](https://d3js.org), one of the most popular and powerful visualization libraries.
+For example, your data may drive the size of dots or any other object, e.g., a car pictogram for when you want to visualize the number of car registrations. 
+The above example shows a strength of the SVG approach: one can use existing SVG graphics without having to draw them from scratch using Javascript. 
+
+HTML5 on the other hand is the latest approach and offers more options to support varying screen sizes and device types. While a look into mobile friendliness is beyond the scope of this book, I would like to show an example of how a screen medium (compared to print) can add value. 
 Consider an interactive time series chart of a long term economic indicator. 
 Depending on the question at hand you may be interested in the indicator's development over decades or rather look at last couple of years or months. 
 Add a zoom window to interactively to not only switch between to views, but to continously zoom in or out on some crisis or boom or drawn an intertemporal comparison between different peaks and lows. 
@@ -163,12 +174,7 @@ t_df |>
 
 ```
 
-Besides the universal libraries such as echarts, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused to make that one thing as convenient and inclusive as possibility. 
-While many libraries use HTML5 canvas elements to provide a stage for graphics, some use SVG vector graphics. 
-
-
-
-
+Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused to make that one thing as convenient and inclusive as possibility. Depending on your needs such a smaller library may be a very good option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundred. 
 
 
 
