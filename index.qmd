@@ -34,3 +34,37 @@ The vast majority of data has been created within the last decade. In turn many 
 <div align="center">
 ![Meet Dr. Egghead who started his quest to figure out how his assistant got a week's work done in two hours. "Hacker's wear hoodies, you know," he mumbles as he pulls up his coat's hood and starts to think...](images/meet_egghead.jpg)
 </div>
+
+
+
+## Acknowledgements
+
+I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations, I would like to thank in particular. 
+
+First, I would like to thank David Grubbs from CRC for getting me started. 
+From our first meeting at useR! in Toulouse, France, David helped streamline writing a book and he kept adding value throughout the process with his remarks and contacts. 
+I would like to thank Achim Zeileis who also played an important role at this early stage of my book project. Achim did not only inspire me to become a co-host for useR! which lead to many experiences that became important to this book. Our discussions about teaching amplified my motivation to have good material to accompany my own course -- which clearly turned out to be one of the most important drivers in the long run. 
+
+In that regard I would like to thank all participants of my *Hacking for ...* courses.
+Your insights, questions, feedback and semester projects have been invaluable to this project. 
+Your field specific expertise is inspirational not only to me but also to readers of the book as it shows the broad relevance of the approach. 
+I would like to thank ETH Zurich, in particularly the Department of Management, Technology and Economics (D-MTEC) and the KOF Swiss Economic Institute for hosting my ideas over the last 13 years. 
+Thank you to educational developers Karin Brown und Erik Jentges - having teaching professionals with open ears and minds around helped to channel motivation and ideas into course that continues to be popular among participants across departments and disciplines. 
+Torboern Netlandt deserves credit for enabling this widespread interest.
+His early advice turned what was initially though of as *Hacking for Economists* into *Hacking for Social Sciences* which became *Hacking for Science*. 
+
+R community in Switzerland and worldwide
+- cynkra
+- Siegfried Heiler, Toni Stocker for pointing me to R
+- too many to thank everyone
+- well represented by Dorothea, Rocío, Yani, Heather
+- Zurich R user group
+
+Last but not least: Emily 
+
+
+
+
+
+
+
