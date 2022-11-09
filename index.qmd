@@ -36,7 +36,6 @@ The vast majority of data has been created within the last decade. In turn many 
 </div>
 
 
-
 ## Acknowledgements
 
 I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations, I would like to thank in particular. 
@@ -49,18 +48,23 @@ In that regard I would like to thank all participants of my *Hacking for ...* co
 Your insights, questions, feedback and semester projects have been invaluable to this project. 
 Your field specific expertise is inspirational not only to me but also to readers of the book as it shows the broad relevance of the approach. 
 I would like to thank ETH Zurich, in particularly the Department of Management, Technology and Economics (D-MTEC) and the KOF Swiss Economic Institute for hosting my ideas over the last 13 years. 
-Thank you to educational developers Karin Brown und Erik Jentges - having teaching professionals with open ears and minds around helped to channel motivation and ideas into course that continues to be popular among participants across departments and disciplines. 
+Thank you to educational developers Karin Brown und Erik Jentges - having teaching professionals with open ears and minds around helped to channel motivation and ideas into a course concept that continues to be popular among participants across departments and disciplines. 
 Torboern Netlandt deserves credit for enabling this widespread interest.
-His early advice turned what was initially though of as *Hacking for Economists* into *Hacking for Social Sciences* which became *Hacking for Science*. 
+His early advice turned what was initially thought of as *Hacking for Economists* into *Hacking for Social Sciences* which eventually became *Hacking for Science*. 
 
-R community in Switzerland and worldwide
-- cynkra
-- Siegfried Heiler, Toni Stocker for pointing me to R
-- too many to thank everyone
-- well represented by Dorothea, Rocío, Yani, Heather
-- Zurich R user group
+Though this book is not exactly a book about the R programming language, I would like to thank the R community in particular because of its instrumental role in growing my own engangement and horizon of the open source ecosystem.
+Thank you the statisticians Siegfried Heiler and Toni Stocker who pointed me to the R language almost 20 years ago. 
+One of my most important learnings about how to leverage open source work may have come only those 20 later when the community held a virtual useR! conference during a time that was unprecedented at least in my lifetime. 
+Through its sharing nature and established workflow open source work is capable of reaching and impacting so many more than just those on one's main diagonal.
+Working with Rocío Joo, Dorothea Hug Peter, Heather Turner and Yanina Bellini Saibene has shown me the inclusion extra mile is not only worth the effort, but an inevitable mindset to bring our work as developers and scientists to next level. Thank you, ladies!
+Thanks also to the local R user group here in Zurich, Switzerland, who continues to show the practical relevance of open source through their events. 
+I want to mention the great people at my new employer cynkra, too.
+Your influence on the community, myself and therefore this book cannot be forgotten.
+Thank you for your support and open ears!
 
-Last but not least: Emily 
+Last but not least, I would like to thank Emily Riederer for her time and patience discussing my thoughts and reviewing my drafts. 
+Particulary, her ideas to streamline and balance my ideas at a stage where they were rather messy added great value. 
+Admittely, your constructive feedback has caused some extra work, but was instrumental to making this book useful and accessible to a wider audience – thank you! 
 
 
 
