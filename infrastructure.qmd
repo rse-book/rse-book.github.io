@@ -10,7 +10,7 @@ Admittedly, unless your favorite superhero is Inspector Gadget or you just alway
 Performance, particularly in terms of throughput is one good reason to look beyond desktop computers. Data proctection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application bring down a computation that ran for hours or even days. Or we need a server that is online 24/7 to publish a report, website or data visualization. 
 
 
-## Where to Go? 
+## Hosting Options 
 
 So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously a description of product offerings in a vastly evolving field are not well suited for discussions in a book. Hence *DevOps Carpentry* intends to give an overview to classify the general options and common business models. 
 
@@ -29,7 +29,6 @@ The alternative approach to buying multiple managed services, is to host your ap
 Since -- this applies to most users at least -- you do not take your own hardware, connect to your home WiFi and aim to start your own hosting provider, we need to look at different degrees of self-hosting. Larger organizations, e.g., universities, often like to host application on their own hardware, within their own network to have full control of their data. Yet, self-hosting exposes you to issues, such as attacks, that you would not need to worry about as much in a software as a service setting (as long as you trust the service). 
 
 Self-hosting allows you to host all the applications you want on a dedicated machine. Self-hosters can configure their server depending on their access rights. Offerings range from root access that allows users to do anything to different shades of managed hosting with more moderated access. Backed by virtual infrastructure, modern cloud provider offer a very dynamic form of self-hosting: their clients can use a web GUIs and/or APIs to add, remove, reboot and shutdown nodes. Users can spin up anything from pre-configured nodes optimized for different use cases to containerized environments and entire Kubernetes (K8s) clusters in the cloud. Flexible pricing models allow to pay based on usage in very dynamic fashion. 
-
 
 
 
@@ -63,4 +62,48 @@ Because Kubernetes is quite some overhead to manage, the big three and their alt
 - HA mode
 - management features
 - minikube
+
+
+## Containerization Basics
+
+While the above *Building Blocks* contextualizes the container approaches, this section gives a simple 101 into the basics of containerization, enabling the reader to take their first steps in the container world.
+One of the beautiful things about containers is that due their isolated nature, one can go along way trying out things as containers get destroyed and recreated all the time. 
+Also, because containers run in a standardized runtime environment, locally developed images easily transfer to large remote machines and clusters. 
+
+
+### Dockerfiles
+
+*Dockerfile*s are text file recipes to create images, i.e., blueprints for containers. On Windows and OSX we can use Docker Desktop as a docker runtime environment to help us execute basic commands and build images. 
+
+
+```{r}
+tribble(
+    ~ command, ~ description,
+    'docker run', 'start application',
+    'docker ps', '',
+    'docker images', '',
+    'docker pull', '',
+    'docker run', '',
+    'docker kill', '',
+    'docker ps', '',
+
+)
+```
+
+```{r}
+
+# 
+
+```
+
+
+
+### Running Containers
+
+
+### Docker Compose - Manage Multiple Containers 
+
+Jointly
+
+
 
