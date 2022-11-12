@@ -176,7 +176,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -244,8 +247,16 @@ bookdown::render_book('index.Rmd', 'bookdown::gitbook',output_dir = "docs")
 </figure>
 </div>
 </div>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations, I would like to thank in particular.</p>
+<p>First, I would like to thank David Grubbs from CRC for getting me started. From our first meeting at useR! in Toulouse, France, David helped streamline writing a book and he kept adding value throughout the process with his remarks and contacts. I would like to thank Achim Zeileis who also played an important role at this early stage of my book project. Achim did not only inspire me to become a co-host for useR! which lead to many experiences that became important to this book. Our discussions about teaching amplified my motivation to have good material to accompany my own course – which clearly turned out to be one of the most important drivers in the long run.</p>
+<p>In that regard I would like to thank all participants of my <em>Hacking for …</em> courses. Your insights, questions, feedback and semester projects have been invaluable to this project. Your field specific expertise is inspirational not only to me but also to readers of the book as it shows the broad relevance of the approach. I would like to thank ETH Zurich, in particularly the Department of Management, Technology and Economics (D-MTEC) and the KOF Swiss Economic Institute for hosting my ideas over the last 13 years. Thank you to educational developers Karin Brown und Erik Jentges - having teaching professionals with open ears and minds around helped to channel motivation and ideas into a course concept that continues to be popular among participants across departments and disciplines. Torboern Netlandt deserves credit for enabling this widespread interest. His early advice turned what was initially thought of as <em>Hacking for Economists</em> into <em>Hacking for Social Sciences</em> which eventually became <em>Hacking for Science</em>.</p>
+<p>Though this book is not exactly a book about the R programming language, I would like to thank the R community in particular because of its instrumental role in growing my own engangement and horizon of the open source ecosystem. Thank you the statisticians Siegfried Heiler and Toni Stocker who pointed me to the R language almost 20 years ago. One of my most important learnings about how to leverage open source work may have come only those 20 later when the community held a virtual useR! conference during a time that was unprecedented at least in my lifetime. Through its sharing nature and established workflow open source work is capable of reaching and impacting so many more than just those on one’s main diagonal. Working with Rocío Joo, Dorothea Hug Peter, Heather Turner and Yanina Bellini Saibene has shown me the inclusion extra mile is not only worth the effort, but an inevitable mindset to bring our work as developers and scientists to next level. Thank you, ladies! Thanks also to the local R user group here in Zurich, Switzerland, who continues to show the practical relevance of open source through their events. I want to mention the great people at my new employer cynkra, too. Your influence on the community, myself and therefore this book cannot be forgotten. Thank you for your support and open ears!</p>
+<p>Last but not least, I would like to thank Emily Riederer for her time and patience discussing my thoughts and reviewing my drafts. Particulary, her ideas to streamline and balance my ideas at a stage where they were rather messy added great value. Admittely, your constructive feedback has caused some extra work, but was instrumental to making this book useful and accessible to a wider audience –&nbsp;thank you!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
