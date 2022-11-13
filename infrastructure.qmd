@@ -64,7 +64,7 @@ Because Kubernetes is quite some overhead to manage, the big three and their alt
 - minikube
 
 
-## Containerization Basics
+## Applied Containerization Basics
 
 While the above *Building Blocks* contextualizes the container approaches, this section gives a simple 101 into the basics of containerization, enabling the reader to take their first steps in the container world.
 One of the beautiful things about containers is that due their isolated nature, one can go along way trying out things as containers get destroyed and recreated all the time. 
@@ -73,37 +73,131 @@ Also, because containers run in a standardized runtime environment, locally deve
 
 ### Dockerfiles
 
-*Dockerfile*s are text file recipes to create images, i.e., blueprints for containers. On Windows and OSX we can use Docker Desktop as a docker runtime environment to help us execute basic commands and build images. 
+*Dockerfile*s are text file recipes to create images, i.e., blueprints for containers. One great thing about container images is that they are layered.
+That is, one can stack images and benefit from previously created images.
+The below example Dockerfile uses a standard, publicly available image from dockerhub.com and adds some custom packages. 
+
+```sh
+FROM rocker/shiny:latest
+RUN apt-get update
+RUN apt-get install -qq -y libpq-dev
+RUN install2.r ggplot2 shiny shinydashboard  \
+               shinydashboardPlus  \
+               dplyr RPostgres  
+
+```
+
+In this case we make use of a pre-built image from the rocker project. 
+The rocker project designs useful images around the R language ecosystem, builds them on regularly basis and makes them available via dockerhub.
+Here, our image allows to run the open source version of shiny server in a docker container. 
+We add a postgres driver at the operating system level before we install several R packages from CRAN. 
 
 
-```{r}
-tribble(
+### Building & Running Containers
+
+There are plenty of ways to run and build containers. 
+Online tools either offered as a service or self-hosted can build images serverside. Yet the easiest way to get started with containers is to run and build them locally with Docker Desktop.  
+Even though Docker may not even be the best way to build containers to some, Docker is by far the most known way and therefore comes with the largest ecosystem and most community material. 
+
+Docker Desktop is an easy to use application available on Windwos and OSX. 
+With Docker Desktop one can execute Docker commands and build images either in a GUI or using its CLI. The below table shows a few of the most basic docker commands.
+
+```{r, echo=FALSE, message=FALSE, warnings=FALSE}
+library(dplyr)
+library(kableExtra)
+tri <- tribble(
     ~ command, ~ description,
     'docker run', 'start application',
-    'docker ps', '',
-    'docker images', '',
-    'docker pull', '',
-    'docker run', '',
-    'docker kill', '',
-    'docker ps', '',
-
+    'docker ps', 'list containers',
+    'docker images', 'list docker images',
+    'docker pull', 'pull images from registry, e.g., dockerhub.com',
+    'docker run', 'run container based on image',
+    'docker kill', 'kill container',
+    'docker build <directory-with-docker-file>', 'build image based on Dockerfile',
+    'docker exec <command> <container>', 'execute command inside container'
 )
-```
-
-```{r}
-
-# 
+kable(tri)
 
 ```
 
+To learn what a container looks like, e.g., to find out how the container was affected by changes to the Dockerfile, it can be very illustrative to walk around inside. 
+To do so with a container created from the above Dockerfile, start the container and execute a bash with the interactive flag `-it`.
 
+```sh
+docker run -d rocker/shiny
+docker exec -it rocker/shiny /bin/bash
 
-### Running Containers
+# alternative you could start R right away
+# note that you need to know the location of the executable
+docker exec -it rocker/shiny /usr/local/bin/R
+
+```
 
 
 ### Docker Compose - Manage Multiple Containers 
 
-Jointly
+Docker is a great way to give a new tool a spin without affecting one's proven environment. 
+So even if you are a container beginner, the time when you would like to spin up multiple containers at once will come quickly. 
+While you can start as many containers as your local resources allow for, running containers at once does not necessarily mean those containers are aware of each other, let alone could talk to each other. 
+
+Modern application often follow modular architecture patterns, i.e., they have a front end, some middle layer such as a REST API and a database backend. 
+A web application may have a statically generated HTML front and simply expose HTML / CSS / Javascript files and query a REST API. 
+The REST API may use the express.io framework and is served using a node server which talks to a Postgres database backend. 
+Each of these three parts could live in its own container. 
+This is where docker could help to create development environment locally that essentially mimicks the production setup and therefore facilitates deployment to production. 
+
+Docker compose allows to define how multiple containers play together. 
+Consider the following example file that creates two containers: a shiny webserver and database which can be queried by the shiny server. 
+
+
+```sh
+services:
+   postgres:
+      # a name, e.g.,  db_container is instrumental to be
+      # called as host from the shiny app
+      container_name: db_container
+      build: ./postgres
+      restart: always
+      environment:
+         - POSTGRES_USER=postgres
+         - POSTGRES_PASSWORD=postgres
+      # This port mapping is only necessary to connect from the host, 
+      # not to let containers talk to each other. 
+      ports:
+         - "5432:5432"
+      volumes:
+         - "./pgdata:/var/lib/postgresql/data"
+   shiny: 
+      container_name: shiny
+      depends_on: 
+         - postgres
+      build: ./shiny
+      volumes:
+         - "./shiny-logs:/var/log/shiny-server"
+         - "./shiny-home:/srv/shiny-server"
+      ports:
+         - "3838:3838"
+
+```
+
+
+Note how images are build from local directories `postgres` and `shiny` that contain Dockerfiles. 
+It is also possible to pull images directly from a registry. 
+To run such a system of multiple containers, simply use
+
+
+```sh
+docker compose up --force-recreate
+
+```
+
+>Note that docker compose does not replace an orchestrator and cannot provide cluster functionality like Docker Swarm or even Kubernetes. It should not be used in a production setup unless you know what you are doing. 
 
 
 
+
+<!--
+
+## So Why Again Should a Practioner Care? 
+
+-->
