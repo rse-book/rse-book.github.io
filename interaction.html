@@ -248,7 +248,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#remote-connections-ssh-scp" id="toc-remote-connections-ssh-scp" class="nav-link" data-scroll-target="#remote-connections-ssh-scp"><span class="toc-section-number">4.2.1</span>  Remote Connections SSH, SCP</a></li>
   <li><a href="#git-through-the-console" id="toc-git-through-the-console" class="nav-link" data-scroll-target="#git-through-the-console"><span class="toc-section-number">4.2.2</span>  Git through the Console</a></li>
-  <li><a href="#a-word-on-cron-jobs" id="toc-a-word-on-cron-jobs" class="nav-link" data-scroll-target="#a-word-on-cron-jobs"><span class="toc-section-number">4.2.3</span>  A Word On Cron Jobs</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -400,16 +399,6 @@ Screenshot of the coverpage of the R Studio <a href="https://rstudio.com">websit
 <section id="git-through-the-console" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="git-through-the-console"><span class="header-section-number">4.2.2</span> Git through the Console</h3>
 <p>Another common use case of the terminal is managing git version control. Admittedly, there is git integration for many IDEs that allow you to point and click your way commits, pushes and pulls as well as dedicated git clients like GitHub Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. The <a href="version-control.html"><span>Chapter&nbsp;5</span></a> sketches an idea of how to operate git through the console from the very basics to a feature branch based workflow.</p>
-</section>
-<section id="a-word-on-cron-jobs" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="a-word-on-cron-jobs"><span class="header-section-number">4.2.3</span> A Word On Cron Jobs</h3>
-<p>Named after the UNIX job scheduler <em>cron</em>, a cron job is a task that runs periodically at fixed times. Pre-installed in most LINUX server setups, data analysts often use cronjobs to regularly run batch jobs on remote servers. Cron jobs use a funny syntax to determine when jobs run.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#min hour day month weekday</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">15</span> 5,11 <span class="pp">*</span> <span class="pp">*</span> 1 Rscript run_me.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The first position denotes the minute mark at which the jobs runs - in our case 15 minutes after the new hour started. The second mark denotes hours during the day – in our case the 5th and 11th hour. The asterisk * is a wildcars expression running the job on every day of the month and in every month throughout the year. The last position denotes the weekday, here we run our job solely on Mondays.</p>
-<p>More advanced expressions can also handle running a job at much shorter intervals, e.g., every 5 minutes.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*/5</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> Rscript check_status.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To learn and play with more expressions check <a href="https://crontab.guru/">crontab guru</a>. If you have more sophisticated use cases, like overseeing a larger amount of jobs or execution on different nodes consider using <a href="https://airflow.apache.org/">Apache Airflow</a> as workflow scheduler.</p>
 
 
 </section>

@@ -240,8 +240,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#infrastructure-as-code" id="toc-infrastructure-as-code" class="nav-link active" data-scroll-target="#infrastructure-as-code"><span class="toc-section-number">8.1</span>  Infrastructure as Code</a></li>
   <li><a href="#cicd" id="toc-cicd" class="nav-link" data-scroll-target="#cicd"><span class="toc-section-number">8.2</span>  CI/CD</a></li>
-  <li><a href="#workflow-scheduling-apache-airflow" id="toc-workflow-scheduling-apache-airflow" class="nav-link" data-scroll-target="#workflow-scheduling-apache-airflow"><span class="toc-section-number">8.3</span>  Workflow Scheduling: Apache Airflow</a></li>
-  <li><a href="#make-target-co." id="toc-make-target-co." class="nav-link" data-scroll-target="#make-target-co."><span class="toc-section-number">8.4</span>  Make, target &amp; co.</a></li>
+  <li><a href="#cron-jobs" id="toc-cron-jobs" class="nav-link" data-scroll-target="#cron-jobs"><span class="toc-section-number">8.3</span>  Cron Jobs</a></li>
+  <li><a href="#workflow-scheduling-apache-airflow" id="toc-workflow-scheduling-apache-airflow" class="nav-link" data-scroll-target="#workflow-scheduling-apache-airflow"><span class="toc-section-number">8.4</span>  Workflow Scheduling: Apache Airflow</a></li>
+  <li><a href="#make-target-co." id="toc-make-target-co." class="nav-link" data-scroll-target="#make-target-co."><span class="toc-section-number">8.5</span>  Make, target &amp; co.</a></li>
   </ul>
 </nav>
     </div>
@@ -267,23 +268,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote class="blockquote">
 <p>Make repetitive work fun again!</p>
 </blockquote>
-<p>In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable.</p>
+<p><img src="images/busy.png" class="img-fluid"></p>
+<p>One aspect that makes a programming approach to data science and analytics appealing is <em>automation</em>. Data ingestion, dissemination, reporting or even analysis itself can be repetitive itself. Particularly shorter update cycles of one’s data ask for a way to make yet another iteration pain free.</p>
 <section id="infrastructure-as-code" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="infrastructure-as-code"><span class="header-section-number">8.1</span> Infrastructure as Code</h2>
+<p>In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable.</p>
+<blockquote class="blockquote">
+<p>Do not think infrastructure as code is only relevant for sys admins or other infrastructure professionals who make use of it every day. The ability to reproduce and tweak infrastructure at essentially no costs enables other forms of automation such as CI/CD. Just like with flat rate with your mobile carrier will lead to more calls.</p>
+</blockquote>
 <p>Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with.</p>
-<p>DOCKERFILE definitions as described in the previous chapter are a recipe to build docker images using some build environment, e.g., a local docker runtime environment such as Docker Desktop or a build tool like <a href="https://www.drone.io/">drone</a>. Just like many automation tools, docker has a console based client interface (CLI) to communicate with the user efficiently. A simple docker command issued in the directory that contains the DOCKERFILE triggers the build of an image.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Usually the next step is to push the resulting image into a public or private registry. This step as well as the sequence of commands, often referred to as pipeline oder build chain, can be automated, too. It is also possible to build an application that uses multiple single purpose containers, e.g., an online survey that stores its results in database. In such a case one container could serve a web frontend using node while another PostgreSQL container provides a database backend. Without going immediately going for a cluster, <a href="https://docs.docker.com/compose/">docker compose</a> can bundle multiple containers and deploy them jointly so they can smoothly interact with each other. Shell scripts can help to automate simpler processes and put several steps after one another, but if your can invest a bit more time, I highly recommend to use the more powerful, Red Hat backed <a href="https://docs.ansible.com/ansible/latest/index.html">ansible</a> automation tool. Ansible also comes with a client interface, defines playbooks and role using .yaml files in declarative, human-read-friendly fashion.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">some</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">yaml</span><span class="kw">:</span><span class="at"> </span><span class="st">"example"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- DOCKERFILE definitions as described in the previous chapter are a recipe to build docker images using some build environment, e.g., a local docker runtime environment such as Docker Desktop or a build tool like [drone](https://www.drone.io/). Just like many automation tools, docker has a console based client interface (CLI) to communicate with the user efficiently. A simple docker command issued in the directory that contains the DOCKERFILE triggers the build of an image. 
+
+```sh
+docker build .
+```
+
+Usually the next step is to push the resulting image into a public or private registry. This step as well as the sequence of commands, often referred to as pipeline oder build chain, can be automated, too. 
+It is also possible to build an application that uses multiple single purpose containers, e.g., an online survey that stores its results in database. In such a case one container could serve a web frontend using node while another PostgreSQL container provides a database backend. Without going immediately going for a cluster, [docker compose](https://docs.docker.com/compose/) can bundle multiple containers and deploy them jointly so they can smoothly interact with each other. Shell scripts can help to automate simpler processes and put several steps after one another, but if your can invest a bit more time, I highly recommend to use the more powerful, Red Hat backed [ansible](https://docs.ansible.com/ansible/latest/index.html) automation tool. Ansible also comes with a client interface, defines playbooks and role using .yaml files in declarative, human-read-friendly fashion. 
+
+```yaml
+some: 
+    yaml: "example"
+
+```
+
+-->
 <p>Automation is more complex for cluster setups, because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in <em>high availability</em> mode. On Kubernetes clusters, <a href="https://helm.sh/">helm</a>, Kubernetes’ package manager, is part of the solution to tackle this added complexity. Helm is “the best way to find share and use software built for Kubernetes”. <a href="https://www.terraform.io/">Terraform</a> can manage Kubernetes clusters on clouds like Amazon’s AWS, Google’s GPC, Microsoft’s Azure and many other cloud systems using declarative configuration files. Again, a console based client interface is used to apply a declarative confiugration plan to a particular cloud.</p>
 </section>
 <section id="cicd" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="cicd"><span class="header-section-number">8.2</span> CI/CD</h2>
-<p>The first type of automation described here refers to automation of your development workflow. That it is, you standardize your path from draft to program to deployment to production. Modern version control software accompanies this process with a toolchain that is often fuzzily called <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">CI/CD</a>. While CI stands for <em>continuous integration</em> and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either <em>continuous delivery</em> or <em>continuous deployment</em>.</p>
-<p>However, in practice the entire toolchain referred to as <em>CI/CD</em> has become broadly available in well documented fashion when git hosting powerhouses GitHub and GitLab introduced their flavors of it: [GitHub Actions])(https://docs.github.com/en/actions) and <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>. In addition services like <a href="https://travis-ci.org/">Travis CI</a> or <a href="https://circleci.com/">Circle CI</a> offer this toolchain independently of hosting git repositories.</p>
+<p>Thanks to infrastructure as code and containerization, automation of development and deployment workflows becomes much easier as local development can run in an environment very close to the production setup. You standardize the path from draft to program to deployment into production. Modern version control software accompanies this process with a toolchain that is often fuzzily called <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">CI/CD (Continuous Integration / Continuous Development)</a>. While CI stands for <em>continuous integration</em> and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either <em>continuous delivery</em> or <em>continuous deployment</em>.</p>
+<p>However, in practice the entire toolchain referred to as <em>CI/CD</em> has become broadly available in well documented fashion when git hosting powerhouses GitHub and GitLab introduced their flavors of it: [GitHub Actions])(https://docs.github.com/en/actions) and <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>. In addition services like <a href="https://circleci.com/">Circle CI</a> offer this toolchain independently of hosting git repositories.</p>
 <p>Users of these platforms can upload a simple textfile that follows a name convention and structure to trigger a step based toolchain based on an event. An example of an event may be the push to a repository’s main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server – all triggered by simple push to master. One particularly cool thing is, that there multiple services who allow to run the testing on their servers using container technologies. This leads to great variety of setups for testing. That way software can easily be tested on different operating systems / environments. Also the mentioned website rendering approach mentioning in the previous section as a potential CI/CD application.</p>
-<p>Here is a simple example of a <em>.gitlab-ci.yml</em> configuration that builds and tests a package and deploys it. It’s triggered on push to master:</p>
+<p>Here is a simple example of a <em>.gitlab-ci.yml</em> configuration that builds, tests a package before deploying it. It’s triggered on push to your main branch:</p>
 <pre><code>stages:
 - buildncheck
 - deploy_pack
@@ -315,17 +332,27 @@ script:
 - do some more steps to login and deploy to server ...
 </code></pre>
 <p>For more in depth examples of the above, <a href="https://www.jimhester.com/talk/2020-rsc-github-actions/">Jim Hester’s talk on GitHub Actions for R</a> is a very good starting point.</p>
-<p>The other automation tool I would like to mention is <a href="https://airflow.apache.org/">Apache Airflow</a> because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to it as <a href="https://en.wikipedia.org/wiki/Cron">cronjobs</a> on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other log and reporting features worth a lot when maintaining reocurring processes.</p>
 </section>
-<section id="workflow-scheduling-apache-airflow" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="workflow-scheduling-apache-airflow"><span class="header-section-number">8.3</span> Workflow Scheduling: Apache Airflow</h2>
+<section id="cron-jobs" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="cron-jobs"><span class="header-section-number">8.3</span> Cron Jobs</h2>
+<p>Named after the UNIX job scheduler <em>cron</em>, a cron job is a task that runs periodically at fixed times. Pre-installed in most LINUX server setups, data analysts often use cronjobs to regularly run batch jobs on remote servers. Cron jobs use a funny syntax to determine when jobs run.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#min hour day month weekday</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">15</span> 5,11 <span class="pp">*</span> <span class="pp">*</span> 1 Rscript run_me.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first position denotes the minute mark at which the jobs runs - in our case 15 minutes after the new hour started. The second mark denotes hours during the day – in our case the 5th and 11th hour. The asterisk * is a wildcars expression running the job on every day of the month and in every month throughout the year. The last position denotes the weekday, here we run our job solely on Mondays.</p>
+<p>More advanced expressions can also handle running a job at much shorter intervals, e.g., every 5 minutes.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*/5</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> Rscript check_status.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To learn and play with more expressions check <a href="https://crontab.guru/">crontab guru</a>. If you have more sophisticated use cases, like overseeing a larger amount of jobs or execution on different nodes consider using <a href="https://airflow.apache.org/">Apache Airflow</a> as workflow scheduler.</p>
+</section>
+<section id="workflow-scheduling-apache-airflow" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="workflow-scheduling-apache-airflow"><span class="header-section-number">8.4</span> Workflow Scheduling: Apache Airflow</h2>
+<p>The other automation tool I would like to mention is <a href="https://airflow.apache.org/">Apache Airflow</a> because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to it as <a href="https://en.wikipedia.org/wiki/Cron">cronjobs</a> on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other log and reporting features worth a lot when maintaining reocurring processes.</p>
 <ul>
 <li>cronjobs</li>
 <li>MWAA</li>
 </ul>
 </section>
-<section id="make-target-co." class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="make-target-co."><span class="header-section-number">8.4</span> Make, target &amp; co.</h2>
+<section id="make-target-co." class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="make-target-co."><span class="header-section-number">8.5</span> Make, target &amp; co.</h2>
 <p>task automation, caching.. monitoring etc.</p>
 
 
