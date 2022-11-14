@@ -141,32 +141,3 @@ Another common use case of the terminal is managing git version control. Admitte
 
 
 
-### A Word On Cron Jobs
-
-Named after the UNIX job scheduler *cron*, a cron job is a task that runs periodically at fixed times. 
-Pre-installed in most LINUX server setups, data analysts often use cronjobs to regularly run batch jobs on remote servers. Cron jobs use a funny syntax to determine when jobs run. 
-
-```sh
-#min hour day month weekday
-15 5,11 * * 1 Rscript run_me.R
-```
-
-The first position denotes the minute mark at which the jobs runs - in our case 15 minutes after the new hour started. The second mark denotes hours during the day – in our case the 5th and 11th hour. The asterisk * is a wildcars expression running the job on every day of the month and in every month throughout the year. The last position denotes the weekday, here we run our job solely on Mondays.
-
-More advanced expressions can also handle running a job at much shorter intervals, e.g., every 5 minutes.
-
-```sh
-*/5 * * * * Rscript check_status.R
-```
-
-To learn and play with more expressions check [crontab guru](https://crontab.guru/). If you have more sophisticated use cases, like overseeing a larger amount of jobs or execution on different nodes consider using [Apache Airflow](https://airflow.apache.org/) as workflow scheduler. 
-
-
-
-
-
-
-
-
-
-

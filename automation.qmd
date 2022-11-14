@@ -2,13 +2,23 @@
 
 >Make repetitive work fun again!
 
-In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 
+![](images/busy.png)
+
+
+One aspect that makes a programming approach to data science and analytics appealing is *automation*. Data ingestion, dissemination, reporting or even analysis itself can be repetitive itself. 
+Particularly shorter update cycles of one's data ask for a way to make yet another iteration pain free. 
+
 
 ## Infrastructure as Code
 
+
+In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 
+
+>Do not think infrastructure as code is only relevant for sys admins or other infrastructure professionals who make use of it every day. The ability to reproduce and tweak infrastructure at essentially no costs enables other forms of automation such as CI/CD. Just like with flat rate with your mobile carrier will lead to more calls. 
+
 Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with. 
 
-DOCKERFILE definitions as described in the previous chapter are a recipe to build docker images using some build environment, e.g., a local docker runtime environment such as Docker Desktop or a build tool like [drone](https://www.drone.io/). Just like many automation tools, docker has a console based client interface (CLI) to communicate with the user efficiently. A simple docker command issued in the directory that contains the DOCKERFILE triggers the build of an image. 
+<!-- DOCKERFILE definitions as described in the previous chapter are a recipe to build docker images using some build environment, e.g., a local docker runtime environment such as Docker Desktop or a build tool like [drone](https://www.drone.io/). Just like many automation tools, docker has a console based client interface (CLI) to communicate with the user efficiently. A simple docker command issued in the directory that contains the DOCKERFILE triggers the build of an image. 
 
 ```sh
 docker build .
@@ -23,20 +33,24 @@ some:
 
 ```
 
+-->
+
+
 Automation is more complex for cluster setups, because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in *high availability* mode. On Kubernetes clusters, [helm](https://helm.sh/), Kubernetes' package manager, is part of the solution to tackle this added complexity. Helm is "the best way to find share and use software built for Kubernetes". [Terraform](https://www.terraform.io/) can manage Kubernetes clusters on clouds like Amazon's AWS, Google's GPC, Microsoft's Azure and many other cloud systems using declarative configuration files. Again, a console based client interface is used to apply 
 a declarative confiugration plan to a particular cloud. 
 
 
 ## CI/CD 
 
-The first type of automation described here refers to automation of your development workflow. That it is, you standardize your path from draft to program to deployment to production. Modern version control software accompanies this process with a toolchain that is often fuzzily called [CI/CD](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment). While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
+Thanks to infrastructure as code and containerization, automation of development and deployment workflows becomes much easier as local development can run in an environment very close to the production setup.
+You standardize the path from draft to program to deployment into production. Modern version control software accompanies this process with a toolchain that is often fuzzily called [CI/CD (Continuous Integration / Continuous Development)](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment). While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
 
-However, in practice the entire toolchain referred to as *CI/CD* has become broadly available in well documented fashion when git hosting powerhouses GitHub and GitLab introduced their flavors of it: [GitHub Actions])(https://docs.github.com/en/actions) and [GitLab CI](https://docs.gitlab.com/ee/ci/). In addition services like [Travis CI](https://travis-ci.org/) or [Circle CI](https://circleci.com/) offer this toolchain independently of hosting git repositories.
+However, in practice the entire toolchain referred to as *CI/CD* has become broadly available in well documented fashion when git hosting powerhouses GitHub and GitLab introduced their flavors of it: [GitHub Actions])(https://docs.github.com/en/actions) and [GitLab CI](https://docs.gitlab.com/ee/ci/). In addition services like [Circle CI](https://circleci.com/) offer this toolchain independently of hosting git repositories.
 
 Users of these platforms can upload a simple textfile that follows a name convention and structure to trigger a step based toolchain based on an event. An example of an event may be the push to a repository's main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server -- all triggered by simple push to master. One particularly cool thing is, that there multiple services who allow to run the testing on their servers using container technologies. This leads to great variety of setups for testing. That way software can easily be tested on different operating systems / environments. Also the mentioned website rendering approach mentioning in the previous section as a potential CI/CD application. 
 
 
-Here is a simple example of a *.gitlab-ci.yml* configuration that builds and tests a package and deploys it. It's triggered on push to master:
+Here is a simple example of a *.gitlab-ci.yml* configuration that builds, tests a package before deploying it. It's triggered on push to your main branch:
 
 ```
 stages:
@@ -74,11 +88,36 @@ script:
 For more in depth examples of the above, [Jim Hester's talk on GitHub Actions for R](https://www.jimhester.com/talk/2020-rsc-github-actions/) is a very good starting point.
 
 
-The other automation tool I would like to mention is [Apache Airflow](https://airflow.apache.org/) because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to it as [cronjobs](https://en.wikipedia.org/wiki/Cron) on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other log and reporting features worth a lot when maintaining reocurring processes. 
+## Cron Jobs
+
+Named after the UNIX job scheduler *cron*, a cron job is a task that runs periodically at fixed times. 
+Pre-installed in most LINUX server setups, data analysts often use cronjobs to regularly run batch jobs on remote servers. Cron jobs use a funny syntax to determine when jobs run. 
+
+```sh
+#min hour day month weekday
+15 5,11 * * 1 Rscript run_me.R
+```
+
+The first position denotes the minute mark at which the jobs runs - in our case 15 minutes after the new hour started. The second mark denotes hours during the day – in our case the 5th and 11th hour. The asterisk * is a wildcars expression running the job on every day of the month and in every month throughout the year. The last position denotes the weekday, here we run our job solely on Mondays.
+
+More advanced expressions can also handle running a job at much shorter intervals, e.g., every 5 minutes.
+
+```sh
+*/5 * * * * Rscript check_status.R
+```
+
+To learn and play with more expressions check [crontab guru](https://crontab.guru/). If you have more sophisticated use cases, like overseeing a larger amount of jobs or execution on different nodes consider using [Apache Airflow](https://airflow.apache.org/) as workflow scheduler. 
+
+
 
 
 
 ## Workflow Scheduling: Apache Airflow
+
+The other automation tool I would like to mention is [Apache Airflow](https://airflow.apache.org/) because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to it as [cronjobs](https://en.wikipedia.org/wiki/Cron) on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other log and reporting features worth a lot when maintaining reocurring processes. 
+
+
+
 
 - cronjobs
 - MWAA
