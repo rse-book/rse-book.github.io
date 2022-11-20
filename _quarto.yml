@@ -33,9 +33,11 @@ format:
   # pdf:
   #   documentclass: krantz
   #   pdf-engine: pdflatex
-  #   toc: false
+  #   toc: true
   #   keep-tex: true
   #   lof: true
   #   lot: true
   #   fontsize: 12pt
+  #   hyperrefoptions: 
+  #     - linktoc=none
     
