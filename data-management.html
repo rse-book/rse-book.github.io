@@ -329,17 +329,17 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>multi_ts <span class="ot">&lt;-</span> <span class="fu">ts</span>(d, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">1</span>), <span class="at">frequency =</span> <span class="dv">4</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>              Var1      Var2     Var3
-2000 Q1  0.2617785  9.288970 30.06576
-2000 Q2  0.1183846 10.698801 29.16410
-2000 Q3  0.1697917  8.212138 29.86349
-2000 Q4 -1.8887090 10.746545 27.97999
-2001 Q1  0.9919948  8.501134 31.50225
-2001 Q2  1.9906449  9.354420 29.56696
-2001 Q3 -1.0310314  8.007709 31.14549
-2001 Q4 -1.1073727 10.670990 30.56001
-2002 Q1 -0.9894805  9.582986 30.29280
-2002 Q2 -0.7424048  9.836055 29.70098</code></pre>
+<pre><code>                Var1      Var2     Var3
+2000 Q1 -0.553825808  9.928785 32.04131
+2000 Q2  0.753683063 11.063691 29.48681
+2000 Q3  0.047050802 10.106099 29.63309
+2000 Q4  0.560446684  9.483104 30.26283
+2001 Q1  1.682103802  9.287202 27.84355
+2001 Q2 -1.220814662 10.808274 29.04588
+2001 Q3  0.812989888  8.391216 29.25218
+2001 Q4  0.004894755 10.554904 31.12424
+2002 Q1  0.501648646 10.951492 29.65601
+2002 Q2  1.190525783 10.080727 30.90366</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -350,22 +350,22 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tsbox)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      id       time      value
- 1: Var1 2000-01-01  0.2617785
- 2: Var1 2000-04-01  0.1183846
- 3: Var1 2000-07-01  0.1697917
- 4: Var1 2000-10-01 -1.8887090
- 5: Var1 2001-01-01  0.9919948
- 6: Var1 2001-04-01  1.9906449
- 7: Var1 2001-07-01 -1.0310314
- 8: Var1 2001-10-01 -1.1073727
- 9: Var1 2002-01-01 -0.9894805
-10: Var1 2002-04-01 -0.7424048
-11: Var2 2000-01-01  9.2889697
-12: Var2 2000-04-01 10.6988007
-13: Var2 2000-07-01  8.2121378
-14: Var2 2000-10-01 10.7465451
-15: Var2 2001-01-01  8.5011336</code></pre>
+<pre><code>      id       time        value
+ 1: Var1 2000-01-01 -0.553825808
+ 2: Var1 2000-04-01  0.753683063
+ 3: Var1 2000-07-01  0.047050802
+ 4: Var1 2000-10-01  0.560446684
+ 5: Var1 2001-01-01  1.682103802
+ 6: Var1 2001-04-01 -1.220814662
+ 7: Var1 2001-07-01  0.812989888
+ 8: Var1 2001-10-01  0.004894755
+ 9: Var1 2002-01-01  0.501648646
+10: Var1 2002-04-01  1.190525783
+11: Var2 2000-01-01  9.928785138
+12: Var2 2000-04-01 11.063690850
+13: Var2 2000-07-01 10.106099002
+14: Var2 2000-10-01  9.483103886
+15: Var2 2001-01-01  9.287202023</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
