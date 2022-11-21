@@ -10,23 +10,21 @@ you can password protect the authentication process. Doing so buys you time to r
 
 Step one en route to log in like a grown up, is the create an RSA key pair. Github has a [1-2-3 type of manual](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to get it done. Nevertheless, I would like the R Studio (Server) specific way here. 
 
-1. Login to https://teaching.kof.ethz.ch/ (or use your local R Studio Desktop)
+1. Login to your Posit Workbench, RStudio Server or start your Desktop RStudio IDE. 
 2. Go to *Tools* -> *Global Options* -> *Git/SVN*
 3. Hit Create RSA KEY (When you some crazy ASCII art reminiscant of a rabbit, it's just ok.)
 4. Click 'View Public Key' 
 5. Copy this key to the your clipboard. 
+6. You can paste the key you obtained to your Github settings or put it into your server's authorized keys file. 
+7. Doing so allows your SSH agent to clone and interact with remote git repositories via SSH or log in to a server if your user is allowed to use a login shell by the server.  
 
 <img src="images/rsa.png">
 <div class="caption-left">The R Studio GUI is an easy way to create an RSA Key Pair.</div> 
 
-6. You can paste the key you obtained to your Github settings or put it into your server's authorized keys file. 
 
-Congrats you may log in now! 
+## Application Programming Interfaces (APIs) 
 
-
-## Consuming APIs 
-
-An Application Programming Interface (API) is nothing else but an interface to facilitate machine to machine communication. An interface can be anything, any protocol or pre-defined process. But of course there are standard and not-so-standard ways to communicate. Plus some matter-of-taste type of decisions. But security and standard compliance are none of the latter. 
+An Application Programming Interface (API) is an interface to facilitate machine to machine communication. An interface can be anything, any protocol or pre-defined process. But of course there are standard and not-so-standard ways to communicate. Plus some matter-of-taste type of decisions. But security and standard compliance are none of the latter. 
 There are standards such as the popular, URL based REST that make developers'
 lives a lot easier -- regardless of the language they prefer. 
 
@@ -48,19 +46,13 @@ tsplot(tsl)
 
 ```
 
-
-
-### Example 2: The {OECD} R package 
-
-Also large organizations like the Organization for Economic Co-operation and development (OECD) provide API wrappers to facilitate data consumption. 
-
 ### Build Your Own API Wrapper
 
 Here's an example of a very simple API wrapper that makes use of the 
-Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based on 
-a simple search. 
+Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based on  a simple search. 
 
-```{r, eval=FALSE, warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE}
+library(jsonlite)
 # Visit this example query
 # https://collectionapi.metmuseum.org/public/collection/v1/search?q=umbrella
 # returns a json containing quite a few ids of pictures that were tagged 'umbrella'
@@ -97,55 +89,117 @@ search_met <- function(keyword){
 You can use these ids with another [endpoint]() in order to receive the pictures
 themselves.
 
-```{r, eval=FALSE,warning=FALSE,message=FALSE}
+```{r,warning=FALSE,message=FALSE}
 download_met_images_by_id <- function(ids,
-                                      download = "primaryImage") {
+                                      download = "primaryImage",
+                                      path = "met") {
   # Obtain meta description objects from MET API
   obj_list <- lapply(ids, function(x) {
     req <- download.file(sprintf("https://collectionapi.metmuseum.org/public/collection/v1/objects/%d",
-                   x),destfile = "temp.json")
+                                 x),destfile = "temp.json")
     fromJSON("temp.json")
   })
-
+  
+  
+  public <- sapply(obj_list, "[[", "isPublicDomain")
+  
+  
   # Extract the list elements that contains
   # img URLs in order to pass it to the download function
   img_urls <- lapply(obj_list, "[[", download)
+  
   # Note the implicit return, no return statement needed
   # last un-assigned statement is returned from the function
-  lapply(seq_along(img_urls), function(x) {
-    download.file(img_urls[[x]],
-                  destfile = sprintf("data/image_%d.jpg", x)
-    )
-  })
+  for (x in unlist(img_urls[public])){
+    download.file(x, destfile = sprintf("%s/%s", path, basename(x)))
+  }
+  
+  
+  message(
+    sprintf("The following images ids were not public domain and could not be downloaded:\n %s",
+            paste(ids[!public], collapse = ",")
+  ))
+  
+  message(
+    sprintf("The following images ids were public domain and could be downloaded to\n %s: %s",
+            path, paste(ids[public], collapse = ",")
+  ))
+  
 }
 
-
-# Step 4: Use the Wrapper
-umbrella_ids <- search_met("umbrella")
-umbrella_ids
-download_met_images_by_id(umbrella_ids$objectIDs[2:4])
 ```
 
+Finally, execute the functions: first, search for images with umbrellas, second, download these images by id.
+Note that even if I do not display the image itself in the book to err on the side of caution w.r.t. to image property rights, the below code shows availability is checked, and an image is actually downloaded to a previously created folder called *met*. 
 
+
+```{r}
+# Step 4: Use the Wrapper
+umbrella_ids <- search_met("umbrella")
+umbrella_ids$total
+head(umbrella_ids$objectIDs)
+download_met_images_by_id(umbrella_ids$objectIDs[30:33])
+dir("met")
+
+```
+
+Wonder what's really on the image? Umbrella or not :) ? Try to reproduce the this example or come up with your own wrapper from scratch ... 
 
 
 ## Create Your Own API
 
-Being able to expose data is a go-to skill in order to make research reproducible and credible. Especially when data get complex and require thorough description in order to remain reproducible for others, a programmtic, machine readable approach is the way to go. 
+The ability to expose data is a go-to skill in order to make research reproducible and credible. Especially when data get complex and require thorough description in order to remain reproducible for others, a programmtic, machine readable approach is the way to go. 
 
 
 ### GitHub to Serve Static Files
 
-Exposing your data through an API is not something you would need a software engineer or an own server infrastructure for. Simply hosting a bunch of .csv spreadsheet alongside a good description (in separate files!!) on, e.g., GitHub for free can be an easy highly available solution to serve static files. 
+Exposing your data through an API is not something you would necessarily need a software engineer let alone an own server infrastructure for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub for free is an easy and highly available solution.
 
-The KOF High Frequency Economic Monitoring dashboard simply shares standardized .csv (data) and .json (description) files based on a Github. 
+The [swissdata project](https://github.com/swissdata) proposes an implementation of such an approach.
+The project transforms all sorts of datasets into .csv spreadsheets to contain a cleaned version of the data alongside .json files that contain the data descriptions. The [demo](https://github.com/swissdata/demo) describes the implementation in a greater detail and hands on fashion. 
+
+If you add a naming convention for your files to such an implementation, you already have a solid interface to a data science environment. 
+Consider the following simple R wrapper that downloads both data and metadata first and then reads the into R. (Alternatively, direct streaming would be possible, too.)
+
+```{r}
+library(jsonlite)
+download_swissdata <- function(dataset){
+  d_ext <- ".csv"  
+  m_ext <- ".json"
+  d <- sprintf("%s%s", dataset, d_ext)
+  m <- sprintf("%s%s", dataset, m_ext)
+  gh_url <- "https://raw.githubusercontent.com/swissdata/demo/master/data"
+  download.file(file.path(gh_url, d), d)
+  download.file(file.path(gh_url, m), m)
+}
 
 
-INSERT SCREENSHOT OF GITHUB HERE
+download_swissdata("ch_adecco_sjmi")
 
-To make it look at little niftier, the dashboard uses a quasar frontend to guide the human user, but it would not be necessary to have such a framework.
+```
 
-INSERT SCREENSHOT OF KOFDATA HERE
+Now, read the data from disk into your R session
+
+```{r}
+d <- read.csv("ch_adecco_sjmi.csv")
+head(d)
+
+```
+
+As well as the nested meta information. 
+JSON maps 1:1 to R lists.
+Hence both the on the on disk representation as well as the in-memory representation are equally well suited for nested data. 
+The below example shows a sub label element containing description in multiple languages. 
+
+
+```{r}
+m <- fromJSON("ch_adecco_sjmi.json")
+m$labels$idx_type$unw
+```
+
+
+>Note, standard GitHub repositories are not well suited to host larger files or binaries. Check out their file hosting offering or consider other services focused on files. 
+
 
 
 ### Simple Dynamic APIs
