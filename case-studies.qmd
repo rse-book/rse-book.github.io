@@ -204,23 +204,106 @@ m$labels$idx_type$unw
 
 ### Simple Dynamic APIs
 
-Even going past serving static files, does not require much software development expertise. 
-Thanks to frameworks such as express.js or the {plumbr} it easy to create an API that turns a URL into a server side action and returns a result. 
+<!-- A word on Swagger -->
 
-Assume you've installed node.js already, you can set up a simple API on your local computer just like this. 
+Even going past serving static files, does not require much software development expertise. 
+Thanks to frameworks such as express.js or the {plumbr} package in the R ecosystem, it is easy to create an API that turns an URL into a parameterized server side action.
+Before we look at one of those frameworks in greater detail, let's take a look at the two most common [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) GET and POST. 
+
+According to [Mozilla's defintion](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), the GET method "requests a representation of the specified resource.
+Requests using GET should only retrieve data" while POST "submits an entity to the specified resource, often causing a change in state or side effects on the server".
+Obviously, there are many other methods for the HTTP protocol, but the above two should help to understand the idea behind standard compliant REST web application programming interfaces.
+
+Let's assume you have a working [nodejs](https://nodejs.org/en/) Javascript runtime environment installed on your local development machine, so you can run javascript files outside of a web browser. 
+Such a setup mimicks the situation on webserver with nodejs installed. 
+Also, let's assume you have [npm](https://npmjs.com) installed as a package manager to facilitate installing node packages from the npm open source package registry. 
+
+First, create a folder `api`, go to freshly created directory and initiate a node package. 
 
 ```
 # run initialization in a dedicated folder
 mkdir api
 cd api
+mkdir public 
 npm init
 ```
 
-just sleep walk through the interactive dialog accepting all defaults. Once done, add install express using the npm package manager.
+just sleep walk through the interactive dialog accepting all defaults. This created a package.json file to keep track of dependencies and their package versions used in your protect. Once done, add express using the npm package manager. 
 
 ```
-npm install express --save
+npm install express
 ```
+
+Now, that we installed the javascript framework expressjs, we can use the framework to create an minimal web application that serves an API endpoint using the node runtime environment. 
+Consider a minimal hello-world example that does about the same as static file example of the previous action: 
+
+```js
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.use('/static', express.static('public'))
+
+
+app.listen(port, () => {
+  console.log(`devOps carpentry demo app listening on port ${port}`)
+})
+
+```
+
+The first `app.get` route simply maps the root, in our case `localhost:3000/` to the output of the `res.send` call. 
+The second `app` command serves the content of the `public` folder to visitor's of `localhost:3000/static`. 
+So if `api/public/` contained a picture of pretty Johnny, this would be served at `localhost:3000/static/johnny.png`.
+
+
+![](images/express.png)
+
+Now let us make use of server side features beyond simply serving static files and add the need for an API key to get the picture. 
+
+```js
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.use('/static', (req, res, next) => {  
+  var key = req.query['api_key'];
+  if (!key) res.send('api key required');
+  if (apiKeys.indexOf(key) === -1)  res.send('eh-eh, wrong key.');
+  req.key = key;
+  next();
+})
+
+
+// NOTE THAT this is only a demo example (!)
+// DO NOT use insecure passwords in production.
+// Make sure to find better ways to secure your keys! 
+// also transferring keys in URLs via GET is not optimal, 
+// consider using an upfront authentication method
+var apiKeys = ['abc','123'];
+app.use('/static', express.static('public'))
+
+app.listen(port, () => {
+  console.log(`devOps carpentry demo api listening on port ${port}`)
+})
+
+```
+
+We simply added a mount point using `app.use` (instead of `app.get`) which makes sure than everything past `/static` is affected by the logic added to this mount. 
+So our `Hello World!` greeting is out there for anybody to see while displaying the picture whose URL starts with `/static` needs an API key.
+Though this is only one, admittedly made up example of mapping URLs and parameters to functions via HTTP(S), it hints at possibilities of dynamic APIs from database queries to web forms and many other applications. 
+Frameworks help even inexperienced developers to comply with the rules of the REST standard, making it easy to write code to consume data from our API. 
+
+### Swagger API Documentation
+
+<!-- https://idratherbewriting.com/learnapidoc/pubapis_swagger.html -->
 
 
 ## A Minimal Webscraper: Extracting Publication Dates
