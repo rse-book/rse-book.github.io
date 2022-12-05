@@ -299,10 +299,13 @@ app.listen(port, () => {
 We simply added a mount point using `app.use` (instead of `app.get`) which makes sure than everything past `/static` is affected by the logic added to this mount. 
 So our `Hello World!` greeting is out there for anybody to see while displaying the picture whose URL starts with `/static` needs an API key.
 Though this is only one, admittedly made up example of mapping URLs and parameters to functions via HTTP(S), it hints at possibilities of dynamic APIs from database queries to web forms and many other applications. 
-Frameworks help even inexperienced developers to comply with the rules of the REST standard, making it easy to write code to consume data from our API. 
+The above example shows also how frameworks like [express.io]() or [plumber]() facilitate the definition of machine-to-machine interfaces even for less experienced developers. 
+The impact of frameworks is not limited to the technical implementation though. 
+Developers benefit from comprehensive approaches like Swagger and the OpenAPI specification during the conceptual part of creating machine to machine interfaces. 
 
-### Swagger API Documentation
+ 
 
+<!-- ### Swagger API Documentation -->
 <!-- https://idratherbewriting.com/learnapidoc/pubapis_swagger.html -->
 
 
@@ -366,6 +369,103 @@ Yay! We got everything we wanted. Ready to process.
 
 
 ## Automate Script Execution: A GitHub Actions Example 
+
+Containerization as described in the infrastructure section has standardized virtual hardware into building blocks that are available across different platforms and providers. 
+This development has lead to a wide array of offerings that allow us to run our code in a language agnostic environment. 
+In addition to the major cloudplatforms, git providers that offer a CI/CD toolchain are a good option to run our code on a remote container. 
+Though originally designed mostly for build automation, CI/CD such as GitHub actions can be used to automate a variety of tasks by running them on a container. 
+Consider the following minimal R script that we will run on GitHub actions. 
+
+```{r, eval=FALSE}
+#!/usr/bin/env Rscript
+
+library(knitr)
+knit("README.Rmd")
+
+```
+
+
+The script uses {knitr} to render an RMarkdown document to a markdown document that is automatically rendered to pretty HTML file when pushed to a repository hosted on GitHub.
+
+>Notice the common *shebang* comment that defines the executable for batch execution of a script file -- in this case *Rscript* to run R outside of an interactive R session. 
+
+Embedded in a bit of descriptive text before and after the code, the main code chunk of the .Rmd template file is equally straight forward: 
+
+```{r, eval=FALSE}
+library(kofdata)
+library(tsbox)
+tsl <- get_time_series("ch.kof.barometer")
+ts_plot(tsl$ch.kof.barometer)
+cat(sprintf("last update on %s.", as.character(Sys.Date())))
+```
+
+We make use of the {kofdata} API wrapper to obtain data from the KOF Data API and use the {tsbox} to visualize the time series data we received. 
+Last but not least we print the system date of the runtime environment -- in our case the GitHub Actions docker container. 
+Running the the README.**Rmd** file yields two artifacts: a README.**md** file and a .png graph located in a `figure/` folder. 
+Because the above runs inside a temporary single purpose container, our workflow needs to make sure those artifacts are stored persistently. 
+
+The below .yaml file defines the environment and workflow for GitHub Actions.
+When located properly according to GitHub's convention, i.e., in a hidden `github/worflows` folder, GitHub identifies the .yanl file as input and allows to execute the worflow.
+(Standalone build tools like woodpecker or other integrated CI/CD tools like Gitlab CI/CD use very similar workflow defintions). 
+
+```yaml
+# Simple data transformation workflow
+name: KOF Economic Barometer
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+on:
+  workflow_dispatch
+
+jobs:
+  kof:
+    runs-on: ubuntu-latest
+    container: rocker/verse
+    steps:
+      - uses: actions/checkout@v3
+      - run: git version
+      - run: rm -rf README.md
+      - run: |
+          Rscript -e 'install.packages(c("kofdata","tsbox"))'
+          chmod +x demo_gha.R
+          ./demo_gha.R
+      - run: ls -lah
+      - run: |
+          git config --global --add safe.directory /__w/h4sci-gha-demo/h4sci-gha-demo
+          git config --global user.name "Matt Bannert"
+          git config --global user.email "mbannert@users.noreply.github.com"
+          git add figure README.md
+          git commit -m "Update README.md via GH Actions"
+          git push
+
+```
+
+First of all, the a below file gives our workflow a name to identify the workflow among other workflows defined within the same repository. 
+The `on` block defines what triggers the workflow.
+The `workflow_dispatch` option is a rather uncommon trigger as it simply means the workflow can be triggered by pressing a button in GitHub' Web GUI.
+Cronjob based triggers or triggers based on git actions such as pushes to a certain branch are more common as we are looking to avoid interaction at runtime. 
+Inside the job definitions itself, we first define the operating system of the host and the docker image in which our process should run. 
+
+Then, walk through the single steps of our workflow. 
+Notice that `actions/checkout@v3` is different from the other steps because it is taken from GitHub's market place for actions.
+Instead of writing standard operations, namely checking out the git repository we're working with to the container that runs the action, from scratch, we use the market place action for that. 
+Be aware though that there is tradeoff between convenience and transparency. 
+When I was teaching this year and wanted to recycle an example from the previous year it was not all that convenient. 
+Only one year later my example that leaned heavily on market place actions was not working anymore. 
+Worse than that it was also relatively hard to debug because I had to deal with the inner workings of a dependency heavy implementation that I would not have implemented this way. 
+If we look at the above steps after the checkout action, we see a list of simple steps that are easy to read:
+first, simply print the git version to make sure git is working inside the container and we know its version in case we need to debug. 
+Second we remove the README.md file we have just checked out. 
+This file is going to be replaced anyway and we want to avoid any rights conflicts overwriting the file. 
+Then we run R in batch to install two more specific packages to the R environment running inside the container. 
+Because we use a pre-built tidyverse images from the rocker project we do not have to install R itself and many common packages. 
+We continue to use the chmod linux command to change the access rights of our minimal R script.
+In combination with the *shebang* comment inside the file, we can directly execute the .R file with the `./` prefix because it know which executable to use to run it. 
+Finally we take a look at the content of the current folder before we commit and push all the files we generated back to our GitHub repository. 
+After the process is done, the container will stopped and removed. 
+
+>Note that we can see all the output of the process from the GitHub actions menu on our repository's website. 
+This is why it's useful to print outputs of intermediate steps. 
 
 
 ## Choropleth Map: Link Data to a geojson Map File {#sec-map}
