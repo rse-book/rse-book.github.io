@@ -773,41 +773,29 @@ from left to right: To Do, Doing, Under Review, Done. (you can also customize th
 <img src="images/swim.png">
 <div class="caption-left">GitHub's web platform offers swimlanes to keep a better overview of issues being worked on.</div>
 
-```{, type='note'}
+
 **Tipp**: 
 No lane except 'Done' should contain more than 5-6 issues. 
 Doing so prevents clogging the lanes at particular stage which 
 could potentially lead to negligent behavior, e.g., careless reviews. 
 
-```
 
 
-<!--
-## Articles, Presentations, Reports and Websites /w Markdown and RMarkdown
+## Parallel Computation
 
-Working with data asks for reproducible reports, presentations and articles that can be rendered to accessible, screenreader friendly online output as well as more traditional, print minded PDF output. 
-This case study explains how to create documents like this book, a presentation for a conference or simple, static reporting minded websites.
+The idea of having multiple workers at your disposal to fix your math problem even quicker than one smart worker seems equally appealing to 3rd graders and researchers. 
+Very much like in school, the ability to assess whether getting help in the first place is worth the overhead and what type of help to get, is the most important skill.
+The classical challenge where parallel computation using multiple cores really helps are throughput problems. I.e., problems where your tasks are independent of each other.
+Yet, it may not be clear upfront if the number and computation time of your single tasks justifies the overhead of letting your program know it should split computations across cores and manage memory accordingly. 
+Also, consider that processes can be turned parallel at different levels: you could simply use your local machine's cores and a parellization implementation such as R's {future} or {parallel} to parrelize locally. 
+Or you could go parallel at a machine or container level. 
+While the former is easier as it requires less infrastructure knowledge it is limited by the resources of your local machine. 
+Of course, if you have access to a HPC cluster, this may not be a disadvantage at all (depending how your cluster balances load and manages access to resources). 
+In any case you should make a clear decision at which level you go parallel and avoid nested parallelization. 
 
-*Markdown* is simple language based approach that can handle all of these tasks and allows for automation at the same time. Automation of document rendering does not only save time, it also ensures reproducibility across different machines. The name *Markdown* is a wordplay as *Markdown* is a simple mark-up language, similar to HTML or LaTeX but with a much much simpler syntax. 
-*Markdown* helps users to format plain text using reserved characters. For example, a set of ** at the beginning and at the end of a word, sentence or paragraph lets everything wrapped in between these double asterisk appear **bold**, wrapping text in a single * asterisk makes the wrapped text *italic*. *Markdown* has become so ubiquitous that websites such as GitHub, discussion boards or Q&A sites allow users who post online to use *Markdown* to format their text. 
-
-Various rendering engines can render *Markdown* into HTML, PDF or even MS Word output. Often [pandoc](https://pandoc.org/) is a popular driver as a universal document converter under the hood. Programming languages such as Python and R have embraced *Markdown* based reporting to mingle descriptive plain text with code in order to execute the code at render time and fit tables, figures and even animations into reports. [Jupyter notebooks](https://jupyter.org/) is an interactive Python based example. In the R ecosystem the approach is slightly different and is called *knitting* which is why the corresponding package is called [knitr](https://yihui.org/knitr/). In the meantinem there is a plethora of packages (with great documentation that I won't c&p here but refer to) for different flavors of output: {[bookdown]()} for online books such as this one, {[pkgdown]()} for documenting your own R package or {[blogdown]()} to run your own markdown based blog (hosted for free on, e.g., GitHub). In addition to these "main diagonal" packages, there smaller gems such as the {[postcard]()} package to get a mini personal website up in a few minutes. 
-
-- [*Markdown* source of this particular site that you are reading here]().
-- [*Markdown* source of a presentation slides]()
-
-
-
-
-
-## Spatial Visualization with Leaflet and Open Streetmap
-
-
-
-## Basic Parallel Programming
-
-Here's an R example using the {microbenchmark} package to check the effect parallel computing on running seasonal adjustment of multiple time series. First let's set up some demo data: We simply create a list with 1000 elements each of which is the same
-monthly time series about airline passengers from 1949-1960. 
+Let's consider the following example of a simple local parallelization including a performance benchmark. 
+The following R example uses the {microbenchmark} package to check the effect parallel computing on running seasonal adjustment of multiple time series.
+Before we start with the actual example, let's create some demo data: We simply create a list with 1000 elements each of which is the same monthly time series about airline passengers from 1949-1960. 
 
 ```{r}
 data("AirPassengers")
@@ -818,17 +806,45 @@ for(i in 1:1000){
 ```
 
 Now, let's load the {seasonal} package and perform a basic seasonal adjustment
-of each of these time series. The first statement performs 1000 adjustments 
+of each of these time series.
+The first statement performs 1000 adjustments 
 sequentially, the second statement uses parallel computing to spread computations across my machines multiple processors. The key take away from this exercise is not the parallel computation itself, but the ability to set up a benchmark. 
 
 ```{r}
 library(seasonal)
 library(microbenchmark)
 
+m <- list()
+n <- list()
+
+no_parallel <- function(li, s){
+  out <- list()
+  for(i in s) out[[i]] <- seas(li[[i]])
+  out
+}
+
+with_parallel <- function(li, s){
+  out <- list()
+  # TODO
+}
+
+
+
+
+microbenchmark(
+    no_parallel = no_parallel(tsl, 1:10),
+    with_parallel = no_parallel(tsl, 11:20),
+    times = 1
+)
+
+
+
 
 ```
 
-Obviously the absolute computation time depends on the hardware used, but also the operating system can be an important factor depending on the task at hand. Even though the combination of algorithm, hardware, operating system and software used for the computation can make assessment a daunting, complex task, easily venturing into expert realm, a basic understanding and a ballpark relation between multiple approaches can carry you a long way. 
+Obviously the absolute computation time depends on the hardware used, but also the operating system can be an important factor depending on the task at hand.
+Even though the combination of algorithm, hardware, operating system and software used for the computation can make assessment a daunting, complex task, easily venturing into expert realm, a basic understanding can carry you a long way.
+Awareness of different approaches and basic benchmarking skills do not help to get a ballpark estimate of the costs but also given an idea of what expertise needs to be added to your team. 
 
 
--->
+
