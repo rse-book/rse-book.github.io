@@ -337,35 +337,72 @@ If your are not happy with the 'beyond-the-scope-of-this-book' argument, bloggin
 
 ## Non Technical Aspects of Managing Data
 
-The fact that we can do more data work single handedly than ever before does not only equate to more options. It also means we need to be aware of new issues and responsibilities.
+The fact that we can do more data work single handedly than ever before does not only equate to more options.
+It also means we need to be aware of new issues and responsibilities.
+Those responsibilities range from leading by example when it comes to etiquette and ethical aspects to sticking to privacy rules and complying with security standards. 
+In addition normative restrictions that come with handling data, the options and choices of data dissemination are a realm of its own. 
+Just like software publications you should not just 'drop' data without a license and instructions on accetable use of the data. 
 
 
 ### Etiquette
 
+Just because content is publicly avaiable on a website, it does not automatically mean that bulk downloads, aggregation and re-publishing are ok.
 For example, the ability to scrape a website daily and doing so with good intent for the sake of science does not mean a website's AUP (Accetable Use Policy) allows to systematically archive its content. 
 
 >Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. --CRAN description of the polite R package.
 
-In other words, the new type of researcher discussed in this book needs awareness for potential legal consequences and online community etiquette, and ultimately the ability to choose an approach. The {polite} R package quoted above is an example for an alternative approach that favors etiqutte over hiding IP addresses to avoid access denial. 
+In other words, the new type of researcher discussed in this book needs to be aware of potential legal and social consequences. The {polite} R package quoted above is an example for an alternative approach that favors etiqutte over hiding IP addresses to avoid access denial. 
 
 
 ### Privacy 
 
-- aggreagtion level, assess the sensitivity of data, anonymize data
-
+Privacy in data science is a complex issue and could legitamtely fill a book on its own.
+Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entrypoint to the matter. 
+When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. 
+It is important to understand that exposure does not stop at names. 
+A single extra ordinary feature or an exotic combination of features can identify an individual within a dataset or at least expose a group. 
+This is why merging merging multiple dataset may also cause privacy concerns when datasets where not created to be merged in the first place and/or individuals were not aware that merging was possible. 
+So what we can we as researchers learn from here, except from concerns and further complication of our work? 
+First, licenses and usage policies are a service to users of the data. 
+Second, awareness of what is sensitive data is a skill that is valuable to have on a team. 
+That being said management of in-depth knowledge is rather easy to organize in centralized fashion. 
+Most universities and larger corpersations will have an officer to run these things by. 
 
 
 ### Security
 
-- do not store passwords
-- tokens, RSA Keys 
-- access control easier via databases. 
+"I ain't got nothing to hide. I don't care about people reading my stuff." 
+I've heard similar 'arguments' a zillion times. 
+People who argue like that do not only endanger their environment, they contribute to a less secure internet at large as they leave their device open to contribute to malicious activity. 
+
+It does not have to be you who has been trusted to work with data that qualify as senstive. 
+Someone on your team or within your network might have been and that person may trust you more than a stranger and be less vigilant when harmful actions are executed your name. 
+This is why you are *obliged* to care about security. 
+As in do *NOT* store your credentials in your scripts.
+As in passwords are *NOT* part of your analysis. 
+You may accidentally push your password to GitHub where it is not only publicly available but also hard to delete for beginners. 
+Make sure to choose secure passwords.
+Use a password manager so the passwords do not need to be your cats name for you to remember. 
+Use a password manager so you can afford to not have the same passwords for multiple applications. 
+Use a password manager so you can afford to change your passwords. 
+Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username / password combination. 
+This is also a good way to connect to a remote server via ssh. 
+
+In addition to above brainy smurf advice, let me mention security as a reason to consider using a database to manage and archive your data for the long haul. 
+Enterprise level databases allow for granular access management and help to stay ahead of users and their rights with respect to your database's entries. 
 
 
 ### Open Data 
 
-- publicly funded data 
+Open Data refers to publicly available data that are available free of license costs and in machine readable fashion. 
 
+>“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefition.org
+
+Because of approaches such as the Swiss governments' "open by default", open government data (OGD) has become a common form of open data. 
+The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD project out of public administration at different levels. 
+From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. 
+Whether you think about the conditions of your own data publications or about a source to help you with your research project, make sure to consider open data. 
+Think about the ability of different envrironments and systems to work together. This interoperability 
 
 
 
