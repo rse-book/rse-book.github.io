@@ -399,10 +399,14 @@ Open Data refers to publicly available data that are available free of license c
 >“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefition.org
 
 Because of approaches such as the Swiss governments' "open by default", open government data (OGD) has become a common form of open data. 
-The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD project out of public administration at different levels. 
+The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. 
 From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. 
-Whether you think about the conditions of your own data publications or about a source to help you with your research project, make sure to consider open data. 
-Think about the ability of different envrironments and systems to work together. This interoperability 
+pendata initiatives of your country as well as major international organizations will help you to create interoperable datasets.
+In addition, open data organizations provide you with a publication channel for your data or with data catalog that stores the data description. 
+Initiatives like [SDMX (Statistical Data and Meta Exchange)](https://sdmx.org/) aim to improve exchange of data *and* data descriptions. 
+Their XML based format has become an international standards which lead to the implementation of SDMX read and write routines in statistical software.
+Whether you think about the conditions of your own data publications or about a source for own research project, make sure to consider open data. 
+
 
 
 

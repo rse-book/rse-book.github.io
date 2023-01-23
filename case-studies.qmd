@@ -324,14 +324,14 @@ Even though KOF Swiss Economic Institute offers a REST API to consume publicly a
 
 Let's take a look at our starting point, the media releases sub page, first. 
 
-<img src="docs/agenda.png">
+<img src="images/agenda.png">
 
 The website looks fairly simple and the jackpot is not hard, presented in a table 
 right in front of us. Can't you smell the data.frame already? 
 
 Right click the table to see a Chrome context window pop up. Select *inspect*. 
 
-<img src="docs/inspect.png">
+<img src="images/inspect.png">
 
 
 Hover over the blue line in the source code at the bottom. Make sure the selected line marks the table. Right click again,
@@ -797,7 +797,7 @@ Let's consider the following example of a simple local parallelization including
 The following R example uses the {microbenchmark} package to check the effect parallel computing on running seasonal adjustment of multiple time series.
 Before we start with the actual example, let's create some demo data: We simply create a list with 1000 elements each of which is the same monthly time series about airline passengers from 1949-1960. 
 
-```{r}
+```{r, seasonal1}
 data("AirPassengers")
 tsl <- list()
 for(i in 1:1000){
@@ -809,7 +809,7 @@ Now, let's load the {seasonal} package and perform a basic seasonal adjustment
 of each of these time series.
 The first statement performs 100 adjustments sequentially, the second statement uses parallel computing to spread computations across my machines multiple processors. 
 
-```{r}
+```{r, seasonal2}
 library(seasonal)
 library(parallel)
 library(microbenchmark)
@@ -834,7 +834,8 @@ out <- microbenchmark(
     with_parallel_10 = with_parallel(tsl, 1:10),
     no_parallel_100 = no_parallel(tsl, 1:100),
     with_parallel_100 = with_parallel(tsl, 1:100),
-    times = 5
+    times = 5,
+    unit = "seconds"
 )
 
 d <- summary(out)
@@ -850,14 +851,95 @@ kable(d)
 ```
 
 As expected given the perfect independence of the tasks from each other, performance gains are quite substantial (~5.5 times faster) for the above example, though not perfect (on my 8-core machine).
-Advanced parallel implementations and deeper dives into the way how different processors can help to optimize efficiency here.
+Advanced parallel implementations and deeper dives into the way different processors work may further optimize efficiency here.
 
-Yet, the key take away from the above exercise is not the parallel computation itself, but the ability to assess it. 
-Benchmarking does not only help to get a ballpark estimate of the costs, it a gives you an idea whether the gains from a parallel approach are worth the hassle. 
+Yet, the key take away from the above exercise is not the parallel computation itself, but the ability to the need to go parallel and how. 
+Benchmarking does not only help to get a ballpark estimate of the costs should you go outside for more computational power, it a gives you an idea whether the gains from a parallel approach are worth the hassle. 
 In other words, of course a computation running four to five times faster than before sounds spectacular, but what if the total run time is less than a few minutes either way? 
 Development time, particularly for newcomers, is very very likely higher than a few minutes. 
 Plus, going parallel jeopardizes your cross-platform compatbility depending on the parallel implementation you use.
 
-Another good use of benchmarking is to run 
+Another good use of benchmarking is to run a few smaller case experiments to get an idea of how performance gains evolves when we throw more work at our system. 
+Unlike the below example, performance gains do not necessarily have to be linear. 
+Visualization can give us a better idea. 
 
+
+```{r, messages=FALSE, warnigs=FALSE}
+library(ggplot2)
+library(viridis)
+vizframe <- d[,c(1,5)]
+vizframe$iterations <- as.character(c(10,10,100,100))
+vizframe$parallel <- c("no","yes","no","yes")
+names(vizframe)[2] <- "seconds"
+
+gg <- ggplot(
+  vizframe[,-1],
+ aes(fill = parallel, 
+     y = seconds,
+     x = iterations))
+gg + 
+  geom_bar(position = "dodge",
+           stat = "identity") + 
+  coord_flip() + 
+  scale_fill_viridis(discrete = T) +
+  theme_minimal() +
+  ggtitle("Comparison of Computation Time (shorter bar is faster)")
+
+
+
+```
+
+
+## Good Practice
+
+Even though I cannot really aim at a comprehensive section on the *Do's and Dont's*, I would like to share a few common sense practices here.
+
+
+## Manage Dependencies at the Project Level
+
+Javascript projects do it in their lock files, Python projects have their requirements.txt files and R has the {renv} package. 
+All these scripting language *can* keep track of the exact library versions used in a project. 
+
+```{bash, eval=FALSE}
+pip freeze | grep -v "pkg-resources" > requirements.txt
+```
+
+The above pip command extracts dependencies from a python projects folder and write it to a requirements file. 
+Nevertheless, because there is no build process, scripting languages do not enforce keeping track of library versions necessarily. 
+And even though it is common sense in engineering, it took data science, R in particular quite a while to really establish going the extra mile and keep track of a projects dependencies. 
+For many, an R *project A* simply loads a few libraries, does its job, while another *R project B* loads its libraries and does another job -- all on the same local machine. 
+After a few more projects, we decide upgrade R to ne next minor release, e.g., go from 4.1. to 4.2. which cause re-installing all the extensions packages. 
+It is a very safe bet that at least one of the packages we use gets its own update (or two) between two R minor releases. 
+When all projects share the same library, your project that has just started after the latest package release may benefit from the latest feature of a package while another project might break because its code is affected by a breaking change. 
+Given that most packages are not large in size, I encourage everyone starting a programming with data project to embrace project based library version management early on. 
+
+
+## Do NOT Set Static Working Directories in Your Code
+
+Like `C:\Users\MatthiasBannert\My Documents\R Course\`.
+I see more than one thing that has you set of for trouble before you even started. 
+Please
+
+- resist that visceral urge to define the project root folder somewhere at the beginning of yoour code, because your collaborators usually do not have a directory on their machine that bears your name. 
+That might not even use the same operating system. 
+And before you ask, simply putting the a neutrally named folder on shared NAS storage or service such as dropbox is not really better. 
+Doing 
+
+- Avoid spaces in folder and file names. 
+Though modern operating systems and most languages can handle spaces, you might need to escape certain characters and make a beginner's life much harder. 
+The same holds for umlauts and other hieroglyphical characters. Simple use lower case adn either kebap-case or snake_case. 
+
+- work with projects of your favorite IDE. 
+The idea of projects is to make a folder the document root 
+
+
+
+## Take Some Time Learn How to Play the 'Piano' 
+
+No need to become vim virtuoso (that's essentially Lang Lang status on a computer keyboard), but make sure to learn some basic shortcuts of your environment that help you avoid touching the mouse or trackpad. 
+
+
+
+
+If you are interested in a more throrough R specific collection take a look at Jenny Bryan's and Jim Hester's wonderful *What They Forget to Tell Us About R* book. 
 
