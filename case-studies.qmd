@@ -234,7 +234,7 @@ just sleep walk through the interactive dialog accepting all defaults. This crea
 npm install express
 ```
 
-Now, that we installed the javascript framework expressjs, we can use the framework to create an minimal web application that serves an API endpoint using the node runtime environment. 
+Now, that we installed the javascript framfework expressjs, we can use the framework to create an minimal web application that serves an API endpoint using the node runtime environment. 
 Consider a minimal hello-world example that does about the same as static file example of the previous action: 
 
 ```js
@@ -591,7 +591,10 @@ This case study does not intend to rewrite {shiny}'s great documentation or blog
 
 ### The Web Frontend 
 
+![Maybe I am late, but I look goood. Johny Bravo representing the frontend](images/johnny.png)
+<!--
 <img src="docs/johnny.jpg" alt="Maybe I am late, but I look goood. Johny Bravo representing the frontend" width=300>
+-->
 
 Stats & figures put together by academic researchers or business analysts are not used to spend a lot of time in front of the mirror. (Often for the same reason as their creators: perceived opportunity costs.)
 
