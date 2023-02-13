@@ -152,8 +152,10 @@ with DAG(
 
 ```
 
-The above code shows an example of a simple DAG that combines three strictly sequential tasks: 
+The above code shows an example of a simple DAG that combines three strictly sequential tasks. 
 Task *t1* depends on tasks *t2* and *t3*. 
+In this simple example, all tasks use the Airflow *BashOperator* to execute bash commands, but Airflow 
+provides plenty of other operators from its *PythonOperator*, to *Docker* or *Kubernetes* operators.  
 
 
 
