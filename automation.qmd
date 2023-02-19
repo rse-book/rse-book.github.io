@@ -109,7 +109,7 @@ DAGs can be one dimensional and fully seqeuential, but can also run tasks in par
 
 <!-- https://airflow.apache.org/docs/apache-airflow/stable/tutorial/pipeline.html -->
 
-```{python}
+```python
 from datetime import datetime, timedelta
 from airflow import DAG
 # Operators; we need this to operate!
@@ -148,7 +148,7 @@ with DAG(
         bash_command="cat date.txt & date",
     )
 
-    t1 >> t2 >> t3]
+    t1 >> t2 >> t3
 
 ```
 
@@ -156,6 +156,7 @@ The above code shows an example of a simple DAG that combines three strictly seq
 Task *t1* depends on tasks *t2* and *t3*. 
 In this simple example, all tasks use the Airflow *BashOperator* to execute bash commands, but Airflow 
 provides plenty of other operators from its *PythonOperator*, to *Docker* or *Kubernetes* operators.  
+Such operators also allow to execute tasks on remote machine or clusters, not solely the machine or container that serves Airflow itself.
 
 
 

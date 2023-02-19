@@ -351,7 +351,10 @@ Hadley's book R packages has a more thorough introduction to [testing in R](http
 
 ## Debugging
 
-In programming there is no way around debugging. From copy&paste artists to the grandmasters of hacking: writing code implies the need to debug. The main difference between amateur and professional is the degree to which the hunt for errors a.k.a. bugs is done systematically. This section gives a few tips to help organize a debugging strategy and assess how much honing of one's debugging approach is reasonable. 
+In programming there is no way around debugging.
+From copy&paste artists to the grandmasters of hacking: writing code implies the need to debug.
+One of the main differences between amateur and professional is the degree to which the hunt for errors a.k.a. bugs is done systematically.
+This section gives a few tips to help organize a debugging strategy and assess how much honing of one's debugging approach is reasonable for your one's individual need. 
 
 
 ### Read Code from the Inside Out
@@ -391,11 +394,51 @@ The calls to cumsum() and sum() are the next layers. Finally, identical() is the
 
 ### Debugger, Breakpoints, Traceback
 
-Typically modern source code editors (see chapter IDEs) provide support to make your debugging approach. more systematic 
-- use debug
-- set breakpoints (IDE feature)
+Typically modern interpreters and/or source code editors (see chapter IDEs) provide support to make debugging more systematic. 
+In R, you can use `debug(function_name)` to activate debug mode for one particular function. 
+On the next call of `function_name()`, the interpreter will go through the function, executing its source line by line. 
+One of the insightful things about it is that standard exploration functions like `ls()` list all objects within the private environment of that function (by default `ls()` would just list all objects within the global environment).
+Inspection of of objects as they are seen by the functions helps to find out whether parameters are passed on correctly (or at all). 
+Often, on error message from execution of a function motivates a debugging session.
+In that case, try to identify the line that causes the error and just do all the object inspection right before the line that causes the crash.
 
+Another, similar approach is to use breakpoints which are a feature of your editor.
+You can activate a break point to set execution of a function to debug mode by clicking next to a line in the source of the function that should trigger the switch to debug mode. 
+Breakpoints may be the more convenient version of using the debug tool 'per pedes' as described above because of its ability to follow function dispatch across multiple (wrapper) functions.
+Consider the following demo function: 
 
+```{r}
+debug_me <- function(a,b){
+  out <- list()
+  out$add <- a + b
+  out$prod <- a * b
+  out$dev <- a / b
+  out$sub <- a - b
+  out
+}
+
+debug_me(1,2)
+
+```
+
+Now let's give this function a bad argument. 
+(Unlike Python, R's addition operation will not simply concatenate strings when facing string input.)
+
+```{r, eval=FALSE}
+debug_me("1","2")
+# if evaluated this would return
+Error in a + b : non-numeric argument to binary operator
+```
+
+Motivated by this error message, let's switch into debug mode
+
+```{r, eval=FALSE}
+debug(debug_me)
+```
+
+The below screenshot show line-by-line execution of our demo function. The yellow line marks the line which will be executed on the next press of the return key. R's debug mode can be stopped by either executing the erroneous line or by executing a capital `Q` command in the R console window. 
+
+![](images/debug.png)
 
 
 
