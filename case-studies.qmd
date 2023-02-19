@@ -712,8 +712,6 @@ The vector that is returned from *rnorm* is passed on to the base R *hist* which
 ### Put Things Together and Run Your App 
 
 
-
-
 The basic app shown above consists of a *ui.R* and a *server.R* file living in the same folder. The most straight forward way to run such an app is to call the *runApp()* function and provide the location of the folder that contains both of the aforementioned files. 
 
 ```{r, eval=FALSE}
@@ -896,9 +894,39 @@ gg +
 ## Good Practice
 
 Even though I cannot really aim at a comprehensive section on the *Do's and Dont's*, I would like to share a few common sense practices here.
+If you are interested in a more throrough but rather R specific collection take a look at Jenny Bryan's and Jim Hester's wonderful *What They Forget to Tell Us About R* book. 
 
 
-## Manage Dependencies at the Project Level
+**Do NOT Set Static Working Directories in Your Code**
+
+Like `C:\Users\MatthiasBannert\My Documents\R Course\`.
+Locations that only exist in your own environment have you set up for trouble before you even started. 
+
+Please
+
+- resist that visceral urge to define the project root folder somewhere at the beginning of yoour code, because your collaborators usually do not have a directory on their machine that bears your name. 
+That might not even use the same operating system. 
+And before you ask, simply putting the a neutrally named folder on shared NAS storage or service such as dropbox is not really better. 
+Doing 
+
+- avoid spaces in folder and file names. 
+Though modern operating systems and most languages can handle spaces, you might need to escape certain characters and make a beginner's life much harder. 
+The same holds for umlauts and other hieroglyphical characters. 
+Simply use lower case and either kebap-case or snake_case. 
+
+- work with projects of your favorite IDE. 
+The idea of projects is to make a folder the document root of your project. 
+That way, your code can reference to other files inside this project root in relative fashion, no matter where the project itself is located. 
+
+
+**Take Time to Learn How to Play the 'Piano'**
+
+No need to become vim virtuoso (that's essentially Lang Lang status on a computer keyboard), but make sure to learn some basic shortcuts of your environment that help you avoid touching the mouse or trackpad. 
+Like `ctrl+L` to clear the screen, `cmd+tab` to switch between applications, `cmd+w` to close windows, `ctrl+number` to switch between tabs and most importantly, some shortcut to execute the selected line of code (often `cmd+enter`, `ctrl+enter` or `shift+enter` depending on your operating system).
+Note that this is really not so much about a specific programming language, but more about the environment you work in. 
+
+
+**Manage Dependencies at the Project Level** 
 
 Javascript projects do it in their lock files, Python projects have their requirements.txt files and R has the {renv} package. 
 All these scripting language *can* keep track of the exact library versions used in a project. 
@@ -917,32 +945,4 @@ When all projects share the same library, your project that has just started aft
 Given that most packages are not large in size, I encourage everyone starting a programming with data project to embrace project based library version management early on. 
 
 
-## Do NOT Set Static Working Directories in Your Code
-
-Like `C:\Users\MatthiasBannert\My Documents\R Course\`.
-I see more than one thing that has you set of for trouble before you even started. 
-Please
-
-- resist that visceral urge to define the project root folder somewhere at the beginning of yoour code, because your collaborators usually do not have a directory on their machine that bears your name. 
-That might not even use the same operating system. 
-And before you ask, simply putting the a neutrally named folder on shared NAS storage or service such as dropbox is not really better. 
-Doing 
-
-- Avoid spaces in folder and file names. 
-Though modern operating systems and most languages can handle spaces, you might need to escape certain characters and make a beginner's life much harder. 
-The same holds for umlauts and other hieroglyphical characters. Simple use lower case adn either kebap-case or snake_case. 
-
-- work with projects of your favorite IDE. 
-The idea of projects is to make a folder the document root 
-
-
-
-## Take Some Time Learn How to Play the 'Piano' 
-
-No need to become vim virtuoso (that's essentially Lang Lang status on a computer keyboard), but make sure to learn some basic shortcuts of your environment that help you avoid touching the mouse or trackpad. 
-
-
-
-
-If you are interested in a more throrough R specific collection take a look at Jenny Bryan's and Jim Hester's wonderful *What They Forget to Tell Us About R* book. 
 

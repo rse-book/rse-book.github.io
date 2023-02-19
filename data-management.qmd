@@ -223,7 +223,7 @@ sw = Parquet.File("starwars.parquet")
 >When I composed this example reading and writing parquet files in different environments I ran into several compatibility issues. This shows that the level of interoperability is not at the same level as the interoperability of text files. 
 
 
-#### A Note on Overhead {.unnumbered}{#columnar}
+#### A Note on Overhead {#columnar}
 
 The *parquet* format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that parquet comes with some overhead which may eat up gains if datasets are small. Consider our *starwars* dataset. At 87 rows and 14 columns the dataset is rather small.
 
