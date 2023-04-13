@@ -5,18 +5,18 @@ help you tremendously to plan ahead.
 
 ## Why Go Beyond a Local Notebook?
 
-Admittedly, unless your favorite superhero is Inspector Gadget or you just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead. So why leave the peaceful, well-known shire of our local environment for the uncharted, rocky terroritory of unwelcoming technical documentations and time consuming rabbit holes?
+Admittedly, unless your favorite superhero is Inspector Gadget or you just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead. So, why leave the peaceful, well-known shire of our local environment for the uncharted, rocky territory of unwelcoming technical documentations and time-consuming rabbit holes?
 
-Performance, particularly in terms of throughput is one good reason to look beyond desktop computers. Data proctection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application bring down a computation that ran for hours or even days. Or we need a server that is online 24/7 to publish a report, website or data visualization. 
+Performance, particularly in terms of throughput, is one good reason to look beyond desktop computers. Data protection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application to bring down a computation that ran for hours or even days. Or we need a server that is online 24/7 to publish a report, website or data visualization. 
 
 
 ## Hosting Options 
 
-So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously a description of product offerings in a vastly evolving field are not well suited for discussions in a book. Hence *DevOps Carpentry* intends to give an overview to classify the general options and common business models. 
+So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, *DevOps Carpentry* intends to give an overview to classify the general options and common business models. 
 
 ### Software-as-a-Service (SaaS)
 
-The simplest solution and fastest time-to-market is almost always to go for a SaaS product -- particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus to do one single thing well. The [shinyapps.io](https://shinyapps.io) platform is great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product, because R developers who come from field specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R shiny web application framework that uses R to generate HTML, CSS and Javascript based applications. Still, those applications need to be hosted somewhere. This is exactly what shinyapps.io does. The service solely hosts web applications that were created with the shiny web application framework. This ease of use is also the biggest limitations of SaaS products. A website generated with another tool cannot be deployed easily. In addition the mere bang-for-buck price is rather high compared to self-hostimg as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many many projects, especially at a proof of concept stage.
+The simplest solution and fastest time-to-market is almost always to go for a SaaS product -- particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus on doing one single thing well. The [shinyapps.io](https://shinyapps.io) platform is a great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product because R developers who come from field-specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers, for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R shiny web application framework that uses R to generate HTML, CSS and JavaScript based applications. Still, those applications need to be hosted somewhere. This is precisely what shinyapps.io does. The service solely hosts web applications that were created with the shiny web application framework. This ease of use is also the biggest limitation of SaaS products. A website generated with another tool cannot be deployed easily. In addition, the mere bang-for-buck price is rather high compared to self-hosting as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many projects, especially at a proof of concept stage.
 
 >In case you are interested in getting started with shiny, take a look at the shiny case study in this book. The study explains basic concepts of shiny to the user and walks readers through the creation and deployment of a simple app. 
 
@@ -26,9 +26,9 @@ SaaS, of course, is neither an R nor a data science idea. Modern providers offer
 ### Self Hosted
 
 The alternative approach to buying multiple managed services, is to host your applications by yourself. 
-Since -- this applies to most users at least -- you do not take your own hardware, connect to your home WiFi and aim to start your own hosting provider, we need to look at different degrees of self-hosting. Larger organizations, e.g., universities, often like to host application on their own hardware, within their own network to have full control of their data. Yet, self-hosting exposes you to issues, such as attacks, that you would not need to worry about as much in a software as a service setting (as long as you trust the service). 
+Since -- this applies to most users at least -- you do not take your own hardware, connect to your home Wi-Fi and aim to start your own hosting provider, we need to look at different degrees of self-hosting. Larger organizations, e.g., universities, often like to host application on their own hardware, within their own network to have full control of their data. Yet, self-hosting exposes you to issues, such as attacks, that you would not need to worry about as much in a software as a service setting (as long as you trust the service). 
 
-Self-hosting allows you to host all the applications you want on a dedicated machine. Self-hosters can configure their server depending on their access rights. Offerings range from root access that allows users to do anything to different shades of managed hosting with more moderated access. Backed by virtual infrastructure, modern cloud provider offer a very dynamic form of self-hosting: their clients can use a web GUIs and/or APIs to add, remove, reboot and shutdown nodes. Users can spin up anything from pre-configured nodes optimized for different use cases to containerized environments and entire Kubernetes (K8s) clusters in the cloud. Flexible pricing models allow to pay based on usage in very dynamic fashion. 
+Self-hosting allows you to host all the applications you want on a dedicated machine. Self-hosters can configure their server depending on their access rights. Offerings range from root access that allows users to do anything to different shades of managed hosting with more moderated access. Backed by virtual infrastructure, modern cloud providers offer a very dynamic form of self-hosting: their clients can use a web GUIs and/or APIs to add, remove, reboot and shutdown nodes. Users can spin up anything from pre-configured nodes optimized for different use cases to containerized environments and entire Kubernetes (K8s) clusters in the cloud. Flexible pricing models allow paying based on usage in a very dynamic fashion. 
 
 
 
@@ -38,25 +38,25 @@ Exactly because of this dynamic described above and the ubiquity of the cloud, i
 
 
 ### Virtual Machines
-Virtual machines (VMs) remain the go-to building blocks for many set ups. Hence university IT, private sector IT, independent hosting providers and online giants all offer VMs. Virtual machines allow to run a virtual computers that have own operating system on some host machine. Running applications on such a virtual computer feels like running an application on a standalone computer dedicated to run this amplication.
+Virtual machines (VMs) remain the go-to building blocks for many set-ups. Hence, university IT, private sector IT, independent hosting providers and online giants all offer VMs. Virtual machines allow running a virtual computer that has its own operating system on some host machine. Running applications on such a virtual computer feels like running an application on a standalone computer dedicated to run this application.
 
 >Oracle's Virtual Box is great tool to use and try virtual machines locally. Virtual Box allows to run a Virtual Windows or Linux inside Mac OS and vice versa. Running a virtual box locally may not be the most performant solution but it allows to have several test environments without altering one's main environment. 
 
 
 ### Containers & Images
 
-At the first glimpse containers look very much like Virtual Machines to the practitioner. The difference is that every Virtual Machine has its own operating system while containers use the the host OS to run a container engine on to top of the OS. By doing so containers can be very light weight and may take only a few seconds to spin up while spinning up Virtual Machines can take up to a few minutes - just like booting physical computers. Hence docker containers are often used as single purpose environments: Fire up a container, run a task in that environment, store the results outside of the container and shut down the container again. 
+At the first glimpse, containers look very much like Virtual Machines to the practitioner. The difference is that every Virtual Machine has its own operating system, while containers use the host OS to run a container engine on top of the OS. By doing so, containers can be very lightweight and may take only a few seconds to spin up, while spinning up Virtual Machines can take up to a few minutes - just like booting physical computers. Hence, docker containers are often used as single purpose environments: Fire up a container, run a task in that environment, store the results outside the container and shut down the container again. 
 
-Docker ([Why docker?](https://www.docker.com/why-docker)) is the most popular containerized solution and quickly became synonym to container environments configured in a file. So called docker images are build layer by layer based on other less specific docker images. A DOCKERFILE is the recipe for a new image. Images are blueprints for containers, an image's running instance. A docker runtime environment can build images from DOCKERFILEs and distribute these images to an image registry. The platform [dockerhub](https://dockerhub.com) hosts a plethora of pre-built docker images from ready-to-go database to Python ML environments or minimal Linux containers to run a simple shell script in a lab type environment. 
+Docker ([Why docker?](https://www.docker.com/why-docker)) is the most popular containerized solution and quickly became synonymous to container environments configured in a file. So-called docker images are built layer by layer based on other less specific docker images. A DOCKERFILE is the recipe for a new image. Images are blueprints for containers, an image's running instance. A docker runtime environment can build images from DOCKERFILEs and distribute these images to an image registry. The platform [dockerhub](https://dockerhub.com) hosts a plethora of pre-built docker images from ready-to-go databases to Python ML environments or minimal Linux containers to run a simple shell script in a lab type environment. 
 
-Containers run in a docker runtime environment and can either be used interactively or in batches which execute a single task in an environment specifically built for this task. One of the reasons why docker is attractive to researchers is its open character: Dockerfiles are a good way to share a configuration in a simple, reproducible file, making it easy to reproduce setups. Less experienced researchers can benefit from [Dockerhub](https://hub.docker.com/) which shares images for a plethora of purposes from mixed data science setups to database configuration. Side effect free working environments for all sorts of tasks can especially be appealing in exotic and/or dependency heavy cases. 
+Containers run in a docker runtime environment and can either be used interactively or in batches which execute a single task in an environment specifically built for this task. One of the reasons why docker is attractive to researchers is its open character: Dockerfiles are a good way to share a configuration in a simple, reproducible file, making it easy to reproduce setups. Less experienced researchers can benefit from [Dockerhub](https://hub.docker.com/) which shares images for a plethora of purposes, from mixed data science setups to database configuration. Side effect free working environments for all sorts of tasks can especially be appealing in exotic and/or dependency heavy cases. 
 
 Beside simplification of system administration, *docker* is known for its ability to work in the cloud. All major cloud hosters offer docker environments and the ability to deploy docker containers that were previously developed and tested locally. You can also use docker to tackle [throughput problems](#glossary) using container orchestration tools like [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) or [K8s (say: Kubernetes)](https://kubernetes.io/) to run hundreds of containers (depending on your virtual resources).
 
-### Kubernetets (K8s)
-Though hosting Kubernetes is clearly beyond the scope of carpentry level devOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.
+### Kubernetes (K8s)
+Though hosting Kubernetes is clearly beyond the scope of carpentry level DevOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.
 
-Because Kubernetes is quite some overhead to manage, the big three and their alternatives all offer services such as a container registry to support their clients in running Kubernetes. Without any support and/or pre-configured parts it is... 
+Because Kubernetes is quite some overhead to manage, the big three and their alternatives all offer services such as a container registry to support their clients in running Kubernetes. Without any support and/or pre-configured parts, it is... 
 
 - manage nodes in line with resource
 - HA mode
@@ -67,7 +67,7 @@ Because Kubernetes is quite some overhead to manage, the big three and their alt
 ## Applied Containerization Basics
 
 While the above *Building Blocks* contextualizes the container approaches, this section gives a simple 101 into the basics of containerization, enabling the reader to take their first steps in the container world.
-One of the beautiful things about containers is that due their isolated nature, one can go along way trying out things as containers get destroyed and recreated all the time. 
+One of the beautiful things about containers is that due to their isolated nature, one can go along way trying out things as containers get destroyed and recreated all the time. 
 Also, because containers run in a standardized runtime environment, locally developed images easily transfer to large remote machines and clusters. 
 
 
@@ -87,20 +87,20 @@ RUN install2.r ggplot2 shiny shinydashboard  \
 
 ```
 
-In this case we make use of a pre-built image from the rocker project. 
-The rocker project designs useful images around the R language ecosystem, builds them on regularly basis and makes them available via dockerhub.
-Here, our image allows to run the open source version of shiny server in a docker container. 
-We add a postgres driver at the operating system level before we install several R packages from CRAN. 
+In this case, we make use of a pre-built image from the rocker project. 
+The rocker project designs useful images around the R language ecosystem, builds them on regular basis and makes them available via dockerhub.
+Here, our image allows running the open source version of shiny server in a docker container. 
+We add a Postgres driver at the operating system level before we install several R packages from CRAN. 
 
 
 ### Building & Running Containers
 
 There are plenty of ways to run and build containers. 
-Online tools either offered as a service or self-hosted can build images serverside. Yet the easiest way to get started with containers is to run and build them locally with Docker Desktop.  
+Online tools either offered as a service or self-hosted can build images server-side. Yet, the easiest way to get started with containers is to run and build them locally with Docker Desktop.  
 Even though Docker may not even be the best way to build containers to some, Docker is by far the most known way and therefore comes with the largest ecosystem and most community material. 
 
-Docker Desktop is an easy to use application available on Windwos and OSX. 
-With Docker Desktop one can execute Docker commands and build images either in a GUI or using its CLI. The below table shows a few of the most basic docker commands.
+Docker Desktop is an easy-to-use application available on Windows and OSX. 
+With Docker Desktop, one can execute Docker commands and build images, either in a GUI or using its CLI. The below table shows a few of the most basic docker commands.
 
 ```{r, echo=FALSE, message=FALSE, warnings=FALSE}
 library(dplyr)
@@ -137,17 +137,17 @@ docker exec -it rocker/shiny /usr/local/bin/R
 ### Docker Compose - Manage Multiple Containers 
 
 Docker is a great way to give a new tool a spin without affecting one's proven environment. 
-So even if you are a container beginner, the time when you would like to spin up multiple containers at once will come quickly. 
+So, even if you are a container beginner, the time when you would like to spin up multiple containers at once will come quickly. 
 While you can start as many containers as your local resources allow for, running containers at once does not necessarily mean those containers are aware of each other, let alone could talk to each other. 
 
-Modern application often follow modular architecture patterns, i.e., they have a front end, some middle layer such as a REST API and a database backend. 
-A web application may have a statically generated HTML front and simply expose HTML / CSS / Javascript files and query a REST API. 
+Modern applications often follow modular architecture patterns, i.e., they have a front end, some middle layer such as a REST API and a database backend. 
+A web application may have a statically generated HTML front and simply expose HTML / CSS / JavaScript files and query a REST API. 
 The REST API may use the express.io framework and is served using a node server which talks to a Postgres database backend. 
 Each of these three parts could live in its own container. 
-This is where docker could help to create development environment locally that essentially mimicks the production setup and therefore facilitates deployment to production. 
+This is where docker could help to create a development environment locally that essentially mimics the production setup and therefore facilitates deployment to production. 
 
-Docker compose allows to define how multiple containers play together. 
-Consider the following example file that creates two containers: a shiny webserver and database which can be queried by the shiny server. 
+Docker compose allows defining how multiple containers play together. 
+Consider the following example file that creates two containers: a shiny web server and a database which can be queried by the shiny server. 
 
 
 ```sh
@@ -181,7 +181,7 @@ services:
 ```
 
 
-Note how images are build from local directories `postgres` and `shiny` that contain Dockerfiles. 
+Note how images are built from local directories `postgres` and `shiny` that contain Dockerfiles. 
 It is also possible to pull images directly from a registry. 
 To run such a system of multiple containers, simply use
 
@@ -198,6 +198,6 @@ docker compose up --force-recreate
 
 <!--
 
-## So Why Again Should a Practioner Care? 
+## So Why Again Should a Practitioner Care? 
 
 -->
