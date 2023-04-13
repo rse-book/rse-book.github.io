@@ -9,63 +9,63 @@ This section intends to help overcome entry barriers and encourage the reader to
 ![R Community Explorer by Ben Ubah](images/community_explorer.png)
 
 The above figure shows a screenshot of an interactive community explorer tool for the R community.
-Users can explore user groups and such as R user groups or R Ladies chapters around the world. At the time of writing the tool counted more than 775'000 members of R user groups world wide and more than 100'000 members of RLadies.
-The explorer tool and its numbers should not only show you the size of the community but also help to connect to what has become a very global community. 
+Users can explore user groups and such as R user groups or R Ladies chapters around the world. At the time of writing, the tool counted more than 775'000 members of R user groups worldwide and more than 100'000 members of RLadies.
+The explorer tool and its numbers should not only show you the size of the community, but also help to connect to what has become a very global community. 
 
-Apart from user groups of programming languages the Society of [Research Software Engineering](https://society-rse.org/) is a good way to connect.
-In addition to the UK based origin the society has expanded to other countries and has derivatives in, e.g., the [United States](https://us-rse.org/) or [Germany](https://de-rse.org/de/index.html).
+Apart from user groups of programming languages, the Society of [Research Software Engineering](https://society-rse.org/) is a good way to connect.
+In addition to the UK-based origin, the society has expanded to other countries and has derivatives in, e.g., the [United States](https://us-rse.org/) or [Germany](https://de-rse.org/de/index.html).
 The main idea of research software engineering societies is to work on a role of software engineering in academia that accounts for the importance and impact of software on modern research. This goes from education in programming to lobbying for acknowledgement of software engineering in academic resumes. 
 
 The below sections introduce different channels to connect and interact with the community. 
-Of course, one does not have to use all of these tools and be active in all of these communities but rather pick some that suit our way of communication. 
+Of course, one does not have to use all of these tools and be active in all of these communities, but rather pick some that suit our way of communication. 
 
 ## Stay up to Date and a Vastly Evolving Field -- Social Media
 
-I hate to admit it, because I am not a big fan of social media but it has definnitely become an important channel for professional use also to me.
-Social media is a great way to get my regular dose of whats new in tech. My platform of choice is [twitter](https://twitter.com/whatsgoodio).
+I hate to admit it because I am not a big fan of social media but it has definitely become an important channel for professional use also to me.
+Social media is a great way to get my regular dose of what's new in tech. My platform of choice is [twitter](https://twitter.com/whatsgoodio).
 I mostly use it as a bookmark tool and to get some feedback from publicly sharing resources.
-I try to not get caught in any politics, memes or cat pictures, even if that's a hard thing to do. 
-But once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and more importantly get a sense of trends and dynamics in the big picture. 
+I try not to get caught in any politics, memes or cat pictures, even if that's a hard thing to do. 
+But once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and more importantly, get a sense of trends and dynamics in the big picture. 
 
-Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more. tweetdeck is a good standard option of a more advanced use of twitter.
-If you plan to build some following of your own, learn how to schedule tweets and put some thought into the timing of your tweets with respect to timezone and audience.
+Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more. Tweet deck is a good standard option for a more advanced use of twitter.
+If you plan to build some following of your own, learn how to schedule tweets and put some thought into the timing of your tweets regarding timezone and audience.
 Keep in mind also that not social media is highly selective and not all platforms are equally popular in all parts of the world.  
 
 ## Knowledge Sharing Platforms
 
 The most popular knowledge sharing platform for programmers, [stackoverflow.com](https://stackoverflow.com) has made itself a name for being the first hit in your favorite search engine to any questions or error message remotely related to source code.
 The platform has accumulated millions of questions AND answers to programming questions across languages. 
-Through a mix of quality content, a community rating system and a healthy mix of gamification the platform managed to become a mainstay of the programming community. 
-The platform's crowd based rating system does not only assess the quality of questions and answers, a solid stackoverflow score and reach has also become a notch on programmers' resumes.  CITE AER here
+Through a mix of quality content, a community rating system and a healthy mix of gamification, the platform managed to become a mainstay of the programming community. 
+The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach has also become a notch on programmers' resumes.  CITE AER here
 
 ## Look Out for Local Community Group 
 
 Speaking of job market opportunities, look out for a local R, Python or data science user group. 
 Local user groups around programming languages do not only host interesting talks or other formats, they often provide an opportunity to network or even have dedicated time to advertise open positions. 
-Besides the community explorer mentioned in the introduction of this chapter, the [meetup](https://www.meetup.com/) platform that has become synomimous with special interest groups coming together locally, is a good place to start your research.  
+Besides the community explorer mentioned in the introduction of this chapter, the [meetup](https://www.meetup.com/) platform that has become synonymous with special interest groups coming together locally, is a good place to start your research.  
 
 
-## Attend Conferences - Online Can Be a Good Option !
+## Attend Conferences - Online Can Be a Viable Option!
 
-In similar fashion conferences are a good channel to stay connected and up to date. 
-A conference like [PiConf](https://piconf.net/), [RStudio Conf]() or [useR!](https://twitter.com/_useRconf) is basically a bulk meetup: potentially hundreds of talks, thousands of potential contacts and quite a bit of time to digest a large conference. 
-In recent years conference often provide an option to attend online. While to some most of the fun and networking will be missing online, the ability to attend online can also be great chance for a conference and its attendance. Online conferences have the chance to be a lot more inclusive than its in-person counterparts. Even costs aside, i.e., covered by scholarships, many cannot afford the time to leave their jobs and families to travel internationally for an entire week. 
-Online conferences also give people a chance to attend who may be not involved enough to attend a software development conference for an entire week, but are interested to catch a glimpse and to evaluate. 
-In any case, the entry hurdle is lower than ever. These paragraphs are meant to convinve  take your time, to prepare, attend and debrief a major open source software conference -- online or in-person. 
+In similar fashion, conferences are a good channel to stay connected and up to date. 
+A conference like [PiConf](https://piconf.net/), [RStudio Conf]() or [useR!](https://twitter.com/_useRconf) is basically a bulk meetup: potentially hundreds of talks, thousands of potential contacts, and quite a bit of time to digest a large conference. 
+In recent years, conferences often provide an option to attend online. While to some, most of the fun and networking will be missing online, the ability to attend online can also be a great chance for a conference and its attendance. Online conferences have the chance to be a lot more inclusive than its in-person counterparts. Even costs aside, i.e., covered by scholarships, many cannot afford the time to leave their jobs and families to travel internationally for an entire week. 
+Online conferences also give people a chance to attend who may not be involved enough to attend a software development conference for an entire week, but are interested to catch a glimpse and to evaluate. 
+In any case, the entry hurdle is lower than ever. These paragraphs are meant to convince  take your time, to prepare, attend and debrief a major open source software conference -- online or in-person. 
 
 
 ## Join Slack Spaces (or other Chats) 
 
-Community chat spaces run by conference organizers, local user groups or societies are another way to stay connected to the community. More dynamic than message boards and forums, chats allow for both async and live communication. Usually chat spaces are 
+Community chat spaces run by conference organizers, local user groups or societies are another way to stay connected to the community. More dynamic than message boards and forums, chats allow for both asynchronous and live communication. Usually chat spaces are 
 more domain or even topic specific than local meetups or social media.
-Popular software to particapte or even run an own community are [Slack](https://slack.com), [Discord](https://discord.com/), [Mattermost](https://mattermost.com/) or [Matrix](https://matrix.org/).
+Popular software to participate or even run an own community are [Slack](https://slack.com), [Discord](https://discord.com/), [Mattermost](https://mattermost.com/) or [Matrix](https://matrix.org/).
 Slack is available as a service run by a company of the same name.
 Slack users can start new workspaces for free for hundreds of members, but will have to pay when they want to keep their communities messages beyond the last 10'000 messages.
 Just like Slack, *Discord* works in our web browsers or as a standalone Desktop or mobile client.
-Popular among gamers, Discord does not quite have the business attire of Slack but certainly has its fans.
+Popular among gamers, Discord does not quite have the business attire of Slack, but certainly has its fans.
 Mattermost is an open source alternative to the former two.
 It is also available as a service, but is rather known as a package to self-host one's own independent chat space.
 Matrix has a different approach, labelling itself *an open network for secure, decentralized communication*.
-Reminiscant of the [Internet Relay Chat (IRC)](https://en.wikipedia.org/wiki/Internet_Relay_Chat) of the old days, matrix is server software and network of the same name. 
-Just like IRC, matrix is not bound to a single client and therefore appears modular to the endusers allowing to choose between different clients such as [Element](https://element.io/) to connect to established and self hosted networds alike. 
+Reminiscent of the [Internet Relay Chat (IRC)](https://en.wikipedia.org/wiki/Internet_Relay_Chat) of the old days, matrix is server software and network of the same name. 
+Just like IRC, matrix is not bound to a single client and therefore appears modular to the end users allowing to choose between different clients such as [Element](https://element.io/) to connect to established and self-hosted networks alike. 
 
