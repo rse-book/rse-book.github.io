@@ -1,21 +1,21 @@
 # Publishing & Reporting
 
-Business analysts are used to report to management and/or clients on a regular basis. Academia has a lively debate about science communication. So what does a researcher need to know about publishing and reporting in order to make right choices? 
-The key term about modern reporting in both cases is *regular*. Data might get revised or otherwise updated, journals, reviewers and readers will ask for reproducible research. Dissemination of datasets and results in visually appealing as well as machine readable communication are equally important in modern publishing and reporting. 
+Business analysts are used to reporting to management and/or clients regularly. Academia has a lively debate about science communication. So, what does a researcher need to know about publishing and reporting to make the right choices? 
+The key term about modern reporting in both cases is *regular*. Data might get revised or otherwise updated, journals, reviewers and readers will ask for reproducible research. Dissemination of datasets and results in visually appealing as well as machine-readable communication are equally important in modern publishing and reporting. 
 
-Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, markdown based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn markdown into HTML/CSS/Javascript output for flexible use in a standard web browser. Likewise, markdown renders to PDF or even Microsoft Word. 
+Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, markdown-based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn markdown into HTML/CSS/JavaScript output for flexible use in a standard web browser. Likewise, markdown renders to PDF or even Microsoft Word. 
 
-Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dynamically rendered code chunks that create tables or figures and embedd these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
+Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
 
 ## Getting Started With a Simple Report
 
-The simplest form of such a markdown based output, is a simple HTML report.  
+The simplest form of such a markdown-based output, is a simple HTML report.  
 With web development somewhere in the back of their minds, HTML may rather sound daunting than simple. 
 But hear me out: HTML is a) a lot more useful and flexible than newcomers might think and b) simple indeed: 
-HTML is text, does not need LaTeX to be rendered from markdown like PDF and can displayed by web browsers on a plethore of devices. 
-Plus, based on HTML you can create (fancy) presentations, websites or simple reports. 
-With the self-contained option you can even embedd included files such as images into one single HTML document using byte encoding.
-That way you can easily share a report that can be viewed on any device with a web browser across different operating systems and setups.  
+HTML is text, does not need LaTeX to be rendered from Markdown like PDF, and can be displayed by web browsers on a plethora of devices. 
+Plus, based on HTML, you can create (fancy) presentations, websites or simple reports. 
+With the self-contained option, you can even embed included files such as images into one single HTML document using byte encoding.
+That way, you can easily share a report that can be viewed on any device with a web browser across different operating systems and setups.  
 To see a markdown process in action, consider the following basic example: 
 
 ```md
@@ -43,37 +43,37 @@ more text
 
 ## Static Website Generators
 
-Once that we understood how the output files are created, let's take a deeper look at how a report goes online in fully automated fashion from computation to a website.
-In a nutshell, static website generators turn markdown code 
-into a combination of HTML, CSS and Javascript, so a web browser can display the result. 
+Once that we understood how the output files are created, let's take a more in-depth look at how a report goes online in fully automated fashion from computation to a website.
+In a nutshell, static website generators turn Markdown code 
+into a combination of HTML, CSS and JavaScript, so a web browser can display the result. 
 The Go based [hugo](https://gohugo.io/) or the classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
 
-Approaches such as the {distill} R package or [quarto](https://quarto.org), the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allows to run analytics' code at render time. 
-Quarto documents, for example, are text files that contain markdown text and possibly code chunks in the same documents. 
+Approaches such as the {distill} R package or [quarto](https://quarto.org), the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
+Quarto documents, for example, are text files that contain Markdown text and possibly code chunks in the same documents. 
 When rendered, the analytics code runs first, potentially creating output such as tables or figures.
-If necessary, this output is stored in separate files and smoothly integrated into main document that is about to be rendered afterwards.  
+If necessary, this output is stored in separate files and smoothly integrated into the main document that is about to be rendered afterward.  
 
 >Rendered output often consists of multiple files such as HTML documents, CSS style information, javascript code or images.
-Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics minded renderes such as quarto offer a **self-contained** option. 
-When enabled, quarto renders a single self-contained, encoded HTML file that contains everything from javscript to images. 
+Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics minded renderers such as quarto offer a **self-contained** option. 
+When enabled, quarto renders a single self-contained, encoded HTML file that contains everything from JavaScript to images. 
 
 
 
 ## Hosting Static Websites
 
 Because the requirements of a static website are minimal, we can essentially use the simplest website host possible to host our static site.
-Unlike with content management system approaches such as Wordpress, static websites do not need server side scripting languages or databases. 
-This simplicity allows to host static websites on a plethora of cheap hosters, including many free plans.
+Unlike with content management system approaches such as WordPress, static websites do not need server side scripting languages or databases. 
+This simplicity allows hosting static websites on a plethora of cheap hosters, including many free plans.
 
 ### GitHub Pages
 
-One very good and simple solution to host blogs, personal websites, online documentation or presentations is to use offerings of major git providers such as Github's [Github Pages]().
-Though originally meant to be used with themes provided by GitHub and markdown rendered by Jekyll on GitHub's servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.    
+One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's [GitHub Pages]().
+Though originally meant to be used with themes provided by GitHub and Markdown rendered by Jekyll on GitHub's servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.    
 
 All you need is a repository on GitHub to host the static files. You can activate GitHub Pages for your repository and choose whether you rather want the rendered files to be on a separate branch named *gh-pages* or in a subfolder of your root directory (mostly docs).
-Personally, I favor to use a seperate *gh-pages* branch, because git would track every single change made to the automatically rendered content, leading to a messy git history. 
+Personally, I favor using a separate *gh-pages* branch because git would track every single change made to the automatically rendered content, leading to a messy git history. 
 
-By convention the corresponding static website of a git repository is exposed at `<username>.github.io/<repository-name>`.
+By convention, the corresponding static website of a git repository is exposed at `<username>.github.io/<repository-name>`.
 For GitHub organizations which are popular to group repositories, the exposed URL would be
 `<orgname>.github.io/<repository-name>`. 
 
@@ -81,17 +81,17 @@ For GitHub organizations which are popular to group repositories, the exposed UR
 
 ### GitHub Actions
 
-Hosting a website on a modern git platform comes with an intriguing option: the use of continous integration tools as discussed in the automation chapter. 
-CI/CD is capable of not only rendering markdown, but can even run computations and virtually any pre-requisite step thanks to the underlying docker technology. 
-CI/CD certainly introduces a setup hurdle, but allows to integrate users who do not have the necessary stack installed to execute the render process locally. 
+Hosting a website on a modern git platform comes with an intriguing option: the use of continuous integration tools, as discussed in the automation chapter. 
+CI/CD is capable of not only rendering markdown, but can even run computations and virtually any prerequisite step thanks to the underlying docker technology. 
+CI/CD certainly introduces a setup hurdle, but allows integrating users who do not have the necessary stack installed to execute the render process locally. 
 
 ### Netlify
 
 The [Netlify](https://netlify.app/) platform does not host git repositories like GitHub or Bitbucket, but rather focuses on the *build* part.
-Netlify supports the user in setting up the build process and offers a few add-ons such as Netlify forms to allow for website feature that can process user interaction such as online forms. 
-Also, unlike git platforms, Netlify integrates domain purchase into its own platflorm. 
+Netlify supports the user in setting up the build process and offers a few add-ons such as Netlify forms to allow for website features that can process user interaction such as online forms. 
+Also, unlike git platforms, Netlify integrates domain purchase into its own platform. 
 Note that Netlify and git are complementary, not mutually exclusive approaches. 
-Platflorms like Netlify and GitHub use APIs to communicate with each other allowing to trigger Netlify builds based on changes to a GitHub repositories. 
+Platforms like Netlify and GitHub use APIs to communicate with each other, allowing to trigger Netlify builds based on changes to a GitHub repositories. 
 
 >Basic GitHub pages setups are good enough for online documentation of most software or other sites that simply display static content. 
 Netlify cannot only improve convenience when using advanced features, it can also extend possibilities for static websites when needed. 
@@ -100,21 +100,21 @@ Netlify cannot only improve convenience when using advanced features, it can als
 ## Visualization
 
 Visualization is a powerful tool to communicate insights derived from data analysis. 
-Good visual communication can not only summarize large datasets, it has the ability to make your report -- and therefore your insights -- accessible to a wider audience. 
-No matter whether you are working on an online outlet or a printed publication of your analysis, it is safe to say that either channel benefits from aesthetically pleaseant and concise visualization. 
+Good visual communication can not only summarize large datasets, it can make your report -- and therefore your insights -- accessible to a wider audience. 
+No matter whether you are working on an online outlet or a printed publication of your analysis, it is safe to say that either channel benefits from aesthetically pleasant and concise visualization. 
 Long story short, proficiency in data visualization is an indispensable part of a researcher or analyst's toolbox. 
 
-Albeit plots may look similar across channels, opportunities and challenges plots optimized for online use and traditional printed figures are substantially different.
-Obviously, the beholder cannot interactively adjust parameters in printed images while online visualization can be interactive and needs to adapt to varying screens and devices. 
-Hence the visualization toolbox offers libraries with very different approaches. 
+Although plots may look similar across channels, opportunities and challenges plots optimized for online use and traditional printed figures are substantially different.
+Obviously, the beholder cannot interactively adjust parameters in printed images, while online visualization can be interactive and needs to adapt to varying screens and devices. 
+Hence, the visualization toolbox offers libraries with very different approaches. 
 
 
 ### Rendered Graphs 
 
-The idea of visualization libraries that create rendered graphs is straight forward to understand. 
+The idea of visualization libraries that create rendered graphs is straightforward to understand. 
 Libraries such as R's [ggplot2]() or Python's [matplotlib]() fix the dots per inch (dpi) at render time. 
-When writing to disk, such a graph is typically saved as a .png or .jpg file^[When file size does not matter, .png is usually preferred because it allows for transparent backgrounds]. 
-To the end user handling such graphs is rather intuitive as it feels similar to handling photos or screenshots:
+When writing to disk, such a graph is typically saved as a .png or .jpg file^[When file size is not relevant, .png is usually preferred because it allows for transparent backgrounds]. 
+To the end user, handling such graphs is rather intuitive as it feels similar to handling photos or screenshots:
 We have to handle single image files that we can easily preview with onboard tools of all major operating systems.
 But just like with a photo, if the resolution of an existing image is too small for our next use case, scaling the image up will lead to interpolation, i.e., a loss in quality. 
 To see the effect, take a closer look at the two .png files below: The second image doubles the width of the first image.
@@ -126,36 +126,36 @@ Because of interpolation, the text looks blurred, particularly in its curves.
 ![](images/rendered.png){width=700}
 
 
-A streamlined publication workflow such as the quarto based approach described above, mitigates the problem, because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 
+A streamlined publication workflow, such as the quarto-based approach described above, mitigates the problem because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 
 Further mitigation comes from extensions packages such as R's [gganimate]() that allows to animate graphs created with ggplot2.
-Though you might miss out on bleeding edge interaction and the maximum flexibility of libraries with an online focus, rendered graphs created with a powerful library such as ggplot or matplotlib are a solid way to go for most people's use cases. 
+Though you might miss out on bleeding-edge interaction and the maximum flexibility of libraries with an online focus, rendered graphs created with a powerful library such as ggplot or matplotlib are a solid way to go for most people's use cases. 
 The likes of ggplot2 have home court advantage in all things printed and still look decent in most online outlets. 
 
 
-### Javascript Visualization Libraries
+### JavaScript Visualization Libraries
 
-To those old enough to remember, javascript visualization may be reminiscant of a Japanese game convention at night: colorful and blinking. 
-But the visualization knowledge embedded in modern javascript libraries and the maximum out-of-the-box opportunities of libraries like [Apache echarts](), [Data Driven Documents (d3js.org)]() or [Highcharts]() have very little in common with the javascript of the web of the late 90s.
+To those old enough to remember, JavaScript visualization may be reminiscent of a Japanese game convention at night: colorful and blinking. 
+But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like [Apache echarts](), [Data Driven Documents (d3js.org)]() or [Highcharts]() have very little in common with the JavaScript of the web of the late 90s.
 In 2022, online communication can take your data visualization to another level.  
 
-Today, there are basically two popular Javascript based approaches to data visualiation: SVG manipulation and HTML5 drawing.
-No matter whether which one you choose the opportunities are just off the charts (pun intended): 
-from basic bar charts, scatter plots, candle stick and radar charts to heatmaps, treemaps, 3D and spatial charts, there is hardly anything data visualzation you cannot do. 
+Today, there are basically two popular JavaScript based approaches to data visualization: SVG manipulation and HTML5 drawing.
+No matter whether which one you choose, the opportunities are just off the charts (pun intended): 
+From basic bar charts, scatter plots, candle stick and radar charts to heatmaps, treemaps, 3D and spatial charts, there is hardly anything data visualization you cannot do. 
 And if you really needed special treatment, there is an API to extend your possibilities even. 
 Let us quickly dive into both options...
 
 
-With the advent of wide spread Scalable Vector Graphics (SVG) support in mainstream web browsers about a decade ago, the online ecosystem enabled a lot of options to add channel specific value to visualization. 
+With the advent of widespread Scalable Vector Graphics (SVG) support in mainstream web browsers about a decade ago, the online ecosystem enabled numerous options to add channel-specific value to visualization. 
 Unlike formats with fixed resolutions like .gif, .jpg or .png formats, vector graphics are not only scalable without  loss, they are also defined inside your HTML document.
-This opens up the possibility to manipulate them easily using Javascript as if they were objects of the DOM^[The Document Object Model (DOM) is the hierarchical definition of an HTML website which in today's web is modified by Javascript]. 
+This opens up the possibility to manipulate them easily using JavaScript as if they were objects of the DOM^[The Document Object Model (DOM) is the hierarchical definition of an HTML website, which in today's web is modified by Javascript]. 
 Mapping data to SVG aesthetics is the exact idea of the [Data Driven Documents (D3)](https://d3js.org), one of the most popular and powerful visualization libraries.
 For example, your data may drive the size of dots or any other object, e.g., a car pictogram for when you want to visualize the number of car registrations. 
-The above example shows a strength of the SVG approach: one can use existing SVG graphics without having to draw them from scratch using Javascript. 
+The above example shows a strength of the SVG approach: one can use existing SVGs without having to draw them from scratch using JavaScript. 
 
-HTML5 on the other hand is the latest approach and offers more options to support varying screen sizes and device types. While a look into mobile friendliness is beyond the scope of this book, I would like to show an example of how a screen medium (compared to print) can add value. 
+HTML5, on the other hand, is the latest approach and offers more options to support varying screen sizes and device types. While a look into mobile friendliness is beyond the scope of this book, I would like to show an example of how a screen medium (compared to print) can add value. 
 Consider an interactive time series chart of a long term economic indicator. 
-Depending on the question at hand you may be interested in the indicator's development over decades or rather look at last couple of years or months. 
-Add a zoom window to interactively to not only switch between to views, but to continously zoom in or out on some crisis or boom or drawn an intertemporal comparison between different peaks and lows. 
+Depending on the question at hand, you may be interested in the indicator's development over decades or rather look at the last couple of years or months. 
+Add a zoom window to interactively to not only switch between views, but to continuously zoom in or out on some crisis or boom or draw an intertemporal comparison between different peaks and lows. 
 
 ```{r, message=FALSE, warnings=FALSE}
 library(echarts4r)
@@ -174,7 +174,7 @@ t_df |>
 
 ```
 
-Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused to make that one thing as convenient and inclusive as possibility. Depending on your needs such a smaller library may be a very good option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundred. 
+Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused on making that one thing as convenient and inclusive as possibility. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundred. 
 
 
 
