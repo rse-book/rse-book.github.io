@@ -1,16 +1,16 @@
 #  Interaction Environment
 
-As kid of the 90s, reading about a new editor or fancy shell coming out triggers playing Inspector Gadget's tune in my head. To invest a few fun hours into exploring a new tool that might save me a split second or two in processes that I run a hundred times on a daily basis may not always pay off by the hour even in a lifetime of programming, but is totally worth it in most case - at least to me. Repetitive work is tiring and error prone, adds to cognitive workload and shifts focus away from hard-to-tackle puzzles. 
+As a kid of the 90s, reading about a new editor or fancy shell coming out triggers playing Inspector Gadget's tune in my head. To invest a few fun hours into exploring a new tool that might save me a split second or two in processes that I run a hundred times daily may not always pay off by the hour even in a lifetime of programming, but is totally worth it in most cases - at least to me. Repetitive work is tiring and error-prone, adds to cognitive workload, and shifts focus away from hard-to-tackle puzzles. 
 
-That being said, I am nowhere near the vim aficionados whose jaw-dropping editing speed probably takes 1000s of hours to master and configure, and would not advise to overengineer setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside of graphical user interfaces and editing code at a 100 words per minute pace is key. 
+That being said, I am nowhere near the vim aficionados whose jaw-dropping editing speed probably takes 1000s of hours to master and configure, and would not advise overengineering setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside graphical user interfaces and editing code at a 100 words per minute pace is key. 
 
-Probably, investing in an initial setup of a solid editor plus some basic terminal workflows is a good starting point that can be revisted every once in a while, e.g., when we start a larger new project. What editor you will center your environment around will depend a lot on the programming language you chose. Yet, it also depends on your personal preference of how much investment, support and supportive features you want. The following features / criteria are likely the most influential when composing a programming environment for statisitcal computing: 
+Most likely, investing in an initial setup of a solid editor plus some basic terminal workflows are a good starting point that can be revisited every once in a while, e.g., when we start a larger new project. What editor you will center your environment around will depend a lot on the programming language you chose. Yet, it also depends on your personal preference of how much investment, support and supportive features you want. The following features / criteria are likely the most influential when composing a programming environment for statistical computing: 
 
 
 - *code highlighting*, i.e., use of colors to highlight the structure of your code
 - *linting* scans the code for potential errors and displays hints in the editor
-- integrated *debuggers* allow to run parts of the code line by line and to inspect the inner workings of functions
-- *multi language support* is important when work multiple programming or markup languages. 
+- integrated *debuggers* allow running parts of the code line by line and to inspect the inner workings of functions
+- *multi-language support* is important when working in multiple programming or markup languages. 
 - *terminal integration* helps to run stuff using system commands
 - git integration helps interact with git version control and do basic add, commit, push operations through the editor's GUI 
 - build tools for programs that need rendering and compilation
@@ -19,17 +19,17 @@ Probably, investing in an initial setup of a solid editor plus some basic termin
 
 ## Integrated Development Environments (IDE)
 
-While some prefer lightning fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, IDEs are the right choice for most people. In other words, it's certainly possible to move a five person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an Integrated Development Environment (IDE) just like they prefer to use a truck when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages. 
+While some prefer lightning fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, IDEs are the right choice for most people. In other words, it's certainly possible to move a five-person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an Integrated Development Environment (IDE) just like they prefer to use a truck when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages. 
 
-The below sections will focus on data science' most popular editors, namely Visual Studio Code and RStudio. Hence I would like to mention at least some IDE juggernaughts here, for the reader looking or alternatives: [Eclipse](https://www.eclipse.org/) (mostly Java but tons of plugins for other languages), or JetBrains' [IntelliJ](https://www.jetbrains.com/idea/) (Java) and [PyCharm](https://www.jetbrains.com/pycharm/) (Python).
+The below sections will focus on data science' most popular editors, namely Visual Studio Code and RStudio. Hence, I would like to mention at least some IDE juggernauts here, for the reader looking or alternatives: [Eclipse](https://www.eclipse.org/) (mostly Java but tons of plugins for other languages), or JetBrains' [IntelliJ](https://www.jetbrains.com/idea/) (Java) and [PyCharm](https://www.jetbrains.com/pycharm/) (Python).
 
 
 
 ### RStudio
 
-Posit's *RStudio* has become the default environment for most R people and those who mostly use R but C or Python and Markdown in addition. The open source version ships for free as RStudio Desktop and RStudio Server Open Source. In addition the creators of RStudio offer commercially supported versions of both the desktop and server version (Posit Workbench). If you want your environment to essentially look like the environment of your peers, RStudio is a good choice. To have the same visual image in mind can be very helpful in workshops, coaching or teaching.
+Posit's *RStudio* has become the default environment for most R people and those who mostly use R but C or Python and Markdown in addition. The open source version ships for free as RStudio Desktop and RStudio Server Open Source. In addition, the creators of RStudio offer commercially supported versions of both the desktop and server version (Posit Workbench). If you want your environment to essentially look like the environment of your peers, RStudio is a good choice. To have the same visual image in mind can be very helpful in workshops, coaching or teaching.
 
-RStudio has 4 control panes which the user can fill with a different functionality like script editor, R console, terminal, file explorer, environment explorer, test suite, build suite and many others. I advise newcomers to change the default to have the script editor and the console next to each other (instead of below each other). That is because (at least in the Western world) we read from left to right and send source code from left to right in order to execute it in the console. Combine this practice with the *run selection shortcut* (cmd+enter or ctrl+enter on a PC) and you have gained substantial efficiency compared to leaving your keyboard, reaching four mouse and finding the right button. In addition, this workflow should allow you to see larger chunks^[Many coding conventions recommend to have no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.] of your code as well as your output. 
+RStudio has 4 control panes which the user can fill with a different functionality like script editor, R console, terminal, file explorer, environment explorer, test suite, build suite and many others. I advise newcomers to change the default to have the script editor and the console next to each other (instead of below each other). That is because (at least in the Western world) we read from left to right and send source code from left to right to execute it in the console. Combine this practice with the *run selection shortcut* (cmd+enter or ctrl+enter on a PC) and you have gained substantial efficiency compared to leaving your keyboard, reaching for your mouse and finding the right button. In addition, this workflow should allow you to see larger chunks^[Many coding conventions recommend having no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.] of your code as well as your output. 
 
 #### Explore Extensions {-}
 
@@ -43,7 +43,7 @@ RStudio has 4 control panes which the user can fill with a different functionali
 
 - use cmd+enter (ctrl+enter on PCs) to send selected code from the script window (on the left) to the console (on the right)
 
-- cmd+shift+option+R, while cursor is within a function's body (create a roxygen documentation skeleton)
+- cmd+shift+option+R, while the cursor is within a function's body (create a roxygen documentation skeleton)
 
 - use ctrl 1,2 to switch between console and script pane. 
 
@@ -56,7 +56,7 @@ RStudio has 4 control panes which the user can fill with a different functionali
 
 
 For R, the Open Source Edition of [R Studio Desktop](https://rstudio.com/products/rstudio/) is the right choice for most people.
-(If you are working in a team, R Studio's server version is great. It allows to have a centrally managed server which clients can use through their a web browser without even installing R and R Studio locally.) R Studio has solid support for a few other languages often used together with R, plus it's customizable. The French premier thinkR [Colin_Fay](https://twitter.com/_colinfay) gave a nice tutorial on [Hacking R Studio](https://speakerdeck.com/colinfay/hacking-rstudio-advanced-use-of-your-favorite-ide) at the useR! 2019 conference.
+(If you are working in a team, R Studio's server version is great. It allows having a centrally managed server which clients can use through their web browser without even installing R and R Studio locally.) R Studio has solid support for a few other languages often used together with R, plus it's customizable. The French premier thinkR [Colin_Fay](https://twitter.com/_colinfay) gave a nice tutorial on [Hacking R Studio](https://speakerdeck.com/colinfay/hacking-rstudio-advanced-use-of-your-favorite-ide) at the useR! 2019 conference.
 
 
 Back in fall 2020, long before RStudio turned into Posit, the company already indicated that data science was not about R vs. Python to them ([Remember, the introduction of the programming chapter of this book?](/programming.html#the-choice-that-doesnt-matter)) 
@@ -66,10 +66,10 @@ Back in fall 2020, long before RStudio turned into Posit, the company already in
 
 ### Visual Studio Code
 
-Outside the R universe (and to some degree even inside it), Visual Studio Code became to the go-to editor in data science. 
-Microsoft's Visual Studio Code started out as modular, general purpose IDE not focused on a single language.
-In the meantime there is not only great Python support, but also auto-completion, code highlighting for R or Julia and many other languages. 
-[VS Code Live Share](https://visualstudio.microsoft.com/services/live-share/) is just one rather random example of its remarkably well implemented features. Live share allows developers to edit a document simultaneously using multiple cursors in similar fashion to Google Docs, but with all the IDE magic. And in a Desktop client. 
+Outside the R universe (and to some degree even inside it), Visual Studio Code became the go-to editor in data science. 
+Microsoft's Visual Studio Code started out as a modular, general purpose IDE not focused on a single language.
+Meanwhile, there is not only great Python support, but also auto-completion, code highlighting for R or Julia and many other languages. 
+[VS Code Live Share](https://visualstudio.microsoft.com/services/live-share/) is just one rather random example of its remarkably well implemented features. Live share allows developers to edit a document simultaneously using multiple cursors similarly to Google Docs, but with all the IDE magic. And in a Desktop client. 
 
 
 
@@ -92,22 +92,22 @@ Now, that IDEs became so much better and many of them even offering vim modes or
 
 ## Notebooks
 
-Notebooks are yet another popular choice for a homecourt among data scientists and analysts. 
-Though most often associated with the Python world, notebooks are language agnostic and also common for the R and Julia languages. 
-The basic idea of notebooks is to run webserver in the background to present a browser based frontend to the developer.
+Notebooks are yet another popular choice for a home court among data scientists and analysts. 
+Though most often associated with the Python world, notebooks are language-agnostic and also common for the R and Julia languages. 
+The basic idea of notebooks is to run web server in the background to present a browser-based frontend to the developer.
 The difference between the Markdown rendering approach described in the [publishing chapter](publishing.html) is that the browser is not just used to display the result, but is also the interaction environment to interactively add commands. 
 The resulting workflow for, e.g., a data analysis in the making feels like a social media timeline: execute a command, receive a result posted on a web page printed below the command, again posting a prompt to expect the next command.
 This way we get an endless scroll of commands, analysis and descriptive text in between. 
 
-Consider the following example drawing a basketball court using the *matplotlib* Python package. 
+Consider the following example, drawing a basketball court using the *matplotlib* Python package. 
 This example uses screenshots of a notebook to illustrate the difference between a notebook and concepts like RMarkdown.
 
 >Note the prompts in between the results!
 
 ![](images/notebook-1.png)
 
-The above figure depicts a markdown element in editing mode, showing the markdown syntax (double ## for a section header of type 2).
-The second element is a chunk of Python code to import two well known Python libraries. 
+The above figure depicts a markdown element in editing mode, showing the Markdown syntax (double ## for a section header of type 2).
+The second element is a chunk of Python code to import two well-known Python libraries. 
 
 ![](images/notebook-2.png)
 
@@ -118,8 +118,8 @@ I have used this app for the illustration in this book because of its slim, no n
 
 
 <!--
-# Python code to draw a very simple NBA court, 
-# leaving out a few details. 
+# Python code to draw an elementary NBA court, 
+# omitting a few details. 
 # import matplotlib as mpl
 # import matplotlib.pyplot as plt
 
@@ -166,10 +166,10 @@ I have used this app for the illustration in this book because of its slim, no n
 
 ## The Console / Terminal
 
-In addition to the editor you will spent most of your time with, it is also worthwile to put 
-some effort into configuring keyboard driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third party applications. A program called a *shell* runs inside the terminal application to run  commands and display output. *bash* is probably the most known shell program, but there tons of different flavors. FWIW, I love [fish](https://fishshell.com/) shell (combined with iterm2) for its smooth auto-completion, highlighting and its extras. 
+In addition to the editor you will spend most of your time with, it is also worthwhile to put 
+some effort into configuring keyboard-driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third-party applications. A program called a *shell* runs inside the terminal application to run  commands and display output. *bash* is probably the most known shell program, but there are tons of different flavors. FWIW, I love [fish](https://fishshell.com/) shell (combined with iterm2) for its smooth auto-completion, highlighting and its extras. 
 
-In the Windows world, the use of terminal applications has been much less common than for OSX/Linux -- at least for non-systemadmins. Git Bash which ships with git version control installations on Windows mitigates this shortcoming as it provides a basic UNIX style console on windows. For a full fledged UNIX terminal experience, I suggest to use a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at OS level to a broader Windows audience – albeit with different Windows specific syntax. The ideas and examples in this book are limited to UNIX flavored shells. 
+In the Windows world, the use of terminal applications has been much less common than for OSX/Linux -- at least for non-systemadmins. Git Bash which ships with git version control installations on Windows mitigates this shortcoming as it provides a basic UNIX style console on windows. For a full-fledged UNIX terminal experience, I suggest using a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at the OS level to a broader Windows audience – albeit with different Windows specific syntax. The ideas and examples in this book are limited to UNIX flavored shells. 
 
 | Command | What it does |
 |---------|------|
@@ -187,7 +187,7 @@ In the Windows world, the use of terminal applications has been much less common
 ### Remote Connections SSH, SCP 
 
 One of the most important use cases of the console for data analysts is the ability to log into 
-other machines, namely servers that most often run on LINUX. Typically we use the SSH protocol to connect to a (remote) machine that allows to connect through port 22. 
+other machines, namely servers that most often run on LINUX. Typically, we use the SSH protocol to connect to a (remote) machine that allows to connect through port 22. 
 
 >Note that sometimes firewalls limit access to ports other than those needed for surfing the web (8080 for http:// and 443 for https://) so you can only access port 22 inside an organization's VPN network. 
 
@@ -197,7 +197,7 @@ To connect to a server using a username and password simply use your console's s
 ssh mbannert@someserver.org
 ```
 
-You will often encounter another login procedure though. RSA key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file: 
+You will often encounter another login procedure, though. RSA key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file: 
 
 ```sh
 ssh -i ~/.ssh/id_rsa mbannert@someserver.org
@@ -205,19 +205,19 @@ ssh -i ~/.ssh/id_rsa mbannert@someserver.org
 
 For more details on RSA key pair authentication, check this example from the case study chapter @sec-rsa. 
 
-While ssh is designed to log in to a remote server and from then on issue commands like the server was a local linux machine, `scp` copies files from one machine to another.
+While ssh is designed to log in to a remote server and from then on, issue commands like the server was a local Linux machine, `scp` copies files from one machine to another.
 
 ```sh
 scp -i ~/.ssh/id_rsa ~/Desktop/a_file_on_my_desktop
  mbannert@someserver.org:/some/remote/location/
 ```
 
-The above command copies a file dwelling on the users desktop into a /some/remote/location on the server. Just like ssh, secure copy (scp) can use RSA key authentication, too. 
+The above command copies a file dwelling on the user's desktop into a /some/remote/location on the server. Just like ssh, secure copy (scp) can use RSA key authentication, too. 
 
 
 ### Git through the Console
 
-Another common use case of the terminal is managing git version control. Admittedly, there is git integration for many IDEs that allow you to point and click your way commits, pushes and pulls as well as dedicated git clients like GitHub Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. The @sec-git sketches an idea of how to operate git through the console from the very basics to a feature branch based workflow.
+Another common use case of the terminal is managing git version control. Admittedly, there is git integration for many IDEs that allows you to point and click your way to commits, pushes and pulls as well as dedicated git clients like GitHub Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. The @sec-git sketches an idea of how to operate git through the console from the very basics to a feature branch-based workflow.
 
 
 
