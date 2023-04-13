@@ -5,29 +5,29 @@ In this chapter about the way developers work and collaborate, I will stick to v
 
 ## What is Git Version Control? 
 
-Git is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git programm itself is a small console programm that creates and manages a hidden folder inside the folder you put under version control (you know those folders with a leading dot in their foldername, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one. 
+Git is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git program itself is a small console program that creates and manages a hidden folder inside the folder you put under version control (you know those folders with a leading dot in their folder name, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one. 
 
 <img src="images/commits.png" width="300px">
 <div class="caption-half">Meaningful commit messages help to make sense of a project's history.</div>
 
 
-The key to appreciate the value of git is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). Because these GUIs tools^[[GitHub Desktop](https://desktop.github.com/), Atlassian's [Source Tree](https://www.sourcetreeapp.com/) and [Tortoise](https://tortoisegit.org/) are some of the most popular choices if you are not a console person.] may be convenient but do not really help to improve your understanding of the workflow, we will use the git console throughout this book. As opposed to the sync approaches mentioned above, a version control system allows to summarize a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message 'incorporated advice from Anna (discussion at XYZ Conf 2020)'. 
+The key to appreciating the value of git is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). Because these GUIs tools^[[GitHub Desktop](https://desktop.github.com/), Atlassian's [Source Tree](https://www.sourcetreeapp.com/) and [Tortoise](https://tortoisegit.org/) are some of the most popular choices if you are not a console person.] may be convenient but do not really help to improve your understanding of the workflow, we will use the git console throughout this book. As opposed to the sync approaches mentioned above, a version control system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message 'incorporated advice from Anna (discussion at XYZ Conference 2020)'. 
 
 
 ## Why Use Version Control in Research? 
 
 >A version control based workflow is a path to your goals that rather consists of semantically relevant steps instead of semantically meaningless chunks based on the time you saved them. 
 
-In other more blatant, applied words: naming files like 
+In other, more blatant, applied words: naming files like 
 `final_version_your_name.R` or `final_final_correction_collaboratorX_20200114.R` 
-is like naming your WiFi `dont_park_the_car_in_the_frontyard` or `be_quiet_at_night` to communicate with your neighbors.  Information is supposed to be sent in a message, not a file name. With version control it is immediately clear what the most current version is - no matter the file name. No room for interpretation. No need to start guessing about the delta between the current version and another version.
+is like naming your WiFi `dont_park_the_car_in_the_frontyard` or `be_quiet_at_night` to communicate with your neighbors.  Information is supposed to be sent in a message, not a file name. With version control, it is immediately clear what the most current version is - no matter the file name. No room for interpretation. No need to start guessing about the delta between the current version and another version.
 
-Also, you can easily try out different scenarios on different branches and merge them back together if you need to. Version control is a well established industry standard in software development. And it is relatively easy to adopt. With datasets growing in size and complexity, it is only natural to improve management of the code that processes these data. 
+Also, you can easily try out different scenarios on different branches and merge them back together if you need to. Version control is a well established industry standard in software development. And it is relatively easy to adopt. With datasets growing and complexity, it is only natural to improve management of the code that processes these data. 
 
-Academia has probably been the only place that would allow you to dive into hacking at somewhat complex problems for several years w/o ever taking notice of version control. As a social scientist who rather collaborates in small groups and writes moderate amount of code, have you ever thought about how to collaborate with 100+ persons in a big software project? Or to manage ten thousands of lines of code and beyond? Version control is an important reason why these things work. And it's been around for decades. But enough about the rant... 
+Academia has probably been the only place that would allow you to dive into hacking at somewhat complex problems for several years w/o ever taking notice of version control. As a social scientist who rather collaborates in small groups and writes moderate amount of code, have you ever thought about how to collaborate with 100+ persons in a big software project? Or to manage ten thousand lines of code and beyond? Version control is an important reason why these things work. And it's been around for decades. But enough about the rant... 
 
 
-## How Does Git Work ? 
+## How Does Git Work? 
 
 
 >This introduction tries narrow things down to the commands that you'll need if want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely Atlassian's Bitbucket, GitHub and Gitlab offer comprehensive introductions as well as advanced articles or videos to learn git online.
@@ -38,14 +38,14 @@ The first important implication of decentralized version control is that all ver
 <img src="images/decentralized.png" width="700px">
 <div class="caption-half"></div>
 
-Locally, a git repository consists of a *checkout* which is also called current *working copy* soon. This is the status of the file that your file explorer or your editor will see when you use them to open a file. To checkout a different version, one needs to call a commit by its unique commit hash and checkout that particular version. 
+Locally, a git repository consists of a *checkout* which is also called current *working copy* soon. This is the status of the file that your file explorer or your editor will see when you use them to open a file. To check out a different version, one needs to call a commit by its unique commit hash and checkout that particular version. 
 
-If you want to add new files to version control or bundle changes to some existing files into a new commit, add these files to the staging area, so they get committed next time a commit process is triggered. Finally committing all these staged changes under another commit id a new version is created. 
+If you want to add new files to version control or bundle changes to some existing files into a new commit, add these files to the staging area, so they get committed next time a commit process is triggered. Finally, committing all these staged changes under another commit ID a new version is created. 
 
 
 ## Moving Around
 
-So let's actually do it. Here's a three stage walk through of git commands that should have you covered in most use cases a researcher will face. Note that git has some pretty good error message that guess what could have gone wrong. Make sure to read them carefully. Even if you can't make sense of them, your online search will be a lot more efficient when you include these messages. 
+So let's actually do it. Here's a three-stage walk through of git commands that should have you covered in most use cases a researcher will face. Note that git has some pretty good error messages that guess what could have gone wrong. Make sure to read them carefully. Even if you can't make sense of them, your online search will be a lot more efficient when you include these messages. 
 
 **Stage 1: Working Locally**
 
@@ -75,7 +75,7 @@ kable(d,"html",escape= FALSE)
 **Stage 2: Working with a Remote Repository**
 
 Though git can be tremendously useful even without collaborators, the real fun starts
-when working together. The first step en route to get others involved is to add a remote repository. 
+when working together. The first step en route to getting others involved is to add a remote repository. 
 
 
 ```{r gittable2, eval=TRUE,message=FALSE, echo=FALSE}
@@ -99,8 +99,8 @@ kable(d,"html",escape= FALSE)
 
 **Stage 3: Branches**
 
-Branches are derivatives from the main branch that allow to work on different feature at the same time
-without stepping on someone elses feet. Through branch repositories can actively maintain different states. 
+Branches are derivatives from the main branch that allow to work on different features at the same time
+without stepping on someone else's feet. Through branches, repositories can actively maintain different states. 
 
 
 ```{r, eval=TRUE,message=FALSE, echo=FALSE}
@@ -124,19 +124,18 @@ kable(d,"html",escape= FALSE)
 
 **Fixing Merge Conflicts** 
 
-In most cases *git* is quite clever and can figure out which is the desired state of 
-a file when putting two versions of it together. When git's *recursive strategy* is possible, git
-it wil merge versions automatically. When the same lines were affected in different versions, git cannot tell 
+In most cases, *git* is quite clever and can figure out which is the desired state of 
+a file when putting two versions of it together. When git's *recursive strategy* is possible, git will merge versions automatically. When the same lines were affected in different versions, git cannot tell 
 which line should be kept. Sometimes you would even want to keep both changes. 
 
-But even in such scenario fixing the conflict is easy. Git will tell you that your last command
+But even in such scenario, fixing the conflict is easy. Git will tell you that your last command
 caused a merge conflict and which files are conflicted. Open these files and see all parts of the file that
 are in question. 
 
 <img src="images/merge_conflict.png">
-<div class="caption-left">Ouch! We created a conflict by editing the same line in the same file on different branches and trying to but these branches back together.</div>
+<div class="caption-left">Ouch! We created a conflict by editing the same line in the same file on different branches and trying to, but these branches back together.</div>
 
-Luckily git marks the exact spot where the conflict happens. Good text editors / IDEs 
+Luckily, git marks the exact spot where the conflict happens. Good text editors / IDEs 
 ship with cool colors to highlight all our options. 
 
 <img src="images/sublime_conflict.png">
@@ -145,9 +144,9 @@ ship with cool colors to highlight all our options.
 Some of the fancier editors even have git conflict resolve plugins that let you walk through all conflict points. 
 
 <img src="images/vscode_conflict.png">
-<div class="caption-left">In VS Code you can even click the option.</div>
+<div class="caption-left">In VS Code, you can even click the option.</div>
 
-At the and of the day, all do the same, i.e., remove the unwanted part including all the marker gibberish. 
+At the end of the day, all do the same, i.e., remove the unwanted part, including all the marker gibberish. 
 After you have done so, save, commit and push (if you are working with a remote repo) . Don't forget to make sure you kinked out ALL conflicts.  
 
 
@@ -158,31 +157,31 @@ The broad acceptance of git as a framework for collaboration has certainly playe
 
 ### Feature Branches
 
-This section discusses real world collaboration workflows of modern open source software developers. 
-Hence the prerequisites are a bit different in order to benefit the most from this section.
-Make sure you are past the mere ability to describe and explain git basics, make sure you are able to create and handle your own repositories. 
+This section discusses real-world collaboration workflows of modern open source software developers. 
+Hence, the prerequisites to benefitting the most from this section are bit different.
+Make sure you are past the mere ability to describe and explain git basics, make sure you can create and handle your own repositories. 
 
-If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each others feet.
+If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each other's feet.
 This is reasonable because, git aside, it is rarely efficient to work asynchronously on exact the same lines of code anyway.
 Nevertheless, there is a reason why *feature-branch-based* workflows became 
-very popular among developers: Imagine you collaborate in async fashion, maybe with someone in another timezone.
-Or with a colleague who works on your project, but in a totally different month during the year.
+very popular among developers: Imagine you collaborating in asynchronous fashion, maybe with someone in another timezone.
+Or with a colleague, who works on your project, but in a totally different month during the year.
 Or, most obviously, with someone you have never met.
-Forks and *feature-branch-based* workflows is the way a lot of modern open source projects tackle the above situations. 
+Forks and *feature-branch-based* workflows are the way a lot of modern open source projects tackle the above situations. 
 
-Forks are just a way to contribute via feature branches even in case you do not have write access to a repository.
-But let's just have look at the basic feature branch case in which you are part of the team first with full access to the repository.
+Forks are just a way to contribute via feature branches, even in case you do not have write access to a repository.
+But let's just have a look at the basic feature branch case, in which you are part of the team first with full access to the repository.
 Assume there is already some work done, some version of the project is already up on a some remote GitHub account.
 You join as a collaborator and are allowed to push changes now.
 It's certainly not a good idea to simply add things without review to a project's production.
-Like if you got access to modify the institute's website and you made your first changes and all your changes go straight to production. Like this:
+Like if you got access to modify the institute's website, and you made your first changes and all your changes go straight to production. Like this:
 
 <div class="yellow">&nbsp;</div>
 <div id="pink">
 It used to be subtle and light gray. I swear!
 </div>
 
-Bet everybody on the team took notice of the new team member by then. In a feature branch workflow you would start from the latest production version. Remember, git is decentralized and you have all versions of your team's project on your local machine.
+Bet everybody on the team took notice of the new team member by then. In a feature branch workflow, you would start from the latest production version. Remember, git is decentralized, and you have all versions of your team's project on your local machine.
 Create a new branch named indicative of the feature you are looking to work on. 
 
 ```
@@ -192,28 +191,28 @@ git checkout -b colorways
 You are automatically being switched to the freshly created branch.
 Do your thing now.
 It could be just a single commit, or several commits by different persons.
-Once you are done, i.e., commited all changes, add your branch to the remote repository by pushing.  
+Once you are done, i.e., committed all changes, add your branch to the remote repository by pushing.  
 
 ```
 git push -u origin colorways
 ```
 
-This will add a your branch called *colorways* to the remote repository.
+This will add your branch called *colorways* to the remote repository.
 If you are on any major git platform with your project, it will come with a decent web GUI.
-Such a GUI is the most straight forward way to do the next step: get your Pull Request (PR) out.
+Such a GUI is the most straightforward way to do the next step: get your Pull Request (PR) out.
 
 <img src="images/pr.png" width="700px">
-<div class="caption-left">Github pull request dialog: Select the *pull request*, choose which branch you merge into which target branch.</div>
+<div class="caption-left">GitHub pull request dialog: Select the *pull request*, choose which branch you merge into which target branch.</div>
 
 As you can see, git will check whether it is possible to merge automatically w/o interaction.
 Even if that is not possible, you can still issue the pull request.
-When you create the request you can also assign reviewers, but you could also do so at a later stage. 
+When you create the request, you can also assign reviewers, but you could also do so at a later stage. 
 
 
 
 >Even after a PR was issued you can continue to add commits to the branch about to be merged. 
 As long as you do not merge the branch through the Pull Request, commits are added to the branch.
-In other words your existing PR gets updated. This is a very natural way to account for reviewer comments. 
+In other words, your existing PR gets updated. This is a very natural way to account for reviewer comments. 
 
 **Pro-Tipp**: 
 Use commit messages like 'added join to SQL query, closes #3'. The key word 'closes' or 'fixes', will automatically close issues referred to when merged into the main branch.
@@ -224,35 +223,35 @@ Once the merge is done, all your changes are in the main branch and you and ever
 
 ### Pull Requests from Forks
 
-Now let's assume you are using an open source software created by someone else.
-At some point you miss a feature that you feel is not to hard to implement. 
-After googling and reading up a bit, you realize others would like to have these feature, too but the orginal authors did not find the time to implement it yet. 
-Hence you get to work yourself.
-Luckily the project is open source and up on GitHub, so you can simply get you version of, i.e., *fork* the project to your own GitHub account (just click the *fork* button and follow the instructions) .
+Now, let's assume you are using an open source software created by someone else.
+At some point, you miss a feature that you feel is not too hard to implement. 
+After googling and reading up a bit, you realize others would like to have these features, too, but the original authors did not find the time to implement it yet. 
+Hence, you get to work yourself.
+Luckily, the project is open source and up on GitHub, so you can simply get you version of, i.e., *fork* the project to your own GitHub account (just click the *fork* button and follow the instructions) .
 
-Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository your remote git platform will still remmeber where you got it from and allows you to issue a pull request to original author. The original authors can now review the pull request, see the changes and decide whether they are fine with the feature and its implementation. 
+Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository, your remote git platform will still remember where you got it from and allows you to issue a pull request to the original author. The original authors can now review the pull request, see the changes, and decide whether they are fine with the feature and its implementation. 
 
-There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussion are very context aware and sooner or later you will get your first pull request approved and merged. In that case congratulations - you have turned yourself into a team-oriented open source collaborator! 
+There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussions are very context aware and sooner or later, you will get your first pull request approved and merged. In that case, congratulations - you have turned yourself into a team-oriented open source collaborator! 
 
 
 ### Rebase vs. Merge
 
 Powerful systems often provide more than one way to achieve your goals.
 In the case of git, putting together two branches of work -- a very vital task, is exactly such a case:
-we can either *merge* or *rebase* branches. 
+We can either *merge* or *rebase* branches. 
 
 While *merge* keeps the history intact, *rebase* is a history altering command. 
-Though most people are happy with the more straight forward *merge* approach, a bit of context is certainly helpful. 
+Though most people are happy with the more straightforward *merge* approach, a bit of context is certainly helpful. 
 
-Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories becomes out of sync because someone else adds to the main branch while you keep adding to feature branch you can either merge oder rebase to put the two together. 
+Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories becomes out of sync because someone else adds to the main branch while you keep adding to the feature branch, you can either merge or rebase to put the two together. 
 
 Sitting on a checkout of the feature branch, a merge of the main branch would simply create an additional merge commit sequentially after the last commit of the feature branch. This merge commit contains the changes of both branches, no matter if they were automatically merged using the standard recursive strategy or through resolving a merge conflict. 
 
-As opposed to that, rebase would move all changes to main to before the feature branch started then sequentially add all commits of the feature branch.
+As opposed to that, rebase would move all changes to main to before the feature branch started, then sequentially add all commits of the feature branch.
 That way the remains linear, history looks cleaner and does not contain those artificial merge commits. 
 
-So when should we merge and when should rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main, because you would have a different main branch than other developers than. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. 
-The following [Atlassian tutorial](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) offers more insights an illustrations to deepen your understanding of the matter.  
+So, when should we merge, and when should rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main because you would have a different main branch than other developers than. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. 
+The following [Atlassian tutorial](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) offers more insights and illustrations to deepen your understanding of the matter.  
 
 
 
