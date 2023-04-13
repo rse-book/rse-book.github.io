@@ -1,31 +1,31 @@
 # Programming 101
 
-Obviously, the craft of *programming* is essential to handling data with a programming language. Though programming languages can differ quite a bit from each other, there is common ground and an approach to programming that is crucial to understand and important to learn by -- particularly for programmers without a formal computer science background. This chapter wants to point researchers, analysts and data scientists to the low hanging, high impact fruits of software engineering.
+Obviously, the craft of *programming* is essential to handling data with a programming language. Though programming languages can differ quite a bit from each other, there is common ground and an approach to programming that is crucial to understand and important to learn by -- particularly for programmers without a formal computer science background. This chapter wants to point researchers, analysts and data scientists to the low hanging, high-impact fruits of software engineering.
 
-*Programming is a form of communication*. Communication with others but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore source code needs to be written inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.
+*Programming is a form of communication*. Communication with others, but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore, source code needs to be written in inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.
 
-The programming examples in this book mostly stick to the [R] language which is easy to install and run on one's own local computer. All of the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have a been an equally good choice, but at there a had to be a decision for one language for this book... 
+The programming examples in this book mostly stick to the [R] language, which is easy to install and run on one's own local computer. All the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book... 
 
 
 ## The Choice that Doesn't Matter
 
-The very first (and intimidating) choice a novice hacker faces is which is programming language to learn. Unfortunately the medium popularily summed up as the internet offers a lot of really really good advice on the matter. The problem is, however, that this advice does not necessarily agree which language is the best for research. In the realm of data science -- get accustomed to that label if you are a scientist who works with data -- the debate basically comes down to two languages: The R Language for Statistical Computing and Python. 
+The very first (and intimidating) choice a novice hacker faces is which is the programming language to learn. Unfortunately, the medium popularly summed up as the internet offers a lot of really, fantastic advice on the matter. The problem is, however, that this advice does not necessarily agree which language is the best for research. In the realm of data science -- get accustomed to that label if you are a scientist who works with data -- the debate basically comes down to two languages: The R Language for Statistical Computing and Python. 
 
-At least to me, there is only one valid advice: **It simply does NOT matter**. If you stick around in data science long enough you will eventually get in touch with both languages and in turn learn both. There is a huge overlap of what you can do either of those languages. R came out of the rather specific domain of statiscs 25+ years ago and made its way to a more general programming language thanks to 15K+ extension packages (and counting). Built by a mathmatician, Python continues to be as general purpose as it's ever been. But it got more scientific, thanks to extension packages of its own such as [pandas](https://pandas.pydata.org/), [SciPy](https://www.scipy.org/) or [numPy](https://numpy.org/). As a result there is a huge overlap of what both languages can do and both will extend your horizon in unprecendented fashion if you did not use a full fledged programming language for your analysis before. 
+At least to me, there is only one valid advice: **It simply does NOT matter**. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. R came out of the rather specific domain of statistics 25+ years ago and made its way to a more general programming language thanks to 15K+ extension packages (and counting). Built by a mathematician, Python continues to be as general purpose as it's ever been. But it got more scientific, thanks to extension packages of its own such as [pandas](https://pandas.pydata.org/), [SciPy](https://www.scipy.org/) or [NumPy](https://numpy.org/). As a result, there is a huge overlap of what both languages can do and both will extend your horizon in unprecedented fashion if you did not use a full-fledged programming language for your analysis before. 
 
 ![R: "Dplyr smokes pandas." Python: "But Keras is better for ML!" Language wars can be entertaining, sometimes spectacular, but most times they are just useless...](images/languagewar.jpg)
 
-But why is there such a heartfelt debate online, if it doesn't matter? Let's pick up a random argument from this debate: R is easier to set up and Python is better for machine learning. If you worked with Java or another environment that's rather tricky to get going, you are hardened and might not cherish easy onboarding. If you got frustrated before you really started, you might feel otherwise. You may just have been unlucky making guesses about a not so well documented paragraph, trying to reproduce a nifty machine learning blog post. Just because you installed the wrong version of Python or didn't manage to make sense of virtualenv right from the beginning. 
+But why is there such a heartfelt debate online if it doesn't matter? Let's pick up a random argument from this debate: R is easier to set up and Python is better for machine learning. If you worked with Java or another environment that's rather tricky to get going, you are hardened and might not cherish easy onboarding. If you got frustrated before you really started, you might feel otherwise. You may just have been unlucky making guesses about a not so well documented paragraph, trying to reproduce a nifty machine learning blog post. Just because you installed the wrong version of Python or didn't manage to make sense of *virtualenv* right from the beginning. 
 
-The point is,  rest assured, if you just start doing analytics using a programming languages both languages are guaranteed to carry you a long way. There is no way to tell for sure which one will be the more dominant language in 10 years from now or whether both still be around holding their ground the way they do now. But once you reached a decent software carpentry level in either language, it will help you a lot learning the other. If your peers work with R, start with R, if your close community
-works with Python, start with Python. If you are in for the longer run either language will help you understand the concepts and ideas of programming with data. Trust me, there will be a natural opportunity to get to know the other. 
+The point is,  rest assured, if you just start doing analytics using a programming language both languages are guaranteed to carry you a long way. There is no way to tell for sure which one will be the more dominant language in 10 years from now, or whether both still be around holding their ground the way they do now. But once you reached a decent software carpentry level in either language, it will help you a lot learning the other. If your peers work with R, start with R, if your close community
+works with Python, start with Python. If you are in for the longer run, either language will help you understand the concepts and ideas of programming with data. Trust me, there will be a natural opportunity to get to know the other. 
 
 
 <!-- DO NOT FORGET TO SAY SOMETHIN ABOUT LICENSES !! -->
 
 If you associate programming more often than not with hours of fiddling, tweaking and fighting to galvanize approaches found online, this chapter is for you. Don't expect lots of syntax. If you came for examples of useful little programs from data visualization to parallel computing, check out the [case studies]().
 
-The following sections share a blueprint to go from explorative script to production ready package.  Organise your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith. 
+The following sections share a blueprint to go from explorative script to production-ready package.  Organize your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully, the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith. 
 
 
 <!-- - maybe overview sketch here... decision tree.  -->
@@ -40,9 +40,9 @@ How much planning ahead is optimal for your project ultimately depends on your e
 !["Over the days are when creating packages for gurus was only."](images/packages.jpg)
 
 
-The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me de-mystify packages for you: **Packages are nothing else than source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like [Packing Python Projects](https://packaging.python.org/tutorials/packaging-projects/) or Hadley Wickham's free online book [R Packages](https://r-pkgs.org/) explain how to create packages good enough to make the official PyPi or CRAN package repository. 
+The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing else than source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like [Packing Python Projects](https://packaging.python.org/tutorials/packaging-projects/) or Hadley Wickham's free online book [R Packages](https://r-pkgs.org/) explain how to create packages good enough to make the official PyPi or CRAN package repository. 
 
-In other words, it is unlikely that someone with moderate experience comes up the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office type of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file. 
+In other words, it is unlikely that someone with moderate experience comes with the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office types of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file. 
 
 Trust me on this one: The package approach will pay off early. Long before you ever thought about publishing your package. Write your own function definition, rather than just calling functions line by line. Write code as if you need to make sure it runs on another computer. Write code as if you need to maintain it. 
 
@@ -74,7 +74,7 @@ desc_stats_d2 <- list(d2_mean = d2_mean,
 
 ```
 
-To function defintions and calls like that
+To function definitions and calls like that
 
 ```{r}
 
@@ -99,7 +99,7 @@ create_basic_desc(d2)
 
 ```
 
-Start to document functions and their parameters using [Roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) syntax and you're already very close to creating your first package. **Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with you cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters. 
+Start to document functions and their parameters using [Roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) syntax, and you're already very close to creating your first package. **Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters. 
 
 ```{r}
 
@@ -120,7 +120,7 @@ create_basic_desc <- function(distr){
 
 ```
 
-Writing *reusable code* will improve your ability to remember syntax and apply concepts to other problems. The more you do it, the easier and more natural becomes. Just like a toddler figuring out how to speak in a natural language. At first progress seems small, but once kids understand the bits and pieces of a language they start building at a remarkable speed, learn and never forget again. 
+Writing *reusable code* will improve your ability to remember syntax and apply concepts to other problems. The more you do it, the easier and more natural it becomes. Just like a toddler figuring out how to speak in a natural language. At first, progress seems small, but once kids understand the bits and pieces of a language they start building at a remarkable speed, learn and never forget again. 
 
 
 
@@ -129,9 +129,9 @@ Writing *reusable code* will improve your ability to remember syntax and apply c
 
 ### Documentation
 
-First things first. Write the first bit of documentation before your first line of code. Documentation **written** with hindsight will always be written with an all-knowing, smartest-person-in-the-room mindset and the motivation of someone who already gave her best programming. Understand, I am not talking about the finetuning here, but about a written outline. Describe **how** parts of the code are going to do stuff. Also, examples can't hurt to illustrate what you meant. Research projects often take breaks and getting back to work after months should be as easy as possible. 
+First things first. Write the first bit of documentation before your first line of code. Documentation **written** with hindsight will always be written with an all-knowing, smartest-person-in-the-room mindset and the motivation of someone who already gave her best programming. Understand, I am not talking about the fine-tuning here, but about a written outline. Describe **how** parts of the code are going to do stuff. Also, examples can't hurt to illustrate what you meant. Research projects often take breaks, and getting back to work after months should be as easy as possible. 
 
-_Pseudo Code_ is a good way of writing up such an outline documentation. Take a simple API wrapper for example. Assume there is an API that returns numeric ids of hit entries when queried for keywords. These ids can be passed on to yet another [endpoint](), to obtain a profile. A rough game plan for an API Wrapper could like this: 
+_Pseudo Code_ is a good way of writing up such an outline documentation. Take a simple API wrapper, for example. Assume there is an API that returns numeric IDs of hit entries when queried for keywords. These IDs can be passed on to yet another [endpoint](), to obtain a profile. A rough game plan for an API Wrapper could like this: 
 
 ```r
 
@@ -147,7 +147,7 @@ _Pseudo Code_ is a good way of writing up such an outline documentation. Take a 
 
 Documentation should use your ecosystem's favorite documentation framework. Yet, your comments within the code are the raw, initial form of documentation. Comments help to understand key parts of a program as well as caveats. Comments help tremendously during development time, when debugging or coming back to a project. Let alone when joining a project started by others. 
 
-While pseudo code where comments mimmick code itself is the exception to that rule, good comments should always follow the **not-what-but-why** principle. Usually, most high level programming languages are fairly easy to read and remind of rudimentary English. Therefore a _what_ comment like this is considered rather useless: 
+While pseudocode where comments mimmick code itself is the exception to that rule, good comments should always follow the **not-what-but-why** principle. Usually, most high-level programming languages are fairly easy to read and remind of rudimentary English. Therefore, a _what_ comment like this is considered rather useless: 
 
 
 ```{r, eval=FALSE}
@@ -168,24 +168,24 @@ Comment on why you do things, especially with which plan for future use in mind.
 
 ### Design Your Interface
 
-In other languages it is fairly common to define the data type of both: the input and the output^[See statically typed language vs. dynamically typed language.]. Though doing so is not necessary in R, it is good practice to define the types of all parameters and results in your comments / documentation.  
+In other languages, it is fairly common to define the data type of both: the input and the output^[See statically typed language vs. dynamically typed language.]. Though doing so is not necessary in R, it is good practice to define the types of all parameters and results in your comments / documentation.  
 
-Once you know a bit more about your direction of travel, it's time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for adhoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need graphical user interface (GUI) like shiny? 
+Once you know a bit more about your direction of travel, it's time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for ad hoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need a graphical user interface (GUI) like shiny? 
 
 These questions will determine whether you use a [strictly functional approach](http://adv-r.had.co.nz/Functional-programming.html), a [rudimentary 
-form of object orientation like S3](http://adv-r.had.co.nz/OO-essentials.html), a stricter implementation like [R6](https://github.com/r-lib/R6/) or something completely exotic. There a plenty of great resources out there, so I will not elaborate on this for the time being. 
-The main message of this section is: Think about the main use case. Is it interactive? Is it a program that runs in batch typically? Do your users code? Would they prefer a GUI? 
+form of object orientation like S3](http://adv-r.had.co.nz/OO-essentials.html), a stricter implementation like [R6](https://github.com/r-lib/R6/) or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. 
+The main message of this section is: Think about the main use case. Is it interactive? Is it a program that runs in batch, typically? Do your users code? Would they prefer a GUI? 
 
 
 ### Dependencies
 
-One important word of advice for novice package developers is to think about your dependencies. Do not take depedencies lightly. Of course it is intriguiging to stand on the shoulders of giants. Isn't R great because of its 15K+ extension packages? Isn't exactly this was made R such as popular language? 
+One important word of advice for novice package developers is to think about your dependencies. Do not take dependencies lightly. Of course, it is intriguing to stand on the shoulders of giants. Isn't R great because of its 15K+ extension packages? Isn't exactly this was made R such as popular language? 
 
-Yes, extension packages are cool. Yes, the ease with with CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs it does not mean leaning on a lot of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages. 
+Yes, extension packages are cool. Yes, the ease with CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs it does not mean leaning on plenty of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages. 
 
-The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of [reverse dependencies]() tend to deprecate old functionality more smoothly as authors are aware of the issues breaking changes cause to a package's ecosystem. 
+The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of [reverse dependencies]() tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
 
-In R, the tidyverse bundle of packages seems ubiquitous and easy to use. But it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).
+In R, the *tidyverse* bundle of packages seems ubiquitous and easy to use. But it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).
 
 Often it does not take much to get rid of dependency: 
 
@@ -204,13 +204,13 @@ Sure, the above code is more intuitive, but shrewd use of good ol' _gsub_ and ba
 gsub("(.+)(mooo+)","\\2",cow)
 ```
 
-Again, {stringr} is certainly a well crafted package and it is definitely not the worst of all packages. But when you just loaded a package because it adds convenience to one single line or worse just because you found your solution online, think again before adding more dependencies to a production environment.  
+Again, {stringr} is certainly a well-crafted package, and it is definitely not the worst of all packages. But when you just loaded a package because it adds convenience to one single line or worse just because you found your solution online, think again before adding more dependencies to a production environment.  
 
 ### Folder Structure
 
 In R, packages may have the following folders. Note that this does not mean a package has to
-contain all of these folders. FWIW, an R package needs to have NAMESPACE and DESCRIPTION files, but that is not the point here. Also there are more comprehensive, better books on the matter than this little section. The point of this section though is to discuss the role of folders 
-and how they help you structure your work, even if you don't want to create an R package in first place. 
+contain all of these folders. FWIW, an R package needs to have NAMESPACE and DESCRIPTION files, but that is not the point here. Also, there are more comprehensive, better books on the matter than this little section. The point of this section though is to discuss the role of folders 
+and how they help you structure your work, even if you don't want to create an R package in the first place. 
 
 This chapter describes the role of different folders in a package and what these folders are good for. More likely than not, this will cover a lot of the aspects of your project, too.
 
@@ -227,7 +227,7 @@ The below description explains the role of all of these folders.
 **R**
 
 A folder to store function definitions as opposed to function calls. Typically 
-every function goes into a separate file. Sometimes it makes sense to group multiple functions into a single file when functions are closely related. Another reason for putting more than one function into a single file is when you have a collection of relatively simple, short helper functions. The R folder MUST NOT contain calls^[Essentially, examples are calls, too. Note, I do recommend to add examples. Hadley Wickham's [guide to document functions within packages](https://r-pkgs.org/man.html#man-functions) shows how to add examples correctly.].
+every function goes into a separate file. Sometimes it makes sense to group multiple functions into a single file when functions are closely related. Another reason for putting more than one function into a single file is when you have a collection of relatively simple, short helper functions. The R folder MUST NOT contain calls^[Essentially, examples are calls, too. Note, I do recommend adding examples. Hadley Wickham's [guide to documenting functions within packages](https://r-pkgs.org/man.html#man-functions) shows how to add examples correctly.].
 
 ```{r}
 my_func_def <- function(param1, param2){
@@ -241,7 +241,7 @@ my_func_def <- function(param1, param2){
 
 **man** 
 
-This folder contains the context manual of your package. What you'll find here is the so called _function reference_, basically a function and dataset specific documentation. It's what you see when you run `?function_name`. The content of the `man/` folder is usually created automatically from the roxygen style documentation (note the #' styled comments) during a ```devtools::document()`` run. Back in the days when people wore pijamas and
+This folder contains the context manual of your package. What you'll find here is the so-called _function reference_, basically a function and dataset-specific documentation. It's what you see when you run `?function_name`. The content of the `man/` folder is usually created automatically from the roxygen style documentation (note the #' styled comments) during a ```devtools::document()`` run. Back in the days when people wore pijamas and
 lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use Roxygen and render the function reference part of the documentation from their comments. 
 
 
@@ -436,28 +436,21 @@ Motivated by this error message, let's switch into debug mode
 debug(debug_me)
 ```
 
-The below screenshot show line-by-line execution of our demo function. The yellow line marks the line which will be executed on the next press of the return key. R's debug mode can be stopped by either executing the erroneous line or by executing a capital `Q` command in the R console window. 
+The below screenshot shows line-by-line execution of our demo function. The yellow line marks the line which will be executed on the next press of the return key. R's debug mode can be stopped by either executing the erroneous line or by executing a capital `Q` command in the R console window. 
 
 ![](images/debug.png)
 
 
 
-
-
-
-
-
-
-
 ## A Word on Peer Programming
 
-Peer programming, also called pair programming just means two developers sit in front of the same screen to collaborate on a piece of code. So why is there such a buzz about it? Why is there even a term for it? And why is there a section in an applied book on it? 
+Peer programming, also called pair programming, just means two developers sit in front of the same screen to collaborate on a piece of code. So why is there such a buzz about it? Why is there even a term for it? And why is there a section in an applied book on it? 
 
-That is because novice programmers (and their scientific supervisors) often doubt the efficiency of two paid persons working at the same work station. But programming is not about digging a hole with two shovels. Particularly not when it comes to building the software basis or frame of a project. 
+That is because novice programmers (and their scientific supervisors) often doubt the efficiency of two paid persons working at the same workstation. But programming is not about digging a hole with two shovels. Particularly not when it comes to building the software basis or frame of a project. 
 
-Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys from time to time and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. [Visual Studio Code Live Share](https://visualstudio.microsoft.com/services/live-share/) is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.
+Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. [Visual Studio Code Live Share](https://visualstudio.microsoft.com/services/live-share/) is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.
 
 
-Of course there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had its fair of success, too, according to the New Yorker's [https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge](The Friendship That Made Google Huge).  
+Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker's [https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge](The Friendship That Made Google Huge).  
 
 
