@@ -177,15 +177,12 @@ t_df |>
 Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused on making that one thing as convenient and inclusive as possibility. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundred. 
 
 
+## Data Publications {#datapub}
 
-
-
-
-## Data Publications
-
-- alongside papers
-- opendata, open research data
-
+As mentioned in the [data management section](data-management.qmd#data-publications), publishing data on research repositories and catalogs is important not only to make research reproducible but also helps to data workers to get credit for their contribution to research. 
+Archives like [Zenodo](https://zonodo.org) provide GitHub integration to automate data releases and versioning of data. 
+In addition, archives can parse the [citation file format (.cff)](https://citation-file-format.github.io/) and generate unique object identification (DOI) numbers for your dataset as well a meta information for the archive entry. 
+Thanks to rOpoenSci, there is also curated R package called [cffr](https://docs.ropensci.org/cffr/) to help generate citation files. 
 
 
     

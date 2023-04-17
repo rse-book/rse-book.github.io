@@ -353,22 +353,6 @@ For example, the ability to scrape a website daily and doing so with good intent
 
 In other words, the new type of researcher discussed in this book needs to be aware of potential legal and social consequences. The {polite} R package quoted above is an example of an alternative approach that favors etiquette over hiding IP addresses to avoid access denial. 
 
-
-### Privacy 
-
-Privacy in data science is a complex issue and could legitimately fill a book on its own.
-Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entry point to the matter. 
-When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. 
-It is important to understand that exposure does not stop at names. 
-A single extraordinary feature or an exotic combination of features can identify an individual within a dataset, or at least expose a group. 
-This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place and/or individuals were not aware that merging was possible. 
-So, what we can we as researchers learn from here, except from concerns and further complication of our work? 
-First, licenses and usage policies are a service to users of the data. 
-Second, awareness of what is sensitive data is a skill that is valuable to have on a team. 
-That being said, management of in-depth knowledge is rather easy to organize in centralized fashion. 
-Most universities and larger corporations will have an officer to run these things by. 
-
-
 ### Security
 
 "I ain't got nothing to hide. I don't care about people reading my stuff." 
@@ -392,9 +376,42 @@ In addition to the above brainy smurf advice, let me mention security as a reaso
 Enterprise level databases allow for granular access management and help to stay ahead of users and their rights regarding your database's entries. 
 
 
-### Open Data 
+### Privacy 
 
-Open Data refers to publicly available data that are available free of license costs and in machine-readable fashion. 
+Privacy in data science is a complex issue and could legitimately fill a book on its own.
+Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entry point to the matter. 
+When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. 
+It is important to understand that exposure does not stop at names. 
+A single extraordinary feature or an exotic combination of features can identify an individual within a dataset, or at least expose a group. 
+This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place and/or individuals were not aware that merging was possible. 
+So, what we can we as researchers learn from here, except from concerns and further complication of our work? 
+First, licenses and usage policies are a service to users of the data. 
+Second, awareness of what is sensitive data is a skill that is valuable to have on a team. 
+That being said, management of in-depth knowledge is rather easy to organize in centralized fashion. 
+Most universities and larger corporations will have an officer to run these things by. 
+
+
+### Data Publications
+
+Yet, there is more to managing your data's exposure than just making sure everything is encrypted and locked up. 
+Publication of data makes your results reproducible and improves trust in said results. 
+As a consequence there is a notable crescendo in the claim for reproducible research.
+While reproducible research is great, I would like to raise awareness that essentially all solutions created and advertised to improve reproducibilty implicitly assume the researcher deals with datasets obtained through a study. 
+In other words, it is implied that your work is not about monitoring an ongoing process.  
+
+
+#### Data Archives {.unnumbered}
+
+Research repositories like [Zenodo](https://zenodo.org) that allow to archive data follow a snapshot thinking:
+A catalog entry refers to a particular version of an research paper, report, software or dataset. 
+Whenever there is an update a new version is added to a catalog entry. 
+Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility it also helps data workers get credit for their contribution. 
+Fortunately, feeding research repositories is a task that is easy to automate thanks [great integration, APIs and community work](publishing.qmd#datapub). 
+
+
+#### Open Data {.unnumbered}
+
+Open Data archhives are special form of repositories. The term open data refers to publicly available data that are available free of license costs and in machine-readable fashion. 
 
 >“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefition.org
 
@@ -406,6 +423,8 @@ In addition, open data organizations provide you with a publication channel for 
 Initiatives like [SDMX (Statistical Data and Meta Exchange)](https://sdmx.org/) aim to improve exchange of data *and* data descriptions. 
 Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software.
 Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. 
+
+
 
 
 
