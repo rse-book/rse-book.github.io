@@ -85,7 +85,7 @@ search_met <- function(keyword){
 
 ```
 
-You can use these IDs with another [endpoint]() to receive the pictures
+You can use these IDs with another [endpoint](glossary.qmd) to receive the pictures
 themselves.
 
 ```{r,warning=FALSE,message=FALSE}
@@ -249,7 +249,7 @@ app.use('/static', express.static('public'))
 
 
 app.listen(port, () => {
-  console.log(`devOps carpentry demo app listening on port ${port}`)
+  console.log(`DevOps carpentry demo app listening on port ${port}`)
 })
 
 ```
@@ -290,7 +290,7 @@ var apiKeys = ['abc','123'];
 app.use('/static', express.static('public'))
 
 app.listen(port, () => {
-  console.log(`devOps carpentry demo api listening on port ${port}`)
+  console.log(`DevOps carpentry demo api listening on port ${port}`)
 })
 
 ```
@@ -298,7 +298,7 @@ app.listen(port, () => {
 We simply added a mount point using `app.use` (instead of `app.get`) which makes sure that everything past `/static` is affected by the logic added to this mount. 
 So, our `Hello World!` greeting is out there for anybody to see, while displaying the picture whose URL starts with `/static` needs an API key.
 Though this is only one, admittedly made up example of mapping URLs and parameters to functions via HTTP(S), it hints at the possibilities of dynamic APIs from database queries to web forms and many other applications. 
-The above example shows also how frameworks like [express.io]() or [plumber]() facilitate the definition of machine-to-machine interfaces even for less experienced developers. 
+The above example shows also how frameworks like [Express JavaScript](https://expressjs.com/) or plumber [@plumbr] facilitate the definition of machine-to-machine interfaces even for less experienced developers. 
 The impact of frameworks is not limited to the technical implementation, though. 
 Developers benefit from comprehensive approaches like Swagger and the OpenAPI specification during the conceptual part of creating machine to machine interfaces. 
 

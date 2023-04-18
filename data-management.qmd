@@ -61,7 +61,7 @@ json_ch <- jsonlite::read_json(
 ls.str(json_ch)
 ```
 
-Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like [rvest]() or [beautiful soup]() parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website's DOM. For DOM parsing example, see CASE STUDY XYZ. 
+Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest [@rvest] or beautiful soup [@soup] parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website's DOM. For DOM parsing example, see CASE STUDY XYZ. 
 
 
 ## Representing Data in Files
@@ -263,7 +263,7 @@ The above figure shows a terminal client which users use to send queries written
 SELECT * FROM myschema.demotable
 ```
 
-The above query would return all rows and all columns from a table called *demotable* in a schema called *myschema*. Such a query can easier be sent from a standalone database client, a database specific IDE with a built in client such as [DataGrid]() or a programming language. Given the ubiquity of databases most basically any programming language has native interfaces to the most common database. And if that is not the case, there is the database management system agnostic ODBC standard that is supported by all major SQL databases. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects. 
+The above query would return all rows and all columns from a table called *demotable* in a schema called *myschema*. Such a query can easier be sent from a standalone database client, a database specific IDE with a built in client such as [DataGrip](https://www.jetbrains.com/datagrip/) or a programming language. Given the ubiquity of databases most basically any programming language has native interfaces to the most common database. And if that is not the case, there is the database management system agnostic ODBC standard that is supported by all major SQL databases. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects. 
 
 ```{r,eval=FALSE}
 library(RPostgres)
@@ -300,7 +300,7 @@ engine from R.
 
 ```{r}
 library(RSQLite)
-db_path <- "devopscarpentry.sqlite3"
+db_path <- "DevOpscarpentry.sqlite3"
 con <- dbConnect(RSQLite::SQLite(), db_path)
 dbWriteTable(con, dbQuoteIdentifier(con,"mtcars"), mtcars, overwrite = T)
 dbWriteTable(con, dbQuoteIdentifier(con,"flowers"), iris, overwrite = T)

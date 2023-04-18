@@ -23,7 +23,7 @@ works with Python, start with Python. If you are in for the longer run, either l
 
 <!-- DO NOT FORGET TO SAY SOMETHIN ABOUT LICENSES !! -->
 
-If you associate programming more often than not with hours of fiddling, tweaking and fighting to galvanize approaches found online, this chapter is for you. Don't expect lots of syntax. If you came for examples of useful little programs from data visualization to parallel computing, check out the [case studies]().
+If you associate programming more often than not with hours of fiddling, tweaking and fighting to galvanize approaches found online, this chapter is for you. Don't expect lots of syntax. If you came for examples of useful little programs from data visualization to parallel computing, check out the [case studies](case-studies.qmd).
 
 The following sections share a blueprint to go from explorative script to production-ready package.  Organize your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully, the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith. 
 
@@ -131,7 +131,7 @@ Writing *reusable code* will improve your ability to remember syntax and apply c
 
 First things first. Write the first bit of documentation before your first line of code. Documentation **written** with hindsight will always be written with an all-knowing, smartest-person-in-the-room mindset and the motivation of someone who already gave her best programming. Understand, I am not talking about the fine-tuning here, but about a written outline. Describe **how** parts of the code are going to do stuff. Also, examples can't hurt to illustrate what you meant. Research projects often take breaks, and getting back to work after months should be as easy as possible. 
 
-_Pseudo Code_ is a good way of writing up such an outline documentation. Take a simple API wrapper, for example. Assume there is an API that returns numeric IDs of hit entries when queried for keywords. These IDs can be passed on to yet another [endpoint](), to obtain a profile. A rough game plan for an API Wrapper could like this: 
+_Pseudo Code_ is a good way of writing up such an outline documentation. Take a simple API wrapper, for example. Assume there is an API that returns numeric IDs of hit entries when queried for keywords. These IDs can be passed on to yet another [endpoint](appendix.qmd#glossary--), to obtain a profile. A rough game plan for an API Wrapper could like this: 
 
 ```r
 
@@ -183,7 +183,7 @@ One important word of advice for novice package developers is to think about you
 
 Yes, extension packages are cool. Yes, the ease with CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs it does not mean leaning on plenty of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages. 
 
-The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of [reverse dependencies]() tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
+The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of [reverse dependencies](appendix.qmd#glossary--) tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
 
 In R, the *tidyverse* bundle of packages seems ubiquitous and easy to use. But it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).
 

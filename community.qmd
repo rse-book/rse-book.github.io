@@ -48,7 +48,7 @@ Besides the community explorer mentioned in the introduction of this chapter, th
 ## Attend Conferences - Online Can Be a Viable Option!
 
 In similar fashion, conferences are a good channel to stay connected and up to date. 
-A conference like [PiConf](https://piconf.net/), [RStudio Conf]() or [useR!](https://twitter.com/_useRconf) is basically a bulk meetup: potentially hundreds of talks, thousands of potential contacts, and quite a bit of time to digest a large conference. 
+A conference like [PiConf](https://piconf.net/), Posit Conf or [useR!](https://twitter.com/_useRconf) is basically a bulk meetup: potentially hundreds of talks, thousands of potential contacts, and quite a bit of time to digest a large conference. 
 In recent years, conferences often provide an option to attend online. While to some, most of the fun and networking will be missing online, the ability to attend online can also be a great chance for a conference and its attendance. Online conferences have the chance to be a lot more inclusive than its in-person counterparts. Even costs aside, i.e., covered by scholarships, many cannot afford the time to leave their jobs and families to travel internationally for an entire week. 
 Online conferences also give people a chance to attend who may not be involved enough to attend a software development conference for an entire week, but are interested to catch a glimpse and to evaluate. 
 In any case, the entry hurdle is lower than ever. These paragraphs are meant to convince  take your time, to prepare, attend and debrief a major open source software conference -- online or in-person. 

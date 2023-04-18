@@ -67,7 +67,7 @@ This simplicity allows hosting static websites on a plethora of cheap hosters, i
 
 ### GitHub Pages
 
-One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's [GitHub Pages]().
+One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's [GitHub Pages](https://pages.github.com/).
 Though originally meant to be used with themes provided by GitHub and Markdown rendered by Jekyll on GitHub's servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.    
 
 All you need is a repository on GitHub to host the static files. You can activate GitHub Pages for your repository and choose whether you rather want the rendered files to be on a separate branch named *gh-pages* or in a subfolder of your root directory (mostly docs).
@@ -77,7 +77,7 @@ By convention, the corresponding static website of a git repository is exposed a
 For GitHub organizations which are popular to group repositories, the exposed URL would be
 `<orgname>.github.io/<repository-name>`. 
 
->Note that the online version of the book you are currently reading is hosted in very same fashion: `devops-carpentry.github.io/book`
+>Note that the online version of the book you are currently reading is hosted in very same fashion: `DevOps-carpentry.github.io/book`
 
 ### GitHub Actions
 
@@ -112,7 +112,7 @@ Hence, the visualization toolbox offers libraries with very different approaches
 ### Rendered Graphs 
 
 The idea of visualization libraries that create rendered graphs is straightforward to understand. 
-Libraries such as R's [ggplot2]() or Python's [matplotlib]() fix the dots per inch (dpi) at render time. 
+Libraries such as R's ggplot2 [@ggplot] or Python's matplotlib [@matplotlib] fix the dots per inch (dpi) at render time. 
 When writing to disk, such a graph is typically saved as a .png or .jpg file^[When file size is not relevant, .png is usually preferred because it allows for transparent backgrounds]. 
 To the end user, handling such graphs is rather intuitive as it feels similar to handling photos or screenshots:
 We have to handle single image files that we can easily preview with onboard tools of all major operating systems.
@@ -127,7 +127,7 @@ Because of interpolation, the text looks blurred, particularly in its curves.
 
 
 A streamlined publication workflow, such as the quarto-based approach described above, mitigates the problem because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 
-Further mitigation comes from extensions packages such as R's [gganimate]() that allows to animate graphs created with ggplot2.
+Further mitigation comes from extensions packages such as R's gganimate [@gganimate] that allows to animate graphs created with ggplot2.
 Though you might miss out on bleeding-edge interaction and the maximum flexibility of libraries with an online focus, rendered graphs created with a powerful library such as ggplot or matplotlib are a solid way to go for most people's use cases. 
 The likes of ggplot2 have home court advantage in all things printed and still look decent in most online outlets. 
 
@@ -187,7 +187,7 @@ Thanks to rOpoenSci, there is also curated R package called [cffr](https://docs.
 
     
 
-
+<!-- sayin this and that cause this and that was missin [@knuth84] -->
 
 
 

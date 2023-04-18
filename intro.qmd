@@ -1,6 +1,6 @@
 # Introduction
 
->Simply put, the *devOps* carpentry is the art of making our work deployable and functional on other machines. 
+>Simply put, the *DevOps* carpentry is the art of making our work deployable and functional on other machines. 
 
 ## Why Work Like a Software Engineer? 
 
@@ -53,17 +53,17 @@ packs |>
 
 Bandwagonism aside, source code can be a tremendously sharp, unambiguous and international communication channel.
 Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours. Platforms like [Stackoverflow](https://stackoverflow.com) or [Crossvalidated](https://crossvalidated.com) do not only store millions of questions and answers, they also gather a huge and active community to discuss issues. Or think of feature requests: After a little code ping pong with the package author, your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. 
-Academic journals have found that out, too. Many outlets require you to make the data and source code behind your work available. [Social Science Data Editors](https://social-science-data-editors.github.io/guidance/template-README.html) is a bleeding-edge project at the time of writing this, but is already referred to by top-notch journals like American Economic Review (AER). 
+Academic journals have found that out, too. Many outlets require you to make the data and source code behind your work available. Social Science Data Editors [@soscieds] is a bleeding-edge project at the time of writing this, but is already referred to by top-notch journals like American Economic Review (AER). 
 
 ![](images/communication.png)
 
 In addition to the above reproducibility and ability to share, code scales and automates. Automation is not only convenient. Like when you want to download data, process and create the same visualization and put it on your website any given Sunday. Automation is inevitable. Like when you have to gather daily updates from different outlets or work through thousands of .pdfs. 
 
-Last but not least, programming enables you to many things you couldn't do w/o being an absolute guru (if at all) if it wasn't for programming. Take visualization. Go, check [these D3 Examples](https://d3js.org/). Now, try to do that in Excel. If you did these things in Excel it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Yet, with decent, carpentry level programming skills you can already do so many spectacular things while not really specializing and staying very flexible. 
+Last but not least, programming enables you to many things you couldn't do w/o being an absolute guru (if at all) if it wasn't for programming. Take visualization. Go, check [these D3 Examples](https://observablehq.com/@d3/gallery). Now, try to do that in Excel. If you did these things in Excel it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Yet, with decent, carpentry level programming skills you can already do so many spectacular things while not really specializing and staying very flexible. 
 
 ## Why Work Like an Operations Engineer?
 
-While software *development* has become closer to many researchers, *operations* the second part of the term *devOps* is much further away from the average researcher or business analyst. 
+While software *development* has become closer to many researchers, *operations* the second part of the term *DevOps* is much further away from the average researcher or business analyst. 
 Why even think about Operations? 
 Because we can afford to do so. 
 Operations have become so much more accessible in recent years, that many applications can be dealt with single-handedly. 
@@ -74,14 +74,14 @@ The other way around, something to look at in early stage helps to acquire funds
 But people without a computer engineering background are by no means limited to proof of concepts these days.
 Trends like Cloud computing and software-as-a-service products help developers focus on their expertise and limit the amount of knowledge needed to host a service in secure and highly available fashion. 
 
-Also, automation is key to the devOps approach and an important reason why devOps thinking is also very well suited for academic researchers and business analysts.
+Also, automation is key to the DevOps approach and an important reason why DevOps thinking is also very well suited for academic researchers and business analysts.
 So called *continuous integration* can help to enforce a battery of quality checks such as unit tests or installation checks.  Let's say a push to a certain branch of a git repository leads to the checks and tests.
 In a typical workflow, successful completion of quality checks triggers continuous deployment to a blog, rendering into a paper or interactive data visualization.
 
-By embracing both parts of the *devOps* approach, researchers do not only gain extra efficiency, but more importantly
+By embracing both parts of the *DevOps* approach, researchers do not only gain extra efficiency, but more importantly
 improve reproducibility and therefore accountability and quality of their work.
-The effect of a devOps approach on quality control is not limited to reproducible research in a publication sense, but also enforces rules during collaboration: no matter who contributes, the contribution gets gut checked and only deployed if checks passed. 
-Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a *devOps carpentry* level understanding of development and operations is desirable for the programming data analyst. 
+The effect of a DevOps approach on quality control is not limited to reproducible research in a publication sense, but also enforces rules during collaboration: no matter who contributes, the contribution gets gut checked and only deployed if checks passed. 
+Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a *DevOps carpentry* level understanding of development and operations is desirable for the programming data analyst. 
 
 
 
@@ -106,13 +106,13 @@ Motivation and commitment are key to the endurance needed to develop programming
 
 If you can confidently say you can check all or most of the below, you have reached *carpentry* level in developing and running your applications.
 Even if this level is your starting point, you might find a few useful tips or simply may come to cherry-pick. 
-In case you are rather unfamiliar with most of the below, the classification, overview and contextualization *devOps carpentry* provides is likely this reads most valuable help to you. 
+In case you are rather unfamiliar with most of the below, the classification, overview and contextualization *DevOps carpentry* provides is likely this reads most valuable help to you. 
 
 A solid, applied understanding of **git version control** and the **collaboration workflow associated with git** does not only help you stay ahead of your own code. Git proficiency makes you a team player. 
-If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, *devOps carpentry* will open up a new world for you.
+If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, *DevOps carpentry* will open up a new world for you.
 An introduction to industry standard collaboration makes you fit into a plethora of (software) teams around the globe -- in academia and beyond.
 
-Your backlog en route to a researcher who is comfortable in devOps carpentry obviously contains a **strategy to improve your programming** itself.
+Your backlog en route to a researcher who is comfortable in DevOps carpentry obviously contains a **strategy to improve your programming** itself.
 To work with data in the long run, an idea of the **challenges of data management** from persistent storage to access restrictions should complement your programming.
 Plus, modern data-driven science often has to handle datasets so large, **infrastructure** other than local desktops come into play.
 Yet, high performance computing (HPC) is by far not the only reason why it is handy for a researcher to have a basic understanding of **infrastructure**.
@@ -124,15 +124,15 @@ The case studies at the end of the book are not exactly a backlog item like the 
 
 ## Requirements
 
-Even though *devOps carpentry* aims to be inclusive and open to a broad audience with different starting points, several prerequisites exist to get the most out of this book. 
+Even though *DevOps carpentry* aims to be inclusive and open to a broad audience with different starting points, several prerequisites exist to get the most out of this book. 
 I recommend you have made your first experience with an interpreted programming language like R or Python. 
-Be aware though that experience from a stats or math course does not automatically make you a programmer, as these courses are rightfully focused on their own domain. Books like [R for Data Science]() or websites like the [The Carpentries]() help to solidify your data science minded, applied programming. [Advanced R](), despite its daunting title, is an excellent read to get past the superficial kind of understanding of R that we might acquire from a first encounter in stats course. 
+Be aware though that experience from a stats or math course does not automatically make you a programmer, as these courses are rightfully focused on their own domain. Books like R for Data Science [@r4ds] or websites like the [The Carpentries](https://carpentries.org/) help to solidify your data science minded, applied programming. Advanced R [@advancedR], despite its daunting title, is an excellent read to get past the superficial kind of understanding of R that we might acquire from a first encounter in stats course.
 
 A certain familiarity with  *console / terminal basics* will help the reader sail smoothly. 
 At the end of the day, there are no real must-have requirements to benefit from this book. 
 The ability to self-reflect on one's starting point remains the most important requirement to leverage the book. 
 
-*devOps carpentry* willingly accepts to be overwhelming at times. Given the variety of topics touched in an effort to show the big picture, I encourage the reader to remain relaxed about a few blanks even when it comes to fundamentals.
+*DevOps carpentry* willingly accepts to be overwhelming at times. Given the variety of topics touched in an effort to show the big picture, I encourage the reader to remain relaxed about a few blanks even when it comes to fundamentals.
 The open source community offers plenty of great resources to selectively upgrade skills.
 This books intends to show how to evaluate the need for help and how to find the right sources. 
 If none of the above means something to you, though, I recommend making yourself comfortable with the basics of some of the above  fields before you start to read this book.
