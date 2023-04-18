@@ -227,7 +227,7 @@ The below description explains the role of all of these folders.
 **R**
 
 A folder to store function definitions as opposed to function calls. Typically 
-every function goes into a separate file. Sometimes it makes sense to group multiple functions into a single file when functions are closely related. Another reason for putting more than one function into a single file is when you have a collection of relatively simple, short helper functions. The R folder MUST NOT contain calls^[Essentially, examples are calls, too. Note, I do recommend adding examples. Hadley Wickham's [guide to documenting functions within packages](https://r-pkgs.org/man.html#man-functions) shows how to add examples correctly.].
+every function goes into a separate file. Sometimes it makes sense to group multiple functions into a single file when functions are closely related. Another reason for putting more than one function into a single file is when you have a collection of relatively simple, short helper functions. The R folder MUST NOT contain calls^[Essentially, examples are calls, too. Note, I do recommend adding examples. Hadley Wickham's guide to documenting functions within packages [@rpkgs] shows how to add examples correctly.].
 
 ```{r}
 my_func_def <- function(param1, param2){
@@ -241,8 +241,8 @@ my_func_def <- function(param1, param2){
 
 **man** 
 
-This folder contains the context manual of your package. What you'll find here is the so-called _function reference_, basically a function and dataset-specific documentation. It's what you see when you run `?function_name`. The content of the `man/` folder is usually created automatically from the roxygen style documentation (note the #' styled comments) during a ```devtools::document()`` run. Back in the days when people wore pijamas and
-lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use Roxygen and render the function reference part of the documentation from their comments. 
+This folder contains the context manual of your package. What you'll find here is the so-called _function reference_, basically a function and dataset-specific documentation. It's what you see when you run `?function_name`. The content of the `man/` folder is usually created automatically from the *roxygen* style documentation (note the #' styled comments) during a ```devtools::document()`` run. Back in the days when people wore pijamas and
+lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use *roxygen* and render the function reference part of the documentation from their comments. 
 
 
 ```{r, eval=FALSE}
