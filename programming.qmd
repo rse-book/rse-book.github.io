@@ -99,7 +99,7 @@ create_basic_desc(d2)
 
 ```
 
-Start to document functions and their parameters using [Roxygen](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html) syntax, and you're already very close to creating your first package. **Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters. 
+Start to document functions and their parameters using [Roxygen [@roxygen] syntax, and you're already very close to creating your first package. **Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters. 
 
 ```{r}
 
@@ -173,7 +173,7 @@ In other languages, it is fairly common to define the data type of both: the inp
 Once you know a bit more about your direction of travel, it's time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for ad hoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need a graphical user interface (GUI) like shiny? 
 
 These questions will determine whether you use a [strictly functional approach](http://adv-r.had.co.nz/Functional-programming.html), a [rudimentary 
-form of object orientation like S3](http://adv-r.had.co.nz/OO-essentials.html), a stricter implementation like [R6](https://github.com/r-lib/R6/) or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. 
+form of object orientation like S3](http://adv-r.had.co.nz/OO-essentials.html) [@advancedR], a stricter implementation like [R6 [@r6] or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. 
 The main message of this section is: Think about the main use case. Is it interactive? Is it a program that runs in batch, typically? Do your users code? Would they prefer a GUI? 
 
 
@@ -345,7 +345,7 @@ So why don't we write code correctly in the first place instead of writing code 
 When developing *new* features we might be confident that newly introduced features do not break existing functionality. At least until we test it :) . Experience proves that seemingly unrelated edits do cause side effects. That is why well maintained packages have so called unit tests that are run when the package is re-build. If one of the checks fails, the developer can take a look before the a change that broke the code is actually deployed. 
 To foster the development of these type of tests there are unit testing frameworks for many languages and frameworks. In R the most prominent testing packages are {tinytest} and {testthat}.
 
-Hadley's book R packages has a more thorough introduction to [testing in R](https://r-pkgs.org/tests.html) with the {testthat} packages. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco
+Hadley's book R packages has a more thorough introduction to [testing in R](https://r-pkgs.org/tests.html) with the testthat [@testthat] package. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco
 
 
 

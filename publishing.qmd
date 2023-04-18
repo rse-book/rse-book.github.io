@@ -135,7 +135,7 @@ The likes of ggplot2 have home court advantage in all things printed and still l
 ### JavaScript Visualization Libraries
 
 To those old enough to remember, JavaScript visualization may be reminiscent of a Japanese game convention at night: colorful and blinking. 
-But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like [Apache echarts](), [Data Driven Documents (d3js.org)]() or [Highcharts]() have very little in common with the JavaScript of the web of the late 90s.
+But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like Apache echarts [@echarts], Data Driven Documents (d3js.org) [@d3] or [Highcharts](https://www.highcharts.com/) have very little in common with the JavaScript of the web of the late 90s.
 In 2022, online communication can take your data visualization to another level.  
 
 Today, there are basically two popular JavaScript based approaches to data visualization: SVG manipulation and HTML5 drawing.
@@ -148,7 +148,7 @@ Let us quickly dive into both options...
 With the advent of widespread Scalable Vector Graphics (SVG) support in mainstream web browsers about a decade ago, the online ecosystem enabled numerous options to add channel-specific value to visualization. 
 Unlike formats with fixed resolutions like .gif, .jpg or .png formats, vector graphics are not only scalable without  loss, they are also defined inside your HTML document.
 This opens up the possibility to manipulate them easily using JavaScript as if they were objects of the DOM^[The Document Object Model (DOM) is the hierarchical definition of an HTML website, which in today's web is modified by Javascript]. 
-Mapping data to SVG aesthetics is the exact idea of the [Data Driven Documents (D3)](https://d3js.org), one of the most popular and powerful visualization libraries.
+Mapping data to SVG aesthetics is the exact idea of the [Data Driven Documents (D3), one of the most popular and powerful visualization libraries.
 For example, your data may drive the size of dots or any other object, e.g., a car pictogram for when you want to visualize the number of car registrations. 
 The above example shows a strength of the SVG approach: one can use existing SVGs without having to draw them from scratch using JavaScript. 
 
