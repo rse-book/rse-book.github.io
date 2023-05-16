@@ -763,14 +763,14 @@ During the implementation you'd meet regularly, let's say every 10 days, to disc
 
 Major git platforms ship with a decent, carpentry level project management GUI. The issue tracker is at the core of this. If you use it the minimal way, it's simply a colorful to-do list. Yet, with a bit of inspiration and the use of tags, comments and projects, an issue tracker can be a lot more
 
-<img src="images/issue.png">
+![](images/issue.png)
 <div class="caption-left">The GitHub issue tracker (example from one of the course's repositories) can be a lot more than a to-do list.</div>
 
 Swim lanes (reminiscent of a bird's-eye view of an Olympic pool) can be thought of columns that you have to walk through
 from left to right: To Do, Doing, Under Review, done. (you can also customize the number and label of lanes and event associate actions with them, but let's stick to those basic lanes in this section.) The idea is to use to keep track of the process and make the process transparent. 
 
-
-<img src="images/swim.png">
+![](images/swim.png)
+<!-- <img src="images/swim.png"> -->
 <div class="caption-left">GitHub's web platform offers swim lanes to keep a better overview of issues being worked on.</div>
 
 
@@ -809,7 +809,7 @@ Now, let's load the {seasonal} package and perform a basic seasonal adjustment
 of each of these time series.
 The first statement performs 100 adjustments sequentially, the second statement uses parallel computing to spread computations across my machine's multiple processors. 
 
-```{r, seasonal2}
+```{r, seasonal2}}
 library(seasonal)
 library(parallel)
 library(microbenchmark)
@@ -863,8 +863,13 @@ Another good use of benchmarking is to run a few smaller case experiments to get
 Unlike the below example, performance gains do not necessarily have to be linear. 
 Visualization can give us a better idea. 
 
+```{r, echo=FALSE}
+# hack to avoid pesky warning about masking 
+.GlobalEnv$unemp <- NULL
+```
 
-```{r, messages=FALSE, warnigs=FALSE}
+
+```{r, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(viridis)
 vizframe <- d[,c(1,5)]

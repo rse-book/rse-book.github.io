@@ -1,6 +1,7 @@
 project:
   type: book
 
+
 book:
   title: "DevOps Carpentry"
   subtitle: "A Researcher's Guide to the Open Source Ecosystem"
