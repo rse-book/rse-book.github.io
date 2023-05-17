@@ -5,9 +5,12 @@ help you tremendously to plan ahead.
 
 ## Why Go Beyond a Local Notebook?
 
-Admittedly, unless your favorite superhero is Inspector Gadget or you just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead. So, why leave the peaceful, well-known shire of our local environment for the uncharted, rocky territory of unwelcoming technical documentations and time-consuming rabbit holes?
+Admittedly, unless just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead. So, why leave the peaceful, well-known shire of our local environment for the uncharted, rocky territory of unwelcoming technical documentations and time-consuming rabbit holes?
 
-Performance, particularly in terms of throughput, is one good reason to look beyond desktop computers. Data protection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application to bring down a computation that ran for hours or even days. Or we need a server that is online 24/7 to publish a report, website or data visualization. 
+Performance, particularly in terms of throughput, is one good reason to look beyond desktop computers. Data protection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application to bring down a computation that ran for hours or even days. Or we need a computer that is online 24/7 to publish a report, website or data visualization. 
+
+
+![Thinking of a server as a 'program that listens' rather than a data vault that looks like a fridge is a good starting point. (source: own illustration)](images/listen.jpg){width=300px}
 
 
 ## Hosting Options 
