@@ -37,7 +37,7 @@ How much planning ahead is optimal for your project ultimately depends on your e
 ### Think library!
 
 
-!["Over the days are when creating packages for gurus was only."](images/packages.jpg)
+!["Over the days are when creating packages for gurus was only." (source: own illustration)](images/packages.jpg)
 
 
 The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing else than source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like [Packing Python Projects](https://packaging.python.org/tutorials/packaging-projects/) or Hadley Wickham's free online book [R Packages](https://r-pkgs.org/) explain how to create packages good enough to make the official PyPi or CRAN package repository. 
