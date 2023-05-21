@@ -2,7 +2,7 @@
 
 The goal of this chapter (and probably the most important goal of this entire book) is to help you with the big picture of which tool does what. The following sections will group common programming-with-data components by purpose. All of the resulting groups represent aspects of programming with data and I will move on to  discuss these groups in a dedicated chapter each. 
 
-![Aaaaaaah! Don't panic, Dr. Egghead! All these components are here to help you and you won't need all of them from the start.](images/dr_egghead_panics.jpg)
+![Aaaaaaah! Don't panic, Dr. Egghead! All these components are here to help you and you won't need all of them from the start. (source: own illustration)](images/dr_egghead_panics.jpg)
 
 
 Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project's *stack* is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in *programming with data* stacks. Below are some of the components I use most often. Of course, this is a personal choice. Obviously, I do not use *all* of these components in every single small project. *Git, R* and *R Studio* would be a good minimal version.

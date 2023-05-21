@@ -49,7 +49,7 @@ Your insights, questions, feedback and semester projects have been invaluable to
 Your field specific expertise is inspirational not only to me but also to readers of the book as it shows the broad relevance of the approach. 
 I would like to thank ETH Zurich, in particularly the Department of Management, Technology and Economics (D-MTEC) and the KOF Swiss Economic Institute for hosting my ideas over the last 13 years. 
 Thank you to educational developers Karin Brown and Erik Jentges - having teaching professionals with open ears and minds around helped to channel motivation and ideas into a course concept that continues to be popular among participants across departments and disciplines. 
-Torboern Netlandt deserves credit for enabling this widespread interest.
+Torbjørn Netland deserves credit for enabling this widespread interest.
 His early advice turned what was initially thought of as *Hacking for Economists* into *Hacking for Social Sciences* which eventually became *Hacking for Science*. 
 
 Though this book is not exactly a book about the R programming language, I would like to thank the R community in particular because of its instrumental role in growing my own engagement and horizon of the open source ecosystem.

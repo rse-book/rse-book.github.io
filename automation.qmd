@@ -2,7 +2,7 @@
 
 >Make repetitive work fun again!
 
-![](images/busy.png)
+![Too busy too automate? (source: Håkan Forss, https://hakanforss.wordpress.com)](images/busy.png)
 
 
 One aspect that makes a programming approach to data science and analytics appealing is *automation*. Data ingestion, dissemination, reporting or even analysis itself can be repetitive. 

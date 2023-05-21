@@ -6,7 +6,7 @@ The support of some of the best communities is so good it may very well outperfo
 Still, developer communities do have their idiosyncrasies.
 This section intends to help overcome entry barriers and encourage the reader to connect to the developer communities -- even if one is not a regular active contributor. 
 
-![R Community Explorer by Ben Ubah](images/community_explorer.png)
+![R Community Explorer by Ben Ubah. (source: benubah.github.io/r-community-explorer/rugs.html)](images/community_explorer.png)
 
 The above figure shows a screenshot of an interactive community explorer tool for the R community.
 Users can explore user groups and such as R user groups or R Ladies chapters around the world. At the time of writing, the tool counted more than 775'000 members of R user groups worldwide and more than 100'000 members of RLadies.

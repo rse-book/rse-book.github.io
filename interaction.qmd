@@ -2,9 +2,9 @@
 
 As a kid of the 90s, reading about a new editor or fancy shell coming out triggers playing Inspector Gadget's tune in my head. To invest a few fun hours into exploring a new tool that might save me a split second or two in processes that I run a hundred times daily may not always pay off by the hour even in a lifetime of programming, but is totally worth it in most cases - at least to me. Repetitive work is tiring and error-prone, adds to cognitive workload, and shifts focus away from hard-to-tackle puzzles. 
 
-That being said, I am nowhere near the vim aficionados whose jaw-dropping editing speed probably takes 1000s of hours to master and configure, and would not advise overengineering setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside graphical user interfaces and editing code at a 100 words per minute pace is key. 
+That being said, I am nowhere near the vim aficionados whose jaw-dropping editing speed probably takes 1000s of hours to master and configure, and I would not advise overengineering setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside graphical user interfaces and editing code at a 100 words per minute pace is key. 
 
-![Wizard or Carpenter? Aiming at solid mastery of your toolset is sufficient to become happy with programming approach to analytics.](images/wizardry.jpg)
+![Wizard or Carpenter? Aiming at solid mastery of your toolset is sufficient to become happy with a programming approach to analytics. (source: own illustration)](images/wizardry.jpg)
 
 
 Most likely, investing in an initial setup of a solid editor plus some basic terminal workflows are a good starting point that can be revisited every once in a while, e.g., when we start a larger new project. What editor you will center your environment around will depend a lot on the programming language you chose. Yet, it also depends on your personal preference of how much investment, support and supportive features you want. The following features / criteria are likely the most influential when composing a programming environment for statistical computing: 
@@ -64,7 +64,7 @@ For R, the Open Source Edition of [R Studio Desktop](https://rstudio.com/product
 
 Back in fall 2020, long before RStudio turned into Posit, the company already indicated that data science was not about R vs. Python to them ([Remember, the introduction of the programming chapter of this book?](/programming.html#the-choice-that-doesnt-matter)) 
 
-![Then RStudio already indicated years ago, it was not solely about R](images/rstudio_r_py.png)
+![Then RStudio already indicated years ago, it was not solely about R. (source: rstudio.com website in 2021)](images/rstudio_r_py.png)
 
 
 ### Visual Studio Code
