@@ -737,6 +737,7 @@ Truth be told, the full hype and excitement of a shiny app only comes into play 
 
 One of the cool things of learning shiny is how shiny, and its ecosystem allow you to learn quickly. Here are some of my favorite resources to hone your shiny skills. 
 
+![The shinydasboard R package provides nice, customizable skeletons for dashboards. (source: screenshot of minimal, blank dashboard created with shinydashboard)](images/blank_dashboard.png)
 
 - [R Studio Shiny's Widget Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) 
 
