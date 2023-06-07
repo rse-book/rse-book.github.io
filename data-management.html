@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -251,12 +270,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#relational-database-management-systems-rdbms" id="toc-relational-database-management-systems-rdbms" class="nav-link" data-scroll-target="#relational-database-management-systems-rdbms"><span class="toc-section-number">6.3.1</span>  Relational Database Management Systems (RDBMS)</a></li>
   <li><a href="#a-word-on-non-relational-databases" id="toc-a-word-on-non-relational-databases" class="nav-link" data-scroll-target="#a-word-on-non-relational-databases"><span class="toc-section-number">6.3.2</span>  A Word on Non-Relational Databases</a></li>
   </ul></li>
-  <li><a href="#non-technical-aspects-of-managing-data" id="toc-non-technical-aspects-of-managing-data" class="nav-link" data-scroll-target="#non-technical-aspects-of-managing-data"><span class="toc-section-number">6.4</span>  Non Technical Aspects of Managing Data</a>
+  <li><a href="#non-technical-aspects-of-managing-data" id="toc-non-technical-aspects-of-managing-data" class="nav-link" data-scroll-target="#non-technical-aspects-of-managing-data"><span class="toc-section-number">6.4</span>  Non-Technical Aspects of Managing Data</a>
   <ul class="collapse">
   <li><a href="#etiquette" id="toc-etiquette" class="nav-link" data-scroll-target="#etiquette"><span class="toc-section-number">6.4.1</span>  Etiquette</a></li>
-  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy"><span class="toc-section-number">6.4.2</span>  Privacy</a></li>
-  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="toc-section-number">6.4.3</span>  Security</a></li>
-  <li><a href="#open-data" id="toc-open-data" class="nav-link" data-scroll-target="#open-data"><span class="toc-section-number">6.4.4</span>  Open Data</a></li>
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="toc-section-number">6.4.2</span>  Security</a></li>
+  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy"><span class="toc-section-number">6.4.3</span>  Privacy</a></li>
+  <li><a href="#data-publications" id="toc-data-publications" class="nav-link" data-scroll-target="#data-publications"><span class="toc-section-number">6.4.4</span>  Data Publications</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -274,17 +293,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
-<p>Admittedly, I have said the same thing about <a href="version-control.html"><span>Chapter&nbsp;5</span></a> on version control, yet <em>data management</em> may be the single most impactful chapter of this book. This may be the case in particular in case you came from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long term) data management is a step into a bigger world.</p>
-<p>After decades of information engineering and computer science, some can’t help but wonder why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully this chapters helps the reader to assess how far they wanted to dig into data management.</p>
+<p>Admittedly, I have said the same thing about <a href="version-control.html"><span>Chapter&nbsp;5</span></a> on version control, yet <em>data management</em> may be the single most impactful chapter of this book. This may be the case in particular in case you come from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long term) data management is a step into a bigger world.</p>
+<p>After decades of information engineering and computer science, some can’t help but wonder why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully, this chapter helps the reader to assess how far they wanted to dig into data management.</p>
 <section id="forms-of-data" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="forms-of-data"><span class="header-section-number">6.1</span> Forms of Data</h2>
-<p>In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mostly trained to handle different flavors of two dimensional data as in <strong>one-observation-one-row</strong>. Adhoc studies conducted once result in <em>cross sectional data</em>: one line per observation, columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as <em>time series</em>. Multivariate time series, i.e., multi-variable, longitudinal data are often referred to as <em>panel data</em>. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet like tables. Here are a few easy-to-reproduce examples using popular R demo datasets.</p>
+<p>In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mostly trained to handle different flavors of two-dimensional data, as in <strong>one-observation-one-row</strong>. Ad hoc studies conducted once result in <em>cross-sectional data</em>: one line per observation, columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as <em>time series</em>. Multivariate time series, i.e., multi-variable, longitudinal data are often referred to as <em>panel data</em>. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet like tables. Here are a few easy-to-reproduce examples using popular R demo datasets.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" data-caption="moo"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">head</span>(mtcars)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -302,7 +322,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <pre><code>[1]  6 11</code></pre>
 </div>
 </div>
-<p>The above output shows an excerpt of the <em>mtcars</em> <strong>cross-sectional</strong> dataset with 6 lines and 11 variables. <em>Airpassenger</em> is a <strong>time series</strong> dataset represented in an R <em>ts</em> object which is essentially a vector with time based index attribute.</p>
+<p>The above output shows an excerpt of the <em>mtcars</em> <strong>cross-sectional</strong> dataset with 6 lines and 11 variables. <em>Airpassenger</em> is a <strong>time series</strong> dataset represented in an R <em>ts</em> object which is essentially a vector with time-based index attribute.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>AirPassengers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -321,7 +341,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 1960 417 391 419 461 472 535 622 606 508 461 390 432</code></pre>
 </div>
 </div>
-<p>Let’s create <strong>multivariate time series (panel)</strong> dataset, i.e., multiple variables observed over time:</p>
+<p>Let’s create <strong>a multivariate time series (panel)</strong> dataset, i.e., multiple variables observed over time:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Var1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">Var2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">10</span>),</span>
@@ -330,16 +350,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                Var1      Var2     Var3
-2000 Q1 -0.553825808  9.928785 32.04131
-2000 Q2  0.753683063 11.063691 29.48681
-2000 Q3  0.047050802 10.106099 29.63309
-2000 Q4  0.560446684  9.483104 30.26283
-2001 Q1  1.682103802  9.287202 27.84355
-2001 Q2 -1.220814662 10.808274 29.04588
-2001 Q3  0.812989888  8.391216 29.25218
-2001 Q4  0.004894755 10.554904 31.12424
-2002 Q1  0.501648646 10.951492 29.65601
-2002 Q2  1.190525783 10.080727 30.90366</code></pre>
+2000 Q1 -0.676858699  8.403807 29.80095
+2000 Q2  0.008546361 12.202218 30.98657
+2000 Q3 -1.236814166  9.758867 28.81733
+2000 Q4 -1.250533647  9.049875 30.52182
+2001 Q1 -0.240729144 10.526917 29.71805
+2001 Q2 -0.944497153  9.869729 28.65148
+2001 Q3  0.550031840  8.729170 27.55825
+2001 Q4  0.061196533 10.299427 29.00935
+2002 Q1  0.197022686  8.106308 28.65849
+2002 Q2 -0.394084843 11.548171 31.94435</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -351,28 +371,28 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id       time        value
- 1: Var1 2000-01-01 -0.553825808
- 2: Var1 2000-04-01  0.753683063
- 3: Var1 2000-07-01  0.047050802
- 4: Var1 2000-10-01  0.560446684
- 5: Var1 2001-01-01  1.682103802
- 6: Var1 2001-04-01 -1.220814662
- 7: Var1 2001-07-01  0.812989888
- 8: Var1 2001-10-01  0.004894755
- 9: Var1 2002-01-01  0.501648646
-10: Var1 2002-04-01  1.190525783
-11: Var2 2000-01-01  9.928785138
-12: Var2 2000-04-01 11.063690850
-13: Var2 2000-07-01 10.106099002
-14: Var2 2000-10-01  9.483103886
-15: Var2 2001-01-01  9.287202023</code></pre>
+ 1: Var1 2000-01-01 -0.676858699
+ 2: Var1 2000-04-01  0.008546361
+ 3: Var1 2000-07-01 -1.236814166
+ 4: Var1 2000-10-01 -1.250533647
+ 5: Var1 2001-01-01 -0.240729144
+ 6: Var1 2001-04-01 -0.944497153
+ 7: Var1 2001-07-01  0.550031840
+ 8: Var1 2001-10-01  0.061196533
+ 9: Var1 2002-01-01  0.197022686
+10: Var1 2002-04-01 -0.394084843
+11: Var2 2000-01-01  8.403807159
+12: Var2 2000-04-01 12.202218132
+13: Var2 2000-07-01  9.758867374
+14: Var2 2000-10-01  9.049874850
+15: Var2 2001-01-01 10.526917012</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
 <p>The ability to transform data from one format into the other and to manipulate both formats is an essential skill for any data scientist or data engineer. It is important to point out that the ability to do the above transformations effortlessly is an absolute go-to skill for people who want to use programming to run analysis. (Different analyses or visualizations may require one form or the other and ask for quick transformation).</p>
 </blockquote>
-<p>Hence popular data science programming languages offer great toolsets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how.</p>
-<p>Yet, not all information suits a two dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data, let’s take a look at the map file and code example case study in <a href="case-studies.html#sec-map"><span>Section&nbsp;11.6</span></a>. In memory, i.e., in our R session the data is represented in a list that contains multiple list may contain more lists nested inside.</p>
+<p>Hence, popular data science programming languages offer great tool sets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how.</p>
+<p>Yet, not all information suits a two-dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data, let’s take a look at the map file and code example case study in <a href="case-studies.html#sec-map"><span>Section&nbsp;11.6</span></a>. In memory, i.e., in our R session, the data is represented in a list that contains multiple list may contain more lists nested inside.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -395,16 +415,16 @@ features : List of 7
 type :  chr "FeatureCollection"</code></pre>
 </div>
 </div>
-<p>Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like <a href="">rvest</a> or <a href="">beautiful soup</a> parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website’s DOM. For DOM parsing example see CASE STUDY XYZ.</p>
+<p>Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest <span class="citation" data-cites="rvest">(<a href="references.html#ref-rvest" role="doc-biblioref">Wickham 2022</a>)</span> or beautiful soup <span class="citation" data-cites="soup">(<a href="references.html#ref-soup" role="doc-biblioref">Zheng, He, and Peng 2015</a>)</span> parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website’s DOM. For DOM parsing example, see CASE STUDY XYZ.</p>
 </section>
 <section id="representing-data-in-files" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="representing-data-in-files"><span class="header-section-number">6.2</span> Representing Data in Files</h2>
-<p>To create the above examples of different forms of data, it was mostly sufficient to represent data in memory, in this case within an R session. As an interpreted language, an R interpreter has to run at all times when using R. The very same is true for Python. Users of these language can work interactively, very much like with a pocket calculator on heavy steroids. All functions, all data, are in loaded into a machine’s RAM (memory) represented as objects of various classes. This is convenient, but has an obvious limitation: once the sessions ends, the information is gone. Hence we need to have a way to store at least the results of our computation in persistent fashion.</p>
-<p>Just like in office or image editing software, the intuitive way to store data persistently from a programming language is to store data into files. The choice of the file format is much less straight forward in our case though. The different forms of data discussed above, potential collaborators and interfaces are factors among others than weigh into our choice of a file format.</p>
+<p>To create the above examples of different forms of data, it was mostly sufficient to represent data in memory, in this case within an R session. As an interpreted language, an R interpreter has to run at all times when using R. The very same is true for Python. Users of these languages can work interactively, very much like with a pocket calculator on heavy steroids. All functions, all data, are in loaded into a machine’s RAM (memory) represented as objects of various classes. This is convenient, but has an obvious limitation: once the sessions ends, the information is gone. Hence, we need to have a way to store at least the results of our computation in persistent fashion.</p>
+<p>Just like in office or image editing software, the intuitive way to store data persistently from a programming language is to store data into files. The choice of the file format is much less straightforward in our case, though. The different forms of data discussed above, potential collaborators and interfaces are factors among others that weigh into our choice of a file format.</p>
 <section id="spreadsheets" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="spreadsheets"><span class="header-section-number">6.2.1</span> Spreadsheets</h3>
-<p>Based on our two dimension focused intuition and training spreadsheets are the on-disk analog of data.frames, data.tables and tibbles. Formats like <strong>.csv</strong> or <strong>.xlsx</strong> are the most common way to represent two dimensional data on disk.<br>
-On the programming side the ubiquity of spreadsheets leads to a wide variety of libraries to parse and write different spreadsheet formats.</p>
+<p>Based on our two dimensions focused intuition and training, spreadsheets are the on-disk analog of data.frames, data.tables and tibbles. Formats like <strong>.csv</strong> or <strong>.xlsx</strong> are the most common way to represent two-dimensional data on disk.<br>
+On the programming side, the ubiquity of spreadsheets leads to a wide variety of libraries to parse and write different spreadsheet formats.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -413,11 +433,11 @@ On the programming side the ubiquity of spreadsheets leads to a wide variety of 
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>d)</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"an_example.csv"</span>, sep<span class="op">=</span><span class="st">";"</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Comma separated values (.csv)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are good and simple option. Their text based nature makes .csv files language agnostic and human readable through a text editor.</p>
+<p>Comma separated values (.csv)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are good and simple option. Their text-based nature makes .csv files language agnostic and human-readable through a text editor.</p>
 <pre><code>;column1;column2
 0;1;3
 1;2;4</code></pre>
-<p>Though Excel spreadsheets are a convenient interface to office environments that offer extras such organization into workbooks, the simpler .csv format has advatanges in machine-to-machine communication and as an interface between different programming languages and tools. For example, web visualization libraries such as highcharts or echarts are most commonly written in javascript and can conveniently consume data from .csv files. The above example .csv file was written by Python and is now easily read by R.</p>
+<p>Though Excel spreadsheets are a convenient interface to office environments that offer extras such organization into workbooks, the simpler .csv format has advantages in machine-to-machine communication and as an interface between different programming languages and tools. For example, web visualization libraries such as highcharts or echarts are most commonly written in JavaScript and can conveniently consume data from .csv files. The above example .csv file was written in Python and is now easily read by R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>csv <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv2</span>(<span class="st">"an_example.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,7 +466,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 </section>
 <section id="file-formats-for-nested-information" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="file-formats-for-nested-information"><span class="header-section-number">6.2.2</span> File Formats for Nested Information</h3>
-<p>For many data engineers and developers. <a href="https://json.org">Javascript Object Notation (JSON)</a> has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and de-serialize JSON (read and write). Though harder to read for humans than .csv, pretty-fied JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format.</p>
+<p>For many data engineers and developers. <a href="https://json.org">JavaScript Object Notation (JSON)</a> has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -508,7 +528,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 </div>
 </div>
 <p>The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but is more flexible than the former.</p>
-<p>Besides JSON, <strong>XML</strong> is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more light weight and close to ‘the web’ while XML is the traditional, very explicit no-nonsense format. XML has a <strong>Document Type Defintion (DTD)</strong> that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach for as XML based defintion. <a href="https://sdmx.org/">SDMX</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, a world-wide effort to provide a format for exchange statistical data and meta data, is an example of such a higher level format build on XML.</p>
+<p>Besides JSON, <strong>XML</strong> is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more light weight and close to ‘the web’ while XML is the traditional, very explicit no-nonsense format. XML has a <strong>Document Type Definition (DTD)</strong> that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML based definition. <a href="https://sdmx.org/">SDMX</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">CompactData</span><span class="ot"> xmlns:c=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/compact"</span><span class="ot"> xmlns:sdds=</span><span class="st">"urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:msg=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message"</span>&gt;</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Header</span>&gt;</span>
@@ -538,12 +558,12 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CompactData</span>&gt;</span>
 <span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  i: 1403 : 1660204311  --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The above example shows and excerpt of the main economic forward looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like <em>Contact</em> or <em>ID</em> in the very same file. Note that modern browser often provide code folding for nodes and highlighting to improve readability.</p>
+<p>The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like <em>Contact</em> or <em>ID</em> in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.</p>
 </section>
 <section id="a-word-on-binaries" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="a-word-on-binaries"><span class="header-section-number">6.2.3</span> A Word on Binaries</h3>
 <p>Unlike all file formats discussed above, binaries cannot be read by humans using a simple text editor. In other words, you will need the software that wrote the binary to read it again. If that software was expensive and/or exotic, your work is much less accessible, more difficult to share and harder to reproduce. Though this disadvantage of binaries is mitigated when you use freely available open source software, storing data in binaries can still be a hurdle.</p>
-<p>But of course binaries do have advantages, too: binaries can compress their content and save space. Binaries can take on all sorts of in-memory objects including functions, not just datasets. In other words, binaries can bundle stuff. Consider the following load/save operation in R:</p>
+<p>But, of course, binaries do have advantages, too: binaries can compress their content and save space. Binaries can take on all sorts of in-memory objects including functions, not just datasets. In other words, binaries can bundle stuff. Consider the following load/save operation in R:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bogus <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b){</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  a <span class="sc">+</span> b</span>
@@ -566,7 +586,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 </section>
 <section id="interoperable-file-formats" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="interoperable-file-formats"><span class="header-section-number">6.2.4</span> Interoperable File Formats</h3>
-<p>Interoperable file formats cover some middle ground between the options described above. The <em>cross-language in-memory development platform</em> <a href="https://arrow.apache.org/">Apache Arrow</a> is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow to share in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless if you’re interested in a modern, yet established cross environment data science project, diggin deeper into Apache Arrow is certainly a fun experience.</p>
+<p>Interoperable file formats cover some middle ground between the options described above. The <em>cross-language in-memory development platform</em> <a href="https://arrow.apache.org/">Apache Arrow</a> is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you’re interested in a modern, yet established cross environment data science project, digging deeper into Apache Arrow is certainly a fun experience.</p>
 <p>From the Apache Arrow documentation:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -575,7 +595,7 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>file_path_sw <span class="ot">&lt;-</span> <span class="st">"starwars.parquet"</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(starwars, file_path_sw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The above R code writes the <em>starwars</em> demo dataset from the <em>dplyr</em> R package to a temporary .parquet file. The arrow R packages comes with the necessary toolset to write the open source columnar<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R.</p>
+<p>The above R code writes the <em>starwars</em> demo dataset from the <em>dplyr</em> R package to a temporary .parquet file. The arrow R packages comes with the necessary tool set to write the open source columnar<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyarrow.parquet <span class="im">as</span> pa</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pa.read_table(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -628,8 +648,8 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <p>When I composed this example reading and writing parquet files in different environments I ran into several compatibility issues. This shows that the level of interoperability is not at the same level as the interoperability of text files.</p>
 </blockquote>
 <section id="columnar" class="level4" data-number="6.2.4.1">
-<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="columnar"><span class="header-section-number">6.2.4.1</span> A Note on Overhead {.unnumbered}</h4>
-<p>The <em>parquet</em> format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that parquet comes with some overhead which may eat up gains if datasets are small. Consider our <em>starwars</em> dataset. At 87 rows and 14 columns the dataset is rather small.</p>
+<h4 data-number="6.2.4.1" class="anchored" data-anchor-id="columnar"><span class="header-section-number">6.2.4.1</span> A Note on Overhead</h4>
+<p>The <em>parquet</em> format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that parquet comes with some overhead, which may eat up gains if datasets are small. Consider our <em>starwars</em> dataset. At 87 rows and 14 columns, the dataset is rather small.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(starwars, <span class="at">file =</span> <span class="st">"starwars.csv"</span>)</span>
@@ -642,7 +662,7 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <pre><code>[1] 1.47</code></pre>
 </div>
 </div>
-<p>Hence the overhead of a schema implementation and other meta information outweighs parquet’s compression for such a small dataset leading to a parquet file that is almost 1.5 times larger than the corresponding csv file. Yet, parquet already turns the tables for the <em>diamonds</em> demo dataset from the <em>ggplot2</em> R package which is by no means a large dataset.</p>
+<p>Hence, the overhead of a schema implementation and other meta information outweighs parquet’s compression for such a small dataset, leading to a parquet file that is almost 1.5 times larger than the corresponding csv file. Yet, parquet already turns the tables for the <em>diamonds</em> demo dataset from the <em>ggplot2</em> R package, which is by no means a large dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
@@ -653,18 +673,18 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <pre><code>[1] 0.21</code></pre>
 </div>
 </div>
-<p>The parquet file for the diamonds dataset has roughly one fifth of the size of the corresponding text file. This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change.</p>
+<p>The parquet file for the <em>diamonds</em> dataset has roughly one fifth of the size of the corresponding text file. This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change.</p>
 </section>
 </section>
 </section>
 <section id="databases" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="databases"><span class="header-section-number">6.3</span> Databases</h2>
-<p>Given the options that file based approaches provide, what is a) the difference and b) the added value of going for database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.</p>
-<p>The above figure shows a terminal client which users use to send queries written in a query language. The client sends these queries to a database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). This leads to a standard way of interaction with the data no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself and continue to be inevitable as application backends and data archives for many use cases.</p>
+<p>Given the options that file based approaches provide, what is a) the difference and b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.</p>
+<p>The above figure shows a terminal client which users use to send queries written in a query language. The client sends these queries to a database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). This leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> myschema.demotable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The above query would return all rows and all columns from a table called <em>demotable</em> in a schema called <em>myschema</em>. Such a query can easier be send from a standalone database client, a database specific IDE with a built in client such as <a href="">DataGrid</a> or a programming language. Given the ubiquity of database most basically any programming language has native interfaces to the most common database. And if that is not the case there is the database management system agnostic ODBC standard that is supported by all major SQL database. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects.</p>
+<p>The above query would return all rows and all columns from a table called <em>demotable</em> in a schema called <em>myschema</em>. Such a query can easier be sent from a standalone database client, a database specific IDE with a built in client such as <a href="https://www.jetbrains.com/datagrip/">DataGrip</a> or a programming language. Given the ubiquity of databases most basically any programming language has native interfaces to the most common database. And if that is not the case, there is the database management system agnostic ODBC standard that is supported by all major SQL databases. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgres)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
@@ -682,10 +702,10 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span>
 <span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Obviously the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend to get a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form.</p>
+<p>Obviously, the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form.</p>
 <section id="relational-database-management-systems-rdbms" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="relational-database-management-systems-rdbms"><span class="header-section-number">6.3.1</span> Relational Database Management Systems (RDBMS)</h3>
-<p>When you need to pick a concrete database technology for your project, the first major choice is whether to go for a relational system or not. Unless you have a very compelling reason not to, you are almost always better off with a relational database: Relational databases are well established and accessible from any programming language used in programming with data that one could think of. In addition, modern RDBMS implmentations offer many non-relational features such as JSON field types and operations.</p>
+<p>When you need to pick a concrete database technology for your project, the first major choice is whether to go for a relational system or not. Unless you have a very compelling reason not to, you are almost always better off with a relational database: Relational databases are well established and accessible from any programming language used in programming with data that one could think of. In addition, modern RDBMS implementations offer many non-relational features such as JSON field types and operations.</p>
 <p>I would classify the most popular relational database implementations as follows. First, there is <a href="https://www.sqlite.org/index.html">SQLite</a>. As the name suggestions, <em>SQLite</em> is a light-weight, stripped down, easy-to-use and install implementation.</p>
 <blockquote class="blockquote">
 <p>SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. – SQLite.org</p>
@@ -693,7 +713,7 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <p><em>SQLite</em> data lives in a single file that the user queries through the <em>SQLite</em> engine. Here is an example using that engine from R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"devopscarpentry.sqlite3"</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"DevOpscarpentry.sqlite3"</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), db_path)</span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"mtcars"</span>), mtcars, <span class="at">overwrite =</span> T)</span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"flowers"</span>), iris, <span class="at">overwrite =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -719,55 +739,69 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 4 30.4   4 95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 </div>
 </div>
-<p><a href="https://www.mysql.com/">MySQL</a> can do a little more and also immensely popular, particularly as a database backend for web content management systems and other web based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium level web projects around the world. In its early days MySQL used to be an independent open source project, but was later on acquired by database juggernaught Oracle as a lite version to go with its flagship product.</p>
-<p>While certainly doing its job in millions of installation, MySQL it is not in at same level as <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">Microsoft SQL Server</a> (MSSQL), <a href="https://www.postgresql.org/">PostgreSQL</a> and <a href="https://www.oracle.com/database/technologies/">Oracle Database</a> and I suggest one of these three enterprise level database as data store for a research projects that go beyond hosting a blog. Especially when it comes to long term conservation of data and enforcing consistency MSSQL, PostgreSQL and Oracle are hard to beat. Among the three, personally I would always lean towards the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either of MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific enduser. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice.</p>
-<p>Another database management that gets a lot of attention recently (and rightfully so) is <a href="https://duckdb.org/">DuckDB</a>. Because it is mentioned so overwhelmingly positive and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offers an SQL interface but is very different in its aims from the traditional SQL databases. DuckDB is serverless and allows to access parquet files via a very fast SQL interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets but not so suitable for enterprise data warehousing.</p>
+<p><a href="https://www.mysql.com/">MySQL</a> can do a little more and also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium level web projects around the world. In its early days, MySQL used to be an independent open source project, but was later on acquired by database Juggernaut Oracle as a lite version to go with its flagship product.</p>
+<p>While certainly doing its job in millions of installations, MySQL it is not in at the same level as <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">Microsoft SQL Server</a> (MSSQL), <a href="https://www.postgresql.org/">PostgreSQL</a> and <a href="https://www.oracle.com/database/technologies/">Oracle Database</a> and I suggest one of these three enterprise level databases as data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. Among the three, personally I would always lean towards the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either of MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice.</p>
+<p>Another database management that gets a lot of attention recently (and rightfully so) is <a href="https://duckdb.org/">DuckDB</a>. Because it is mentioned so overwhelmingly positive and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer an SQL interface, but is very different in its aims from the traditional SQL databases. DuckDB is serverless and allows accessing parquet files via a very fast SQL interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but not so suitable for enterprise data warehousing.</p>
 </section>
 <section id="a-word-on-non-relational-databases" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="a-word-on-non-relational-databases"><span class="header-section-number">6.3.2</span> A Word on Non-Relational Databases</h3>
-<p>Among other things, relational databases are ACID (Atomicity, Consistency, Isolation, and Durability) compliant and ask for very little in return to provide us with a framework to keep our data quality high for decades. So unless, you have a very specific use case that translates to a compelling reason to use a non-relational database – stick to SQL. Document oriented storage or very unstructured information could be such a reason to use a non-relational database, yet their JSON support allow to also handle JSON in database cells. About a decade ago <a href="https://www.mongodb.com/">mongoDB</a> gained traction, partly piggy-backing the success of Javascript and serverside javascript in particular. In web development the MEAN (mongoDB, expressjs, angular and node) stack become popular and with the bundle the idea of non-relational databases as fast track to a backend spread.</p>
-<p>Columnar stores which are also considered non-relational are conceptional very similar to relational databases though denormalized and designed to structure sparse data. Database systems like <a href="https://cassandra.apache.org/">Apache Cassandra</a> are designed to scale horizontally and be highly available managing massive amounts of data. Cloud applications that distribute data across multiple nodes for high availability benefit from such an approach. Other options include <a href="https://redis.io/">Redis</a> or <a href="https://www.couchbase.com/">Couchbase</a>. If your are not happy with the ‘beyond-the-scope-of-this-book’ argument, blogging experts like <a href="https://blog.jooq.org/tag/nosql/">Lukas Eder</a> maybe biased but much better educated (and fun) to educate you here.</p>
+<p>Among other things, relational databases are ACID (Atomicity, Consistency, Isolation, and Durability) compliant and ask for very little in return to provide us with a framework to keep our data quality high for decades. So unless, you have a very specific use case that translates to a compelling reason to use a non-relational database – stick to SQL. Document oriented storage or very unstructured information could be such a reason to use a non-relational database, yet their JSON support allows to also handle JSON in database cells. About a decade ago, <a href="https://www.mongodb.com/">mongoDB</a> gained traction, partly piggybacking the success of JavaScript and server-side JavaScript in particular. In web development the MEAN (mongoDB, expressjs, angular and node) stack become popular and with the bundle, the idea of non-relational databases as fast track to a backend spread.</p>
+<p>Columnar stores, which are also considered non-relational, are conceptional very similar to relational databases, though denormalized and designed to structure sparse data. Database systems like <a href="https://cassandra.apache.org/">Apache Cassandra</a> are designed to scale horizontally and be highly available, managing massive amounts of data. Cloud applications that distribute data across multiple nodes for high availability benefit from such an approach. Other options include <a href="https://redis.io/">Redis</a> or <a href="https://www.couchbase.com/">Couchbase</a>. If you are not happy with the ‘beyond-the-scope-of-this-book’ argument, blogging experts like <a href="https://blog.jooq.org/tag/nosql/">Lukas Eder</a> maybe biased but much better educated (and fun) to educate you here.</p>
 </section>
 </section>
 <section id="non-technical-aspects-of-managing-data" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="non-technical-aspects-of-managing-data"><span class="header-section-number">6.4</span> Non Technical Aspects of Managing Data</h2>
-<p>The fact that we can do more data work single handedly than ever before does not only equate to more options. It also means we need to be aware of new issues and responsibilities.</p>
+<h2 data-number="6.4" class="anchored" data-anchor-id="non-technical-aspects-of-managing-data"><span class="header-section-number">6.4</span> Non-Technical Aspects of Managing Data</h2>
+<p>The fact that we can do more data work single-handedly than ever before does not only equate to more options. It also means we need to be aware of new issues and responsibilities. Those responsibilities range from leading by example when it comes to etiquette and ethical aspects, to sticking to privacy rules and complying with security standards. In addition, to normative restrictions that come with handling data, the options and choices of data dissemination are a realm of its own. Just like software publications, you should not just ‘drop’ data without a license and instructions on acceptable use of the data.</p>
 <section id="etiquette" class="level3" data-number="6.4.1">
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="etiquette"><span class="header-section-number">6.4.1</span> Etiquette</h3>
-<p>For example, the ability to scrape a website daily and doing so with good intent for the sake of science does not mean a website’s AUP (Accetable Use Policy) allows to systematically archive its content.</p>
+<p>Just because content is publicly available on a website, it does not automatically mean that bulk downloads, aggregation and re-publishing are ok. For example, the ability to scrape a website daily and doing so with good intent for science does not mean a website’s AUP (Acceptable Use Policy) allows to systematically archive its content.</p>
 <blockquote class="blockquote">
 <p>Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. –CRAN description of the polite R package.</p>
 </blockquote>
-<p>In other words, the new type of researcher discussed in this book needs awareness for potential legal consequences and online community etiquette, and ultimately the ability to choose an approach. The {polite} R package quoted above is an example for an alternative approach that favors etiqutte over hiding IP addresses to avoid access denial.</p>
+<p>In other words, the new type of researcher discussed in this book needs to be aware of potential legal and social consequences. The {polite} R package quoted above is an example of an alternative approach that favors etiquette over hiding IP addresses to avoid access denial.</p>
 </section>
-<section id="privacy" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="privacy"><span class="header-section-number">6.4.2</span> Privacy</h3>
-<ul>
-<li>aggreagtion level, assess the sensitivity of data, anonymize data</li>
-</ul>
+<section id="security" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="security"><span class="header-section-number">6.4.2</span> Security</h3>
+<p>“I ain’t got nothing to hide. I don’t care about people reading my stuff.” I’ve heard similar ‘arguments’ a zillion times. People who argue like that do not only endanger their environment, they contribute to a less secure internet at large, as they leave their device open to contribute to malicious activity.</p>
+<p>It does not have to be you who has been trusted to work with data that qualify as sensitive. Someone on your team or within your network might have been, and that person may trust you more than a stranger and be less vigilant when harmful actions are executed in your name. This is why you are <em>obliged</em> to care about security. As in, do <em>NOT</em> store your credentials in your scripts. As in, passwords are <em>NOT</em> part of your analysis. You may accidentally push your password to GitHub, where it is not only publicly available but also hard to delete for beginners. Make sure to choose secure passwords. Use a password manager, so the passwords do not need to be your cat’s name for you to remember. Use a password manager so you can afford not to have the same passwords for multiple applications. Use a password manager so you can afford to change your passwords. Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username / password combination. This is also a good way to connect to a remote server via ssh.</p>
+<p>In addition to the above brainy smurf advice, let me mention security as a reason to consider using a database to manage and archive your data for the long haul. Enterprise level databases allow for granular access management and help to stay ahead of users and their rights regarding your database’s entries.</p>
 </section>
-<section id="security" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="security"><span class="header-section-number">6.4.3</span> Security</h3>
-<ul>
-<li>do not store passwords</li>
-<li>tokens, RSA Keys</li>
-<li>access control easier via databases.</li>
-</ul>
+<section id="privacy" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="privacy"><span class="header-section-number">6.4.3</span> Privacy</h3>
+<p>Privacy in data science is a complex issue and could legitimately fill a book on its own. Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entry point to the matter. When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. It is important to understand that exposure does not stop at names. A single extraordinary feature or an exotic combination of features can identify an individual within a dataset, or at least expose a group. This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place and/or individuals were not aware that merging was possible. So, what we can we as researchers learn from here, except from concerns and further complication of our work? First, licenses and usage policies are a service to users of the data. Second, awareness of what is sensitive data is a skill that is valuable to have on a team. That being said, management of in-depth knowledge is rather easy to organize in centralized fashion. Most universities and larger corporations will have an officer to run these things by.</p>
 </section>
-<section id="open-data" class="level3" data-number="6.4.4">
-<h3 data-number="6.4.4" class="anchored" data-anchor-id="open-data"><span class="header-section-number">6.4.4</span> Open Data</h3>
-<ul>
-<li>publicly funded data</li>
-</ul>
+<section id="data-publications" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="data-publications"><span class="header-section-number">6.4.4</span> Data Publications</h3>
+<p>Yet, there is more to managing your data’s exposure than just making sure everything is encrypted and locked up. Publication of data makes your results reproducible and improves trust in said results. As a consequence there is a notable crescendo in the claim for reproducible research. While reproducible research is great, I would like to raise awareness that essentially all solutions created and advertised to improve reproducibilty implicitly assume the researcher deals with datasets obtained through a study. In other words, it is implied that your work is not about monitoring an ongoing process.</p>
+<section id="data-archives" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="data-archives">Data Archives</h4>
+<p>Research repositories like <a href="https://zenodo.org">Zenodo</a> that allow to archive data follow a snapshot thinking: A catalog entry refers to a particular version of an research paper, report, software or dataset. Whenever there is an update a new version is added to a catalog entry. Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility it also helps data workers get credit for their contribution. Fortunately, feeding research repositories is a task that is easy to automate thanks <a href="./publishing.html#datapub">great integration, APIs and community work</a>.</p>
+</section>
+<section id="open-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="open-data">Open Data</h4>
+<p>Open Data archhives are special form of repositories. The term open data refers to publicly available data that are available free of license costs and in machine-readable fashion.</p>
+<blockquote class="blockquote">
+<p>“Open data and content can be freely used, modified, and shared by anyone for any purpose” – opendefition.org</p>
+</blockquote>
+<p>Because of approaches such as the Swiss governments’ “open by default”, open government data (OGD) has become a common form of open data. The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets. In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. Initiatives like <a href="https://sdmx.org/">SDMX (Statistical Data and Meta Exchange)</a> aim to improve exchange of data <em>and</em> data descriptions. Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software. Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-rvest" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley. 2022. <em>Rvest: Easily Harvest (Scrape) Web Pages</em>. <a href="https://CRAN.R-project.org/package=rvest">https://CRAN.R-project.org/package=rvest</a>.
+</div>
+<div id="ref-soup" class="csl-entry" role="doc-biblioentry">
+Zheng, Chunmei, Guomei He, and Zuojie Peng. 2015. <span>“A Study of Web Information Extraction Technology Based on Beautiful Soup.”</span> <em>J. Comput.</em> 10: 381–87.
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Note that commas are not always necessarily the seperator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>SDMX.org about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardising and modernising (“industrialising”) the mechanisms and processes for the exchange of statistical data and metadata among international organisations and their member countries. SDMX is sponsored by seven international organisations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Note that commas are not always necessarily the separator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>SDMX.org about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>see also<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
@@ -814,7 +848,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -850,24 +901,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

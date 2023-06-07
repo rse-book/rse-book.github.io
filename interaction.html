@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -242,12 +242,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="toc-section-number">4.1.1</span>  RStudio</a></li>
   <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code"><span class="toc-section-number">4.1.2</span>  Visual Studio Code</a></li>
-  <li><a href="#others" id="toc-others" class="nav-link" data-scroll-target="#others"><span class="toc-section-number">4.1.3</span>  Others</a></li>
+  <li><a href="#editors-on-steroids" id="toc-editors-on-steroids" class="nav-link" data-scroll-target="#editors-on-steroids"><span class="toc-section-number">4.1.3</span>  Editors on Steroids</a></li>
   </ul></li>
-  <li><a href="#the-console-terminal" id="toc-the-console-terminal" class="nav-link" data-scroll-target="#the-console-terminal"><span class="toc-section-number">4.2</span>  The Console / Terminal</a>
+  <li><a href="#notebooks" id="toc-notebooks" class="nav-link" data-scroll-target="#notebooks"><span class="toc-section-number">4.2</span>  Notebooks</a></li>
+  <li><a href="#the-console-terminal" id="toc-the-console-terminal" class="nav-link" data-scroll-target="#the-console-terminal"><span class="toc-section-number">4.3</span>  The Console / Terminal</a>
   <ul class="collapse">
-  <li><a href="#remote-connections-ssh-scp" id="toc-remote-connections-ssh-scp" class="nav-link" data-scroll-target="#remote-connections-ssh-scp"><span class="toc-section-number">4.2.1</span>  Remote Connections SSH, SCP</a></li>
-  <li><a href="#git-through-the-console" id="toc-git-through-the-console" class="nav-link" data-scroll-target="#git-through-the-console"><span class="toc-section-number">4.2.2</span>  Git through the Console</a></li>
+  <li><a href="#remote-connections-ssh-scp" id="toc-remote-connections-ssh-scp" class="nav-link" data-scroll-target="#remote-connections-ssh-scp"><span class="toc-section-number">4.3.1</span>  Remote Connections SSH, SCP</a></li>
+  <li><a href="#git-through-the-console" id="toc-git-through-the-console" class="nav-link" data-scroll-target="#git-through-the-console"><span class="toc-section-number">4.3.2</span>  Git through the Console</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -265,20 +266,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
-<p>As kid of the 90s, reading about a new editor or fancy shell coming out triggers playing Inspector Gadget’s tune in my head. To invest a few fun hours into exploring a new tool that might save me a split second or two in processes that I run a hundred times on a daily basis may not always pay off by the hour even in a lifetime of programming, but is totally worth it in most case - at least to me. Repetitive work is tiring and error prone, adds to cognitive workload and shifts focus away from hard-to-tackle puzzles.</p>
-<p>That being said, I am nowhere near the vim aficionados whose jaw-dropping editing speed probably takes 1000s of hours to master and configure, and would not advise to overengineer setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside of graphical user interfaces and editing code at a 100 words per minute pace is key.</p>
-<p>Probably, investing in an initial setup of a solid editor plus some basic terminal workflows is a good starting point that can be revisted every once in a while, e.g., when we start a larger new project. What editor you will center your environment around will depend a lot on the programming language you chose. Yet, it also depends on your personal preference of how much investment, support and supportive features you want. The following features / criteria are likely the most influential when composing a programming environment for statisitcal computing:</p>
+<p>As a kid of the 90s, reading about a new editor or fancy shell coming out triggers playing Inspector Gadget’s tune in my head. To invest a few fun hours into exploring a new tool that might save me a split second or two in processes that I run a hundred times daily may not always pay off by the hour even in a lifetime of programming, but is totally worth it in most cases - at least to me. Repetitive work is tiring and error-prone, adds to cognitive workload, and shifts focus away from hard-to-tackle puzzles.</p>
+<p>That being said, I am nowhere near the vim aficionados whose jaw-dropping editing speed probably takes 1000s of hours to master and configure, and I would not advise overengineering setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside graphical user interfaces and editing code at a 100 words per minute pace is key.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/wizardry.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Wizard or Carpenter? Aiming at solid mastery of your toolset is sufficient to become happy with a programming approach to analytics. (source: own illustration)</figcaption><p></p>
+</figure>
+</div>
+<p>Most likely, investing in an initial setup of a solid editor plus some basic terminal workflows are a good starting point that can be revisited every once in a while, e.g., when we start a larger new project. What editor you will center your environment around will depend a lot on the programming language you chose. Yet, it also depends on your personal preference of how much investment, support and supportive features you want. The following features / criteria are likely the most influential when composing a programming environment for statistical computing:</p>
 <ul>
 <li><em>code highlighting</em>, i.e., use of colors to highlight the structure of your code</li>
 <li><em>linting</em> scans the code for potential errors and displays hints in the editor</li>
-<li>integrated <em>debuggers</em> allow to run parts of the code line by line and to inspect the inner workings of functions</li>
-<li><em>multi language support</em> is important when work multiple programming or markup languages.</li>
+<li>integrated <em>debuggers</em> allow running parts of the code line by line and to inspect the inner workings of functions</li>
+<li><em>multi-language support</em> is important when working in multiple programming or markup languages.</li>
 <li><em>terminal integration</em> helps to run stuff using system commands</li>
 <li>git integration helps interact with git version control and do basic add, commit, push operations through the editor’s GUI</li>
 <li>build tools for programs that need rendering and compilation</li>
@@ -286,11 +294,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <section id="integrated-development-environments-ide" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="integrated-development-environments-ide"><span class="header-section-number">4.1</span> Integrated Development Environments (IDE)</h2>
-<p>While some prefer lightning fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, IDEs are the right choice for most people. In other words, it’s certainly possible to move a five person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an Integrated Development Environment (IDE) just like they prefer to use a truck when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages.</p>
+<p>While some prefer lightning fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, IDEs are the right choice for most people. In other words, it’s certainly possible to move a five-person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an Integrated Development Environment (IDE) just like they prefer to use a truck when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages.</p>
+<p>The below sections will focus on data science’ most popular editors, namely Visual Studio Code and RStudio. Hence, I would like to mention at least some IDE juggernauts here, for the reader looking or alternatives: <a href="https://www.eclipse.org/">Eclipse</a> (mostly Java but tons of plugins for other languages), or JetBrains’ <a href="https://www.jetbrains.com/idea/">IntelliJ</a> (Java) and <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> (Python).</p>
 <section id="rstudio" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">4.1.1</span> RStudio</h3>
-<p>RStudio’s IDE <em>RStudio</em> has become the default environment for most R people and people who mostly use R but use C or Python and Markdown in addition. The open source RStudio IDEs version ships for free as RStudio Desktop and RStudio Server Open Source. In addition the creators of RStudio offer commercially supported versions of both the desktop and server version (RStudio Workbench). If you want your environment to essentially look like the environment of your peers, R Studio is a good choice. To have the same visual image in mind can be very helpful in workshops, coaching or teaching.</p>
-<p>RStudio has 4 control panes which the user can fill with a different functionality like script editor, R console, terminal, file explorer, environment explorer, test suite, build suite and many others. I advise newcomers to change the default to have the script editor and the console next to each other (instead of below each other). That is because (at least in the Western world) we read from left to right and send source code from left to right in order to execute it in the console. Combine this practice with the <em>run selection shortcut</em> (cmd+enter or ctrl+enter on a PC) and you have gained substantial efficiency compared to leaving your keyboard, reaching four mouse and finding the right button. In addition, this workflow should allow you to see larger chunks<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of your code as well as your output.</p>
+<p>Posit’s <em>RStudio</em> has become the default environment for most R people and those who mostly use R but C or Python and Markdown in addition. The open source version ships for free as RStudio Desktop and RStudio Server Open Source. In addition, the creators of RStudio offer commercially supported versions of both the desktop and server version (Posit Workbench). If you want your environment to essentially look like the environment of your peers, RStudio is a good choice. To have the same visual image in mind can be very helpful in workshops, coaching or teaching.</p>
+<p>RStudio has 4 control panes which the user can fill with a different functionality like script editor, R console, terminal, file explorer, environment explorer, test suite, build suite and many others. I advise newcomers to change the default to have the script editor and the console next to each other (instead of below each other). That is because (at least in the Western world) we read from left to right and send source code from left to right to execute it in the console. Combine this practice with the <em>run selection shortcut</em> (cmd+enter or ctrl+enter on a PC) and you have gained substantial efficiency compared to leaving your keyboard, reaching for your mouse and finding the right button. In addition, this workflow should allow you to see larger chunks<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of your code as well as your output.</p>
 <section id="explore-extensions" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="explore-extensions">Explore Extensions</h4>
 <ul>
@@ -302,41 +311,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4 class="unnumbered anchored" data-anchor-id="favorite-shortcuts">Favorite Shortcuts</h4>
 <ul>
 <li><p>use cmd+enter (ctrl+enter on PCs) to send selected code from the script window (on the left) to the console (on the right)</p></li>
-<li><p>cmd+shift+option+R (roxygen while on function)</p></li>
-<li><p>use ctrl 1,2 to</p></li>
+<li><p>cmd+shift+option+R, while the cursor is within a function’s body (create a roxygen documentation skeleton)</p></li>
+<li><p>use ctrl 1,2 to switch between console and script pane.</p></li>
 </ul>
 </section>
 <section id="pitfalls" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="pitfalls">Pitfalls</h4>
 <ul>
-<li>save defaults</li>
-<li>git integration</li>
+<li>You may stumble over RStudio’s defaults, such storing your global environment on exit and thus resurrecting long forgotten objects impacting your next experiment through, e.g., lexical scoping.</li>
+<li>RStudio’s git integration abstracts git essentials away, so it hampers understanding what’s going on.</li>
 <li>below vs beyond</li>
 </ul>
+<p>For R, the Open Source Edition of <a href="https://rstudio.com/products/rstudio/">R Studio Desktop</a> is the right choice for most people. (If you are working in a team, R Studio’s server version is great. It allows having a centrally managed server which clients can use through their web browser without even installing R and R Studio locally.) R Studio has solid support for a few other languages often used together with R, plus it’s customizable. The French premier thinkR <a href="https://twitter.com/_colinfay">Colin_Fay</a> gave a nice tutorial on <a href="https://speakerdeck.com/colinfay/hacking-rstudio-advanced-use-of-your-favorite-ide">Hacking R Studio</a> at the useR! 2019 conference.</p>
+<p>Back in fall 2020, long before RStudio turned into Posit, the company already indicated that data science was not about R vs.&nbsp;Python to them (<a href="./programming.html#the-choice-that-doesnt-matter">Remember, the introduction of the programming chapter of this book?</a>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rstudio_r_py.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Then RStudio already indicated years ago, it was not solely about R. (source: rstudio.com website in 2021)</figcaption><p></p>
+</figure>
+</div>
 </section>
 </section>
 <section id="visual-studio-code" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="visual-studio-code"><span class="header-section-number">4.1.2</span> Visual Studio Code</h3>
-<p>Unlike RStudio, Microsoft’s Visual Studio Code started out as modular, general purpose IDE not focused on a single language. In the meantime there is not only great Python support, but also auto-completion, code highlighting for R or Julia and many other languages.</p>
+<p>Outside the R universe (and to some degree even inside it), Visual Studio Code became the go-to editor in data science. Microsoft’s Visual Studio Code started out as a modular, general purpose IDE not focused on a single language. Meanwhile, there is not only great Python support, but also auto-completion, code highlighting for R or Julia and many other languages. <a href="https://visualstudio.microsoft.com/services/live-share/">VS Code Live Share</a> is just one rather random example of its remarkably well implemented features. Live share allows developers to edit a document simultaneously using multiple cursors similarly to Google Docs, but with all the IDE magic. And in a Desktop client.</p>
 </section>
-<section id="others" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="others"><span class="header-section-number">4.1.3</span> Others</h3>
-<p>Here are some of the features you are looking for in an IDE for programming with data:</p>
-<p>For R, the Open Source Edition of <a href="https://rstudio.com/products/rstudio/">R Studio Desktop</a> is the right choice for most people. (If you are working in a team, R Studio’s server version is great. It allows to have a centrally managed server which clients can use through their a web browser without even installing R and R Studio locally.) R Studio has solid support for a few other languages often used together with R, plus it’s customizable. The French premier thinkR <a href="https://twitter.com/_colinfay">Colin_Fay</a> gave a nice tutorial on <a href="https://speakerdeck.com/colinfay/hacking-rstudio-advanced-use-of-your-favorite-ide">Hacking R Studio</a> at the useR! 2019 conference.</p>
-<img src="images/rstudio_r_py.png" width="350px">
-<div class="caption-half">
-Screenshot of the coverpage of the R Studio <a href="https://rstudio.com">website</a> in fall 2020. The site advertises R Studio as an IDE for both languages R and Python. Remember <a href="introduction-the-choice-that-doesnt-matter.html">The Choice that Doesn’t Matter?</a>
-</div>
-<p>While R Studio managed to hold its ground among R aficionados as of fall 2020, Microsoft’s free <em>Visual Studio Code</em> has blown the competition out of the water otherwise. Microsoft’s IDE is blazing fast, extendable and polyglot. <a href="https://visualstudio.microsoft.com/services/live-share/">VS Code Live Share</a> is just one rather random example of its remarkably well implemented features. Live share allows developers to edit a document simultaneously using multiple cursors in similar fashion to Google Docs, but with all the IDE magic. And in a Desktop client.</p>
+<section id="editors-on-steroids" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="editors-on-steroids"><span class="header-section-number">4.1.3</span> Editors on Steroids</h3>
 <p>Another approach is to go for a highly customizable editor such as <a href="https://www.sublimetext.com/">Sublime</a> or <a href="https://atom.io/">Atom</a>. The idea is to send source code from the editor to interchangeable <a href="appendix.html#glossary">REPL</a>s which can be adapted according to the language that needs to be interpreted. That way a good linter / code highlighter for your favorite language is all you need to have a lightweight environment to run things. An example of such a customization approach is Christoph Sax’ small project <a href="https://github.com/christophsax/SublimeStudio">Sublime Studio</a>.</p>
-<p>Other examples for popular IDEs are <a href="https://www.eclipse.org/">Eclipse</a> (mostly Java but tons of plugins for other languages), or JetBrains’ <a href="https://www.jetbrains.com/idea/">IntelliJ</a> (Java) and <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> (Python).</p>
-<p>A word on vim and emacs (just so you know what people are talking about)</p>
+<p>For readers with UNIX experience, <a href="https://www.vim.org/">vim</a> may just be the most ubiquitous editor of them all, to everyone else it may just live in deep nerd territory. The fact a quick online search for ‘How to quit vim’ came back with more than 56.4 million (!) results shows that both perspectives have a point. With vim, users can switch between a <em>move around</em> and <em>insert</em> mode. The former allows the users to use single letters as shortcuts to navigate a text file instead of typing the actual letter. This enables users to do things like move-three-words-forward or delete the next three lines and many other more complex things. Given some practice and regular use, it is easy to imagine that vim wizards can navigate their source code incredibly quick.<br>
+Back when IDEs were less comfortable and often clunky due to their heavy lifting, a broader group of people had their incentives to invest into vim. Now, that IDEs became so much better and many of them even offering vim modes or plugins, the point of contact with vim for a data scientist is mostly UNIX server administration or work inside containers. <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a> is another noteworthy editor because, even though much more exotic, it is popular among long tenured R folks thanks to the Emacs Speaks Statistics extension.</p>
 </section>
 </section>
-<section id="the-console-terminal" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="the-console-terminal"><span class="header-section-number">4.2</span> The Console / Terminal</h2>
-<p>In addition to the editor you will spent most of your time with, it is also worthwile to put some effort into configuring keyboard driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third party applications. A program called a <em>shell</em> runs inside the terminal application to run commands and display output. <em>bash</em> is probably the most known shell program, but there tons of different flavors. FWIW, I love <a href="https://fishshell.com/">fish</a> shell (combined with iterm2) for its smooth auto-completion, highlighting and its extras.</p>
-<p>In the Windows world, the use of terminal applications has been much less common than for OSX/Linux – at least for non-systemadmins. Git Bash which ships with git version control installations on Windows mitigates this shortcoming as it provides a basic UNIX style console on windows. For a full fledged UNIX terminal experience, I suggest to use a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at OS level to a broader Windows audience –&nbsp;albeit with different Windows specific syntax. The ideas and examples in this book are limited to UNIX flavored shells.</p>
+<section id="notebooks" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="notebooks"><span class="header-section-number">4.2</span> Notebooks</h2>
+<p>Notebooks are yet another popular choice for a home court among data scientists and analysts. Though most often associated with the Python world, notebooks are language-agnostic and also common for the R and Julia languages. The basic idea of notebooks is to run web server in the background to present a browser-based frontend to the developer. The difference between the Markdown rendering approach described in the <a href="publishing.html">publishing chapter</a> is that the browser is not just used to display the result, but is also the interaction environment to interactively add commands. The resulting workflow for, e.g., a data analysis in the making feels like a social media timeline: execute a command, receive a result posted on a web page printed below the command, again posting a prompt to expect the next command. This way we get an endless scroll of commands, analysis and descriptive text in between.</p>
+<p>Consider the following example, drawing a basketball court using the <em>matplotlib</em> Python package. This example uses screenshots of a notebook to illustrate the difference between a notebook and concepts like RMarkdown.</p>
+<blockquote class="blockquote">
+<p>Note the prompts in between the results!</p>
+</blockquote>
+<p><img src="images/notebook-1.png" class="img-fluid"></p>
+<p>The above figure depicts a markdown element in editing mode, showing the Markdown syntax (double ## for a section header of type 2). The second element is a chunk of Python code to import two well-known Python libraries.</p>
+<p><img src="images/notebook-2.png" class="img-fluid"></p>
+<p>After the function definition, we see another markdown section header element that says <em>Call the Function</em> – this time already rendered to HTML. Finally, we call the Python function defined above in another code chunk element<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<!--
+# Python code to draw an elementary NBA court, 
+# omitting a few details. 
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
+
+
+# def draw_nba_court():
+#     # from wikipedia https://en.wikipedia.org/wiki/Basketball_court
+#     # basketball half court
+#     # 47' 50' => map it to: 470, 500 axes => 1' = 10
+#     fig = plt.figure(figsize=(4.7, 5))
+#     ax = fig.add_axes([0, 0, 1, 1])
+#     ax.set_xlim(-250, 250)
+#     ax.set_ylim(0, 470)
+#     color = 'black'
+
+#     # 3pt line, corner threes are 22', arc threes are 23' 9'' from the hoop
+#     ax.plot([-220, -220], [0, 140], linewidth=2, color = color)
+#     ax.plot([220, 220], [0, 140], linewidth=2, color = color)
+#     ax.add_artist(mpl.patches.Arc((0, 140), 440, 315, theta1=0,
+#      theta2=180, facecolor='none', edgecolor=color, lw=2))
+
+#     # hoop (backboard 6' wide)
+#     ax.add_artist(mpl.patches.Circle((0, 60), 10,
+#      facecolor='none', edgecolor=color, lw=2))
+#     ax.plot([-30, 30], [40, 40], linewidth=2, color=color)
+
+#     ax.plot([-80, -80], [0, 190], linewidth=2, color=color)
+#     ax.plot([80, 80], [0, 190], linewidth=2, color=color)
+#     ax.plot([-80, 80], [190, 190], linewidth=2, color=color)
+#     ax.add_artist(mpl.patches.Circle((0, 190), 60,
+#      facecolor='none', edgecolor=color, lw=2))
+
+#     # Remove all ticks / labels
+#     ax.set_xticks([])
+#     ax.set_yticks([])
+
+#     return ax
+
+# draw_nba_court()
+
+-->
+</section>
+<section id="the-console-terminal" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="the-console-terminal"><span class="header-section-number">4.3</span> The Console / Terminal</h2>
+<p>In addition to the editor you will spend most of your time with, it is also worthwhile to put some effort into configuring keyboard-driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third-party applications. A program called a <em>shell</em> runs inside the terminal application to run commands and display output. <em>bash</em> is probably the most known shell program, but there are tons of different flavors. FWIW, I love <a href="https://fishshell.com/">fish</a> shell (combined with iterm2) for its smooth auto-completion, highlighting and its extras.</p>
+<p>In the Windows world, the use of terminal applications has been much less common than for OSX/Linux – at least for non-systemadmins. Git Bash which ships with git version control installations on Windows mitigates this shortcoming as it provides a basic UNIX style console on windows. For a full-fledged UNIX terminal experience, I suggest using a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at the OS level to a broader Windows audience –&nbsp;albeit with different Windows specific syntax. The ideas and examples in this book are limited to UNIX flavored shells.</p>
 <table class="table">
 <caption>Basic Unix Terminal commands</caption>
 <colgroup>
@@ -380,25 +445,25 @@ Screenshot of the coverpage of the R Studio <a href="https://rstudio.com">websit
 </tr>
 </tbody>
 </table>
-<section id="remote-connections-ssh-scp" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="remote-connections-ssh-scp"><span class="header-section-number">4.2.1</span> Remote Connections SSH, SCP</h3>
-<p>One of the most important use cases of the console for data analysts is the ability to log into other machines, namely servers that most often run on LINUX. Typically we use the SSH protocol to connect to a (remote) machine that allows to connect through port 22.</p>
+<section id="remote-connections-ssh-scp" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="remote-connections-ssh-scp"><span class="header-section-number">4.3.1</span> Remote Connections SSH, SCP</h3>
+<p>One of the most important use cases of the console for data analysts is the ability to log into other machines, namely servers that most often run on LINUX. Typically, we use the SSH protocol to connect to a (remote) machine that allows to connect through port 22.</p>
 <blockquote class="blockquote">
 <p>Note that sometimes firewalls limit access to ports other than those needed for surfing the web (8080 for http:// and 443 for https://) so you can only access port 22 inside an organization’s VPN network.</p>
 </blockquote>
 <p>To connect to a server using a username and password simply use your console’s ssh client like this:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> mbannert@someserver.org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will often encounter another login procedure though. RSA key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file:</p>
+<p>You will often encounter another login procedure, though. RSA key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> ~/.ssh/id_rsa mbannert@someserver.org</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For more details on RSA key pair authentication, check this example from the case study chapter <a href="case-studies.html#sec-rsa"><span>Section&nbsp;11.1</span></a>.</p>
-<p>While ssh is designed to log in to a remote server and from then on issue commands like the server was a local linux machine, <code>scp</code> copies files from one machine to another.</p>
+<p>While ssh is designed to log in to a remote server and from then on, issue commands like the server was a local Linux machine, <code>scp</code> copies files from one machine to another.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-i</span> ~/.ssh/id_rsa ~/Desktop/a_file_on_my_desktop</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">mbannert@someserver.org:/some/remote/location/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The above command copies a file dwelling on the users desktop into a /some/remote/location on the server. Just like ssh, secure copy (scp) can use RSA key authentication, too.</p>
+<p>The above command copies a file dwelling on the user’s desktop into a /some/remote/location on the server. Just like ssh, secure copy (scp) can use RSA key authentication, too.</p>
 </section>
-<section id="git-through-the-console" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="git-through-the-console"><span class="header-section-number">4.2.2</span> Git through the Console</h3>
-<p>Another common use case of the terminal is managing git version control. Admittedly, there is git integration for many IDEs that allow you to point and click your way commits, pushes and pulls as well as dedicated git clients like GitHub Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. The <a href="version-control.html"><span>Chapter&nbsp;5</span></a> sketches an idea of how to operate git through the console from the very basics to a feature branch based workflow.</p>
+<section id="git-through-the-console" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="git-through-the-console"><span class="header-section-number">4.3.2</span> Git through the Console</h3>
+<p>Another common use case of the terminal is managing git version control. Admittedly, there is git integration for many IDEs that allows you to point and click your way to commits, pushes and pulls as well as dedicated git clients like GitHub Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. The <a href="version-control.html"><span>Chapter&nbsp;5</span></a> sketches an idea of how to operate git through the console from the very basics to a feature branch-based workflow.</p>
 
 
 </section>
@@ -406,7 +471,8 @@ Screenshot of the coverpage of the R Studio <a href="https://rstudio.com">websit
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Many coding conventions recommend to have no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Many coding conventions recommend having no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Though notebooks were originally designed to run on a (local) Python based webserver and to be used in a web browser, there is a neat, Electron based standalone app called JupyterLab. I have used this app for the illustration in this book because of its slim, no nonsense interface that unlike browsers comes without distractions from plugins.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -452,7 +518,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -488,24 +571,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

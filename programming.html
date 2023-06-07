@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -271,30 +290,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
-<p>Obviously, the craft of <em>programming</em> is essential to handling data with a programming language. Though programming languages can differ quite a bit from each other, there is common ground and an approach to programming that is crucial to understand and important to learn by – particularly for programmers without a formal computer science background. This chapter wants to point researchers, analysts and data scientists to the low hanging, high impact fruits of software engineering.</p>
-<p><em>Programming is a form of communication</em>. Communication with others but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore source code needs to be written inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.</p>
-<p>The programming examples in this book mostly stick to the [R] language which is easy to install and run on one’s own local computer. All of the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have a been an equally good choice, but at there a had to be a decision for one language for this book…</p>
+<p>Obviously, the craft of <em>programming</em> is essential to handling data with a programming language. Though programming languages can differ quite a bit from each other, there is common ground and an approach to programming that is crucial to understand and important to learn by – particularly for programmers without a formal computer science background. This chapter wants to point researchers, analysts and data scientists to the low hanging, high-impact fruits of software engineering.</p>
+<p><em>Programming is a form of communication</em>. Communication with others, but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore, source code needs to be written in inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.</p>
+<p>The programming examples in this book mostly stick to the <em>R</em> language, which is easy to install and run on one’s own local computer. All the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book…</p>
 <section id="the-choice-that-doesnt-matter" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-choice-that-doesnt-matter"><span class="header-section-number">3.1</span> The Choice that Doesn’t Matter</h2>
-<p>The very first (and intimidating) choice a novice hacker faces is which is programming language to learn. Unfortunately the medium popularily summed up as the internet offers a lot of really really good advice on the matter. The problem is, however, that this advice does not necessarily agree which language is the best for research. In the realm of data science – get accustomed to that label if you are a scientist who works with data – the debate basically comes down to two languages: The R Language for Statistical Computing and Python.</p>
-<p>At least to me, there is only one valid advice: <strong>It simply does NOT matter</strong>. If you stick around in data science long enough you will eventually get in touch with both languages and in turn learn both. There is a huge overlap of what you can do either of those languages. R came out of the rather specific domain of statiscs 25+ years ago and made its way to a more general programming language thanks to 15K+ extension packages (and counting). Built by a mathmatician, Python continues to be as general purpose as it’s ever been. But it got more scientific, thanks to extension packages of its own such as <a href="https://pandas.pydata.org/">pandas</a>, <a href="https://www.scipy.org/">SciPy</a> or <a href="https://numpy.org/">numPy</a>. As a result there is a huge overlap of what both languages can do and both will extend your horizon in unprecendented fashion if you did not use a full fledged programming language for your analysis before.</p>
+<p>The very first (and intimidating) choice a novice hacker faces is which is the programming language to learn. Unfortunately, the medium popularly summed up as the internet offers a lot of really, fantastic advice on the matter. The problem is, however, that this advice does not necessarily agree which language is the best for research. In the realm of data science – get accustomed to that label if you are a scientist who works with data – the debate basically comes down to two languages: The R Language for Statistical Computing and Python.</p>
+<p>At least to me, there is only one valid advice: <strong>It simply does NOT matter</strong>. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. R came out of the rather specific domain of statistics 25+ years ago and made its way to a more general programming language thanks to 15K+ extension packages (and counting). Built by a mathematician, Python continues to be as general purpose as it’s ever been. But it got more scientific, thanks to extension packages of its own such as <a href="https://pandas.pydata.org/">pandas</a>, <a href="https://www.scipy.org/">SciPy</a> or <a href="https://numpy.org/">NumPy</a>. As a result, there is a huge overlap of what both languages can do and both will extend your horizon in unprecedented fashion if you did not use a full-fledged programming language for your analysis before.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/languagewar.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">R: “Dplyr smokes pandas.” Python: “But Keras is better for ML!” Language wars can be entertaining, sometimes spectacular, but most times they are just useless…</figcaption><p></p>
+<p></p><figcaption class="figure-caption">R: “Dplyr smokes pandas.” Python: “But Keras is better for ML!” Language wars can be entertaining, sometimes spectacular, but most times they are just useless… (source: own illustration)</figcaption><p></p>
 </figure>
 </div>
-<p>But why is there such a heartfelt debate online, if it doesn’t matter? Let’s pick up a random argument from this debate: R is easier to set up and Python is better for machine learning. If you worked with Java or another environment that’s rather tricky to get going, you are hardened and might not cherish easy onboarding. If you got frustrated before you really started, you might feel otherwise. You may just have been unlucky making guesses about a not so well documented paragraph, trying to reproduce a nifty machine learning blog post. Just because you installed the wrong version of Python or didn’t manage to make sense of virtualenv right from the beginning.</p>
-<p>The point is, rest assured, if you just start doing analytics using a programming languages both languages are guaranteed to carry you a long way. There is no way to tell for sure which one will be the more dominant language in 10 years from now or whether both still be around holding their ground the way they do now. But once you reached a decent software carpentry level in either language, it will help you a lot learning the other. If your peers work with R, start with R, if your close community works with Python, start with Python. If you are in for the longer run either language will help you understand the concepts and ideas of programming with data. Trust me, there will be a natural opportunity to get to know the other.</p>
+<p>But why is there such a heartfelt debate online if it doesn’t matter? Let’s pick up a random argument from this debate: R is easier to set up and Python is better for machine learning. If you worked with Java or another environment that’s rather tricky to get going, you are hardened and might not cherish easy onboarding. If you got frustrated before you really started, you might feel otherwise. You may just have been unlucky making guesses about a not so well documented paragraph, trying to reproduce a nifty machine learning blog post. Just because you installed the wrong version of Python or didn’t manage to make sense of <em>virtualenv</em> right from the beginning.</p>
+<p>The point is, rest assured, if you just start doing analytics using a programming language both languages are guaranteed to carry you a long way. There is no way to tell for sure which one will be the more dominant language in 10 years from now, or whether both still be around holding their ground the way they do now. But once you reached a decent software carpentry level in either language, it will help you a lot learning the other. If your peers work with R, start with R, if your close community works with Python, start with Python. If you are in for the longer run, either language will help you understand the concepts and ideas of programming with data. Trust me, there will be a natural opportunity to get to know the other.</p>
 <!-- DO NOT FORGET TO SAY SOMETHIN ABOUT LICENSES !! -->
-<p>If you associate programming more often than not with hours of fiddling, tweaking and fighting to galvanize approaches found online, this chapter is for you. Don’t expect lots of syntax. If you came for examples of useful little programs from data visualization to parallel computing, check out the <a href="">case studies</a>.</p>
-<p>The following sections share a blueprint to go from explorative script to production ready package. Organise your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith.</p>
+<p>If you associate programming more often than not with hours of fiddling, tweaking and fighting to galvanize approaches found online, this chapter is for you. Don’t expect lots of syntax. If you came for examples of useful little programs from data visualization to parallel computing, check out the <a href="./case-studies.html">case studies</a>.</p>
+<p>The following sections share a blueprint to go from explorative script to production-ready package. Organize your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully, the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith.</p>
 <!-- - maybe overview sketch here... decision tree.  -->
 </section>
 <section id="plan-your-program" class="level2" data-number="3.2">
@@ -305,11 +325,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/packages.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">“Over the days are when creating packages for gurus was only.”</figcaption><p></p>
+<p></p><figcaption class="figure-caption">“Over the days are when creating packages for gurus was only.” (source: own illustration)</figcaption><p></p>
 </figure>
 </div>
-<p>The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think <em>reusable</em> code. Don’t think you can’t do it. Let me de-mystify packages for you: <strong>Packages are nothing else than source code organized in folders following some convention</strong>. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like <a href="https://packaging.python.org/tutorials/packaging-projects/">Packing Python Projects</a> or Hadley Wickham’s free online book <a href="https://r-pkgs.org/">R Packages</a> explain how to create packages good enough to make the official PyPi or CRAN package repository.</p>
-<p>In other words, it is unlikely that someone with moderate experience comes up the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office type of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file.</p>
+<p>The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think <em>reusable</em> code. Don’t think you can’t do it. Let me demystify packages for you: <strong>Packages are nothing else than source code organized in folders following some convention</strong>. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like <a href="https://packaging.python.org/tutorials/packaging-projects/">Packing Python Projects</a> or Hadley Wickham’s free online book <a href="https://r-pkgs.org/">R Packages</a> explain how to create packages good enough to make the official PyPi or CRAN package repository.</p>
+<p>In other words, it is unlikely that someone with moderate experience comes with the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office types of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file.</p>
 <p>Trust me on this one: The package approach will pay off early. Long before you ever thought about publishing your package. Write your own function definition, rather than just calling functions line by line. Write code as if you need to make sure it runs on another computer. Write code as if you need to maintain it.</p>
 <p>Go from scripts like this</p>
 <div class="cell">
@@ -336,7 +356,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                      <span class="at">d2_sd =</span> d2_sd,</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                      <span class="at">d2_q =</span> d2_q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To function defintions and calls like that</p>
+<p>To function definitions and calls like that</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imagine you had thousand of datasets.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Imagine you wanted to add some other stats</span></span>
@@ -378,7 +398,7 @@ $quantiles
 -3.04786089 -0.65322296  0.05485238  0.75345037  3.39037082 </code></pre>
 </div>
 </div>
-<p>Start to document functions and their parameters using <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">Roxygen</a> syntax and you’re already very close to creating your first package. <strong>Pro-tipp</strong>: Hit Cmd+Alt+Shift+R<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> while inside a function definition with you cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function’s parameters.</p>
+<p>Start to document functions and their parameters using [Roxygen <span class="citation" data-cites="roxygen">(<a href="references.html#ref-roxygen" role="doc-biblioref">Hadley Wickham et al. 2022</a>)</span> syntax, and you’re already very close to creating your first package. <strong>Pro-tipp</strong>: Hit Cmd+Alt+Shift+R<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function’s parameters.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Create Basic Descriptive Statistics</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -395,12 +415,12 @@ $quantiles
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  out</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Writing <em>reusable code</em> will improve your ability to remember syntax and apply concepts to other problems. The more you do it, the easier and more natural becomes. Just like a toddler figuring out how to speak in a natural language. At first progress seems small, but once kids understand the bits and pieces of a language they start building at a remarkable speed, learn and never forget again.</p>
+<p>Writing <em>reusable code</em> will improve your ability to remember syntax and apply concepts to other problems. The more you do it, the easier and more natural it becomes. Just like a toddler figuring out how to speak in a natural language. At first, progress seems small, but once kids understand the bits and pieces of a language they start building at a remarkable speed, learn and never forget again.</p>
 </section>
 <section id="documentation" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="documentation"><span class="header-section-number">3.2.2</span> Documentation</h3>
-<p>First things first. Write the first bit of documentation before your first line of code. Documentation <strong>written</strong> with hindsight will always be written with an all-knowing, smartest-person-in-the-room mindset and the motivation of someone who already gave her best programming. Understand, I am not talking about the finetuning here, but about a written outline. Describe <strong>how</strong> parts of the code are going to do stuff. Also, examples can’t hurt to illustrate what you meant. Research projects often take breaks and getting back to work after months should be as easy as possible.</p>
-<p><em>Pseudo Code</em> is a good way of writing up such an outline documentation. Take a simple API wrapper for example. Assume there is an API that returns numeric ids of hit entries when queried for keywords. These ids can be passed on to yet another <a href="">endpoint</a>, to obtain a profile. A rough game plan for an API Wrapper could like this:</p>
+<p>First things first. Write the first bit of documentation before your first line of code. Documentation <strong>written</strong> with hindsight will always be written with an all-knowing, smartest-person-in-the-room mindset and the motivation of someone who already gave her best programming. Understand, I am not talking about the fine-tuning here, but about a written outline. Describe <strong>how</strong> parts of the code are going to do stuff. Also, examples can’t hurt to illustrate what you meant. Research projects often take breaks, and getting back to work after months should be as easy as possible.</p>
+<p><em>Pseudo Code</em> is a good way of writing up such an outline documentation. Take a simple API wrapper, for example. Assume there is an API that returns numeric IDs of hit entries when queried for keywords. These IDs can be passed on to yet another <a href="./appendix.html#glossary--">endpoint</a>, to obtain a profile. A rough game plan for an API Wrapper could like this:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># function: keyword_search(keyword, url = "https://some.default.url.com")</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># returns numeric ids according to some api documentation</span></span>
@@ -410,7 +430,7 @@ $quantiles
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># a json object that should be immediately turned into list by the function, </span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># returns list of properties</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Documentation should use your ecosystem’s favorite documentation framework. Yet, your comments within the code are the raw, initial form of documentation. Comments help to understand key parts of a program as well as caveats. Comments help tremendously during development time, when debugging or coming back to a project. Let alone when joining a project started by others.</p>
-<p>While pseudo code where comments mimmick code itself is the exception to that rule, good comments should always follow the <strong>not-what-but-why</strong> principle. Usually, most high level programming languages are fairly easy to read and remind of rudimentary English. Therefore a <em>what</em> comment like this is considered rather useless:</p>
+<p>While pseudocode where comments mimmick code itself is the exception to that rule, good comments should always follow the <strong>not-what-but-why</strong> principle. Usually, most high-level programming languages are fairly easy to read and remind of rudimentary English. Therefore, a <em>what</em> comment like this is considered rather useless:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute the cumulative sum of a vector</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(<span class="fu">c</span>(T,F,F,F,F,T,F,F,T,F,F,F,T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -426,16 +446,16 @@ $quantiles
 </section>
 <section id="design-your-interface" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="design-your-interface"><span class="header-section-number">3.2.3</span> Design Your Interface</h3>
-<p>In other languages it is fairly common to define the data type of both: the input and the output<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Though doing so is not necessary in R, it is good practice to define the types of all parameters and results in your comments / documentation.</p>
-<p>Once you know a bit more about your direction of travel, it’s time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for adhoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need graphical user interface (GUI) like shiny?</p>
-<p>These questions will determine whether you use a <a href="http://adv-r.had.co.nz/Functional-programming.html">strictly functional approach</a>, a <a href="http://adv-r.had.co.nz/OO-essentials.html">rudimentary form of object orientation like S3</a>, a stricter implementation like <a href="https://github.com/r-lib/R6/">R6</a> or something completely exotic. There a plenty of great resources out there, so I will not elaborate on this for the time being. The main message of this section is: Think about the main use case. Is it interactive? Is it a program that runs in batch typically? Do your users code? Would they prefer a GUI?</p>
+<p>In other languages, it is fairly common to define the data type of both: the input and the output<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Though doing so is not necessary in R, it is good practice to define the types of all parameters and results in your comments / documentation.</p>
+<p>Once you know a bit more about your direction of travel, it’s time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for ad hoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need a graphical user interface (GUI) like shiny?</p>
+<p>These questions will determine whether you use a <a href="http://adv-r.had.co.nz/Functional-programming.html">strictly functional approach</a>, a <a href="http://adv-r.had.co.nz/OO-essentials.html">rudimentary form of object orientation like S3</a> <span class="citation" data-cites="advancedR">(<a href="references.html#ref-advancedR" role="doc-biblioref">Hadley Wickham 2019</a>)</span>, a stricter implementation like [R6 <span class="citation" data-cites="r6">(<a href="references.html#ref-r6" role="doc-biblioref">Chang 2021</a>)</span> or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. The main message of this section is: Think about the main use case. Is it interactive? Is it a program that runs in batch, typically? Do your users code? Would they prefer a GUI?</p>
 </section>
 <section id="dependencies" class="level3" data-number="3.2.4">
 <h3 data-number="3.2.4" class="anchored" data-anchor-id="dependencies"><span class="header-section-number">3.2.4</span> Dependencies</h3>
-<p>One important word of advice for novice package developers is to think about your dependencies. Do not take depedencies lightly. Of course it is intriguiging to stand on the shoulders of giants. Isn’t R great because of its 15K+ extension packages? Isn’t exactly this was made R such as popular language?</p>
-<p>Yes, extension packages are cool. Yes, the ease with with CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs it does not mean leaning on a lot of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages.</p>
-<p>The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of <a href="">reverse dependencies</a> tend to deprecate old functionality more smoothly as authors are aware of the issues breaking changes cause to a package’s ecosystem.</p>
-<p>In R, the tidyverse bundle of packages seems ubiquitous and easy to use. But it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).</p>
+<p>One important word of advice for novice package developers is to think about your dependencies. Do not take dependencies lightly. Of course, it is intriguing to stand on the shoulders of giants. Isn’t R great because of its 15K+ extension packages? Isn’t exactly this was made R such as popular language?</p>
+<p>Yes, extension packages are cool. Yes, the ease with CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs it does not mean leaning on plenty of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages.</p>
+<p>The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of <a href="./appendix.html#glossary--">reverse dependencies</a> tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package’s ecosystem.</p>
+<p>In R, the <em>tidyverse</em> bundle of packages seems ubiquitous and easy to use. But it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).</p>
 <p>Often it does not take much to get rid of dependency:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
@@ -452,11 +472,11 @@ $quantiles
 <pre><code>[1] "mooooo"</code></pre>
 </div>
 </div>
-<p>Again, {stringr} is certainly a well crafted package and it is definitely not the worst of all packages. But when you just loaded a package because it adds convenience to one single line or worse just because you found your solution online, think again before adding more dependencies to a production environment.</p>
+<p>Again, {stringr} is certainly a well-crafted package, and it is definitely not the worst of all packages. But when you just loaded a package because it adds convenience to one single line or worse just because you found your solution online, think again before adding more dependencies to a production environment.</p>
 </section>
 <section id="folder-structure" class="level3" data-number="3.2.5">
 <h3 data-number="3.2.5" class="anchored" data-anchor-id="folder-structure"><span class="header-section-number">3.2.5</span> Folder Structure</h3>
-<p>In R, packages may have the following folders. Note that this does not mean a package has to contain all of these folders. FWIW, an R package needs to have NAMESPACE and DESCRIPTION files, but that is not the point here. Also there are more comprehensive, better books on the matter than this little section. The point of this section though is to discuss the role of folders and how they help you structure your work, even if you don’t want to create an R package in first place.</p>
+<p>In R, packages may have the following folders. Note that this does not mean a package has to contain all of these folders. FWIW, an R package needs to have NAMESPACE and DESCRIPTION files, but that is not the point here. Also, there are more comprehensive, better books on the matter than this little section. The point of this section though is to discuss the role of folders and how they help you structure your work, even if you don’t want to create an R package in the first place.</p>
 <p>This chapter describes the role of different folders in a package and what these folders are good for. More likely than not, this will cover a lot of the aspects of your project, too.</p>
 <ul>
 <li>R</li>
@@ -480,7 +500,7 @@ $quantiles
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>man</strong></p>
-<p>This folder contains the context manual of your package. What you’ll find here is the so called <em>function reference</em>, basically a function and dataset specific documentation. It’s what you see when you run <code>?function_name</code>. The content of the <code>man/</code> folder is usually created automatically from the roxygen style documentation (note the #’ styled comments) during a `<code>devtools::document()</code> run. Back in the days when people wore pijamas and lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use Roxygen and render the function reference part of the documentation from their comments.</p>
+<p>This folder contains the context manual of your package. What you’ll find here is the so-called <em>function reference</em>, basically a function and dataset-specific documentation. It’s what you see when you run <code>?function_name</code>. The content of the <code>man/</code> folder is usually created automatically from the <em>roxygen</em> style documentation (note the #’ styled comments) during a `<code>devtools::document()</code> run. Back in the days when people wore pijamas and lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use <em>roxygen</em> and render the function reference part of the documentation from their comments.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Sum of Parameters Multiplied by First Input</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
@@ -549,11 +569,11 @@ $quantiles
 </div>
 <p>The above dummy function simply returns a character. The accompanying test checks whether the “moo” of the cow is loud enough (=has at least 3 characters) and whether it starts with “m” (so it’s not a “woof”). Note how tests typically come in bunches to thoroughly test functionality.</p>
 <p>So why don’t we write code correctly in the first place instead of writing code to check everything that could eventually go wrong? When developing <em>new</em> features we might be confident that newly introduced features do not break existing functionality. At least until we test it :) . Experience proves that seemingly unrelated edits do cause side effects. That is why well maintained packages have so called unit tests that are run when the package is re-build. If one of the checks fails, the developer can take a look before the a change that broke the code is actually deployed. To foster the development of these type of tests there are unit testing frameworks for many languages and frameworks. In R the most prominent testing packages are {tinytest} and {testthat}.</p>
-<p>Hadley’s book R packages has a more thorough introduction to <a href="https://r-pkgs.org/tests.html">testing in R</a> with the {testthat} packages. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco</p>
+<p>Hadley’s book R packages has a more thorough introduction to <a href="https://r-pkgs.org/tests.html">testing in R</a> with the testthat <span class="citation" data-cites="testthat">(<a href="references.html#ref-testthat" role="doc-biblioref">Hadley Wickham 2011</a>)</span> package. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco</p>
 </section>
 <section id="debugging" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="debugging"><span class="header-section-number">3.5</span> Debugging</h2>
-<p>In programming there is no way around debugging. From copy&amp;paste artists to the grandmasters of hacking: writing code implies the need to debug. The main difference between amateur and professional is the degree to which the hunt for errors a.k.a. bugs is done systematically. This section gives a few tips to help organize a debugging strategy and assess how much honing of one’s debugging approach is reasonable.</p>
+<p>In programming there is no way around debugging. From copy&amp;paste artists to the grandmasters of hacking: writing code implies the need to debug. One of the main differences between amateur and professional is the degree to which the hunt for errors a.k.a. bugs is done systematically. This section gives a few tips to help organize a debugging strategy and assess how much honing of one’s debugging approach is reasonable for your one’s individual need.</p>
 <section id="read-code-from-the-inside-out" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="read-code-from-the-inside-out"><span class="header-section-number">3.5.1</span> Read Code from the Inside Out</h3>
 <p>Many scripting languages allow some form of nesting code. In order to understand what’s going on reading and running code from innermost element first helps. Even if you are not an R user, applying the inside-out idea helps to understand what’s going on. Consider the following piece of R code:</p>
@@ -591,24 +611,79 @@ $quantiles
 </section>
 <section id="debugger-breakpoints-traceback" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="debugger-breakpoints-traceback"><span class="header-section-number">3.5.2</span> Debugger, Breakpoints, Traceback</h3>
-<p>Typically modern source code editors (see chapter IDEs) provide support to make your debugging approach. more systematic - use debug - set breakpoints (IDE feature)</p>
+<p>Typically modern interpreters and/or source code editors (see chapter IDEs) provide support to make debugging more systematic. In R, you can use <code>debug(function_name)</code> to activate debug mode for one particular function. On the next call of <code>function_name()</code>, the interpreter will go through the function, executing its source line by line. One of the insightful things about it is that standard exploration functions like <code>ls()</code> list all objects within the private environment of that function (by default <code>ls()</code> would just list all objects within the global environment). Inspection of of objects as they are seen by the functions helps to find out whether parameters are passed on correctly (or at all). Often, on error message from execution of a function motivates a debugging session. In that case, try to identify the line that causes the error and just do all the object inspection right before the line that causes the crash.</p>
+<p>Another, similar approach is to use breakpoints which are a feature of your editor. You can activate a break point to set execution of a function to debug mode by clicking next to a line in the source of the function that should trigger the switch to debug mode. Breakpoints may be the more convenient version of using the debug tool ‘per pedes’ as described above because of its ability to follow function dispatch across multiple (wrapper) functions. Consider the following demo function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>debug_me <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b){</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  out<span class="sc">$</span>add <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  out<span class="sc">$</span>prod <span class="ot">&lt;-</span> a <span class="sc">*</span> b</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  out<span class="sc">$</span>dev <span class="ot">&lt;-</span> a <span class="sc">/</span> b</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  out<span class="sc">$</span>sub <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  out</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">debug_me</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$add
+[1] 3
+
+$prod
+[1] 2
+
+$dev
+[1] 0.5
+
+$sub
+[1] -1</code></pre>
+</div>
+</div>
+<p>Now let’s give this function a bad argument. (Unlike Python, R’s addition operation will not simply concatenate strings when facing string input.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">debug_me</span>(<span class="st">"1"</span>,<span class="st">"2"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># if evaluated this would return</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> a <span class="sc">+</span> b <span class="sc">:</span> non<span class="sc">-</span>numeric argument to binary operator</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Motivated by this error message, let’s switch into debug mode</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">debug</span>(debug_me)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The below screenshot shows line-by-line execution of our demo function. The yellow line marks the line which will be executed on the next press of the return key. R’s debug mode can be stopped by either executing the erroneous line or by executing a capital <code>Q</code> command in the R console window.</p>
+<p><img src="images/debug.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="a-word-on-peer-programming" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="a-word-on-peer-programming"><span class="header-section-number">3.6</span> A Word on Peer Programming</h2>
-<p>Peer programming, also called pair programming just means two developers sit in front of the same screen to collaborate on a piece of code. So why is there such a buzz about it? Why is there even a term for it? And why is there a section in an applied book on it?</p>
-<p>That is because novice programmers (and their scientific supervisors) often doubt the efficiency of two paid persons working at the same work station. But programming is not about digging a hole with two shovels. Particularly not when it comes to building the software basis or frame of a project.</p>
-<p>Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one’s knowledge. One important advice when peer programming is to switch the driver’s seat from time to time. Make sure the lesser programmer holds the keys from time to time and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. <a href="https://visualstudio.microsoft.com/services/live-share/">Visual Studio Code Live Share</a> is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.</p>
-<p>Of course there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had its fair of success, too, according to the New Yorker’s <a href="The%20Friendship%20That%20Made%20Google%20Huge">https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge</a>.</p>
+<p>Peer programming, also called pair programming, just means two developers sit in front of the same screen to collaborate on a piece of code. So why is there such a buzz about it? Why is there even a term for it? And why is there a section in an applied book on it?</p>
+<p>That is because novice programmers (and their scientific supervisors) often doubt the efficiency of two paid persons working at the same workstation. But programming is not about digging a hole with two shovels. Particularly not when it comes to building the software basis or frame of a project.</p>
+<p>Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one’s knowledge. One important advice when peer programming is to switch the driver’s seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. <a href="https://visualstudio.microsoft.com/services/live-share/">Visual Studio Code Live Share</a> is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.</p>
+<p>Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker’s <a href="The Friendship That Made Google Huge">https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge</a>.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-r6" class="csl-entry" role="doc-biblioentry">
+Chang, Winston. 2021. <em>R6: Encapsulated Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6">https://CRAN.R-project.org/package=R6</a>.
+</div>
+<div id="ref-rpkgs" class="csl-entry" role="doc-biblioentry">
+Wickham, H. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. O’Reilly Media. <a href="https://r-pkgs.org/">https://r-pkgs.org/</a>.
+</div>
+<div id="ref-testthat" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley. 2011. <span>“Testthat: Get Started with Testing.”</span> <em>The R Journal</em> 3: 5–10. <a href="https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf">https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf</a>.
+</div>
+<div id="ref-advancedR" class="csl-entry" role="doc-biblioentry">
+———. 2019. <em>Advanced r</em>. 2nd ed. Chapman &amp; Hall/CRC the r Series. Taylor &amp; Francis.
+</div>
+<div id="ref-roxygen" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster. 2022. <em>Roxygen2: In-Line Documentation for r</em>. <a href="https://CRAN.R-project.org/package=roxygen2">https://CRAN.R-project.org/package=roxygen2</a>.
+</div>
+</div>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>On Windows / Linux use Ctrl instead of Cmd.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>See statically typed language vs.&nbsp;dynamically typed language.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Essentially, examples are calls, too. Note, I do recommend to add examples. Hadley Wickham’s <a href="https://r-pkgs.org/man.html#man-functions">guide to document functions within packages</a> shows how to add examples correctly.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Essentially, examples are calls, too. Note, I do recommend adding examples. Hadley Wickham’s guide to documenting functions within packages <span class="citation" data-cites="rpkgs">(<a href="references.html#ref-rpkgs" role="doc-biblioref">H. Wickham 2015</a>)</span> shows how to add examples correctly.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -654,7 +729,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -690,24 +782,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

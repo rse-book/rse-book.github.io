@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -259,6 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -268,14 +269,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote class="blockquote">
 <p>Make repetitive work fun again!</p>
 </blockquote>
-<p><img src="images/busy.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/busy.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Too busy too automate? (source: Håkan Forss, https://hakanforss.wordpress.com)</figcaption><p></p>
+</figure>
+</div>
 <p>One aspect that makes a programming approach to data science and analytics appealing is <em>automation</em>. Data ingestion, dissemination, reporting or even analysis itself can be repetitive. Particularly shorter update cycles of one’s data ask for a way to make yet another iteration pain free. The following sections look at different forms of automation such continuous integration and deployment, different forms of workflow automation as well as infrastructure as code.</p>
 <section id="continuous-integration-continuous-deployment-cicd" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="continuous-integration-continuous-deployment-cicd"><span class="header-section-number">8.1</span> Continuous Integration / Continuous Deployment (CI/CD)</h2>
-<p>Because of its origin in build, test and check automation CI/CD may not be the first thing that comes into mind when one approached programming through the analytics route. Yet, thorough testing and automated builds have not only become well established parts of the data science workflow, CI/CD tools can also help to automate tasks beyond testing and packaging your next release.</p>
-<p>Modern version control software providers are an easy way to add the toolchain that is often fuzzily called <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">CI/CD (Continuous Integration / Continuous Development)</a>. While CI stands for <em>continuous integration</em> and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either <em>continuous delivery</em> or <em>continuous deployment</em>.</p>
-<p>Thanks to infrastructure as code and containerization, automation of development and deployment workflows become much easier also because local development can run in an environment very close to the production setup. Git hosting powerhouses GitHub and GitLab run their flavors of CI/CD tools, making the approach well documented and readily available by default to a wide array of users: [GitHub Actions])(https://docs.github.com/en/actions) and <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>. In addition services like <a href="https://circleci.com/">Circle CI</a> offer this toolchain independently of hosting git repositories.</p>
-<p>Users of the above platforms can upload a simple textfile that follows a name convention and structure to trigger a step based toolchain based on an event. An example of an event may be a push to a repository’s main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server – all triggered by simple push to master. One particularly cool thing is, that there multiple services who allow to run the testing on their servers using container technologies. This leads to great variety of setups for testing. That way software can easily be tested on different operating systems / environments.</p>
+<p>Because of its origin in build, test and check automation, CI/CD may not be the first thing that comes into mind when one approaches programming through the analytics route. Yet, thorough testing and automated builds have not only become well established parts of the data science workflow, CI/CD tools can also help to automate tasks beyond testing and packaging your next release.</p>
+<p>Modern version control software providers are an easy way to add the tool chain that is often fuzzily called <a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">CI/CD (Continuous Integration / Continuous Development)</a>. While CI stands for <em>continuous integration</em> and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either <em>continuous delivery</em> or <em>continuous deployment</em>.</p>
+<p>Thanks to infrastructure as code and containerization, automation of development and deployment workflows become much easier also because local development can run in an environment very close to the production setup. Git hosting powerhouses GitHub and GitLab run their flavors of CI/CD tools, making the approach well documented and readily available by default to a wide array of users: [GitHub Actions])(https://docs.github.com/en/actions) and <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>. In addition, services like <a href="https://circleci.com/">Circle CI</a> offer this tool chain independently of hosting git repositories.</p>
+<p>Users of the above platforms can upload a simple text file that follows a name convention and structure to trigger a step-based tool chain based on an event. An example of an event may be a push to a repository’s main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server – all triggered by simple push to master. One particularly cool thing is, that there are multiple services which allow running the testing on their servers using container technologies. This leads to a great variety of setups for testing. That way, software can easily be tested on different operating systems / environments.</p>
 <p>Here is a simple sketch of a <em>.gitlab-ci.yml</em> configuration that builds and tests on pushes to all branches and deploys a package after a push to the main branch and successful build and test steps:</p>
 <pre><code>stages:
 - buildncheck
@@ -307,7 +313,7 @@ dependencies:
 script:
 - do some more steps to login and deploy to server ...
 </code></pre>
-<p>For more in depth examples of the above, <a href="https://www.jimhester.com/talk/2020-rsc-github-actions/">Jim Hester’s talk on GitHub Actions for R</a> is a very good starting point. CI/CD toolchain are useful for a plethora of actions beyond mere building, testing and deployment of software. The publication chapter covers another common use case: rendering and deployment of static websites. That is, website that get updated by re-rendering their content at build time, creating static files (artifacts) that are uploaded to web host. Outlets like the GitHub Actions Marketplace, the r-lib collections for R specific actions and the plethora of readily available actions are a great showcase of the broad use of CI/CD applications.</p>
+<p>For more in depth examples of the above, <a href="https://www.jimhester.com/talk/2020-rsc-github-actions/">Jim Hester’s talk on GitHub Actions for R</a> is an excellent starting point. CI/CD tool chains are useful for a plethora of actions beyond mere building, testing and deployment of software. The publication chapter covers another common use case: rendering and deployment of static websites. That is, websites that are updated by re-rendering their content at build time, creating static files (artifacts) that are uploaded to web host. Outlets like the GitHub Actions Marketplace, the r-lib collections for R specific actions and the plethora of readily available actions are a great showcase of the broad use of CI/CD applications.</p>
 </section>
 <section id="cron-jobs" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="cron-jobs"><span class="header-section-number">8.2</span> Cron Jobs</h2>
@@ -317,42 +323,85 @@ script:
 <p>Named after the UNIX job scheduler <em>cron</em>, a cron job is a task that runs periodically at fixed times. Pre-installed in most LINUX server setups, data analysts often use cronjobs to regularly run batch jobs on remote servers. Cron jobs use a funny syntax to determine when jobs run.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#min hour day month weekday</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">15</span> 5,11 <span class="pp">*</span> <span class="pp">*</span> 1 Rscript run_me.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The first position denotes the minute mark at which the jobs runs - in our case 15 minutes after the new our started. The second mark denotes hours during the day – in our case the 5th and 11th hour. The asterisk * is a wildcard expression for running the job on every day of the month and in every month throughout the year. The last position denotes the weekday, in this example we run our job solely on Mondays.</p>
+<p>The first position denotes the minute mark at which the job runs - in our case 15 minutes after the new our started. The second mark denotes hours during the day – in our case the 5th and 11th hour. The asterisk * is a wildcard expression for running the job on every day of the month and in every month throughout the year. The last position denotes the weekday, in this example we run our job solely on Mondays.</p>
 <p>More advanced expressions can also handle running a job at much shorter intervals, e.g., every 5 minutes.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*/5</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> <span class="pp">*</span> Rscript check_status.R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To learn and play with more expressions, check <a href="https://crontab.guru/">crontab guru</a>. If you have more sophisticated use cases, like overseeing a larger amount of jobs or execution on different nodes consider using <a href="https://airflow.apache.org/">Apache Airflow</a> as workflow scheduler.</p>
+<p>To learn and play with more expressions, check <a href="https://crontab.guru/">crontab guru</a>. If you have more sophisticated use cases, like overseeing a larger number of jobs or execution on different nodes, consider using <a href="https://airflow.apache.org/">Apache Airflow</a> as a workflow scheduler.</p>
 </section>
 <section id="workflow-scheduling-apache-airflow-dags" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="workflow-scheduling-apache-airflow-dags"><span class="header-section-number">8.3</span> Workflow Scheduling: Apache Airflow DAGs</h2>
-<p>Though much less common than the above tools, <a href="https://airflow.apache.org/">Apache Airflow</a> has definitely earned a mention because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to Airflow as <a href="https://en.wikipedia.org/wiki/Cron">cronjobs</a> on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other log and reporting features worth a lot when maintaining reocurring processes. Airflow has its own <em>Airflow Summit</em> conference, a solid community and docker compose setup to get you started quickly. The setup consists of a container image for the web frontend and another image for the PostgreSQL backend. The fact that there is also an <em>Managed Workflow for Apache Airflow</em> offering in the Amazon cloud at the time of writing shows the broad acceptance of the tool. Airflow also runs on Kubernetes in case you are interested in hosting Airflow in more robust production setup.</p>
-<p>!! DAGS</p>
+<p>Though much less common than the above tools, <a href="https://airflow.apache.org/">Apache Airflow</a> has definitely earned a mention because of its ability to help researchers keep an overview of regularly running processes. Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator. I often referred to Airflow as <a href="https://en.wikipedia.org/wiki/Cron">cronjobs</a> on steroids. Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other logs and reporting features, worth a lot when maintaining reoccurring processes. Airflow has its own <em>Airflow Summit</em> conference, a solid community and docker compose setup to get you started quickly. The setup consists of a container image for the web frontend and another image for the PostgreSQL backend. The fact that there is also a <em>Managed Workflow for Apache Airflow</em> offering in the Amazon cloud at the time of writing shows the broad acceptance of the tool. Airflow also runs on Kubernetes in case you are interested in hosting Airflow in a more robust production setup.</p>
+<p>So, what does Airflow look like in practice? Airflow uses the Python language to define Directed Acyclic Graphs (DAGs). Essentially, a DAG pictures a process that has – unlike a cycle – a clear start and ending. DAGs can be one dimensional and fully sequential, but can also run tasks in parallel.</p>
+
+<!-- https://airflow.apache.org/docs/apache-airflow/stable/tutorial/pipeline.html -->
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> airflow <span class="im">import</span> DAG</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Operators; we need this to operate!</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> BashOperator</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> DAG(</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    default_args<span class="op">=</span>{</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"depends_on_past"</span>: <span class="va">False</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"email"</span>: [<span class="st">"airflow-admin@your-site.com"</span>],</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"email_on_failure"</span>: <span class="va">False</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"email_on_retry"</span>: <span class="va">False</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"retries"</span>: <span class="dv">1</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"retry_delay"</span>: timedelta(minutes<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">"Bash Operator"</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    schedule<span class="op">=</span><span class="st">'5 11 * * *'</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    start_date<span class="op">=</span>datetime(<span class="dv">2023</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    catchup<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    tags<span class="op">=</span>[<span class="st">"example"</span>],</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>) <span class="im">as</span> dag:</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># t1, t2 and t3 are examples of tasks created by instantiating operators</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    t1 <span class="op">=</span> BashOperator(</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        task_id<span class="op">=</span><span class="st">"print_date"</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        bash_command<span class="op">=</span><span class="st">"date &gt; date.txt"</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    t2 <span class="op">=</span> BashOperator(</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>        task_id<span class="op">=</span><span class="st">"sleep"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        depends_on_past<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        bash_command<span class="op">=</span><span class="st">"sleep 5"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        retries<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    t3 <span class="op">=</span> BashOperator(</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        task_id<span class="op">=</span><span class="st">"2 dates"</span>,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        depends_on_past<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>        bash_command<span class="op">=</span><span class="st">"cat date.txt &amp; date"</span>,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    t1 <span class="op">&gt;&gt;</span> t2 <span class="op">&gt;&gt;</span> t3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The above code shows an example of a simple DAG that combines three strictly sequential tasks. Task <em>t1</em> depends on tasks <em>t2</em> and <em>t3</em>. In this simple example, all tasks use the Airflow <em>BashOperator</em> to execute bash commands, but Airflow provides plenty of other operators from its <em>PythonOperator</em>, to <em>Docker</em> or <em>Kubernetes</em> operators.<br>
+Such operators also allow executing tasks on remote machine or clusters, not solely the machine or container that serves Airflow itself.</p>
 </section>
 <section id="make-like-worflows" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="make-like-worflows"><span class="header-section-number">8.4</span> Make-Like Worflows</h2>
-<p><em>Makefiles</em> and the <em>make</em> software that made them popular are the classic of build automation. Best known for its support in the compilation of C programs, makefiles became popular across programming languages thanks to its straight forward concept and readable approach. A makefile contains a <em>target</em>, an optional prerequisite and a recipe to get there.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">target:</span> prerequisite</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">recipe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Makefiles</em> and the <em>make</em> software that made them popular are the classic of build automation. Best known for its support in the compilation of C programs, makefiles became popular across programming languages thanks to its straightforward concept and readable approach. A Makefile contains a <em>target</em>, an optional prerequisite, and a recipe to get there.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">target:</span> prerequisite</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">recipe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">say_yo:</span> store_yo</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> echo.txt</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">store_yo:</span> </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"yo!"</span> <span class="op">&gt;</span> echo.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">say_yo:</span> store_yo</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> echo.txt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">store_yo:</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"yo!"</span> <span class="op">&gt;</span> echo.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will simply print</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"yo!"</span> <span class="op">&gt;</span> echo.txt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> echo.txt</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">yo!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>in your terminal. Very much like Apache Airflow and its DAGs which were introduced above, makefiles allow to declare and manage dependencies. The ability of make and make like approaches such as the <a href="https://CRAN.R-project.org/package=targets">targets R package</a> goes well beyond the simple sequential definitions like the basic example above. Parallel execution of independent tasks, cherry-picking execution of single tasks from a larger workflow, variables and caching are highly useful when runtime increases. Consider, a multi step workflow parts of which are running for quite a while but hardly change while other swift parts change all the time and it becomes obvious how a simple CLI based workflow helps.<br>
-Modern implementation like the target R package ship with network visualizations of the execution path and its depedencies. The <a href="https://books.ropensci.org/targets/walkthrough.html">walkthrough provided in R OpenSci’s book</a> on target is a great summary available as text, code example and video.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"yo!"</span> <span class="op">&gt;</span> echo.txt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> echo.txt</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">yo!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>in your terminal. Very much like Apache Airflow and its DAGs which were introduced above, Makefiles allow declaring and manage dependencies. The ability of make and make like approaches such as the <a href="https://CRAN.R-project.org/package=targets">targets R package</a> goes well beyond the simple sequential definitions like the basic example above. Parallel execution of independent tasks, cherry-picking execution of single tasks from a larger workflow, variables and caching are highly useful when runtime increases. Consider, a multistep workflow, parts of which are running for quite a while but hardly change while other swift parts change all the time, and it becomes obvious how a simple CLI-based workflow helps.<br>
+Modern implementation like the target R package ship with network visualizations of the execution path and its dependencies. The <a href="https://books.ropensci.org/targets/walkthrough.html">walkthrough provided in R OpenSci’s book</a> on target is a great summary available as text, code example and video.</p>
 </section>
 <section id="infrastructure-as-code" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="infrastructure-as-code"><span class="header-section-number">8.5</span> Infrastructure as Code</h2>
-<p>In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable.</p>
+<p>In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself, but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable.</p>
 <blockquote class="blockquote">
 <p>Do not think infrastructure as code is only relevant for sys admins or other infrastructure professionals who make use of it every day. The ability to reproduce and tweak infrastructure at essentially no costs enables other forms of automation such as CI/CD. Just like with flat rate with your mobile carrier will lead to more calls.</p>
 </blockquote>
 <p>Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with. The infrastructure section explains in greater detail how such definitions look like and containers are building blocks of modern infrastructure defined in code.</p>
-<p>Automation is more complex for cluster setups, because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in <em>high availability</em> mode. On Kubernetes clusters, <a href="https://helm.sh/">helm</a>, Kubernetes’ package manager, is part of the solution to tackle this added complexity. Helm is “the best way to find share and use software built for Kubernetes”. <a href="https://www.terraform.io/">Terraform</a> can manage Kubernetes clusters on clouds like Amazon’s AWS, Google’s GPC, Microsoft’s Azure and many other cloud systems using declarative configuration files. Again, a console based client interface is used to apply a declarative confiugration plan to a particular cloud.</p>
+<p>Automation is more complex for cluster setups because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in <em>high availability</em> mode. On Kubernetes clusters, <a href="https://helm.sh/">helm</a>, Kubernetes’ package manager, is part of the solution to tackle this added complexity. Helm is “the best way to find share and use software built for Kubernetes”. <a href="https://www.terraform.io/">Terraform</a> can manage Kubernetes clusters on clouds like Amazon’s AWS, Google’s GPC, Microsoft’s Azure and many other cloud systems using declarative configuration files. Again, a console-based client interface is used to apply a declarative configuration plan to a particular cloud.</p>
 
 
 </section>
@@ -399,7 +448,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -435,24 +501,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
