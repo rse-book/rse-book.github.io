@@ -54,11 +54,11 @@ Virtual machines (VMs) remain the go-to building blocks for many set-ups. Hence,
 
 At the first glimpse, containers look very much like Virtual Machines to the practitioner. The difference is that every Virtual Machine has its own operating system, while containers use the host OS to run a container engine on top of the OS. By doing so, containers can be very lightweight and may take only a few seconds to spin up, while spinning up Virtual Machines can take up to a few minutes - just like booting physical computers. Hence, docker containers are often used as single purpose environments: Fire up a container, run a task in that environment, store the results outside the container and shut down the container again. 
 
-Docker ([Why docker?](https://www.docker.com/why-docker)) is the most popular containerized solution and quickly became synonymous to container environments configured in a file. So-called docker images are built layer by layer based on other less specific docker images. A DOCKERFILE is the recipe for a new image. Images are blueprints for containers, an image's running instance. A docker runtime environment can build images from DOCKERFILEs and distribute these images to an image registry. The platform [dockerhub](https://dockerhub.com) hosts a plethora of pre-built docker images from ready-to-go databases to Python ML environments or minimal Linux containers to run a simple shell script in a lab type environment. 
+Docker (Why docker?^[https://www.docker.com/why-docker]) is the most popular containerized solution and quickly became synonymous to container environments configured in a file. So-called docker images are built layer by layer based on other less specific docker images. A DOCKERFILE is the recipe for a new image. Images are blueprints for containers, an image's running instance. A docker runtime environment can build images from DOCKERFILEs and distribute these images to an image registry. The platform dockerhub^[https://dockerhub.com] hosts a plethora of pre-built docker images from ready-to-go databases to Python ML environments or minimal Linux containers to run a simple shell script in a lab type environment. 
 
 Containers run in a docker runtime environment and can either be used interactively or in batches which execute a single task in an environment specifically built for this task. One of the reasons why docker is attractive to researchers is its open character: Dockerfiles are a good way to share a configuration in a simple, reproducible file, making it easy to reproduce setups. Less experienced researchers can benefit from [Dockerhub](https://hub.docker.com/) which shares images for a plethora of purposes, from mixed data science setups to database configuration. Side effect free working environments for all sorts of tasks can especially be appealing in exotic and/or dependency heavy cases. 
 
-Beside simplification of system administration, *docker* is known for its ability to work in the cloud. All major cloud hosters offer docker environments and the ability to deploy docker containers that were previously developed and tested locally. You can also use docker to tackle [throughput problems](#glossary) using container orchestration tools like [Docker Swarm](https://docs.docker.com/engine/swarm/swarm-tutorial/) or [K8s (say: Kubernetes)](https://kubernetes.io/) to run hundreds of containers (depending on your virtual resources).
+Beside simplification of system administration, *docker* is known for its ability to work in the cloud. All major cloud hosters offer docker environments and the ability to deploy docker containers that were previously developed and tested locally. You can also use docker to tackle [throughput problems](#glossary) using container orchestration tools like Docker Swarm^[https://docs.docker.com/engine/swarm/swarm-tutorial/] or K8s (say: Kubernetes)^[https://kubernetes.io/] to run hundreds of containers (depending on your virtual resources).
 
 ### Kubernetes (K8s)
 Though hosting Kubernetes is clearly beyond the scope of carpentry level DevOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.
@@ -123,7 +123,10 @@ tri <- tribble(
     'docker build <directory-with-docker-file>', 'build image based on Dockerfile',
     'docker exec <command> <container>', 'execute command inside container'
 )
-kable(tri)
+kable(tri) |>
+      kable_styling(latex_options = c("repeat_header")) |>
+      column_spec(2, width = "6.8cm")
+
 
 ```
 
