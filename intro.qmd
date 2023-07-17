@@ -1,6 +1,6 @@
 # Introduction
 
->Simply put, the *DevOps* carpentry is the art of making our work deployable and functional on other machines. 
+>Simply put, *DevOps* carpentry is the art of making our work deployable and functional on other machines. 
 
 ## Why Work Like a Software Engineer? 
 
@@ -52,14 +52,14 @@ packs |>
 
 
 Bandwagonism aside, source code can be a tremendously sharp, unambiguous and international communication channel.
-Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours. Platforms like [Stackoverflow](https://stackoverflow.com) or [Crossvalidated](https://crossvalidated.com) do not only store millions of questions and answers, they also gather a huge and active community to discuss issues. Or think of feature requests: After a little code ping pong with the package author, your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. 
+Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours. Platforms like Stackoverflow^[https://stackoverflow.com] or Crossvalidated^[https://crossvalidated.com] do not only store millions of questions and answers, they also gather a huge and active community to discuss issues. Or think of feature requests: After a little code ping pong with the package author, your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. 
 Academic journals have found that out, too. Many outlets require you to make the data and source code behind your work available. Social Science Data Editors [@soscieds] is a bleeding-edge project at the time of writing this, but is already referred to by top-notch journals like American Economic Review (AER). 
 
 ![](images/communication.png)
 
 In addition to the above reproducibility and ability to share, code scales and automates. Automation is not only convenient. Like when you want to download data, process and create the same visualization and put it on your website any given Sunday. Automation is inevitable. Like when you have to gather daily updates from different outlets or work through thousands of .pdfs. 
 
-Last but not least, programming enables you to many things you couldn't do w/o being an absolute guru (if at all) if it wasn't for programming. Take visualization. Go, check [these D3 Examples](https://observablehq.com/@d3/gallery). Now, try to do that in Excel. If you did these things in Excel it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Yet, with decent, carpentry level programming skills you can already do so many spectacular things while not really specializing and staying very flexible. 
+Last but not least, programming enables you to many things you couldn't do w/o being an absolute guru (if at all) if it wasn't for programming. Take visualization. Go, check these D3 Examples^[https://observablehq.com/@d3/gallery]. Now, try to do that in Excel. If you did these things in Excel it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time consuming skills to master. Yet, with decent, carpentry level programming skills you can already do so many spectacular things while not really specializing and staying very flexible. 
 
 ## Why Work Like an Operations Engineer?
 
@@ -92,7 +92,7 @@ The focal goal of this book is to map out the open source ecosystem, identify ne
 
 This book is a companion. The companion I wish I had when I started an empirical, data intensive PhD in economics. Yet, the book is written years after said PhD was completed and with the hindsight of 10+ years in academia. *Programming with Data* is written based on the experience of helping students and seasoned researchers of different fields with their data management, processing and communication of results.
 
-If you are confident in your ambition to amp up your programming to at least [solid software carpentry level](https://software-carpentry.org/) within the next few months, I suggest getting an idea of your starting point relative to this book.
+If you are confident in your ambition to amp up your programming to at least solid software carpentry level^[https://software-carpentry.org/] within the next few months, I suggest getting an idea of your starting point relative to this book.
 The upcoming *backlog* section is essentially a list of suggested to-dos on your way to solid software carpentry.
 Obviously, you may have cleared a few tasks of this backlog item before reading this book which is fine.
 On the other hand, you might not know about some of the things that are listed in the *requirement* section, which is fine, too.
@@ -126,7 +126,7 @@ The case studies at the end of the book are not exactly a backlog item like the 
 
 Even though *DevOps carpentry* aims to be inclusive and open to a broad audience with different starting points, several prerequisites exist to get the most out of this book. 
 I recommend you have made your first experience with an interpreted programming language like R or Python. 
-Be aware though that experience from a stats or math course does not automatically make you a programmer, as these courses are rightfully focused on their own domain. Books like R for Data Science [@r4ds] or websites like the [The Carpentries](https://carpentries.org/) help to solidify your data science minded, applied programming. Advanced R [@advancedR], despite its daunting title, is an excellent read to get past the superficial kind of understanding of R that we might acquire from a first encounter in stats course.
+Be aware though that experience from a stats or math course does not automatically make you a programmer, as these courses are rightfully focused on their own domain. Books like R for Data Science [@r4ds] or websites like the The Carpentries^[https://carpentries.org/] help to solidify your data science minded, applied programming. Advanced R [@advancedR], despite its daunting title, is an excellent read to get past the superficial kind of understanding of R that we might acquire from a first encounter in stats course.
 
 A certain familiarity with  *console / terminal basics* will help the reader sail smoothly. 
 At the end of the day, there are no real must-have requirements to benefit from this book. 

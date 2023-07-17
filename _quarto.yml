@@ -6,7 +6,7 @@ book:
   title: "DevOps Carpentry"
   subtitle: "A Researcher's Guide to the Open Source Ecosystem"
   author: "Matthias Bannert"
-  date: "7/12/2022"
+  date: "7/17/2023"
   search: true
   sharing: [twitter]
   chapters:
@@ -29,16 +29,16 @@ bibliography: references.bib
 execute: 
   freeze: true
 format:
-  html:
-    theme: cosmo
-  # pdf:
-  #   documentclass: krantz
-  #   pdf-engine: pdflatex
-  #   toc: true
-  #   keep-tex: true
-  #   lof: true
-  #   lot: true
-  #   fontsize: 12pt
-  #   hyperrefoptions: 
-  #     - linktoc=none
+  # html:
+  #   theme: cosmo
+  pdf:
+    documentclass: krantz
+    pdf-engine: pdflatex
+    toc: true
+    keep-tex: true
+    lof: true
+    lot: true
+    fontsize: 12pt
+    hyperrefoptions: 
+      - linktoc=none
     

@@ -66,7 +66,9 @@ d <- data.frame("Command" = c("git init",
                              "leave temporary state, go back to last commit"),
                 
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE)
+kable(d,"html",escape= FALSE) |>
+      kable_styling(latex_options = c("repeat_header")) |>
+      column_spec(2, width = "6.8cm")
 
 ```
 
@@ -92,7 +94,9 @@ d <- data.frame("Command" = c("git clone",
                              "show remote repo URL",
                              "set URL to remote repo"),
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE)
+kable(d,"html",escape= FALSE) |>
+      kable_styling(latex_options = c("repeat_header")) |>
+      column_spec(2, width = "6.8cm")
 
 ```
 
@@ -114,7 +118,9 @@ d <- data.frame("Command" = c("git checkout -b branchname",
                              "merge branch named branchname into current branch"
                 ),
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE)
+kable(d,"html",escape= FALSE) |>
+      kable_styling(latex_options = c("repeat_header")) |>
+      column_spec(2, width = "6.8cm")
 
 ```
 
@@ -247,7 +253,7 @@ As opposed to that, rebase would move all changes to main to before the feature 
 That way the remains linear, history looks cleaner and does not contain those artificial merge commits. 
 
 So, when should we merge, and when should rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main because you would have a different main branch than other developers than. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. 
-The following [Atlassian tutorial](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) offers more insights and illustrations to deepen your understanding of the matter.  
+The following Atlassian tutorial^[https://www.atlassian.com/git/tutorials/merging-vs-rebasing] offers more insights and illustrations to deepen your understanding of the matter.  
 
 
 

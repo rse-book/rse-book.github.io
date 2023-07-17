@@ -1,7 +1,7 @@
 # Preface {.unnumbered}
 
 
-**Note**: This book will be published by [Chapman & Hall/CRC](https://www.routledge.com/). The online version of this book is free to read here (thanks to Chapman & Hall/CRC), and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). If you have any feedback, please feel free to [file an issue on GitHub](https://github.com/DevOps-carpentry/book/issues). Thank you!
+**Note**: The online version of this book is free to read here (thanks to Chapman & Hall/CRC), and licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License^[https://creativecommons.org/licenses/by-nc-sa/4.0/]. If you have any feedback, please feel free to file an issue on GitHub^[https://github.com/DevOps-carpentry/book/issues]. Thank you!
 
 
 <!--

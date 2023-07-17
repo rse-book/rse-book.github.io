@@ -82,7 +82,7 @@ Another approach is to go for a highly customizable editor such as [Sublime](htt
 The idea is to send source code from the editor to interchangeable [REPL](#glossary)s 
 which can be adapted according to the language that needs to be interpreted. That way a good linter / code highlighter for your favorite language is all you need to have a lightweight environment to run things. An example of such a customization approach is Christoph Sax' small project [Sublime Studio](https://github.com/christophsax/SublimeStudio). 
 
-For readers with UNIX experience, [vim](https://www.vim.org/) may just be the most ubiquitous editor of them all, to everyone else it may just live in deep nerd territory.
+For readers with UNIX experience, vim^[https://www.vim.org/] may just be the most ubiquitous editor of them all, to everyone else it may just live in deep nerd territory.
 The fact a quick online search for 'How to quit vim' came back with more than 56.4 million (!) results shows that both perspectives have a point. 
 With vim, users can switch between a *move around* and *insert* mode.
 The former allows the users to use single letters as shortcuts to navigate a text file instead of typing the actual letter. 
@@ -90,7 +90,7 @@ This enables users to do things like move-three-words-forward or delete the next
 Given some practice and regular use, it is easy to imagine that vim wizards can navigate their source code incredibly quick.  
 Back when IDEs were less comfortable and often clunky due to their heavy lifting, a broader group of people had their incentives to invest into vim. 
 Now, that IDEs became so much better and many of them even offering vim modes or plugins, the point of contact with vim for a data scientist is mostly UNIX server administration or work inside containers. 
-[GNU Emacs](https://www.gnu.org/software/emacs/) is another noteworthy editor because, even though much more exotic, it is popular among long tenured R folks thanks to the Emacs Speaks Statistics extension. 
+GNU Emacs^[https://www.gnu.org/software/emacs/] is another noteworthy editor because, even though much more exotic, it is popular among long tenured R folks thanks to the Emacs Speaks Statistics extension. 
 
 
 ## Notebooks
@@ -170,7 +170,7 @@ I have used this app for the illustration in this book because of its slim, no n
 ## The Console / Terminal
 
 In addition to the editor you will spend most of your time with, it is also worthwhile to put 
-some effort into configuring keyboard-driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third-party applications. A program called a *shell* runs inside the terminal application to run  commands and display output. *bash* is probably the most known shell program, but there are tons of different flavors. FWIW, I love [fish](https://fishshell.com/) shell (combined with iterm2) for its smooth auto-completion, highlighting and its extras. 
+some effort into configuring keyboard-driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third-party applications. A program called a *shell* runs inside the terminal application to run  commands and display output. *bash* is probably the most known shell program, but there are tons of different flavors. FWIW, I love fish^[https://fishshell.com/] shell (combined with iterm2) for its smooth auto-completion, highlighting and its extras. 
 
 In the Windows world, the use of terminal applications has been much less common than for OSX/Linux -- at least for non-systemadmins. Git Bash which ships with git version control installations on Windows mitigates this shortcoming as it provides a basic UNIX style console on windows. For a full-fledged UNIX terminal experience, I suggest using a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at the OS level to a broader Windows audience – albeit with different Windows specific syntax. The ideas and examples in this book are limited to UNIX flavored shells. 
 
@@ -200,13 +200,13 @@ To connect to a server using a username and password simply use your console's s
 ssh mbannert@someserver.org
 ```
 
-You will often encounter another login procedure, though. RSA key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file: 
+You will often encounter another login procedure, though. SSH key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file: 
 
 ```sh
 ssh -i ~/.ssh/id_rsa mbannert@someserver.org
 ```
 
-For more details on RSA key pair authentication, check this example from the case study chapter @sec-rsa. 
+For more details on SSH key pair authentication, check this example from the case study chapter @sec-rsa. 
 
 While ssh is designed to log in to a remote server and from then on, issue commands like the server was a local Linux machine, `scp` copies files from one machine to another.
 
@@ -215,7 +215,7 @@ scp -i ~/.ssh/id_rsa ~/Desktop/a_file_on_my_desktop
  mbannert@someserver.org:/some/remote/location/
 ```
 
-The above command copies a file dwelling on the user's desktop into a /some/remote/location on the server. Just like ssh, secure copy (scp) can use RSA key authentication, too. 
+The above command copies a file dwelling on the user's desktop into a /some/remote/location on the server. Just like ssh, secure copy (scp) can use SSH key authentication, too. 
 
 
 ### Git through the Console

@@ -32,7 +32,7 @@ In Statistical Computing, the interface between the researcher and the computati
 The main advantage of a compiled language is speed in terms of computing performance because the translation into machine language does not happen during runtime. A reduction of development speed and increase in required developer skills are the downside of using compiled languages. 
 
 > Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it. </br></br>
--- Dan Ariely, Professor of Psychology and Behavioral Economics, <a href="https://twitter.com/danariely/status/287952257926971392">on twitter</a>
+-- Dan Ariely, Professor of Psychology and Behavioral Economics on twitter^[https://twitter.com/danariely/status/287952257926971392]
 
 The above quote became famous in the hacking data community, not only because of the provocative, fun part of it, but also because of the implicit advice behind it. Given the enormous gain in computing power in recent decades, but also methodological advances, interpreted languages are often fast enough for many social science problems. And even if it turns out, your data grow out of your setup, a well written proof of concept written in an interpreted language can be a formidable blueprint. **Source code is turning into an important scientific communication channel.** Put your money on it, your interdisciplinary collaborator from the High Performance Computing (HPC) group, will prefer some Python code as a briefing for their C++ or FORTRAN program over a wordy description out of your field's ivory tower. 
 
@@ -62,19 +62,19 @@ In any case, make sure to customize your development environment: choose the the
 
 To buy into the importance of managing one's code professionally may be the single most important take away from this book. Being able to work with version control will help you fit into numerous different teams that have contact points with data science and programming, let alone if you become part of a programming or data science team. 
 
-While version control has a long history dating back to CVS and SVN, the good news for the learner is, that there is a single dominant approach when it comes to version control in the data analysis world. Despite the fact that its predecessors and alternatives such as mercurial are still around, [git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) is the one you have to learn. To learn more about the history of version control and approaches other than git, [Eric Sink's Version Control by Example [@sink]
+While version control has a long history dating back to CVS and SVN, the good news for the learner is, that there is a single dominant approach when it comes to version control in the data analysis world. Despite the fact that its predecessors and alternatives such as mercurial are still around, git^[https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control] is the one you have to learn. To learn more about the history of version control and approaches other than git, [Eric Sink's Version Control by Example [@sink]
 is for you. 
 
 So what does git do for us as researchers? How is it different from Dropbox?
 
 
 ```
-git does not work like dropbox. git does not work like dropbox.
-git does not work like dropbox. git does not work like dropbox. 
-git does not work like dropbox. git does not work like dropbox.
-git does not work like dropbox. git does not work like dropbox. 
-git does not work like dropbox. git does not work like dropbox.
-git does not work like dropbox. git does not work like dropbox. 
+git does not work like dropbox. git is not like dropbox.
+git does not work like dropbox. git is not like dropbox. 
+git does not work like dropbox. git is not like dropbox.
+git does not work like dropbox. git is not like dropbox. 
+git does not work like dropbox. git is not like dropbox.
+git does not work like dropbox. git is not like dropbox. 
 
 ```
 
@@ -130,11 +130,11 @@ Rendering documentation, e.g., from Markdown to HTML into a website or presentat
 
 Its community is one of the reasons for the rise of open source software over the last decades. Particularly, newcomers would miss a great chance for a kick start into programming if they did not connect with the community. Admittedly, not all the community's communication habits are for everyone, yet it is important to make your choices and pick up a few channels. 
 
-Chat clients like Slack, Discord or the Internet Relay Chat (IRC) (for the pre-millenials among readers) are the most direct form of asynchronous communication. Though many of the modern alternatives are not open source themselves, they offer free options and remain popular in the community despite self-hosted approaches such as [matrix](https://matrix.org/) along with [element](https://element.io/). Many international groups around data science and statistical computing such as RLadies or the Research Software Engineering society have Slack space that are busy 24/7 around the world. 
+Chat clients like Slack, Discord or the Internet Relay Chat (IRC) (for the pre-millenials among readers) are the most direct form of asynchronous communication. Though many of the modern alternatives are not open source themselves, they offer free options and remain popular in the community despite self-hosted approaches such as matrix^[https://matrix.org/] along with element^[https://element.io/]. Many international groups around data science and statistical computing such as RLadies or the Research Software Engineering society have Slack space that are busy 24/7 around the world. 
 
 Social media is less directed and more easily consumed in a passive fashion than a chat space. Twitter is a very active resource to find and exchange good reads or online tutorials. LinkedIn is another suitable option to connect and find input, particularly in parts of the world where Twitter is less popular.  Due to its activity, social media is also a great way to stay up-to-date with the latest developments. 
 
-Mailing lists are another more old-fashioned form to discuss things. They do not require a special client, but just an email address to subscribe to their regular updates. If you intend to avoid social media, as well as signing up at knowledge sharing platforms such as [stackoverflow.com](https://stackoverflow.com) or [reddit](https://reddit.com) mailing lists are a good way to get help from experienced developers. 
+Mailing lists are another more old-fashioned form to discuss things. They do not require a special client, but just an email address to subscribe to their regular updates. If you intend to avoid social media, as well as signing up at knowledge sharing platforms such as stackoverflow.com^[https://stackoverflow.com] or reddit^[https://reddit.com] mailing lists are a good way to get help from experienced developers. 
 
 Issue trackers are one form of communication that is often underestimated by newcomers. Remotely hosted git repositories, e.g., repositories hosted at GitHub or Gitlab, typically come with an integrated issue trackers to report bugs. The community discusses a lot more than problems on issue trackers: feature requests are a common use case, and even the future direction of an open source project may be affected substantially by discussions in its issue tracker.  
 

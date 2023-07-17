@@ -40,7 +40,7 @@ How much planning ahead is optimal for your project ultimately depends on your e
 !["Over the days are when creating packages for gurus was only." (source: own illustration)](images/packages.jpg)
 
 
-The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing else than source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like [Packing Python Projects](https://packaging.python.org/tutorials/packaging-projects/) or Hadley Wickham's free online book [R Packages](https://r-pkgs.org/) explain how to create packages good enough to make the official PyPi or CRAN package repository. 
+The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing else than source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like Packing Python Projects^[https://packaging.python.org/tutorials/packaging-projects/] or Hadley Wickham's free online book R Packages^[https://r-pkgs.org/] explain how to create packages good enough to make the official PyPi or CRAN package repositories. 
 
 In other words, it is unlikely that someone with moderate experience comes with the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office types of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file. 
 
@@ -99,15 +99,19 @@ create_basic_desc(d2)
 
 ```
 
-Start to document functions and their parameters using [Roxygen [@roxygen] syntax, and you're already very close to creating your first package. **Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters. 
+Start to document functions and their parameters using [Roxygen [@roxygen] syntax, and you're already very close to creating your first package. 
+
+>**Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters.
 
 ```{r}
 
 #' Create Basic Descriptive Statistics
 #'
-#' Creates means, standard deviations and default quantiles from an numeric input vector. 
+#' Creates means, standard deviations and default
+#' quantiles from an numeric input vector. 
 #' 
-#' @param distr numeric vector drawn from an arbitraty distribution. 
+#' @param distr numeric vector drawn from an
+#' arbitraty distribution. 
 #' @export 
 create_basic_desc <- function(distr){
   out <- list(
@@ -135,12 +139,14 @@ _Pseudo Code_ is a good way of writing up such an outline documentation. Take a 
 
 ```r
 
-# function: keyword_search(keyword, url = "https://some.default.url.com")
+# function: 
+# keyword_search(keyword, url = "https://some.default.url.com")
 # returns numeric ids according to some api documentation
 
 
 # function: query_profile(vec_in_ids)
-# a json object that should be immediately turned into list by the function, 
+# a json object that should be immediately
+# turned into list by the function, 
 # returns list of properties
 
 ```
@@ -172,8 +178,8 @@ In other languages, it is fairly common to define the data type of both: the inp
 
 Once you know a bit more about your direction of travel, it's time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for ad hoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need a graphical user interface (GUI) like shiny? 
 
-These questions will determine whether you use a [strictly functional approach](http://adv-r.had.co.nz/Functional-programming.html), a [rudimentary 
-form of object orientation like S3](http://adv-r.had.co.nz/OO-essentials.html) [@advancedR], a stricter implementation like [R6 [@r6] or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. 
+These questions will determine whether you use a strictly functional approach^[http://adv-r.had.co.nz/Functional-programming.html], a rudimentary 
+form of object orientation like S3^[http://adv-r.had.co.nz/OO-essentials.html] [@advancedR], a stricter implementation like [R6 [@r6] or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. 
 The main message of this section is: Think about the main use case. Is it interactive? Is it a program that runs in batch, typically? Do your users code? Would they prefer a GUI? 
 
 
@@ -231,10 +237,13 @@ every function goes into a separate file. Sometimes it makes sense to group mult
 
 ```{r}
 my_func_def <- function(param1, param2){
-  # here goes the function body, i.e., what the function does
+  # here goes the function body, i.e.,
+  # what the function does
   a <- (param1 + param2) * param3
-  # Note that in R, return statements are not necessary and even
-  # relatively uncommon, R will return the last unassigned statement
+  # Note that in R, return statements are
+  # not necessary and even
+  # relatively uncommon, R will return
+  # the last unassigned statement
   return(a)
 }
 ```
@@ -249,17 +258,22 @@ lived life slow, the man folder was filled up manually with some LaTeX reminisca
 #' Sum of Parameters Multiplied by First Input
 #'
 #' This functions only exists as a show case. 
-#' It's useless but nevertheless exported to the NAMESPACE of this
-#' package so users can see it and call the function by it's name.
+#' It's useless but nevertheless exported
+#' to the NAMESPACE of this
+#' package so users can see it and
+#'  call the function by it's name.
 #'
 #' @param param1 numeric input 
 #' @param param2 numeric input 
 #' @export
 my_func_def <- function(param1, param2){
-  # here goes the function body, i.e., what the function does
+  # here goes the function body, i.e.,
+  # what the function does
   a <- (param1 + param2) * param1
-  # Note that in R, return statements are not necessary and even
-  # relatively uncommon, R will return the last unassigned statement
+  # Note that in R, return statements are
+  # not necessary and even
+  # relatively uncommon, R will return
+  # the last unassigned statement
   return(a)
 }
 ```
@@ -271,9 +285,11 @@ my_func_def <- function(param1, param2){
 **docs**
 
 This folder is typically not filled with content manually. When pushed to github
-a docs folder can easily be published as website using [Github Pages](https://pages.github.com/). With Github pages you can host a decently styled modern website for free. Software projects often use GitHub Pages to market a product or project or simply for documentation purposes. All you need to do is check a couple of options inside the Github Web GUI and make sure the docs/ folder contains .md or .html files as well as stylesheets (.css). The latter may sound a bit like Latin to people without a basic web development background, but there is plenty of help. The R ecosystem offers different flavors of the same idea: use a bit of markdown + R to generate website code. There is blogdown for your personal website or blog. There is pkgdown for your packages documentation. And there is even bookdown to write an online book like this. Write the markdown file, render it as HTML into the docs folder, push the docs folder to GitHub. Done. Your website will be online at username.github.io/reponame.
+a docs folder can easily be published as website using Github Pages^[https://pages.github.com/]. With Github pages you can host a decently styled modern website for free. Software projects often use GitHub Pages to market a product or project or simply for documentation purposes. All you need to do is check a couple of options inside the Github Web GUI and make sure the docs/ folder contains .md or .html files as well as stylesheets (.css). The latter may sound a bit like Latin to people without a basic web development background, but there is plenty of help. The R ecosystem offers different flavors of the same idea: use a bit of markdown + R to generate website code. There is blogdown for your personal website or blog. There is pkgdown for your packages documentation. And there is even bookdown to write an online book like this. Write the markdown file, render it as HTML into the docs folder, push the docs folder to GitHub. Done. Your website will be online at username.github.io/reponame.
 
-Here's a an example of a package down website: https://mbannert.github.io/timeseriesdb/
+Here is a an example of a package down website:
+
+https://mbannert.github.io/timeseriesdb/
 
 **data**
 
@@ -448,9 +464,9 @@ Peer programming, also called pair programming, just means two developers sit in
 
 That is because novice programmers (and their scientific supervisors) often doubt the efficiency of two paid persons working at the same workstation. But programming is not about digging a hole with two shovels. Particularly not when it comes to building the software basis or frame of a project. 
 
-Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. [Visual Studio Code Live Share](https://visualstudio.microsoft.com/services/live-share/) is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.
+Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. Visual Studio Code Live Share^[https://visualstudio.microsoft.com/services/live-share/] is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.
 
 
-Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker's [https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge](The Friendship That Made Google Huge).  
+Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker's The Friendship That Made Google Huge^[[https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge].  
 
 

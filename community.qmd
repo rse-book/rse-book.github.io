@@ -22,21 +22,23 @@ Of course, one does not have to use all of these tools and be active in all of t
 ## Stay up to Date and a Vastly Evolving Field -- Social Media
 
 I hate to admit it because I am not a big fan of social media but it has definitely become an important channel for professional use also to me.
-Social media is a great way to get my regular dose of what's new in tech. My platform of choice is [twitter](https://twitter.com/whatsgoodio).
-I mostly use it as a bookmark tool and to get some feedback from publicly sharing resources.
-I try not to get caught in any politics, memes or cat pictures, even if that's a hard thing to do. 
-But once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and more importantly, get a sense of trends and dynamics in the big picture. 
+Social media is a great way to get my regular dose of what's new in tech. 
+The popularity of platforms varies locally but also evolves pretty dynamically over time. 
+Twitter has been the platform of choice for many egineers around data science for almost a decade, before large chunks turned their back on the chirping platform. 
+I am still [there](https://twitter.com/whatsgoodio), but may have to find a new tool to get feedback and bookmark good reads.
+No matter the platform, make sure not to get caught in politics, memes or cat pictures if you use it professionally. 
+Because once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and more importantly, get a sense of trends and dynamics.
 
-Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more. Tweet deck is a good standard option for a more advanced use of twitter.
-If you plan to build some following of your own, learn how to schedule tweets and put some thought into the timing of your tweets regarding timezone and audience.
-Keep in mind also that not social media is highly selective and not all platforms are equally popular in all parts of the world.  
+Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more.
+For twitter, Tweet Deck is a good standard option for a more advanced use of twitter.
+If you plan to build some following of your own, learn how to schedule posts and put some thought into the timing of your outlet, regarding timezone and audience.
 
 ## Knowledge Sharing Platforms
 
 The most popular knowledge sharing platform for programmers, [stackoverflow.com](https://stackoverflow.com) has made itself a name for being the first hit in your favorite search engine to any questions or error message remotely related to source code.
 The platform has accumulated millions of questions AND answers to programming questions across languages. 
 Through a mix of quality content, a community rating system and a healthy mix of gamification, the platform managed to become a mainstay of the programming community. 
-The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach has also become a notch on programmers' resumes.  CITE AER here
+The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach has also become a notch on programmers' resumes [].
 
 ## Look Out for Local Community Group 
 
@@ -54,7 +56,7 @@ Online conferences also give people a chance to attend who may not be involved e
 In any case, the entry hurdle is lower than ever. These paragraphs are meant to convince  take your time, to prepare, attend and debrief a major open source software conference -- online or in-person. 
 
 
-## Join Slack Spaces (or other Chats) 
+## Join a Chat Space
 
 Community chat spaces run by conference organizers, local user groups or societies are another way to stay connected to the community. More dynamic than message boards and forums, chats allow for both asynchronous and live communication. Usually chat spaces are 
 more domain or even topic specific than local meetups or social media.
