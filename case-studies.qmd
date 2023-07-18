@@ -2,13 +2,13 @@
 
 While the rest of the book provided more of a big picture type of insight, this section is all about application minded examples that most of the time feature code to reproduce. 
 
-## RSA Key Pair Authentication {#sec-rsa}
+## SSH Key Pair Authentication {#sec-rsa}
 
-This section could be headed 'log in like a developer'. RSA Key Pairs are a convenient, relatively secure way to log into an account. SSH based connections, including secure copy (SCP), often make use of RSA Key Pairs instead of using a combination of username and password. Also, most git platforms use this form of authentication. The basic idea of key pairs is to have a public key and a private key. While the private key is never shared with anyone, the public key is shared with any server you want to log in to.
+This section could be headed 'log in like a developer'. SSH Key Pairs (often referred to as RSA key pairs because of the popular RSA encryption process) are a convenient, relatively secure way to log into an account. SSH based connections, including secure copy (SCP), often make use of SSH Key Pairs instead of using a combination of username and password. Also, most git platforms use this form of authentication. The basic idea of key pairs is to have a public key and a private key. While the private key is never shared with anyone, the public key is shared with any server you want to log in to.
 It's like getting a custom door for any house that you are allowed to enter: share your public key with the server admin / or web portal, and you'll be allowed in when you show your private key. In case you lose your private key or suspect it has been stolen, simply inform the admin, so she can remove the door (the public key). This is where a little detail comes into play: 
 you can password protect the authentication process. Doing so buys you time to remove the key from the server before your password gets brute forced. The downside of this additional password is its need for interaction. So, when you are setting up a batch that talks to a remote server, that is when you do *not* want a key /w password. 
 
-Step one en route to logging in like a grown up, is to create an RSA key pair. GitHub has a [1-2-3 type of manual](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to get it done. Nevertheless, I would like the R Studio (Server) specific way here. 
+Step one en route to logging in like a grown up, is to create an RSA key pair. GitHub has a [1-2-3 type of manual^[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent] to get it done. Nevertheless, I would like to show the TL;DR R Studio (Server) specific way here. 
 
 1. Login to your Posit Workbench, RStudio Server or start your Desktop RStudio IDE. 
 2. Go to *Tools* → *Global Options* → *Git/SVN*
@@ -18,7 +18,7 @@ Step one en route to logging in like a grown up, is to create an RSA key pair. G
 6. You can paste the key you obtained to your GitHub settings or put it into your server's authorized keys file. 
 7. Doing so allows your SSH agent to clone and interact with remote git repositories via SSH or log in to a server if your user is allowed to use a login shell by the server.  
 
-![The R Studio GUI is an easy way to create an RSA Key Pair. (source: screenshot RStudio IDE taken in 2021.)](images/rsa.png)
+![The R Studio GUI is an easy way to create a key pair. (source: screenshot RStudio IDE taken in 2021.)](images/rsa.png)
 
 
 
@@ -53,24 +53,30 @@ Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based 
 ```{r, warning=FALSE,message=FALSE}
 library(jsonlite)
 # Visit this example query
-# https://collectionapi.metmuseum.org/public/collection/v1/search?q=umbrella
-# returns a json containing quite a few ids of pictures that were tagged 'umbrella'
+# https://collectionapi.metmuseum.org/
+# public/collection/v1/search?q=umbrella
+# returns a json containing quite a few
+# ids of pictures that were tagged 'umbrella'
 
 #' Search MET
 #'
-#' This function searches the MET's archive for keywords and
-#' returns object ids of search hits. It is a simple wrapper
-#' around the MET's Application Programming interface (API).
-#' The function is designed to work with other API wrappers
+#' This function searches the MET's archive
+#' for keywords and returns object ids of
+#' search hits. It is a simple wrapper
+#' around the MET's Application Programming
+#' interface (API). The function is designed 
+#' to work with other API wrappers
 #' and use object ids as an input.
 #' @param character search term
-#' @return list containing the totoal number of objects found
-#' and a vector of object ids.
+#' @return list containing the totoal 
+#' number of objects found and a 
+#' vector of object ids.
 #'
-# Note these declaration are not relevant when code is not
-# part of a package, hence you need to call library(jsonlite)
-# in order to make this function work if you are not building
-# a package.
+# Note these declaration are not relevant
+# when code is not part of a package, 
+# hence you need to call library(jsonlite)
+# in order to make this function work if
+# you are not building a package.
 #' @examples
 #' search_met("umbrella")
 #' @importFrom jsonlite formJSON
@@ -79,7 +85,9 @@ search_met <- function(keyword){
   # note how URLencode improves this function
   # because spaces are common in searches
   # but are not allowed in URLs
-  url <- sprintf("https://collectionapi.metmuseum.org/public/collection/v1/search?q=%s", URLencode(keyword))
+  url <- sprintf("
+  https://collectionapi.metmuseum.org/public/collection/v1/search?q=%s",
+  URLencode(keyword))
   fromJSON(url)
 }
 
@@ -94,8 +102,9 @@ download_met_images_by_id <- function(ids,
                                       path = "met") {
   # Obtain meta description objects from MET API
   obj_list <- lapply(ids, function(x) {
-    req <- download.file(sprintf("https://collectionapi.metmuseum.org/public/collection/v1/objects/%d",
-                                 x),destfile = "temp.json")
+    req <- download.file(sprintf("
+    https://collectionapi.metmuseum.org/public/collection/v1/objects/%d",
+    x),destfile = "temp.json")
     fromJSON("temp.json")
   })
   
@@ -115,12 +124,14 @@ download_met_images_by_id <- function(ids,
   
   
   message(
-    sprintf("The following images ids were not public domain and could not be downloaded:\n %s",
+    sprintf("
+    The following images ids were not public domain and could not be downloaded:\n %s",
             paste(ids[!public], collapse = ",")
   ))
   
   message(
-    sprintf("The following images ids were public domain and could be downloaded to\n %s: %s",
+    sprintf("
+    The following images ids were public domain and could be downloaded to\n %s: %s",
             path, paste(ids[public], collapse = ",")
   ))
   
@@ -154,8 +165,8 @@ The ability to expose data is a go-to skill to make research reproducible and cr
 
 Exposing your data through an API is not something you would necessarily need a software engineer, let alone an own server infrastructure for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub for free is an easy and highly available solution.
 
-The [swissdata project](https://github.com/swissdata) proposes an implementation of such an approach.
-The project transforms all sorts of datasets into .csv spreadsheets to contain a cleaned version of the data alongside .json files that contain the data descriptions. The [demo](https://github.com/swissdata/demo) describes the implementation in a greater detail and hands on fashion. 
+The swissdata project^[https://github.com/swissdata] proposes an implementation of such an approach.
+The project transforms all sorts of datasets into .csv spreadsheets to contain a cleaned version of the data alongside .json files that contain the data descriptions. The demo^[https://github.com/swissdata/demo] describes the implementation in a greater detail and hands on fashion. 
 
 If you add a naming convention for your files to such an implementation, you already have a solid interface to a data science environment. 
 Consider the following simple R wrapper that downloads both data and metadata first and then reads the into R. (Alternatively, direct streaming would be possible, too.)
@@ -207,15 +218,15 @@ m$labels$idx_type$unw
 
 Even, going past serving static files, does not require much software development expertise. 
 Thanks to frameworks such as express.js or the {plumbr} package in the R ecosystem, it is easy to create an API that turns an URL into a parameterized server-side action.
-Before we look at one of those frameworks in greater detail, let's take a look at the two most common [HTTP request methods,](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) GET and POST. 
+Before we look at one of those frameworks in greater detail, let's take a look at the two most common HTTP request methods^[https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods] GET and POST. 
 
-According to [Mozilla's definition](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), the GET method "requests a representation of the specified resource.
+According to Mozilla's definition, the GET method "requests a representation of the specified resource.
 Requests using GET should only retrieve data" while POST "submits an entity to the specified resource, often causing a change in state or side effects on the server".
 Obviously, there are many other methods for the HTTP protocol, but the above two should help to understand the idea behind standard compliant REST web application programming interfaces.
 
-Let's assume you have a working [nodejs](https://nodejs.org/en/) JavaScript runtime environment installed on your local development machine, so you can run JavaScript files outside a web browser. 
+Let's assume you have a working [odejs^[https://nodejs.org/en/] JavaScript runtime environment installed on your local development machine, so you can run JavaScript files outside a web browser. 
 Such a setup mimics the situation on web server with Node.js installed. 
-Also, let's assume you have [npm](https://npmjs.com) installed as a package manager to facilitate installing node packages from the npm open source package registry. 
+Also, let's assume you have npm^[https://npmjs.com] installed as a package manager to facilitate installing node packages from the npm open source package registry. 
 
 First, create a folder `api`, go to the freshly created directory and initiate a node package. 
 
@@ -249,7 +260,8 @@ app.use('/static', express.static('public'))
 
 
 app.listen(port, () => {
-  console.log(`DevOps carpentry demo app listening on port ${port}`)
+  console.log(`DevOps carpentry demo app 
+  listening on port ${port}`)
 })
 
 ```
@@ -275,7 +287,8 @@ app.get('/', (req, res) => {
 app.use('/static', (req, res, next) => {  
   var key = req.query['api_key'];
   if (!key) res.send('api key required');
-  if (apiKeys.indexOf(key) === -1)  res.send('eh-eh, wrong key.');
+  if (apiKeys.indexOf(key) === -1)  res.send('eh-eh,
+   wrong key.');
   req.key = key;
   next();
 })
@@ -290,7 +303,8 @@ var apiKeys = ['abc','123'];
 app.use('/static', express.static('public'))
 
 app.listen(port, () => {
-  console.log(`DevOps carpentry demo api listening on port ${port}`)
+  console.log(`DevOps carpentry demo api
+   listening on port ${port}`)
 })
 
 ```
@@ -298,7 +312,7 @@ app.listen(port, () => {
 We simply added a mount point using `app.use` (instead of `app.get`) which makes sure that everything past `/static` is affected by the logic added to this mount. 
 So, our `Hello World!` greeting is out there for anybody to see, while displaying the picture whose URL starts with `/static` needs an API key.
 Though this is only one, admittedly made up example of mapping URLs and parameters to functions via HTTP(S), it hints at the possibilities of dynamic APIs from database queries to web forms and many other applications. 
-The above example shows also how frameworks like [Express JavaScript](https://expressjs.com/) or plumber [@plumbr] facilitate the definition of machine-to-machine interfaces even for less experienced developers. 
+The above example shows also how frameworks like Express JavaScript^[https://expressjs.com/] or plumber [@plumbr] facilitate the definition of machine-to-machine interfaces even for less experienced developers. 
 The impact of frameworks is not limited to the technical implementation, though. 
 Developers benefit from comprehensive approaches like Swagger and the OpenAPI specification during the conceptual part of creating machine to machine interfaces. 
 
@@ -347,19 +361,23 @@ On to R!
 library(rvest)
 # URL of the media release subsite
 url <- "https://kof.ethz.ch/news-und-veranstaltungen/medien/medienagenda.html"
-# Extract the DOM object from the path we've previously detected using 
+# Extract the DOM object from the path we've 
+# previously detected using 
 # Chrome's inspect feature
 table_list <- url %>%
   read_html() %>%
-  html_nodes(xpath = '//html/body/div[6]/section/div/section/div[2]/div/div[3]/div/div/div/div/div/div/div/table') %>%
+  html_nodes(xpath = '
+  //html/body/div[6]/section/div/section/div[2]/div/div[3]/div/div/div/div/div/div/div/table') %>%
   # turn the HTML table into an R data.frame
   html_table()
-# because the above result may potentially contain multiple tables, we just use 
-# the first table. We know from visual inspection of the site that this is the
+# because the above result may potentially contain
+# multiple tables, we just use 
+# the first table. We know from visua
+# inspection of the site that this is the
 # right table. 
 agenda_table <- table_list[[1]]
 
-//*[@id="t-6b2da0b4-cec0-47a4-bf9d-bbfa5338fec8-tbody-row-2-cell-2"]
+# *[@id="t-6b2da0b4-cec0-47a4-bf9d-bbfa5338fec8-tbody-row-2-cell-2"]
 
 # extract KOF barometer lines
 pub_date <- agenda_table[grep("barometer",agenda_table$X3),]
@@ -398,7 +416,8 @@ library(kofdata)
 library(tsbox)
 tsl <- get_time_series("ch.kof.barometer")
 ts_plot(tsl$ch.kof.barometer)
-cat(sprintf("last update on %s.", as.character(Sys.Date())))
+cat(sprintf("last update on %s.",
+ as.character(Sys.Date())))
 ```
 
 We make use of the {kofdata} API wrapper to obtain data from the KOF Data API and use the {tsbox} to visualize the time series data we received. 
@@ -414,7 +433,8 @@ When located properly according to GitHub's convention, i.e., in a hidden `githu
 # Simple data transformation workflow
 name: KOF Economic Barometer
 
-# Controls when the action will run. Triggers the workflow on push or pull request
+# Controls when the action will run. 
+# Triggers the workflow on push or pull request
 # events but only for the main branch
 on:
   workflow_dispatch
@@ -507,7 +527,12 @@ d |>
 
 ```
 
-First, we need a *definition of a country's shape*. Those definitions come in various formats, from traditional *shape files* to web friendly *geoJSON*. Edzer Pebesma's [useR! 2021 keynote](https://www.youtube.com/watch?v=cK08bxUJn5A&list=PL4IzsxWztPdmHoJwIVa4um44w2GMjctmP&index=6) has a more thorough insight. 
+
+![screenshot of an interactive choropleth, for the actual interactive visit https://devops-carpentry.github.io/book/case-studies.html#sec-map](images/case-choropleth.png)
+
+
+
+First, we need a *definition of a country's shape*. Those definitions come in various formats, from traditional *shape files* to web friendly *geoJSON*. Edzer Pebesma's useR! 2021 keynote^[https://www.youtube.com/watch?v=cK08bxUJn5A&list=PL4IzsxWztPdmHoJwIVa4um44w2GMjctmP&index=6] has a more thorough insight. 
 
 Second, we need some data.frame that simply connects values to regions. In this case, we use regions defined by the Swiss Federal Statistical Office (FSO). Because our charting library makes use of the geoJSON convention to call the region label 'name' we need to call the column that holds the region names 
 'name' as well. That way, we can safely use defaults when plotting. Ah, and note that the values are absolutely bogus that came to my mind while writing this (so please do not mull over how these values were picked).
@@ -653,7 +678,8 @@ Note also how similar the hierarchical, nested structure of the above code is to
 <!-- < > denotes an opening, </ > denotes an end tag. -->
 <html>
   <body>
-  <!-- anything in between tags is affected by the tags formatting.
+  <!-- anything in between tags is affected by
+       the tags formatting.
        In this case bold -->
     <b> some bold title </b>
     <p>some text</p>
@@ -739,9 +765,9 @@ One of the cool things of learning shiny is how shiny, and its ecosystem allow y
 
 ![The shinydasboard R package provides nice, customizable skeletons for dashboards. (source: screenshot of minimal, blank dashboard created with shinydashboard)](images/blank_dashboard.png)
 
-- [R Studio Shiny's Widget Gallery](https://shiny.rstudio.com/gallery/widget-gallery.html) 
+- R Studio Shiny's Widget Gallery: https://shiny.rstudio.com/gallery/widget-gallery.html
 
-- [shinydashboard](https://rstudio.github.io/shinydashboard/)
+- shinydashboard: https://rstudio.github.io/shinydashboard 
 
 - [Mastering Shiny by Hadley Wickham](https://mastering-shiny.org/)
 
@@ -886,7 +912,9 @@ gg +
   coord_flip() + 
   scale_fill_viridis(discrete = T) +
   theme_minimal() +
-  ggtitle("Comparison of Computation Time (shorter bar is faster)")
+  ggtitle("
+  Comparison of Computation Time (shorter bar is faster)"
+  )
 
 
 
