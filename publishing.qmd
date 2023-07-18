@@ -21,7 +21,8 @@ To see a markdown process in action, consider the following basic example:
 ```md
 ## This a level two header
 
-This is plain text *this is italic* and **this is bold**
+This is plain text *this is italic*
+and **this is bold**
 
 ### This is a level three header 
 
@@ -33,7 +34,8 @@ into this output, stored in HTML and CSS files.
 
 ## This a level two header {.unnumbered}
 
-This is plain text *this is italic* and **this is bold**
+This is plain text *this is italic* 
+and **this is bold**
 
 ### This is a level three header {.unnumbered}
 
@@ -46,14 +48,14 @@ more text
 Once that we understood how the output files are created, let's take a more in-depth look at how a report goes online in fully automated fashion from computation to a website.
 In a nutshell, static website generators turn Markdown code 
 into a combination of HTML, CSS and JavaScript, so a web browser can display the result. 
-The Go based [hugo](https://gohugo.io/) or the classic [Jekyll](https://jekyllrb.com/) are popular static website generator approaches to run a website or blog.
+The Go based hugo^[https://gohugo.io/] or the classic Jekyll^[https://jekyllrb.com/] are popular static website generator approaches to run a website or blog.
 
-Approaches such as the {distill} R package or [quarto](https://quarto.org), the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
+Approaches such as the {distill} R package or quarto^[https://quarto.org], the new kid on the block, add data science & analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
 Quarto documents, for example, are text files that contain Markdown text and possibly code chunks in the same documents. 
 When rendered, the analytics code runs first, potentially creating output such as tables or figures.
 If necessary, this output is stored in separate files and smoothly integrated into the main document that is about to be rendered afterward.  
 
->Rendered output often consists of multiple files such as HTML documents, CSS style information, javascript code or images.
+Rendered output often consists of multiple files such as HTML documents, CSS style information, javascript code or images.
 Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics minded renderers such as quarto offer a **self-contained** option. 
 When enabled, quarto renders a single self-contained, encoded HTML file that contains everything from JavaScript to images. 
 
@@ -67,7 +69,7 @@ This simplicity allows hosting static websites on a plethora of cheap hosters, i
 
 ### GitHub Pages
 
-One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's [GitHub Pages](https://pages.github.com/).
+One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's GitHub Pages^[https://pages.github.com/].
 Though originally meant to be used with themes provided by GitHub and Markdown rendered by Jekyll on GitHub's servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.    
 
 All you need is a repository on GitHub to host the static files. You can activate GitHub Pages for your repository and choose whether you rather want the rendered files to be on a separate branch named *gh-pages* or in a subfolder of your root directory (mostly docs).
@@ -87,7 +89,7 @@ CI/CD certainly introduces a setup hurdle, but allows integrating users who do n
 
 ### Netlify
 
-The [Netlify](https://netlify.app/) platform does not host git repositories like GitHub or Bitbucket, but rather focuses on the *build* part.
+The Netlify^[https://netlify.app/] platform does not host git repositories like GitHub or Bitbucket, but rather focuses on the *build* part.
 Netlify supports the user in setting up the build process and offers a few add-ons such as Netlify forms to allow for website features that can process user interaction such as online forms. 
 Also, unlike git platforms, Netlify integrates domain purchase into its own platform. 
 Note that Netlify and git are complementary, not mutually exclusive approaches. 
@@ -123,7 +125,7 @@ Because of interpolation, the text looks blurred, particularly in its curves.
 ![](images/rendered.png)
 
 
-![](images/rendered.png){width=700}
+![](images/rendered.png){width=600}
 
 
 A streamlined publication workflow, such as the quarto-based approach described above, mitigates the problem because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 
@@ -135,7 +137,7 @@ The likes of ggplot2 have home court advantage in all things printed and still l
 ### JavaScript Visualization Libraries
 
 To those old enough to remember, JavaScript visualization may be reminiscent of a Japanese game convention at night: colorful and blinking. 
-But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like Apache echarts [@echarts], Data Driven Documents (d3js.org) [@d3] or [Highcharts](https://www.highcharts.com/) have very little in common with the JavaScript of the web of the late 90s.
+But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like Apache echarts [@echarts], Data Driven Documents (d3js.org) [@d3] or Highcharts^[https://www.highcharts.com/] have very little in common with the JavaScript of the web of the late 90s.
 In 2022, online communication can take your data visualization to another level.  
 
 Today, there are basically two popular JavaScript based approaches to data visualization: SVG manipulation and HTML5 drawing.
@@ -157,7 +159,7 @@ Consider an interactive time series chart of a long term economic indicator.
 Depending on the question at hand, you may be interested in the indicator's development over decades or rather look at the last couple of years or months. 
 Add a zoom window to interactively to not only switch between views, but to continuously zoom in or out on some crisis or boom or draw an intertemporal comparison between different peaks and lows. 
 
-```{r, message=FALSE, warnings=FALSE}
+```{r, message=FALSE, warnings=FALSE, eval=FALSE}
 library(echarts4r)
 library(kofdata)
 library(tsbox)
@@ -171,8 +173,9 @@ t_df |>
    e_title("Demo: Interactivity Adds Value")
 
 
-
 ```
+
+![Screenshot of an interactive chart created with echarts. Check the online book for the interactive version: https://devops-carpentry.github.io/book/publishing.html#visualization](images/echart-ts-pdf.png)
 
 Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused on making that one thing as convenient and inclusive as possibility. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundred. 
 
@@ -180,9 +183,9 @@ Besides more universal libraries like D3 or echarts with all their options and o
 ## Data Publications {#datapub}
 
 As mentioned in the [data management section](data-management.qmd#data-publications), publishing data on research repositories and catalogs is important not only to make research reproducible but also helps to data workers to get credit for their contribution to research. 
-Archives like [Zenodo](https://zonodo.org) provide GitHub integration to automate data releases and versioning of data. 
-In addition, archives can parse the [citation file format (.cff)](https://citation-file-format.github.io/) and generate unique object identification (DOI) numbers for your dataset as well a meta information for the archive entry. 
-Thanks to rOpoenSci, there is also curated R package called [cffr](https://docs.ropensci.org/cffr/) to help generate citation files. 
+Archives like Zenodo^[https://zenodo.org] provide GitHub integration to automate data releases and versioning of data. 
+In addition, archives can parse the citation file format (.cff)^[https://citation-file-format.github.io/] and generate unique object identification (DOI) numbers for your dataset as well a meta information for the archive entry. 
+Thanks to rOpoenSci, there is also curated R package called cffr^[https://docs.ropensci.org/cffr/] to help generate citation files. 
 
 
     

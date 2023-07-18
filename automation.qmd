@@ -14,10 +14,10 @@ The following sections look at different forms of automation such continuous int
 
 Because of its origin in build, test and check automation, CI/CD may not be the first thing that comes into mind when one approaches programming through the analytics route. Yet, thorough testing and automated builds have not only become well established parts of the data science workflow, CI/CD tools can also help to automate tasks beyond testing and packaging your next release.
 
-Modern version control software providers are an easy way to add the tool chain that is often fuzzily called [CI/CD (Continuous Integration / Continuous Development)](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment). While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
+Modern version control software providers are an easy way to add the tool chain that is often fuzzily called [CI/CD (Continuous Integration / Continuous Development)^[https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment]. While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
 
 Thanks to infrastructure as code and containerization, automation of development and deployment workflows become much easier also because local development can run in an environment very close to the production setup.
-Git hosting powerhouses GitHub and GitLab run their flavors of CI/CD tools, making the approach well documented and readily available by default to a wide array of users: [GitHub Actions])(https://docs.github.com/en/actions) and [GitLab CI](https://docs.gitlab.com/ee/ci/). In addition, services like [Circle CI](https://circleci.com/) offer this tool chain independently of hosting git repositories.
+Git hosting powerhouses GitHub and GitLab run their flavors of CI/CD tools, making the approach well documented and readily available by default to a wide array of users: [GitHub Actions^[https://docs.github.com/en/actions] and GitLab CI^[https://docs.gitlab.com/ee/ci/]. In addition, services like Circle CI^[https://circleci.com/] offer this tool chain independently of hosting git repositories.
 
 
 Users of the above platforms can upload a simple text file that follows a name convention and structure to trigger a step-based tool chain based on an event. An example of an event may be a push to a repository's main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server -- all triggered by simple push to master. One particularly cool thing is, that there are multiple services which allow running the testing on their servers using container technologies. This leads to a great variety of setups for testing. That way, software can easily be tested on different operating systems / environments. 
@@ -57,7 +57,7 @@ script:
 
 ```
 
-For more in depth examples of the above, [Jim Hester's talk on GitHub Actions for R](https://www.jimhester.com/talk/2020-rsc-github-actions/) is an excellent starting point.
+For more in depth examples of the above, Jim Hester's talk on GitHub Actions for R^[https://www.jimhester.com/talk/2020-rsc-github-actions/] is an excellent starting point.
 CI/CD tool chains are useful for a plethora of actions beyond mere building, testing and deployment of software.
 The publication chapter covers another common use case: rendering and deployment of static websites. 
 That is, websites that are updated by re-rendering their content at build time, 
@@ -87,15 +87,15 @@ More advanced expressions can also handle running a job at much shorter interval
 ```
 
 
-To learn and play with more expressions, check [crontab guru](https://crontab.guru/).
-If you have more sophisticated use cases, like overseeing a larger number of jobs or execution on different nodes, consider using [Apache Airflow](https://airflow.apache.org/) as a workflow scheduler. 
+To learn and play with more expressions, check crontab guru^[https://crontab.guru/].
+If you have more sophisticated use cases, like overseeing a larger number of jobs or execution on different nodes, consider using Apache Airflow^[https://airflow.apache.org/] as a workflow scheduler. 
 
 
 ## Workflow Scheduling: Apache Airflow DAGs
 
-Though much less common than the above tools, [Apache Airflow](https://airflow.apache.org/) has definitely earned a mention because of its ability to help researchers keep an overview of regularly running processes. 
+Though much less common than the above tools, [Apache Airflow](https://airflow.apache.org/) has earned a mention because of its ability to help researchers keep an overview of regularly running processes. 
 Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator.
-I often referred to Airflow as [cronjobs](https://en.wikipedia.org/wiki/Cron) on steroids.
+I often referred to Airflow as 'cronjobs^[https://en.wikipedia.org/wiki/Cron] on steroids'.
 Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other logs and reporting features, worth a lot when maintaining reoccurring processes.
 Airflow has its own *Airflow Summit* conference, a solid community and docker compose setup to get you started quickly.
 The setup consists of a container image for the web frontend and another image for the PostgreSQL backend. 
@@ -129,7 +129,8 @@ with DAG(
     catchup=False,
     tags=["example"],
 ) as dag:
-    # t1, t2 and t3 are examples of tasks created by instantiating operators
+    # t1, t2 and t3 are examples of tasks
+    # created by instantiating operators
     t1 = BashOperator(
         task_id="print_date",
         bash_command="date > date.txt",
@@ -191,11 +192,11 @@ yo!
 
 in your terminal. 
 Very much like Apache Airflow and its DAGs which were introduced above, Makefiles allow declaring and manage dependencies. 
-The ability of make and make like approaches such as the [targets R package](https://CRAN.R-project.org/package=targets) goes well beyond the simple sequential definitions like the basic example above. 
+The ability of make and make like approaches such as the targets R package^[https://CRAN.R-project.org/package=targets] goes well beyond the simple sequential definitions like the basic example above. 
 Parallel execution of independent tasks, cherry-picking execution of single tasks from a larger workflow, variables and caching are highly useful when runtime increases. 
 Consider, a multistep workflow, parts of which are running for quite a while but hardly change while other swift parts change all the time, and it becomes obvious how a simple CLI-based workflow helps.  
 Modern implementation like the target R package ship with network visualizations of the execution path and its dependencies. 
-The [walkthrough provided in R OpenSci's book](https://books.ropensci.org/targets/walkthrough.html) on target is a great summary available as text, code example and video.  
+The walkthrough provided in R OpenSci's book^[https://books.ropensci.org/targets/walkthrough.html] on target is a great summary available as text, code example and video.  
 
 
 
@@ -209,7 +210,7 @@ In recent years, declarative approaches helped to make task automation more incl
 Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with. 
 The infrastructure section explains in greater detail how such definitions look like and containers are building blocks of modern infrastructure defined in code. 
 
-Automation is more complex for cluster setups because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in *high availability* mode. On Kubernetes clusters, [helm](https://helm.sh/), Kubernetes' package manager, is part of the solution to tackle this added complexity. Helm is "the best way to find share and use software built for Kubernetes". [Terraform](https://www.terraform.io/) can manage Kubernetes clusters on clouds like Amazon's AWS, Google's GPC, Microsoft's Azure and many other cloud systems using declarative configuration files. Again, a console-based client interface is used to apply a declarative configuration plan to a particular cloud. 
+Automation is more complex for cluster setups because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in *high availability* mode. On Kubernetes clusters, helm^[https://helm.sh/], Kubernetes' package manager, is part of the solution to tackle this added complexity. Helm is "the best way to find share and use software built for Kubernetes". Terraform^[https://www.terraform.io/] can manage Kubernetes clusters on clouds like Amazon's AWS, Google's GPC, Microsoft's Azure and many other cloud systems using declarative configuration files. Again, a console-based client interface is used to apply a declarative configuration plan to a particular cloud. 
 
 
 
