@@ -23,9 +23,12 @@ So, where should we go with our project when it outgrows the local environment o
 
 ### Software-as-a-Service (SaaS)
 
-The simplest solution and fastest time-to-market is almost always to go for a SaaS product -- particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus on doing one single thing well. The [shinyapps.io](https://shinyapps.io) platform is a great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product because R developers who come from field-specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers, for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R shiny web application framework that uses R to generate HTML, CSS and JavaScript based applications. Still, those applications need to be hosted somewhere. This is precisely what shinyapps.io does. The service solely hosts web applications that were created with the shiny web application framework. This ease of use is also the biggest limitation of SaaS products. A website generated with another tool cannot be deployed easily. In addition, the mere bang-for-buck price is rather high compared to self-hosting as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many projects, especially at a proof of concept stage.
+The simplest solution and fastest time-to-market is almost always to go for a SaaS product -- particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus on doing one single thing well. The shinyapps.io^https://shinyapps.io] platform is a great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product because R developers who come from field-specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers, for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R shiny web application framework that uses R to generate HTML, CSS and JavaScript based applications. Still, those applications need to be hosted somewhere. This is precisely what shinyapps.io does. The service solely hosts web applications that were created with the shiny web application framework. This ease of use is also the biggest limitation of SaaS products. A website generated with another tool cannot be deployed easily. In addition, the mere bang-for-buck price is rather high compared to self-hosting as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many projects, especially at a proof of concept stage.
 
->In case you are interested in getting started with shiny, take a look at the shiny case study in this book. The study explains basic concepts of shiny to the user and walks readers through the creation and deployment of a simple app. 
+::: {.callout-note appearance="simple"} 
+In case you are interested in getting started with shiny, take a look at the shiny case study in this book. The study explains basic concepts of shiny to the user and walks readers through the creation and deployment of a simple app. 
+:::
+
 
 SaaS, of course, is neither an R nor a data science idea. Modern providers offer databases, storage calendars, face recognition, location services among other things. 
 
@@ -47,8 +50,9 @@ Exactly because of this dynamic described above and the ubiquity of the cloud, i
 ### Virtual Machines
 Virtual machines (VMs) remain the go-to building blocks for many set-ups. Hence, university IT, private sector IT, independent hosting providers and online giants all offer VMs. Virtual machines allow running a virtual computer that has its own operating system on some host machine. Running applications on such a virtual computer feels like running an application on a standalone computer dedicated to run this application.
 
->Oracle's Virtual Box is great tool to use and try virtual machines locally. Virtual Box allows to run a Virtual Windows or Linux inside Mac OS and vice versa. Running a virtual box locally may not be the most performant solution but it allows to have several test environments without altering one's main environment. 
-
+::: {.callout-note appearance="simple"} 
+Oracle's Virtual Box is great tool to use and try virtual machines locally. Virtual Box allows to run a Virtual Windows or Linux inside Mac OS and vice versa. Running a virtual box locally may not be the most performant solution but it allows to have several test environments without altering one's main environment. 
+:::
 
 ### Containers & Images
 
@@ -110,6 +114,7 @@ Docker Desktop is an easy-to-use application available on Windows and OSX.
 With Docker Desktop, one can execute Docker commands and build images, either in a GUI or using its CLI. The below table shows a few of the most basic docker commands.
 
 ```{r, echo=FALSE, message=FALSE, warnings=FALSE}
+#| size: scriptsize
 library(dplyr)
 library(kableExtra)
 tri <- tribble(
@@ -163,7 +168,8 @@ Consider the following example file that creates two containers: a shiny web ser
 ```sh
 services:
    postgres:
-      # a name, e.g.,  db_container is instrumental to be
+      # a name, e.g.,  db_container is 
+      # instrumental to be
       # called as host from the shiny app
       container_name: db_container
       build: ./postgres
@@ -171,7 +177,8 @@ services:
       environment:
          - POSTGRES_USER=postgres
          - POSTGRES_PASSWORD=postgres
-      # This port mapping is only necessary to connect from the host, 
+      # This port mapping is only necessary 
+      # to connect from the host, 
       # not to let containers talk to each other. 
       ports:
          - "5432:5432"
@@ -201,7 +208,10 @@ docker compose up --force-recreate
 
 ```
 
->Note that docker compose does not replace an orchestrator and cannot provide cluster functionality like Docker Swarm or even Kubernetes. It should not be used in a production setup unless you know what you are doing. 
+::: {.callout-note appearance="simple"} 
+Note that docker compose does not replace an orchestrator and cannot provide cluster functionality like Docker Swarm or even Kubernetes. 
+:::
+
 
 
 

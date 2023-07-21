@@ -1,6 +1,6 @@
 # Automation
 
->Make repetitive work fun again!
+Make repetitive work fun again!
 
 ![Too busy too automate? (source: Håkan Forss, https://hakanforss.wordpress.com)](images/busy.png)
 
@@ -38,7 +38,8 @@ stage: buildncheck
 artifacts:
 untracked: true
 script:
-- rm .gitlab-ci.yml # we don't need it and it causes a hidden file NOTE
+# we don't need it and it causes a hidden file NOTE
+- rm .gitlab-ci.yml 
 - install2.r --repos custom.mini.cran.ch .
 - R CMD build . --no-build-vignettes --no-manual
 - R CMD check --no-manual *.tar.gz
@@ -205,7 +206,7 @@ The walkthrough provided in R OpenSci's book^[https://books.ropensci.org/targets
 
 In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself, but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 
 
->Do not think infrastructure as code is only relevant for sys admins or other infrastructure professionals who make use of it every day. The ability to reproduce and tweak infrastructure at essentially no costs enables other forms of automation such as CI/CD. Just like with flat rate with your mobile carrier will lead to more calls. 
+Do not think infrastructure as code is only relevant for sys admins or other infrastructure professionals who make use of it every day. The ability to reproduce and tweak infrastructure at essentially no costs enables other forms of automation such as CI/CD. Just like with flat rate with your mobile carrier will lead to more calls. 
 
 Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above, infrastructure as code can also be seen as a way to automate setting up the environment you work with. 
 The infrastructure section explains in greater detail how such definitions look like and containers are building blocks of modern infrastructure defined in code. 

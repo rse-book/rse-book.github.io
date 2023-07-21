@@ -304,7 +304,7 @@ dbDisconnect(con)
 
 Obviously, the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form. 
 
-![The ](images/postgres.png)
+![The iconic Postgres Elephant logo](images/postgres.png)
 
 
 ### Relational Database Management Systems (RDBMS)
@@ -332,17 +332,18 @@ dbWriteTable(con, dbQuoteIdentifier(con,"flowers"),
 The above code initiates a *SQLite* database and continues to write the built-in R demo datasets into separate tables in that newly created database. Now we can use SQL to query the data. Return the first three rows of *flowers*:
 
 ```{r}
-#| size: tiny
+#| size: scriptsize
 dbGetQuery(con, "SELECT * FROM flowers LIMIT 3")
 ```
 
 Return cars that are more fuel efficient than 30 miles per gallon:
 
 ```{r}
+#| size: scriptsize
 dbGetQuery(con, "SELECT * FROM mtcars WHERE mpg > 30")
 ```
 
-[MySQL](https://www.mysql.com/) can do a little more and also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium level web projects around the world. In its early days, MySQL used to be an independent open source project, but was later on acquired by database Juggernaut Oracle as a lite version to go with its flagship product. 
+MySQL^[https://www.mysql.com/] can do a little more and also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium level web projects around the world. In its early days, MySQL used to be an independent open source project, but was later on acquired by database Juggernaut Oracle as a lite version to go with its flagship product. 
 
 While certainly doing its job in millions of installations, MySQL it is not in at the same level as [Microsoft SQL Server^[https://www.microsoft.com/en-us/sql-server/sql-server-2019] (MSSQL), 
 PostgreSQL^[https://www.postgresql.org/] and Oracle Database^[https://www.oracle.com/database/technologies/] and I suggest one of these three enterprise level databases as data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. 
@@ -373,14 +374,18 @@ Just like software publications, you should not just 'drop' data without a licen
 Just because content is publicly available on a website, it does not automatically mean that bulk downloads, aggregation and re-publishing are ok.
 For example, the ability to scrape a website daily and doing so with good intent for science does not mean a website's AUP (Acceptable Use Policy) allows to systematically archive its content. 
 
->Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. --CRAN description of the polite R package.
+
+::: {.callout-important appearance="simple"} 
+Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. --CRAN description of the polite R package.
+:::
+
 
 In other words, the new type of researcher discussed in this book needs to be aware of potential legal and social consequences. The {polite} R package quoted above is an example of an alternative approach that favors etiquette over hiding IP addresses to avoid access denial. 
 
 ### Security
 
-"I ain't got nothing to hide. I don't care about people reading my stuff." 
-I've heard similar 'arguments' a zillion times. 
+>"I ain't got nothing to hide. I don't care about people reading my stuff." 
+I have heard similar 'arguments' a zillion times. 
 People who argue like that do not only endanger their environment, they contribute to a less secure internet at large, as they leave their device open to contribute to malicious activity. 
 
 It does not have to be you who has been trusted to work with data that qualify as sensitive. 

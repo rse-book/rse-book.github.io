@@ -51,6 +51,7 @@ Here's an example of an elementary API wrapper that makes use of the
 Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based on  a simple search. 
 
 ```{r, warning=FALSE,message=FALSE}
+#| size: scriptsize
 library(jsonlite)
 # Visit this example query
 # https://collectionapi.metmuseum.org/
@@ -97,6 +98,7 @@ You can use these IDs with another [endpoint](glossary.qmd) to receive the pictu
 themselves.
 
 ```{r,warning=FALSE,message=FALSE}
+#| size: scriptsize
 download_met_images_by_id <- function(ids,
                                       download = "primaryImage",
                                       path = "met") {
@@ -144,6 +146,7 @@ Note that even if I do not display the image itself in the book to err on the si
 
 
 ```{r}
+#| size: scriptsize
 # Step 4: Use the Wrapper
 umbrella_ids <- search_met("umbrella")
 umbrella_ids$total
@@ -178,7 +181,8 @@ download_swissdata <- function(dataset){
   m_ext <- ".json"
   d <- sprintf("%s%s", dataset, d_ext)
   m <- sprintf("%s%s", dataset, m_ext)
-  gh_url <- "https://raw.githubusercontent.com/swissdata/demo/master/data"
+  gh_url <- paste0("https://raw.githubusercontent.com/",
+  "swissdata/demo/master/data")
   download.file(file.path(gh_url, d), d)
   download.file(file.path(gh_url, m), m)
 }

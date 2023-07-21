@@ -141,9 +141,12 @@ _Pseudo Code_ is a good way of writing up such an outline documentation. Take a 
 ```r
 
 # function: 
-# keyword_search(keyword,
-#                url = "https://some.default.url.com")
-# returns numeric ids according to some api documentation
+# keyword_search(
+#  keyword,
+#  url = "https://some.default.url.com"
+#)
+# returns numeric ids according to some
+# api documentation
 
 # function: query_profile(vec_in_ids)
 # a json object that should be immediately

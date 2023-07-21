@@ -52,7 +52,7 @@ So let's actually do it. Here's a three-stage walk through of git commands that 
 library(kableExtra)
 d <- data.frame("Command" = c("git init",
                               "git status",
-                              "git add file_name.py",
+                              "git add filename.py",
                               "git commit -m 'meaningful msg'",
                               "git log",
                               "git checkout some-commit-id",

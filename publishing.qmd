@@ -79,7 +79,9 @@ By convention, the corresponding static website of a git repository is exposed a
 For GitHub organizations which are popular to group repositories, the exposed URL would be
 `<orgname>.github.io/<repository-name>`. 
 
->Note that the online version of the book you are currently reading is hosted in very same fashion: `DevOps-carpentry.github.io/book`
+::: {.callout-note appearance="simple"} 
+Note that the online version of the book you are currently reading is hosted in very same fashion: `DevOps-carpentry.github.io/book`
+:::
 
 ### GitHub Actions
 
@@ -95,7 +97,7 @@ Also, unlike git platforms, Netlify integrates domain purchase into its own plat
 Note that Netlify and git are complementary, not mutually exclusive approaches. 
 Platforms like Netlify and GitHub use APIs to communicate with each other, allowing to trigger Netlify builds based on changes to a GitHub repositories. 
 
->Basic GitHub pages setups are good enough for online documentation of most software or other sites that simply display static content. 
+Basic GitHub pages setups are good enough for online documentation of most software or other sites that simply display static content. 
 Netlify cannot only improve convenience when using advanced features, it can also extend possibilities for static websites when needed. 
 
 
@@ -125,7 +127,7 @@ Because of interpolation, the text looks blurred, particularly in its curves.
 ![](images/rendered.png)
 
 
-![](images/rendered.png){width=600}
+![](images/rendered.png){width=450}
 
 
 A streamlined publication workflow, such as the quarto-based approach described above, mitigates the problem because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 
