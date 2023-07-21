@@ -9,7 +9,7 @@ Git is a decentralized version control system. It manages different versions of 
 
 ![Meaningful commit messages help to make sense of a project's history. Screenshot of a commit history on GitHub. source: (own Github repository)](images/commits.png)
 
-The key to appreciating the value of git is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). Because these GUIs tools^[[GitHub Desktop](https://desktop.github.com/), Atlassian's [Source Tree](https://www.sourcetreeapp.com/) and [Tortoise](https://tortoisegit.org/) are some of the most popular choices if you are not a console person.] may be convenient but do not really help to improve your understanding of the workflow, we will use the git console throughout this book. As opposed to the sync approaches mentioned above, a version control system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message 'incorporated advice from Anna (discussion at XYZ Conference 2020)'. 
+The key to appreciating the value of git is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). GUI tools GitHub Desktop^[https://desktop.github.com/], Atlassian's Source Tree^[https://www.sourcetreeapp.com/] and Tortoise^[https://tortoisegit.org/] are some of the most popular choices if you are not a console person. Though GUI tools may be convenient, we will use the git console throughout this book to improve our understanding. As opposed to the sync approaches mentioned above, a version control system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message 'incorporated advice from Anna (discussion at XYZ Conference 2020)'. 
 
 
 ## Why Use Version Control in Research? 
@@ -66,7 +66,7 @@ d <- data.frame("Command" = c("git init",
                              "leave temporary state, go back to last commit"),
                 
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE) |>
+kable(d,"latex",escape= FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
       column_spec(2, width = "6.8cm")
 
@@ -94,7 +94,7 @@ d <- data.frame("Command" = c("git clone",
                              "show remote repo URL",
                              "set URL to remote repo"),
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE) |>
+kable(d,"latex",escape= FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
       column_spec(2, width = "6.8cm")
 
@@ -118,7 +118,7 @@ d <- data.frame("Command" = c("git checkout -b branchname",
                              "merge branch named branchname into current branch"
                 ),
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE) |>
+kable(d,"latex",escape= FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
       column_spec(2, width = "6.8cm")
 
@@ -211,14 +211,15 @@ As you can see, git will check whether it is possible to merge automatically w/o
 Even if that is not possible, you can still issue the pull request.
 When you create the request, you can also assign reviewers, but you could also do so at a later stage. 
 
-
->Even after a PR was issued you can continue to add commits to the branch about to be merged. 
+::: {.callout-note}
+Even after a PR was issued you can continue to add commits to the branch about to be merged. 
 As long as you do not merge the branch through the Pull Request, commits are added to the branch.
 In other words, your existing PR gets updated. This is a very natural way to account for reviewer comments. 
+:::
+
 
 **Pro-Tipp**: 
 Use commit messages like 'added join to SQL query, closes #3'. The key word 'closes' or 'fixes', will automatically close issues referred to when merged into the main branch.
-
 
 Once the merge is done, all your changes are in the main branch and you and everyone else can pull the main branch that now contains your new feature. Yay!
 

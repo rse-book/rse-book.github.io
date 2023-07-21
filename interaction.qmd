@@ -78,9 +78,9 @@ Meanwhile, there is not only great Python support, but also auto-completion, cod
 
 ### Editors on Steroids
 
-Another approach is to go for a highly customizable editor such as [Sublime](https://www.sublimetext.com/) or [Atom](https://atom.io/). 
+Another approach is to go for a highly customizable editor such as Sublime^[https://www.sublimetext.com/] or Atom^[https://atom.io/]. 
 The idea is to send source code from the editor to interchangeable [REPL](#glossary)s 
-which can be adapted according to the language that needs to be interpreted. That way a good linter / code highlighter for your favorite language is all you need to have a lightweight environment to run things. An example of such a customization approach is Christoph Sax' small project [Sublime Studio](https://github.com/christophsax/SublimeStudio). 
+which can be adapted according to the language that needs to be interpreted. That way a good linter / code highlighter for your favorite language is all you need to have a lightweight environment to run things. An example of such a customization approach is Christoph Sax' small project Sublime Studio^[https://github.com/christophsax/SublimeStudio]. 
 
 For readers with UNIX experience, vim^[https://www.vim.org/] may just be the most ubiquitous editor of them all, to everyone else it may just live in deep nerd territory.
 The fact a quick online search for 'How to quit vim' came back with more than 56.4 million (!) results shows that both perspectives have a point. 

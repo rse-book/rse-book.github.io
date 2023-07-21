@@ -11,7 +11,7 @@ The programming examples in this book mostly stick to the *R* language, which is
 
 The very first (and intimidating) choice a novice hacker faces is which is the programming language to learn. Unfortunately, the medium popularly summed up as the internet offers a lot of really, fantastic advice on the matter. The problem is, however, that this advice does not necessarily agree which language is the best for research. In the realm of data science -- get accustomed to that label if you are a scientist who works with data -- the debate basically comes down to two languages: The R Language for Statistical Computing and Python. 
 
-At least to me, there is only one valid advice: **It simply does NOT matter**. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. R came out of the rather specific domain of statistics 25+ years ago and made its way to a more general programming language thanks to 15K+ extension packages (and counting). Built by a mathematician, Python continues to be as general purpose as it's ever been. But it got more scientific, thanks to extension packages of its own such as [pandas](https://pandas.pydata.org/), [SciPy](https://www.scipy.org/) or [NumPy](https://numpy.org/). As a result, there is a huge overlap of what both languages can do and both will extend your horizon in unprecedented fashion if you did not use a full-fledged programming language for your analysis before. 
+At least to me, there is only one valid advice: **It simply does NOT matter**. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. R came out of the rather specific domain of statistics 25+ years ago and made its way to a more general programming language thanks to 15K+ extension packages (and counting). Built by a mathematician, Python continues to be as general purpose as it's ever been. But it got more scientific, thanks to extension packages of its own such as pandas^[https://pandas.pydata.org/], SciPy^[https://www.scipy.org/] or NumPy^[https://numpy.org/]. As a result, there is a huge overlap of what both languages can do and both will extend your horizon in unprecedented fashion if you did not use a full-fledged programming language for your analysis before. 
 
 ![R: "Dplyr smokes pandas." Python: "But Keras is better for ML!" Language wars can be entertaining, sometimes spectacular, but most times they are just useless... (source: own illustration)](images/languagewar.jpg)
 
@@ -140,9 +140,9 @@ _Pseudo Code_ is a good way of writing up such an outline documentation. Take a 
 ```r
 
 # function: 
-# keyword_search(keyword, url = "https://some.default.url.com")
+# keyword_search(keyword,
+#                url = "https://some.default.url.com")
 # returns numeric ids according to some api documentation
-
 
 # function: query_profile(vec_in_ids)
 # a json object that should be immediately
@@ -361,7 +361,7 @@ So why don't we write code correctly in the first place instead of writing code 
 When developing *new* features we might be confident that newly introduced features do not break existing functionality. At least until we test it :) . Experience proves that seemingly unrelated edits do cause side effects. That is why well maintained packages have so called unit tests that are run when the package is re-build. If one of the checks fails, the developer can take a look before the a change that broke the code is actually deployed. 
 To foster the development of these type of tests there are unit testing frameworks for many languages and frameworks. In R the most prominent testing packages are {tinytest} and {testthat}.
 
-Hadley's book R packages has a more thorough introduction to [testing in R](https://r-pkgs.org/tests.html) with the testthat [@testthat] package. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco
+Hadley's book R packages has a more thorough introduction to testing in R^[https://r-pkgs.org/tests.html] with the testthat [@testthat] package. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco
 
 
 
@@ -443,7 +443,8 @@ Now let's give this function a bad argument.
 ```{r, eval=FALSE}
 debug_me("1","2")
 # if evaluated this would return
-Error in a + b : non-numeric argument to binary operator
+Error in a + b : non-numeric argument
+to binary operator
 ```
 
 Motivated by this error message, let's switch into debug mode
@@ -467,6 +468,6 @@ That is because novice programmers (and their scientific supervisors) often doub
 Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. Visual Studio Code Live Share^[https://visualstudio.microsoft.com/services/live-share/] is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.
 
 
-Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker's The Friendship That Made Google Huge^[[https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge].  
+Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker's The Friendship That Made Google Huge^[https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge].  
 
 

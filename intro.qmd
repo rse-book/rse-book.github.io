@@ -14,16 +14,16 @@ library(cranlogs)
 library(dplyr)
 library(lubridate)
 library(tsbox)
-top <- cranlogs::cran_top_downloads()
+library(cranlogs)
+top <- cran_top_downloads()
 
-packs <- cranlogs::cran_downloads(
-                               from = "2015-01-01",
-                               to = "2022-09-30")
+packs <- cran_downloads(from = "2015-01-01",
+                        to = "2022-09-30")
 
 packs |> 
   group_by(floor_date(date, "month")) |> 
   summarize(m = sum(count)) |> 
-  ts_plot(title = "Sum of Monthly R Package Downloads",
+  ts_plot(title = "Monthly R Package Downloads",
           subtitle = "source: RStudio CRAN mirror")
 
 ```

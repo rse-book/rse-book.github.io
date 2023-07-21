@@ -1,5 +1,28 @@
 # Data Management
 
+```{r}
+#| echo: false
+
+default_chunk_hook  <- knitr::knit_hooks$get("chunk")
+
+latex_font_size <- c("Huge", "huge", "LARGE", "Large", 
+                     "large", "normalsize", "small", 
+                     "footnotesize", "scriptsize", "tiny")
+
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- default_chunk_hook(x, options)
+  if(options$size %in% latex_font_size) {
+    paste0("\n \\", options$size, "\n\n", 
+      x, 
+      "\n\n \\normalsize"
+    )
+  } else {
+    x
+  }
+})
+
+```
+
 Admittedly, I have said the same thing about @sec-git on version control, yet *data management* may be the single most impactful chapter of this book. This may be the case in particular in case you come from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long term) data management is a step into a bigger world. 
 
 After decades of information engineering and computer science, some can't help but wonder why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully, this chapter helps the reader to assess how far they wanted to dig into data management. 
@@ -8,6 +31,7 @@ After decades of information engineering and computer science, some can't help b
 
 In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mostly trained to handle different flavors of two-dimensional data, as in **one-observation-one-row**. Ad hoc studies conducted once result in *cross-sectional data*: one line per observation, columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as *time series*. Multivariate time series, i.e., multi-variable, longitudinal data are often referred to as *panel data*. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet like tables. Here are a few easy-to-reproduce examples using popular R demo datasets. 
 
+\tiny
 ```{r}
 #| label: moo
 #| lst-cap: 'moo'
@@ -17,6 +41,7 @@ h
 dim(h)
 ```
 
+\normalsize
 The above output shows an excerpt of the *mtcars* **cross-sectional** dataset with 6 lines and 11 variables.  *Airpassenger*
 is a **time series** dataset represented in an R *ts* object which is essentially a vector with time-based index attribute.    
 

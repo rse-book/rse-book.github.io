@@ -85,8 +85,8 @@ search_met <- function(keyword){
   # note how URLencode improves this function
   # because spaces are common in searches
   # but are not allowed in URLs
-  url <- sprintf("
-  https://collectionapi.metmuseum.org/public/collection/v1/search?q=%s",
+  uri <- "https://collectionapi.metmuseum.org/public/collection/v1/search?q=%s"
+  url <- sprintf(uri,
   URLencode(keyword))
   fromJSON(url)
 }
@@ -102,8 +102,8 @@ download_met_images_by_id <- function(ids,
                                       path = "met") {
   # Obtain meta description objects from MET API
   obj_list <- lapply(ids, function(x) {
-    req <- download.file(sprintf("
-    https://collectionapi.metmuseum.org/public/collection/v1/objects/%d",
+    uri <- "https://collectionapi.metmuseum.org/public/collection/v1/objects/%d"
+    req <- download.file(sprintf(uri,
     x),destfile = "temp.json")
     fromJSON("temp.json")
   })
