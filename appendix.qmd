@@ -23,6 +23,7 @@ d <- data.frame("Term" = c(
   "Regular Expression",
   "REPL",
   "Reproducible Example",
+  "Reverse Dependency"
   "Snake_case",
   "Stack",
   "SQL",
@@ -50,6 +51,7 @@ d <- data.frame("Term" = c(
     "Pattern to extract specific parts from a text, find stuff in a text.",
     "read-eval-print-loop",
     "A self-contained code example, including the data it needs to run.",
+    "inverted dependency, another library or piece of code that depends on the code at hand.",
     "Convention to spell file, variable or function names reminiscant of a snake, e.g., do_something()",
     "selection of software used in a project",
     "**S**tructured **Q**uery **L**anguage",

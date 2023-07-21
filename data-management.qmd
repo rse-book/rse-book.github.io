@@ -437,7 +437,7 @@ Fortunately, feeding research repositories is a task that is easy to automate th
 
 Open Data archhives are special form of repositories. The term open data refers to publicly available data that are available free of license costs and in machine-readable fashion. 
 
->“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefition.org
+>“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefinition.org
 
 Because of approaches such as the Swiss governments' "open by default", open government data (OGD) has become a common form of open data. 
 The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. 

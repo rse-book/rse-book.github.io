@@ -28,7 +28,7 @@ Academia has probably been the only place that would allow you to dive into hack
 ## How Does Git Work? 
 
 
->This introduction tries narrow things down to the commands that you'll need if want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely Atlassian's Bitbucket, GitHub and Gitlab offer comprehensive introductions as well as advanced articles or videos to learn git online.
+This introduction tries narrow things down to the commands that you'll need if want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely Atlassian's Bitbucket, GitHub and Gitlab offer comprehensive introductions as well as advanced articles or videos to learn git online.
 
 
 The first important implication of decentralized version control is that all versions are stored on the local machines of every collaborator, not just on a remote server (this is also a nice, natural backup of your work). So let's consider a single local machine first.
@@ -211,15 +211,16 @@ As you can see, git will check whether it is possible to merge automatically w/o
 Even if that is not possible, you can still issue the pull request.
 When you create the request, you can also assign reviewers, but you could also do so at a later stage. 
 
-::: {.callout-note}
+
 Even after a PR was issued you can continue to add commits to the branch about to be merged. 
 As long as you do not merge the branch through the Pull Request, commits are added to the branch.
 In other words, your existing PR gets updated. This is a very natural way to account for reviewer comments. 
-:::
 
 
+::: {.callout-note}
 **Pro-Tipp**: 
 Use commit messages like 'added join to SQL query, closes #3'. The key word 'closes' or 'fixes', will automatically close issues referred to when merged into the main branch.
+:::
 
 Once the merge is done, all your changes are in the main branch and you and everyone else can pull the main branch that now contains your new feature. Yay!
 

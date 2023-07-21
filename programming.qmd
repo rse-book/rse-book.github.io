@@ -49,6 +49,7 @@ Trust me on this one: The package approach will pay off early. Long before you e
 Go from scripts like this
 
 ```{r}
+#| size: tiny
 # This is just data from the sake of 
 # reproducible example
 set.seed(123)
