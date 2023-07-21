@@ -31,17 +31,17 @@ After decades of information engineering and computer science, some can't help b
 
 In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mostly trained to handle different flavors of two-dimensional data, as in **one-observation-one-row**. Ad hoc studies conducted once result in *cross-sectional data*: one line per observation, columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as *time series*. Multivariate time series, i.e., multi-variable, longitudinal data are often referred to as *panel data*. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet like tables. Here are a few easy-to-reproduce examples using popular R demo datasets. 
 
-\tiny
+
 ```{r}
 #| label: moo
 #| lst-cap: 'moo'
 #| echo: true
+#| size: tiny
 h <- head(mtcars)
 h
 dim(h)
 ```
 
-\normalsize
 The above output shows an excerpt of the *mtcars* **cross-sectional** dataset with 6 lines and 11 variables.  *Airpassenger*
 is a **time series** dataset represented in an R *ts* object which is essentially a vector with time-based index attribute.    
 
@@ -60,10 +60,13 @@ multi_ts <- ts(d, start = c(2000,1), frequency = 4)
 multi_ts
 ```
 
- 
-**A Note on Long Format vs. Wide Format**
 
-> The above multi-variable time series is shown in what the data science community calls *wide* format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so called *long* format shown below. The long format is a machine friendly, flexible way to represent multi-variable data without altering the number of columns with more variables. 
+::: {.callout-note appearance="simple"} 
+**A Note on Long Format vs. Wide Format**
+The above multi-variable time series is shown in what the data science community calls *wide* format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so called *long* format shown below. The long format is a machine friendly, flexible way to represent multi-variable data without altering the number of columns with more variables. 
+
+:::
+
 
 ```{r, message=FALSE}
 library(tsbox)
@@ -132,7 +135,7 @@ Comma separated values (.csv)^[Note that commas are not always necessarily the s
 
 Though Excel spreadsheets are a convenient interface to office environments that offer extras such organization into workbooks, the simpler .csv format has advantages in machine-to-machine communication and as an interface between different programming languages and tools. For example, web visualization libraries such as highcharts or echarts are most commonly written in JavaScript and can conveniently consume data from .csv files. The above example .csv file was written in Python and is now easily read by R. 
 
-```{r}
+```{r, message=FALSE}
 library(readr)
 csv <- readr::read_csv2("an_example.csv")
 csv
@@ -160,37 +163,7 @@ The above example shows the first two lines of two different, unrelated rectangu
 
 Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more light weight and close to 'the web' while XML is the traditional, very explicit no-nonsense format.  XML has a **Document Type Definition (DTD)** that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML based definition. SDMX^[SDMX.org (https://sdmx.org) about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
 
-
-```{xml}
-<CompactData xmlns:c="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/compact" xmlns:sdds="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:msg="http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message">
-<Header>
-<ID>kofbarometer</ID>
-<Test>false</Test>
-<Prepared>2022-07-27 23:19:15</Prepared>
-<Sender id="KOF">
-<Name xml:lang="en">KOF Swiss Economic Institute</Name>
-<Contact>
-<Name>KOF Swiss Economic Institute</Name>
-<URI>http://www.kof.ethz.ch/prognosen-indikatoren/indikatoren/kof-konjunkturbarometer.html</URI>
-</Contact>
-</Sender>
-</Header>
-<sdds:DataSet>
-<sdds:Series DATA_DOMAIN="FLI" REF_AREA="CH" INDICATOR="AL" COUNTERPART_AREA="_Z" FREQ="M" UNIT_MULT="0" TIME_FORMAT="P3M">
-<sdds:Obs TIME_PERIOD="1991-01" OBS_VALUE="79.7534465342489" OBS_STATUS="A"/>
-<sdds:Obs TIME_PERIOD="1991-02" OBS_VALUE="71.8659035408967" OBS_STATUS="A"/>
-
-
-
-<sdds:Obs TIME_PERIOD="2022-05" OBS_VALUE="96.4419659191275" OBS_STATUS="A"/>
-<sdds:Obs TIME_PERIOD="2022-06" OBS_VALUE="95.1748194208808" OBS_STATUS="A"/>
-<sdds:Obs TIME_PERIOD="2022-07" OBS_VALUE="90.08821804515" OBS_STATUS="A"/>
-</sdds:Series>
-</sdds:DataSet>
-</CompactData>
-<!--  i: 1403 : 1660204311  -->
-
-```
+![SDMX example](images/xml.png)
 
 The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like *Contact* or *ID* in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.  
 
@@ -228,7 +201,7 @@ load("bundle.RData")
 
 ### Interoperable File Formats
 
-Interoperable file formats cover some middle ground between the options described above. The *cross-language in-memory development platform* [Apache Arrow](https://arrow.apache.org/) is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you're interested in a modern, yet established cross environment data science project, digging deeper into Apache Arrow is certainly a fun experience. 
+Interoperable file formats cover some middle ground between the options described above. The *cross-language in-memory development platform* Apache Arrow^[https://arrow.apache.org/] is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you're interested in a modern, yet established cross environment data science project, digging deeper into Apache Arrow is certainly a fun experience. 
 
 From the Apache Arrow documentation:
 
@@ -248,7 +221,8 @@ The arrow R packages comes with the necessary tool set to write the open source 
 
 ```{python}
 import pyarrow.parquet as pa
-pa.read_table("starwars.parquet")
+sw = pa.read_table("starwars.parquet")
+print(*sw.column_names, sep="\n")
 ```
 
 Here's Julia reading our Parquet file: 
@@ -358,6 +332,7 @@ dbWriteTable(con, dbQuoteIdentifier(con,"flowers"),
 The above code initiates a *SQLite* database and continues to write the built-in R demo datasets into separate tables in that newly created database. Now we can use SQL to query the data. Return the first three rows of *flowers*:
 
 ```{r}
+#| size: tiny
 dbGetQuery(con, "SELECT * FROM flowers LIMIT 3")
 ```
 
