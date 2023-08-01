@@ -48,9 +48,53 @@ tsplot(tsl)
 ### Build Your Own API Wrapper
 
 Here's an example of an elementary API wrapper that makes use of the 
-Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based on  a simple search. 
+Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based on  a simple search^[Full URL used in the below code example: https://collectionapi.metmuseum.org/public/collection/v1/search?q=%s]. 
 
-```{r, warning=FALSE,message=FALSE}
+```{r, eval=FALSE, warning=FALSE,message=FALSE}
+#| size: scriptsize
+library(jsonlite)
+# Visit this example query
+# https://collectionapi.metmuseum.org/
+# public/collection/v1/search?q=umbrella
+# returns a json containing quite a few
+# ids of pictures that were tagged 'umbrella'
+
+#' Search MET
+#'
+#' This function searches the MET's archive
+#' for keywords and returns object ids of
+#' search hits. It is a simple wrapper
+#' around the MET's Application Programming
+#' interface (API). The function is designed 
+#' to work with other API wrappers
+#' and use object ids as an input.
+#' @param character search term
+#' @return list containing the totoal 
+#' number of objects found and a 
+#' vector of object ids.
+#'
+# Note these declaration are not relevant
+# when code is not part of a package, 
+# hence you need to call library(jsonlite)
+# in order to make this function work if
+# you are not building a package.
+#' @examples
+#' search_met("umbrella")
+#' @importFrom jsonlite formJSON
+#' @export
+search_met <- function(keyword){
+  # note how URLencode improves this function
+  # because spaces are common in searches
+  # but are not allowed in URLs
+  uri <- "https://collect..."
+  url <- sprintf(uri,
+  URLencode(keyword))
+  fromJSON(url)
+}
+
+```
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE}
 #| size: scriptsize
 library(jsonlite)
 # Visit this example query
@@ -94,10 +138,59 @@ search_met <- function(keyword){
 
 ```
 
-You can use these IDs with another [endpoint](glossary.qmd) to receive the pictures
-themselves.
 
-```{r,warning=FALSE,message=FALSE}
+
+
+You can use these IDs with another [endpoint](glossary.qmd) to receive the pictures
+themselves^[Full URL used in the below code example: https://collectionapi.metmuseum.org/public/collection/v1/objects/%d.
+
+```{r, eval=FALSE, warning=FALSE,message=FALSE}
+#| size: scriptsize
+download_met_images_by_id <- function(ids,
+                                      download = "primaryImage",
+                                      path = "met") {
+  # Obtain meta description objects from MET API
+  obj_list <- lapply(ids, function(x) {
+    uri <- "https://collect..."
+    req <- download.file(sprintf(uri,
+    x),destfile = "temp.json")
+    fromJSON("temp.json")
+  })
+  
+  
+  public <- sapply(obj_list, "[[", "isPublicDomain")
+  
+  
+  # Extract the list elements that contains
+  # img URLs in order to pass it to the download function
+  img_urls <- lapply(obj_list, "[[", download)
+  
+  # Note the implicit return, no return statement needed
+  # last un-assigned statement is returned from the function
+  for (x in unlist(img_urls[public])){
+    download.file(x, destfile = sprintf("%s/%s", path, basename(x)))
+  }
+  
+  
+  message(
+    sprintf("
+    The following images ids were not public
+    domain and could not be downloaded:\n %s",
+            paste(ids[!public], collapse = ",")
+  ))
+  
+  message(
+    sprintf("
+    The following images ids were public
+    domain and could be downloaded to\n %s: %s",
+            path, paste(ids[public], collapse = ",")
+  ))
+  
+}
+
+```
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE}
 #| size: scriptsize
 download_met_images_by_id <- function(ids,
                                       download = "primaryImage",
@@ -127,19 +220,23 @@ download_met_images_by_id <- function(ids,
   
   message(
     sprintf("
-    The following images ids were not public domain and could not be downloaded:\n %s",
+    The following images ids were not public
+    domain and could not be downloaded:\n %s",
             paste(ids[!public], collapse = ",")
   ))
   
   message(
     sprintf("
-    The following images ids were public domain and could be downloaded to\n %s: %s",
+    The following images ids were public
+    domain and could be downloaded to\n %s: %s",
             path, paste(ids[public], collapse = ",")
   ))
   
 }
 
 ```
+
+
 
 Finally, execute the functions: first, search for images with umbrellas, second, download these images by ID.
 Note that even if I do not display the image itself in the book to err on the side of caution w.r.t. to image property rights, the below code shows availability is checked, and an image is actually downloaded to a previously created folder called *met*. 
@@ -172,17 +269,16 @@ The swissdata project^[https://github.com/swissdata] proposes an implementation 
 The project transforms all sorts of datasets into .csv spreadsheets to contain a cleaned version of the data alongside .json files that contain the data descriptions. The demo^[https://github.com/swissdata/demo] describes the implementation in a greater detail and hands on fashion. 
 
 If you add a naming convention for your files to such an implementation, you already have a solid interface to a data science environment. 
-Consider the following simple R wrapper that downloads both data and metadata first and then reads the into R. (Alternatively, direct streaming would be possible, too.)
+Consider the following simple R wrapper that downloads both data and metadata first and then reads the into R^[Full url of the below code example: https://raw.githubusercontent.com/swissdata/demo/master/data]. (Alternatively, direct streaming would be possible, too.)
 
-```{r}
+```{r, eval=FALSE}
 library(jsonlite)
 download_swissdata <- function(dataset){
   d_ext <- ".csv"  
   m_ext <- ".json"
   d <- sprintf("%s%s", dataset, d_ext)
   m <- sprintf("%s%s", dataset, m_ext)
-  gh_url <- paste0("https://raw.githubusercontent.com/",
-  "swissdata/demo/master/data")
+  gh_url <- "https://raw.git...")
   download.file(file.path(gh_url, d), d)
   download.file(file.path(gh_url, m), m)
 }
@@ -191,6 +287,25 @@ download_swissdata <- function(dataset){
 download_swissdata("ch_adecco_sjmi")
 
 ```
+
+```{r, echo=FALSE}
+library(jsonlite)
+download_swissdata <- function(dataset){
+  d_ext <- ".csv"  
+  m_ext <- ".json"
+  d <- sprintf("%s%s", dataset, d_ext)
+  m <- sprintf("%s%s", dataset, m_ext)
+  gh_url <- "https://raw.githubusercontent.com/swissdata/demo/master/data"
+  download.file(file.path(gh_url, d), d)
+  download.file(file.path(gh_url, m), m)
+}
+
+
+download_swissdata("ch_adecco_sjmi")
+
+```
+
+
 
 Now, read the data from disk into your R session
 
@@ -354,7 +469,7 @@ Right-click the table to see a Chrome context window pop up. Select *inspect*.
 
 
 Hover over the blue line in the source code at the bottom. Make sure the selected line marks the table. Right click again,
-select copy → copy X-Path. 
+select copy → copy X-Path^[Full url used in the below code example: https://kof.ethz.ch/news-und-veranstaltungen/medien/medienagenda.html]. 
 
 ![Browser tools help you explore the hierarchical structure of a website in interactive fashion. (source: screenshot Google Chrome browser.)](images/xpath.png)
 
@@ -364,14 +479,16 @@ On to R!
 ```{r rvest, warning=FALSE, message=FALSE, eval=FALSE}
 library(rvest)
 # URL of the media release subsite
-url <- "https://kof.ethz.ch/news-und-veranstaltungen/medien/medienagenda.html"
+url <- "https://kof.ethz.ch..."
 # Extract the DOM object from the path we've 
 # previously detected using 
 # Chrome's inspect feature
 table_list <- url %>%
   read_html() %>%
   html_nodes(xpath = '
-  //html/body/div[6]/section/div/section/div[2]/div/div[3]/div/div/div/div/div/div/div/table') %>%
+  //html/body/div[6]/section/div/section
+  /div[2]/div/div[3]/div/div/div/
+  div/div/div/div/table') %>%
   # turn the HTML table into an R data.frame
   html_table()
 # because the above result may potentially contain
@@ -381,10 +498,12 @@ table_list <- url %>%
 # right table. 
 agenda_table <- table_list[[1]]
 
-# *[@id="t-6b2da0b4-cec0-47a4-bf9d-bbfa5338fec8-tbody-row-2-cell-2"]
+# *[@id="t-6b2da0b4-cec0-47a4-bf9d-
+#   bbfa5338fec8-tbody-row-2-cell-2"]
 
 # extract KOF barometer lines
-pub_date <- agenda_table[grep("barometer",agenda_table$X3),]
+pub_date <- agenda_table[grep("barometer",
+                         agenda_table$X3),]
 pub_date
 
 ```
@@ -452,16 +571,21 @@ jobs:
       - run: git version
       - run: rm -rf README.md
       - run: |
-          Rscript -e 'install.packages(c("kofdata","tsbox"))'
+          Rscript -e \ 
+          && 'install.packages(c("kofdata","tsbox"))'
           chmod +x demo_gha.R
           ./demo_gha.R
       - run: ls -lah
       - run: |
-          git config --global --add safe.directory /__w/h4sci-gha-demo/h4sci-gha-demo
-          git config --global user.name "Matt Bannert"
-          git config --global user.email "mbannert@users.noreply.github.com"
+          git config --global --add safe.directory \
+          && /__w/h4sci-gha-demo/h4sci-gha-demo
+          git config --global user.name \
+          && "Matt Bannert"
+          git config --global user.email \
+          && "mbannert@users.noreply.github.com"
           git add figure README.md
-          git commit -m "Update README.md via GH Actions"
+          git commit -m \
+          && "Update README.md via GH Actions"
           git push
 
 ```
@@ -498,7 +622,10 @@ This is why it's useful to print outputs of intermediate steps.
 
 Data visualization is a big reason for researchers and data analysts to look into programming languages. Programming languages do not only provide unparalleled flexibility, they also make data visualization reproducible and allow placing charts in different contexts, e.g., websites, printed outlets or social media. 
 
-One of the more popular types of plots that can be created smoothly using a programming language is the so called *choropleth*. A *choropleth* maps values of a variable that is available by region to a given continuous color palette on a map. Let's break down the ingredients of the below map of Switzerland. 
+One of the more popular types of plots that can be created smoothly using a programming language is the so called *choropleth*. A *choropleth* maps values of a variable that is available by region to a given continuous color palette on a map. Let's break down the ingredients of the below map of Switzerland^[Full url used in the below example https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson]. 
+
+
+
 
 ```{r, echo=FALSE}
 library(echarts4r)
@@ -583,7 +710,7 @@ library(viridisLite)
 library(jsonlite)
 
 json_ch <- jsonlite::read_json(
-  "https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson"
+  "https://raw.github..."
 )
 
 
@@ -679,7 +806,8 @@ Note also how similar the hierarchical, nested structure of the above code is to
 
 
 ```html
-<!-- < > denotes an opening, </ > denotes an end tag. -->
+<!-- < > denotes an opening,
+ </ > denotes an end tag. -->
 <html>
   <body>
   <!-- anything in between tags is affected by
@@ -825,7 +953,7 @@ Let's consider the following example of a simple local parallelization, includin
 The following R example uses the {microbenchmark} package to check the effect of parallel computing on running seasonal adjustment of multiple time series.
 Before we start with the actual example, let's create some demo data: We simply create a list with 1000 elements, each of which is the same monthly time series about airline passengers from 1949-1960. 
 
-```{r, seasonal1}
+```{r seasonal1}
 data("AirPassengers")
 tsl <- list()
 for(i in 1:1000){
@@ -837,7 +965,7 @@ Now, let's load the {seasonal} package and perform a basic seasonal adjustment
 of each of these time series.
 The first statement performs 100 adjustments sequentially, the second statement uses parallel computing to spread computations across my machine's multiple processors. 
 
-```{r, seasonal2}}
+```{r, warning=FALSE}
 library(seasonal)
 library(parallel)
 library(microbenchmark)
@@ -858,10 +986,10 @@ with_parallel <- function(li, s){
 
 
 out <- microbenchmark(
-    no_parallel_10 = no_parallel(tsl, 1:10),
-    with_parallel_10 = with_parallel(tsl, 1:10),
-    no_parallel_100 = no_parallel(tsl, 1:100),
-    with_parallel_100 = with_parallel(tsl, 1:100),
+    noparallel10 = no_parallel(tsl, 1:10),
+    withparallel10 = with_parallel(tsl, 1:10),
+    noparallel100 = no_parallel(tsl, 1:100),
+    withparallel100 = with_parallel(tsl, 1:100),
     times = 5,
     unit = "seconds"
 )
@@ -873,8 +1001,12 @@ d <- summary(out)
 Obviously, the absolute computation time depends on the hardware used as well as the operating system, depending on the task at hand.
 
 ```{r}
+#| size: scriptsize
 library(kableExtra)
-kable(d)
+kable(d,"latex",escape= FALSE) |>
+      kable_styling(latex_options = c("repeat_header")) |>
+      column_spec(1:2, width = "5cm")
+
 
 ```
 
@@ -917,8 +1049,9 @@ gg +
   scale_fill_viridis(discrete = T) +
   theme_minimal() +
   ggtitle("
-  Comparison of Computation Time (shorter bar is faster)"
-  )
+  Comparison of Computation Time\n
+  (shorter bar is faster)
+  ")
 
 
 

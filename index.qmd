@@ -42,7 +42,7 @@ I am thankful for the inspiration, help and perspectives of everyone who contrib
 
 First, I would like to thank David Grubbs from CRC for getting me started. 
 From our first meeting at useR! in Toulouse, France, David helped streamline writing a book, and he kept adding value throughout the process with his remarks and contacts. 
-I would like to thank Achim Zeileis who also played an important role at this early stage of my book project. Achim did not only inspire me to become a co-host for useR! which led to many experiences that became important to this book. Our discussions about teaching amplified my motivation to have good material to accompany my own course -- which clearly turned out to be one of the most important drivers eventually. 
+I would like to thank Achim Zeileis who also played an important role at this early stage of my book project. Achim did not only inspire me to become a co-host for useR! which led to many experiences that became important to this book. Our discussions about teaching amplified my motivation to have good material to accompany my own course -- which eventually turned out to be one of the most important drivers. 
 
 In that regard, I would like to thank all participants of my *Hacking for ...* courses.
 Your insights, questions, feedback and semester projects have been invaluable to this project. 
@@ -54,8 +54,8 @@ His early advice turned what was initially thought of as *Hacking for Economists
 
 Though this book is not exactly a book about the R programming language, I would like to thank the R community in particular because of its instrumental role in growing my own engagement and horizon of the open source ecosystem.
 Thank you, statisticians Siegfried Heiler and Toni Stocker who pointed me to the R language almost 20 years ago. 
-One of my most important learnings about how to leverage open source work may have come only those 20 later when the community held a virtual useR! conference during a time that was unprecedented, at least in my lifetime. 
-Through its sharing nature and established workflow, open source work is capable of reaching and impacting so many more than just those on one's main diagonal.
+One of my most important learnings about how to leverage open source work may have come only those 20 years
+later: In 2021, the community overcame the hurdles of a global pandemic that was unprecedented, at least in my lifetime, and held a virtual useR! conference that enabled a much larger and much more diverse group of participants to join [@inclusivecon].  
 Working with Rocío Joo, Dorothea Hug Peter, Heather Turner and Yanina Bellini Saibene has shown me the inclusion extra mile is not only worth the effort, but an inevitable mindset to bring our work as developers and scientists to the next level. Thank you, ladies!
 Thanks also to the local R user group here in Zurich, Switzerland, who continues to show the practical relevance of open source through their events. 
 I want to mention the great people at my new employer, cynkra, too.

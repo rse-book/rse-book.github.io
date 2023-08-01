@@ -45,8 +45,7 @@ R and Python are the most popular [OSS](#glossary) choices for hacking with data
 
 ## Interaction Environment
 
-While the fact that a software developer needs to choose a programming language to work with is rather obvious, the need to compose and customize an environment to interact with the computer is much less obvious to many. Understandably, so because outside of programming, software such as word processors, video or image editors presents itself to the user as a single program. That single program  
-takes the user's input, processes the input (in memory) and stores a result on disk for persistence -- often in a proprietary, program specific format. 
+While the fact that a software developer needs to choose a programming language to work with is rather obvious, the need to compose and customize an environment to interact with the computer is much less obvious to many. Understandably so because outside of programming, software such as word processors, video or image editors presents itself to the user as a single program. That single program takes the user's input, processes the input (in memory) and stores a result on disk for persistence -- often in a proprietary, program specific format. 
 
 Yet, despite all the understanding for nonchalantly saying we keep documents **in** Word or data **in** R Studio, it's beyond nerdy nitpicking when I insist that data are kept in files (or databases) -- NOT in a program. And that R is NOT R Studio: This sloppy terminology contributes to making us implicitly accept that our office documents live in one single program. (And that there is only one way to find and edit these files: through said program). 
 
@@ -62,7 +61,7 @@ In any case, make sure to customize your development environment: choose the the
 
 To buy into the importance of managing one's code professionally may be the single most important take away from this book. Being able to work with version control will help you fit into numerous different teams that have contact points with data science and programming, let alone if you become part of a programming or data science team. 
 
-While version control has a long history dating back to CVS and SVN, the good news for the learner is, that there is a single dominant approach when it comes to version control in the data analysis world. Despite the fact that its predecessors and alternatives such as mercurial are still around, git^[https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control] is the one you have to learn. To learn more about the history of version control and approaches other than git, [Eric Sink's Version Control by Example [@sink]
+While version control has a long history dating back to CVS and SVN, the good news for the learner is, that there is a single dominant approach when it comes to version control in the data analysis world. Despite the fact that its predecessors and alternatives such as mercurial are still around, git^[https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control] is the one you have to learn. To learn more about the history of version control and approaches other than git, Eric Sink's Version Control by Example [@sink]
 is for you. 
 
 So what does git do for us as researchers? How is it different from Dropbox?
@@ -81,8 +80,7 @@ git does not work like dropbox. git is not like dropbox.
 The idea of thinking of a sync is what interferes with comprehension of the benefit of version control (which why I hate that git [GUI](#glossary)s call it 'sync' anyway to avoid irritation of user's initial beliefs.). Git is a decentralized version control system that keeps track of a history of semantic commits. Those commits may consist of changes to multiple files.
 A commit message summarizes the gist of a contribution. *Diffs* allow comparing different versions. 
 
-<img src="images/diff.png" width="300px">
-<div class="caption-half">The *diff* output shows an edit during the writing of this book. The line preceded by '-' was replaced with the line preceded by '+'.</div>
+![The *diff* output shows an edit during the writing of this book. The line preceded by '-' was replaced with the line preceded by '+'.](images/diff.png)
 
 Git is well suited for any kind of text file. May it be source code from Python or C++, or some text written in markdown or LaTeX. Binaries like .pdfs or Word documents are possible, too, but certainly not the type of file for which git is really useful. This book contains a detailed, applied introduction tailed to researchers as part of the [Programmers' Practices and Workflows](developer-practices-workflows.html) chapter, so let's dwell with the above contextualization for a bit.   
 
@@ -92,7 +90,7 @@ Git is well suited for any kind of text file. May it be source code from Python 
 One implication of bigger datasets and/or bigger teams is the need to manage  data. Particularly when projects establish themselves or update their data regularly, well-defined processes, consistent storage and possibly access management become relevant. But even if you worked alone, it can be very helpful to have an idea about data storage in files systems, memory consumption and archiving data for good. 
 
 Data come in various forms and dimensions, potentially deeply nested. Yet, researchers and analysts are mostly trained to work with one-row-one-observation formats, in which columns typically represent different variables. In other words, two-dimensional representation of data remains the most common and intuitive form of data to many. Hence, office software offers different, text based and proprietary spreadsheet file formats. 
-On disk, comma separated files (.csv)^[Some dialects use different separators like ';' or tabs, partly because of regional differences like the use of commas as decimal delimiters.] are probably the purest representation of two-dimensional data that can processed comfortably by any programming language and be read by many programs. Other formats such as .xml or .json allow storing even deeply nested data. 
+On disk, comma separated files (.csv)^[Some dialects use different separators like ';' or tabs, partly because of regional differences like the use of commas as decimal delimiters.] are probably the purest representation of two-dimensional data that can be processed comfortably by any programming language and be read by many programs. Other formats such as .xml or .json allow storing even deeply nested data. 
 
 In-memory, that is when working interactively with programming languages such as R or Python, data.frames are the most common representation of two-dimensional data. Data.frames, their progressive relatives like tibbles or data.tables and the ability to manipulate them in reproducible, shareable and discussible fashion is the first superpower upgrade over pushing spreadsheets. Plus, other representation such as arrays, dictionaries or lists represent nested data in memory. Though in memory data manipulation is very appealing, memory is limited and needs to be managed. Making the most of the memory available is one of the driving forces behind extensions of the original data.frame concept. 
 

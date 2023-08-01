@@ -304,7 +304,7 @@ dbDisconnect(con)
 
 Obviously, the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form. 
 
-![The iconic Postgres Elephant logo](images/postgres.png)
+![The iconic Postgres elephant logo](images/postgres.png)
 
 
 ### Relational Database Management Systems (RDBMS)
