@@ -124,10 +124,10 @@ But just like with a photo, if the resolution of an existing image is too small 
 To see the effect, take a closer look at the two .png files below: The second image doubles the width of the first image.
 Because of interpolation, the text looks blurred, particularly in its curves. 
 
-![](images/rendered.png)
+![](images/rendered.png){width=250}
 
 
-![](images/rendered.png){width=450}
+![](images/rendered.png){width=470}
 
 
 A streamlined publication workflow, such as the quarto-based approach described above, mitigates the problem because this type of workflow automation reduces the effort of re-sizing, re-rendering and fitting of graphs into the current document. 

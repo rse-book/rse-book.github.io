@@ -5,9 +5,12 @@ The goal of this chapter (and probably the most important goal of this entire bo
 ![Aaaaaaah! Don't panic, Dr. Egghead! All these components are here to help you and you won't need all of them from the start. (source: own illustration)](images/dr_egghead_panics.jpg)
 
 
-Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project's *stack* is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in *programming with data* stacks. Below are some of the components I use most often. Of course, this is a personal choice. Obviously, I do not use *all* of these components in every single small project. *Git, R* and *R Studio* would be a good minimal version.
+Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project's *stack* is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in *programming with data* stacks. @tbl-stack shows some of the components I use most often grouped by their role. Of course, this is a personal choice. Obviously, I do not use *all* of these components in every single small project. *Git, R* and *R Studio* would be a good minimal version.
 
 ```{r, eval=TRUE,message=FALSE, echo=FALSE}
+#| size: scriptsize
+#| label: tbl-stack
+#| tbl-cap: "Components of Data Science Stack"
 library(kableExtra)
 d <- data.frame(Component = c("Interpreter / Language", "IDE / Editor",
                               "Version Control","Project Management",
@@ -20,7 +23,10 @@ d <- data.frame(Component = c("Interpreter / Language", "IDE / Editor",
                            "<a href='https://nodejs.org/en/'>Node</a>, <a href='https://quasar.dev/'>Quasar (vue.js)</a>",
                            "<a href='https://netlify.com/'>Netlify</a>, <a href='https://pages.github.com/'>GitHub Pages</a>","<a href='https://airflow.apache.org/'>Apache Airflow</a>", "<a href='https://docs.gitlab.com/ee/ci/'>GitLab CI</a>"),
                 stringsAsFactors = FALSE)
-kable(d,"html",escape= FALSE)
+kable(d, booktabs = TRUE,
+      escape= FALSE) |>
+      kable_styling(latex_options = c("repeat_header")) |>
+      column_spec(2, width = "5.6cm")
 
 ```
 

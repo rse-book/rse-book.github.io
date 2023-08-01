@@ -48,7 +48,12 @@ So let's actually do it. Here's a three-stage walk through of git commands that 
 
 **Stage 1: Working Locally**
 
+@tbl-gitbasics summarizes essential git commands to move around your local repository.
+
 ```{r gittable, eval=TRUE,message=FALSE, echo=FALSE}
+#| label: tbl-gitbasics
+#| tbl-cap: "Basic commands for working with git"
+
 library(kableExtra)
 d <- data.frame("Command" = c("git init",
                               "git status",
@@ -66,9 +71,10 @@ d <- data.frame("Command" = c("git init",
                              "leave temporary state, go back to last commit"),
                 
                 stringsAsFactors = FALSE)
-kable(d,"latex",escape= FALSE) |>
+kable(d,"latex", booktabs = TRUE,
+      escape = FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
-      column_spec(2, width = "6.8cm")
+      column_spec(2, width = "5.7cm")
 
 ```
 
@@ -76,10 +82,12 @@ kable(d,"latex",escape= FALSE) |>
 **Stage 2: Working with a Remote Repository**
 
 Though git can be tremendously useful even without collaborators, the real fun starts
-when working together. The first step en route to getting others involved is to add a remote repository. 
+when working together. The first step en route to getting others involved is to add a remote repository. @tbl-gittable2 shows essential commands for working with a remote repository.
 
 
 ```{r gittable2, eval=TRUE,message=FALSE, echo=FALSE}
+#| label: tbl-gittable2
+#| tbl-cap: "Commands for working with a remote repository"
 library(kableExtra)
 d <- data.frame("Command" = c("git clone",
                               "git pull",
@@ -94,19 +102,23 @@ d <- data.frame("Command" = c("git clone",
                              "show remote repo URL",
                              "set URL to remote repo"),
                 stringsAsFactors = FALSE)
-kable(d,"latex",escape= FALSE) |>
+kable(d,"latex", booktabs = TRUE,
+      escape= FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
-      column_spec(2, width = "6.8cm")
+      column_spec(1:2, width = "5.7cm")
 
 ```
 
 **Stage 3: Branches**
 
 Branches are derivatives from the main branch that allow to work on different features at the same time
-without stepping on someone else's feet. Through branches, repositories can actively maintain different states. 
+without stepping on someone else's feet. Through branches, repositories can actively maintain different states. @tbl-gitbranches shows commands to navigate these states.
 
 
 ```{r, eval=TRUE,message=FALSE, echo=FALSE}
+#| label: tbl-gitbranches
+#| tbl-cap: "Commands for for handling multiple branches"
+
 library(kableExtra)
 d <- data.frame("Command" = c("git checkout -b branchname",
                               "git branch",
@@ -118,9 +130,10 @@ d <- data.frame("Command" = c("git checkout -b branchname",
                              "merge branch named branchname into current branch"
                 ),
                 stringsAsFactors = FALSE)
-kable(d,"latex",escape= FALSE) |>
+kable(d,"latex", booktabs = TRUE,
+      escape= FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
-      column_spec(2, width = "6.8cm")
+      column_spec(1:2, width = "5.7cm")
 
 ```
 

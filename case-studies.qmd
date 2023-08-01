@@ -441,7 +441,7 @@ Developers benefit from comprehensive approaches like Swagger and the OpenAPI sp
 <!-- https://idratherbewriting.com/learnapidoc/pubapis_swagger.html -->
 
 
-## A Minimal Webscraper: Extracting Publication Dates
+## A Minimal Webscraper: Extracting Publication Dates {#sec-webscrape}
 
 Even though KOF Swiss Economic Institute offers a REST API to consume publicly available data, publication dates are unfortunately not available through in API just yet. Hence, to automate data consumption based on varying publication dates, we need to extract upcoming publication dates of the Barometer from KOF's media release calendar. Fortunately, all future releases are presented online in an easy-to-scrape table. So, here's the plan: 
 
@@ -663,7 +663,7 @@ d |>
 
 
 
-First, we need a *definition of a country's shape*. Those definitions come in various formats, from traditional *shape files* to web friendly *geoJSON*. Edzer Pebesma's useR! 2021 keynote^[https://www.youtube.com/watch?v=cK08bxUJn5A&list=PL4IzsxWztPdmHoJwIVa4um44w2GMjctmP&index=6] has a more thorough insight. 
+First, we need a *definition of a country's shape*. Those definitions come in various formats, from traditional *shape files* to web friendly *geoJSON*. Edzer Pebesma's useR! 2021 keynote^[https://www.youtube.com/watch?v=cK08bxUJn5A] has a more thorough insight. 
 
 Second, we need some data.frame that simply connects values to regions. In this case, we use regions defined by the Swiss Federal Statistical Office (FSO). Because our charting library makes use of the geoJSON convention to call the region label 'name' we need to call the column that holds the region names 
 'name' as well. That way, we can safely use defaults when plotting. Ah, and note that the values are absolutely bogus that came to my mind while writing this (so please do not mull over how these values were picked).
@@ -1003,7 +1003,9 @@ Obviously, the absolute computation time depends on the hardware used as well as
 ```{r}
 #| size: scriptsize
 library(kableExtra)
-kable(d,"latex",escape= FALSE) |>
+kable(d,"latex",
+      booktabs = TRUE,
+      escape= FALSE) |>
       kable_styling(latex_options = c("repeat_header")) |>
       column_spec(1:2, width = "5cm")
 

@@ -101,7 +101,7 @@ json_ch <- jsonlite::read_json(
 ls.str(json_ch)
 ```
 
-Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest [@rvest] or beautiful soup [@soup] parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website's DOM. For DOM parsing example, see CASE STUDY XYZ. 
+Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest [@rvest] or beautiful soup [@soup] parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website's DOM. For a DOM parsing example, see the case study @sec-webscrape. 
 
 
 ## Representing Data in Files
