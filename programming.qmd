@@ -2,7 +2,7 @@
 
 Obviously, the craft of *programming* is essential to handling data with a programming language. Though programming languages can differ quite a bit from each other, there is common ground and an approach to programming that is crucial to understand and important to learn by -- particularly for programmers without a formal computer science background. This chapter wants to point researchers, analysts and data scientists to the low hanging, high-impact fruits of software engineering.
 
-*Programming is a form of communication*. Communication with others, but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore, source code needs to be written in inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.
+*Programming is a form of communication*. Communication with others, but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore, source code needs to be written in inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are not experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.
 
 The programming examples in this book mostly stick to the *R* language, which is easy to install and run on one's own local computer. All the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book... 
 
@@ -42,7 +42,7 @@ How much planning ahead is optimal for your project ultimately depends on your e
 
 The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing else than source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like Packing Python Projects^[https://packaging.python.org/tutorials/packaging-projects/] or Hadley Wickham's free online book R Packages^[https://r-pkgs.org/] explain how to create packages good enough to make the official PyPi or CRAN package repositories. 
 
-In other words, it is unlikely that someone with moderate experience comes with the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office types of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file. 
+In other words, it is unlikely that someone with moderate experience comes with the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well established blueprints, guides and conventions that suit almost any project. Unlike Office type of projects which center around one single file, understand a research project will live in a folder with many subfolders and files. Not in one single file. 
 
 Trust me on this one: The package approach will pay off early. Long before you ever thought about publishing your package. Write your own function definition, rather than just calling functions line by line. Write code as if you need to make sure it runs on another computer. Write code as if you need to maintain it. 
 
@@ -93,14 +93,17 @@ create_basic_desc <- function(distr){
   )
   out
 }
+```
 
+```{r}
+#| size: scriptsize
 create_basic_desc(d1)
 create_basic_desc(d2)
 
 
 ```
 
-Start to document functions and their parameters using [Roxygen [@roxygen] syntax, and you're already very close to creating your first package. 
+Start to document functions and their parameters using Roxygen [@roxygen] syntax, and you're already very close to creating your first package. 
 
 >**Pro-tipp**: Hit Cmd+Alt+Shift+R^[On Windows / Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty roxygen skeleton with all your function's parameters.
 
@@ -126,10 +129,6 @@ create_basic_desc <- function(distr){
 ```
 
 Writing *reusable code* will improve your ability to remember syntax and apply concepts to other problems. The more you do it, the easier and more natural it becomes. Just like a toddler figuring out how to speak in a natural language. At first, progress seems small, but once kids understand the bits and pieces of a language they start building at a remarkable speed, learn and never forget again. 
-
-
-
-
 
 
 ### Documentation
@@ -178,9 +177,9 @@ Comment on why you do things, especially with which plan for future use in mind.
 
 ### Design Your Interface
 
-In other languages, it is fairly common to define the data type of both: the input and the output^[See statically typed language vs. dynamically typed language.]. Though doing so is not necessary in R, it is good practice to define the types of all parameters and results in your comments / documentation.  
+In many languages, it is fairly common to define the data type of both: the input and the output^[See statically typed language vs. dynamically typed language.]. Though doing so is not necessary in R, it is good practice to define the types of all parameters and results in your comments / documentation.  
 
-Once you know a bit more about your direction of travel, it's time to think about how to modularize your program. How do different parts of the program play together. users interact with your program: Will your code just act as a storage pit of tools, a loose collection of commands for ad hoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need a graphical user interface (GUI) like shiny? 
+Once you know a bit more about your direction of travel, it's time to think about how to modularize your program. How do different parts of the program play together? How do users interact with your program? Will your code just act as a storage pit of tools, a loose collection of commands for ad hoc use? Are others using the program, too? Will there be machine-to-machine interaction? Do you need a graphical user interface (GUI) like shiny? 
 
 These questions will determine whether you use a strictly functional approach^[http://adv-r.had.co.nz/Functional-programming.html], a rudimentary 
 form of object orientation like S3^[http://adv-r.had.co.nz/OO-essentials.html] [@advancedR], a stricter implementation like [R6 [@r6] or something completely exotic. There are plenty of great resources out there, so I will not elaborate on this for the moment. 
@@ -189,11 +188,11 @@ The main message of this section is: Think about the main use case. Is it intera
 
 ### Dependencies
 
-One important word of advice for novice package developers is to think about your dependencies. Do not take dependencies lightly. Of course, it is intriguing to stand on the shoulders of giants. Isn't R great because of its 15K+ extension packages? Isn't exactly this was made R such as popular language? 
+One important word of advice for novice package developers is to think about your dependencies. Do not take dependencies lightly. Of course, it is intriguing to stand on the shoulders of giants. Isn't R great because of its almost 20K extension packages? Isn't exactly this was made R such as popular language? 
 
-Yes, extension packages are cool. Yes, the ease with CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs it does not mean leaning on plenty of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages. 
+Yes, extension packages are cool. Yes, the ease with which CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs, it does not mean leaning on plenty of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages. 
 
-The problem is mitigated a bit when a) a package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of [reverse dependencies](appendix.qmd#glossary--) tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
+The problem is mitigated a bit when a) package is required in an interactive script and b) one is working with a very popular package. Well managed packages with a lot of [reverse dependencies](appendix.qmd#glossary--) tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
 
 In R, the *tidyverse* bundle of packages seems ubiquitous and easy to use. But it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).
 
@@ -254,8 +253,7 @@ my_func_def <- function(param1, param2){
 
 **man** 
 
-This folder contains the context manual of your package. What you'll find here is the so-called _function reference_, basically a function and dataset-specific documentation. It's what you see when you run `?function_name`. The content of the `man/` folder is usually created automatically from the *roxygen* style documentation (note the #' styled comments) during a ```devtools::document()`` run. Back in the days when people wore pijamas and
-lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use *roxygen* and render the function reference part of the documentation from their comments. 
+This folder contains the context manual of your package. What you'll find here is the so-called _function reference_, basically a function and dataset-specific documentation. It's what you see when you run `?function_name`. The content of the `man/` folder is usually created automatically from the *roxygen* style documentation (note the #' styled comments) during a ```devtools::document()`` run. Back in the days when people wore pijamas and lived life slow, the man folder was filled up manually with some LaTeX reminiscant .rd files, but ever since R Studio took over in 2012, most developers use *roxygen* and render the function reference part of the documentation from their comments. 
 
 
 ```{r, eval=FALSE}
@@ -298,7 +296,7 @@ https://mbannert.github.io/timeseriesdb/
 **data**
 
 If you have file based data like .csv, .RData, .json or even .xlsx put them in here. Keeping data in a separate folder inside the project directory helps to keep reference to the data relative. There is nothing more greenhorn than 
-```r read.csv("C:\mbannert\My Documents\some_data.csv") ```. Even if you like this book, I doubt you have a folder named 'mbannert' on your computer. Ah, an in case you wondered, extensive use of ```setwd()``` is even worse. Keep your reference to data (and functions alike) relative. If you are sourcing data from a remote NAS drive as it is common at many universities, you can simply mount this drive to you folder (LTMGTFY: How to mount a network drive Windows / OSX).
+`r read.csv("C:\mbannert\My Documents\some_data.csv")`. Even if you like this book, I doubt you have a folder named 'mbannert' on your computer. Ah, an in case you wondered, extensive use of ```setwd()``` is even worse. Keep your reference to data (and functions alike) relative. If you are sourcing data from a remote NAS drive as it is common at many universities, you can simply mount this drive to you folder (LTMGTFY: How to mount a network drive Windows / OSX).
 
 **vignettes**
 
@@ -314,13 +312,13 @@ The source folder is just here for the sake of completeness and is not needed in
 
 When you install an R package using `install.packages()` it will be installed in some deep dungeon on your computer where R lives within your OS. The inst/ folder allows you to ship non R files with your installation. The files of the inst folder will just be copied into the package root folder inside your installation of that package. 
 
-*inst* is also a great place to store experimental function calls or playground files once the package ambitions become more concrete and those type of files do not live conveniently in the project root anymore. Also. I sometimes put shiny apps for local use into the inst/ folder if I want to make them part of a package. 
+*inst* is also a great place to store experimental function calls or playground files once the package ambitions become more concrete and those type of files do not live conveniently in the project root anymore. Also, I sometimes put shiny apps for local use into the inst/ folder if I want to make them part of a package. 
 
 
 
 ## Naming Conventions: Snake, Camel or Kebap
 
-Before we start with files and folders, let me drop a quick, general note on naming. As in how to name files, folders and functions. It may look like a mere detail, but concise formatting and styling of your code will be appreciated by your peers and by those you ask for help. Plus, following an established convention will not make you look like a complete greenhorn. 
+Let me drop a quick, general note on naming. As in how to name files, folders and functions. It may look like a mere detail, but concise formatting and styling of your code will be appreciated by your peers and by those you ask for help. Plus, following an established convention will not make you look like a complete greenhorn. 
 
 - Do NOT use spaces in folder or file names! Never. If you need lengthy descriptions, use underscores '_', dashes '-' or camelCase. 
 
@@ -363,9 +361,9 @@ accompanying test checks whether the "moo" of the cow is loud enough (=has at le
 
 So why don't we write code correctly in the first place instead of writing code to check everything that could eventually go wrong? 
 When developing *new* features we might be confident that newly introduced features do not break existing functionality. At least until we test it :) . Experience proves that seemingly unrelated edits do cause side effects. That is why well maintained packages have so called unit tests that are run when the package is re-build. If one of the checks fails, the developer can take a look before the a change that broke the code is actually deployed. 
-To foster the development of these type of tests there are unit testing frameworks for many languages and frameworks. In R the most prominent testing packages are {tinytest} and {testthat}.
+To foster the development of these type of tests there are unit testing frameworks for many languages and frameworks. 
 
-Hadley's book R packages has a more thorough introduction to testing in R^[https://r-pkgs.org/tests.html] with the testthat [@testthat] package. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. Despite the fact that a comprehensive introduction to testing is out of the scope of this book, I would like to briefly introduce the concept of code cco
+Hadley's book R packages has a more thorough introduction to testing in R^[https://r-pkgs.org/tests.html] with the testthat [@testthat] package. Though the book is focused on R its introduction to formal testing is very illustrative for anyone interested to add testing to their development routine. 
 
 
 
@@ -374,7 +372,7 @@ Hadley's book R packages has a more thorough introduction to testing in R^[https
 In programming there is no way around debugging.
 From copy&paste artists to the grandmasters of hacking: writing code implies the need to debug.
 One of the main differences between amateur and professional is the degree to which the hunt for errors a.k.a. bugs is done systematically.
-This section gives a few tips to help organize a debugging strategy and assess how much honing of one's debugging approach is reasonable for your one's individual need. 
+This section gives a few tips to help organize a debugging strategy and assess how much honing of one's debugging approach is reasonable for your individual needs. 
 
 
 ### Read Code from the Inside Out
@@ -418,7 +416,7 @@ Typically modern interpreters and/or source code editors (see chapter IDEs) prov
 In R, you can use `debug(function_name)` to activate debug mode for one particular function. 
 On the next call of `function_name()`, the interpreter will go through the function, executing its source line by line. 
 One of the insightful things about it is that standard exploration functions like `ls()` list all objects within the private environment of that function (by default `ls()` would just list all objects within the global environment).
-Inspection of of objects as they are seen by the functions helps to find out whether parameters are passed on correctly (or at all). 
+Inspection of objects as they are seen by the functions helps to find out whether parameters are passed on correctly (or at all). 
 Often, on error message from execution of a function motivates a debugging session.
 In that case, try to identify the line that causes the error and just do all the object inspection right before the line that causes the crash.
 
