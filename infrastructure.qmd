@@ -15,7 +15,7 @@ Performance, particularly in terms of throughput, is one good reason to look bey
 
 ## Hosting Options 
 
-So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, *DevOps Carpentry* intends to give an overview to classify the general options and common business models. 
+So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, *Research Software Engineering* intends to give an overview to classify the general options and common business models. 
 
 ### Software-as-a-Service (SaaS)
 

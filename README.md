@@ -1,3 +1,3 @@
-# devOps Carpentry
+# Research Software Engineering -- A Researcher's Guide to the Open Source Ecosystem
 
-A Researcher's Guide to the Open Source Ecosystem
+

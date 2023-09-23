@@ -77,7 +77,7 @@ By convention, the corresponding static website of a git repository is exposed a
 For GitHub organizations which are popular to group repositories, the exposed URL would be
 `<orgname>.github.io/<repository-name>`. 
 
->Note that the online version of the book you are currently reading is hosted in very same fashion: `DevOps-carpentry.github.io/book`
+>Note that the online version of the book you are currently reading is hosted in very same fashion: `rse-book.github.io`
 
 ### GitHub Actions
 

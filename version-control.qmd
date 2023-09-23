@@ -1,6 +1,6 @@
 # Git Version Control {#sec-git}
 
-As stated before, version control may be the single most important thing to take away from *DevOps Carpentry* if you have not used it before. 
+As stated before, version control may be the single most important thing to take away from *Research Software Engineering* if you have not used it before. 
 In this chapter about the way developers work and collaborate, I will stick to version control with *git*. The stack discussion of the previous chapter features a few more version control systems, but given git's dominant position, we will stick solely to git in this introduction to version control.  
 
 ## What is Git Version Control? 
