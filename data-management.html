@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DevOps Carpentry - 6&nbsp; Data Management</title>
+<title>Research Software Engineering - 6&nbsp; Data Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,7 +165,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">DevOps Carpentry</a> 
+      <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
 </div>
@@ -349,17 +349,17 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>multi_ts <span class="ot">&lt;-</span> <span class="fu">ts</span>(d, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2000</span>,<span class="dv">1</span>), <span class="at">frequency =</span> <span class="dv">4</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                Var1      Var2     Var3
-2000 Q1 -0.676858699  8.403807 29.80095
-2000 Q2  0.008546361 12.202218 30.98657
-2000 Q3 -1.236814166  9.758867 28.81733
-2000 Q4 -1.250533647  9.049875 30.52182
-2001 Q1 -0.240729144 10.526917 29.71805
-2001 Q2 -0.944497153  9.869729 28.65148
-2001 Q3  0.550031840  8.729170 27.55825
-2001 Q4  0.061196533 10.299427 29.00935
-2002 Q1  0.197022686  8.106308 28.65849
-2002 Q2 -0.394084843 11.548171 31.94435</code></pre>
+<pre><code>               Var1      Var2     Var3
+2000 Q1 -0.01798322 11.025712 28.14234
+2000 Q2 -1.42322799  9.421370 30.15326
+2000 Q3  0.11070743  8.614003 30.51970
+2000 Q4  1.15431409 10.941032 29.02695
+2001 Q1  1.44450435 10.748767 29.19662
+2001 Q2  1.43122093 10.817780 29.17718
+2001 Q3 -1.48733927 10.021865 30.68991
+2001 Q4  0.98798638  9.199083 29.11500
+2002 Q1  0.48660557  9.351128 30.27413
+2002 Q2  0.86149978  8.430274 30.00786</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -370,22 +370,22 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tsbox)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      id       time        value
- 1: Var1 2000-01-01 -0.676858699
- 2: Var1 2000-04-01  0.008546361
- 3: Var1 2000-07-01 -1.236814166
- 4: Var1 2000-10-01 -1.250533647
- 5: Var1 2001-01-01 -0.240729144
- 6: Var1 2001-04-01 -0.944497153
- 7: Var1 2001-07-01  0.550031840
- 8: Var1 2001-10-01  0.061196533
- 9: Var1 2002-01-01  0.197022686
-10: Var1 2002-04-01 -0.394084843
-11: Var2 2000-01-01  8.403807159
-12: Var2 2000-04-01 12.202218132
-13: Var2 2000-07-01  9.758867374
-14: Var2 2000-10-01  9.049874850
-15: Var2 2001-01-01 10.526917012</code></pre>
+<pre><code>      id       time       value
+ 1: Var1 2000-01-01 -0.01798322
+ 2: Var1 2000-04-01 -1.42322799
+ 3: Var1 2000-07-01  0.11070743
+ 4: Var1 2000-10-01  1.15431409
+ 5: Var1 2001-01-01  1.44450435
+ 6: Var1 2001-04-01  1.43122093
+ 7: Var1 2001-07-01 -1.48733927
+ 8: Var1 2001-10-01  0.98798638
+ 9: Var1 2002-01-01  0.48660557
+10: Var1 2002-04-01  0.86149978
+11: Var2 2000-01-01 11.02571170
+12: Var2 2000-04-01  9.42137011
+13: Var2 2000-07-01  8.61400297
+14: Var2 2000-10-01 10.94103175
+15: Var2 2001-01-01 10.74876730</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -713,7 +713,7 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <p><em>SQLite</em> data lives in a single file that the user queries through the <em>SQLite</em> engine. Here is an example using that engine from R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"DevOpscarpentry.sqlite3"</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"rse.sqlite3"</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), db_path)</span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"mtcars"</span>), mtcars, <span class="at">overwrite =</span> T)</span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"flowers"</span>), iris, <span class="at">overwrite =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

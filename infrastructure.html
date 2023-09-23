@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DevOps Carpentry - 7&nbsp; Infrastructure</title>
+<title>Research Software Engineering - 7&nbsp; Infrastructure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">DevOps Carpentry</a> 
+      <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
 </div>
@@ -280,32 +280,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Yes, there is a third area besides your research and carpentry level programming that I suppose you should get an idea of. Again, you do not have to master hosting servers or even clusters, but a decent overview and an idea of when to use what will help you tremendously to plan ahead.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/server-setup3.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Schematic illustration of a simple server setup for web a based IDE and web application server. The setup would work well with virtual machines as well as with docker containers. (source: own illustration)</figcaption><p></p>
-</figure>
-</div>
 <section id="why-go-beyond-a-local-notebook" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="why-go-beyond-a-local-notebook"><span class="header-section-number">7.1</span> Why Go Beyond a Local Notebook?</h2>
 <p>Admittedly, unless just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead. So, why leave the peaceful, well-known shire of our local environment for the uncharted, rocky territory of unwelcoming technical documentations and time-consuming rabbit holes?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/server-thinking.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Though servers can provide access to massive computing resources, do not think of them as of data vault that looks like a fridge. (source: own illustration)</figcaption><p></p>
-</figure>
-</div>
 <p>Performance, particularly in terms of throughput, is one good reason to look beyond desktop computers. Data protection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application to bring down a computation that ran for hours or even days. Or we need a computer that is online 24/7 to publish a report, website or data visualization.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/listen.jpg" class="img-fluid figure-img" width="300"></p>
-<p></p><figcaption class="figure-caption">Think of a server as a ‘program that listens’. (source: own illustration)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Thinking of a server as a ‘program that listens’ rather than a data vault that looks like a fridge is a good starting point. (source: own illustration)</figcaption><p></p>
 </figure>
 </div>
 </section>
 <section id="hosting-options" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="hosting-options"><span class="header-section-number">7.2</span> Hosting Options</h2>
-<p>So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, <em>DevOps Carpentry</em> intends to give an overview to classify the general options and common business models.</p>
+<p>So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, <em>Research Software Engineering</em> intends to give an overview to classify the general options and common business models.</p>
 <section id="software-as-a-service-saas" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="software-as-a-service-saas"><span class="header-section-number">7.2.1</span> Software-as-a-Service (SaaS)</h3>
 <p>The simplest solution and fastest time-to-market is almost always to go for a SaaS product – particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus on doing one single thing well. The <a href="https://shinyapps.io">shinyapps.io</a> platform is a great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product because R developers who come from field-specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers, for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R shiny web application framework that uses R to generate HTML, CSS and JavaScript based applications. Still, those applications need to be hosted somewhere. This is precisely what shinyapps.io does. The service solely hosts web applications that were created with the shiny web application framework. This ease of use is also the biggest limitation of SaaS products. A website generated with another tool cannot be deployed easily. In addition, the mere bang-for-buck price is rather high compared to self-hosting as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many projects, especially at a proof of concept stage.</p>

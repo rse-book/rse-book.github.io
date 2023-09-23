@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DevOps Carpentry - 3&nbsp; Programming 101</title>
+<title>Research Software Engineering - 3&nbsp; Programming 101</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,7 +165,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">DevOps Carpentry</a> 
+      <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
     <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
 </div>
@@ -299,7 +299,7 @@ div.csl-indent {
 
 <p>Obviously, the craft of <em>programming</em> is essential to handling data with a programming language. Though programming languages can differ quite a bit from each other, there is common ground and an approach to programming that is crucial to understand and important to learn by – particularly for programmers without a formal computer science background. This chapter wants to point researchers, analysts and data scientists to the low hanging, high-impact fruits of software engineering.</p>
 <p><em>Programming is a form of communication</em>. Communication with others, but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore, source code needs to be written in inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.</p>
-<p>The programming examples in this book mostly stick to the <em>R</em> language, which is easy to install and run on one’s own local computer. All the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book…</p>
+<p>The programming examples in this book mostly stick to the [R] language, which is easy to install and run on one’s own local computer. All the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book…</p>
 <section id="the-choice-that-doesnt-matter" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-choice-that-doesnt-matter"><span class="header-section-number">3.1</span> The Choice that Doesn’t Matter</h2>
 <p>The very first (and intimidating) choice a novice hacker faces is which is the programming language to learn. Unfortunately, the medium popularly summed up as the internet offers a lot of really, fantastic advice on the matter. The problem is, however, that this advice does not necessarily agree which language is the best for research. In the realm of data science – get accustomed to that label if you are a scientist who works with data – the debate basically comes down to two languages: The R Language for Statistical Computing and Python.</p>
@@ -307,7 +307,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/languagewar.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">R: “Dplyr smokes pandas.” Python: “But Keras is better for ML!” Language wars can be entertaining, sometimes spectacular, but most times they are just useless… (source: own illustration)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">R: “Dplyr smokes pandas.” Python: “But Keras is better for ML!” Language wars can be entertaining, sometimes spectacular, but most times they are just useless…</figcaption><p></p>
 </figure>
 </div>
 <p>But why is there such a heartfelt debate online if it doesn’t matter? Let’s pick up a random argument from this debate: R is easier to set up and Python is better for machine learning. If you worked with Java or another environment that’s rather tricky to get going, you are hardened and might not cherish easy onboarding. If you got frustrated before you really started, you might feel otherwise. You may just have been unlucky making guesses about a not so well documented paragraph, trying to reproduce a nifty machine learning blog post. Just because you installed the wrong version of Python or didn’t manage to make sense of <em>virtualenv</em> right from the beginning.</p>
@@ -325,7 +325,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/packages.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">“Over the days are when creating packages for gurus was only.” (source: own illustration)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">“Over the days are when creating packages for gurus was only.”</figcaption><p></p>
 </figure>
 </div>
 <p>The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think <em>reusable</em> code. Don’t think you can’t do it. Let me demystify packages for you: <strong>Packages are nothing else than source code organized in folders following some convention</strong>. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like R Studio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like <a href="https://packaging.python.org/tutorials/packaging-projects/">Packing Python Projects</a> or Hadley Wickham’s free online book <a href="https://r-pkgs.org/">R Packages</a> explain how to create packages good enough to make the official PyPi or CRAN package repository.</p>
