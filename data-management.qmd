@@ -321,7 +321,7 @@ engine from R.
 
 ```{r}
 library(RSQLite)
-db_path <- "DevOpscarpentry.sqlite3"
+db_path <- "rse.sqlite3"
 con <- dbConnect(RSQLite::SQLite(), db_path)
 dbWriteTable(con, dbQuoteIdentifier(con,"mtcars"),
              mtcars, overwrite = T)

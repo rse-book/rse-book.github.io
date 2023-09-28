@@ -19,7 +19,7 @@ Performance, particularly in terms of throughput, is one good reason to look bey
 
 ## Hosting Options 
 
-So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, *DevOps Carpentry* intends to give an overview to classify the general options and common business models. 
+So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, *Research Software Engineering* intends to give an overview to classify the general options and common business models. 
 
 ### Software-as-a-Service (SaaS)
 
@@ -65,7 +65,7 @@ Containers run in a docker runtime environment and can either be used interactiv
 Beside simplification of system administration, *docker* is known for its ability to work in the cloud. All major cloud hosters offer docker environments and the ability to deploy docker containers that were previously developed and tested locally. You can also use docker to tackle [throughput problems](#glossary) using container orchestration tools like Docker Swarm^[https://docs.docker.com/engine/swarm/swarm-tutorial/] or K8s (say: Kubernetes)^[https://kubernetes.io/] to run hundreds of containers (depending on your virtual resources).
 
 ### Kubernetes (K8s)
-Though hosting Kubernetes is clearly beyond the scope of carpentry level DevOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.
+Though hosting Kubernetes is clearly beyond the scope of basic level DevOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.
 
 Because Kubernetes is quite some overhead to manage, the big three and their alternatives all offer services such as a container registry to support their clients in running Kubernetes. Without any support and/or pre-configured parts, it is... 
 

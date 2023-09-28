@@ -3,8 +3,8 @@ project:
 
 
 book:
-  title: "DevOps Carpentry"
-  subtitle: "A Researcher's Guide to the Open Source Ecosystem"
+  title: "Research Software Engineering"
+  subtitle: "A Guide to the Open Source Ecosystem"
   author: "Matthias Bannert"
   cover-image: images/wizardry.jpg
   date: "7/17/2023"
