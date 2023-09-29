@@ -350,16 +350,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Var1      Var2     Var3
-2000 Q1 -0.01798322 11.025712 28.14234
-2000 Q2 -1.42322799  9.421370 30.15326
-2000 Q3  0.11070743  8.614003 30.51970
-2000 Q4  1.15431409 10.941032 29.02695
-2001 Q1  1.44450435 10.748767 29.19662
-2001 Q2  1.43122093 10.817780 29.17718
-2001 Q3 -1.48733927 10.021865 30.68991
-2001 Q4  0.98798638  9.199083 29.11500
-2002 Q1  0.48660557  9.351128 30.27413
-2002 Q2  0.86149978  8.430274 30.00786</code></pre>
+2000 Q1 -0.05587767 11.437470 29.62562
+2000 Q2  0.57251421  9.651352 29.01342
+2000 Q3 -1.11255160  8.898516 30.42722
+2000 Q4  0.90465012 10.163317 30.81309
+2001 Q1 -0.36696028  8.911933 29.60303
+2001 Q2  0.48166193  9.718937 29.84228
+2001 Q3 -1.29428872 10.402438 29.37598
+2001 Q4  1.70900362  9.572109 29.81129
+2002 Q1  0.88974149  9.422984 29.38957
+2002 Q2  2.02569081 10.986160 30.07380</code></pre>
 </div>
 </div>
 <p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
@@ -371,21 +371,21 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      id       time       value
- 1: Var1 2000-01-01 -0.01798322
- 2: Var1 2000-04-01 -1.42322799
- 3: Var1 2000-07-01  0.11070743
- 4: Var1 2000-10-01  1.15431409
- 5: Var1 2001-01-01  1.44450435
- 6: Var1 2001-04-01  1.43122093
- 7: Var1 2001-07-01 -1.48733927
- 8: Var1 2001-10-01  0.98798638
- 9: Var1 2002-01-01  0.48660557
-10: Var1 2002-04-01  0.86149978
-11: Var2 2000-01-01 11.02571170
-12: Var2 2000-04-01  9.42137011
-13: Var2 2000-07-01  8.61400297
-14: Var2 2000-10-01 10.94103175
-15: Var2 2001-01-01 10.74876730</code></pre>
+ 1: Var1 2000-01-01 -0.05587767
+ 2: Var1 2000-04-01  0.57251421
+ 3: Var1 2000-07-01 -1.11255160
+ 4: Var1 2000-10-01  0.90465012
+ 5: Var1 2001-01-01 -0.36696028
+ 6: Var1 2001-04-01  0.48166193
+ 7: Var1 2001-07-01 -1.29428872
+ 8: Var1 2001-10-01  1.70900362
+ 9: Var1 2002-01-01  0.88974149
+10: Var1 2002-04-01  2.02569081
+11: Var2 2000-01-01 11.43746980
+12: Var2 2000-04-01  9.65135184
+13: Var2 2000-07-01  8.89851566
+14: Var2 2000-10-01 10.16331713
+15: Var2 2001-01-01  8.91193339</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -783,7 +783,10 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 <blockquote class="blockquote">
 <p>“Open data and content can be freely used, modified, and shared by anyone for any purpose” – opendefition.org</p>
 </blockquote>
-<p>Because of approaches such as the Swiss governments’ “open by default”, open government data (OGD) has become a common form of open data. The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets. In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. Initiatives like <a href="https://sdmx.org/">SDMX (Statistical Data and Meta Exchange)</a> aim to improve exchange of data <em>and</em> data descriptions. Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software. Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data.</p>
+<p>Because of approaches such as the Swiss governments’ “open by default”, open government data (OGD) has become a common form of open data. The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets. In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. Initiatives like <a href="https://sdmx.org/">SDMX (Statistical Data and Meta Exchange)</a> aim to improve exchange of data <em>and</em> data descriptions. Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software. Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The <em>openwashdata</em> project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and re-publishes them in in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project’s GitHub organization.</p>
+<blockquote class="blockquote">
+<p>“openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector” – openwashdata.org</p>
+</blockquote>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
