@@ -1,9 +1,6 @@
 # Automation
 
-Make repetitive work fun again!
-
-![Too busy too automate? (source: Håkan Forss, https://hakanforss.wordpress.com)](images/busy.png)
-
+>Make repetitive work fun again!
 
 One aspect that makes a programming approach to data science and analytics appealing is *automation*. Data ingestion, dissemination, reporting or even analysis itself can be repetitive. 
 Particularly shorter update cycles of one's data ask for a way to make yet another iteration pain free. 

@@ -907,9 +907,9 @@ One of the cool things of learning shiny is how shiny, and its ecosystem allow y
 
 - shinydashboard: https://rstudio.github.io/shinydashboard 
 
-- Mastering Shiny by Hadley Wickham @masteringshiny: (https://mastering-shiny.org/)
+- Mastering Shiny [@masteringshiny]: (https://mastering-shiny.org/)
 
-- Engineering Production Grade Shiny Apps @fay2021engineering: https://engineering-shiny.org/
+- Engineering Production Grade Shiny Apps [@fay2021engineering]: https://engineering-shiny.org/
 
 - RInterface by David Granjon, John Coene, Victor Perrier and Isabelle Rudolf: https://rinterface.com/
 
@@ -1109,8 +1109,8 @@ JavaScript projects do it in their lock files, Python projects have their requir
 All these scripting languages *can* keep track of the exact library versions used in a project. 
 
 ```{bash, eval=FALSE}
-#|size: tiny
-pip freeze | grep -v "pkg-resources" > requirements.txt
+pip freeze |
+ grep -v "pkg-resources" > requirements.txt
 ```
 
 The above pip command extracts dependencies from a python projects folder and writes it to a requirements file. 
