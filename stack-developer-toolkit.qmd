@@ -18,10 +18,10 @@ d <- data.frame(Component = c("Interpreter / Language", "IDE / Editor",
                               "Communication (Visualization, Web)",
                               "Website Hosting",
                               "Workflow Automation", "Continous Integration"),
-                Choice = c("<a href='https://r-project.org'>R</a>, <a href='https://www.python.org/'>Python</a>, <a href=''>Javascript</a>","<a href='https://rstudio.com'>R Studio</a>,<a href='https://code.visualstudio.com/'>VS Code</a>, <a href='https://www.sublimetext.com/'>Sublime</a>",
-                           "<a href='https://git-scm.com/'>Git</a>", "<a href='https://github.com/features/project-management/'>GitHub</a>, <a href='https://about.gitlab.com/solutions/project-management/'>GitLab</a>","<a href='https://www.postgresql.org/'>PostgreSQL</a>","<a href='https://www.docker.com/'>Docker</a>",
-                           "<a href='https://nodejs.org/en/'>Node</a>, <a href='https://quasar.dev/'>Quasar (vue.js)</a>",
-                           "<a href='https://netlify.com/'>Netlify</a>, <a href='https://pages.github.com/'>GitHub Pages</a>","<a href='https://airflow.apache.org/'>Apache Airflow</a>", "<a href='https://docs.gitlab.com/ee/ci/'>GitLab CI</a>"),
+                Choice = c("R,Python,Javascript","R Studio, VS Code, Sublime",
+                           "Git", "GitHub, GitLab","PostgreSQL","Docker",
+                           "Node, Quasar (vue.js)",
+                           "Netlify, GitHub Pages","Apache Airflow", "Woodpecker, Gitlab CI, Github Actions"),
                 stringsAsFactors = FALSE)
 kable(d, booktabs = TRUE,
       escape= FALSE) |>
@@ -39,6 +39,8 @@ The main advantage of a compiled language is speed in terms of computing perform
 
 > Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it. 
 -- Dan Ariely, Professor of Psychology and Behavioral Economics on twitter^[https://twitter.com/danariely/status/287952257926971392]
+
+\newpage
 
 The above quote became famous in the hacking data community, not only because of the provocative, fun part of it, but also because of the implicit advice behind it. Given the enormous gain in computing power in recent decades, but also methodological advances, interpreted languages are often fast enough for many social science problems. And even if it turns out, your data grow out of your setup, a well written proof of concept written in an interpreted language can be a formidable blueprint. **Source code is turning into an important scientific communication channel.** Put your money on it, your interdisciplinary collaborator from the High Performance Computing (HPC) group, will prefer some Python code as a briefing for their C++ or FORTRAN program over a wordy description out of your field's ivory tower. 
 
@@ -88,7 +90,7 @@ A commit message summarizes the gist of a contribution. *Diffs* allow comparing 
 
 ![The *diff* output shows an edit during the writing of this book. The line preceded by '-' was replaced with the line preceded by '+'.](images/diff.png)
 
-Git is well suited for any kind of text file. May it be source code from Python or C++, or some text written in markdown or LaTeX. Binaries like .pdfs or Word documents are possible, too, but certainly not the type of file for which git is really useful. This book contains a detailed, applied introduction tailed to researchers as part of the [Programmers' Practices and Workflows](developer-practices-workflows.html) chapter, so let's dwell with the above contextualization for a bit.   
+Git is well suited for any kind of text file. May it be source code from Python or C++, or some text written in markdown or LaTeX. Binaries like .pdfs or Word documents are possible, too, but certainly not the type of file for which git is really useful. This book contains a detailed, applied introduction tailed to researchers in a dedicated version control chapter, so let's dwell with the above contextualization for a bit.   
 
 
 ## Data Management 
@@ -136,7 +138,7 @@ Its community is one of the reasons for the rise of open source software over th
 
 Chat clients like Slack, Discord or the Internet Relay Chat (IRC) (for the pre-millenials among readers) are the most direct form of asynchronous communication. Though many of the modern alternatives are not open source themselves, they offer free options and remain popular in the community despite self-hosted approaches such as matrix^[https://matrix.org/] along with element^[https://element.io/]. Many international groups around data science and statistical computing such as RLadies or the Research Software Engineering society have Slack space that are busy 24/7 around the world. 
 
-Social media is less directed and more easily consumed in a passive fashion than a chat space. Over the last decade, Twitter has been a very active and reliable resource for good reads but has seen parts of the community switch to more independent platforms such as Mastodon^[https://mastodon.social/]. LinkedIn is another suitable option to connect and find input, particular in parts of the world were other platforms are less popular. Due to its activity, social media is also a great way to stay up-to-date with the latest developments. 
+Social media is less directed and more easily consumed in a passive fashion than a chat space. Over the last decade, Twitter has been a very active and reliable resource for good reads but has seen parts of the community switch to more independent platforms such as Mastodon^[https://mastodon.social/]. LinkedIn is another suitable option to connect and find input, particular in parts of the world where other platforms are less popular. Due to its activity, social media is also a great way to stay up-to-date with the latest developments. 
 
 Mailing lists are another, more old-fashioned form to discuss things. They do not require a special client and just an email address to subscribe to their regular updates. If you intend to avoid social media, as well as signing up at knowledge sharing platforms such as stackoverflow.com^[https://stackoverflow.com] or reddit^[https://reddit.com] mailing lists are a good way to get help from experienced developers. 
 

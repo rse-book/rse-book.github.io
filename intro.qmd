@@ -82,7 +82,7 @@ In a typical workflow, successful completion of quality checks triggers continuo
 By embracing both parts of the *DevOps* approach, researchers do not only gain extra efficiency, but more importantly
 improve reproducibility and therefore accountability and quality of their work.
 The effect of a DevOps approach on quality control is not limited to reproducible research in a publication sense, but also enforces rules during collaboration: no matter who contributes, the contribution gets gut checked and only deployed if checks passed. 
-Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a *DevOps carpentry* level understanding of development and operations is desirable for the programming data analyst. 
+Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a carpentry level understanding of development and operations is desirable for the programming data analyst. 
 
 
 

@@ -4,7 +4,7 @@ Obviously, the craft of *programming* is essential to handling data with a progr
 
 *Programming is a form of communication*. Communication with others, but also with your future self. It actually may be the best way to define complex contexts in reproducible fashion. Therefore, source code needs to be written in inclusive fashion. Programming needs to be seen as a chance to make complexity accessible to those who are not experts in a particular domain. The fact that programs actually run makes them more accessible to many than formal mathematical definitions.
 
-The programming examples in this book mostly stick to the *R* language, which is easy to install and run on one's own local computer. All the concepts shown can easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book... 
+The programming examples in this book mostly stick to the *R* language, which is easy to install and run on one's own local computer. All the concepts shown easily transfer to other languages. Though potentially a bit more tricky to install and run across operating systems, Python would have been an equally good choice, but as there had to be a decision for one language for this book... 
 
 
 ## The Choice that Doesn't Matter
@@ -25,7 +25,7 @@ works with Python, start with Python. If you are in for the longer run, either l
 
 If you associate programming more often than not with hours of fiddling, tweaking and fighting to galvanize approaches found online, this chapter is for you. Don't expect lots of syntax. If you came for examples of useful little programs from data visualization to parallel computing, check out the [case studies](case-studies.qmd).
 
-The following sections share a blueprint to go from explorative script to production-ready package.  Organize your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully, the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith. 
+The following sections share a blueprint to go from explorative script to production-ready package.  Organize your code and accompany the evolution of your project: start out with experiments, define your interface, narrow down to a proof of concept and scale up. Hopefully, the tips, tricks and the guidance in this chapter will help you to experience the rewarding feeling of a software project coming together like a plan originated by Hannibal Smith^[Google me!]. 
 
 
 <!-- - maybe overview sketch here... decision tree.  -->
@@ -96,7 +96,7 @@ create_basic_desc <- function(distr){
 ```
 
 ```{r}
-#| size: scriptsize
+#| size: tiny
 create_basic_desc(d1)
 create_basic_desc(d2)
 

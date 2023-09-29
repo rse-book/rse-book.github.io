@@ -142,13 +142,14 @@ search_met <- function(keyword){
 
 
 You can use these IDs with another [endpoint](glossary.qmd) to receive the pictures
-themselves^[Full URL used in the below code example: https://collectionapi.metmuseum.org/public/collection/v1/objects/%d.
+themselves^[Full URL used in the below code example: https://collectionapi.metmuseum.org/public/collection/v1/objects/%d].
 
 ```{r, eval=FALSE, warning=FALSE,message=FALSE}
 #| size: scriptsize
-download_met_images_by_id <- function(ids,
-                                      download = "primaryImage",
-                                      path = "met") {
+download_met_images_by_id <- 
+  function(ids,
+           download = "primaryImage",
+           path = "met") {
   # Obtain meta description objects from MET API
   obj_list <- lapply(ids, function(x) {
     uri <- "https://collect..."
@@ -166,9 +167,11 @@ download_met_images_by_id <- function(ids,
   img_urls <- lapply(obj_list, "[[", download)
   
   # Note the implicit return, no return statement needed
-  # last un-assigned statement is returned from the function
+  # last un-assigned statement is returned
+  # from the function
   for (x in unlist(img_urls[public])){
-    download.file(x, destfile = sprintf("%s/%s", path, basename(x)))
+    download.file(x, destfile = sprintf("%s/%s",
+     path, basename(x)))
   }
   
   
@@ -242,7 +245,7 @@ Finally, execute the functions: first, search for images with umbrellas, second,
 Note that even if I do not display the image itself in the book to err on the side of caution w.r.t. to image property rights, the below code shows availability is checked, and an image is actually downloaded to a previously created folder called *met*. 
 
 
-```{r}
+```{r,warning=FALSE}
 #| size: scriptsize
 # Step 4: Use the Wrapper
 umbrella_ids <- search_met("umbrella")
@@ -412,11 +415,16 @@ app.use('/static', (req, res, next) => {
 })
 
 
-// NOTE THAT this is only a demo example (!)
-// DO NOT use insecure passwords in production.
-// Make sure to find better ways to secure your keys! 
-// also transferring keys in URLs via GET is not optimal, 
-// consider using an upfront authentication method
+// NOTE THAT this is only a 
+// demo example (!)
+// DO NOT use insecure passwords
+// in production.
+// Make sure to find better ways
+// to secure your keys! 
+// also transferring keys in URLs
+// via GET is not optimal, 
+// consider using an upfront
+// authentication method
 var apiKeys = ['abc','123'];
 app.use('/static', express.static('public'))
 
@@ -657,7 +665,7 @@ d |>
 ```
 
 
-![screenshot of an interactive choropleth, for the actual interactive visit https://devops-carpentry.github.io/book/case-studies.html#sec-map](images/case-choropleth.png)
+![screenshot of an interactive choropleth, for the actual interactive visit https://rse-book.github.io/case-studies.html#sec-map](images/case-choropleth.png)
 
 
 
@@ -899,11 +907,11 @@ One of the cool things of learning shiny is how shiny, and its ecosystem allow y
 
 - shinydashboard: https://rstudio.github.io/shinydashboard 
 
-- [Mastering Shiny by Hadley Wickham](https://mastering-shiny.org/)
+- Mastering Shiny by Hadley Wickham @masteringshiny: (https://mastering-shiny.org/)
 
-- [Engineering Production Grade Shiny Apps](https://engineering-shiny.org/)
+- Engineering Production Grade Shiny Apps @fay2021engineering: https://engineering-shiny.org/
 
-- [RInterface by David Granjon, John Coene, Victor Perrier and Isabelle Rudolf](https://rinterface.com/)
+- RInterface by David Granjon, John Coene, Victor Perrier and Isabelle Rudolf: https://rinterface.com/
 
 
 
@@ -999,13 +1007,15 @@ d <- summary(out)
 Obviously, the absolute computation time depends on the hardware used as well as the operating system, depending on the task at hand.
 
 ```{r}
-#| size: scriptsize
+#| size: tiny
 library(kableExtra)
 kable(d,"latex",
       booktabs = TRUE,
       escape= FALSE) |>
-      kable_styling(latex_options = c("repeat_header")) |>
-      column_spec(1:2, width = "5cm")
+      kable_styling(
+        latex_options = c("repeat_header")
+        ) |>
+      column_spec(1:2, width = "2.5cm")
 
 
 ```
@@ -1099,6 +1109,7 @@ JavaScript projects do it in their lock files, Python projects have their requir
 All these scripting languages *can* keep track of the exact library versions used in a project. 
 
 ```{bash, eval=FALSE}
+#|size: tiny
 pip freeze | grep -v "pkg-resources" > requirements.txt
 ```
 

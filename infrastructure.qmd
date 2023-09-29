@@ -128,7 +128,7 @@ tri <- tribble(
     'docker pull', 'pull images from registry, e.g., dockerhub.com',
     'docker run', 'run container based on image',
     'docker kill', 'kill container',
-    'docker build <directory-with-docker-file>', 'build image based on Dockerfile',
+    'docker build <dir-with-docker-file>', 'build image based on Dockerfile',
     'docker exec <command> <container>', 'execute command inside container'
 )
 kable(tri, booktabs = TRUE) |>
@@ -146,7 +146,8 @@ docker run -d rocker/shiny
 docker exec -it rocker/shiny /bin/bash
 
 # alternative you could start R right away
-# note that you need to know the location of the executable
+# note that you need to know the location 
+# of the executable
 docker exec -it rocker/shiny /usr/local/bin/R
 
 ```
@@ -216,7 +217,15 @@ Note that docker compose does not replace an orchestrator and cannot provide clu
 :::
 
 
+### A Little Docker Debugging Tip 
 
+Sometimes containers keep crashing right after they started. This makes debugging a bit harder because we cannot simply use the `-it` flag to get inside and stroll around to find the issue. In such a case, even if you briefly log in your container will down before you can even reach to location in question inside your container. Of course, there a log files 
+
+```sh
+docker logs <container-name>
+```
+
+Maybe though these logs are not verbose enough or some permission issue may not be fully covered. Hence adding `command: "sleep infinity" to your compose file prevents the service / container in question from running into the problem and crashing immediately. 
 
 
 <!--
