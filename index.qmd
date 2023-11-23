@@ -1,7 +1,4 @@
-# Preface {.unnumbered}
-
-
-**Note**: This book will be published by [Chapman & Hall/CRC](https://www.routledge.com/). The online version of this book is free to read here (thanks to Chapman & Hall/CRC), and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). If you have any feedback, please feel free to [file an issue on GitHub](https://github.com/rse-book/rse-book.github.io/issues). Thank you!
+**Note**: This book is published by [Chapman & Hall/CRC](https://www.routledge.com/). The online version of this book is free to read here (thanks to Chapman & Hall/CRC), and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). If you have any feedback, please feel free to [file an issue on GitHub](https://github.com/rse-book/rse-book.github.io/issues). Thank you!
 
 
 <!--
@@ -26,43 +23,43 @@ bookdown::render_book('index.Rmd', 'bookdown::gitbook',output_dir = "docs")
 -->
 
 
->"One of the things that Baidu did well early on was to create an internal platform for deep learning. What that did was enable engineers all across the company, including people who were not AI researchers, to leverage deep learning in all sorts of creative ways - applications that an AI researcher like me never would have thought of" -- Andrew Ng
+>One of the things that Baidu did well early on was to create an internal platform for deep learning. What that did was enable engineers all across the company, including people who were not AI researchers, to leverage deep learning in all sorts of creative ways - applications that an AI researcher like me never would have thought of. -- Andrew Ng
 
 
-The vast majority of data has been created within the last decade. In turn, many fields of research are confronted with an unprecedented wealth of data. The sheer amount of information but also the complexity of modern datasets continues to point a kind of researcher to programming approaches who had not considered programming to process data so far. *Research Software Engineering* aims at two things: First, to give a big picture overview and starting point to reach what the open source software community calls a 'software carpentry' level. Second, the book gives an understanding of the opportunities of automation and reproducibility, as well as the effort to maintain the required environment. This book argues a solid programming skill level and self-operation is totally in reach for most researchers. And most importantly, investing is worth the effort: being able to code leverages field specific expertise and fosters interdisciplinary collaboration as source code continues to become an important communication channel. 
+The vast majority of data has been created within the last decade. In turn, many fields of research are confronted with an unprecedented wealth of data. The sheer amount of information and the complexity of modern datasets continue to point a kind of researcher to programming approaches that had not considered programming to process data so far. *Research Software Engineering* aims at two things: First, to give a big picture overview and starting point to reach what the open source software community calls a "software carpentry" level. Second, to give an understanding of the opportunities of automation and reproducibility, as well as the effort to maintain the required environment. This book argues a solid programming skill level and self-operation is totally in reach for most researchers. And most importantly, investing is worth the effort: being able to code leverages field-specific expertise and fosters interdisciplinary collaboration as source code continues to become an important communication channel. 
 
 <div align="center">
-![Meet Dr. Egghead who started his quest to figure out how his assistant got a week's work done in two hours. "Hacker's wear hoodies, you know," he mumbles as he pulls up his coat's hood and starts to think...](images/meet_egghead.jpg)
+![Meet Dr. Egghead who started his quest to figure out how his assistant got a week's work done in hours. "Hackers wear hoodies, you know," he mumbles as he pulls up his coat's hood and starts to think.](images/meet_egghead.jpg)
 </div>
 
 
-## Acknowledgements
+## Preface
 
-I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations, I would like to thank, in particular. 
+I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations that I would like to thank in particular. 
 
-First, I would like to thank David Grubbs from CRC for getting me started. 
+First, thank you to David Grubbs at CRC Press for getting me started. 
 From our first meeting at useR! in Toulouse, France, David helped streamline writing a book, and he kept adding value throughout the process with his remarks and contacts. 
-I would like to thank Achim Zeileis who also played an important role at this early stage of my book project. Achim did not only inspire me to become a co-host for useR! which led to many experiences that became important to this book. Our discussions about teaching amplified my motivation to have good material to accompany my own course -- which eventually turned out to be one of the most important drivers. 
+I would like to thank Achim Zeileis who also played an important role at the early stage of my book project. Achim inspired me to become a co-host for useR! which led to many experiences that became important to this book. Our discussions about teaching amplified my motivation to have good material to accompany my own course -- which eventually turned out to be one of the most important drivers. 
 
 In that regard, I would like to thank all participants of my *Hacking for ...* courses.
 Your insights, questions, feedback and semester projects have been invaluable to this project. 
-Your field specific expertise is inspirational not only to me but also to readers of the book as it shows the broad relevance of the approach. 
+Your field-specific expertise is inspirational not only to me, but also to readers of the book as it shows the broad relevance of the approach. 
 I would like to thank ETH Zurich, in particularly the Department of Management, Technology and Economics (D-MTEC) and the KOF Swiss Economic Institute for hosting my ideas over the last 13 years. 
-Thank you to educational developers Karin Brown and Erik Jentges - having teaching professionals with open ears and minds around helped to channel motivation and ideas into a course concept that continues to be popular among participants across departments and disciplines. 
+Thank you to educational developers Karin Brown and Erik Jentges; having teaching professionals with open ears and minds around helped to channel motivation and ideas into a course concept that continues to be popular among participants across departments and disciplines. 
 Torbjørn Netland deserves credit for enabling this widespread interest.
-His early advice turned what was initially thought of as *Hacking for Economists* into *Hacking for Social Sciences* which eventually became *Hacking for Science*. 
+His early advice turned what was initially thought of as *Hacking for Economists* into *Hacking for Social Sciences*, which eventually became *Hacking for Science*. 
 
-Though this book is not exactly a book about the R programming language, I would like to thank the R community in particular because of its instrumental role in growing my own engagement and horizon of the open source ecosystem.
-Thank you, statisticians Siegfried Heiler and Toni Stocker who pointed me to the R language almost 20 years ago. 
-One of my most important learnings about how to leverage open source work may have come only those 20 years
-later: In 2021, the community overcame the hurdles of a global pandemic that was unprecedented, at least in my lifetime, and held a virtual useR! conference that enabled a much larger and much more diverse group of participants to join [@inclusivecon].  
+Though this book is not exactly about the R programming language, I would like to thank the R community in particular because of its instrumental role in growing my own engagement and horizon of the open source ecosystem.
+My thanks go to statisticians Siegfried Heiler and Toni Stocker who pointed me to the R language almost 20 years ago. 
+One of my most important learnings about how to leverage open source work may have come only 20 years
+later: In 2021, the community overcame the hurdles of the global COVID-19 pandemic that was unprecedented, at least in my lifetime, and held a virtual useR! conference that enabled a much larger and much more diverse group of participants to join [@inclusivecon].  
 Working with Rocío Joo, Dorothea Hug Peter, Heather Turner and Yanina Bellini Saibene has shown me the inclusion extra mile is not only worth the effort, but an inevitable mindset to bring our work as developers and scientists to the next level. Thank you, ladies!
-Thanks also to the local R user group here in Zurich, Switzerland, who continues to show the practical relevance of open source through their events. 
+Thanks also to the local R user group in Zurich, Switzerland, who continues to show the practical relevance of open source through events. 
 I want to mention the great people at my new employer, cynkra, too.
-Your influence on the community, myself and therefore this book cannot be forgotten.
+Your influence on the community and therefore this book cannot be forgotten.
 Thank you for your support and open ears!
 
 Last but not least, I would like to thank Emily Riederer for her time and patience discussing my thoughts and reviewing my drafts. 
 Particulary, her ideas to streamline and balance my ideas at a stage where they were rather messy added great value. 
-Admittedly, your constructive feedback has caused some extra work, but was instrumental to making this book useful and accessible to a wider audience – thank you. 
+Admittedly, your constructive feedback has caused some extra work, but was instrumental to making this book useful and accessible to a wider audience – Thank you. 
 
