@@ -11,7 +11,7 @@ Approaches such as Quarto, RMarkdown or Jupyter Notebooks mix plain text with dy
 
 The simplest form of such a markdown-based output, is a simple HTML report.  
 With web development somewhere in the back of their minds, HTML may rather sound daunting than simple. 
-But hear me out: HTML is a) a lot more useful and flexible than newcomers might think and b) simple indeed: 
+But hear me out: HTML is (a) a lot more useful and flexible than newcomers might think and (b) simple indeed: 
 HTML is text, does not need LaTeX to be rendered from Markdown like PDF, and can be displayed by web browsers on a plethora of devices. 
 Plus, based on HTML, you can create (fancy) presentations, websites or simple reports. 
 With the self-contained option, you can even embed included files such as images into one single HTML document using byte encoding.

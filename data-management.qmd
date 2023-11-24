@@ -268,7 +268,7 @@ decades of information engineering. So when you choose how you are going to repr
 
 ## Databases
 
-Given the options that file based approaches provide, what is a) the difference and b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
+Given the options that file based approaches provide, what is (a) the difference and (b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
 
 
 

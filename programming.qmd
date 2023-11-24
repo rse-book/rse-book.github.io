@@ -191,7 +191,7 @@ One important word of advice for novice package developers is to think about you
 
 Yes, extension packages are cool. Yes, the ease with which CRAN packages are distributed is cool. But, just because packages are easy to install and free of license costs, it does not mean leaning on plenty of packages comes at no costs: One needs to stay informed about updates, issues, breaking changes or undesired interdependencies between packages. 
 
-The problem is mitigated a bit when a) package is required in an interactive script and b) one is working with a very popular package. Well-managed packages with a lot of [reverse dependencies](appendix.qmd#glossary--) tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
+The problem is mitigated a bit when (a) package is required in an interactive script and (b) one is working with a very popular package. Well-managed packages with a lot of [reverse dependencies](appendix.qmd#glossary--) tend to deprecate old functionality more smoothly, as authors are aware of the issues breaking changes cause to a package's ecosystem. 
 
 In R, the *tidyverse* bundle of packages seems ubiquitous and easy to use, but it leads to quite a few dependencies. The data.table ecosystem might be less popular but provides its functionality with a single R package dependency (the {methods} package).
 
@@ -370,23 +370,22 @@ Hadley's book *R packages* [@rpkgs] has a more thorough introduction to testing 
 
 ## Debugging
 
-In programming there is no way around debugging.
+In programming, there is no way around debugging.
 From copy&paste artists to the grandmasters of hacking: writing code implies the need to debug.
-One of the main differences between amateur and professional is the degree to which the hunt for errors a.k.a. bugs is done systematically.
+One of the main differences between amateur and professional is the degree to which the hunt for errors, a.k.a. bugs, is done systematically.
 This section gives a few tips to help organize a debugging strategy and assess how much honing of one's debugging approach is reasonable for your individual needs. 
 
 
 ### Read Code from the Inside Out
 
 Many scripting languages allow some form of nesting code. 
-In order to understand what's going on reading and running code from innermost element first helps. Even if you are not an R user, applying the inside-out idea helps to understand what's going on. Consider the following piece of R code:
+In order to understand what's going on, reading and running code from innermost element first helps. Even if you are not an R user, applying the inside-out idea helps to understand what's going on. Consider the following piece of R code:
 
 ```{r back}
 identical(sum(cumsum(1:10)),sum(cumsum(rev(1:10))))
 ```
 
-The re-formatted version below helps to identify the innermost part of the code at 
-the first glimpse:
+The re-formatted version below helps to identify the innermost part of the code immediately:
 
 ```{r,eval=FALSE}
 identical(
@@ -401,7 +400,7 @@ identical(
   )
 ```
 
-To understand the above demo code let's take closer look at the innermost element(s). Also consider looking at the single functiosn documentation, e.g., *?rev*:
+To understand the above demo code, let's take a closer look at the innermost element(s). Also consider looking at the single function's documentation, e.g., *?rev*:
 
 ```{r}
 1:10
@@ -413,12 +412,12 @@ The calls to cumsum() and sum() are the next layers. Finally, identical() is the
 
 ### Debugger, Breakpoints, Traceback
 
-Typically modern interpreters and/or source code editors (see chapter IDEs) provide support to make debugging more systematic. 
+Typically modern interpreters and/or source code editors (see chapter 4 on IDEs) provide support to make debugging more systematic. 
 In R, you can use `debug(function_name)` to activate debug mode for one particular function. 
-On the next call of `function_name()`, the interpreter will go through the function, executing its source line by line. 
+On the next call of `function_name()`, the interpreter will go through the function, executing its source line-by-line. 
 One of the insightful things about it is that standard exploration functions like `ls()` list all objects within the private environment of that function (by default `ls()` would just list all objects within the global environment).
 Inspection of objects as they are seen by the functions helps to find out whether parameters are passed on correctly (or at all). 
-Often, on error message from execution of a function motivates a debugging session.
+Often, an error message from execution of a function motivates a debugging session.
 In that case, try to identify the line that causes the error and just do all the object inspection right before the line that causes the crash.
 
 Another, similar approach is to use breakpoints which are a feature of your editor.
@@ -456,7 +455,7 @@ Motivated by this error message, let's switch into debug mode
 debug(debug_me)
 ```
 
-The below screenshot shows line-by-line execution of our demo function. The yellow line marks the line which will be executed on the next press of the return key. R's debug mode can be stopped by either executing the erroneous line or by executing a capital `Q` command in the R console window. 
+The below screenshot shows line-by-line execution of our demo function. The highlighted line marks the line which will be executed on the next press of the return key. R's debug mode can be stopped by either executing the erroneous line or by executing a capital `Q` command in the R console window. 
 
 ![](images/debug.png)
 
@@ -464,13 +463,13 @@ The below screenshot shows line-by-line execution of our demo function. The yell
 
 ## A Word on Peer Programming
 
-Peer programming, also called pair programming, just means two developers sit in front of the same screen to collaborate on a piece of code. So why is there such a buzz about it? Why is there even a term for it? And why is there a section in an applied book on it? 
+Peer programming, also called pair programming, just means that two developers sit in front of the same screen to collaborate on a piece of code. So why is there such a buzz about it? Why is there even a term for it? And why is there a section in an applied book on it? 
 
 That is because novice programmers (and their scientific supervisors) often doubt the efficiency of two paid persons working at the same workstation. But programming is not about digging a hole with two shovels. Particularly not when it comes to building the software basis or frame of a project. 
 
-Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with a) your concept, b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. Visual Studio Code Live Share^[https://visualstudio.microsoft.com/services/live-share/] is a great feature for next level virtual peer programming as it allows for two drivers using two cursors.
+Working together using one single keyboard and screen or the virtual equivalent thereof can be highly efficient. The virtual equivalent, i.e., in fact, using two computers but sharing the screen while in call, helps tremendously with (a) your concept, (b) your documentation. Plus, it is a code review at the same time. But most importantly, both developers learn from each other. Having to explain and being challenged, deepens the understanding of experienced developers and ruthlessly identifies holes in one's knowledge. One important advice when peer programming is to switch the driver's seat from time to time. Make sure the lesser programmer holds the keys occasionally and maneuvers through articles, repositories, code and data. Doing so prevents the co-pilot from taking a back seat and letting the veteran do the entertainment. Visual Studio Code Live Share^[https://visualstudio.microsoft.com/services/live-share/] is a great feature for next-level virtual peer programming, as it allows for two drivers using two cursors.
 
 
-Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair of success, too, according to the New Yorker's The Friendship That Made Google Huge^[https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge].  
+Of course, there are downsides of the pair programming approach, too. Also, timing within the lifecycle of a project is an important factor and not every project is the same fit for this agile method. But given there are so many approaches, I will leave the back and forth to others. The goal of this section is to point the reader to a practical approach that tends to work well in programming with data setups in social sciences. Googlers Jeff Dean and Sanjay Ghemawat had their fair share of success, too, according to *The New Yorker's* The Friendship That Made Google Huge^[https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge].  
 
 
