@@ -40,7 +40,7 @@ How much planning ahead is optimal for your project ultimately depends on your e
 !["Over the days are when creating packages for gurus was only." (Source: own illustration.)](images/packages.jpg)
 
 
-The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing but source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like RStudio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like Packaging Python Projects^[https://packaging.python.org/tutorials/packaging-projects/] or Hadley Wickham's book *R Packages(^[@rpkgs] explain how to create packages good enough to make the official PyPi or CRAN package repositories. 
+The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing but source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like RStudio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like Packaging Python Projects^[https://packaging.python.org/tutorials/packaging-projects/] or Hadley Wickham's book *R Packages [@rpkgs] explain how to create packages good enough to make the official PyPi or CRAN package repositories. 
 
 In other words, it is unlikely that someone with moderate experience comes with the best folder structure ever invented. Sure, every project is different and not every aspect (folder) is needed in every project. Nevertheless, there are well-established blueprints, guides and conventions that suit almost any project. Unlike Office type of projects which center around one single file, understand that a research project will live in a folder with many subfolders and files. Not in one single file. 
 
@@ -212,7 +212,7 @@ Sure, the above code is more intuitive, but shrewd use of good ol' _gsub_ and ba
 gsub("(.+)(mooo+)","\\2",cow)
 ```
 
-Again, {stringr} is certainly a well-crafted package, and it is definitely not the worst of all packages. But when you just loaded a package because it adds convenience to one single line or worse just because you found your solution online, think again before adding more dependencies to a production environment.  
+Again, {stringr} [@stringr] is certainly a well-crafted package, and it is definitely not the worst of all packages. But when you just loaded a package because it adds convenience to one single line or worse just because you found your solution online, think again before adding more dependencies to a production environment.  
 
 ### Folder Structure
 
@@ -296,8 +296,10 @@ https://mbannert.github.io/timeseriesdb/
 If you have file-based data like .csv, .RData, .json or even .xlsx, put them in here. Keeping data in a separate folder inside the project directory helps to keep reference to the data relative. There is nothing more novice than 
 `read.csv("C:\mbannert\My Documents\some_data.csv")`. Even if you like this book, I doubt you have a folder named 'mbannert' on your computer. Ah, and in case you wondered, extensive use of ```setwd()``` is even worse. Keep your reference to data (and functions alike) relative. If you are sourcing data from a remote NAS drive as it is common at many universities, you can simply mount this drive to your folder (LTMGTFY: How to mount a network drive Windows/OSX). 
 
->To actually bundle data into packages, I recommend to use a `data-raw` folder for data formats other than native R formats. From the raw folder, go on to process these raw files into R representations that are then stored in `data`.
+::: {.callout-note} 
+To actually bundle data into packages, I recommend to use a `data-raw` folder for data formats other than native R formats. From the raw folder, go on to process these raw files into R representations that are then stored in `data`.
 The {usethis} R package [@usethis] is a modern boilerplate approach and suggest a smooth packaging workflow.
+:::
 
 **vignettes**
 

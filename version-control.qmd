@@ -3,48 +3,46 @@
 As stated before, version control may be the single most important thing to take away from *Research Software Engineering* if you have not used it before. 
 In this chapter about the way developers work and collaborate, I will stick to version control with *git*. The stack discussion of the previous chapter features a few more version control systems, but given git's dominant position, we will stick solely to git in this introduction to version control.  
 
-## What is Git Version Control? 
+## What Is Git Version Control? 
 
 Git is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git program itself is a small console program that creates and manages a hidden folder inside the folder you put under version control (you know those folders with a leading dot in their folder name, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one. 
 
-![Meaningful commit messages help to make sense of a project's history. Screenshot of a commit history on GitHub. source: (own Github repository)](images/commits.png)
+![Meaningful commit messages help to make sense of a project's history. Screenshot of a commit history on GitHub. Source: (own GitHub repository.)](images/commits.png)
 
-The key to appreciating the value of git is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). GUI tools GitHub Desktop^[https://desktop.github.com/], Atlassian's Source Tree^[https://www.sourcetreeapp.com/] and Tortoise^[https://tortoisegit.org/] are some of the most popular choices if you are not a console person. Though GUI tools may be convenient, we will use the git console throughout this book to improve our understanding. As opposed to the sync approaches mentioned above, a version control system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message 'incorporated advice from Anna (discussion at XYZ Conference 2020)'. 
+The key to appreciating the value of git is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). GUI tools GitHub Desktop^[https://desktop.github.com/], Atlassian's Source Tree^[https://www.sourcetreeapp.com/] and Tortoise^[https://tortoisegit.org/] are some of the most popular choices if you are not a console person. Though GUI tools may be convenient, we will use the git console throughout this book to improve our understanding. As opposed to the sync approaches mentioned above, a version control system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message "incorporated advice from Anna (discussion at XYZ Conference 2020)". 
 
 
 ## Why Use Version Control in Research? 
 
->A version control based workflow is a path to your goals that rather consists of semantically relevant steps instead of semantically meaningless chunks based on the time you saved them. 
+A version control based workflow is a path to your goals that rather consists of semantically relevant steps instead of semantically meaningless chunks based on the time you saved them. 
 
-In other, more blatant, applied words: naming files like 
-`final_version_your_name.R` or `final_final_correction_collaboratorX_20200114.R` 
-is like naming your WiFi `dont_park_the_car_in_the_frontyard` or `be_quiet_at_night` to communicate with your neighbors.  Information is supposed to be sent in a message, not a file name. With version control, it is immediately clear what the most current version is - no matter the file name. No room for interpretation. No need to start guessing about the delta between the current version and another version.
+In other, more blatant, applied words: naming files like `final_version_your_name.R` or `final_final_correction_collaboratorX_20200114.R` 
+is like naming your WiFi `dont_park_the_car_in_the_frontyard` or `be_quiet_at_night` to communicate with your neighbors.  Information is supposed to be sent in a message, not a file name. With version control, it is immediately clear what the most current version is, no matter the file name. There is no room for interpretation. There is no need to start guessing about the delta between the current version and another version.
 
-Also, you can easily try out different scenarios on different branches and merge them back together if you need to. Version control is a well established industry standard in software development. And it is relatively easy to adopt. With datasets growing and complexity, it is only natural to improve management of the code that processes these data. 
+Also, you can easily try out different scenarios on different branches and merge them back together if you need to. Version control is a well-established industry standard in software development. And it is relatively easy to adopt. With datasets growing in complexity, it is only natural to improve management of the code that processes these data. 
 
-Academia has probably been the only place that would allow you to dive into hacking at somewhat complex problems for several years w/o ever taking notice of version control. As a social scientist who rather collaborates in small groups and writes moderate amount of code, have you ever thought about how to collaborate with 100+ persons in a big software project? Or to manage ten thousand lines of code and beyond? Version control is an important reason why these things work. And it's been around for decades. But enough about the rant... 
+Academia has probably been the only place that would allow you to dive into hacking at somewhat complex problems for several years without ever taking notice of version control. As a social scientist who rather collaborates in small groups and writes moderate amount of code, have you ever thought about how to collaborate with more 100 than persons in a big software project? Or to manage 10,000 lines of code and beyond? Version control is an important reason these things work. And it's been around for decades. But enough about the rant.
 
 
 ## How Does Git Work? 
 
-
-This introduction tries narrow things down to the commands that you'll need if want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely Atlassian's Bitbucket, GitHub and Gitlab offer comprehensive introductions as well as advanced articles or videos to learn git online.
+This introduction tries to narrow things down to the commands that you'll need if you want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely, Atlassian's Bitbucket, GitHub and GitLab offer comprehensive introductions as well as advanced articles or videos to learn git online.
 
 
 The first important implication of decentralized version control is that all versions are stored on the local machines of every collaborator, not just on a remote server (this is also a nice, natural backup of your work). So let's consider a single local machine first.
 
-![Schematic illustration of an example git workflow including remote repositories. (source: own illustation)](images/decentralized.png)
+![Schematic illustration of an example git workflow including remote repositories. (Source: own illustation.)](images/decentralized.png)
 
 
 
-Locally, a git repository consists of a *checkout* which is also called current *working copy* soon. This is the status of the file that your file explorer or your editor will see when you use them to open a file. To check out a different version, one needs to call a commit by its unique commit hash and checkout that particular version. 
+Locally, a git repository consists of a *checkout* which is also called current *working copy*. This is the status of the file that your file explorer or your editor will see when you use them to open a file. To check out a different version, one needs to call a commit by its unique commit hash and check out that particular version. 
 
-If you want to add new files to version control or bundle changes to some existing files into a new commit, add these files to the staging area, so they get committed next time a commit process is triggered. Finally, committing all these staged changes under another commit ID a new version is created. 
+If you want to add new files to version control or bundle changes to some existing files into a new commit, add these files to the staging area, so they get committed next time a commit process is triggered. Finally, committing all these staged changes under another commit ID, a new version is created. 
 
 
 ## Moving Around
 
-So let's actually do it. Here's a three-stage walk through of git commands that should have you covered in most use cases a researcher will face. Note that git has some pretty good error messages that guess what could have gone wrong. Make sure to read them carefully. Even if you can't make sense of them, your online search will be a lot more efficient when you include these messages. 
+So let's actually do it. Here's a three-stage walk-through of git commands that should have you covered in most use cases a researcher will face. Note that git has some pretty good error messages that guess what could have gone wrong. Make sure to read them carefully. Even if you can't make sense of them, your online search will be a lot more efficient when you include these messages. 
 
 **Stage 1: Working Locally**
 
@@ -52,24 +50,23 @@ So let's actually do it. Here's a three-stage walk through of git commands that 
 
 ```{r gittable, eval=TRUE,message=FALSE, echo=FALSE}
 #| label: tbl-gitbasics
-#| tbl-cap: "Basic commands for working with git"
+#| tbl-cap: "Basic Commands for Working with Git"
 
 library(kableExtra)
 d <- data.frame("Command" = c("git init",
                               "git status",
                               "git add filename.py",
-                              "git commit -m 'meaningful msg'",
+                              'git commit -m "meaningful msg"',
                               "git log",
                               "git checkout some-commit-id",
                               "git checkout main-branch-name"),
-                "Effect" = c("put current directory and all its subdirs under version control.",
+                "Effect" = c("puts current directory and all its subdirs under version control.",
                              "shows status",
                              "adds file to tracked files",
                              "creates a new version/commit out of all staged files",
-                             "show log of all commit messages on a branch",
-                             "go to commit, but in detached HEAD state",
-                             "leave temporary state, go back to last commit"),
-                
+                             "shows log of all commit messages on a branch",
+                             "goes to commit, but in detached HEAD state",
+                             "leaves temporary state, goes back to last commit"),                
                 stringsAsFactors = FALSE)
 kable(d,"latex", booktabs = TRUE,
       escape = FALSE) |>
@@ -78,16 +75,14 @@ kable(d,"latex", booktabs = TRUE,
 
 ```
 
-
 **Stage 2: Working with a Remote Repository**
 
 Though git can be tremendously useful even without collaborators, the real fun starts
 when working together. The first step en route to getting others involved is to add a remote repository. @tbl-gittable2 shows essential commands for working with a remote repository.
 
-
 ```{r gittable2, eval=TRUE,message=FALSE, echo=FALSE}
 #| label: tbl-gittable2
-#| tbl-cap: "Commands for working with a remote repository"
+#| tbl-cap: "Commands for Working with a Remote Repository"
 library(kableExtra)
 d <- data.frame("Command" = c("git clone",
                               "git pull",
@@ -96,11 +91,11 @@ d <- data.frame("Command" = c("git clone",
                               "git remote -v",
                               "git remote set-url origin https://some-url.com"),
                 "Effect" = c("creates a new repo based on a remote one",
-                             "get all changes from a linked remote repo",
-                             "deploy all commit changes to the remote repo",
-                             "fetch branches that were created on remote",
-                             "show remote repo URL",
-                             "set URL to remote repo"),
+                             "gets all changes from a linked remote repo",
+                             "deploys all commit changes to the remote repo",
+                             "fetches branches that were created on remote",
+                             "shows remote repo URL",
+                             "sets URL to remote repo"),
                 stringsAsFactors = FALSE)
 kable(d,"latex", booktabs = TRUE,
       escape= FALSE) |>
@@ -117,17 +112,19 @@ without stepping on someone else's feet. Through branches, repositories can acti
 
 ```{r, eval=TRUE,message=FALSE, echo=FALSE}
 #| label: tbl-gitbranches
-#| tbl-cap: "Commands for for handling multiple branches"
+#| tbl-cap: "Commands for for Handling Multiple Branches"
 
 library(kableExtra)
 d <- data.frame("Command" = c("git checkout -b branchname",
                               "git branch",
                               "git checkout branchname",
+                              "git switch branchname",
                               "git merge branchname"),
-                "Effect" = c("create new branch named branchname",
-                             "show locally available branches",
-                             "switch to branch named branchname",
-                             "merge branch named branchname into current branch"
+                "Effect" = c("creates new branch named branchname",
+                             "shows locally available branches",
+                             "switches to branch named branchname",
+                             "switches to branch named branchname",
+                             "merges branch named branchname into current branch"
                 ),
                 stringsAsFactors = FALSE)
 kable(d,"latex", booktabs = TRUE,
@@ -144,27 +141,23 @@ kable(d,"latex", booktabs = TRUE,
 
 In most cases, *git* is quite clever and can figure out which is the desired state of 
 a file when putting two versions of it together. When git's *recursive strategy* is possible, git will merge versions automatically. When the same lines were affected in different versions, git cannot tell 
-which line should be kept. Sometimes you would even want to keep both changes. 
+which line should be kept. Sometimes, you would even want to keep both changes. 
 
 But even in such scenario, fixing the conflict is easy. Git will tell you that your last command
 caused a merge conflict and which files are conflicted. Open these files and see all parts of the file that
 are in question. 
 
 
-![Ouch! We created a conflict by editing the same line in the same file on different branches and trying to, but these branches back together. (source: screenshot own GitHub repository.)](images/merge_conflict.png)
+![Ouch! We created a conflict by editing the same line in the same file on different branches. Trying merge these branches created a conflict. (Source: screenshot of own GitHub repository.)](images/merge_conflict.png)
 
-Luckily, git marks the exact spot where the conflict happens. Good text editors / IDEs 
-ship with cool colors to highlight all our options. 
+Luckily, git marks the exact spot where the conflict happens. Good text editors/IDEs ship with cool colors to highlight all our options. Some of the fancier editors even have git conflict resolve plugins that let you walk through all conflict points.  
 
-![Go for the current status or take what's coming in from the a2 branch? (source: screenshot of Sublime text editor)](images/sublime_conflict.png)
+![Go for the current status or take what's coming in from the a2 branch? (Source: screenshot of Sublime text editor.)](images/sublime_conflict.png)
 
-
-Some of the fancier editors even have git conflict resolve plugins that let you walk through all conflict points. 
-
-![In VS Code, you can even select the option by clicking. (source: screenshot VS Code IDE)](images/vscode_conflict.png)
+![In VS Code, you can even select the option by clicking. (Source: screenshot VS Code IDE.)](images/vscode_conflict.png)
 
 At the end of the day, all do the same, i.e., remove the unwanted part, including all the marker gibberish. 
-After you have done so, save, commit and push (if you are working with a remote repo) . Don't forget to make sure you kinked out ALL conflicts.  
+After you have done so, save, commit and push (if you are working with a remote repo) . Don't forget to make sure you kinked out all conflicts.  
 
 
 ## Collaboration Workflow
@@ -181,7 +174,7 @@ Make sure you are past the mere ability to describe and explain git basics, make
 If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each other's feet.
 This is reasonable because, git aside, it is rarely efficient to work asynchronously on exact the same lines of code anyway.
 Nevertheless, there is a reason why *feature-branch-based* workflows became 
-very popular among developers: Imagine you collaborating in asynchronous fashion, maybe with someone in another timezone.
+very popular among developers: Imagine yourself collaborating in asynchronous fashion, maybe with someone in another time zone.
 Or with a colleague, who works on your project, but in a totally different month during the year.
 Or, most obviously, with someone you have never met.
 Forks and *feature-branch-based* workflows are the way a lot of modern open source projects tackle the above situations. 
@@ -193,10 +186,7 @@ You join as a collaborator and are allowed to push changes now.
 It's certainly not a good idea to simply add things without review to a project's production.
 Like if you got access to modify the institute's website, and you made your first changes and all your changes go straight to production. Like this:
 
-<div class="yellow">&nbsp;</div>
-<div id="pink">
-It used to be subtle and light gray. I swear!
-</div>
+\textcolor{pink}{It used to be subtle and light gray. I swear!}
 
 Bet everybody on the team took notice of the new team member by then. In a feature branch workflow, you would start from the latest production version. Remember, git is decentralized, and you have all versions of your team's project on your local machine.
 Create a new branch named indicative of the feature you are looking to work on. 
@@ -218,24 +208,23 @@ This will add your branch called *colorways* to the remote repository.
 If you are on any major git platform with your project, it will come with a decent web GUI.
 Such a GUI is the most straightforward way to do the next step: get your Pull Request (PR) out.
 
-![GitHub pull request dialog: Select the *pull request*, choose which branch you merge into which target branch. (source: own GitHub repository.)](images/pr.png)
+![GitHub Pull Request dialog: Select the *Pull Request*; choose which branch you merge into which target branch. (Source: own GitHub repository.)](images/pr.png)
 
-As you can see, git will check whether it is possible to merge automatically w/o interaction.
+As you can see, git will check whether it is possible to merge automatically without interaction.
 Even if that is not possible, you can still issue the pull request.
 When you create the request, you can also assign reviewers, but you could also do so at a later stage. 
 
 
-Even after a PR was issued you can continue to add commits to the branch about to be merged. 
-As long as you do not merge the branch through the Pull Request, commits are added to the branch.
+Even after a PR was issued, you can continue to add commits to the branch about to be merged. 
+As long as you do not merge the branch through the PR, commits are added to the branch.
 In other words, your existing PR gets updated. This is a very natural way to account for reviewer comments. 
 
 
-::: {.callout-note}
-**Pro-Tipp**: 
+::: {.callout-note} 
 Use commit messages like 'added join to SQL query, closes #3'. The key word 'closes' or 'fixes', will automatically close issues referred to when merged into the main branch.
 :::
 
-Once the merge is done, all your changes are in the main branch and you and everyone else can pull the main branch that now contains your new feature. Yay!
+Once the merge is done, all your changes are in the main branch, and you and everyone else can pull the main branch that now contains your new feature. Yay!
 
 
 ### Pull Requests from Forks
@@ -243,12 +232,12 @@ Once the merge is done, all your changes are in the main branch and you and ever
 Now, let's assume you are using an open source software created by someone else.
 At some point, you miss a feature that you feel is not too hard to implement. 
 After googling and reading up a bit, you realize others would like to have these features, too, but the original authors did not find the time to implement it yet. 
-Hence, you get to work yourself.
-Luckily, the project is open source and up on GitHub, so you can simply get you version of, i.e., *fork* the project to your own GitHub account (just click the *fork* button and follow the instructions) .
+Hence, you get to work.
+Luckily, the project is open source and up on GitHub, so you can simply get your version of it, i.e., *fork* the project to your own GitHub account (just click the *fork* button and follow the instructions) .
 
 Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository, your remote git platform will still remember where you got it from and allows you to issue a pull request to the original author. The original authors can now review the pull request, see the changes, and decide whether they are fine with the feature and its implementation. 
 
-There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussions are very context aware and sooner or later, you will get your first pull request approved and merged. In that case, congratulations - you have turned yourself into a team-oriented open source collaborator! 
+There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussions are very context-aware and sooner or later, you will get your first pull request approved and merged. In that case, congratulations -- you have turned yourself into a team-oriented open source collaborator! 
 
 
 ### Rebase vs. Merge
@@ -257,17 +246,17 @@ Powerful systems often provide more than one way to achieve your goals.
 In the case of git, putting together two branches of work -- a very vital task, is exactly such a case:
 We can either *merge* or *rebase* branches. 
 
-While *merge* keeps the history intact, *rebase* is a history altering command. 
+While *merge* keeps the history intact, *rebase* is a history-altering command. 
 Though most people are happy with the more straightforward *merge* approach, a bit of context is certainly helpful. 
 
-Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories becomes out of sync because someone else adds to the main branch while you keep adding to the feature branch, you can either merge or rebase to put the two together. 
+Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories become out of sync because someone else adds to the main branch while you keep adding to the feature branch, you can either merge or rebase to put the two together. 
 
 Sitting on a checkout of the feature branch, a merge of the main branch would simply create an additional merge commit sequentially after the last commit of the feature branch. This merge commit contains the changes of both branches, no matter if they were automatically merged using the standard recursive strategy or through resolving a merge conflict. 
 
 As opposed to that, rebase would move all changes to main to before the feature branch started, then sequentially add all commits of the feature branch.
-That way the remains linear, history looks cleaner and does not contain those artificial merge commits. 
+That way your history remains linear, looks cleaner and does not contain artificial merge commits. 
 
-So, when should we merge, and when should rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main because you would have a different main branch than other developers than. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. 
+So, when should we merge, and when should we rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main because you would have a different main branch than other developers. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. 
 The following Atlassian tutorial^[https://www.atlassian.com/git/tutorials/merging-vs-rebasing] offers more insights and illustrations to deepen your understanding of the matter.  
 
 

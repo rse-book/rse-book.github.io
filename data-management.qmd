@@ -23,13 +23,13 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ```
 
-Admittedly, I have said the same thing about @sec-git on version control, yet *data management* may be the single most impactful chapter of this book. This may be the case in particular in case you come from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long term) data management is a step into a bigger world. 
+Admittedly, I have said the same thing about @sec-git on version control, yet *data management* may be the single most impactful chapter of this book. This may be the case in particular if you come from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long-term) data management is a step into a bigger world. 
 
-After decades of information engineering and computer science, some can't help but wonder why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully, this chapter helps the reader to assess how far they wanted to dig into data management. 
+After decades of information engineering and computer science, some can't help wondering why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully, this chapter helps the reader to assess how far they wanted to dig into data management. 
 
 ## Forms of Data 
 
-In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mostly trained to handle different flavors of two-dimensional data, as in **one-observation-one-row**. Ad hoc studies conducted once result in *cross-sectional data*: one line per observation, columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as *time series*. Multivariate time series, i.e., multi-variable, longitudinal data are often referred to as *panel data*. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet like tables. Here are a few easy-to-reproduce examples using popular R demo datasets. 
+In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mainly trained to handle different flavors of two-dimensional data, as in **one-observation-one-row**. Ad hoc studies conducted once result in *cross-sectional data*: one line per observation; columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as *time series*. Multivariate time series, i.e., multivariable, longitudinal data are often referred to as *panel data*. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet-like tables. Here are a few easy-to-reproduce examples using popular R demo datasets. 
 
 
 ```{r}
@@ -63,7 +63,7 @@ multi_ts
 
 ::: {.callout-note appearance="simple"} 
 **A Note on Long Format vs. Wide Format**
-The above multi-variable time series is shown in what the data science community calls *wide* format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so called *long* format shown below. The long format is a machine friendly, flexible way to represent multi-variable data without altering the number of columns with more variables. 
+The above multivariable time series is shown in what the data science community calls *wide* format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so-called *long* format shown below. The long format is a machine-friendly, flexible way to represent multi-variable data without altering the number of columns with more variables. 
 
 :::
 
@@ -76,9 +76,9 @@ ts_dt(multi_ts)[1:15,]
 
 The ability to transform data from one format into the other and to manipulate both formats is an essential skill for any data scientist or data engineer. It is important to point out that the ability to do the above transformations effortlessly is an absolute go-to skill for people who want to use programming to run analysis. (Different analyses or visualizations may require one form or the other and ask for quick transformation).
 
-Hence, popular data science programming languages offer great tool sets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how. 
+Hence, popular data science programming languages offer great toolsets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how. 
 
-Yet, not all information suits a two-dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data^[The original GeoJSON file from the example can be found at https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson.], let's take a look at the map file and code example case study in @sec-map. In memory, i.e., in our R session, the data is represented in a list that contains multiple list may contain more lists nested inside. 
+Yet, not all information suits a two-dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data^[The original GeoJSON file from the example can be found at https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson.], let's take a look at the map file and code example case study in @sec-map. In memory, i.e., in our R session, the data is represented in a list that contains multiple list elements and may contain more lists nested inside. 
 
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -101,7 +101,7 @@ json_ch <- jsonlite::read_json(
 ls.str(json_ch)
 ```
 
-Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest [@rvest] or beautiful soup [@soup] parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website's DOM. For a DOM parsing example, see the case study @sec-webscrape. 
+Another example of nested but structured data is HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest [@rvest] or BeautifulSoup [@soup] parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website's DOM. For a DOM parsing example, see the case study in Chapter @sec-webscrape. 
 
 
 ## Representing Data in Files
@@ -112,7 +112,7 @@ Just like in office or image editing software, the intuitive way to store data p
 
 ### Spreadsheets
 
-Based on our two dimensions focused intuition and training, spreadsheets are the on-disk analog of data.frames, data.tables and tibbles. Formats like **.csv** or **.xlsx** are the most common way to represent two-dimensional data on disk.  
+Based on our two-dimensional focused intuition and training, spreadsheets are the on-disk analog of data.frames, data.tables and tibbles. Formats like **.csv** or **.xlsx** are the most common way to represent two-dimensional data on disk.  
 On the programming side, the ubiquity of spreadsheets leads to a wide variety of libraries to parse and write different spreadsheet formats. 
 
 ```{python}
@@ -125,7 +125,7 @@ df.to_csv("an_example.csv", sep=";",encoding='utf-8')
 
 ```
 
-Comma separated values (.csv)^[Note that commas are not always necessarily the separator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.] are good and simple option. Their text-based nature makes .csv files language agnostic and human-readable through a text editor. 
+Comma-separated values (.csv)^[Note that commas are not always necessarily the separator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.] are a good and simple option. Their text-based nature makes .csv files language agnostic and human-readable through a text editor. 
 
 ```
 ;column1;column2
@@ -159,9 +159,9 @@ toJSON(li, pretty = TRUE)
 
 ```
 
-The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but is more flexible than the former. 
+The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON, both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but it is more flexible than the former. 
 
-Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more light weight and close to 'the web' while XML is the traditional, very explicit no-nonsense format.  XML has a **Document Type Definition (DTD)** that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML based definition. SDMX^[SDMX.org (https://sdmx.org) about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
+Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to "the web" while XML is the traditional, very explicit no-nonsense format.  XML has a **Document Type Definition (DTD)** that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX^[SDMX (https://sdmx.org) stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
 
 
 The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like *Contact* or *ID* in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.  
@@ -200,7 +200,7 @@ load("bundle.RData")
 
 ### Interoperable File Formats
 
-Interoperable file formats cover some middle ground between the options described above. The *cross-language in-memory development platform* Apache Arrow^[https://arrow.apache.org/] is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you're interested in a modern, yet established cross environment data science project, digging deeper into Apache Arrow is certainly a fun experience. 
+Interoperable file formats cover some middle ground between the options described above. The *cross-language in-memory development platform* Apache Arrow^[https://arrow.apache.org/] is a well-established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you're interested in a modern, yet established cross-environment data science project, digging deeper into Apache Arrow is certainly a fun experience. 
 
 From the Apache Arrow documentation:
 
@@ -214,7 +214,7 @@ write_parquet(starwars, file_path_sw)
 ```
 
 The above R code writes the *starwars* demo dataset from the *dplyr* R package to a temporary .parquet file. 
-The arrow R packages comes with the necessary tool set to write the open source columnar^[see also] .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R. 
+The {arrow} R package [@arrow] comes with the necessary toolset to write the open source columnar^[see also] .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R. 
 
 
 
@@ -232,12 +232,12 @@ sw = Parquet.File("starwars.parquet")
 ```
 
 
-When I composed this example reading and writing parquet files in different environments I ran into several compatibility issues. This shows that the level of interoperability is not at the same level as the interoperability of text files. 
+When I composed this example, reading and writing *Parquet* files in different environments, I ran into several compatibility issues. This shows that the level of interoperability is not the same as the interoperability of text files. 
 
 
 #### A Note on Overhead {#columnar}
 
-The *parquet* format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that parquet comes with some overhead, which may eat up gains if datasets are small. Consider our *starwars* dataset. At 87 rows and 14 columns, the dataset is rather small.
+The *parquet* format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that *Parquet* comes with some overhead, which may eat up gains if datasets are small. Consider our *starwars* dataset. At 87 rows and 14 columns, the dataset is rather small.
 
 ```{r}
 library(readr)
@@ -249,7 +249,7 @@ round(file.size("starwars.parquet") /
     
 ```
 
-Hence, the overhead of a schema implementation and other meta information outweighs parquet's compression for such a small dataset, leading to a parquet file that is almost 1.5 times larger than the corresponding csv file. Yet, parquet already turns the tables for the *diamonds* demo dataset from the *ggplot2* R package, which is by no means a large dataset. 
+Hence, the overhead of a schema implementation and other meta information outweighs *Parquet's* compression for such a small dataset, leading to a *Parquet* file that is almost 1.5 times larger than the corresponding csv file. Yet, *Parquet* already turns the tables for the *diamonds* demo dataset from the *ggplot2* R package, which is by no means a large dataset. 
 
 ```{r}
 library(ggplot2)
@@ -262,17 +262,15 @@ round(file.size("diamonds.parquet") /
 
 ```
 
-The parquet file for the *diamonds* dataset has roughly one fifth of the size of the corresponding text file. 
+The *Parquet* file for the *diamonds* dataset has roughly one fifth of the size of the corresponding text file. 
 This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from
 decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change. 
 
 ## Databases
 
-Given the options that file based approaches provide, what is (a) the difference and (b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
+Given the options that file-based approaches provide, what is (a) the difference and (b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
 
-
-
-The above figure shows a terminal client which users use to send queries written in a query language. The client sends these queries to a database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). This leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases. 
+Database users use a client program and a query language to send queries written to a database. The client sends these queries to the database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). Using such a query language leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases. 
 
 
 ```{sql, eval=FALSE}
@@ -301,7 +299,7 @@ head(res)
 dbDisconnect(con)
 ```
 
-Obviously, the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form. 
+Obviously, the above example barely shows the tip of the iceberg, as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form. 
 
 ![The iconic Postgres elephant logo](images/postgres.png)
 
@@ -342,21 +340,21 @@ Return cars that are more fuel efficient than 30 miles per gallon:
 dbGetQuery(con, "SELECT * FROM mtcars WHERE mpg > 30")
 ```
 
-MySQL^[https://www.mysql.com/] can do a little more and also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium level web projects around the world. In its early days, MySQL used to be an independent open source project, but was later on acquired by database Juggernaut Oracle as a lite version to go with its flagship product. 
+MySQL^[https://www.mysql.com/] can do a little more and is also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium-level web projects around the world. In its early days, MySQL used to be an independent open source project, but it was later on acquired by database Juggernaut Oracle as a light version to go with its flagship product. 
 
-While certainly doing its job in millions of installations, MySQL it is not in at the same level as [Microsoft SQL Server^[https://www.microsoft.com/en-us/sql-server/sql-server-2019] (MSSQL), 
-PostgreSQL^[https://www.postgresql.org/] and Oracle Database^[https://www.oracle.com/database/technologies/] and I suggest one of these three enterprise level databases as data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. 
-Among the three, personally I would always lean towards the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either of MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice. 
+While certainly doing its job in millions of installations, MySQL is not in at the same level as [Microsoft SQL Server^[https://www.microsoft.com/en-us/sql-server/sql-server-2019] (MSSQL), 
+PostgreSQL^[https://www.postgresql.org/] and Oracle Database^[https://www.oracle.com/database/technologies/], and I suggest one of these three enterprise-level databases as a data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. 
+Among the three, personally I would always lean toward the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect, may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice. 
 
-Another database management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so overwhelmingly positive and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer an SQL interface, but is very different in its aims from the traditional SQL databases. DuckDB is serverless and allows accessing parquet files via a very fast SQL interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but not so suitable for enterprise data warehousing. 
+Another database management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer an SQL interface, but it is very different in its aims from the traditional SQL databases. DuckDB is serverless and allows accessing *Parquet* files via a very fast SQL interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing. 
 
 
 ### A Word on Non-Relational Databases
 
-Among other things, relational databases are ACID (Atomicity, Consistency, Isolation, and Durability) compliant and ask for very little in return to provide us with a framework to keep our data quality high for decades. So unless, you have a very specific use case that translates to a compelling reason to use a non-relational database -- stick to SQL. Document oriented storage or very unstructured information could be such a reason to use a non-relational database, yet their JSON support allows to also handle JSON in database cells.  About a decade ago, mongoDB^[https://www.mongodb.com/] gained traction, partly piggybacking the success of JavaScript and server-side JavaScript in particular. In web development the MEAN (mongoDB, expressjs, angular and node) stack become popular and with the bundle, the idea of non-relational databases as fast track to a backend spread. 
+Among other things, relational databases are ACID (Atomicity, Consistency, Isolation, and Durability) compliant and ask for very little in return to provide us with a framework to keep our data quality high for decades. So unless, you have a very specific use case that translates to a compelling reason to use a non-relational database stick to SQL. Document-oriented storage or very unstructured information could be such a reason to use non-relational databases, yet their JSON support allows to also handle JSON in database cells.  About a decade ago, mongoDB^[https://www.mongodb.com/] gained traction, partly piggybacking the success of JavaScript and server-side JavaScript in particular. In web development, the MEAN (mongoDB, expressjs, angular and node) stack become popular, and, with the bundle, the idea of non-relational databases as fast track to a backend spread. 
 
-Columnar stores, which are also considered non-relational, are conceptional very similar to relational databases, though denormalized and designed to structure sparse data. Database systems like Apache Cassandra^[https://cassandra.apache.org/] are designed to scale horizontally and be highly available, managing massive amounts of data. Cloud applications that distribute data across multiple nodes for high availability benefit from such an approach. Other options include Redis^[https://redis.io/] or Couchbase^[https://www.couchbase.com/].
-If you are not happy with the 'beyond-the-scope-of-this-book' argument, blogging experts like Lukas Eder^[https://blog.jooq.org/tag/nosql/] maybe biased but much better educated (and fun) to educate you here.
+Columnar stores, which are also considered non-relational, are conceptionally similar to relational databases, though denormalized and designed to structure sparse data. Database systems like Apache Cassandra^[https://cassandra.apache.org/] are designed to scale horizontally and be highly available, managing massive amounts of data. Cloud applications that distribute data across multiple nodes for high availability benefit from such an approach. Other options include Redis^[https://redis.io/] or Couchbase^[https://www.couchbase.com/].
+If you are not happy with the "beyond-the-scope-of-this-book" argument, blogging experts like Lukas Eder^[https://blog.jooq.org/tag/nosql/] maybe biased but much better educated (and fun) to educate you here.
 
 
 ## Non-Technical Aspects of Managing Data
@@ -364,18 +362,18 @@ If you are not happy with the 'beyond-the-scope-of-this-book' argument, blogging
 The fact that we can do more data work single-handedly than ever before does not only equate to more options.
 It also means we need to be aware of new issues and responsibilities.
 Those responsibilities range from leading by example when it comes to etiquette and ethical aspects, to sticking to privacy rules and complying with security standards. 
-In addition, to normative restrictions that come with handling data, the options and choices of data dissemination are a realm of its own. 
-Just like software publications, you should not just 'drop' data without a license and instructions on acceptable use of the data. 
+In addition, to normative restrictions that come with handling data, the options and choices of data dissemination are a realm of their own. 
+Just like software publications, you should not just "drop" data without a license and instructions on acceptable use of the data. 
 
 
 ### Etiquette
 
-Just because content is publicly available on a website, it does not automatically mean that bulk downloads, aggregation and re-publishing are ok.
-For example, the ability to scrape a website daily and doing so with good intent for science does not mean a website's AUP (Acceptable Use Policy) allows to systematically archive its content. 
+Just because content is publicly available on a website does not automatically mean that bulk downloads, aggregation and republishing are ok.
+For example, the ability to scrape a website daily and doing so with good intent for science does not mean a website's Acceptable Use Policy (AUP) allows to systematically archive its content. 
 
 
 ::: {.callout-important appearance="simple"} 
-Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. --CRAN description of the polite R package.
+Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. -- CRAN description of the {polite} R package [@polite].
 :::
 
 
@@ -383,23 +381,22 @@ In other words, the new type of researcher discussed in this book needs to be aw
 
 ### Security
 
->"I ain't got nothing to hide. I don't care about people reading my stuff." -- an argument I have heard about a zillion times. 
+>I ain't got nothing to hide. I don't care about people reading my stuff. -- an argument I have heard about a zillion times. 
 
-People who argue like that do not only endanger their environment, they contribute to a less secure internet at large, as they leave their device open to contribute to malicious activity. It does not have to be you who has been trusted to work with data that qualify as sensitive. 
-Someone on your team or within your network might have been, and that person may trust you more than a stranger and be less vigilant when harmful actions are executed in your name. 
+People who argue like that do not only endanger their environment, they also contribute to a less secure internet at large, as they leave their device open to contribute to malicious activity. It does not have to be you who has been trusted to work with data that qualify as sensitive. 
+Someone on your team or within your network might have been, and that person may trust you more than a stranger and may be less vigilant when harmful actions are executed in your name. 
 This is why you are *obliged* to care about security. 
-As in, do *NOT* store your credentials in your scripts.
-As in, passwords are *NOT* part of your analysis. 
-You may accidentally push your password to GitHub, where it is not only publicly available but also hard to delete for beginners. 
+As in, do *not* store your credentials in your scripts.
+As in, passwords are *not* part of your analysis. 
+You may accidentally push your password to GitHub, where it is not only publicly available but also hard to truly delete for beginners. 
 Make sure to choose secure passwords.
-Use a password manager, so the passwords do not need to be your cat's name for you to remember. 
-Use a password manager so you can afford not to have the same passwords for multiple applications. 
+Use a password manager, so the passwords do not need to be your cat's name for you to remember. Also, with a password manager you can afford *not* to have the same passwords for multiple applications. 
 Use a password manager so you can afford to change your passwords. 
-Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username / password combination. 
-This is also a good way to connect to a remote server via ssh. 
+Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username/password combination. 
+This is also a good way to connect to a remote server via SSH. 
 
-In addition to the above brainy smurf advice, let me mention security as a reason to consider using a database to manage and archive your data for the long haul. 
-Enterprise level databases allow for granular access management and help to stay ahead of users and their rights regarding your database's entries. 
+In addition to the above Brainy Smurf advice, let me mention security as a reason to consider using a database to manage and archive your data for the long haul. 
+Enterprise-level databases allow for granular access management and help to stay ahead of users and their rights regarding your database's entries. 
 
 
 ### Privacy 
@@ -409,11 +406,11 @@ Though I cannot comprehensively cover privacy in a section, it is important to m
 When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. 
 It is important to understand that exposure does not stop at names. 
 A single extraordinary feature or an exotic combination of features can identify an individual within a dataset, or at least expose a group. 
-This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place and/or individuals were not aware that merging was possible. 
-So, what we can we as researchers learn from here, except from concerns and further complication of our work? 
+This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place, and/or individuals were not aware that merging was possible. 
+So, what can we as researchers learn from here, except from concerns and further complication of our work? 
 First, licenses and usage policies are a service to users of the data. 
-Second, awareness of what is sensitive data is a skill that is valuable to have on a team. 
-That being said, management of in-depth knowledge is rather easy to organize in centralized fashion. 
+Second, awareness of what is sensitive data is a valuable skill to have on a team. 
+That being said, management of in-depth knowledge is rather easy to organize in a centralized fashion. 
 Most universities and larger corporations will have an officer to run these things by. 
 
 
@@ -421,8 +418,8 @@ Most universities and larger corporations will have an officer to run these thin
 
 Yet, there is more to managing your data's exposure than just making sure everything is encrypted and locked up. 
 Publication of data makes your results reproducible and improves trust in said results. 
-As a consequence there is a notable crescendo in the claim for reproducible research.
-While reproducible research is great, I would like to raise awareness that essentially all solutions created and advertised to improve reproducibilty implicitly assume the researcher deals with datasets obtained through a study. 
+As a consequence, there is a notable crescendo in the claim for reproducible research.
+While reproducible research is great, I would like to raise awareness that essentially all solutions created and advertised to improve reproducibility implicitly assume the researcher deals with datasets obtained through a study. 
 In other words, it is implied that your work is not about monitoring an ongoing process.  
 
 
@@ -430,27 +427,27 @@ In other words, it is implied that your work is not about monitoring an ongoing 
 
 Research repositories like Zenodo^[https://zenodo.org] that allow to archive data follow a snapshot thinking:
 A catalog entry refers to a particular version of an research paper, report, software or dataset. 
-Whenever there is an update a new version is added to a catalog entry. 
-Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility it also helps data workers get credit for their contribution. 
-Fortunately, feeding research repositories is a task that is easy to automate thanks [great integration, APIs and community work](publishing.qmd#datapub). 
+Whenever there is an update, a new version is added to a catalog entry. 
+Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility, it also helps data workers get credit for their contribution. 
+Fortunately, feeding research repositories is a task that is easy to automate thanks to [great integration, APIs and community work](publishing.qmd#datapub). 
 
 
 #### Open Data {.unnumbered}
 
-Open Data archhives are special form of repositories. The term open data refers to publicly available data that are available free of license costs and in machine-readable fashion. 
+Open Data archives are a special form of repositories. The term "open data" refers to publicly available data that are available free of license costs and in machine-readable fashion. 
 
 >“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefinition.org
 
-Because of approaches such as the Swiss governments' "open by default", open government data (OGD) has become a common form of open data. 
+Because of approaches such as the Swiss government's "open by default," open government data (OGD) has become a common form of open data. 
 The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. 
 From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. 
 Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets.
 In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. 
-Initiatives like SDMX (Statistical Data and Meta Exchange)^[https://sdmx.org/] aim to improve exchange of data *and* data descriptions. 
+Initiatives like SDMX (Statistical Data and Meta eXchange)^[https://sdmx.org/] aim to improve exchange of data *and* data descriptions. 
 Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software.
-Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and re-publishes them in in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub organization.
+Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub organization.
 
->"openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector" -- openwashdata.org
+>openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector -- openwashdata.org
 
 
 
