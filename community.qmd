@@ -6,39 +6,39 @@ The support of some of the best communities is so good it may very well outperfo
 Still, developer communities do have their idiosyncrasies.
 This section intends to help overcome entry barriers and encourage the reader to connect to the developer communities -- even if one is not a regular active contributor. 
 
-![R Community Explorer by Ben Ubah. (source: benubah.github.io/r-community-explorer/rugs.html)](images/community_explorer.png)
+![R Community Explorer by Ben Ubah. (Source: benubah.github.io/r-community-explorer/rugs.html)](images/community_explorer.png)
 
 The above figure shows a screenshot of an interactive community explorer tool for the R community.
-Users can explore user groups and such as R user groups or R Ladies chapters around the world. At the time of writing, the tool counted more than 775'000 members of R user groups worldwide and more than 100'000 members of RLadies.
+Users can explore user groups and such as R user groups or RLadies chapters around the world. At the time of writing, the tool counted more than 775,000 members of R user groups worldwide and more than 100,000 members of RLadies.
 The explorer tool and its numbers should not only show you the size of the community, but also help to connect to what has become a very global community. 
 
 Apart from user groups of programming languages, the Society of Research Software Engineering^[https://society-rse.org/] is a good way to connect.
 In addition to the UK-based origin, the society has expanded to other countries and has derivatives in, e.g., the United States^[https://us-rse.org/] or Germany^[https://de-rse.org/de/index.html].
-The main idea of research software engineering societies is to work on a role of software engineering in academia that accounts for the importance and impact of software on modern research. This goes from education in programming to lobbying for acknowledgement of software engineering in academic resumes. 
+The main idea of research software engineering societies is to work on a role of software engineering in academia that accounts for the importance and impact of software on modern research. This goes from education in programming to lobbying for acknowledgement of software engineering in academic resumés. 
 
 The below sections introduce different channels to connect and interact with the community. 
-Of course, one does not have to use all of these tools and be active in all of these communities, but rather pick some that suit our way of communication. 
+Of course, we do not have to use all of these tools and be active in all of these communities, but rather pick some that suit our way of communication. 
 
-## Stay up to Date and a Vastly Evolving Field -- Social Media
+## Stay Up-to-Date in a Vastly Evolving Field -- Social Media
 
-I hate to admit it because I am not a big fan of social media but it has definitely become an important channel for professional use also to me.
+I hate to admit it because I am not a big fan of social media, but it has definitely become an important channel for professional use also to me.
 Social media is a great way to get my regular dose of what's new in tech. 
 The popularity of platforms varies locally but also evolves pretty dynamically over time. 
-Twitter has been the platform of choice for many egineers around data science for almost a decade, before large chunks turned their back on the chirping platform. 
-I am still there^[https://twitter.com/whatsgoodio], but may have to find a new tool to get feedback and bookmark good reads.
+*X*, back when it was called Twitter, had been the platform of choice for many engineers around data science for almost a decade, before large chunks turned their back on the chirping platform. 
+I am still there^[https://x.com/whatsgoodio], but I may have to find a new tool to get feedback and bookmark good reads.
 No matter the platform, make sure not to get caught in politics, memes or cat pictures if you use it professionally. 
-Because once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and more importantly, get a sense of trends and dynamics.
+Because once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and, more importantly, get a sense of trends and dynamics.
 
 Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more.
-For twitter, Tweet Deck is a good standard option for a more advanced use of twitter.
-If you plan to build some following of your own, learn how to schedule posts and put some thought into the timing of your outlet, regarding timezone and audience.
+For *X*, Tweet Deck is a good standard option for a more advanced use of the platform.
+If you plan to build some following of your own, learn how to schedule posts and put some thought into the timing of your outlet, regarding time zone and audience.
 
-## Knowledge Sharing Platforms
+## Knowledge-Sharing Platforms
 
-The most popular knowledge sharing platform for programmers, stackoverflow.com has made itself a name for being the first hit in your favorite search engine to any questions or error message remotely related to source code.
-The platform has accumulated millions of questions AND answers to programming questions across languages. 
+The most popular knowledge-sharing platform for programmers, stackoverflow.com, has made itself a name for being the first hit in your favorite search engine to any questions or error messages remotely related to source code.
+The platform has accumulated millions of questions and answers to programming questions across languages. 
 Through a mix of quality content, a community rating system and a healthy mix of gamification, the platform managed to become a mainstay of the programming community. 
-The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach has also become a notch on programmers' resumes [].
+The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach have also become a notch on programmers' resumes.
 
 ## Look Out for Local Community Group 
 
