@@ -38,7 +38,7 @@ In Statistical Computing, the interface between the researcher and the computati
 The main advantage of a compiled language is speed in terms of computing performance, because the translation into machine language does not happen during runtime. A reduction of development speed and increase in required developer skills are the downside of using compiled languages. 
 
 > Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, everyone thinks everyone else is doing it, so everyone claims they are doing it. 
--- Dan Ariely, Professor of Psychology and Behavioral Economics on *X*^[https://twitter.com/danariely/status/287952257926971392]
+-- Dan Ariely, Professor of Psychology and Behavioral Economics on *X*^[https://x.com/danariely/status/287952257926971392]
 
 \newpage
 

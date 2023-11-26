@@ -1,19 +1,19 @@
 # Case Studies
 
-While the rest of the book provided more of a big picture type of insight, this section is all about application minded examples that most of the time feature code to reproduce. 
+While the rest of the book provided more of a big picture type of insight, this section is all about application-minded examples that most of the time feature code to reproduce. 
 
 ## SSH Key Pair Authentication {#sec-rsa}
 
-This section could be headed 'log in like a developer'. SSH Key Pairs (often referred to as RSA key pairs because of the popular RSA encryption process) are a convenient, relatively secure way to log into an account. SSH based connections, including secure copy (SCP), often make use of SSH Key Pairs instead of using a combination of username and password. Also, most git platforms use this form of authentication. The basic idea of key pairs is to have a public key and a private key. While the private key is never shared with anyone, the public key is shared with any server you want to log in to.
-It's like getting a custom door for any house that you are allowed to enter: share your public key with the server admin / or web portal, and you'll be allowed in when you show your private key. In case you lose your private key or suspect it has been stolen, simply inform the admin, so she can remove the door (the public key). This is where a little detail comes into play: 
-you can password protect the authentication process. Doing so buys you time to remove the key from the server before your password gets brute forced. The downside of this additional password is its need for interaction. So, when you are setting up a batch that talks to a remote server, that is when you do *not* want a key /w password. 
+This section could be headed "log in like a developer". SSH Key Pairs (often referred to as "RSA key pairs" because of the popular RSA encryption process) are a convenient, relatively secure way to log into an account. SSH-based connections, including secure copy (SCP), often make use of SSH Key Pairs instead of using a combination of username and password. Also, most git platforms use this form of authentication. The basic idea of key pairs is to have a public key and a private key. While the private key is never shared with anyone, the public key is shared with any server you want to log in to.
+It's like getting a custom door for any house that you are allowed to enter: share your public key with the server admin/web portal, and you'll be allowed in when you show your private key. In case you lose your private key or suspect it has been stolen, simply inform the admin, so they can remove the door (public key). This is where a little detail comes into play: 
+you can password protect the authentication process. Doing so buys you time to remove the key from the server before your password gets brute-forced. The downside of this additional password is its need for interaction. So, when you are setting up a batch that talks to a remote server, that is when you do *not* want a key without a password. 
 
 Step one en route to logging in like a grown up, is to create an RSA key pair. GitHub has a [1-2-3 type of manual^[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent] to get it done. Nevertheless, I would like to show the TL;DR R Studio (Server) specific way here. 
 
 1. Login to your Posit Workbench, RStudio Server or start your Desktop RStudio IDE. 
-2. Go to *Tools* → *Global Options* → *Git/SVN*
+2. Go to *Tools* → *Global Options* → *Git/SVN*.
 3. Hit Create RSA KEY (When you have some crazy ASCII art reminiscent of a rabbit, it's just ok.)
-4. Click 'View Public Key' 
+4. Click 'View Public Key'. 
 5. Copy this key to your clipboard. 
 6. You can paste the key you obtained to your GitHub settings or put it into your server's authorized keys file. 
 7. Doing so allows your SSH agent to clone and interact with remote git repositories via SSH or log in to a server if your user is allowed to use a login shell by the server.  
@@ -22,18 +22,18 @@ Step one en route to logging in like a grown up, is to create an RSA key pair. G
 
 
 
-## Application Programming Interfaces (APIs) 
+## Application Programming Interfaces
 
-An Application Programming Interface (API) is an interface to facilitate machine to machine communication. An interface can be anything, any protocol or pre-defined process. But, of course, there are standard and not-so-standard ways to communicate. Plus some matter-of-taste types of decisions. But security and standard compliance are none of the latter. 
+An Application Programming Interface (API) is an interface to facilitate machine-to-machine communication. An interface can be anything, any protocol or pre-defined process. But, of course, there are standard and not-so-standard ways to communicate. Plus some matter-of-taste types of decisions. But security and standard compliance are none of the latter. 
 There are standards such as the popular, URL-based REST that make developers' lives a lot easier -- regardless of the language they prefer. 
 
-Many services such as Google Cloud, AWS, your university library, your favorite social media platform or your local metro operator provide an API. Often, either the platform itself or the community provide what's called an API wrapper: 
-A simple program wraps the process of using the interface though dynamic URLs into a parameterized function. Because the hard work is done server-side by the API backend, building API wrappers is fairly easy and, if you're lucky, wrappers for your favorite languages exit already. If that is the case, end users can simply use functions like `get_dataset(dataset_id)` to download data programmatically. 
+Many services such as Google Cloud, Amazon Webservices (AWS), your university library, your favorite social media platform or your local metro operator provide an API. Often, either the platform itself or the community provides what's called an API wrapper: 
+A simple program wraps the process of using the interface through dynamic URLs into a parameterized function. Because the hard work is done server-side by the API backend, building API wrappers is fairly easy, and, if you're lucky, wrappers for your favorite languages exit already. If that is the case, end users can simply use functions like `get_dataset(dataset_id)` to download data programmatically. 
 
 
-### Example 1: The {kofdata} R package
+### Example 1: The {kofdata} R Package
 
-The KOF Swiss Economic Institute at ETH Zurich provides such a wrapper in an R package. The underlying API allows access to the KOF time series archive database and obtain data and meta information alike. The below code snippet gets data from the API and uses another KOF built library ({tstools}) to visualize the returned time series. 
+The KOF Swiss Economic Institute at ETH Zurich provides such a wrapper in the {kofdata} R package [@kofdata]. The underlying API allows access to the KOF time series archive database and obtain data and meta information alike. The below code snippet gets data from the API and uses another KOF built library ({tstools} [@tstools]) to visualize the returned time series. 
 
 
 ```{r kofdata, warning=FALSE, message=FALSE}
@@ -550,7 +550,7 @@ cat(sprintf("last update on %s.",
 ```
 
 We make use of the {kofdata} API wrapper to obtain data from the KOF Data API and use the {tsbox} to visualize the time series data we received. 
-Finally, we print the system date of the runtime environment -- in our case the GitHub Actions docker container. 
+Finally, we print the system date of the runtime environment -- in our case the GitHub Actions Docker container. 
 Running the README.**Rmd** file yields two artifacts: a README.**md** file and a .png graph located in a `figure/` folder. 
 Because the above runs inside a temporary single purpose container, our workflow needs to make sure those artifacts are stored persistently. 
 

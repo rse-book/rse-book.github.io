@@ -1,4 +1,4 @@
-# Automation
+# Automation {#sec-auto}
 
 >Make repetitive work fun again!
 
