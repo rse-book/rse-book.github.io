@@ -1,10 +1,10 @@
 # Case Studies
 
-While the rest of the book provided more of a big picture type of insight, this section is all about application-minded examples that most of the time feature code to reproduce. 
+While the rest of the book provided more of a big picture\{big picture} type of insight, this section is all about application-minded examples that most of the time feature code to reproduce. 
 
 ## SSH Key Pair Authentication {#sec-rsa}
 
-This section could be headed "log in like a developer". SSH Key Pairs (often referred to as "RSA key pairs" because of the popular RSA encryption process) are a convenient, relatively secure way to log into an account. SSH-based connections, including secure copy (SCP), often make use of SSH Key Pairs instead of using a combination of username and password. Also, most git platforms use this form of authentication. The basic idea of key pairs is to have a public key and a private key. While the private key is never shared with anyone, the public key is shared with any server you want to log in to.
+This section could be headed "log in like a developer". SSH\index{SSH} Key Pairs (often referred to as "RSA key pairs" because of the popular RSA encryption process) are a convenient, relatively secure way to log into an account. SSH-based connections, including secure copy (SCP), often make use of SSH Key Pairs instead of using a combination of username and password. Also, most git platforms use this form of authentication. The basic idea of key pairs is to have a public key and a private key. While the private key is never shared with anyone, the public key is shared with any server you want to log in to.
 It's like getting a custom door for any house that you are allowed to enter: share your public key with the server admin/web portal, and you'll be allowed in when you show your private key. In case you lose your private key or suspect it has been stolen, simply inform the admin, so they can remove the door (public key). This is where a little detail comes into play: 
 you can password protect the authentication process. Doing so buys you time to remove the key from the server before your password gets brute-forced. The downside of this additional password is its need for interaction. So, when you are setting up a batch that talks to a remote server, that is when you do *not* want a key without a password. 
 
@@ -33,7 +33,7 @@ A simple program wraps the process of using the interface through dynamic URLs i
 
 ### Example 1: The {kofdata} R Package
 
-The KOF Swiss Economic Institute at ETH Zurich provides such a wrapper in the {kofdata} R package [@kofdata]. The underlying API allows access to the KOF time series archive database and obtain data and meta information alike. The below code snippet gets data from the API and uses another KOF built library ({tstools} [@tstools]) to visualize the returned time series. 
+The KOF Swiss Economic Institute at ETH Zurich provides such a wrapper in the {kofdata} R package [@kofdata]. The underlying API allows access to the KOF time series\index{time series} archive database\index{database} and obtain data and meta information alike. The below code snippet gets data from the API and uses another KOF built library ({tstools} [@tstools]) to visualize the returned time series\index{time series}. 
 
 
 ```{r kofdata, warning=FALSE, message=FALSE}
@@ -266,7 +266,7 @@ The ability to expose data is a go-to skill to make research reproducible and cr
 
 ### GitHub to Serve Static Files
 
-Exposing your data through an API is not something you would necessarily need a software engineer, let alone an own server infrastructure for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub for free is an easy and highly available solution.
+Exposing your data through an API is not something you would necessarily need a software engineer, let alone an own server infrastructure\index{infrastructure} for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub for free is an easy and highly available solution.
 
 The swissdata project^[https://github.com/swissdata] proposes an implementation of such an approach.
 The project transforms all sorts of datasets into .csv spreadsheets to contain a cleaned version of the data alongside .json files that contain the data descriptions. The demo^[https://github.com/swissdata/demo] describes the implementation in a greater detail and hands on fashion. 
@@ -436,7 +436,7 @@ app.listen(port, () => {
 
 We simply added a mount point using `app.use` (instead of `app.get`) which makes sure that everything past `/static` is affected by the logic added to this mount. 
 So, our `Hello World!` greeting is out there for anybody to see, while displaying the picture whose URL starts with `/static` needs an API key.
-Though this is only one, admittedly made up example of mapping URLs and parameters to functions via HTTP(S), it hints at the possibilities of dynamic APIs from database queries to web forms and many other applications. 
+Though this is only one, admittedly made up example of mapping URLs and parameters to functions via HTTP(S), it hints at the possibilities of dynamic APIs from database\index{database} queries to web forms and many other applications. 
 The above example shows also how frameworks like Express JavaScript^[https://expressjs.com/] or plumber [@plumbr] facilitate the definition of machine-to-machine interfaces even for less experienced developers. 
 The impact of frameworks is not limited to the technical implementation, though. 
 Developers benefit from comprehensive approaches like Swagger and the OpenAPI specification during the conceptual part of creating machine to machine interfaces. 
@@ -519,10 +519,10 @@ Yay! We got everything we wanted. Ready to process.
 
 ## Automate Script Execution: A GitHub Actions Example 
 
-Containerization as described in the infrastructure section has standardized virtual hardware into building blocks that are available across different platforms and providers. 
+containerization\index{containerization} as described in the infrastructure\index{infrastructure} section has standardized virtual hardware into building blocks that are available across different platforms and providers. 
 This development has led to a wide array of offerings that allow us to run our code in a language-agnostic environment. 
-In addition to the major cloud platforms, git providers that offer a CI/CD tool chain are a good option to run our code on a remote container. 
-Though originally designed mostly for build automation, CI/CD such as GitHub actions can be used to automate a variety of tasks by running them on a container. 
+In addition to the major cloud platforms, git providers that offer a CI/CD\index{CI/CD} tool chain are a good option to run our code on a remote container. 
+Though originally designed mostly for build automation\index{automation}, CI/CD\index{CI/CD} such as GitHub actions can be used to automate a variety of tasks by running them on a container. 
 Consider the following minimal R script that we will run on GitHub actions. 
 
 ```{r, eval=FALSE}
@@ -549,14 +549,14 @@ cat(sprintf("last update on %s.",
  as.character(Sys.Date())))
 ```
 
-We make use of the {kofdata} API wrapper to obtain data from the KOF Data API and use the {tsbox} to visualize the time series data we received. 
-Finally, we print the system date of the runtime environment -- in our case the GitHub Actions Docker container. 
+We make use of the {kofdata} API wrapper to obtain data from the KOF Data API and use the {tsbox} to visualize the time series\index{time series} data we received. 
+Finally, we print the system date of the runtime environment -- in our case the GitHub Actions Docker\index{Docker} container. 
 Running the README.**Rmd** file yields two artifacts: a README.**md** file and a .png graph located in a `figure/` folder. 
 Because the above runs inside a temporary single purpose container, our workflow needs to make sure those artifacts are stored persistently. 
 
 The below .yaml file defines the environment and workflow for GitHub Actions.
 When located properly according to GitHub's convention, i.e., in a hidden `github/worflows` folder, GitHub identifies the .yaml file as input and allows executing the workflow.
-(Standalone build tools like woodpecker or other integrated CI/CD tools like GitLab CI/CD use very similar workflow defintions). 
+(Standalone build tools like woodpecker or other integrated CI/CD\index{CI/CD} tools like GitLab CI/CD\index{CI/CD} use very similar workflow defintions). 
 
 ```yaml
 # Simple data transformation workflow
@@ -600,7 +600,7 @@ First, the below file gives our workflow a name to identify the workflow among o
 The `on` block defines what triggers the workflow.
 The `workflow_dispatch` option is a rather uncommon trigger, as it simply means the workflow can be triggered by pressing a button in GitHub' Web GUI.
 Cronjob-based triggers or triggers based on git actions such as pushes to a certain branch are more common as we are looking to avoid interaction at runtime. 
-Inside the job definitions itself, we first define the operating system of the host and the docker image in which our process should run. 
+Inside the job definitions itself, we first define the operating system of the host and the Docker\index{Docker} image in which our process should run. 
 
 Then, walk through the single steps of our workflow. 
 Notice that `actions/checkout@v3` is different from the other steps because it is taken from GitHub's marketplace for actions.
@@ -894,7 +894,7 @@ Truth be told, the full hype and excitement of a shiny app only comes into play 
 
 - **on premise aka in house**. Either download the open source version of shiny server, the alternative shiny proxy or the R Studio Connect premium solution and install them on your own Virtual machine. 
 
-- use a **shiny server docker image** and run a container in your preferred environment. 
+- use a **shiny server Docker image**\index{Docker} and run a container in your preferred environment. 
 
 
 ### Shiny Resources
@@ -951,13 +951,13 @@ The classical challenge where parallel computation using multiple cores really h
 Yet, it may not be clear upfront if the number and computation time of your single tasks justifies the overhead of letting your program know it should split computations across cores and manage memory accordingly. 
 Also, consider that processes can be turned parallel at different levels: you could simply use your local machine's cores and a parallelization implementation such as R's {future} or {parallel} to parrallelize locally. 
 Or you could go parallel at a machine or container level. 
-While the former is easier as it requires less infrastructure knowledge, it is limited by the resources of your local machine. 
+While the former is easier as it requires less infrastructure\index{infrastructure} knowledge, it is limited by the resources of your local machine. 
 Of course, if you have access to a HPC cluster, this may not be a disadvantage at all (depending on how your cluster balances load and manages access to resources). 
 In any case, you should make a clear decision at which level you go parallel and avoid nested parallelization. 
 
 Let's consider the following example of a simple local parallelization, including a performance benchmark. 
-The following R example uses the {microbenchmark} package to check the effect of parallel computing on running seasonal adjustment of multiple time series.
-Before we start with the actual example, let's create some demo data: We simply create a list with 1000 elements, each of which is the same monthly time series about airline passengers from 1949-1960. 
+The following R example uses the {microbenchmark} package to check the effect of parallel computing on running seasonal adjustment of multiple time series\index{time series}.
+Before we start with the actual example, let's create some demo data: We simply create a list with 1000 elements, each of which is the same monthly time series\index{time series} about airline passengers from 1949-1960. 
 
 ```{r seasonal1}
 data("AirPassengers")
@@ -968,7 +968,7 @@ for(i in 1:1000){
 ```
 
 Now, let's load the {seasonal} package and perform a basic seasonal adjustment
-of each of these time series.
+of each of these time series\index{time series}.
 The first statement performs 100 adjustments sequentially, the second statement uses parallel computing to spread computations across my machine's multiple processors. 
 
 ```{r, warning=FALSE}

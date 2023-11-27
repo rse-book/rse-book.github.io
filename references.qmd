@@ -1,3 +1,7 @@
+# References {.unnumbered}
 
-::: References {#refs}
+::: {#refs}
 :::
+
+
+\printindex

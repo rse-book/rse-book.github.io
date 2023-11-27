@@ -4,7 +4,7 @@ Business analysts are used to reporting to management and/or clients regularly. 
 
 Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, Markdown-based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn Markdown into HTML/CSS/JavaScript output for flexible use in a standard web browser. Likewise, Markdown renders to PDF or even Microsoft Word. 
 
-Approaches such as Quarto^[https://quarto.org] [@quarto], RMarkdown [@rmarkdown] or Jupyter Notebooks [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
+Approaches such as Quarto\index{Quarto}^[https://Quarto\index{Quarto}.org] [@Quarto\index{Quarto}], RMarkdown [@rmarkdown] or Jupyter Notebooks [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
 
 ## Getting Started with a Simple Report
 
@@ -49,21 +49,21 @@ In a nutshell, static website generators turn Markdown code
 into a combination of HTML, CSS and JavaScript, so a web browser can display the result. 
 The Go based Hugo^[https://gohugo.io/] or the classic Jekyll^[https://jekyllrb.com/] are popular static website generator approaches to run a website or blog.
 
-Approaches such as the {distill} R package [@distill] or Quarto, the new kid on the block, add a data science and analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
-Quarto documents, for example, are text files that contain Markdown text and possibly code chunks in the same documents. 
+Approaches such as the {distill} R package [@distill] or Quarto\index{Quarto}, the new kid on the block, add a data science and analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
+Quarto\index{Quarto} documents, for example, are text files that contain Markdown text and possibly code chunks in the same documents. 
 When rendered, the analytics code runs first, potentially creating output such as tables or figures.
 If necessary, this output is stored in separate files and smoothly integrated into the main document that is about to be rendered afterward.  
 
 Rendered output often consists of multiple files such as HTML documents, CSS style information, JavaScript code or images.
-Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics-minded renderers such as Quarto offer a **self-contained** option. 
-When enabled, Quarto renders a single self-contained, encoded HTML file that contains everything from JavaScript to images. 
+Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics-minded renderers such as Quarto\index{Quarto} offer a **self-contained** option. 
+When enabled, Quarto\index{Quarto} renders a single self-contained, encoded HTML file that contains everything from JavaScript to images. 
 
 
 
 ## Hosting Static Websites
 
 Because the requirements of a static website are minimal, we can essentially use the simplest website host possible to host our static site.
-Unlike with content management system approaches such as WordPress, static websites do not need server side scripting languages or databases. 
+Unlike with content management system approaches such as WordPress, static websites do not need server side scripting languages or database\index{database}s. 
 This simplicity allows hosting static websites on a plethora of cheap hosters, including many free plans.
 
 ### GitHub Pages
@@ -85,9 +85,9 @@ Note that the online version of the book you are currently reading is hosted in 
 
 ### GitHub Actions
 
-Hosting a website on a modern git platform comes with an intriguing option: the use of continuous integration tools, as discussed in [@sec-auto] on automation. 
-CI/CD is capable of not only rendering Markdown, but can even run computations and virtually any prerequisite step thanks to the underlying docker technology. 
-CI/CD certainly introduces a setup hurdle, but it allows integrating users who do not have the necessary stack installed to execute the render process locally. 
+Hosting a website on a modern git platform comes with an intriguing option: the use of continuous integration tools, as discussed in [@sec-auto] on automation\index{automation}. 
+CI/CD\index{CI/CD} is capable of not only rendering Markdown, but can even run computations and virtually any prerequisite step thanks to the underlying docker\index{Docker} technology. 
+CI/CD\index{CI/CD} certainly introduces a setup hurdle, but it allows integrating users who do not have the necessary stack\index{stack} installed to execute the render process locally. 
 
 ### Netlify
 
@@ -130,7 +130,7 @@ Because of interpolation, the text looks blurred, particularly in its curves.
 ![](images/rendered.png){width=470}
 
 
-A streamlined publication workflow, such as the Quarto-based approach described above, mitigates the problem because this type of workflow automation reduces the effort of resizing, re-rendering and fitting graphs into the current document. 
+A streamlined publication workflow, such as the Quarto\index{Quarto}-based approach described above, mitigates the problem because this type of workflow automation\index{automation} reduces the effort of resizing, re-rendering and fitting graphs into the current document. 
 Further mitigation comes from extensions packages such as R's gganimate [@gganimate] that allows to animate graphs created with ggplot2.
 Though you might miss out on bleeding-edge interaction and the maximum flexibility of libraries with an online focus, rendered graphs created with a powerful library such as ggplot or matplotlib are a solid way to go for most people's use cases. 
 The likes of ggplot2 have home court advantage in all things printed and still look decent in most online outlets. 
@@ -157,7 +157,7 @@ For example, your data may drive the size of dots or any other object, e.g., a c
 The above example shows a strength of the SVG approach: one can use existing SVGs without having to draw them from scratch using JavaScript. 
 
 HTML5, on the other hand, is the latest approach and offers more options to support varying screen sizes and device types. While a look into mobile friendliness is beyond the scope of this book, I would like to show an example of how a screen medium (compared to print) can add value. 
-Consider an interactive time series chart of a long-term economic indicator. 
+Consider an interactive time series\index{time series} chart of a long-term economic indicator. 
 Depending on the question at hand, you may be interested in the indicator's development over decades or rather look at the last couple of years or months. 
 Add a zoom window to not only switch between views, but to also continuously zoom in or out on some crisis or boom or draw an intertemporal comparison between different peaks and lows. 
 
@@ -179,7 +179,7 @@ t_df |>
 
 ![Screenshot of an interactive chart created with echarts. Check the online book for the interactive version: https://rse-book.github.io/publishing.html#visualization](images/echart-ts-pdf.png)
 
-Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series but are focused on making that one thing as convenient and inclusive as possible. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundreds. 
+Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series\index{time series} but are focused on making that one thing as convenient and inclusive as possible. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundreds. 
 
 
 ## Data Publications {#datapub}

@@ -189,32 +189,32 @@ In the Windows world, the use of terminal applications has been much less common
 ### Remote Connections SSH, SCP 
 
 One of the most important use cases of the console for data analysts is the ability to log into 
-other machines, namely servers that most often run on Linux. Typically, we use the SSH protocol to connect to a (remote) machine that allows to connect through port 22. 
+other machines, namely servers that most often run on Linux. Typically, we use the SSH\index{SSH} protocol to connect to a (remote) machine that allows to connect through port 22. 
 
 >Note that sometimes firewalls limit access to ports other than those needed for surfing the web (8080 for http:// and 443 for https://) so you can only access port 22 inside an organization's VPN network. 
 
-To connect to a server using a username and password, simply use your console's SSH client like this:
+To connect to a server using a username and password, simply use your console's SSH\index{SSH} client like this:
 
 ```sh
 ssh mbannert@someserver.org
 ```
 
-You will often encounter another login procedure, though. SSH key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file: 
+You will often encounter another login procedure, though. SSH\index{SSH} key pair authentication is more secure and therefore preferred by many organizations. You need to make sure the public part of your key pair is located on the remote server and hand the ssh command the private file: 
 
 ```sh
 ssh -i ~/.ssh/id_rsa mbannert@someserver.org
 ```
 
-For more details on SSH key pair authentication, check this example from the case studies in Chapter 10 @sec-rsa. 
+For more details on SSH\index{SSH} key pair authentication, check this example from the case studies in Chapter 10 @sec-rsa. 
 
-While SSH is designed to log in to a remote server and from then on, issue commands like the server was a local Linux machine, `scp` copies files from one machine to another.
+While SSH\index{SSH} is designed to log in to a remote server and from then on, issue commands like the server was a local Linux machine, `scp` copies files from one machine to another.
 
 ```sh
 scp -i ~/.ssh/id_rsa ~/Desktop/a_file_on_my_desktop
  mbannert@someserver.org:/some/remote/location/
 ```
 
-The above command copies a file dwelling on the user's desktop into a /some/remote/location on the server. Just like SSH, secure copy (scp) can use SSH key pair authentication, too. 
+The above command copies a file dwelling on the user's desktop into a /some/remote/location on the server. Just like SSH\index{SSH}, secure copy (scp) can use SSH\index{SSH} key pair authentication, too. 
 
 
 ### Git Through the Console

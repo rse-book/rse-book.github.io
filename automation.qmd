@@ -2,19 +2,19 @@
 
 >Make repetitive work fun again!
 
-One aspect that makes a programming approach to data science and analytics appealing is *automation*. Data ingestion, dissemination, reporting or even analysis itself can be repetitive. 
+One aspect that makes a programming approach to data science and analytics appealing is *automation\index{automation}*. Data ingestion, dissemination, reporting or even analysis itself can be repetitive. 
 Particularly shorter update cycles of one's data ask for a way to make yet another iteration pain-free. 
-The following sections look at different forms of automation such as continuous integration and deployment, different forms of workflow automation as well as infrastructure as code. 
+The following sections look at different forms of automation\index{automation} such as continuous integration and deployment, different forms of workflow automation\index{automation} as well as infrastructure\index{infrastructure} as code. 
 
 
 ## Continuous Integration/Continuous Deployment
 
-Because of its origin in build, test and check automation, Continuous Integration/Continuous Deployment (CI/CD)^[See also: https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment] may not be the first thing that comes into mind when one approaches programming through the analytics route. Yet, thorough testing and automated builds have not only become well-established parts of the data science workflow, CI/CD tools can also help to automate tasks beyond testing and packaging your next release.
+Because of its origin in build, test and check automation\index{automation}, Continuous Integration/Continuous Deployment (CI/CD\index{CI/CD})^[See also: https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment] may not be the first thing that comes into mind when one approaches programming through the analytics route. Yet, thorough testing and automated builds have not only become well-established parts of the data science workflow, CI/CD\index{CI/CD} tools can also help to automate tasks beyond testing and packaging your next release.
 
-Modern version control software providers are an easy way to add the tool chain that is often fuzzily called CI/CD. While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
+Modern version control software providers are an easy way to add the tool chain that is often fuzzily called CI/CD\index{CI/CD}. While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
 
-Thanks to infrastructure as code and containerization, automation of development and deployment workflows become much easier also because local development can run in an environment very close to the production setup.
-Git hosting powerhouses GitHub and GitLab run their flavors of CI/CD tools, making the approach well documented and readily available by default to a wide array of users: GitHub Actions^[https://docs.github.com/en/actions] and GitLab CI^[https://docs.gitlab.com/ee/ci/]. In addition, services like CircleCI^[https://circleci.com/] offer this toolchain independently of hosting git repositories.
+Thanks to infrastructure\index{infrastructure} as code and containerization\index{containerization}, automation\index{automation} of development and deployment workflows become much easier also because local development can run in an environment very close to the production setup.
+Git hosting powerhouses GitHub\index{GitHub} and GitLab\index{GitHub} run their flavors of CI/CD\index{CI/CD} tools, making the approach well documented and readily available by default to a wide array of users: GitHub Actions^[https://docs.github.com/en/actions] and GitLab CI^[https://docs.gitlab.com/ee/ci/]. In addition, services like CircleCI^[https://circleci.com/] offer this toolchain independently of hosting git repositories.
 
 Users of the above platforms can upload a simple text file that follows a name convention and structure to trigger a step-based tool-chain based on an event. An example of an event may be a push to a repository's main branch. A common example would be to run tests and/or build a package and upon success deploy the newly created package to some server -- all triggered by a simple push to master. One particularly cool thing is, that there are multiple services which allow running the testing on their servers using container technologies. This leads to a great variety of setups for testing. That way, software can easily be tested on different operating systems/environments. 
 
@@ -55,16 +55,16 @@ script:
 ```
 
 For more in depth examples of the above, Jim Hester's talk on GitHub Actions for R^[https://www.jimhester.com/talk/2020-rsc-github-actions/] is an excellent starting point.
-CI/CD tool chains are useful for a plethora of actions beyond mere building, testing and deployment of software.
+CI/CD\index{CI/CD} tool chains are useful for a plethora of actions beyond mere building, testing and deployment of software.
 The publication chapter covers another common use case: rendering and deployment of static websites. 
 That is, websites that are updated by re-rendering their content at build time, 
 creating static files (artifacts) that are uploaded to web host. 
-Outlets like the GitHub Actions Marketplace, the r-lib collections for R specific actions and the plethora of readily available actions are a great showcase of the broad use of CI/CD applications. 
+Outlets like the GitHub Actions Marketplace, the r-lib collections for R specific actions and the plethora of readily available actions are a great showcase of the broad use of CI/CD\index{CI/CD} applications. 
 
 
 ## Cron Jobs
 
-Cron syntax is very common in the Unix world and is also useful in the context of the CI/CD tools explained above. Instead of *on dispatch* or *event based* triggers, CI/CD processes can also be triggered based on time. 
+Cron syntax is very common in the Unix world and is also useful in the context of the CI/CD\index{CI/CD} tools explained above. Instead of *on dispatch* or *event based* triggers, CI/CD\index{CI/CD} processes can also be triggered based on time. 
 
 
 Named after the Unix job scheduler *cron*, a cron job is a task that runs periodically at fixed times. 
@@ -85,10 +85,10 @@ More advanced expressions can also handle running a job at much shorter interval
 
 
 To learn and play with more expressions, check crontab guru^[https://crontab.guru/].
-If you have more sophisticated use cases, like overseeing a larger number of jobs or execution on different nodes, consider using Apache Airflow^[https://airflow.apache.org/] as a workflow scheduler. 
+If you have more sophisticated use cases, like overseeing a larger number of jobs or execution on different nodes, consider using Apache Airflow\index{Apache Airflow}^[https://airflow.apache.org/] as a workflow scheduler. 
 
 
-## Workflow Scheduling: Apache Airflow DAGs
+## Workflow Scheduling: Apache Airflow\index{Apache Airflow} DAGs
 
 Though much less common than the above tools, [Apache Airflow](https://airflow.apache.org/) has earned a mention because of its ability to help researchers keep an overview of regularly running processes. 
 Examples of such processes could be daily or monthly data sourcing or timely publication of a regularly published indicator.
@@ -96,7 +96,7 @@ I often referred to Airflow as "cronjobs^[https://en.wikipedia.org/wiki/Cron] on
 Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other logs and reporting features, which are worth a lot when maintaining reoccurring processes.
 Airflow has its own *Airflow Summit* conference, a solid community and Docker compose setup to get you started quickly.
 The setup consists of a container image for the web frontend and another image for the PostgreSQL backend. 
-The fact that there is also a *Managed Workflow for Apache Airflow* offering in the Amazon cloud at the time of writing shows the broad acceptance of the tool. 
+The fact that there is also a *Managed Workflow for Apache Airflow\index{Apache Airflow}* offering in the Amazon cloud at the time of writing shows the broad acceptance of the tool. 
 Airflow also runs on Kubernetes in case you are interested in hosting Airflow in a more robust production setup. 
 
 So, what does Airflow look like in practice? 
@@ -160,7 +160,7 @@ Such operators also allow executing tasks on remote machine or clusters, not sol
 
 ## Make-Like Workflows
 
-*Makefiles* and the *make* software that made them popular are the classic of build automation. 
+*Makefiles* and the *make* software that made them popular are the classic of build automation\index{automation}. 
 Best known for its support in the compilation of C programs, Makefiles became popular across programming languages thanks to their straightforward concept and readable approach. 
 A Makefile contains a *target*, an optional prerequisite, and a recipe to get there.
 
@@ -188,7 +188,7 @@ yo!
 ```
 
 in your terminal. 
-Very much like Apache Airflow and its DAGs which were introduced above, Makefiles allow declaring and managing dependencies. 
+Very much like Apache Airflow\index{Apache Airflow} and its DAGs which were introduced above, Makefiles allow declaring and managing dependencies. 
 The ability of make and make-like approaches such as the {targets} R package [@targets] goes well beyond the simple sequential definitions like the basic example above. 
 Parallel execution of independent tasks, cherry-picking execution of single tasks from a larger workflow, variables and caching are highly useful when runtime increases. 
 Consider, a multistep workflow, parts of which are running for quite a while but hardly change while other swift parts change all the time, and it becomes obvious how a simple CLI-based workflow helps.  
@@ -197,17 +197,17 @@ The walkthrough provided in R OpenSci's book^[https://books.ropensci.org/targets
 
 
 
-## Infrastructure as Code
+## infrastructure\index{infrastructure} as Code
 
 
-In recent years, declarative approaches helped to make task automation more inclusive and appealing to a wider audience. Not only a workflow itself, but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 
+In recent years, declarative approaches helped to make task automation\index{automation} more inclusive and appealing to a wider audience. Not only a workflow itself, but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 
 
-Do not think infrastructure as code is only relevant for system admins or other infrastructure professionals who make use of it every day. The ability to reproduce and tweak infrastructure at essentially no costs enables other forms of automation such as CI/CD. Just like a flat rate with your mobile carrier will lead to more calls. 
+Do not think infrastructure\index{infrastructure} as code is only relevant for system admins or other infrastructure\index{infrastructure} professionals who make use of it every day. The ability to reproduce and tweak infrastructure\index{infrastructure} at essentially no costs enables other forms of automation\index{automation} such as CI/CD\index{CI/CD}. Just like a flat rate with your mobile carrier will lead to more calls. 
 
-Infrastructure as code approaches do not only describe infrastructure in declarative and reproducible fashion as stated above; infrastructure-as-code can also be seen as a way to automate setting up the environment you work with. 
-The infrastructure section explains in greater detail how such definitions look like and containers are building blocks of modern infrastructure defined in code. 
+infrastructure\index{infrastructure} as code approaches do not only describe infrastructure\index{infrastructure} in declarative and reproducible fashion as stated above; infrastructure\index{infrastructure}-as-code can also be seen as a way to automate setting up the environment you work with. 
+The infrastructure\index{infrastructure} section explains in greater detail how such definitions look like and containers are building blocks of modern infrastructure\index{infrastructure} defined in code. 
 
-Automation is more complex for cluster setups because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in *high availability* mode. On Kubernetes clusters, Helm^[https://helm.sh/], Kubernetes' package manager, is part of the solution to tackle this added complexity. Helm is, as the Helm website defines "the best way to find share and use software built for Kubernetes". Terraform^[https://www.terraform.io/] can manage Kubernetes clusters on clouds like Amazon's AWS, Google's GPC, Microsoft's Azure and many other cloud systems using declarative configuration files. Again, a console-based client interface is used to apply a declarative configuration plan to a particular cloud. 
+automation\index{automation} is more complex for cluster setups because among other things, applications need to be robust against pods getting shut down on one node and spawned on another node allowing to host applications in *high availability* mode. On Kubernetes clusters, Helm^[https://helm.sh/], Kubernetes' package manager, is part of the solution to tackle this added complexity. Helm is, as the Helm website defines "the best way to find share and use software built for Kubernetes". Terraform^[https://www.terraform.io/] can manage Kubernetes clusters on clouds like Amazon's AWS, Google's GPC, Microsoft's Azure and many other cloud systems using declarative configuration files. Again, a console-based client interface is used to apply a declarative configuration plan to a particular cloud. 
 
 
 

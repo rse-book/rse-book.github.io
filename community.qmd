@@ -35,10 +35,10 @@ If you plan to build some following of your own, learn how to schedule posts and
 
 ## Knowledge-Sharing Platforms
 
-The most popular knowledge-sharing platform for programmers, stackoverflow.com, has made itself a name for being the first hit in your favorite search engine to any questions or error messages remotely related to source code.
+The most popular knowledge-sharing platform for programmers, stack\index{stack}overflow.com, has made itself a name for being the first hit in your favorite search engine to any questions or error messages remotely related to source code.
 The platform has accumulated millions of questions and answers to programming questions across languages. 
 Through a mix of quality content, a community rating system and a healthy mix of gamification, the platform managed to become a mainstay of the programming community. 
-The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach have also become a notch on programmers' resumés.
+The platform's crowd-based rating system does not only assess the quality of questions and answers, a solid stack\index{stack} Overflow score and reach have also become a notch on programmers' resumés.
 
 ## Look Out for Local Community Group 
 

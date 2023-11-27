@@ -14,7 +14,7 @@ d <- data.frame("Term" = c(
   "Fork",
   "GUI",
   "IDE",
-  "Kebap Case",
+  "Kebab Case",
   "Lexical Scoping",
   "Merge Request",
   "OS",
@@ -25,11 +25,11 @@ d <- data.frame("Term" = c(
   "Reproducible Example",
   "Reverse Dependency",
   "Snake_case",
-  "Stack",
+  "stack",
   "SQL",
   "Swimlanes",
   "Throughput Problem",
-  "Transactional Database",
+  "Transactional database",
   "Virtual Machine (VM)"
   ),
   "Description" = c(
@@ -57,7 +57,7 @@ d <- data.frame("Term" = c(
     "Structured Query Language",
     "(Online) Board of columns (lanes). Lanes progress from from left to right and carry issues.",
     "A bottleneck which can be mitigated by parallelization, e.g., multiple containers running in parallel.",
-    "Database optimised for production systems. Such a database is good at reading and writing individual rows without affecting the other and while taking care of data integrity.",
+    "database optimised for production systems. Such a database is good at reading and writing individual rows without affecting the other and while taking care of data integrity.",
     "A virtual computer hosted on your computer. Often used to run another OS inside your main OS for testing purposes."
     
   ),

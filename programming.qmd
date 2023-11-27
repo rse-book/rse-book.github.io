@@ -83,7 +83,7 @@ To function definitions and calls like that
 # Imagine all the error prone c&p with 
 # the above solution. 
 # Think of how much easier this is to document. 
-# This is automation. Not cooking. 
+# This is automation\index{automation}. Not cooking. 
 create_basic_desc <- function(distr){
   out <- list(
     mean = mean(distr),
