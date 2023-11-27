@@ -64,7 +64,7 @@ Last but not least, programming enables you to do many things you couldn't do wi
 
 ## Why Work Like an Operations Engineer?
 
-While software *development* has become closer to many researchers, *operations*, the second part of the term *DevOps*, is much further away from the average researcher or business analyst. 
+While software *development* has become closer to many researchers, *operations*, the second part of the term *DevOps\index{DevOps}*, is much further away from the average researcher or business analyst. 
 Why even think about operations? 
 Because we can afford to do so. 
 Operations have become so much more accessible in recent years, that many applications can be dealt with single-handedly. 
@@ -75,12 +75,12 @@ The other way around, something to look at an early stage helps to acquire funds
 But people without a computer engineering background are by no means limited to proof of concepts these days.
 Trends like cloud computing and software-as-a-service products help developers focus on their expertise and limit the amount of knowledge needed to host a service in secure and highly available fashion. 
 
-Also, automation\index{automation} is key to the DevOps approach and an important reason why DevOps thinking is also very well suited for academic researchers and business analysts.
+Also, automation\index{automation} is key to the DevOps\index{DevOps} approach and an important reason why DevOps\index{DevOps} thinking is also very well suited for academic researchers and business analysts.
 So-called *continuous integration* can help to enforce a battery of quality checks such as unit tests or installation checks.  Let's say a push to a certain branch of a git repository leads to the checks and tests.
 In a typical workflow, successful completion of quality checks triggers continuous deployment to a blog, rendering into a paper or interactive data visualization.
 
-By embracing both parts of the *DevOps* approach, researchers do not only gain extra efficiency, but more importantly they improve reproducibility and therefore accountability and quality of their work.
-The effect of a DevOps approach on quality control is not limited to reproducible research in a publication sense only, but also enforces rules during collaboration: no matter who contributes, the contribution gets gut-checked and only deployed if checks passed. 
+By embracing both parts of the *DevOps\index{DevOps}* approach, researchers do not only gain extra efficiency, but more importantly they improve reproducibility and therefore accountability and quality of their work.
+The effect of a DevOps\index{DevOps} approach on quality control is not limited to reproducible research in a publication sense only, but also enforces rules during collaboration: no matter who contributes, the contribution gets gut-checked and only deployed if checks passed. 
 Similar to the well established term *software carpentry* that advocates a solid, application minded understanding of programming with data, I suggest a carpentry-level understanding of development and operations is desirable for the programming data analyst. 
 
 
@@ -112,7 +112,7 @@ A solid, applied understanding of **git version control** and the **collaboratio
 If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, *Research Software Engineering* will open up a new world for you.
 An introduction to industry standard collaboration makes you fit into a plethora of (software) teams around the globe -- in academia and beyond.
 
-Your backlog en route to a researcher who is comfortable in Research Software Engineering obviously contains a **strategy to improve your programming** itself.
+Your backlog en route to a researcher who is comfortable in *Research Software Engineering* obviously contains a **strategy to improve your programming** itself.
 To work with data in the long run, an idea of the **challenges of data management** from persistent storage to access restrictions should complement your programming.
 Plus, modern data-driven science often has to handle datasets so large, which is when **infrastructure\index{infrastructure}** other than local desktops come into play.
 Yet, high performance computing (HPC) is by far not the only reason it is handy for a researcher to have a basic understanding of **infrastructure\index{infrastructure}**.

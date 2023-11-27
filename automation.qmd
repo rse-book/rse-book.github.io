@@ -11,7 +11,7 @@ The following sections look at different forms of automation\index{automation} s
 
 Because of its origin in build, test and check automation\index{automation}, Continuous Integration/Continuous Deployment (CI/CD\index{CI/CD})^[See also: https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment] may not be the first thing that comes into mind when one approaches programming through the analytics route. Yet, thorough testing and automated builds have not only become well-established parts of the data science workflow, CI/CD\index{CI/CD} tools can also help to automate tasks beyond testing and packaging your next release.
 
-Modern version control software providers are an easy way to add the tool chain that is often fuzzily called CI/CD\index{CI/CD}. While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
+Modern \index{version control} software providers are an easy way to add the tool chain that is often fuzzily called CI/CD\index{CI/CD}. While CI stands for *continuous integration* and simply refers to a workflow in which the team tries to release new features to production as continuously as possible, CD stands for either *continuous delivery* or *continuous deployment*.
 
 Thanks to infrastructure\index{infrastructure} as code and containerization\index{containerization}, automation\index{automation} of development and deployment workflows become much easier also because local development can run in an environment very close to the production setup.
 Git hosting powerhouses GitHub\index{GitHub} and GitLab\index{GitHub} run their flavors of CI/CD\index{CI/CD} tools, making the approach well documented and readily available by default to a wide array of users: GitHub Actions^[https://docs.github.com/en/actions] and GitLab CI^[https://docs.gitlab.com/ee/ci/]. In addition, services like CircleCI^[https://circleci.com/] offer this toolchain independently of hosting git repositories.
@@ -54,7 +54,7 @@ script:
 
 ```
 
-For more in depth examples of the above, Jim Hester's talk on GitHub Actions for R^[https://www.jimhester.com/talk/2020-rsc-github-actions/] is an excellent starting point.
+For more in depth examples of the above, Jim Hester's talk on GitHub\index{GitHub} Actions for R^[https://www.jimhester.com/talk/2020-rsc-github-actions/] is an excellent starting point.
 CI/CD\index{CI/CD} tool chains are useful for a plethora of actions beyond mere building, testing and deployment of software.
 The publication chapter covers another common use case: rendering and deployment of static websites. 
 That is, websites that are updated by re-rendering their content at build time, 

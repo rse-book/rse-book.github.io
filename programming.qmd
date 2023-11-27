@@ -104,7 +104,10 @@ create_basic_desc(d2)
 
 Start to document functions and their parameters using Roxygen [@roxygen] syntax, and you're already very close to creating your first package. 
 
->Hit Cmd+Alt+Shift+R^[On Windows/Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty Roxygen skeleton with all your function's parameters.
+
+:::{.callout-tip}
+Hit Cmd+Alt+Shift+R^[On Windows/Linux use Ctrl instead of Cmd.] while inside a function definition with your cursor. When working with R Studio, it will create a nifty Roxygen skeleton with all your function's parameters.
+:::
 
 ```{r}
 
@@ -284,8 +287,8 @@ my_func_def <- function(param1, param2){
 
 **docs**
 
-This folder is typically not filled with content manually. When pushed to GitHub
-a docs folder can easily be published as website using Github Pages^[https://pages.github.com/]. With GitHub Pages you can host a decently styled modern website for free. Software projects often use GitHub Pages to market a product or project or simply for documentation purposes. All you need to do is check a couple of options inside the Github Web GUI and make sure the docs/ folder contains .md or .html files as well as stylesheets (.css). The latter may sound a bit like Latin to people without a basic web development background, but there is plenty of help. The R ecosystem offers different flavors of the same idea: use a bit of markdown + R to generate website code. There is the {blogdown} R package [@blogdown] for your personal website or blog. There is {pkgdown} [@pkgdown] for your packages documentation. And there is even bookdown to write an online book like this. Write the Markdown file, render it as HTML into the docs folder and push the docs folder to GitHub. Done. Your website will be online at username.github.io/reponame.
+This folder is typically not filled with content manually. When pushed to GitHub\index{GitHub}
+a docs folder can easily be published as website using Github Pages^[https://pages.github.com/]. With GitHub Pages you can host a decently styled modern website for free. Software projects often use GitHub Pages to market a product or project or simply for documentation purposes. All you need to do is check a couple of options inside the Github Web GUI and make sure the docs/ folder contains .md or .html files as well as stylesheets (.css). The latter may sound a bit like Latin to people without a basic web development background, but there is plenty of help. The R ecosystem offers different flavors of the same idea: use a bit of markdown + R to generate website code. There is the {blogdown} R package [@blogdown] for your personal website or blog. There is {pkgdown} [@pkgdown] for your packages documentation. And there is even bookdown to write an online book like this. Write the Markdown file, render it as HTML\index{HTML} into the docs folder and push the docs folder to GitHub. Done. Your website will be online at username.github.io/reponame.
 
 Here is a an example of a {pkgdown} website:
 

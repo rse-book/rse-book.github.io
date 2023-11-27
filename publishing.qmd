@@ -8,9 +8,9 @@ Approaches such as Quarto\index{Quarto}^[https://Quarto\index{Quarto}.org] [@Qua
 
 ## Getting Started with a Simple Report
 
-The simplest form of such a Markdown-based output, is a simple HTML report.  
+The simplest form of such a Markdown-based output, is a simple HTML\index{HTML} report.  
 To those of us without a web development past or present, HTML may rather sound daunting than simple. 
-But hear me out: HTML is (a) a lot more useful and flexible than newcomers might think and (b) simple indeed: 
+But hear me out: HTML\index{HTML} is (a) a lot more useful and flexible than newcomers might think and (b) simple indeed: 
 HTML is text, does not need LaTeX to be rendered from Markdown like PDF, and can be displayed by web browsers on a plethora of devices. 
 Plus, based on HTML, you can create (fancy) presentations, websites or simple reports. 
 With the self-contained option, you can even embed included files such as images into one single HTML document using byte encoding.
@@ -68,7 +68,7 @@ This simplicity allows hosting static websites on a plethora of cheap hosters, i
 
 ### GitHub Pages
 
-One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's GitHub Pages^[https://pages.github.com/].
+One excellent and simple solution to host blogs, personal websites, online documentation or presentations is to use the offerings of major git providers such as GitHub's GitHub\index{GitHub} Pages^[https://pages.github.com/].
 Though originally meant to be used with themes provided by GitHub and Markdown rendered by Jekyll on GitHub's servers, GitHub Pages became the home of an abundance of static sites rendered by a wide array of static website generators.    
 
 All you need is a repository on GitHub to host the static files. You can activate GitHub Pages for your repository and choose whether you rather want the rendered files to be on a separate branch named *gh-pages* or in a subfolder of your root directory (mostly docs).
@@ -83,7 +83,7 @@ Note that the online version of the book you are currently reading is hosted in 
 :::
 
 
-### GitHub Actions
+### GitHub\index{GitHub} Actions
 
 Hosting a website on a modern git platform comes with an intriguing option: the use of continuous integration tools, as discussed in [@sec-auto] on automation\index{automation}. 
 CI/CD\index{CI/CD} is capable of not only rendering Markdown, but can even run computations and virtually any prerequisite step thanks to the underlying docker\index{Docker} technology. 
@@ -91,13 +91,13 @@ CI/CD\index{CI/CD} certainly introduces a setup hurdle, but it allows integratin
 
 ### Netlify
 
-The Netlify^[https://netlify.app/] platform does not host git repositories like GitHub or Bitbucket, but it rather focuses on the *build* part.
+The Netlify^[https://netlify.app/] platform does not host git repositories like GitHub\index{GitHub} or Bitbucket, but it rather focuses on the *build* part.
 Netlify supports the user in setting up the build process and offers a few add-ons such as Netlify forms to allow for website features that can process user interaction such as online forms. 
 Also, unlike git platforms, Netlify integrates domain purchase into its own platform. 
 Note that Netlify and git are complementary, not mutually exclusive approaches. 
-Platforms like Netlify and GitHub use application programming interfaces (APIs) to communicate with each other, allowing to trigger Netlify builds based on changes to a GitHub repositories. 
+Platforms like Netlify and GitHub\index{GitHub} use application programming interfaces (APIs) to communicate with each other, allowing to trigger Netlify builds based on changes to a GitHub repositories. 
 
-Basic GitHub Pages setups are good enough for online documentation of most software or other sites that simply display static content. 
+Basic GitHub\index{GitHub} Pages setups are good enough for online documentation of most software or other sites that simply display static content. 
 Netlify cannot only improve convenience when using advanced features, but it can also extend possibilities for static websites when needed. 
 
 

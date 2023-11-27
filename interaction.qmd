@@ -15,7 +15,7 @@ Most likely, investing in an initial setup of a solid editor plus some basic ter
 - integrated *debuggers* allow running parts of the code line-by-line and to inspect the inner workings of functions
 - *multi-language support* is important when working in multiple programming or markup languages. 
 - *terminal integration* helps to run stuff using system commands
-- git integration helps interact with git version control and do basic add, commit, push operations through the editor's GUI 
+- git integration helps interact with git \index{version control} and do basic add, commit, push operations through the editor's GUI 
 - build tools for programs that need rendering and compilation
 - customizable through add-ins/macros
 
@@ -171,7 +171,7 @@ I have used this app for the illustration in this book because of its slim, no-n
 In addition to the editor with which you will spend most of your time, it is also worthwhile to put 
 some effort into configuring keyboard-driven interaction with your operating systems. And again, you do not need to be a terminal virtuoso to easily outperform mouse pushers, a terminal carpentry level is enough. Terminals come in all shades of gray, integrated into IDEs, built into our operating system or as pimped third-party applications. A program called a *shell* runs inside the terminal application to run  commands and display output. *bash* is probably the most known shell program, but there are tons of different flavors. FWIW, I love *fish*^[https://fishshell.com/] shell (combined with *iterm2*) for its smooth auto-completion, highlighting and its extras. 
 
-In the Windows world, the use of terminal applications has been much less common than for OSX/Linux -- at least for non-systemadmins. Git Bash, which ships with git version control installations on Windows, mitigates this shortcoming, as it provides a basic Unix style console on windows. For a full-fledged Unix terminal experience, I suggest using a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at the OS level to a broader Windows audience – albeit with different Windows specific syntax. The ideas and examples in this book are limited to Unix flavored shells. 
+In the Windows world, the use of terminal applications has been much less common than for OSX/Linux -- at least for non-systemadmins. Git Bash, which ships with git \index{version control} installations on Windows, mitigates this shortcoming, as it provides a basic Unix style console on windows. For a full-fledged Unix terminal experience, I suggest using a full terminal emulator like CYGWIN. More recent, native approaches like powershell brought the power of keyboard interaction at the OS level to a broader Windows audience – albeit with different Windows specific syntax. The ideas and examples in this book are limited to Unix flavored shells. 
 
 | Command | What it does |
 |---------|------|
@@ -219,7 +219,7 @@ The above command copies a file dwelling on the user's desktop into a /some/remo
 
 ### Git Through the Console
 
-Another common use case of the terminal is managing git version control. Admittedly, there is git integration for many IDEs that allows you to point and click your way to commits, pushes and pulls as well as dedicated git clients like GitHub Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. @sec-git sketches an idea of how to operate git through the console from the very basics to a feature branch-based workflow.
+Another common use case of the terminal is managing git \index{version control}. Admittedly, there is git integration for many IDEs that allows you to point and click your way to commits, pushes and pulls as well as dedicated git clients like GitHub\index{GitHub} Desktop or Source Tree. But there is nothing like the console in terms of speed and understanding what you really do. @sec-git sketches an idea of how to operate git through the console from the very basics to a feature branch-based workflow.
 
 
 

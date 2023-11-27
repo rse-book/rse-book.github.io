@@ -8,14 +8,14 @@ This section could be headed "log in like a developer". SSH\index{SSH} Key Pairs
 It's like getting a custom door for any house that you are allowed to enter: share your public key with the server admin/web portal, and you'll be allowed in when you show your private key. In case you lose your private key or suspect it has been stolen, simply inform the admin, so they can remove the door (public key). This is where a little detail comes into play: 
 you can password protect the authentication process. Doing so buys you time to remove the key from the server before your password gets brute-forced. The downside of this additional password is its need for interaction. So, when you are setting up a batch that talks to a remote server, that is when you do *not* want a key without a password. 
 
-Step one en route to logging in like a grown up, is to create an RSA key pair. GitHub has a [1-2-3 type of manual^[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent] to get it done. Nevertheless, I would like to show the TL;DR R Studio (Server) specific way here. 
+Step one en route to logging in like a grown up, is to create an RSA key pair. GitHub\index{GitHub} has a [1-2-3 type of manual^[https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent] to get it done. Nevertheless, I would like to show the TL;DR R Studio (Server) specific way here. 
 
 1. Login to your Posit Workbench, RStudio Server or start your Desktop RStudio IDE. 
 2. Go to *Tools* → *Global Options* → *Git/SVN*.
 3. Hit Create RSA KEY (When you have some crazy ASCII art reminiscent of a rabbit, it's just ok.)
 4. Click 'View Public Key'. 
 5. Copy this key to your clipboard. 
-6. You can paste the key you obtained to your GitHub settings or put it into your server's authorized keys file. 
+6. You can paste the key you obtained to your GitHub\index{GitHub} settings or put it into your server's authorized keys file. 
 7. Doing so allows your SSH agent to clone and interact with remote git repositories via SSH or log in to a server if your user is allowed to use a login shell by the server.  
 
 ![The R Studio GUI is an easy way to create a key pair. (source: screenshot RStudio IDE taken in 2021.)](images/rsa.png)
@@ -266,7 +266,7 @@ The ability to expose data is a go-to skill to make research reproducible and cr
 
 ### GitHub to Serve Static Files
 
-Exposing your data through an API is not something you would necessarily need a software engineer, let alone an own server infrastructure\index{infrastructure} for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub for free is an easy and highly available solution.
+Exposing your data through an API is not something you would necessarily need a software engineer, let alone an own server infrastructure\index{infrastructure} for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub\index{GitHub} for free is an easy and highly available solution.
 
 The swissdata project^[https://github.com/swissdata] proposes an implementation of such an approach.
 The project transforms all sorts of datasets into .csv spreadsheets to contain a cleaned version of the data alongside .json files that contain the data descriptions. The demo^[https://github.com/swissdata/demo] describes the implementation in a greater detail and hands on fashion. 
@@ -523,7 +523,7 @@ containerization\index{containerization} as described in the infrastructure\inde
 This development has led to a wide array of offerings that allow us to run our code in a language-agnostic environment. 
 In addition to the major cloud platforms, git providers that offer a CI/CD\index{CI/CD} tool chain are a good option to run our code on a remote container. 
 Though originally designed mostly for build automation\index{automation}, CI/CD\index{CI/CD} such as GitHub actions can be used to automate a variety of tasks by running them on a container. 
-Consider the following minimal R script that we will run on GitHub actions. 
+Consider the following minimal R script that we will run on GitHub\index{GitHub} actions. 
 
 ```{r, eval=FALSE}
 #!/usr/bin/env Rscript
@@ -534,7 +534,7 @@ knit("README.Rmd")
 ```
 
 
-The script uses {knitr} to render an RMarkdown document to a Markdown document that is automatically rendered to a pretty HTML file when pushed to a repository hosted on GitHub.
+The script uses {knitr} to render an RMarkdown document to a Markdown document that is automatically rendered to a pretty HTML file when pushed to a repository hosted on GitHub\index{GitHub}.
 
 >Notice the common *shebang* comment that defines the executable for batch execution of a script file -- in this case *Rscript* to run R outside of an interactive R session. 
 
@@ -620,7 +620,7 @@ With the *shebang* comment inside the file, we can directly execute the .R file 
 Finally, we take a look at the content of the current folder before we commit and push all the files we generated back to our GitHub repository. 
 After the process is done, the container will stop and removed. 
 
->Note that we can see all the output of the process from the GitHub actions menu on our repository's website. 
+>Note that we can see all the output of the process from the GitHub\index{GitHub} actions menu on our repository's website. 
 This is why it's useful to print outputs of intermediate steps. 
 
 
@@ -759,7 +759,7 @@ This case study does not intend to rewrite {shiny}'s great documentation or blog
 
 Stats & figures put together by academic researchers or business analysts are not used to spending a lot of time in front of the mirror. (Often for the same reason as their creators: perceived opportunity costs.)
 
-Shiny bundles years worth of limelight experience and online catwalk professionalism into an R package. Doing so allows us to use all this design expertise through an R interface, abstracting away the need to dig deep into web programming and frontend design (you know the HTML/CSS/Javascript).
+Shiny bundles years worth of limelight experience and online catwalk professionalism into an R package. Doing so allows us to use all this design expertise through an R interface, abstracting away the need to dig deep into web programming and frontend design (you know the HTML/CSS/Javascript)\index{HTML}.
 
 Let's consider the following web frontend put together with 
 a few lines of R code. Consider the following, simple web fronted that lives in a dedicated user interface R file, called *ui.R*:
