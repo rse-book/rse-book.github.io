@@ -78,7 +78,7 @@ The ability to transform data from one format into the other and to manipulate b
 
 Hence, popular data science programming languages offer great toolsets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how. 
 
-Yet, not all information suits a two-dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data^[The original GeoJSON file from the example can be found at https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson.], let's take a look at the map file and code example case study in @sec-map. In memory, i.e., in our R session, the data is represented in a list that contains multiple list elements and may contain more lists nested inside. 
+Yet, not all information suits a two-dimensional form. Handling nested\index{nested data} or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested\index{nested data} fashion. For an example of nested data^[The original GeoJSON file from the example can be found at https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson.], let's take a look at the map file and code example case study in @sec-map. In memory, i.e., in our R session, the data is represented in a list that contains multiple list elements and may contain more lists nested inside. 
 
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -144,7 +144,7 @@ csv
 
 ### File Formats for Nested Information
 
-For many data engineers and developers. JavaScript Object Notation (JSON)^[https://json.org]\index{json} has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format. 
+For many data engineers and developers. JavaScript Object Notation (JSON)^[https://json.org]\index{JSON} has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format. 
 
 
 ```{r}
@@ -161,10 +161,10 @@ toJSON(li, pretty = TRUE)
 
 The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON, both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but it is more flexible than the former. 
 
-Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to "the web" while XML is the traditional, very explicit no-nonsense format.  XML has a **Document Type Definition (DTD)** that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX^[SDMX (https://sdmx.org) stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
+Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to "the web" while XML is the traditional, very explicit no-nonsense format.  XML\index{XML} has a **Document Type Definition (DTD)** that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX^[SDMX (https://sdmx.org)\index{SDMX} stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
 
 
-The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like *Contact* or *ID* in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.  
+The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX\index{SDMX} XML\index{XML} file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like *Contact* or *ID* in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.  
 
 
 ### A Word on Binaries
@@ -200,7 +200,7 @@ load("bundle.RData")
 
 ### Interoperable File Formats
 
-Interoperable file formats cover some middle ground between the options described above. The *cross-language in-memory development platform* Apache Arrow^[https://arrow.apache.org/] is a well-established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you're interested in a modern, yet established cross-environment data science project, digging deeper into Apache Arrow is certainly a fun experience. 
+Interoperable file formats\index{interoperable file formats} cover some middle ground between the options described above. The *cross-language in-memory development platform* Apache Arrow^[https://arrow.apache.org/] is a well-established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you're interested in a modern, yet established cross-environment data science project, digging deeper into Apache Arrow\index{Apache Arrow} is certainly a fun experience. 
 
 From the Apache Arrow documentation:
 
@@ -214,7 +214,7 @@ write_parquet(starwars, file_path_sw)
 ```
 
 The above R code writes the *starwars* demo dataset from the *dplyr* R package to a temporary .parquet file. 
-The {arrow} R package [@arrow] comes with the necessary toolset to write the open source columnar^[see also] .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R. 
+The {arrow} R package [@arrow] comes with the necessary toolset to write the open source columnar^[see also] .parquet format\index{Parquet}. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R. 
 
 
 
@@ -232,7 +232,7 @@ sw = Parquet.File("starwars.parquet")
 ```
 
 
-When I composed this example, reading and writing *Parquet* files in different environments, I ran into several compatibility issues. This shows that the level of interoperability is not the same as the interoperability of text files. 
+When I composed this example, reading and writing *Parquet* files in different environments, I ran into several compatibility issues. This shows that the level of interoperability\index{interoperability} is not the same as the interoperability of text files. 
 
 
 #### A Note on Overhead {#columnar}
@@ -270,14 +270,14 @@ decades of information engineering. So when you choose how you are going to repr
 
 Given the options that file-based approaches provide, what is (a) the difference and (b) the added value of going for a database\index{database} to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
 
-database\index{database} users use a client program and a query language to send queries written to a database\index{database}. The client sends these queries to the database\index{database} host and either performs an operation on the database\index{database} quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). Using such a query language leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc.SQL\index{SQL}database\index{database}s have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases. 
+database\index{database} users use a client program and a query language to send queries written to a database\index{database}. The client sends these queries to the database\index{database} host and either performs an operation on the database\index{database} quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL)\index{SQL}. Using such a query language leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc.SQL\index{SQL}database\index{database}s have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases. 
 
 
 ```{sql, eval=FALSE}
 SELECT * FROM myschema.demotable
 ```
 
-The above query would return all rows and all columns from a table called *demotable* in a schema called *myschema*. Such a query can easier be sent from a standalone database\index{database} client, a database\index{database} specific IDE with a built in client such as DataGrip^[https://www.jetbrains.com/datagrip/] or a programming language. Given the ubiquity of database\index{database}s most basically any programming language has native interfaces to the most common database\index{database}. And if that is not the case, there is the database\index{database} management system agnostic ODBC standard that is supported by all majorSQL\index{SQL}database\index{database}s. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects. 
+The above query would return all rows and all columns from a table called *demotable* in a schema called *myschema*. Such a query can easier be sent from a standalone database\index{database} client, a database\index{database} specific IDE with a built in client such as DataGrip^[https://www.jetbrains.com/datagrip/] or a programming language. Given the ubiquity of database\index{database}s most basically any programming language has native interfaces to the most common database\index{database}. And if that is not the case, there is the database\index{database} management system agnostic ODBC standard that is supported by all majorSQL\index{SQL}database\index{database}s. The below code shows how to connect from R to PostgreSQL\index{PostgreSQL}, send queries from within R and receive results as R objects. 
 
 ```{r,eval=FALSE}
 library(RPostgres)
@@ -310,10 +310,10 @@ When you need to pick a concrete database\index{database} technology for your pr
 
 I would classify the most popular relational database\index{database} implementations as follows. First, there is [SQLite](https://www.sqlite.org/index.html). As the name suggestions, *SQLite* is a light-weight, stripped down, easy-to-use and install implementation. 
 
->SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured,SQL\index{SQL}database\index{database} engine. SQLite is the most used database\index{database} engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. 
+>SQLite\index{SQLite} is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured,SQL\index{SQL}database\index{database} engine. SQLite is the most used database\index{database} engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. 
 -- SQLite.org
 
-*SQLite* data lives in a single file that the user queries through the *SQLite* engine. Here is an example using that
+*SQLite* data lives in a single file that the user queries through the *SQLite\index{SQLite}* engine. Here is an example using that
 engine from R. 
 
 ```{r}
@@ -326,7 +326,7 @@ dbWriteTable(con, dbQuoteIdentifier(con,"flowers"),
              iris, overwrite = T)
 ```
 
-The above code initiates a *SQLite* database\index{database} and continues to write the built-in R demo datasets into separate tables in that newly created database\index{database}. Now we can useSQL\index{SQL}to query the data. Return the first three rows of *flowers*:
+The above code initiates a *SQLite\index{SQLite}* database\index{database} and continues to write the built-in R demo datasets into separate tables in that newly created database\index{database}. Now we can useSQL\index{SQL}to query the data. Return the first three rows of *flowers*:
 
 ```{r}
 #| size: scriptsize
@@ -340,10 +340,10 @@ Return cars that are more fuel efficient than 30 miles per gallon:
 dbGetQuery(con, "SELECT * FROM mtcars WHERE mpg > 30")
 ```
 
-MySQL^[https://www.mysql.com/] can do a little more and is also immensely popular, particularly as a database\index{database} backend for web content management systems and other web-based applications. The so-called LAMP stack\index{stack} (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium-level web projects around the world. In its early days, MySQL used to be an independent open source project, but it was later on acquired by database\index{database} Juggernaut Oracle as a light version to go with its flagship product. 
+MySQL^[https://www.mysql.com/]\index{MySQL} can do a little more and is also immensely popular, particularly as a database\index{database} backend for web content management systems and other web-based applications. The so-called LAMP stack\index{stack} (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium-level web projects around the world. In its early days, MySQL used to be an independent open source project, but it was later on acquired by database\index{database} Juggernaut Oracle as a light version to go with its flagship product. 
 
 While certainly doing its job in millions of installations, MySQL is not in at the same level as [MicrosoftSQL\index{SQL}Server^[https://www.microsoft.com/en-us/sql-server/sql-server-2019] (MSSQL), 
-PostgreSQL^[https://www.postgresql.org/] and Oracle database\index{database}^[https://www.oracle.com/database\index{database}/technologies/], and I suggest one of these three enterprise-level database\index{database}s as a data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. 
+PostgreSQL^[https://www.postgresql.org/]\index{PostgreSQL} and Oracle database\index{database}^[https://www.oracle.com/database\index{database}/technologies/], and I suggest one of these three enterprise-level database\index{database}s as a data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. 
 Among the three, personally I would always lean toward the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect, may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice. 
 
 Another database\index{database} management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer anSQL\index{SQL}interface, but it is very different in its aims from the traditionalSQL\index{SQL}database\index{database}s. DuckDB is serverless and allows accessing *Parquet* files via a very fastSQL\index{SQL}interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing. 
@@ -425,7 +425,7 @@ In other words, it is implied that your work is not about monitoring an ongoing 
 
 #### Data Archives {.unnumbered}
 
-Research repositories like Zenodo^[https://zenodo.org] that allow to archive data follow a snapshot thinking:
+Research repositories like Zenodo^[https://zenodo.org]\index{Zenodo} that allow to archive data follow a snapshot thinking:
 A catalog entry refers to a particular version of an research paper, report, software or dataset. 
 Whenever there is an update, a new version is added to a catalog entry. 
 Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility, it also helps data workers get credit for their contribution. 
@@ -434,7 +434,7 @@ Fortunately, feeding research repositories is a task that is easy to automate th
 
 #### Open Data {.unnumbered}
 
-Open Data archives are a special form of repositories. The term "open data" refers to publicly available data that are available free of license costs and in machine-readable fashion. 
+Open Data\index{Open Data} archives are a special form of repositories. The term "open data" refers to publicly available data that are available free of license costs and in machine-readable fashion. 
 
 >“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefinition.org
 

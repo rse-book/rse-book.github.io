@@ -95,7 +95,7 @@ Examples of such processes could be daily or monthly data sourcing or timely pub
 I often referred to Airflow as "cronjobs^[https://en.wikipedia.org/wiki/Cron] on steroids."
 Airflow ships with a dashboard to keep track of many timed processes, plus a ton of other logs and reporting features, which are worth a lot when maintaining reoccurring processes.
 Airflow has its own *Airflow Summit* conference, a solid community and Docker compose setup to get you started quickly.
-The setup consists of a container image for the web frontend and another image for the PostgreSQL backend. 
+The setup consists of a container image for the web frontend and another image for the PostgreSQL\index{PostgreSQL} backend. 
 The fact that there is also a *Managed Workflow for Apache Airflow\index{Apache Airflow}* offering in the Amazon cloud at the time of writing shows the broad acceptance of the tool. 
 Airflow also runs on Kubernetes in case you are interested in hosting Airflow in a more robust production setup. 
 

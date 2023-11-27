@@ -60,7 +60,7 @@ Academic journals have found that out, too. Many outlets require you to make the
 
 In addition to the above reproducibility and ability to share, code scales and automates. automation\index{automation} is very convenient; like when you want to download data, process and create the same visualization and put it on your website any given Sunday. automation\index{automation} is inevitable; like when you have to gather daily updates from different outlets or work through thousands of .pdfs. 
 
-Last but not least, programming enables you to do many things you couldn't do without being an absolute guru (if at all) if it wasn't for programming. Take visualization, for example. Go check the D3 Examples at https://d3js.org/. Now, try to do that in Excel. If you did these things in Excel, it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time-consuming skills to master. Yet, with decent, carpentry-level programming skills you can already do so many spectacular things while not really specializing and staying very flexible. 
+Last but not least, programming enables you to do many things you couldn't do without being an absolute guru (if at all) if it wasn't for programming. Take visualization, for example. Go check the D3\index{D3} Examples at https://d3js.org/. Now, try to do that in Excel. If you did these things in Excel, it would make you an absolute spreadsheet visualization Jedi, probably missing out on other time-consuming skills to master. Yet, with decent, carpentry-level programming skills you can already do so many spectacular things while not really specializing and staying very flexible. 
 
 ## Why Work Like an Operations Engineer?
 
@@ -109,7 +109,7 @@ Even if this level is your starting point, you might find a few useful tips or s
 In case you are rather unfamiliar with most of the below, the contextualization, the classification and overview of tools is likely the most valuable help this book provides.
 
 A solid, applied understanding of **git version control** and the **collaboration workflow associated with git** does not only help you stay ahead of your own code; git proficiency makes you a team player. 
-If you are not familiar with commits, pulls, pushes, branches, forks and pull requests, *Research Software Engineering* will open up a new world for you.
+If you are not familiar with commits, pulls, pushes, branches, forks\index{fork} and pull requests, *Research Software Engineering* will open up a new world for you.
 An introduction to industry standard collaboration makes you fit into a plethora of (software) teams around the globe -- in academia and beyond.
 
 Your backlog en route to a researcher who is comfortable in *Research Software Engineering* obviously contains a **strategy to improve your programming** itself.

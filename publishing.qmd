@@ -4,7 +4,7 @@ Business analysts are used to reporting to management and/or clients regularly. 
 
 Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, Markdown-based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn Markdown into HTML/CSS/JavaScript output for flexible use in a standard web browser. Likewise, Markdown renders to PDF or even Microsoft Word. 
 
-Approaches such as Quarto\index{Quarto}^[https://Quarto\index{Quarto}.org] [@Quarto\index{Quarto}], RMarkdown [@rmarkdown] or Jupyter Notebooks [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
+Approaches such as Quarto\index{Quarto}^[https://Quarto.org] [@Quarto], RMarkdown [@rmarkdown] or Jupyter Notebooks\index{Jupyter} [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
 
 ## Getting Started with a Simple Report
 
@@ -139,20 +139,20 @@ The likes of ggplot2 have home court advantage in all things printed and still l
 ### JavaScript Visualization Libraries
 
 To those old enough to remember, JavaScript visualization may be reminiscent of a Japanese game convention at night: colorful and blinking. 
-But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like Apache echarts [@echarts], Data Driven Documents (d3js.org) [@d3] or Highcharts^[https://www.highcharts.com/] have very little in common with the JavaScript of the web of the late-90s.
+But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like Apache echarts [@echarts], Data Driven Documents\index{D3} (d3js.org) [@d3] or Highcharts^[https://www.highcharts.com/] have very little in common with the JavaScript of the web of the late-90s.
 In 2022, online communication can take your data visualization to another level.  
 
-Today, there are basically two popular JavaScript-based approaches to data visualization: SVG manipulation and HTML5 drawing.
+Today, there are basically two popular JavaScript-based approaches to data visualization: SVG\index{SVG} manipulation and HTML5 drawing.
 No matter whether which one you choose, the opportunities are just off the charts (pun intended): 
 From basic bar charts, scatter plots, candle stick and radar charts to heatmaps, treemaps, 3D and spatial charts, there is hardly anything web based visualization cannot do. 
 And if you really needed special treatment, there is an API to extend your possibilities even. 
 Let us quickly dive into both options.
 
 
-With the advent of widespread Scalable Vector Graphics (SVG) support in mainstream web browsers about a decade ago, the online ecosystem enabled numerous options to add channel-specific value to visualization. 
+With the advent of widespread Scalable Vector Graphics (SVG)\index{SVG} support in mainstream web browsers about a decade ago, the online ecosystem enabled numerous options to add channel-specific value to visualization. 
 Unlike formats with fixed resolutions like .gif, .jpg or .png formats, vector graphics are not only scalable without  loss, but they are also defined inside your HTML document.
 This opens up the possibility to manipulate them easily using JavaScript as if they were objects of the DOM^[The Document Object Model (DOM) is the hierarchical definition of an HTML website, which in today's web is modified by JavaScript.]. 
-Mapping data to SVG aesthetics is the exact idea of the [Data Driven Documents (D3), one of the most popular and powerful visualization libraries.
+Mapping data to SVG aesthetics is the exact idea of the [Data Driven Documents (D3)\index{D3}, one of the most popular and powerful visualization libraries.
 For example, your data may drive the size of dots or any other object, e.g., a car pictogram for when you want to visualize the number of car registrations. 
 The above example shows a strength of the SVG approach: one can use existing SVGs without having to draw them from scratch using JavaScript. 
 
@@ -179,7 +179,7 @@ t_df |>
 
 ![Screenshot of an interactive chart created with echarts. Check the online book for the interactive version: https://rse-book.github.io/publishing.html#visualization](images/echart-ts-pdf.png)
 
-Besides more universal libraries like D3 or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series\index{time series} but are focused on making that one thing as convenient and inclusive as possible. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundreds. 
+Besides more universal libraries like D3\index{D3} or echarts with all their options and opportunities, there are a few smaller libraries that are much less powerful but a lot simpler to master. Libraries like [dygraphs]() are limited to, e.g., time series\index{time series} but are focused on making that one thing as convenient and inclusive as possible. Depending on your needs, such a smaller library may be an excellent option. Also, when creating a wrapper package, it is obviously easier to implement and maintain only a couple of graphics types as opposed to several hundreds. 
 
 
 ## Data Publications {#datapub}

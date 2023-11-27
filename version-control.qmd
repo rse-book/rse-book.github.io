@@ -206,12 +206,12 @@ git push -u origin colorways
 
 This will add your branch called *colorways* to the remote repository.
 If you are on any major git platform with your project, it will come with a decent web GUI.
-Such a GUI is the most straightforward way to do the next step: get your Pull Request (PR) out.
+Such a GUI is the most straightforward way to do the next step: get your Pull Request\index{pull request} (PR) out.
 
 ![GitHub\index{GitHub} Pull Request dialog: Select the *Pull Request*; choose which branch you merge into which target branch. (Source: own GitHub repository.)](images/pr.png)
 
 As you can see, git will check whether it is possible to merge automatically without interaction.
-Even if that is not possible, you can still issue the pull request.
+Even if that is not possible, you can still issue the pull request\index{pull request}.
 When you create the request, you can also assign reviewers, but you could also do so at a later stage. 
 
 
@@ -221,13 +221,13 @@ In other words, your existing PR gets updated. This is a very natural way to acc
 
 
 ::: {.callout-note} 
-Use commit messages like 'added join toSQL\index{SQL}query, closes #3'. The key word 'closes' or 'fixes', will automatically close issues referred to when merged into the main branch.
+Use commit messages like 'added join to SQL\index{SQL}query, closes #3'. The key word 'closes' or 'fixes', will automatically close issues referred to when merged into the main branch.
 :::
 
 Once the merge is done, all your changes are in the main branch, and you and everyone else can pull the main branch that now contains your new feature. Yay!
 
 
-### Pull Requests from Forks
+### Pull Requests\index{pull request} from Forks
 
 Now, let's assume you are using an open source software created by someone else.
 At some point, you miss a feature that you feel is not too hard to implement. 
@@ -235,12 +235,12 @@ After googling and reading up a bit, you realize others would like to have these
 Hence, you get to work.
 Luckily, the project is open source and up on GitHub, so you can simply get your version of it, i.e., *fork* the project to your own GitHub account (just click the *fork* button and follow the instructions) .
 
-Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository, your remote git platform will still remember where you got it from and allows you to issue a pull request to the original author. The original authors can now review the pull request, see the changes, and decide whether they are fine with the feature and its implementation. 
+Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository, your remote git platform will still remember where you got it from and allows you to issue a pull request to the original author. The original authors can now review the pull request\index{pull request}, see the changes, and decide whether they are fine with the feature and its implementation. 
 
 There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussions are very context-aware and sooner or later, you will get your first pull request approved and merged. In that case, congratulations -- you have turned yourself into a team-oriented open source collaborator! 
 
 
-### Rebase vs. Merge
+### Rebase\index{git rebase} vs. Merge
 
 Powerful systems often provide more than one way to achieve your goals.
 In the case of git, putting together two branches of work -- a very vital task, is exactly such a case:

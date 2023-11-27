@@ -46,7 +46,7 @@ In other words, it is unlikely that someone with moderate experience comes with 
 
 Trust me on this one: The package approach will pay off early. Long before you ever thought about publishing your package. Write your own function definition, rather than just calling functions line-by-line. Write code as if you need to make sure it runs on another computer. Write code as if you need to maintain it. 
 
-Go from scripts like this
+Go from scripts like this\index{reproducible example}
 
 ```{r}
 #| size: tiny

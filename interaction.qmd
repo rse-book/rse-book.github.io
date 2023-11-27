@@ -22,7 +22,7 @@ Most likely, investing in an initial setup of a solid editor plus some basic ter
 
 ## Integrated Development Environments
 
-While some prefer lightning-fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, Integrated Development Environments (IDEs) are the right choice for most people. In other words, it's certainly possible to move a five-person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an IDE just like they prefer to use a truck over public transport when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages. 
+While some prefer lightning-fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, Integrated Development Environments\index{IDE} (IDEs) are the right choice for most people. In other words, it's certainly possible to move a five-person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an IDE just like they prefer to use a truck over public transport when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages. 
 
 The below sections will focus on data science' most popular editors, namely Visual Studio Code and RStudio. Hence, I would like to mention at least some IDE juggernauts here, for the reader looking for alternatives: [Eclipse](https://www.eclipse.org/) (mostly Java but tons of plugins for other languages), or JetBrains' [IntelliJ](https://www.jetbrains.com/idea/) (Java) and [PyCharm](https://www.jetbrains.com/pycharm/) (Python).
 
@@ -53,7 +53,7 @@ RStudio has four control panes which the user can fill with a different function
 
 #### Pitfalls {-}
 
-- you may stumble over RStudio's defaults, such as storing your global environment on exit and thus resurrecting long forgotten objects impacting your next experiment through, e.g., lexical scoping. 
+- you may stumble over RStudio's defaults, such as storing your global environment on exit and thus resurrecting long forgotten objects impacting your next experiment through, e.g., lexical scoping\index{lexical scoping}. 
 - RStudio's git integration abstracts git essentials away, so it hampers understanding of what's going on. 
 
 
@@ -88,21 +88,21 @@ The former allows the users to use single letters as shortcuts to navigate a tex
 This enables users to do things like move-three-words-forward or delete the next three lines and many other more complex things. 
 Given some practice and regular use, it is easy to imagine that vim wizards can navigate their source code incredibly quickly.  
 Back when IDEs were less comfortable and often clunky due to their heavy lifting, a broader group of people had their incentives to invest into vim. 
-Now that IDEs became so much better and many of them even offering vim modes or plugins, the point of contact with vim for a data scientist is mostly Unix server administration or work inside containers. 
+Now that IDEs became so much better and many of them even offering vim modes or plugins, the point of contact with vim for a data scientist is mostly Unix server administration or work inside containers\index{container}. 
 GNU Emacs^[https://www.gnu.org/software/emacs/] is another noteworthy editor because, even though much more exotic, it is popular among long-tenured R folks thanks to the Emacs Speaks Statistics extension. 
 
 
 ## Notebooks
 
 Notebooks are yet another popular choice for a home court among data scientists and analysts. 
-Though most often associated with the Python world, notebooks are language-agnostic and also common for the R and Julia languages. 
+Though most often associated with the Python world\index{Jupyter}, notebooks are language-agnostic and also common for the R and Julia languages. 
 The basic idea of notebooks is to run web server in the background to present a browser-based frontend to the developer.
 The difference between the Markdown rendering approach described in [Chapter 10 about publishing](publishing.html) is that the browser is not just used to display the result, but it is also the environment to interactively add commands. 
 The resulting workflow, e.g., a data analysis in the making feels like a social media timeline: execute a command, receive a result posted on a web page printed below the command, again posting a prompt to expect the next command.
 This way we get an endless scroll of commands, analysis and descriptive text in between. 
 
 Consider the following example, drawing a basketball court using the *matplotlib* Python package. 
-This example uses screenshots of a notebook to illustrate the difference between a notebook and concepts like RMarkdown.
+This example uses screenshots of a notebook\index{Jupyter} to illustrate the difference between a notebook and concepts like RMarkdown.
 
 >Note the prompts in between the results!
 
@@ -114,7 +114,7 @@ The second element is a chunk of Python code to import two well-known Python lib
 ![](images/notebook-2.png)
 
 After the function definition, we see another Markdown section header element that says *Call the Function* -- this time already rendered to HTML. 
-Finally, we call the Python function defined above in another code chunk element^[Though notebooks were originally designed to run on a (local) Python based webserver and to be used in a web browser, there is a neat, Electron-based standalone app called JupyterLab.
+Finally, we call the Python function defined above in another code chunk element^[Though notebooks\index{Jupyter} were originally designed to run on a (local) Python based webserver and to be used in a web browser, there is a neat, Electron-based standalone app called JupyterLab\index{Jupyter}.
 I have used this app for the illustration in this book because of its slim, no-nonsense interface that unlike browsers comes without distractions from plugins.].
 
 
