@@ -67,7 +67,7 @@ Last but not least, programming enables you to do many things you couldn't do wi
 While software *development* has become closer to many researchers, *operations*, the second part of the term *DevOps\index{DevOps}*, is much further away from the average researcher or business analyst. 
 Why even think about operations? 
 Because we can afford to do so. 
-Operations have become so much more accessible in recent years, that many applications can be dealt with single-handedly. 
+Operations\index{DevOps} have become so much more accessible in recent years, that many applications can be dealt with single-handedly. 
 Though one's production applications may still be administered by operations professionals, the ability to create and run a proof of concept from scratch is an invaluable skill. 
 A running example says more than a 15-page specification that fails to translate business talk into tech talk. 
 The other way around, something to look at an early stage helps to acquire funds and convince managers and other collaborators. 
@@ -92,7 +92,7 @@ The focal goal of this book is to map out the open source ecosystem, identify ne
 
 This book is the companion I wish I had when I started an empirical, data intensive PhD in economics. Yet, the book is written years after my PhD was completed and with the hindsight of more than 10 years in academia. *Research Software Engineering* is written based on the experience of helping students and seasoned researchers of different fields with their data management, processing and communication of results.
 
-If you are confident in your ambition to amp up your programming to at least solid software carpentry level^[https://software-carpentry.org/] within the next few months, I suggest getting an idea of your starting point relative to this book.
+If you are confident in your ambition to amp up your programming to at least solid software carpentry\index{software carpentry} level^[https://software-carpentry.org/] within the next few months, I suggest getting an idea of your starting point relative to this book.
 The upcoming *backlog* section is essentially a list of suggested to-dos on your way to solid software carpentry.
 Obviously, you may have cleared a few tasks of this backlog before reading this book which is fine.
 On the other hand, you might not know about some of the things that are listed in the *requirement* section, which is fine, too.
@@ -108,7 +108,7 @@ If you can confidently say you can check all or most of the below, you have reac
 Even if this level is your starting point, you might find a few useful tips or simply may come to cherry-pick. 
 In case you are rather unfamiliar with most of the below, the contextualization, the classification and overview of tools is likely the most valuable help this book provides.
 
-A solid, applied understanding of **git version control** and the **collaboration workflow associated with git** does not only help you stay ahead of your own code; git proficiency makes you a team player. 
+A solid, applied understanding of **git version control** and the **collaboration workflow associated with git**\index{git} does not only help you stay ahead of your own code; git proficiency makes you a team player. 
 If you are not familiar with commits, pulls, pushes, branches, forks\index{fork} and pull requests, *Research Software Engineering* will open up a new world for you.
 An introduction to industry standard collaboration makes you fit into a plethora of (software) teams around the globe -- in academia and beyond.
 
