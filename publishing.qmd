@@ -2,9 +2,9 @@
 
 Business analysts are used to reporting to management and/or clients regularly. Modern academic research has a similar need for regular updates: Data might get revised or otherwise updated, journals, reviewers and readers will ask for reproducible research. Dissemination of datasets and results in visually appealing as well as machine-readable fashion are important academic, private and public data workers alike. 
 
-Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, Markdown-based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn Markdown into HTML/CSS/JavaScript output for flexible use in a standard web browser. Likewise, Markdown renders to PDF or even Microsoft Word. 
+Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, Markdown-based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn Markdown into HTML/CSS/JavaScript \index{JavaScript} output for flexible use in a standard web browser. Likewise, Markdown renders to PDF or even Microsoft Word. 
 
-Approaches such as Quarto\index{Quarto}^[https://Quarto.org] [@Quarto], RMarkdown [@rmarkdown] or Jupyter Notebooks\index{Jupyter} [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
+Approaches such as Quarto\index{Quarto}^[https://Quarto.org] [@Quarto], RMarkdown [@rmarkdown]\index{RMarkdown} or Jupyter Notebooks\index{Jupyter} [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
 
 ## Getting Started with a Simple Report
 
@@ -42,12 +42,12 @@ more text
 
 
 
-## Static Website Generators
+## Static Website Generators\index{Static Website Generator}
 
 Once we understood how the output files are created, let's take a more in-depth look at how a report goes online in fully automated fashion from computation to a website.
 In a nutshell, static website generators turn Markdown code 
-into a combination of HTML, CSS and JavaScript, so a web browser can display the result. 
-The Go based Hugo^[https://gohugo.io/] or the classic Jekyll^[https://jekyllrb.com/] are popular static website generator approaches to run a website or blog.
+into a combination of HTML\index{HTML}, CSS and JavaScript, so a web browser can display the result. 
+The Go based Hugo^[https://gohugo.io/]\index{Hugo} or the classic Jekyll^[https://jekyllrb.com/]\index{Jekyll} are popular static website generator approaches to run a website or blog.
 
 Approaches such as the {distill} R package [@distill] or Quarto\index{Quarto}, the new kid on the block, add a data science and analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
 Quarto\index{Quarto} documents, for example, are text files that contain Markdown text and possibly code chunks in the same documents. 
@@ -116,7 +116,7 @@ Hence, the visualization toolbox offers libraries with very different approaches
 ### Rendered Graphs 
 
 The idea of visualization libraries that create rendered graphs is straightforward to understand. 
-Libraries such as R's ggplot2 [@ggplot] or Python's matplotlib [@matplotlib] fix the dots per inch (dpi) at render time. 
+Libraries such as R's ggplot2 [@ggplot] or Python's\index{Python} matplotlib [@matplotlib] fix the dots per inch (dpi) at render time. 
 When writing to disk, such a graph is typically saved as a .png or .jpg file^[When file size is not relevant, .png is usually preferred because it allows for transparent backgrounds.]. 
 To the end user, handling such graphs is rather intuitive, as it feels similar to handling photos or screenshots:
 We have to handle single image files that we can easily preview with onboard tools of all major operating systems.
@@ -136,7 +136,7 @@ Though you might miss out on bleeding-edge interaction and the maximum flexibili
 The likes of ggplot2 have home court advantage in all things printed and still look decent in most online outlets. 
 
 
-### JavaScript Visualization Libraries
+### JavaScript Visualization Libraries\index{JavaScript}
 
 To those old enough to remember, JavaScript visualization may be reminiscent of a Japanese game convention at night: colorful and blinking. 
 But the visualization knowledge embedded in modern JavaScript libraries and the maximum out-of-the-box opportunities of libraries like Apache echarts [@echarts], Data Driven Documents\index{D3} (d3js.org) [@d3] or Highcharts^[https://www.highcharts.com/] have very little in common with the JavaScript of the web of the late-90s.

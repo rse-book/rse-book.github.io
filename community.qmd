@@ -12,7 +12,7 @@ The above figure shows a screenshot of an interactive community explorer tool fo
 Users can explore user groups and such as R user groups or RLadies chapters around the world. At the time of writing, the tool counted more than 775,000 members of R user groups worldwide and more than 100,000 members of RLadies.
 The explorer tool and its numbers should not only show you the size of the community, but also help to connect to what has become a very global community. 
 
-Apart from user groups of programming languages, the Society of Research Software Engineering^[https://society-rse.org/] is a good way to connect.
+Apart from user groups of programming languages, the Society of Research Software Engineering^[https://society-rse.org/]\index{Society of Research Software Engineering} is a good way to connect.
 In addition to the UK-based origin, the society has expanded to other countries and has derivatives in, e.g., the United States^[https://us-rse.org/] or Germany^[https://de-rse.org/de/index.html].
 The main idea of research software engineering societies is to work on a role of software engineering in academia that accounts for the importance and impact of software on modern research. This goes from education in programming to lobbying for acknowledgement of software engineering in academic resumés. 
 
@@ -42,7 +42,7 @@ The platform's crowd-based rating system does not only assess the quality of que
 
 ## Look Out for Local Community Group 
 
-Speaking of job market opportunities, look out for a local R, Python or data science user group. 
+Speaking of job market opportunities, look out for a local R, Python\index{Python}} or data science user group. 
 Local user groups around programming languages do not only host interesting talks or other formats, they often provide an opportunity to network or even have dedicated time to advertise open positions. 
 Besides the community explorer mentioned in the introduction of this chapter, the meetup^[https://www.meetup.com/] platform that has become synonymous with special interest groups coming together locally, is a good place to start your research.  
 

@@ -29,7 +29,7 @@ After decades of information engineering and computer science, some can't help w
 
 ## Forms of Data 
 
-In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mainly trained to handle different flavors of two-dimensional data, as in **one-observation-one-row**. Ad hoc studies conducted once result in *cross-sectional data*: one line per observation; columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as *time series\index{time series}*. Multivariate time series\index{time series}, i.e., multivariable, longitudinal data are often referred to as *panel data*. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet-like tables. Here are a few easy-to-reproduce examples using popular R demo datasets. 
+In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mainly trained to handle different flavors of two-dimensional data, as in **one-observation-one-row**. Ad hoc studies conducted once result in *cross-sectional data*\index{cross-sectional}: one line per observation; columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as *time series\index{time series}*. Multivariate time series\index{time series}, i.e., multivariable, longitudinal data are often referred to as *panel data*. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet-like tables. Here are a few easy-to-reproduce examples using popular R demo datasets. 
 
 
 ```{r}
@@ -63,7 +63,7 @@ multi_ts
 
 ::: {.callout-note appearance="simple"} 
 **A Note on Long Format vs. Wide Format**
-The above multivariable time series\index{time series} is shown in what the data science community calls *wide* format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so-called *long* format shown below. The long format is a machine-friendly, flexible way to represent multi-variable data without altering the number of columns with more variables. 
+The above multivariable time series\index{time series} is shown in what the data science community calls *wide* format\index{wide format}. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so-called *long* format shown below. The long format\index{long format} is a machine-friendly, flexible way to represent multi-variable data without altering the number of columns with more variables. 
 
 :::
 
@@ -133,7 +133,7 @@ Comma-separated values\index{csv} (.csv)^[Note that commas are not always necess
 1;2;4
 ```
 
-Though Excel spreadsheets are a convenient interface to office environments that offer extras such organization into workbooks, the simpler .csv format has advantages in machine-to-machine communication and as an interface between different programming languages and tools. For example, web visualization libraries such as highcharts or echarts are most commonly written in JavaScript and can conveniently consume data from .csv files. The above example .csv file was written in Python and is now easily read by R. 
+Though Excel spreadsheets are a convenient interface to office environments that offer extras such organization into workbooks, the simpler .csv format has advantages in machine-to-machine communication and as an interface between different programming languages and tools. For example, web visualization libraries such as highcharts or echarts are most commonly written in JavaScript\index{JavaScript} and can conveniently consume data from .csv files. The above example .csv file was written in Python\index{Python} and is now easily read by R. 
 
 ```{r, message=FALSE}
 library(readr)
@@ -342,11 +342,11 @@ dbGetQuery(con, "SELECT * FROM mtcars WHERE mpg > 30")
 
 MySQL^[https://www.mysql.com/]\index{MySQL} can do a little more and is also immensely popular, particularly as a database\index{database} backend for web content management systems and other web-based applications. The so-called LAMP stack\index{stack} (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium-level web projects around the world. In its early days, MySQL used to be an independent open source project, but it was later on acquired by database\index{database} Juggernaut Oracle as a light version to go with its flagship product. 
 
-While certainly doing its job in millions of installations, MySQL is not in at the same level as [MicrosoftSQL\index{SQL}Server^[https://www.microsoft.com/en-us/sql-server/sql-server-2019] (MSSQL), 
-PostgreSQL^[https://www.postgresql.org/]\index{PostgreSQL} and Oracle database\index{database}^[https://www.oracle.com/database\index{database}/technologies/], and I suggest one of these three enterprise-level database\index{database}s as a data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. 
+While certainly doing its job in millions of installations, MySQL is not in at the same level as [Microsoft SQL Server\index{SQL Server}^[https://www.microsoft.com/en-us/sql-server/sql-server-2019] (MSSQL), 
+PostgreSQL^[https://www.postgresql.org/]\index{PostgreSQL} and Oracle database\index{database}^[https://www.oracle.com/database\index{database}/technologies/], and I suggest one of these three enterprise-level database\index{database}s as a data store for research projects that go beyond hosting\index{hosting} a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL\index{SQL Server}, PostgreSQL\index{PostgreSQL} and Oracle\index{Oracle} are hard to beat. 
 Among the three, personally I would always lean toward the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect, may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice. 
 
-Another database\index{database} management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer anSQL\index{SQL}interface, but it is very different in its aims from the traditionalSQL\index{SQL}database\index{database}s. DuckDB is serverless and allows accessing *Parquet* files via a very fastSQL\index{SQL}interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing. 
+Another database\index{database} management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer anSQL\index{SQL}interface, but it is very different in its aims from the traditionalSQL\index{SQL}database\index{database}s. DuckDB\index{DuckDB} is serverless and allows accessing *Parquet*\index{Parquet} files via a very fastSQL\index{SQL}interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing. 
 
 
 ### A Word on Non-Relational database\index{database}s
@@ -379,7 +379,7 @@ Be responsible when scraping data from websites by following polite principles: 
 
 In other words, the new type of researcher discussed in this book needs to be aware of potential legal and social consequences. The {polite} R package quoted above is an example of an alternative approach that favors etiquette over hiding IP addresses to avoid access denial. 
 
-### Security
+### Security\index{Security}
 
 >I ain't got nothing to hide. I don't care about people reading my stuff. -- an argument I have heard about a zillion times. 
 
@@ -395,11 +395,11 @@ Use a password manager so you can afford to change your passwords.
 Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username/password combination. 
 This is also a good way to connect to a remote server via SSH\index{SSH}. 
 
-In addition to the above Brainy Smurf advice, let me mention security as a reason to consider using a database\index{database} to manage and archive your data for the long haul. 
+In addition to the above Brainy Smurf advice, let me mention security\index{security} as a reason to consider using a database\index{database} to manage and archive your data for the long haul. 
 Enterprise-level database\index{database}s allow for granular access management and help to stay ahead of users and their rights regarding your database\index{database}'s entries. 
 
 
-### Privacy 
+### Privacy\index{privacy}
 
 Privacy in data science is a complex issue and could legitimately fill a book on its own.
 Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entry point to the matter. 
@@ -443,11 +443,11 @@ The basic idea that data generated from publicly funded processes should be publ
 From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. 
 Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets.
 In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. 
-Initiatives like SDMX (Statistical Data and Meta eXchange)^[https://sdmx.org/] aim to improve exchange of data *and* data descriptions. 
+Initiatives like SDMX (Statistical Data and Meta eXchange)^[https://sdmx.org/]\index{SDMX} aim to improve exchange of data *and* data descriptions. 
 Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software.
-Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub organization.
+Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub\index{GitHub} organization.
 
->openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector -- openwashdata.org
+>openwashdata is an active global community that applies FAIR principles\index{FAIR principles} to data generated in the greater water, sanitation, and hygiene (WASH) sector -- openwashdata.org
 
 
 

@@ -24,13 +24,13 @@ Most likely, investing in an initial setup of a solid editor plus some basic ter
 
 While some prefer lightning-fast editors such as Sublime Text that are easy to customize but rather basic out-of-the-box, Integrated Development Environments\index{IDE} (IDEs) are the right choice for most people. In other words, it's certainly possible to move a five-person family into a new home by public transport, but it is not convenient. The same holds for (plain) text editors in programming. You can use them, but most people would prefer an IDE just like they prefer to use a truck over public transport when they move. IDEs are tailored to the needs and idiosyncrasies of a language, some working with plugins and covering multiple languages. Others have a specific focus on a single language or a group of languages. 
 
-The below sections will focus on data science' most popular editors, namely Visual Studio Code and RStudio. Hence, I would like to mention at least some IDE juggernauts here, for the reader looking for alternatives: [Eclipse](https://www.eclipse.org/) (mostly Java but tons of plugins for other languages), or JetBrains' [IntelliJ](https://www.jetbrains.com/idea/) (Java) and [PyCharm](https://www.jetbrains.com/pycharm/) (Python).
+The below sections will focus on data science' most popular editors, namely Visual Studio Code and RStudio. Hence, I would like to mention at least some IDE juggernauts here, for the reader looking for alternatives: [Eclipse](https://www.eclipse.org/) (mostly Java but tons of plugins for other languages), or JetBrains' [IntelliJ](https://www.jetbrains.com/idea/) (Java) and [PyCharm](https://www.jetbrains.com/pycharm/) (Python)\index{Python}.
 
 
 
 ### RStudio
 
-Posit's *RStudio* has become the default environment for most R people and those who mostly use R but C or Python and Markdown, in addition. The open source version ships for free as RStudio Desktop and RStudio Server Open Source. In addition, the creators of RStudio offer commercially supported versions of both the desktop and server version (Posit Workbench). If you want your environment to essentially look like the environment of your peers, RStudio is a good choice. To have the same visual image in mind can be very helpful in workshops, coaching or teaching.
+Posit's *RStudio* has become the default environment for most R people and those who mostly use R but C or Python\index{Python} and Markdown, in addition. The open source version ships for free as RStudio Desktop and RStudio Server Open Source. In addition, the creators of RStudio offer commercially supported versions of both the desktop and server version (Posit Workbench). If you want your environment to essentially look like the environment of your peers, RStudio is a good choice. To have the same visual image in mind can be very helpful in workshops, coaching or teaching.
 
 RStudio has four control panes which the user can fill with a different functionality like script editor, R console, terminal, file explorer, environment explorer, test suite, build suite and many others. I advise newcomers to change the default to have the script editor and the console next to each other (instead of below each other). That is because (at least in the Western world) we read from left to right and send source code from left to right to execute it in the console. Combine this practice with the *run selection shortcut* (cmd+enter or ctrl+enter on a PC) and you have gained substantial efficiency compared to leaving your keyboard, reaching for your mouse and finding the right button. In addition, this workflow should allow you to see larger chunks^[Many coding conventions recommend having no more than 80 characters in one line of code. Sticking to this convention should prevent cutting off your code horizontally.] of your code as well as your output. 
 
@@ -109,12 +109,12 @@ This example uses screenshots of a notebook\index{Jupyter} to illustrate the dif
 ![](images/notebook-1.png)
 
 The above figure depicts a Markdown element in editing mode, showing the Markdown syntax (double ## for a section header of type 2).
-The second element is a chunk of Python code to import two well-known Python libraries. 
+The second element is a chunk of Python\index{Python} code to import two well-known Python libraries. 
 
 ![](images/notebook-2.png)
 
 After the function definition, we see another Markdown section header element that says *Call the Function* -- this time already rendered to HTML. 
-Finally, we call the Python function defined above in another code chunk element^[Though notebooks\index{Jupyter} were originally designed to run on a (local) Python based webserver and to be used in a web browser, there is a neat, Electron-based standalone app called JupyterLab\index{Jupyter}.
+Finally, we call the Python\index{Python} function defined above in another code chunk element^[Though notebooks\index{Jupyter} were originally designed to run on a (local) Python based webserver and to be used in a web browser, there is a neat, Electron-based standalone app called JupyterLab\index{Jupyter}.
 I have used this app for the illustration in this book because of its slim, no-nonsense interface that unlike browsers comes without distractions from plugins.].
 
 

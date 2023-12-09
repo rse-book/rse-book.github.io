@@ -98,7 +98,7 @@ Obviously, you may have cleared a few tasks of this backlog before reading this 
 On the other hand, you might not know about some of the things that are listed in the *requirement* section, which is fine, too.
 The backlog and requirements section just mean to give you some orientation. 
  
-If you do not feel committed, revisit the previous section, discuss the need for programming with peers from your domain and possibly talk to a seasoned R or Python programmer.
+If you do not feel committed, revisit the previous section, discuss the need for programming with peers from your domain and possibly talk to a seasoned R or Python\index{Python} programmer.
 Motivation and commitment are key to the endurance needed to develop programming into a skill that truly leverages your domain-specific expertise. 
 
 

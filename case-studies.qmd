@@ -25,7 +25,7 @@ Step one en route to logging in like a grown up, is to create an RSA key pair. G
 ## Application Programming Interfaces
 
 An Application Programming Interface (API)\index{API} is an interface to facilitate machine-to-machine communication. An interface can be anything, any protocol or pre-defined process. But, of course, there are standard and not-so-standard ways to communicate. Plus some matter-of-taste types of decisions. But security and standard compliance are none of the latter. 
-There are standards such as the popular, URL-based REST that make developers' lives a lot easier -- regardless of the language they prefer. 
+There are standards such as the popular, URL-based REST\index{REST} that make developers' lives a lot easier -- regardless of the language they prefer. 
 
 Many services such as Google Cloud, Amazon Webservices (AWS), your university library, your favorite social media platform or your local metro operator provide an API. Often, either the platform itself or the community provides what's called an API wrapper: 
 A simple program wraps the process of using the interface through dynamic URLs into a parameterized function. Because the hard work is done server-side by the API backend, building API wrappers is fairly easy, and, if you're lucky, wrappers for your favorite languages exit already. If that is the case, end users can simply use functions like `get_dataset(dataset_id)` to download data programmatically. 
@@ -45,7 +45,7 @@ tsplot(tsl)
 
 ```
 
-### Build Your Own API Wrapper
+### Build Your Own API Wrapper\index{API}
 
 Here's an example of an elementary API\index{API} wrapper that makes use of the 
 Metropolitan Museum of Modern Art's API to obtain identifiers of pictures based on  a simple search^[Full URL used in the below code example: https://collectionapi.metmuseum.org/public/collection/v1/search?q=%s]. 
@@ -264,7 +264,7 @@ Wonder what's really in the image? Umbrella or not :) ? Try to reproduce this ex
 The ability to expose data is a go-to skill to make research reproducible and credible. Especially when data get complex and require thorough description in order to remain reproducible for others, a programmatic, machine-readable approach is the way to go. 
 
 
-### GitHub\index{GitHub} to Serve Static Files
+### GitHub\index{GitHub} to Serve Static Files\index{static websites}
 
 Exposing your data through an API is not something for which you would necessarily need a software engineer, let alone your own server infrastructure\index{infrastructure} for. Simply hosting a bunch of .csv spreadsheets alongside a good description (in separate files!!) on, e.g., GitHub\index{GitHub} for free is an easy and highly available solution.
 
@@ -347,7 +347,7 @@ According to Mozilla's definition, the GET method "requests a representation of 
 Requests using GET should only retrieve data," while POST "submits an entity to the specified resource, often causing a change in state or side effects on the server".
 Obviously, there are many other methods for the HTTP protocol, but the above two should help to understand the idea behind standard compliant REST\index{REST} web application programming interfaces.
 
-Let's assume you have a working nodejs^[https://nodejs.org/en/] JavaScript runtime environment installed on your local development machine, so you can run JavaScript files outside a web browser. 
+Let's assume you have a working nodejs^[https://nodejs.org/en/] JavaScript\index{JavaScript} runtime environment installed on your local development machine, so you can run JavaScript files outside a web browser. 
 Such a setup mimics the situation on a web server with Node.js installed. 
 Also, let's assume you have npm^[https://npmjs.com] installed as a package manager to facilitate installing node packages from the npm open source package registry. 
 
@@ -448,7 +448,7 @@ Developers benefit from comprehensive approaches like Swagger and the OpenAPI sp
 <!-- https://idratherbewriting.com/learnapidoc/pubapis_swagger.html -->
 
 
-## A Minimal Webscraper: Extracting Publication Dates {#sec-webscrape}
+## A Minimal Webscraper: Extracting Publication Dates {#sec-webscrape}\index{webscraping}
 
 Even though KOF Swiss Economic Institute offers a REST API to consume publicly available data, publication dates are unfortunately not available through in API just yet. Hence, to automate data consumption based on varying publication dates, we need to extract upcoming publication dates of the Barometer from KOF's media release calendar. Fortunately, all future releases are presented online in an easy-to-scrape table. So, here's the plan: 
 
@@ -518,7 +518,7 @@ pub_date
 Yay! We got everything we wanted. Ready to process. 
 
 
-## Automate Script Execution: An Example with GitHub\index{GitHub} Actions
+## Automate Script Execution: An Example with GitHub\index{GitHub} Actions\index{CI/CD}
 
 containerization\index{containerization} as described in the infrastructure\index{infrastructure} section has standardized virtual hardware into building blocks that are available across different platforms and providers. 
 This development has led to a wide array of offerings that allow us to run our code in a language-agnostic environment. 
@@ -839,7 +839,7 @@ Note also how similar the hierarchical, nested\index{nested data} structure of t
 While the frontend is mostly busy looking good, the backend has to do all the hard work, the computing, the querying -- whatever is processed in the background based on user input. 
 
 
-Under-the-hood-work that is traditionally implemented in languages like Java, Python or PHP^[Yes, one could lists JavaScript\index{PHP} here, too, but let's keep things simple and think of JavaScript as traditionally client-side here.] can now be done in R. This is not only convenient for the R developer who does not need to learn Java, it's also incredibly comfy if you got data work to do. Or put differently: who would like to implement logistic regression, random forests or principal component analysis in PHP?
+Under-the-hood-work that is traditionally implemented in languages like Java, Python\index{Python} or\index{PHP} PHP^[Yes, one could lists JavaScript\index{JavaScript} here, too, but let's keep things simple and think of JavaScript\index{JavaScript} as traditionally client-side here.] can now be done in R. This is not only convenient for the R developer who does not need to learn Java, it's also incredibly comfy if you got data work to do. Or put differently: who would like to implement logistic regression, random forests or principal component analysis in PHP?
 
 
 Consider the following minimal backend *server.R* file which corresponds to the above *ui.R* frontend file. The anonymous (nameless) function which is passed on to the *ShinyServer* function takes two named lists, *input* and *output*, as arguments. The named elements of the input list correspond to the *widgetId* parameter of the UI element. 
@@ -1070,7 +1070,7 @@ gg +
 ```
 
 
-## Good Practice
+## Good Practice\index{Good Practice}
 
 Even though I cannot really aim for a comprehensive section on the *Do's and Dont's*, I would like to share a few common-sense practices here.
 If you are interested in a more thorough but rather R specific collection, take a look at the wonderful online book *What They Forgot to Tell Us About R*: https://rstats.wtf/.
@@ -1107,7 +1107,7 @@ Note that this is really not so much about a specific programming language, but 
 
 **Manage Dependencies at the Project Level** 
 
-JavaScript projects manage dependencies in their lock files, Python projects have their requirements.txt files, and R has the {renv} package [@renv]. 
+JavaScript\index{JavaScript} projects manage dependencies in their lock files, Python projects have their requirements.txt files, and R has the {renv} package [@renv]. 
 All these scripting languages *can* keep track of the exact library versions used in a project. 
 
 ```{bash, eval=FALSE}
