@@ -2059,8 +2059,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \@centertabletitlefalse
-%\HeadingsBookChapter
-\HeadingsChapterSection
+\HeadingsBookChapter
+%\HeadingsChapterSection
 \endinput
 %%
 %% End of file `krantz.cls'.
