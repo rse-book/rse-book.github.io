@@ -4,7 +4,7 @@ Business analysts are used to reporting to management and/or clients regularly. 
 
 Because of frequent updates and reproducibility, manually composed outlets become less sustainable. Luckily, Markdown-based reporting offers great solutions for presentations, websites, reports, blogs, office documents or even printed output. Document converters can turn Markdown into HTML/CSS/JavaScript \index{JavaScript} output for flexible use in a standard web browser. Likewise, Markdown renders to PDF or even Microsoft Word. 
 
-Approaches such as Quarto\index{Quarto}^[https://Quarto.org] [@Quarto], RMarkdown [@rmarkdown]\index{RMarkdown} or Jupyter Notebooks\index{Jupyter} [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
+Approaches\index{Quarto} such as Quarto^[https://Quarto.org] [@Quarto], RMarkdown\index{RMarkdown} [@rmarkdown] or Jupyter Notebooks\index{Jupyter} [@jupyter] mix plain text with dynamically rendered code chunks that create tables or figures and embed these into the document in the right size and spot. Such a setup is the basis to fully automate the way from analysis to report no matter whether the outlet is printed, a Word document, a presentation, blog or website. 
 
 ## Getting Started with a Simple Report
 
@@ -17,29 +17,32 @@ With the self-contained option, you can even embed included files such as images
 That way, you can easily share a report that can be viewed on any device with a web browser across different operating systems and setups.  
 To see a Markdown process in action, consider the following basic example of Markdown syntax: 
 
-```md
-## This is a level two header
+```{.md}
+#| output: asis
+
+
+## This is a level two header {.unlisted}
 
 This is plain text *this is italic*
 and **this is bold**
 
-### This is a level three header 
+### This is a level three header {.unlisted}
 
 more text
 
 ```
 
+
 When rendered, the above Markdown turns into the below output, stored in HTML and CSS files. 
 
-## This is a level two header {.unnumbered}
+## This is a level two header {.unlisted}
 
 This is plain text *this is italic* 
 and **this is bold**
 
-### This is a level three header {.unnumbered}
+### This is a level three header {.unlisted}
 
 more text
-
 
 
 ## Static Website Generators\index{Static Website Generator}
@@ -47,7 +50,7 @@ more text
 Once we understood how the output files are created, let's take a more in-depth look at how a report goes online in fully automated fashion from computation to a website.
 In a nutshell, static website generators turn Markdown code 
 into a combination of HTML\index{HTML}, CSS and JavaScript, so a web browser can display the result. 
-The Go based Hugo^[https://gohugo.io/]\index{Hugo} or the classic Jekyll^[https://jekyllrb.com/]\index{Jekyll} are popular static website generator approaches to run a website or blog.
+The Go based\index{Hugo} Hugo^[https://gohugo.io/] or the classic\index{Jekyll} Jekyll^[https://jekyllrb.com/] are popular static website generator approaches to run a website or blog.
 
 Approaches such as the {distill} R package [@distill] or Quarto\index{Quarto}, the new kid on the block, add a data science and analytics flavor to the static website generator approach: Those implementations allow running analytics' code at render time. 
 Quarto\index{Quarto} documents, for example, are text files that contain Markdown text and possibly code chunks in the same documents. 
@@ -56,7 +59,7 @@ If necessary, this output is stored in separate files and smoothly integrated in
 
 Rendered output often consists of multiple files such as HTML documents, CSS style information, JavaScript code or images.
 Because this may be fine for websites but inconvenient for presentations or the exchange of reports, analytics-minded renderers such as Quarto\index{Quarto} offer a **self-contained** option. 
-When enabled, Quarto\index{Quarto} renders a single self-contained, encoded HTML file that contains everything from JavaScript to images. 
+When enabled, Quarto\index{Quarto} renders a single self-contained, encoded HTML file that contains everything from JavaScript\index{JavaScript} to images. 
 
 
 
@@ -188,12 +191,3 @@ As mentioned in [@sec-datamngmnt], publishing data on research repositories and 
 Archives like Zenodo^[https://zenodo.org] provide GitHub integration to automate data releases and versioning of data. 
 In addition, archives can parse the citation file format (.cff)^[https://citation-file-format.github.io/] and generate unique object identification (DOI) numbers for your dataset as well a meta information for the archive entry. 
 Thanks to rOpenSci, there is also curated R package called {cffr} [@cffr] to help generate citation files. 
-
-
-    
-
-<!-- sayin this and that cause this and that was missin [@knuth84] -->
-
-
-
-

@@ -6,10 +6,12 @@
 
 Why should a researcher or business analyst work Like a Software Engineer? First, because everybody and their grandmothers seem to work like software engineers.
 Statistical computing continues to be on the rise in many branches of research. 
-The below chart shows the obvious trend in the sum of total R package downloads per month since 2015. 
+@fig-cran-dl shows the obvious trend in the sum of total R package downloads per month since 2015. 
 
 
 ```{r, eval=TRUE, echo=FALSE, message=FALSE, warnings=FALSE}
+#| label: fig-cran-dl
+#| fig-cap: "Monthly R Package Downloads. (Source: RStudio CRAN mirror.)"
 library(cranlogs)
 library(dplyr)
 library(lubridate)
@@ -23,15 +25,13 @@ packs <- cran_downloads(from = "2015-01-01",
 packs |> 
   group_by(floor_date(date, "month")) |> 
   summarize(m = sum(count)) |> 
-  ts_plot(title = "Monthly R Package Downloads",
-          subtitle = "source: RStudio CRAN mirror")
+  ts_plot()
 
 ```
 
 
 ```{r, eval=FALSE, message=FALSE, warnings=FALSE}
 #| code-fold: true
-
 library(cranlogs)
 library(dplyr)
 library(lubridate)
@@ -45,9 +45,7 @@ packs <- cranlogs::cran_downloads(
 packs |> 
   group_by(floor_date(date, "month")) |> 
   summarize(m = sum(count)) |> 
-  ts_plot(
-    title = "Sum of Monthly R Package Downloads",
-    subtitle = "source: RStudio CRAN mirror")
+  ts_plot()
 
 ```
 
@@ -56,7 +54,7 @@ Bandwagonism aside, source code can be a tremendously sharp, unambiguous and int
 Your web scraper does not work? Instead of reaching out in a clumsy but wordy cry for help, posting what you tried so far described by source code will often get you good answers within hours. Platforms like stack\index{stack}overflow^[https://stack\index{stack}overflow.com] or Crossvalidated^[https://crossvalidated.com] do not only store millions of questions and answers, they also gather a huge and active community to discuss issues. Plus, recent developments show that source code is not only useful to communicate with human experts. Have you tried to turn an idea into code or improve a piece of code by playing ping pong with chatGPT or Bing? Or think of feature requests: After a little code ping pong with the package author, your wish eventually becomes clearer. Let alone chats with colleagues and co-authors. Sharing code just works. 
 Academic journals have found that out, too. Many outlets require you to make the data and source code behind your work available. Social Science Data Editors [@soscieds] is a bleeding-edge project at the time of writing this, but it is already referred to by top-notch journals like *American Economic Review (AER)*. 
 
-![](images/communication.png)
+![Source code is be unambiguous, interactive and global communication channel. Source: own illustration.](images/communication.png)
 
 In addition to the above reproducibility and ability to share, code scales and automates. automation\index{automation} is very convenient; like when you want to download data, process and create the same visualization and put it on your website any given Sunday. automation\index{automation} is inevitable; like when you have to gather daily updates from different outlets or work through thousands of .pdfs. 
 

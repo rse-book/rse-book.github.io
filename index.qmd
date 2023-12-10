@@ -1,4 +1,4 @@
-# Preface {.unnumbered}
+# Preface
 
 **Note**: This book is published by [Chapman & Hall/CRC](https://www.routledge.com/). The online version of this book is free to read here (thanks to Chapman & Hall/CRC), and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). If you have any feedback, please feel free to [file an issue on GitHub](https://github.com/rse-book/rse-book.github.io/issues). Thank you!
 
@@ -12,7 +12,7 @@ The vast majority of data has been created within the last decade. In turn, many
 ![Meet Dr. Egghead who started his quest to figure out how his assistant got a week's work done in hours. "Hackers wear hoodies, you know," he mumbles as he pulls up his coat's hood and starts to think.](images/meet_egghead.jpg)
 </div>
 
-## Aknowledgements {.unnumbered}
+## Acknowledgements
 
 I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations that I would like to thank in particular. 
 

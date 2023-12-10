@@ -18,7 +18,7 @@ Step one en route to logging in like a grown up, is to create an RSA key pair. G
 6. You can paste the key you obtained to your GitHub\index{GitHub} settings or put it into your server's authorized keys file. 
 7. Doing so allows your SSH agent to clone and interact with remote git repositories via SSH or log in to a server if your user is allowed to use a login shell by the server.  
 
-![The R Studio GUI is an easy way to create a key pair. (source: screenshot RStudio IDE taken in 2021.)](images/rsa.png)
+![The R Studio GUI is an easy way to create a key pair. (Source: screenshot RStudio IDE taken in 2021.)](images/rsa.png)
 
 
 
@@ -393,7 +393,7 @@ The second `app` command serves the content of the `public` folder to visitor's 
 So if `api/public/` contained a picture of pretty Johnny, this would be served at `localhost:3000/static/johnny.png`.
 
 
-![Maybe I am late, but I look good. A cartoon delivered by an Express-based webserver. (Source: own illustration)](images/express.png)
+![Maybe I am late, but I look good. A cartoon delivered by an Express-based webserver. (Source: own illustration.)](images/express.png)
 
 Now let us make use of server-side features beyond simply serving static files and add the need for an API key to get the picture. 
 
@@ -448,7 +448,7 @@ Developers benefit from comprehensive approaches like Swagger and the OpenAPI sp
 <!-- https://idratherbewriting.com/learnapidoc/pubapis_swagger.html -->
 
 
-## A Minimal Webscraper: Extracting Publication Dates {#sec-webscrape}\index{webscraping}
+## A Minimal Webscraper\index{webscraping}: Extracting Publication Dates {#sec-webscrape}
 
 Even though KOF Swiss Economic Institute offers a REST API to consume publicly available data, publication dates are unfortunately not available through in API just yet. Hence, to automate data consumption based on varying publication dates, we need to extract upcoming publication dates of the Barometer from KOF's media release calendar. Fortunately, all future releases are presented online in an easy-to-scrape table. So, here's the plan: 
 
@@ -463,7 +463,7 @@ Even though KOF Swiss Economic Institute offers a REST API to consume publicly a
 
 First, let's take a look at our starting point, the media releases sub-page, first. 
 
-![The KOF Swiss Economic Institute's media agenda in 2021. (source: screenshot Google Chrome browser.)](images/agenda.png)
+![The KOF Swiss Economic Institute's media agenda in 2021. (Source: screenshot Google Chrome browser.)](images/agenda.png)
 
 
 The website looks fairly simple, and the jackpot is not hard, presented in a table 
@@ -478,7 +478,7 @@ Right-click the table to see a Chrome context window pop up. Select *inspect*.
 Hover over the highlighted line in the source code at the bottom. Make sure the selected line marks the table. Right click again,
 select copy → copy X-Path^[Full URL used in the below code example: https://kof.ethz.ch/news-und-veranstaltungen/medien/medienagenda.html]. 
 
-![Browser tools help you explore the hierarchical structure of a website in interactive fashion. (source: screenshot Google Chrome browser.)](images/xpath.png)
+![Browser tools help you explore the hierarchical structure of a website in interactive fashion. (Source: screenshot Google Chrome browser.)](images/xpath.png)
 
 
 On to R! 
@@ -759,7 +759,7 @@ This case study does not intend to rewrite {shiny}'s great documentation or blog
 
 ### The Web Frontend 
 
-![Maybe I am late, but I look goood. Johnny representing the frontend. (Source: own illustration)](images/johnny.png)
+![Maybe I am late, but I look goood. Johnny representing the frontend. (Source: own illustration.)](images/johnny.png)
 
 Stats and figures put together by academic researchers or business analysts are not used to spending a lot of time in front of the mirror. (Often, for the same reason as their creators: perceived opportunity costs.)
 
@@ -904,7 +904,7 @@ Truth be told, the full hype and excitement of a Shiny\index{Shiny} app only com
 
 One of the cool things of learning shiny is how Shiny, and its ecosystem, allow you to learn quickly. Here are some of my favorite resources to hone your Shiny skills. 
 
-![The {shinydashboard} R package provides nice, customizable skeletons for dashboards. (Source: screenshot of minimal, blank dashboard created with shinydashboard)](images/blank_dashboard.png)
+![The {shinydashboard} R package provides nice, customizable skeletons for dashboards. (Source: screenshot of minimal, blank dashboard created with shinydashboard.)](images/blank_dashboard.png)
 
 - R Studio Shiny's Widget Gallery: https://shiny.rstudio.com/gallery/widget-gallery.html
 
@@ -936,7 +936,7 @@ Major git platforms ship with a decent, carpentry-level project management\index
 Swim lanes (reminiscent of a bird's-eye view of an Olympic pool) can be thought of columns that you have to walk through
 from left to right: To Do, Doing, Under Review, done. (you can also customize the number and label of lanes and event associate actions with them, but let's stick to those basic lanes in this section.) The idea is to use to keep track of the process and make the process transparent. 
 
-![GitHub's web platform offers swim lanes to keep a better overview of issues being worked on. (Source: screenshot, own Github repository)](images/swim.png)
+![GitHub's web platform offers swim lanes to keep a better overview of issues being worked on. (Source: own GitHub repository.)](images/swim.png)
 
 :::{.callout-tip}
 No lane except "Done" should contain more than 5–6 issues. 
@@ -1042,6 +1042,8 @@ Visualization can give us a better idea.
 
 
 ```{r, message=FALSE, warning=FALSE}
+#| label: fig-benchmark
+#| fig-cap: "Comparison of computation time (shorter bar is faster)."
 library(ggplot2)
 library(viridis)
 vizframe <- d[,c(1,5)]
@@ -1059,13 +1061,7 @@ gg +
            stat = "identity") + 
   coord_flip() + 
   scale_fill_viridis(discrete = T) +
-  theme_minimal() +
-  ggtitle("
-  Comparison of Computation Time\n
-  (shorter bar is faster)
-  ")
-
-
+  theme_minimal()
 
 ```
 
