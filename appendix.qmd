@@ -1,6 +1,4 @@
-# Appendix {-}
-
-## Glossary {-}
+# Glossary {.unnumbered}
 
 ```{r, eval=TRUE,message=FALSE, echo=FALSE}
 library(kableExtra)

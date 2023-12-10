@@ -45,6 +45,7 @@ format:
       text: |
         \usepackage{makeidx}
         \makeindex
+        \makeindex
     include-after-body: 
       text: |
         \printindex

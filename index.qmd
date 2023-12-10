@@ -12,8 +12,7 @@ The vast majority of data has been created within the last decade. In turn, many
 ![Meet Dr. Egghead who started his quest to figure out how his assistant got a week's work done in hours. "Hackers wear hoodies, you know," he mumbles as he pulls up his coat's hood and starts to think.](images/meet_egghead.jpg)
 </div>
 
-
-## Preface
+## Aknowledgements {.unnumbered}
 
 I am thankful for the inspiration, help and perspectives of everyone who contributed to this book at its different stages. There are several people and organizations that I would like to thank in particular. 
 
