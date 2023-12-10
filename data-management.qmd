@@ -161,7 +161,7 @@ toJSON(li, pretty = TRUE)
 
 The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON, both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but it is more flexible than the former. 
 
-Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to "the web" while XML is the traditional, very explicit no-nonsense format.  XML\index{XML} has a **Document Type Definition (DTD)** that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX^[SDMX (https://sdmx.org)\index{SDMX} stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
+Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to "the web" while XML is the traditional, very explicit no-nonsense format.  XML\index{XML} has a **Document Type Definition (DTD)**\index{DTD} that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX^[SDMX (https://sdmx.org)\index{SDMX} stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
 
 
 The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX\index{SDMX} XML\index{XML} file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like *Contact* or *ID* in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.  
@@ -266,7 +266,7 @@ The *Parquet* file for the *diamonds* dataset has roughly one fifth of the size 
 This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from
 decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change. 
 
-## database\index{database}s
+## Database\index{database}
 
 Given the options that file-based approaches provide, what is (a) the difference and (b) the added value of going for a database\index{database} to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
 
@@ -301,7 +301,7 @@ dbDisconnect(con)
 
 Obviously, the above example barely shows the tip of the iceberg, as it is just meant to illustrate the way we interact with database\index{database}s as opposed to a file system. To dig a little deeper into database\index{database}s, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form. 
 
-![The iconic Postgres elephant logo](images/postgres.png)
+![The iconic Postgres elephant logo.](images/postgres.png)
 
 
 ### Relational database\index{database} Management Systems (RDBMS)
@@ -445,9 +445,12 @@ Open data initiatives of your country, as well as major international organizati
 In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. 
 Initiatives like SDMX (Statistical Data and Meta eXchange)^[https://sdmx.org/]\index{SDMX} aim to improve exchange of data *and* data descriptions. 
 Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software.
-Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub\index{GitHub} organization.
+Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data.
 
 >openwashdata is an active global community that applies FAIR principles\index{FAIR principles} to data generated in the greater water, sanitation, and hygiene (WASH) sector -- openwashdata.org
+
+The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub\index{GitHub} organization.
+
 
 
 

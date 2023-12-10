@@ -636,14 +636,14 @@ Data visualization is a big reason for researchers and data analysts to look int
 
 One of the more popular types of plots that can be created smoothly using a programming language is the so-called *choropleth*\index{choropleth}. A *choropleth* maps values of a variable that is available by region to a given continuous color palette on a map. Let's break down the ingredients of the below map of Switzerland^[Full URL used in the below example https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson]. 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=FALSE}
 library(echarts4r)
 library(viridisLite)
 library(jsonlite)
 
-json_ch <- jsonlite::read_json(
-  "https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson"
-)
+# json_ch <- jsonlite::read_json(
+#   "https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson"
+# )
 
 
 
@@ -658,12 +658,12 @@ d <- data.frame(
   values = c(50,10,100,50,23,100,120)
 )
 
-d |>
-  e_charts(name) |>
-  e_map_register("CH", json_ch) |>
-  e_map(serie = values, map = "CH") |>
-  e_visual_map(values,
-               inRange = list(color = viridis(3)))
+# d |>
+#   e_charts(name) |>
+#   e_map_register("CH", json_ch) |>
+#   e_map(serie = values, map = "CH") |>
+#   e_visual_map(values,
+#                inRange = list(color = viridis(3)))
 
 ```
 

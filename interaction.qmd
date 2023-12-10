@@ -102,9 +102,7 @@ The resulting workflow, e.g., a data analysis in the making feels like a social 
 This way we get an endless scroll of commands, analysis and descriptive text in between. 
 
 Consider the following example, drawing a basketball court using the *matplotlib* Python package. 
-This example uses screenshots of a notebook\index{Jupyter} to illustrate the difference between a notebook and concepts like RMarkdown.
-
->Note the prompts in between the results!
+This example uses screenshots of a notebook\index{Jupyter} to illustrate the difference between a notebook and concepts like RMarkdown. Note the prompts in between the results!
 
 ![](images/notebook-1.png)
 
@@ -191,7 +189,10 @@ In the Windows world, the use of terminal applications has been much less common
 One of the most important use cases of the console for data analysts is the ability to log into 
 other machines, namely servers that most often run on Linux. Typically, we use the SSH\index{SSH} protocol to connect to a (remote) machine that allows to connect through port 22. 
 
->Note that sometimes firewalls limit access to ports other than those needed for surfing the web (8080 for http:// and 443 for https://) so you can only access port 22 inside an organization's VPN network. 
+:::{.callout-note}
+Note that sometimes firewalls limit access to ports other than those needed for surfing the web (8080 for http:// and 443 for https://) so you can only access port 22 inside an organization's VPN network. 
+:::
+
 
 To connect to a server using a username and password, simply use your console's SSH\index{SSH} client like this:
 
