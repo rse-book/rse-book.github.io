@@ -1008,10 +1008,24 @@ d <- summary(out)
 
 Obviously, the absolute computation time depends on the hardware used as well as the operating system, depending on the task at hand.
 
+As expected, given the perfect independence of the tasks from each other, performance gains are quite substantial (~5.5 times faster) for the above example, though not perfect (on my 8-core machine).
+Advanced parallel implementations and deeper dives into the way different processors work may further optimize efficiency here.
+
+
 ```{r}
-#| size: tiny
+#| size: scriptsize
+#| label: tbl-benchmark
+#| tbl-cap: "Runtimes with and without parallelization."
 library(kableExtra)
-kable(d,"latex",
+kable(d[,c(1:4)],"latex",
+      booktabs = TRUE,
+      escape= FALSE) |>
+      kable_styling(
+        latex_options = c("repeat_header")
+        ) |>
+      column_spec(1:2, width = "2.5cm")
+
+kable(d[,c(1,5,6,7)],"latex",
       booktabs = TRUE,
       escape= FALSE) |>
       kable_styling(
@@ -1020,10 +1034,12 @@ kable(d,"latex",
       column_spec(1:2, width = "2.5cm")
 
 
+
 ```
 
-As expected, given the perfect independence of the tasks from each other, performance gains are quite substantial (~5.5 times faster) for the above example, though not perfect (on my 8-core machine).
-Advanced parallel implementations and deeper dives into the way different processors work may further optimize efficiency here.
+
+
+
 
 Yet, the key takeaway from the above exercise is not the parallel computation itself, but the ability to evaluate the need to go parallel and how. 
 Benchmarking does not only help to get a ballpark estimate of the costs should you go outside for more computational power, it gives you an idea whether the gains from a parallel approach are worth the hassle. 

@@ -2,6 +2,3 @@
 
 ::: {#refs}
 :::
-
-
-\printindex

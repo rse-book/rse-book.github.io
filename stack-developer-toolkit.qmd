@@ -1,11 +1,11 @@
 # Stack\index{stack}: A Developer's Toolkit
 
-The goal of this chapter (and probably the most important goal of this entire book) is to help you see the big picture\{big picture} of which tool does what. The following sections will group common programming-with-data components by purpose. All of the resulting groups represent aspects of programming with data, and I will move on to discuss these groups in a dedicated chapter each. 
+The goal of this chapter (and probably the most important goal of this entire book) is to help you see the big picture\index{big picture} of which tool does what. The following sections will group common programming-with-data components by purpose. All of the resulting groups represent aspects of programming with data, and I will move on to discuss these groups in a dedicated chapter each. 
 
 ![Aaaaaaah! Don't panic, Dr. Egghead! All these components are here to help you and you won't need all of them from the start. (Source: own illustration.)](images/dr_egghead_panics.jpg)
 
 
-Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project's *stack\index{stack}* is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in *programming with data* stack\index{stack}s. @tbl-stack shows some of the components I use most often grouped by their role. Of course, this is a personal choice. Obviously, I do not use *all* of these components in every single small project. *Git, R* and *R Studio* would be a good minimal version.
+Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project's *stack\index{stack}* is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in *programming with data* stack\index{stack}s. @tbl-stack shows some of the components I use most often grouped by their role. Of course, this is a personal choice. Obviously, I do not use *all* of these components in every single small project. *Git, R* and *R Studio* would be a good minimal version.\index{Woodpecker}
 
 ```{r, eval=TRUE,message=FALSE, echo=FALSE}
 #| size: scriptsize
@@ -129,7 +129,7 @@ On the flip side, product offerings and therefore our options have become a fast
 The one trending form of automation\index{automation}, though, is *continuous integration/continuous development (CI/CD\index{CI/CD})*. *CI/CD\index{CI/CD}* processes are typically closely linked to 
 a git \index{version control} repository and are triggered by a particular action done to the repository. For example, in case some pre-defined part (branch) of a git repository gets updated, an event is triggered and some process starts to run on some machine (usually some container). Builds of software packages are very common use cases of such a *CI/CD\index{CI/CD}* process. Imagine you are developing an R package and want to run all the tests you've written, create the documentation and test whether the package can be installed. Once you've made your changes and push to your remote git repository, your push triggers the tests, the check, the documentation rendering and the installation. Potentially a push to the main branch of your repository could even deploy a package that cleared all of the above to your production server. 
 
-Rendering documentation, e.g., from Markdown to HTML\index{HTML} into a website or presentation or a book like this one is a very similar example of a CI/CD\index{CI/CD} process. Major git providers like Gitlab (GitLab CI/CD\index{CI/CD}) or GiTHub (GitHub Actions) offer CI/CD\index{CI/CD} tool integration. In addition, standalone services like CircleCI can be used as well as open source, self-hosted software like Woodpecker CI^[https://woodpecker-ci.org/]. 
+Rendering documentation, e.g., from Markdown to HTML\index{HTML} into a website or presentation or a book like this one is a very similar example of a CI/CD\index{CI/CD} process. Major git providers like Gitlab (GitLab CI/CD\index{CI/CD}) or GiTHub (GitHub Actions) offer CI/CD\index{CI/CD} tool integration. In addition, standalone services like CircleCI can be used as well as open source, self-hosted software like Woodpecker\index{Woodpecker} CI^[https://woodpecker-ci.org/]. 
 
 
 ## Communication Tools
