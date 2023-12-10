@@ -390,10 +390,10 @@ app.listen(port, () => {
 
 The first `app.get` route simply maps the root, a plain, un-nested starting point so to say, in our case `localhost:3000/` to the output of the `res.send` call. 
 The second `app` command serves the content of the `public` folder to visitor's of `localhost:3000/static`. 
-So if `api/public/` contained a picture of pretty Johnny, this would be served at `localhost:3000/static/johnny.png`.
+So if a `public/` folder inside the app folder contained a cover image of my *Hacking for Science* courses, this would be served at `localhost:3000/static/h4sci.jpeg`.
 
 
-![Maybe I am late, but I look good. A cartoon delivered by an Express-based webserver. (Source: own illustration.)](images/express.png)
+![Cover illustration of the Hacking for Science Courses. (Source: own illustration.)](images/h4sci.png)
 
 Now let us make use of server-side features beyond simply serving static files and add the need for an API key to get the picture. 
 
@@ -630,14 +630,13 @@ Note that we can see all the output of the process from the GitHub\index{GitHub}
 
 ## Choropleth Map: Link Data to a GeoJSON\index{GeoJSON} Map File {#sec-map}
 
+![Screenshot of an interactive choropleth; for the actual, interactive visit https://rse-book.github.io/case-studies.html#sec-map](images/case-choropleth.png)
+
 Data visualization is a big reason for researchers and data analysts to look into programming languages. Programming languages do not only provide unparalleled flexibility, but they also make data visualization reproducible and allow placing charts in different contexts, e.g., websites, printed outlets or social media. 
 
 One of the more popular types of plots that can be created smoothly using a programming language is the so-called *choropleth*\index{choropleth}. A *choropleth* maps values of a variable that is available by region to a given continuous color palette on a map. Let's break down the ingredients of the below map of Switzerland^[Full URL used in the below example https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson]. 
 
-
-
-
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 library(echarts4r)
 library(viridisLite)
 library(jsonlite)
@@ -667,11 +666,6 @@ d |>
                inRange = list(color = viridis(3)))
 
 ```
-
-
-![Screenshot of an interactive choropleth; for the actual, interactive visit https://rse-book.github.io/case-studies.html#sec-map](images/case-choropleth.png)
-
-
 
 First, we need a *definition of a country's shape*. Those definitions come in various formats, from traditional *shape files* to web-friendly *GeoJSON*. Edzer Pebesma's useR! 2021 keynote^[https://www.youtube.com/watch?v=cK08bxUJn5A] has a more thorough insight. 
 
@@ -838,9 +832,9 @@ Note also how similar the hierarchical, nested\index{nested data} structure of t
 
 While the frontend is mostly busy looking good, the backend has to do all the hard work, the computing, the querying -- whatever is processed in the background based on user input. 
 
+![While the frontend is busy looking spiffy, the backend does the computation work. (Source: own illustration.)](images/overload.jpg)
 
 Under-the-hood-work that is traditionally implemented in languages like Java, Python\index{Python} or\index{PHP} PHP^[Yes, one could lists JavaScript\index{JavaScript} here, too, but let's keep things simple and think of JavaScript\index{JavaScript} as traditionally client-side here.] can now be done in R. This is not only convenient for the R developer who does not need to learn Java, it's also incredibly comfy if you got data work to do. Or put differently: who would like to implement logistic regression, random forests or principal component analysis in PHP?
-
 
 Consider the following minimal backend *server.R* file which corresponds to the above *ui.R* frontend file. The anonymous (nameless) function which is passed on to the *ShinyServer* function takes two named lists, *input* and *output*, as arguments. The named elements of the input list correspond to the *widgetId* parameter of the UI element. 
 In the below example, our well-known base R function *rnorm* takes *nobs* from the input as its *n* sample size argument. Mean and standard deviation are set in the same fashion using the user interface (UI) inputs. 
@@ -863,13 +857,8 @@ shinyServer(function(input,output){
   
   output$tab <- renderDataTable({
     mtcars
-  })
-  
-  
-  
+  })  
 })
-
-
 
 ```
 

@@ -23,7 +23,7 @@ d <- data.frame("Term" = c(
   "Reproducible Example",
   "Reverse Dependency",
   "Snake_case",
-  "stack",
+  "Stack",
   "SQL",
   "Swimlanes",
   "Throughput Problem",

@@ -17,12 +17,12 @@ book:
     - programming.qmd
     - interaction.qmd
     - version-control.qmd
-    # - data-management.qmd
+    - data-management.qmd
     - infrastructure.qmd
     - automation.qmd
     - community.qmd
     - publishing.qmd
-    #- case-studies.qmd
+    - case-studies.qmd
     - appendix.qmd
     - references.qmd
 execute: 

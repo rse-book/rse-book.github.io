@@ -441,7 +441,7 @@
   }
 \newcommand\HeadingsBookChapter{%
   \def\chaptermark##1{%
-    \markboth{\@title}{%
+    \markboth{Research Software Engineering}{%
       ##1}}%
   \def\sectionmark##1{}}
 \def\HeadingsChapterSection{%
@@ -2060,8 +2060,6 @@
 
 \@centertabletitlefalse
 \HeadingsBookChapter
-%\HeadingsChapterSection
 \endinput
 %%
 %% End of file `krantz.cls'.
-         
