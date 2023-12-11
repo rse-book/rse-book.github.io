@@ -4,7 +4,7 @@ As a kid of the 90s, reading about a new editor or fancy shell coming out trigge
 
 That being said, I am nowhere near the *vim* aficionados whose jaw-dropping editing speed probably takes thousands of hours to master and configure, and I would not advise overengineering setting up your environment. Like often, finding a personal middle ground between feeling totally uncomfortable outside graphical user interfaces and editing code at a 100 words per minute is key. 
 
-![Wizard or Carpenter? Aiming at solid mastery of your toolset is sufficient to become happy with a programming approach to analytics. (Source: own illustration.)](images/wizardry.jpg)
+![Wizard or carpenter? What degree of toolset proficiency is sufficient to become happy with a programming approach to analytics? (Source: own illustration.)](images/wizardry.jpg)
 
 
 Most likely, investing in an initial setup of a solid editor plus some basic terminal workflows are a good starting point that can be revisited every once in a while, e.g., when we start a larger new project. What editor you will center your environment around will depend a lot on the programming language you choose. Yet, it also depends on your personal preference of how much investment, support and supportive features you want. The following features/criteria are likely the most influential when composing a programming environment for statistical computing: 

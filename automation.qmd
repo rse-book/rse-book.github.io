@@ -197,7 +197,7 @@ The walkthrough provided in R OpenSci's book^[https://books.ropensci.org/targets
 
 
 
-## infrastructure\index{infrastructure} as Code
+## Infrastructure as Code\index{infrastructure-as-code}
 
 
 In recent years, declarative approaches helped to make task automation\index{automation} more inclusive and appealing to a wider audience. Not only a workflow itself, but also the environment a workflow should live and run in is often defined in declarative fashion. This development does not only make maintenance easier, it also helps to make a setting reproducible and shareable. 

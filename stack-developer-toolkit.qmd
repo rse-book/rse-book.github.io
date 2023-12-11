@@ -107,7 +107,7 @@ The other obvious limitation of data in memory is the lack of persistent storage
 To evaluate which relational (essentially SQL) or non-relational database\index{database} to pick up just seems like the next daunting task of stack\index{stack} choice. Luckily, in research, first encounters with a database\index{database} are usually passive, in the sense that you want to query data from a source. In other words, the choice has been made for you. So unless you want to start your own data collection from scratch, simply sit back, relax and let the internet battle out another conceptual war.  For now, let's just be aware of the fact that a data management game plan should be part of any analysis project. 
 
 
-## infrastructure\index{infrastructure}
+## Infrastructure\index{infrastructure}
 
 For researchers and business analysts who want to program with data, the starting infrastructure\index{infrastructure} is very likely their own desktop or notebook computer. Nowadays, this already means access to remarkable computing power suited for many tasks. 
 

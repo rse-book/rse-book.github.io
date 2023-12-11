@@ -1,13 +1,13 @@
 # Git Version Control {#sec-git}
 
 As stated before, \index{version control} may be the single most important thing to take away from *Research Software Engineering* if you have not used it before. 
-In this chapter about the way developers work and collaborate, I will stick to \index{version control} with *git*. The stack\index{stack} discussion of the previous chapter features a few more \index{version control} systems, but given git's dominant position, we will stick solely to git in this introduction to \index{version control}.  
+In this chapter about the way developers work and collaborate, I will stick to \index{version control} with *git*. The stack\index{stack} discussion of the previous chapter features a few more \index{version control} systems, but given git's dominant position, we will stick solely to git in this introduction to version control\index{version control}.  
 
 ## What Is Git Version Control? 
 
 Git\index{git} is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git program itself is a small console program that creates and manages a hidden folder inside the folder you put under \index{version control} (you know those folders with a leading dot in their folder name, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one. 
 
-![Meaningful commit messages help to make sense of a project's history. Screenshot of a commit history on GitHub. Source: (own GitHub repository.)](images/commits.png)
+![Meaningful commit messages help to make sense of a project's history. Screenshot of a commit history on GitHub. (Source: own GitHub repository.)](images/commits.png)
 
 The key to appreciating the value of git\index{git} is to appreciate the value of semantic versions. Git is *not* Dropbox nor Google Drive. It does *not* sync automagically (even if some Git GUI Tools suggest so). GUI tools GitHub Desktop^[https://desktop.github.com/], Atlassian's Source Tree^[https://www.sourcetreeapp.com/] and Tortoise^[https://tortoisegit.org/] are some of the most popular choices if you are not a console person. Though GUI tools may be convenient, we will use the git console throughout this book to improve our understanding. As opposed to the sync approaches mentioned above, a \index{version control} system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, \index{version control} creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit\index{git commit} message "incorporated advice from Anna (discussion at XYZ Conference 2020)". 
 
@@ -144,11 +144,9 @@ a file when putting two versions of it together. When git's *recursive strategy*
 which line should be kept. Sometimes, you would even want to keep both changes. 
 
 But even in such scenario, fixing the conflict is easy. Git will tell you that your last command
-caused a merge conflict and which files are conflicted. Open these files and see all parts of the file that
-are in question. 
+caused a merge conflict and which files are conflicted. Open these files and take a look at all parts of the files in question. @fig-merge-conflict shows a situation in which trying merge a file that had changes across different branches caused a conflict.
 
-
-![Ouch! We created a conflict by editing the same line in the same file on different branches. Trying merge these branches created a conflict. (Source: screenshot of own GitHub repository.)](images/merge_conflict.png)
+![Ouch! We created a conflict by editing the same line in the same file on different branches. (Source: screenshot of own GitHub repository.)](images/merge_conflict.png){#fig-merge-conflict}
 
 Luckily, git marks the exact spot where the conflict\index{merge conflict} happens. Good text editors/IDEs ship with cool colors to highlight all our options. Some of the fancier editors even have git conflict resolve plugins that let you walk through all conflict points.  
 
@@ -157,7 +155,7 @@ Luckily, git marks the exact spot where the conflict\index{merge conflict} happe
 ![In VS Code, you can even select the option by clicking. (Source: screenshot VS Code IDE.)](images/vscode_conflict.png)
 
 At the end of the day, all do the same, i.e., remove the unwanted part, including all the marker gibberish. 
-After you have done so, save, commit and push (if you are working with a remote repo) . Don't forget to make sure you kinked out all conflicts.  
+After you have done so, save, commit and push (if you are working with a remote repo). Don't forget to make sure you kinked out all conflicts.  
 
 
 ## Collaboration Workflow

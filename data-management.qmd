@@ -144,7 +144,7 @@ csv
 
 ### File Formats for Nested Information
 
-For many data engineers and developers. JavaScript Object Notation (JSON)^[https://json.org]\index{JSON} has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format. 
+For many data engineers and developers. JavaScript Object Notation (JSON)^[https://json.org]\index{JSON} has become the go-to file format for nested data. Just like with .csv\index{csv} basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format. 
 
 
 ```{r}
@@ -159,7 +159,7 @@ toJSON(li, pretty = TRUE)
 
 ```
 
-The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON, both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but it is more flexible than the former. 
+The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON, both datasets can be stored in the same file albeit totally different columns. Again, just like .csv\index{csv}, JSON\index{JSON} works well as an interface, but it is more flexible than the former. 
 
 Besides JSON, **XML** is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to "the web" while XML is the traditional, very explicit no-nonsense format.  XML\index{XML} has a **Document Type Definition (DTD)**\index{DTD} that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX^[SDMX (https://sdmx.org)\index{SDMX} stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.], a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML. 
 
@@ -195,7 +195,9 @@ In memory, *bogus* is a *function*, Airpassengers is an R *time series\index{tim
 load("bundle.RData")
 ```
 
->Notice that unlike reading a .csv or .json file, the call does not make any assignments into a target object. This is because all objects are loaded into an R environment (*.globalEnv* by default) with their original names.  
+:::{.callout-note}
+Notice that unlike reading a .csv\index{csv} or .json\index{JSON} file, the call does not make any assignments into a target object. This is because all objects are loaded into an R environment (*.globalEnv* by default) with their original names.  
+:::
 
 
 ### Interoperable File Formats
@@ -346,7 +348,7 @@ While certainly doing its job in millions of installations, MySQL is not in at t
 PostgreSQL^[https://www.postgresql.org/]\index{PostgreSQL} and Oracle database\index{database}^[https://www.oracle.com/database\index{database}/technologies/], and I suggest one of these three enterprise-level database\index{database}s as a data store for research projects that go beyond hosting\index{hosting} a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL\index{SQL Server}, PostgreSQL\index{PostgreSQL} and Oracle\index{Oracle} are hard to beat. 
 Among the three, personally I would always lean toward the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect, may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice. 
 
-Another database\index{database} management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer anSQL\index{SQL}interface, but it is very different in its aims from the traditionalSQL\index{SQL}database\index{database}s. DuckDB\index{DuckDB} is serverless and allows accessing *Parquet*\index{Parquet} files via a very fastSQL\index{SQL}interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing. 
+Another database\index{database} management that gets a lot of attention recently (and rightfully so) is DuckDB^[https://duckdb.org/]. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer an SQL\index{SQL} interface, but it is very different in its aims from the traditionalSQL\index{SQL}database\index{database}s. DuckDB\index{DuckDB} is serverless and allows accessing *Parquet*\index{Parquet} files via a very fast SQL\index{SQL} interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing. 
 
 
 ### A Word on Non-Relational database\index{database}s
@@ -436,7 +438,7 @@ Fortunately, feeding research repositories is a task that is easy to automate th
 
 Open Data\index{Open Data} archives are a special form of repositories. The term "open data" refers to publicly available data that are available free of license costs and in machine-readable fashion. 
 
->“Open data and content can be freely used, modified, and shared by anyone for any purpose” -- opendefinition.org
+>Open data and content can be freely used, modified, and shared by anyone for any purpose -- opendefinition.org
 
 Because of approaches such as the Swiss government's "open by default," open government data (OGD) has become a common form of open data. 
 The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. 
@@ -447,7 +449,7 @@ Initiatives like SDMX (Statistical Data and Meta eXchange)^[https://sdmx.org/]\i
 Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software.
 Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data.
 
->openwashdata is an active global community that applies FAIR principles\index{FAIR principles} to data generated in the greater water, sanitation, and hygiene (WASH) sector -- openwashdata.org
+>*openwashdata* is an active global community that applies FAIR principles\index{FAIR principles} to data generated in the greater water, sanitation, and hygiene (WASH) sector -- openwashdata.org
 
 The *openwashdata* project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project's GitHub\index{GitHub} organization.
 

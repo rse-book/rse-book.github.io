@@ -1,9 +1,8 @@
 # Infrastructure
 
-Yes, there is a third area besides your research and carpentry-level programming that I suppose you should get an idea about. Again, you do not have to master hosting servers or even clusters, but a decent overview and an idea of when to use what will
-help you tremendously to plan ahead. 
+Yes, there is a third area besides your research and carpentry-level programming that I suppose you should get an idea about. Again, you do not have to master hosting servers or even clusters, but a decent overview and an idea of when to use what will help you tremendously to plan ahead. The figure @fig-schematic-web shows a simple web application setup that would work well with virtual machines as well as with docker\index{Docker} containers. 
 
-![Schematic illustration of a simple server setup for web-based IDE and web application server. The setup would work well with virtual machines as well as with docker\index{Docker} containers. (Source: own illustration.)](images/server-setup3.jpg)
+![Schematic illustration of a simple server setup for web-based IDE and web application server. (Source: own illustration.)](images/server-setup3.jpg){#fig-schematic-web}
 
 ## Why Go Beyond a Local Notebook?
 

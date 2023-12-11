@@ -13,7 +13,7 @@ The very first (and intimidating) choice a novice hacker faces is which is the p
 
 At least to me, there is only one valid advice: **It simply does not matter**. If you stick around in data science long enough, you will eventually get in touch with both languages and, in turn, learn both. There is a huge overlap of what you can do with either of those languages. R came out of the rather specific domain of statistics more than 25 years ago and made its way to a more general programming language thanks to over 20K extension packages (and counting). Built by a mathematician, Python\index{Python} continues to be as general purpose as it has ever been. But it got more scientific, thanks to extension packages of its own such as pandas^[https://pandas.pydata.org/], SciPy^[https://www.scipy.org/] or NumPy^[https://numpy.org/]. As a result, there is a huge overlap of what both languages can do, and both will extend your horizon in unprecedented fashion if you did not use a full-fledged programming language for your analysis beforehand. 
 
-![R: "Dplyr smokes pandas." Python: "But Keras is better for ML!" Language wars can be entertaining, sometimes spectacular, but most of the time they are just useless. (Source: own illustration).](images/languagewar.jpg)
+![R: "Dplyr smokes pandas." Python: "But Keras is better for ML!" Language wars can be entertaining, sometimes spectacular, but are essentially just useless. (Source: own illustration).](images/languagewar.jpg)
 
 But why is there such a heartfelt debate online if it doesn't matter? Let's pick up a random argument from this debate: R is easier to set up and Python is better for machine learning. If you worked with Java or another environment that's rather tricky to get going, you are hardened and might not cherish easy onboarding. If you got frustrated before you really started, you might feel otherwise. You may just have been unlucky making guesses about a not so well-documented paragraph, trying to reproduce a nifty machine learning blog post. Or imagine the frustration in case just had installed the wrong version of Python or did not manage to make sense of *virtualenv* right from the beginning. 
 
@@ -35,10 +35,6 @@ The following sections share a blueprint to go from explorative script to produc
 How much planning ahead is optimal for your project ultimately depends on your experience, number of collaborators and the size of your project. But still, a rough standard checklist helps any project. 
 
 ### Think Library!
-
-
-!["Over the days are when creating packages for gurus was only." (Source: own illustration.)](images/packages.jpg)
-
 
 The approach that I find practical for applied, empirical research projects involving code is: think library. Think package. Think _reusable_ code. Don't think you can't do it. Let me demystify packages for you: **Packages are nothing but source code organized in folders following some convention**. Thanks to modern IDEs, it has never been easier to stay inline with conventions. Editors like RStudio ship with built-in support to create package skeletons with a few clicks. Thousands of open source extension packages allow you to learn from their structure. Tutorials like Packaging Python Projects^[https://packaging.python.org/tutorials/packaging-projects/] or Hadley Wickham's book *R Packages [@rpkgs] explain how to create packages good enough to make the official PyPi or CRAN package repositories. 
 
@@ -237,7 +233,7 @@ The below description explains the role of all of these folders.
 
 **R**
 
-The *R* folder stores function definitions as opposed to function calls. Typically every function goes into a separate file. Sometimes, it makes sense to group multiple functions into a single file when functions are closely related. Another reason for putting more than one function into a single file is when you have a collection of relatively simple, short helper functions. The R folder MUST NOT contain calls^[Essentially, examples are calls, too. Note, I do recommend adding examples. Hadley Wickham's guide to documenting functions within packages [@rpkgs] shows how to add examples correctly.].
+The *R* folder stores function definitions as opposed to function calls. Typically every function goes into a separate file. Sometimes, it makes sense to group multiple functions into a single file when functions are closely related. Another reason for putting more than one function into a single file is when you have a collection of relatively simple, short helper functions. The R folder **must not** contain calls^[Essentially, examples are calls, too. Note, I do recommend adding examples. Hadley Wickham's guide to documenting functions within packages [@rpkgs] shows how to add examples correctly.].
 
 ```{r}
 my_func_def <- function(param1, param2){
@@ -288,9 +284,7 @@ my_func_def <- function(param1, param2){
 **docs**
 
 This folder is typically not filled with content manually. When pushed to GitHub\index{GitHub}
-a docs folder can easily be published as website using Github Pages^[https://pages.github.com/]. With GitHub Pages you can host a decently styled modern website for free. Software projects often use GitHub Pages to market a product or project or simply for documentation purposes. All you need to do is check a couple of options inside the Github Web GUI and make sure the docs/ folder contains .md or .html files as well as stylesheets (.css). The latter may sound a bit like Latin to people without a basic web development background, but there is plenty of help. The R ecosystem offers different flavors of the same idea: use a bit of markdown + R to generate website code. There is the {blogdown} R package [@blogdown] for your personal website or blog. There is {pkgdown} [@pkgdown] for your packages documentation. And there is even bookdown to write an online book like this. Write the Markdown file, render it as HTML\index{HTML} into the docs folder and push the docs folder to GitHub. Done. Your website will be online at username.github.io/reponame.
-
-Here is a an example of a {pkgdown} website:
+a docs folder can easily be published as website using Github Pages^[https://pages.github.com/]. With GitHub Pages you can host a decently styled modern website for free. Software projects often use GitHub Pages to market a product or project or simply for documentation purposes. All you need to do is check a couple of options inside the Github Web GUI and make sure the docs/ folder contains .md or .html files as well as stylesheets (.css). The latter may sound a bit like Latin to people without a basic web development background, but there is plenty of help. The R ecosystem offers different flavors of the same idea: use a bit of markdown + R to generate website code. There is the {blogdown} R package [@blogdown] for your personal website or blog. There is {pkgdown} [@pkgdown] for your packages documentation. And there is even bookdown to write an online book like this. Write the Markdown file, render it as HTML\index{HTML} into the docs folder and push the docs folder to GitHub. Done. Your website will be online at username.github.io/reponame. Here is a an example of a {pkgdown} website:
 
 https://mbannert.github.io/timeseriesdb/
 

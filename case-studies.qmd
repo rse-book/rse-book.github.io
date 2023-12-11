@@ -256,7 +256,7 @@ dir("met")
 
 ```
 
-Wonder what's really in the image? Umbrella or not :) ? Try to reproduce this example or come up with your own wrapper from scratch ... 
+Wonder what's really in the image? Umbrella or not :)? Try to reproduce this example or come up with your own wrapper from scratch. 
 
 
 ## Create Your Own API\index{API}
@@ -630,7 +630,7 @@ Note that we can see all the output of the process from the GitHub\index{GitHub}
 
 ## Choropleth Map: Link Data to a GeoJSON\index{GeoJSON} Map File {#sec-map}
 
-![Screenshot of an interactive choropleth; for the actual, interactive visit https://rse-book.github.io/case-studies.html#sec-map](images/case-choropleth.png)
+![Screenshot of an interactive choropleth; for the actual, interactive visualization visit https://rse-book.github.io/case-studies.html#sec-map](images/case-choropleth.png)
 
 Data visualization is a big reason for researchers and data analysts to look into programming languages. Programming languages do not only provide unparalleled flexibility, but they also make data visualization reproducible and allow placing charts in different contexts, e.g., websites, printed outlets or social media. 
 
@@ -893,7 +893,7 @@ Truth be told, the full hype and excitement of a Shiny\index{Shiny} app only com
 
 One of the cool things of learning shiny is how Shiny, and its ecosystem, allow you to learn quickly. Here are some of my favorite resources to hone your Shiny skills. 
 
-![The {shinydashboard} R package provides nice, customizable skeletons for dashboards. (Source: screenshot of minimal, blank dashboard created with shinydashboard.)](images/blank_dashboard.png)
+![The {shinydashboard} R package provides customizable skeletons for dashboards. (Source: screenshot of a blank dashboard created with shinydashboard.)](images/blank_dashboard.png)
 
 - R Studio Shiny's Widget Gallery: https://shiny.rstudio.com/gallery/widget-gallery.html
 
@@ -1004,7 +1004,7 @@ Advanced parallel implementations and deeper dives into the way different proces
 ```{r}
 #| size: scriptsize
 #| label: tbl-benchmark
-#| tbl-cap: "Runtimes with and without parallelization."
+#| tbl-cap: "Runtimes with and without Parallelization."
 library(kableExtra)
 kable(d[,c(1:4)],"latex",
       booktabs = TRUE,
