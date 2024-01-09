@@ -707,7 +707,7 @@
 }%
 
 
-\newcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+\newcommand\chapter{\if@mainmatter\clearpage\else\cleardoublepage\fi
   \make@cornermarks
   \cleardoublepage
   \if@ChapterTOCs\if@filesw\immediate\closeout\@chaptoc\fi\fi
@@ -1228,7 +1228,7 @@
 \newlength\section@toc@skip
 \section@toc@skip1.5em
 \newlength\SectionTOCWidth
-\SectionTOCWidth2.3em
+\SectionTOCWidth2.8em
 \def\l@section#1#2{%
   \toc@draw
   \gdef\toc@draw{\draw@section{#1}{#2}}}
