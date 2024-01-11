@@ -33,6 +33,7 @@ format:
   pdf:
     documentclass: krantz
     toc: true
+    toc-title: Contents
     keep-tex: true
     lof: true
     lot: true
@@ -44,6 +45,10 @@ format:
       text: |
         \usepackage{makeidx}
         \makeindex
+    include-before-body: 
+      text: |
+        \addtocounter{page}{4}
+        \pagenumbering{roman}
     include-after-body: 
       text: |
         \printindex

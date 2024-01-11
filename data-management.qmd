@@ -268,7 +268,7 @@ The *Parquet* file for the *diamonds* dataset has roughly one fifth of the size 
 This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from
 decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change. 
 
-## Database\index{database}
+## Databases\index{database}
 
 Given the options that file-based approaches provide, what is (a) the difference and (b) the added value of going for a database\index{database} to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.
 

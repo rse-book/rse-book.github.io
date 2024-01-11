@@ -2,7 +2,7 @@
 
 The goal of this chapter (and probably the most important goal of this entire book) is to help you see the big picture\index{big picture} of which tool does what. The following sections will group common programming-with-data components by purpose. All of the resulting groups represent aspects of programming with data, and I will move on to discuss these groups in a dedicated chapter each. 
 
-![Aaaaaaah! Don't panic, Dr. Egghead! All these components are here to help you and you won't need all of them from the start. (Source: own illustration.)](images/dr_egghead_panics.jpg)
+![Aaaaaaah! Don't panic, Dr. Egghead! All these components are here to help you and you won't need all of them from the start. (Source: own illustration.)](images/dr_egghead_panics.jpg){fig-scap="Dr. Egghead panics."}
 
 
 Just like natural craftsmen, digital carpenters depend on their toolbox and their mastery of it. A project's *stack\index{stack}* is what developers call the choice of tools used in a project. Even though different flavors come down to personal preferences, there is a lot of common ground in *programming with data* stack\index{stack}s. @tbl-stack shows some of the components I use most often grouped by their role. Of course, this is a personal choice. Obviously, I do not use *all* of these components in every single small project. *Git, R* and *R Studio* would be a good minimal version.\index{Woodpecker}
@@ -88,7 +88,7 @@ git does not work like dropbox. git is not like dropbox.
 The idea of thinking of a sync is what interferes with comprehension of the benefit of \index{version control} (which is why I hate that git [GUI](#glossary)s call it "sync" anyway to avoid irritation of user's initial beliefs.). Git is a decentralized \index{version control} system that keeps track of a history of semantic commits. Those commits may consist of changes to multiple files.
 A commit message summarizes the gist of a contribution. *Diffs* allow comparing different versions. 
 
-![The *diff* output shows an edit during the writing of this book. The line preceded by '-' was replaced with the line preceded by '+'.](images/diff.png)
+![The *diff* output shows an edit during the writing of this book. The line preceded by '-' was replaced with the line preceded by '+'.](images/diff.png){fig-scap="Output of git diff."}
 
 Git is well suited for any kind of text file, whether it is source code from Python or C++, or some text written in Markdown or LaTeX. Binaries like .pdfs or Word documents are possible, too, but certainly not the type of file for which git is really useful. This book contains a detailed, applied introduction tailored to researchers in a dedicated \index{version control} chapter, so let's dwell with the above contextualization for a bit.   
 
