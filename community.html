@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -68,11 +76,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./community.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -80,106 +93,121 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
-    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack: A Developer’s Toolkit</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  <a href="./programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./version-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  <a href="./automation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./community.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a>
+  <a href="./community.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing and Reporting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#stay-up-to-date-and-a-vastly-evolving-field-social-media" id="toc-stay-up-to-date-and-a-vastly-evolving-field-social-media" class="nav-link active" data-scroll-target="#stay-up-to-date-and-a-vastly-evolving-field-social-media"><span class="toc-section-number">9.1</span>  Stay up to Date and a Vastly Evolving Field – Social Media</a></li>
-  <li><a href="#knowledge-sharing-platforms" id="toc-knowledge-sharing-platforms" class="nav-link" data-scroll-target="#knowledge-sharing-platforms"><span class="toc-section-number">9.2</span>  Knowledge Sharing Platforms</a></li>
-  <li><a href="#look-out-for-local-community-group" id="toc-look-out-for-local-community-group" class="nav-link" data-scroll-target="#look-out-for-local-community-group"><span class="toc-section-number">9.3</span>  Look Out for Local Community Group</a></li>
-  <li><a href="#attend-conferences---online-can-be-a-viable-option" id="toc-attend-conferences---online-can-be-a-viable-option" class="nav-link" data-scroll-target="#attend-conferences---online-can-be-a-viable-option"><span class="toc-section-number">9.4</span>  Attend Conferences - Online Can Be a Viable Option!</a></li>
-  <li><a href="#join-slack-spaces-or-other-chats" id="toc-join-slack-spaces-or-other-chats" class="nav-link" data-scroll-target="#join-slack-spaces-or-other-chats"><span class="toc-section-number">9.5</span>  Join Slack Spaces (or other Chats)</a></li>
+  <li><a href="#stay-up-to-date-in-a-vastly-evolving-field-social-media" id="toc-stay-up-to-date-in-a-vastly-evolving-field-social-media" class="nav-link active" data-scroll-target="#stay-up-to-date-in-a-vastly-evolving-field-social-media"><span class="header-section-number">9.1</span> Stay Up-to-Date in a Vastly Evolving Field – Social Media</a></li>
+  <li><a href="#knowledge-sharing-platforms" id="toc-knowledge-sharing-platforms" class="nav-link" data-scroll-target="#knowledge-sharing-platforms"><span class="header-section-number">9.2</span> Knowledge-Sharing Platforms</a></li>
+  <li><a href="#look-out-for-local-community-group" id="toc-look-out-for-local-community-group" class="nav-link" data-scroll-target="#look-out-for-local-community-group"><span class="header-section-number">9.3</span> Look Out for Local Community Group</a></li>
+  <li><a href="#attend-conferences---online-can-be-a-viable-option" id="toc-attend-conferences---online-can-be-a-viable-option" class="nav-link" data-scroll-target="#attend-conferences---online-can-be-a-viable-option"><span class="header-section-number">9.4</span> Attend Conferences - Online Can Be a Viable Option!</a></li>
+  <li><a href="#join-a-chat-space" id="toc-join-a-chat-space" class="nav-link" data-scroll-target="#join-a-chat-space"><span class="header-section-number">9.5</span> Join a Chat Space</a></li>
   </ul>
 </nav>
     </div>
@@ -188,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></h1>
 </div>
 
 
@@ -201,40 +229,60 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Besides the free-of-license-costs argument, the open source community may be the most popular argument in favor of open source software. And the added value of the community is almost certainly much more valuable than a few green bucks saved on licenses. The support of some of the best communities is so good it may very well outperform an internal IT department specialized elsewhere. Still, developer communities do have their idiosyncrasies. This section intends to help overcome entry barriers and encourage the reader to connect to the developer communities – even if one is not a regular active contributor.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/community_explorer.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">R Community Explorer by Ben Ubah</figcaption><p></p>
+<figcaption>R Community Explorer by Ben Ubah. (Source: benubah.github.io/r-community-explorer/rugs.html)</figcaption>
 </figure>
 </div>
-<p>The above figure shows a screenshot of an interactive community explorer tool for the R community. Users can explore user groups and such as R user groups or R Ladies chapters around the world. At the time of writing, the tool counted more than 775’000 members of R user groups worldwide and more than 100’000 members of RLadies. The explorer tool and its numbers should not only show you the size of the community, but also help to connect to what has become a very global community.</p>
-<p>Apart from user groups of programming languages, the Society of <a href="https://society-rse.org/">Research Software Engineering</a> is a good way to connect. In addition to the UK-based origin, the society has expanded to other countries and has derivatives in, e.g., the <a href="https://us-rse.org/">United States</a> or <a href="https://de-rse.org/de/index.html">Germany</a>. The main idea of research software engineering societies is to work on a role of software engineering in academia that accounts for the importance and impact of software on modern research. This goes from education in programming to lobbying for acknowledgement of software engineering in academic resumes.</p>
-<p>The below sections introduce different channels to connect and interact with the community. Of course, one does not have to use all of these tools and be active in all of these communities, but rather pick some that suit our way of communication.</p>
-<section id="stay-up-to-date-and-a-vastly-evolving-field-social-media" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="stay-up-to-date-and-a-vastly-evolving-field-social-media"><span class="header-section-number">9.1</span> Stay up to Date and a Vastly Evolving Field – Social Media</h2>
-<p>I hate to admit it because I am not a big fan of social media but it has definitely become an important channel for professional use also to me. Social media is a great way to get my regular dose of what’s new in tech. My platform of choice is <a href="https://twitter.com/whatsgoodio">twitter</a>. I mostly use it as a bookmark tool and to get some feedback from publicly sharing resources. I try not to get caught in any politics, memes or cat pictures, even if that’s a hard thing to do. But once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and more importantly, get a sense of trends and dynamics in the big picture.</p>
-<p>Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more. Tweet deck is a good standard option for a more advanced use of twitter. If you plan to build some following of your own, learn how to schedule tweets and put some thought into the timing of your tweets regarding timezone and audience. Keep in mind also that not social media is highly selective and not all platforms are equally popular in all parts of the world.</p>
+<p>The above figure shows a screenshot of an interactive community explorer tool for the R community. Users can explore user groups and such as R user groups or RLadies chapters around the world. At the time of writing, the tool counted more than 775,000 members of R user groups worldwide and more than 100,000 members of RLadies. The explorer tool and its numbers should not only show you the size of the community, but also help to connect to what has become a very global community.</p>
+<p>Apart from user groups of programming languages, the Society of Research Software Engineering<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is a good way to connect. In addition to the UK-based origin, the society has expanded to other countries and has derivatives in, e.g., the United States<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> or Germany<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The main idea of research software engineering societies is to work on a role of software engineering in academia that accounts for the importance and impact of software on modern research. This goes from education in programming to lobbying for acknowledgement of software engineering in academic resumés.</p>
+<p>The below sections introduce different channels to connect and interact with the community. Of course, we do not have to use all of these tools and be active in all of these communities, but rather pick some that suit our way of communication.</p>
+<section id="stay-up-to-date-in-a-vastly-evolving-field-social-media" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="stay-up-to-date-in-a-vastly-evolving-field-social-media"><span class="header-section-number">9.1</span> Stay Up-to-Date in a Vastly Evolving Field – Social Media</h2>
+<p>I hate to admit it because I am not a big fan of social media, but it has definitely become an important channel for professional use also to me. Social media is a great way to get my regular dose of what’s new in tech. The popularity of platforms varies locally but also evolves pretty dynamically over time. <em>X</em>, back when it was called Twitter, had been the platform of choice for many engineers around data science for almost a decade, before large chunks turned their back on the chirping platform. I am still there<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, but I may have to find a new tool to get feedback and bookmark good reads. No matter the platform, make sure not to get caught in politics, memes or cat pictures if you use it professionally. Because once you strictly limit your time and avoid going down too many rabbit holes, you will get a programming tip here, a nice shortcut there and, more importantly, get a sense of trends and dynamics.</p>
+<p>Start with a few accounts to follow, adapt them regularly and use lists in case you need to organize your input a bit more. For <em>X</em>, Tweet Deck is a good standard option for a more advanced use of the platform. If you plan to build some following of your own, learn how to schedule posts and put some thought into the timing of your outlet, regarding time zone and audience.</p>
 </section>
 <section id="knowledge-sharing-platforms" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="knowledge-sharing-platforms"><span class="header-section-number">9.2</span> Knowledge Sharing Platforms</h2>
-<p>The most popular knowledge sharing platform for programmers, <a href="https://stackoverflow.com">stackoverflow.com</a> has made itself a name for being the first hit in your favorite search engine to any questions or error message remotely related to source code. The platform has accumulated millions of questions AND answers to programming questions across languages. Through a mix of quality content, a community rating system and a healthy mix of gamification, the platform managed to become a mainstay of the programming community. The platform’s crowd-based rating system does not only assess the quality of questions and answers, a solid Stack Overflow score and reach has also become a notch on programmers’ resumes. CITE AER here</p>
+<h2 data-number="9.2" class="anchored" data-anchor-id="knowledge-sharing-platforms"><span class="header-section-number">9.2</span> Knowledge-Sharing Platforms</h2>
+<p>The most popular knowledge-sharing platform for programmers, stackoverflow.com, has made itself a name for being the first hit in your favorite search engine to any questions or error messages remotely related to source code. The platform has accumulated millions of questions and answers to programming questions across languages. Through a mix of quality content, a community rating system and a healthy mix of gamification, the platform managed to become a mainstay of the programming community. The platform’s crowd-based rating system does not only assess the quality of questions and answers, a solid stack Overflow score and reach have also become a notch on programmers’ resumés.</p>
 </section>
 <section id="look-out-for-local-community-group" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="look-out-for-local-community-group"><span class="header-section-number">9.3</span> Look Out for Local Community Group</h2>
-<p>Speaking of job market opportunities, look out for a local R, Python or data science user group. Local user groups around programming languages do not only host interesting talks or other formats, they often provide an opportunity to network or even have dedicated time to advertise open positions. Besides the community explorer mentioned in the introduction of this chapter, the <a href="https://www.meetup.com/">meetup</a> platform that has become synonymous with special interest groups coming together locally, is a good place to start your research.</p>
+<p>Speaking of job market opportunities, look out for a local R, Python} or data science user group. Local user groups around programming languages do not only host interesting talks or other formats, they often provide an opportunity to network or even have dedicated time to advertise open positions. Besides the community explorer mentioned in the introduction of this chapter, the meetup<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> platform that has become synonymous with special interest groups coming together locally, is a good place to start your research.</p>
 </section>
 <section id="attend-conferences---online-can-be-a-viable-option" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="attend-conferences---online-can-be-a-viable-option"><span class="header-section-number">9.4</span> Attend Conferences - Online Can Be a Viable Option!</h2>
-<p>In similar fashion, conferences are a good channel to stay connected and up to date. A conference like <a href="https://piconf.net/">PiConf</a>, Posit Conf or <a href="https://twitter.com/_useRconf">useR!</a> is basically a bulk meetup: potentially hundreds of talks, thousands of potential contacts, and quite a bit of time to digest a large conference. In recent years, conferences often provide an option to attend online. While to some, most of the fun and networking will be missing online, the ability to attend online can also be a great chance for a conference and its attendance. Online conferences have the chance to be a lot more inclusive than its in-person counterparts. Even costs aside, i.e., covered by scholarships, many cannot afford the time to leave their jobs and families to travel internationally for an entire week. Online conferences also give people a chance to attend who may not be involved enough to attend a software development conference for an entire week, but are interested to catch a glimpse and to evaluate. In any case, the entry hurdle is lower than ever. These paragraphs are meant to convince take your time, to prepare, attend and debrief a major open source software conference – online or in-person.</p>
+<p>In similar fashion, conferences are a good channel to stay connected and up-to-date. A conference like PiConf<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, Posit Conf or useR!<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> is basically a bulk meetup: potentially hundreds of talks, thousands of potential contacts, and quite a bit of time to digest a large conference. In recent years, conferences often provide an option to attend online. While, to some, most of the fun and networking will be missing online, the ability to attend online can also be a great chance for a conference and its attendance. Online conferences have the chance to be a lot more inclusive than their in-person counterparts. Even costs aside, i.e., covered by scholarships, many cannot afford the time to leave their jobs and families to travel internationally for an entire week. Online conferences also give people a chance to attend who may not be involved enough to attend a software development conference for an entire week, but who want to catch a glimpse and evaluate. In any case, the entry hurdle is lower than ever. These paragraphs are meant to convince you to take your time, to prepare, attend and debrief a major open source software conference – online or in-person.</p>
 </section>
-<section id="join-slack-spaces-or-other-chats" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="join-slack-spaces-or-other-chats"><span class="header-section-number">9.5</span> Join Slack Spaces (or other Chats)</h2>
-<p>Community chat spaces run by conference organizers, local user groups or societies are another way to stay connected to the community. More dynamic than message boards and forums, chats allow for both asynchronous and live communication. Usually chat spaces are more domain or even topic specific than local meetups or social media. Popular software to participate or even run an own community are <a href="https://slack.com">Slack</a>, <a href="https://discord.com/">Discord</a>, <a href="https://mattermost.com/">Mattermost</a> or <a href="https://matrix.org/">Matrix</a>. Slack is available as a service run by a company of the same name. Slack users can start new workspaces for free for hundreds of members, but will have to pay when they want to keep their communities messages beyond the last 10’000 messages. Just like Slack, <em>Discord</em> works in our web browsers or as a standalone Desktop or mobile client. Popular among gamers, Discord does not quite have the business attire of Slack, but certainly has its fans. Mattermost is an open source alternative to the former two. It is also available as a service, but is rather known as a package to self-host one’s own independent chat space. Matrix has a different approach, labelling itself <em>an open network for secure, decentralized communication</em>. Reminiscent of the <a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">Internet Relay Chat (IRC)</a> of the old days, matrix is server software and network of the same name. Just like IRC, matrix is not bound to a single client and therefore appears modular to the end users allowing to choose between different clients such as <a href="https://element.io/">Element</a> to connect to established and self-hosted networks alike.</p>
+<section id="join-a-chat-space" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="join-a-chat-space"><span class="header-section-number">9.5</span> Join a Chat Space</h2>
+<p>Community chat spaces run by conference organizers, local user groups or societies are another way to stay connected to the community. More dynamic than message boards and forums, chats allow for both asynchronous and live communication. Usually chat spaces are more domain- or even topic-specific than local meetups or social media. Popular software to participate or even run one’s own community is Slack<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, Discord<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>, Mattermost<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> or Matrix<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. Slack is available as a service run by a company of the same name. Slack users can start new workspaces for free for hundreds of members, but will have to pay when they want to keep their communities messages beyond the last 10,000 messages. Just like Slack, <em>Discord</em> works in our web browsers or as a standalone Desktop or mobile client. Popular among gamers, Discord does not quite have the business attire of Slack, but it certainly has its fans. Mattermost is an open source alternative to the former two. It is also available as a service, but is rather known as a package to self-host one’s independent chat space. Matrix has a different approach, labelling itself <em>an open network for secure, decentralized communication</em>. Reminiscent of the Internet Relay Chat (IRC)<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> of the old days, Matrix is server software and network of the same name. Just like IRC, Matrix is not bound to a single client and therefore appears modular to the end users allowing to choose between different clients such as Element<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> to connect to established and self-hosted networks alike.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>https://society-rse.org/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://us-rse.org/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://de-rse.org/de/index.html<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>https://x.com/whatsgoodio<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>https://www.meetup.com/<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>https://piconf.net/<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>https://x.com/_useRconf<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>https://slack.com<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>https://discord.com/<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>https://mattermost.com/<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>https://matrix.org/<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>https://en.wikipedia.org/wiki/Internet_Relay_Chat<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>https://element.io/<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -265,9 +313,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -303,10 +365,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -316,8 +395,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -329,9 +417,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -373,17 +697,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./automation.html" class="pagination-link">
+      <a href="./automation.html" class="pagination-link" aria-label="Automation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./publishing.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./publishing.html" class="pagination-link" aria-label="Publishing and Reporting">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing and Reporting</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

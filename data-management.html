@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,11 +17,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -46,48 +47,20 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -101,8 +74,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -129,7 +101,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -138,8 +116,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -150,11 +130,16 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data-management.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -162,120 +147,135 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
-    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack: A Developer’s Toolkit</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  <a href="./programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./version-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-management.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  <a href="./automation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./community.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a>
+  <a href="./community.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing and Reporting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#forms-of-data" id="toc-forms-of-data" class="nav-link active" data-scroll-target="#forms-of-data"><span class="toc-section-number">6.1</span>  Forms of Data</a></li>
-  <li><a href="#representing-data-in-files" id="toc-representing-data-in-files" class="nav-link" data-scroll-target="#representing-data-in-files"><span class="toc-section-number">6.2</span>  Representing Data in Files</a>
+  <li><a href="#forms-of-data" id="toc-forms-of-data" class="nav-link active" data-scroll-target="#forms-of-data"><span class="header-section-number">6.1</span> Forms of Data</a></li>
+  <li><a href="#representing-data-in-files" id="toc-representing-data-in-files" class="nav-link" data-scroll-target="#representing-data-in-files"><span class="header-section-number">6.2</span> Representing Data in Files</a>
   <ul class="collapse">
-  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link" data-scroll-target="#spreadsheets"><span class="toc-section-number">6.2.1</span>  Spreadsheets</a></li>
-  <li><a href="#file-formats-for-nested-information" id="toc-file-formats-for-nested-information" class="nav-link" data-scroll-target="#file-formats-for-nested-information"><span class="toc-section-number">6.2.2</span>  File Formats for Nested Information</a></li>
-  <li><a href="#a-word-on-binaries" id="toc-a-word-on-binaries" class="nav-link" data-scroll-target="#a-word-on-binaries"><span class="toc-section-number">6.2.3</span>  A Word on Binaries</a></li>
-  <li><a href="#interoperable-file-formats" id="toc-interoperable-file-formats" class="nav-link" data-scroll-target="#interoperable-file-formats"><span class="toc-section-number">6.2.4</span>  Interoperable File Formats</a></li>
+  <li><a href="#spreadsheets" id="toc-spreadsheets" class="nav-link" data-scroll-target="#spreadsheets"><span class="header-section-number">6.2.1</span> Spreadsheets</a></li>
+  <li><a href="#file-formats-for-nested-information" id="toc-file-formats-for-nested-information" class="nav-link" data-scroll-target="#file-formats-for-nested-information"><span class="header-section-number">6.2.2</span> File Formats for Nested Information</a></li>
+  <li><a href="#a-word-on-binaries" id="toc-a-word-on-binaries" class="nav-link" data-scroll-target="#a-word-on-binaries"><span class="header-section-number">6.2.3</span> A Word on Binaries</a></li>
+  <li><a href="#interoperable-file-formats" id="toc-interoperable-file-formats" class="nav-link" data-scroll-target="#interoperable-file-formats"><span class="header-section-number">6.2.4</span> Interoperable File Formats</a></li>
   </ul></li>
-  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="toc-section-number">6.3</span>  Databases</a>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">6.3</span> Databases</a>
   <ul class="collapse">
-  <li><a href="#relational-database-management-systems-rdbms" id="toc-relational-database-management-systems-rdbms" class="nav-link" data-scroll-target="#relational-database-management-systems-rdbms"><span class="toc-section-number">6.3.1</span>  Relational Database Management Systems (RDBMS)</a></li>
-  <li><a href="#a-word-on-non-relational-databases" id="toc-a-word-on-non-relational-databases" class="nav-link" data-scroll-target="#a-word-on-non-relational-databases"><span class="toc-section-number">6.3.2</span>  A Word on Non-Relational Databases</a></li>
+  <li><a href="#relational-database-management-systems-rdbms" id="toc-relational-database-management-systems-rdbms" class="nav-link" data-scroll-target="#relational-database-management-systems-rdbms"><span class="header-section-number">6.3.1</span> Relational database Management Systems (RDBMS)</a></li>
+  <li><a href="#a-word-on-non-relational-databases" id="toc-a-word-on-non-relational-databases" class="nav-link" data-scroll-target="#a-word-on-non-relational-databases"><span class="header-section-number">6.3.2</span> A Word on Non-Relational databases</a></li>
   </ul></li>
-  <li><a href="#non-technical-aspects-of-managing-data" id="toc-non-technical-aspects-of-managing-data" class="nav-link" data-scroll-target="#non-technical-aspects-of-managing-data"><span class="toc-section-number">6.4</span>  Non-Technical Aspects of Managing Data</a>
+  <li><a href="#non-technical-aspects-of-managing-data" id="toc-non-technical-aspects-of-managing-data" class="nav-link" data-scroll-target="#non-technical-aspects-of-managing-data"><span class="header-section-number">6.4</span> Non-Technical Aspects of Managing Data</a>
   <ul class="collapse">
-  <li><a href="#etiquette" id="toc-etiquette" class="nav-link" data-scroll-target="#etiquette"><span class="toc-section-number">6.4.1</span>  Etiquette</a></li>
-  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="toc-section-number">6.4.2</span>  Security</a></li>
-  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy"><span class="toc-section-number">6.4.3</span>  Privacy</a></li>
-  <li><a href="#data-publications" id="toc-data-publications" class="nav-link" data-scroll-target="#data-publications"><span class="toc-section-number">6.4.4</span>  Data Publications</a></li>
+  <li><a href="#etiquette" id="toc-etiquette" class="nav-link" data-scroll-target="#etiquette"><span class="header-section-number">6.4.1</span> Etiquette</a></li>
+  <li><a href="#security" id="toc-security" class="nav-link" data-scroll-target="#security"><span class="header-section-number">6.4.2</span> Security</a></li>
+  <li><a href="#privacy" id="toc-privacy" class="nav-link" data-scroll-target="#privacy"><span class="header-section-number">6.4.3</span> Privacy</a></li>
+  <li><a href="#data-publications" id="toc-data-publications" class="nav-link" data-scroll-target="#data-publications"><span class="header-section-number">6.4.4</span> Data Publications</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -285,7 +285,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></h1>
+<h1 class="title"><span id="sec-datamngmnt" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span></h1>
 </div>
 
 
@@ -298,15 +298,20 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>Admittedly, I have said the same thing about <a href="version-control.html"><span>Chapter&nbsp;5</span></a> on version control, yet <em>data management</em> may be the single most impactful chapter of this book. This may be the case in particular in case you come from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long term) data management is a step into a bigger world.</p>
-<p>After decades of information engineering and computer science, some can’t help but wonder why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully, this chapter helps the reader to assess how far they wanted to dig into data management.</p>
+
+<p></p>
+<p></p>
+<p>Admittedly, I have said the same thing about <a href="version-control.html" class="quarto-xref"><span>Chapter 5</span></a> on version control, yet <em>data management</em> may be the single most impactful chapter of this book. This may be the case in particular if you come from an environment that mostly organized data in spreadsheets shared via e-mail or network drives. To contextualize data and think about (long-term) data management is a step into a bigger world.</p>
+<p>After decades of information engineering and computer science, some can’t help wondering why we have not found one perfect, one-size-fits-all form of data. In fact, a substantial part of programming with data deals with transforming data from one form into another. This chapter intends to give an idea of the aspects of data management most relevant for data analytics. Hopefully, this chapter helps the reader to assess how far they wanted to dig into data management.</p>
 <section id="forms-of-data" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="forms-of-data"><span class="header-section-number">6.1</span> Forms of Data</h2>
-<p>In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mostly trained to handle different flavors of two-dimensional data, as in <strong>one-observation-one-row</strong>. Ad hoc studies conducted once result in <em>cross-sectional data</em>: one line per observation, columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as <em>time series</em>. Multivariate time series, i.e., multi-variable, longitudinal data are often referred to as <em>panel data</em>. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet like tables. Here are a few easy-to-reproduce examples using popular R demo datasets.</p>
+<p>In research and analytics, data appear in a plethora of different forms. Yet, most researchers and business analysts are mainly trained to handle different flavors of two-dimensional data, as in <strong>one-observation-one-row</strong>. Ad hoc studies conducted once result in <em>cross-sectional data</em>: one line per observation; columns represent variables. Sensor data, server logs or forecasts of official statistics are examples of single variable data observed over time. These single variable, longitudinal data are also known as <em>time series</em>. Multivariate time series, i.e., multivariable, longitudinal data are often referred to as <em>panel data</em>. In our heads, all of these forms of data are typically represented as rectangular, two-dimensional one-line-per-observation, spreadsheet-like tables. Here are a few easy-to-reproduce examples using popular R demo datasets.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" data-caption="moo"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">head</span>(mtcars)</span>
+<div class="sourceCode cell-code" id="cb1" data-lst-cap="moo"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">head</span>(mtcars)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
@@ -317,12 +322,14 @@ Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3" data-caption="moo"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(h)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-lst-cap="moo"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(h)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  6 11</code></pre>
 </div>
 </div>
+<p></p>
 <p>The above output shows an excerpt of the <em>mtcars</em> <strong>cross-sectional</strong> dataset with 6 lines and 11 variables. <em>Airpassenger</em> is a <strong>time series</strong> dataset represented in an R <em>ts</em> object which is essentially a vector with time-based index attribute.</p>
+<p></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>AirPassengers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -341,7 +348,9 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 1960 417 391 419 461 472 535 622 606 508 461 390 432</code></pre>
 </div>
 </div>
+<p></p>
 <p>Let’s create <strong>a multivariate time series (panel)</strong> dataset, i.e., multiple variables observed over time:</p>
+<p></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Var1 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>),</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">Var2 =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">10</span>),</span>
@@ -350,56 +359,69 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>multi_ts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              Var1      Var2     Var3
-2000 Q1  0.6428638  8.780140 30.35948
-2000 Q2 -1.0156843  9.813669 28.85264
-2000 Q3 -0.3286740  8.690206 29.40070
-2000 Q4  0.2368141 10.873496 30.34395
-2001 Q1 -2.0052139 10.996617 31.00408
-2001 Q2  0.8869538  8.783797 29.51489
-2001 Q3  0.5119350 10.631907 30.07512
-2001 Q4  0.8801927  9.602890 30.25296
-2002 Q1  0.4160729 10.213400 29.87545
-2002 Q2 -0.6564528  9.872200 29.48070</code></pre>
+2000 Q1  0.9359328  9.957211 30.43941
+2000 Q2 -0.1321149  8.961033 29.94285
+2000 Q3  0.7165394  9.334308 30.50787
+2000 Q4  0.2272221 10.699150 31.31079
+2001 Q1  2.2570970 10.554651 29.75946
+2001 Q2 -1.2410411 11.545357 30.45149
+2001 Q3 -1.5790516  9.798941 29.27251
+2001 Q4 -1.5895758 11.470772 30.27933
+2002 Q1  0.3038607 11.455950 29.81893
+2002 Q2 -0.6376979  9.950946 28.43646</code></pre>
 </div>
 </div>
-<p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong></p>
-<blockquote class="blockquote">
-<p>The above multi-variable time series is shown in what the data science community calls <em>wide</em> format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so called <em>long</em> format shown below. The long format is a machine friendly, flexible way to represent multi-variable data without altering the number of columns with more variables.</p>
-</blockquote>
+<p></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>A Note on Long Format vs.&nbsp;Wide Format</strong> The above multivariable time series is shown in what the data science community calls <em>wide</em> format. In this most intuitive format, every column represents one variable, time is on the Y-axis. The counterpart is the so-called <em>long</em> format shown below. The long format is a machine-friendly, flexible way to represent multi-variable data without altering the number of columns with more variables.</p>
+</div>
+</div>
+</div>
+<p></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tsbox)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ts_dt</span>(multi_ts)[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      id       time      value
- 1: Var1 2000-01-01  0.6428638
- 2: Var1 2000-04-01 -1.0156843
- 3: Var1 2000-07-01 -0.3286740
- 4: Var1 2000-10-01  0.2368141
- 5: Var1 2001-01-01 -2.0052139
- 6: Var1 2001-04-01  0.8869538
- 7: Var1 2001-07-01  0.5119350
- 8: Var1 2001-10-01  0.8801927
- 9: Var1 2002-01-01  0.4160729
-10: Var1 2002-04-01 -0.6564528
-11: Var2 2000-01-01  8.7801401
-12: Var2 2000-04-01  9.8136692
-13: Var2 2000-07-01  8.6902060
-14: Var2 2000-10-01 10.8734958
-15: Var2 2001-01-01 10.9966173</code></pre>
+<pre><code>        id       time      value
+    &lt;char&gt;     &lt;Date&gt;      &lt;num&gt;
+ 1:   Var1 2000-01-01  0.9359328
+ 2:   Var1 2000-04-01 -0.1321149
+ 3:   Var1 2000-07-01  0.7165394
+ 4:   Var1 2000-10-01  0.2272221
+ 5:   Var1 2001-01-01  2.2570970
+ 6:   Var1 2001-04-01 -1.2410411
+ 7:   Var1 2001-07-01 -1.5790516
+ 8:   Var1 2001-10-01 -1.5895758
+ 9:   Var1 2002-01-01  0.3038607
+10:   Var1 2002-04-01 -0.6376979
+11:   Var2 2000-01-01  9.9572108
+12:   Var2 2000-04-01  8.9610329
+13:   Var2 2000-07-01  9.3343080
+14:   Var2 2000-10-01 10.6991499
+15:   Var2 2001-01-01 10.5546507</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
+<p></p>
 <p>The ability to transform data from one format into the other and to manipulate both formats is an essential skill for any data scientist or data engineer. It is important to point out that the ability to do the above transformations effortlessly is an absolute go-to skill for people who want to use programming to run analysis. (Different analyses or visualizations may require one form or the other and ask for quick transformation).</p>
-</blockquote>
-<p>Hence, popular data science programming languages offer great tool sets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how.</p>
-<p>Yet, not all information suits a two-dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data, let’s take a look at the map file and code example case study in <a href="case-studies.html#sec-map"><span>Section&nbsp;11.6</span></a>. In memory, i.e., in our R session, the data is represented in a list that contains multiple list may contain more lists nested inside.</p>
+<p>Hence, popular data science programming languages offer great toolsets to get the job done. Mastering these toolboxes is not the focus of this book. R for Data Science and the Carpentries are good starting points if you feel the need to catch up or solidify your know-how.</p>
+<p>Yet, not all information suits a two-dimensional form. Handling nested or unstructured information is one of the fields where the strength of a programming approach to data analysis and visualization comes into play. Maps are a common form of information that is often represented in nested fashion. For an example of nested data<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, let’s take a look at the map file and code example case study in <a href="case-studies.html#sec-map" class="quarto-xref"><span>Section 11.6</span></a>. In memory, i.e., in our R session, the data is represented in a list that contains multiple list elements and may contain more lists nested inside.</p>
+<p></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>json_ch <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">read_json</span>(</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/...."</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls.str</span>(json_ch)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p></p>
+<p></p>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>crs : List of 2
  $ type      : chr "name"
@@ -415,7 +437,8 @@ features : List of 7
 type :  chr "FeatureCollection"</code></pre>
 </div>
 </div>
-<p>Another example of nested but structured data are HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest <span class="citation" data-cites="rvest">(<a href="references.html#ref-rvest" role="doc-biblioref">Wickham 2022</a>)</span> or beautiful soup <span class="citation" data-cites="soup">(<a href="references.html#ref-soup" role="doc-biblioref">Zheng, He, and Peng 2015</a>)</span> parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website’s DOM. For DOM parsing example, see CASE STUDY XYZ.</p>
+<p></p>
+<p>Another example of nested but structured data is HTML or XML trees obtained from scraping websites. Typically, web scraping approaches like rvest <span class="citation" data-cites="rvest">(<a href="references.html#ref-rvest" role="doc-biblioref">Wickham 2022</a>)</span> or BeautifulSoup <span class="citation" data-cites="soup">(<a href="references.html#ref-soup" role="doc-biblioref">Zheng, He, and Peng 2015</a>)</span> parse the hierarchical Document Object Model (DOM) and turn it into an in-memory representation of a website’s DOM. For a DOM parsing example, see case study <a href="case-studies.html#sec-webscrape" class="quarto-xref"><span>Section 11.4</span></a>.</p>
 </section>
 <section id="representing-data-in-files" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="representing-data-in-files"><span class="header-section-number">6.2</span> Representing Data in Files</h2>
@@ -423,38 +446,28 @@ type :  chr "FeatureCollection"</code></pre>
 <p>Just like in office or image editing software, the intuitive way to store data persistently from a programming language is to store data into files. The choice of the file format is much less straightforward in our case, though. The different forms of data discussed above, potential collaborators and interfaces are factors among others that weigh into our choice of a file format.</p>
 <section id="spreadsheets" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="spreadsheets"><span class="header-section-number">6.2.1</span> Spreadsheets</h3>
-<p>Based on our two dimensions focused intuition and training, spreadsheets are the on-disk analog of data.frames, data.tables and tibbles. Formats like <strong>.csv</strong> or <strong>.xlsx</strong> are the most common way to represent two-dimensional data on disk.<br>
+<p>Based on our two-dimensional focused intuition and training, spreadsheets are the on-disk analog of data.frames, data.tables and tibbles. Formats like <strong>.csv</strong> or <strong>.xlsx</strong> are the most common way to represent two-dimensional data on disk.<br>
 On the programming side, the ubiquity of spreadsheets leads to a wide variety of libraries to parse and write different spreadsheet formats.</p>
+<p></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">'column1'</span>: [<span class="dv">1</span>,<span class="dv">2</span>], <span class="st">'column2'</span>: [<span class="dv">3</span>,<span class="dv">4</span>]}</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data<span class="op">=</span>d)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"an_example.csv"</span>, sep<span class="op">=</span><span class="st">";"</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"an_example.csv"</span>, sep<span class="op">=</span><span class="st">";"</span>,encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Comma separated values (.csv)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> are good and simple option. Their text-based nature makes .csv files language agnostic and human-readable through a text editor.</p>
+<p></p>
+<p>Comma-separated values (.csv)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> are a good and simple option. Their text-based nature makes .csv files language agnostic and human-readable through a text editor.</p>
 <pre><code>;column1;column2
 0;1;3
 1;2;4</code></pre>
 <p>Though Excel spreadsheets are a convenient interface to office environments that offer extras such organization into workbooks, the simpler .csv format has advantages in machine-to-machine communication and as an interface between different programming languages and tools. For example, web visualization libraries such as highcharts or echarts are most commonly written in JavaScript and can conveniently consume data from .csv files. The above example .csv file was written in Python and is now easily read by R.</p>
+<p></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>csv <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv2</span>(<span class="st">"an_example.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-Rows: 2 Columns: 3
-── Column specification
-──────────────────────────────────────────────────────── Delimiter: ";" dbl
-(3): ...1, column1, column2
-ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-Specify the column types or set `show_col_types = FALSE` to quiet this message.
-• `` -&gt; `...1`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>csv <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv2</span>(<span class="st">"an_example.csv"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
    ...1 column1 column2
@@ -463,19 +476,21 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 2     1       2       4</code></pre>
 </div>
 </div>
+<p></p>
 </section>
 <section id="file-formats-for-nested-information" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="file-formats-for-nested-information"><span class="header-section-number">6.2.2</span> File Formats for Nested Information</h3>
-<p>For many data engineers and developers. <a href="https://json.org">JavaScript Object Notation (JSON)</a> has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format.</p>
+<p>For many data engineers and developers. JavaScript Object Notation (JSON)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> has become the go-to file format for nested data. Just like with .csv basically every programming language used in data science and analytics has libraries to serialize and deserialize JSON (read and write). Though harder to read for humans than .csv, prettified JSON with a decent highlighting color scheme is easy to read and gives the human reader a good understanding of the hierarchy at hand. The added complexity comes mostly from the nested nature of the data, not so much from the file format.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>li <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_1 =</span> <span class="fu">head</span>(mtcars, <span class="dv">2</span>),</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_2 =</span> <span class="fu">head</span>(iris, <span class="dv">2</span>)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">toJSON</span>(li, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>li <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_1 =</span> <span class="fu">head</span>(mtcars, <span class="dv">2</span>),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">element_2 =</span> <span class="fu">head</span>(iris, <span class="dv">2</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">toJSON</span>(li, <span class="at">pretty =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{
   "element_1": [
@@ -527,200 +542,201 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 } </code></pre>
 </div>
 </div>
-<p>The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but is more flexible than the former.</p>
-<p>Besides JSON, <strong>XML</strong> is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more light weight and close to ‘the web’ while XML is the traditional, very explicit no-nonsense format. XML has a <strong>Document Type Definition (DTD)</strong> that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML based definition. <a href="https://sdmx.org/">SDMX</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">CompactData</span><span class="ot"> xmlns:c=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/compact"</span><span class="ot"> xmlns:sdds=</span><span class="st">"urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=IMF:ECOFIN_DSD"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:msg=</span><span class="st">"http://www.SDMX.org/resources/SDMXML/schemas/v2_0/message"</span>&gt;</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Header</span>&gt;</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ID</span>&gt;kofbarometer&lt;/<span class="kw">ID</span>&gt;</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Test</span>&gt;false&lt;/<span class="kw">Test</span>&gt;</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Prepared</span>&gt;2022-07-27 23:19:15&lt;/<span class="kw">Prepared</span>&gt;</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Sender</span><span class="ot"> id=</span><span class="st">"KOF"</span>&gt;</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Name</span><span class="ot"> xml:lang=</span><span class="st">"en"</span>&gt;KOF Swiss Economic Institute&lt;/<span class="kw">Name</span>&gt;</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Contact</span>&gt;</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">Name</span>&gt;KOF Swiss Economic Institute&lt;/<span class="kw">Name</span>&gt;</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">URI</span>&gt;http://www.kof.ethz.ch/prognosen-indikatoren/indikatoren/kof-konjunkturbarometer.html&lt;/<span class="kw">URI</span>&gt;</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Contact</span>&gt;</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Sender</span>&gt;</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">Header</span>&gt;</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:DataSet</span>&gt;</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Series</span><span class="ot"> DATA_DOMAIN=</span><span class="st">"FLI"</span><span class="ot"> REF_AREA=</span><span class="st">"CH"</span><span class="ot"> INDICATOR=</span><span class="st">"AL"</span><span class="ot"> COUNTERPART_AREA=</span><span class="st">"_Z"</span><span class="ot"> FREQ=</span><span class="st">"M"</span><span class="ot"> UNIT_MULT=</span><span class="st">"0"</span><span class="ot"> TIME_FORMAT=</span><span class="st">"P3M"</span>&gt;</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"1991-01"</span><span class="ot"> OBS_VALUE=</span><span class="st">"79.7534465342489"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"1991-02"</span><span class="ot"> OBS_VALUE=</span><span class="st">"71.8659035408967"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-05"</span><span class="ot"> OBS_VALUE=</span><span class="st">"96.4419659191275"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-06"</span><span class="ot"> OBS_VALUE=</span><span class="st">"95.1748194208808"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sdds:Obs</span><span class="ot"> TIME_PERIOD=</span><span class="st">"2022-07"</span><span class="ot"> OBS_VALUE=</span><span class="st">"90.08821804515"</span><span class="ot"> OBS_STATUS=</span><span class="st">"A"</span>/&gt;</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sdds:Series</span>&gt;</span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sdds:DataSet</span>&gt;</span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">CompactData</span>&gt;</span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  i: 1403 : 1660204311  --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p></p>
+<p>The above example shows the first two lines of two different, unrelated rectangular datasets. Thanks to the hierarchical nature of JSON, both datasets can be stored in the same file albeit totally different columns. Again, just like .csv, JSON works well as an interface, but it is more flexible than the former.</p>
+<p>Besides JSON, <strong>XML</strong> is the most common format to represent nested data in files. Though there are a lot of overlapping use cases, there is a bit of a different groove around both of these file formats. JSON is perceived as more lightweight and close to “the web” while XML is the traditional, very explicit no-nonsense format. XML has a <strong>Document Type Definition (DTD)</strong> that defines the structure of the document and which elements and attributes are legal. Higher level formats use this more formal approach as XML-based definition. SDMX<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, a world-wide effort to provide a format for exchange statistical data and metadata, is an example of such a higher level format build on XML.</p>
 <p>The above example shows an excerpt of the main economic forward-looking indicator (FLI) for Switzerland, the KOF Economic Barometer, represented in an SDMX XML file. Besides the value and the date index, several attributes provide the consumer with an elaborate data description. In addition, other nodes and their children provide information like <em>Contact</em> or <em>ID</em> in the very same file. Note that modern browsers often provide code folding for nodes and highlighting to improve readability.</p>
 </section>
 <section id="a-word-on-binaries" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="a-word-on-binaries"><span class="header-section-number">6.2.3</span> A Word on Binaries</h3>
 <p>Unlike all file formats discussed above, binaries cannot be read by humans using a simple text editor. In other words, you will need the software that wrote the binary to read it again. If that software was expensive and/or exotic, your work is much less accessible, more difficult to share and harder to reproduce. Though this disadvantage of binaries is mitigated when you use freely available open source software, storing data in binaries can still be a hurdle.</p>
 <p>But, of course, binaries do have advantages, too: binaries can compress their content and save space. Binaries can take on all sorts of in-memory objects including functions, not just datasets. In other words, binaries can bundle stuff. Consider the following load/save operation in R:</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bogus <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b){</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  a <span class="sc">+</span> b</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Airpassengers)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">summary</span>(mtcars)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="st">"bogus"</span>, <span class="st">"Airpassengers"</span>,<span class="st">"s"</span>, <span class="at">file=</span><span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bogus <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b){</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  a <span class="sc">+</span> b</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Airpassengers)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">summary</span>(mtcars)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(<span class="st">"bogus"</span>, <span class="st">"Airpassengers"</span>,<span class="st">"s"</span>,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">file=</span><span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p></p>
 <p>In memory, <em>bogus</em> is a <em>function</em>, Airpassengers is an R <em>time series</em> object and <em>s</em> is a <em>list</em> based summary object. All of these objects can be stored in a single binary RData file using <em>save()</em>. A fresh R session can now <em>load()</em> everything stored in that file.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"bundle.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<blockquote class="blockquote">
+<p></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Notice that unlike reading a .csv or .json file, the call does not make any assignments into a target object. This is because all objects are loaded into an R environment (<em>.globalEnv</em> by default) with their original names.</p>
-</blockquote>
+</div>
+</div>
 </section>
 <section id="interoperable-file-formats" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="interoperable-file-formats"><span class="header-section-number">6.2.4</span> Interoperable File Formats</h3>
-<p>Interoperable file formats cover some middle ground between the options described above. The <em>cross-language in-memory development platform</em> <a href="https://arrow.apache.org/">Apache Arrow</a> is a well established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you’re interested in a modern, yet established cross environment data science project, digging deeper into Apache Arrow is certainly a fun experience.</p>
+<p>Interoperable file formats cover some middle ground between the options described above. The <em>cross-language in-memory development platform</em> Apache Arrow<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> is a well-established project that also implements file formats that work across many popular (data science) environments. Though the major contribution of the Apache Arrow project is to allow sharing in-memory data store across environments, I will just show it as an example for interoperable file formats here. Nevertheless, if you’re interested in a modern, yet established cross-environment data science project, digging deeper into Apache Arrow is certainly a fun experience.</p>
 <p>From the Apache Arrow documentation:</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"starwars"</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>file_path_sw <span class="ot">&lt;-</span> <span class="st">"starwars.parquet"</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(starwars, file_path_sw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"starwars"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>file_path_sw <span class="ot">&lt;-</span> <span class="st">"starwars.parquet"</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(starwars, file_path_sw)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The above R code writes the <em>starwars</em> demo dataset from the <em>dplyr</em> R package to a temporary .parquet file. The arrow R packages comes with the necessary tool set to write the open source columnar<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R.</p>
+<p></p>
+<p>The above R code writes the <em>starwars</em> demo dataset from the <em>dplyr</em> R package to a temporary .parquet file. The {arrow} R package <span class="citation" data-cites="arrow">(<a href="references.html#ref-arrow" role="doc-biblioref">Richardson et al. 2022</a>)</span> comes with the necessary toolset to write the open source columnar<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> .parquet format. Though they are not text files, .parquet files can be read and written from different environments and consume the file written with R. The below code uses the arrow library for Python to read the file we have just written with R.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyarrow.parquet <span class="im">as</span> pa</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pa.read_table(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyarrow.parquet <span class="im">as</span> pa</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sw <span class="op">=</span> pa.read_table(<span class="st">"starwars.parquet"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">*</span>sw.column_names, sep<span class="op">=</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>pyarrow.Table
-name: string
-height: int32
-mass: double
-hair_color: string
-skin_color: string
-eye_color: string
-birth_year: double
-sex: string
-gender: string
-homeworld: string
-species: string
-films: list&lt;item: string&gt;
-  child 0, item: string
-vehicles: list&lt;item: string&gt;
-  child 0, item: string
-starships: list&lt;item: string&gt;
-  child 0, item: string
-----
-name: [["Luke Skywalker","C-3PO","R2-D2","Darth Vader","Leia Organa",...,"Rey","Poe Dameron","BB8","Captain Phasma","Padmé Amidala"]]
-height: [[172,167,96,202,150,...,null,null,null,null,165]]
-mass: [[77,75,32,136,49,...,null,null,null,null,45]]
-hair_color: [["blond",null,null,"none","brown",...,"brown","brown","none","unknown","brown"]]
-skin_color: [["fair","gold","white, blue","white","light",...,"light","light","none","unknown","light"]]
-eye_color: [["blue","yellow","red","yellow","brown",...,"hazel","brown","black","unknown","brown"]]
-birth_year: [[19,112,33,41.9,19,...,null,null,null,null,46]]
-sex: [["male","none","none","male","female",...,"female","male","none",null,"female"]]
-gender: [["masculine","masculine","masculine","masculine","feminine",...,"feminine","masculine","masculine",null,"feminine"]]
-homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,null,null,"Naboo"]]
-...</code></pre>
+<pre><code>name
+height
+mass
+hair_color
+skin_color
+eye_color
+birth_year
+sex
+gender
+homeworld
+species
+films
+vehicles
+starships</code></pre>
 </div>
 </div>
+<p></p>
 <p>Here’s Julia reading our Parquet file:</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Parquet</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>sw <span class="op">=</span> Parquet.<span class="fu">File</span>(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Parquet</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sw <span class="op">=</span> Parquet.<span class="fu">File</span>(<span class="st">"starwars.parquet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Parquet file: starwars.parquet
     version: 2
     nrows: 87
-    created by: parquet-cpp-arrow version 9.0.0
+    created by: parquet-cpp-arrow version 14.0.0
     cached: 0 column chunks</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>When I composed this example reading and writing parquet files in different environments I ran into several compatibility issues. This shows that the level of interoperability is not at the same level as the interoperability of text files.</p>
-</blockquote>
+<p></p>
+<p>When I composed this example, reading and writing <em>Parquet</em> files in different environments, I ran into several compatibility issues. This shows that the level of interoperability is not the same as the interoperability of text files.</p>
 <section id="columnar" class="level4" data-number="6.2.4.1">
 <h4 data-number="6.2.4.1" class="anchored" data-anchor-id="columnar"><span class="header-section-number">6.2.4.1</span> A Note on Overhead</h4>
-<p>The <em>parquet</em> format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that parquet comes with some overhead, which may eat up gains if datasets are small. Consider our <em>starwars</em> dataset. At 87 rows and 14 columns, the dataset is rather small.</p>
+<p>The <em>parquet</em> format is designed to read and write files swiftly and to consume less disk space than text files. Both features can become particularly relevant in the cloud. Note though that <em>Parquet</em> comes with some overhead, which may eat up gains if datasets are small. Consider our <em>starwars</em> dataset. At 87 rows and 14 columns, the dataset is rather small.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(starwars, <span class="at">file =</span> <span class="st">"starwars.csv"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(starwars, <span class="at">file =</span> <span class="st">"starwars.csv"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(starwars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 87 14</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"starwars.parquet"</span>) <span class="sc">/</span> <span class="fu">file.size</span>(<span class="st">"starwars.csv"</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"starwars.parquet"</span>) <span class="sc">/</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">file.size</span>(<span class="st">"starwars.csv"</span>),</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.47</code></pre>
 </div>
 </div>
-<p>Hence, the overhead of a schema implementation and other meta information outweighs parquet’s compression for such a small dataset, leading to a parquet file that is almost 1.5 times larger than the corresponding csv file. Yet, parquet already turns the tables for the <em>diamonds</em> demo dataset from the <em>ggplot2</em> R package, which is by no means a large dataset.</p>
+<p></p>
+<p>Hence, the overhead of a schema implementation and other meta information outweighs <em>Parquet’s</em> compression for such a small dataset, leading to a <em>Parquet</em> file that is almost 1.5 times larger than the corresponding csv file. Yet, <em>Parquet</em> already turns the tables for the <em>diamonds</em> demo dataset from the <em>ggplot2</em> R package, which is by no means a large dataset.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(diamonds, <span class="at">file =</span> <span class="st">"diamonds.csv"</span>)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(diamonds, <span class="st">"diamonds.parquet"</span> )</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"diamonds.parquet"</span>) <span class="sc">/</span> <span class="fu">file.size</span>(<span class="st">"diamonds.csv"</span>), <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(diamonds, <span class="at">file =</span> <span class="st">"diamonds.csv"</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_parquet</span>(diamonds, <span class="st">"diamonds.parquet"</span> )</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">file.size</span>(<span class="st">"diamonds.parquet"</span>) <span class="sc">/</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">file.size</span>(<span class="st">"diamonds.csv"</span>),</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.21</code></pre>
 </div>
 </div>
-<p>The parquet file for the <em>diamonds</em> dataset has roughly one fifth of the size of the corresponding text file. This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change.</p>
+<p></p>
+<p>The <em>Parquet</em> file for the <em>diamonds</em> dataset has roughly one fifth of the size of the corresponding text file. This is a great example of why there is not one single, perfect, one-size-fits all form of data that emerged from decades of information engineering. So when you choose how you are going to represent data in our project, think about your goals, your most common use or query and a smooth data transformation strategy for when the use cases or goals change.</p>
 </section>
 </section>
 </section>
 <section id="databases" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="databases"><span class="header-section-number">6.3</span> Databases</h2>
-<p>Given the options that file based approaches provide, what is a) the difference and b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.</p>
-<p>The above figure shows a terminal client which users use to send queries written in a query language. The client sends these queries to a database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). This leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc. SQL databases have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases.</p>
+<p>Given the options that file-based approaches provide, what is (a) the difference and (b) the added value of going for a database to manage data? The front-and-center difference is the client interface, but there are many more differences and benefits.</p>
+<p>database users use a client program and a query language to send queries written to a database. The client sends these queries to the database host and either performs an operation on the database quietly or returns a result. The most common example of such a query language is the Structured Query Language (SQL). Using such a query language leads to a standard way of interaction with the data, no matter how the dataset looks like in terms of dimensions, size etc.SQLdatabases have been around much longer than data science itself, and continue to be inevitable as application backends and data archives for many use cases.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> myschema.demotable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> myschema.demotable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The above query would return all rows and all columns from a table called <em>demotable</em> in a schema called <em>myschema</em>. Such a query can easier be sent from a standalone database client, a database specific IDE with a built in client such as <a href="https://www.jetbrains.com/datagrip/">DataGrip</a> or a programming language. Given the ubiquity of databases most basically any programming language has native interfaces to the most common database. And if that is not the case, there is the database management system agnostic ODBC standard that is supported by all major SQL databases. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects.</p>
+<p></p>
+<p>The above query would return all rows and all columns from a table called <em>demotable</em> in a schema called <em>myschema</em>. Such a query can easier be sent from a standalone database client, a database specific IDE with a built in client such as DataGrip<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> or a programming language. Given the ubiquity of databases most basically any programming language has native interfaces to the most common database. And if that is not the case, there is the database management system agnostic ODBC standard that is supported by all majorSQLdatabases. The below code shows how to connect from R to PostgreSQL, send queries from within R and receive results as R objects.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgres)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"localhost"</span>,</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"bugsbunny"</span>,</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">passwd =</span> <span class="fu">.rs.AskForPassword</span>(<span class="st">"Enter Pw"</span>), <span class="co"># only works within RStudio,</span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"some_db_name"</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="co"># the result is an R data.frame</span></span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT * FROM myschema.demotable"</span>)</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can do R things with it</span></span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="co"># such as show the first 6 lines.</span></span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgres)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">"localhost"</span>,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">"bugsbunny"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># only works within RStudio</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">passwd =</span> <span class="fu">.rs.AskForPassword</span>(<span class="st">"Enter Pw"</span>), </span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">dbname =</span> <span class="st">"some_db_name"</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co"># the result is an R data.frame</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">dbSendQuery</span>(con,</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a> <span class="st">"SELECT * FROM myschema.demotable"</span>)</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="co"># and we can do R things with it</span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># such as show the first 6 lines.</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Obviously, the above example barely shows the tip of the iceberg as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form.</p>
+<p></p>
+<p>Obviously, the above example barely shows the tip of the iceberg, as it is just meant to illustrate the way we interact with databases as opposed to a file system. To dig a little deeper into databases, I recommend getting a solid understanding of the basic CREATE, SELECT, INSERT, UPDATE, DELETE, TRUNCATE, DROP processes as well as basic JOINs and WHERE clauses. Also, it is helpful to understand the concept of normalization up to the third normal form.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/postgres.png" class="img-fluid figure-img"></p>
+<figcaption>The iconic Postgres elephant logo.</figcaption>
+</figure>
+</div>
 <section id="relational-database-management-systems-rdbms" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="relational-database-management-systems-rdbms"><span class="header-section-number">6.3.1</span> Relational Database Management Systems (RDBMS)</h3>
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="relational-database-management-systems-rdbms"><span class="header-section-number">6.3.1</span> Relational database Management Systems (RDBMS)</h3>
 <p>When you need to pick a concrete database technology for your project, the first major choice is whether to go for a relational system or not. Unless you have a very compelling reason not to, you are almost always better off with a relational database: Relational databases are well established and accessible from any programming language used in programming with data that one could think of. In addition, modern RDBMS implementations offer many non-relational features such as JSON field types and operations.</p>
 <p>I would classify the most popular relational database implementations as follows. First, there is <a href="https://www.sqlite.org/index.html">SQLite</a>. As the name suggestions, <em>SQLite</em> is a light-weight, stripped down, easy-to-use and install implementation.</p>
 <blockquote class="blockquote">
-<p>SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. – SQLite.org</p>
+<p>SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured,SQLdatabase engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day. – SQLite.org</p>
 </blockquote>
 <p><em>SQLite</em> data lives in a single file that the user queries through the <em>SQLite</em> engine. Here is an example using that engine from R.</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"rse.sqlite3"</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), db_path)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"mtcars"</span>), mtcars, <span class="at">overwrite =</span> T)</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"flowers"</span>), iris, <span class="at">overwrite =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>db_path <span class="ot">&lt;-</span> <span class="st">"rse.sqlite3"</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), db_path)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"mtcars"</span>),</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>             mtcars, <span class="at">overwrite =</span> T)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dbWriteTable</span>(con, <span class="fu">dbQuoteIdentifier</span>(con,<span class="st">"flowers"</span>),</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>             iris, <span class="at">overwrite =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The above code initiates a <em>SQLite</em> database and continues to write the built-in R demo datasets into separate tables in that newly created database. Now we can use SQL to query the data. Return the first three rows of <em>flowers</em>:</p>
+<p></p>
+<p>The above code initiates a <em>SQLite</em> database and continues to write the built-in R demo datasets into separate tables in that newly created database. Now we can useSQLto query the data. Return the first three rows of <em>flowers</em>:</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM flowers LIMIT 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM flowers LIMIT 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 1          5.1         3.5          1.4         0.2  setosa
@@ -728,9 +744,11 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 3          4.7         3.2          1.3         0.2  setosa</code></pre>
 </div>
 </div>
+<p></p>
 <p>Return cars that are more fuel efficient than 30 miles per gallon:</p>
+<p></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars WHERE mpg &gt; 30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM mtcars WHERE mpg &gt; 30"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   mpg cyl disp  hp drat    wt  qsec vs am gear carb
 1 32.4   4 78.7  66 4.08 2.200 19.47  1  1    4    1
@@ -739,61 +757,78 @@ homeworld: [["Tatooine","Tatooine","Naboo","Tatooine","Alderaan",...,null,null,n
 4 30.4   4 95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
 </div>
 </div>
-<p><a href="https://www.mysql.com/">MySQL</a> can do a little more and also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium level web projects around the world. In its early days, MySQL used to be an independent open source project, but was later on acquired by database Juggernaut Oracle as a lite version to go with its flagship product.</p>
-<p>While certainly doing its job in millions of installations, MySQL it is not in at the same level as <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">Microsoft SQL Server</a> (MSSQL), <a href="https://www.postgresql.org/">PostgreSQL</a> and <a href="https://www.oracle.com/database/technologies/">Oracle Database</a> and I suggest one of these three enterprise level databases as data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. Among the three, personally I would always lean towards the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either of MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice.</p>
-<p>Another database management that gets a lot of attention recently (and rightfully so) is <a href="https://duckdb.org/">DuckDB</a>. Because it is mentioned so overwhelmingly positive and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer an SQL interface, but is very different in its aims from the traditional SQL databases. DuckDB is serverless and allows accessing parquet files via a very fast SQL interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but not so suitable for enterprise data warehousing.</p>
+<p></p>
+<p>MySQL<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> can do a little more and is also immensely popular, particularly as a database backend for web content management systems and other web-based applications. The so-called LAMP stack (Linux, Apache, MySQL and PHP) contributed to its rise decades ago when it fueled many smaller and medium-level web projects around the world. In its early days, MySQL used to be an independent open source project, but it was later on acquired by database Juggernaut Oracle as a light version to go with its flagship product.</p>
+<p>While certainly doing its job in millions of installations, MySQL is not in at the same level as [Microsoft SQL Server<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> (MSSQL), PostgreSQL<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> and Oracle database<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>, and I suggest one of these three enterprise-level databases as a data store for research projects that go beyond hosting a blog. Especially when it comes to long-term conservation of data and enforcing consistency, MSSQL, PostgreSQL and Oracle are hard to beat. Among the three, personally I would always lean toward the license cost free open source PostgreSQL, but fitting into existing ecosystems is a good reason to go with either MSSQL or Oracle if you can afford the licenses. For many use cases, there is hardly any difference for the analyst or scientific end user. PostgreSQL may have the coolest spatial support, MSSQL T-SQL dialect, may have some extra convenient queries if your developers mastered the dialect and Oracle may have the edge in performance and Java interaction here and there, but none of these systems is a bad choice.</p>
+<p>Another database management that gets a lot of attention recently (and rightfully so) is DuckDB<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>. Because it is mentioned so positively and often, it is important to understand what it is and when to use it. DuckDB is not yet another competitor that tries to gain some ground from the big three of MSSQL, PostgreSQL and Oracle. DuckDB does offer an SQL interface, but it is very different in its aims from the traditionalSQLdatabases. DuckDB is serverless and allows accessing <em>Parquet</em> files via a very fast SQL interface. This makes DuckDB a great tool for interactive analysis and transfer of large result sets, but it is not so suitable for enterprise data warehousing.</p>
 </section>
 <section id="a-word-on-non-relational-databases" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="a-word-on-non-relational-databases"><span class="header-section-number">6.3.2</span> A Word on Non-Relational Databases</h3>
-<p>Among other things, relational databases are ACID (Atomicity, Consistency, Isolation, and Durability) compliant and ask for very little in return to provide us with a framework to keep our data quality high for decades. So unless, you have a very specific use case that translates to a compelling reason to use a non-relational database – stick to SQL. Document oriented storage or very unstructured information could be such a reason to use a non-relational database, yet their JSON support allows to also handle JSON in database cells. About a decade ago, <a href="https://www.mongodb.com/">mongoDB</a> gained traction, partly piggybacking the success of JavaScript and server-side JavaScript in particular. In web development the MEAN (mongoDB, expressjs, angular and node) stack become popular and with the bundle, the idea of non-relational databases as fast track to a backend spread.</p>
-<p>Columnar stores, which are also considered non-relational, are conceptional very similar to relational databases, though denormalized and designed to structure sparse data. Database systems like <a href="https://cassandra.apache.org/">Apache Cassandra</a> are designed to scale horizontally and be highly available, managing massive amounts of data. Cloud applications that distribute data across multiple nodes for high availability benefit from such an approach. Other options include <a href="https://redis.io/">Redis</a> or <a href="https://www.couchbase.com/">Couchbase</a>. If you are not happy with the ‘beyond-the-scope-of-this-book’ argument, blogging experts like <a href="https://blog.jooq.org/tag/nosql/">Lukas Eder</a> maybe biased but much better educated (and fun) to educate you here.</p>
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="a-word-on-non-relational-databases"><span class="header-section-number">6.3.2</span> A Word on Non-Relational databases</h3>
+<p>Among other things, relational databases are ACID (Atomicity, Consistency, Isolation, and Durability) compliant and ask for very little in return to provide us with a framework to keep our data quality high for decades. So unless, you have a very specific use case that translates to a compelling reason to use a non-relational database stick to SQL. Document-oriented storage or very unstructured information could be such a reason to use non-relational databases, yet their JSON support allows to also handle JSON in database cells. About a decade ago, mongoDB<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> gained traction, partly piggybacking the success of JavaScript and server-side JavaScript in particular. In web development, the MEAN (mongoDB, expressjs, angular and node) stack become popular, and, with the bundle, the idea of non-relational databases as fast track to a backend spread.</p>
+<p>Columnar stores, which are also considered non-relational, are conceptionally similar to relational databases, though denormalized and designed to structure sparse data. database systems like Apache Cassandra<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> are designed to scale horizontally and be highly available, managing massive amounts of data. Cloud applications that distribute data across multiple nodes for high availability benefit from such an approach. Other options include Redis<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> or Couchbase<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>. If you are not happy with the “beyond-the-scope-of-this-book” argument, blogging experts like Lukas Eder<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> maybe biased but much better educated (and fun) to educate you here.</p>
 </section>
 </section>
 <section id="non-technical-aspects-of-managing-data" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="non-technical-aspects-of-managing-data"><span class="header-section-number">6.4</span> Non-Technical Aspects of Managing Data</h2>
-<p>The fact that we can do more data work single-handedly than ever before does not only equate to more options. It also means we need to be aware of new issues and responsibilities. Those responsibilities range from leading by example when it comes to etiquette and ethical aspects, to sticking to privacy rules and complying with security standards. In addition, to normative restrictions that come with handling data, the options and choices of data dissemination are a realm of its own. Just like software publications, you should not just ‘drop’ data without a license and instructions on acceptable use of the data.</p>
+<p>The fact that we can do more data work single-handedly than ever before does not only equate to more options. It also means we need to be aware of new issues and responsibilities. Those responsibilities range from leading by example when it comes to etiquette and ethical aspects, to sticking to privacy rules and complying with security standards. In addition, to normative restrictions that come with handling data, the options and choices of data dissemination are a realm of their own. Just like software publications, you should not just “drop” data without a license and instructions on acceptable use of the data.</p>
 <section id="etiquette" class="level3" data-number="6.4.1">
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="etiquette"><span class="header-section-number">6.4.1</span> Etiquette</h3>
-<p>Just because content is publicly available on a website, it does not automatically mean that bulk downloads, aggregation and re-publishing are ok. For example, the ability to scrape a website daily and doing so with good intent for science does not mean a website’s AUP (Acceptable Use Policy) allows to systematically archive its content.</p>
-<blockquote class="blockquote">
-<p>Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. –CRAN description of the polite R package.</p>
-</blockquote>
+<p>Just because content is publicly available on a website does not automatically mean that bulk downloads, aggregation and republishing are ok. For example, the ability to scrape a website daily and doing so with good intent for science does not mean a website’s Acceptable Use Policy (AUP) allows to systematically archive its content.</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Be responsible when scraping data from websites by following polite principles: introduce yourself, ask for permission, take slowly and never ask twice. – CRAN description of the {polite} R package <span class="citation" data-cites="polite">(<a href="references.html#ref-polite" role="doc-biblioref">Perepolkin 2023</a>)</span>.</p>
+</div>
+</div>
+</div>
 <p>In other words, the new type of researcher discussed in this book needs to be aware of potential legal and social consequences. The {polite} R package quoted above is an example of an alternative approach that favors etiquette over hiding IP addresses to avoid access denial.</p>
 </section>
 <section id="security" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="security"><span class="header-section-number">6.4.2</span> Security</h3>
-<p>“I ain’t got nothing to hide. I don’t care about people reading my stuff.” I’ve heard similar ‘arguments’ a zillion times. People who argue like that do not only endanger their environment, they contribute to a less secure internet at large, as they leave their device open to contribute to malicious activity.</p>
-<p>It does not have to be you who has been trusted to work with data that qualify as sensitive. Someone on your team or within your network might have been, and that person may trust you more than a stranger and be less vigilant when harmful actions are executed in your name. This is why you are <em>obliged</em> to care about security. As in, do <em>NOT</em> store your credentials in your scripts. As in, passwords are <em>NOT</em> part of your analysis. You may accidentally push your password to GitHub, where it is not only publicly available but also hard to delete for beginners. Make sure to choose secure passwords. Use a password manager, so the passwords do not need to be your cat’s name for you to remember. Use a password manager so you can afford not to have the same passwords for multiple applications. Use a password manager so you can afford to change your passwords. Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username / password combination. This is also a good way to connect to a remote server via ssh.</p>
-<p>In addition to the above brainy smurf advice, let me mention security as a reason to consider using a database to manage and archive your data for the long haul. Enterprise level databases allow for granular access management and help to stay ahead of users and their rights regarding your database’s entries.</p>
+<blockquote class="blockquote">
+<p>I ain’t got nothing to hide. I don’t care about people reading my stuff. – an argument I have heard about a zillion times.</p>
+</blockquote>
+<p>People who argue like that do not only endanger their environment, they also contribute to a less secure internet at large, as they leave their device open to contribute to malicious activity. It does not have to be you who has been trusted to work with data that qualify as sensitive. Someone on your team or within your network might have been, and that person may trust you more than a stranger and may be less vigilant when harmful actions are executed in your name. This is why you are <em>obliged</em> to care about security. As in, do <em>not</em> store your credentials in your scripts. As in, passwords are <em>not</em> part of your analysis. You may accidentally push your password to GitHub, where it is not only publicly available but also hard to truly delete for beginners. Make sure to choose secure passwords. Use a password manager, so the passwords do not need to be your cat’s name for you to remember. Also, with a password manager you can afford <em>not</em> to have the same passwords for multiple applications. Use a password manager so you can afford to change your passwords. Use key files where you can. The case study chapter gives you a hands-on recipe to use RSA key pairs to connect to remote servers, e.g., your GitHub account instead of a username/password combination. This is also a good way to connect to a remote server via SSH.</p>
+<p>In addition to the above Brainy Smurf advice, let me mention security as a reason to consider using a database to manage and archive your data for the long haul. Enterprise-level databases allow for granular access management and help to stay ahead of users and their rights regarding your database’s entries.</p>
 </section>
 <section id="privacy" class="level3" data-number="6.4.3">
 <h3 data-number="6.4.3" class="anchored" data-anchor-id="privacy"><span class="header-section-number">6.4.3</span> Privacy</h3>
-<p>Privacy in data science is a complex issue and could legitimately fill a book on its own. Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entry point to the matter. When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. It is important to understand that exposure does not stop at names. A single extraordinary feature or an exotic combination of features can identify an individual within a dataset, or at least expose a group. This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place and/or individuals were not aware that merging was possible. So, what we can we as researchers learn from here, except from concerns and further complication of our work? First, licenses and usage policies are a service to users of the data. Second, awareness of what is sensitive data is a skill that is valuable to have on a team. That being said, management of in-depth knowledge is rather easy to organize in centralized fashion. Most universities and larger corporations will have an officer to run these things by.</p>
+<p>Privacy in data science is a complex issue and could legitimately fill a book on its own. Though I cannot comprehensively cover privacy in a section, it is important to me to raise awareness and hopefully create an entry point to the matter. When working with data, in its essence, respecting privacy is about avoiding exposure of individual units without their explicit prior consent. It is important to understand that exposure does not stop at names. A single extraordinary feature or an exotic combination of features can identify an individual within a dataset, or at least expose a group. This is why merging multiple datasets may also cause privacy concerns when datasets were not created to be merged in the first place, and/or individuals were not aware that merging was possible. So, what can we as researchers learn from here, except from concerns and further complication of our work? First, licenses and usage policies are a service to users of the data. Second, awareness of what is sensitive data is a valuable skill to have on a team. That being said, management of in-depth knowledge is rather easy to organize in a centralized fashion. Most universities and larger corporations will have an officer to run these things by.</p>
 </section>
 <section id="data-publications" class="level3" data-number="6.4.4">
 <h3 data-number="6.4.4" class="anchored" data-anchor-id="data-publications"><span class="header-section-number">6.4.4</span> Data Publications</h3>
-<p>Yet, there is more to managing your data’s exposure than just making sure everything is encrypted and locked up. Publication of data makes your results reproducible and improves trust in said results. As a consequence there is a notable crescendo in the claim for reproducible research. While reproducible research is great, I would like to raise awareness that essentially all solutions created and advertised to improve reproducibilty implicitly assume the researcher deals with datasets obtained through a study. In other words, it is implied that your work is not about monitoring an ongoing process.</p>
+<p>Yet, there is more to managing your data’s exposure than just making sure everything is encrypted and locked up. Publication of data makes your results reproducible and improves trust in said results. As a consequence, there is a notable crescendo in the claim for reproducible research. While reproducible research is great, I would like to raise awareness that essentially all solutions created and advertised to improve reproducibility implicitly assume the researcher deals with datasets obtained through a study. In other words, it is implied that your work is not about monitoring an ongoing process.</p>
 <section id="data-archives" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="data-archives">Data Archives</h4>
-<p>Research repositories like <a href="https://zenodo.org">Zenodo</a> that allow to archive data follow a snapshot thinking: A catalog entry refers to a particular version of an research paper, report, software or dataset. Whenever there is an update a new version is added to a catalog entry. Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility it also helps data workers get credit for their contribution. Fortunately, feeding research repositories is a task that is easy to automate thanks <a href="./publishing.html#datapub">great integration, APIs and community work</a>.</p>
+<p>Research repositories like Zenodo<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> that allow to archive data follow a snapshot thinking: A catalog entry refers to a particular version of an research paper, report, software or dataset. Whenever there is an update, a new version is added to a catalog entry. Adding datasets or software publications to catalogs like Zenodo does not only improve reproducibility, it also helps data workers get credit for their contribution. Fortunately, feeding research repositories is a task that is easy to automate thanks to <a href="./publishing.html#datapub">great integration, APIs and community work</a>.</p>
 </section>
 <section id="open-data" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="open-data">Open Data</h4>
-<p>Open Data archhives are special form of repositories. The term open data refers to publicly available data that are available free of license costs and in machine-readable fashion.</p>
+<p>Open Data archives are a special form of repositories. The term “open data” refers to publicly available data that are available free of license costs and in machine-readable fashion.</p>
 <blockquote class="blockquote">
-<p>“Open data and content can be freely used, modified, and shared by anyone for any purpose” – opendefition.org</p>
+<p>Open data and content can be freely used, modified, and shared by anyone for any purpose – opendefinition.org</p>
 </blockquote>
-<p>Because of approaches such as the Swiss governments’ “open by default”, open government data (OGD) has become a common form of open data. The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets. In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. Initiatives like <a href="https://sdmx.org/">SDMX (Statistical Data and Meta Exchange)</a> aim to improve exchange of data <em>and</em> data descriptions. Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software. Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data. The <em>openwashdata</em> project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the <a href="https://openwashdata.org">openwashdata project</a> collects datasets from publications and re-publishes them in in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project’s GitHub organization.</p>
+<p>Because of approaches such as the Swiss government’s “open by default,” open government data (OGD) has become a common form of open data. The basic idea that data generated from publicly funded processes should be publicly available whenever no privacy rights are violated has been the motor for many OGD projects out of public administration. From small local governments to international organizations like the World Bank or OECD, open data have become a valuable and growing source for researchers. Open data initiatives of your country, as well as major international organizations, will help you to create interoperable datasets. In addition, open data organizations provide you with a publication channel for your data or with a data catalog that stores the data description. Initiatives like SDMX (Statistical Data and Meta eXchange)<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> aim to improve exchange of data <em>and</em> data descriptions. Their XML-based format has become an international standard which led to the implementation of SDMX read and write routines in statistical software. Whether you think about the conditions of your own data publications or about a source for your own research project, make sure to consider open data.</p>
 <blockquote class="blockquote">
-<p>“openwashdata is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector” – openwashdata.org</p>
+<p><em>openwashdata</em> is an active global community that applies FAIR principles to data generated in the greater water, sanitation, and hygiene (WASH) sector – openwashdata.org</p>
 </blockquote>
+<p>The <em>openwashdata</em> project I have been contributing to might be an hands-on inspiration to get a more concrete understanding of what open data is actually about. Among other things, the openwashdata project collects datasets from publications and republishes them in machine readable format alongside their meta information. The data manipulation to reach this end is documented in reproducible fashion. The final results, R data packages, are published in freely available git repositories in the project’s GitHub organization.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-rvest" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-polite" class="csl-entry" role="listitem">
+Perepolkin, Dmytro. 2023. <em>Polite: Be Nice on the Web</em>. <a href="https://CRAN.R-project.org/package=polite">https://CRAN.R-project.org/package=polite</a>.
+</div>
+<div id="ref-arrow" class="csl-entry" role="listitem">
+Richardson, Neal, Ian Cook, Nic Crane, Dewey Dunnington, Romain François, Jonathan Keane, Dragoș Moldovan-Grünfeld, Jeroen Ooms, and Apache Arrow. 2022. <em>Arrow: Integration to ’Apache’ ’Arrow’</em>. <a href="https://CRAN.R-project.org/package=arrow">https://CRAN.R-project.org/package=arrow</a>.
+</div>
+<div id="ref-rvest" class="csl-entry" role="listitem">
 Wickham, Hadley. 2022. <em>Rvest: Easily Harvest (Scrape) Web Pages</em>. <a href="https://CRAN.R-project.org/package=rvest">https://CRAN.R-project.org/package=rvest</a>.
 </div>
-<div id="ref-soup" class="csl-entry" role="doc-biblioentry">
+<div id="ref-soup" class="csl-entry" role="listitem">
 Zheng, Chunmei, Guomei He, and Zuojie Peng. 2015. <span>“A Study of Web Information Extraction Technology Based on Beautiful Soup.”</span> <em>J. Comput.</em> 10: 381–87.
 </div>
 </div>
@@ -803,9 +838,25 @@ Zheng, Chunmei, Guomei He, and Zuojie Peng. 2015. <span>“A Study of Web Inform
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Note that commas are not always necessarily the separator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>SDMX.org about SDMX: SDMX, which stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Cooperation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>see also<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>The original GeoJSON file from the example can be found at https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note that commas are not always necessarily the separator in .csv files. Because of the use of commas as decimal delimiters in some regions, columns are also often separated by semicolons to avoid conflicts.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://json.org<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>SDMX (https://sdmx.org) stands for Statistical Data and Metadata eXchange is an international initiative that aims at standardizing and modernizing (“industrializing”) the mechanisms and processes for the exchange of statistical data and metadata among international organizations and their member countries. SDMX is sponsored by seven international organizations including the Bank for International Settlements (BIS), the European Central Bank (ECB), Eurostat (Statistical Office of the European Union), the International Monetary Fund (IMF), the Organisation for Economic Co-operation and Development (OECD), the United Nations Statistical Division (UNSD), and the World Bank.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>https://arrow.apache.org/<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>see also<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>https://www.jetbrains.com/datagrip/<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>https://www.mysql.com/<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>https://www.microsoft.com/en-us/sql-server/sql-server-2019<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>https://www.postgresql.org/<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>https://www.oracle.com/database/technologies/<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>https://duckdb.org/<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>https://www.mongodb.com/<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>https://cassandra.apache.org/<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>https://redis.io/<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>https://www.couchbase.com/<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>https://blog.jooq.org/tag/nosql/<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>https://zenodo.org<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>https://sdmx.org/<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -837,9 +888,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -875,10 +940,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -888,8 +970,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -901,9 +992,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -945,17 +1272,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./version-control.html" class="pagination-link">
+      <a href="./version-control.html" class="pagination-link" aria-label="Git Version Control">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./infrastructure.html" class="pagination-link">
+      <a href="./infrastructure.html" class="pagination-link" aria-label="Infrastructure">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

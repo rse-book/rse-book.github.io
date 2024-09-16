@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,11 +17,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -110,7 +81,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -119,10 +96,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -131,11 +112,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -143,118 +129,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
-    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack: A Developer’s Toolkit</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  <a href="./programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./version-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  <a href="./automation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./community.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a>
+  <a href="./community.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing and Reporting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-go-beyond-a-local-notebook" id="toc-why-go-beyond-a-local-notebook" class="nav-link active" data-scroll-target="#why-go-beyond-a-local-notebook"><span class="toc-section-number">7.1</span>  Why Go Beyond a Local Notebook?</a></li>
-  <li><a href="#hosting-options" id="toc-hosting-options" class="nav-link" data-scroll-target="#hosting-options"><span class="toc-section-number">7.2</span>  Hosting Options</a>
+  <li><a href="#why-go-beyond-a-local-notebook" id="toc-why-go-beyond-a-local-notebook" class="nav-link active" data-scroll-target="#why-go-beyond-a-local-notebook"><span class="header-section-number">7.1</span> Why Go Beyond a Local Notebook?</a></li>
+  <li><a href="#hosting-options" id="toc-hosting-options" class="nav-link" data-scroll-target="#hosting-options"><span class="header-section-number">7.2</span> Hosting Options</a>
   <ul class="collapse">
-  <li><a href="#software-as-a-service-saas" id="toc-software-as-a-service-saas" class="nav-link" data-scroll-target="#software-as-a-service-saas"><span class="toc-section-number">7.2.1</span>  Software-as-a-Service (SaaS)</a></li>
-  <li><a href="#self-hosted" id="toc-self-hosted" class="nav-link" data-scroll-target="#self-hosted"><span class="toc-section-number">7.2.2</span>  Self Hosted</a></li>
+  <li><a href="#software-as-a-service" id="toc-software-as-a-service" class="nav-link" data-scroll-target="#software-as-a-service"><span class="header-section-number">7.2.1</span> Software-as-a-Service</a></li>
+  <li><a href="#self-hosted" id="toc-self-hosted" class="nav-link" data-scroll-target="#self-hosted"><span class="header-section-number">7.2.2</span> Self-Hosted</a></li>
   </ul></li>
-  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"><span class="toc-section-number">7.3</span>  Building Blocks</a>
+  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"><span class="header-section-number">7.3</span> Building Blocks</a>
   <ul class="collapse">
-  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines"><span class="toc-section-number">7.3.1</span>  Virtual Machines</a></li>
-  <li><a href="#containers-images" id="toc-containers-images" class="nav-link" data-scroll-target="#containers-images"><span class="toc-section-number">7.3.2</span>  Containers &amp; Images</a></li>
-  <li><a href="#kubernetes-k8s" id="toc-kubernetes-k8s" class="nav-link" data-scroll-target="#kubernetes-k8s"><span class="toc-section-number">7.3.3</span>  Kubernetes (K8s)</a></li>
+  <li><a href="#virtual-machines" id="toc-virtual-machines" class="nav-link" data-scroll-target="#virtual-machines"><span class="header-section-number">7.3.1</span> Virtual Machines</a></li>
+  <li><a href="#containers-and-images" id="toc-containers-and-images" class="nav-link" data-scroll-target="#containers-and-images"><span class="header-section-number">7.3.2</span> Containers and Images</a></li>
+  <li><a href="#kubernetes" id="toc-kubernetes" class="nav-link" data-scroll-target="#kubernetes"><span class="header-section-number">7.3.3</span> Kubernetes</a></li>
   </ul></li>
-  <li><a href="#applied-containerization-basics" id="toc-applied-containerization-basics" class="nav-link" data-scroll-target="#applied-containerization-basics"><span class="toc-section-number">7.4</span>  Applied Containerization Basics</a>
+  <li><a href="#applied-containerization-basics" id="toc-applied-containerization-basics" class="nav-link" data-scroll-target="#applied-containerization-basics"><span class="header-section-number">7.4</span> Applied Containerization Basics</a>
   <ul class="collapse">
-  <li><a href="#dockerfiles" id="toc-dockerfiles" class="nav-link" data-scroll-target="#dockerfiles"><span class="toc-section-number">7.4.1</span>  Dockerfiles</a></li>
-  <li><a href="#building-running-containers" id="toc-building-running-containers" class="nav-link" data-scroll-target="#building-running-containers"><span class="toc-section-number">7.4.2</span>  Building &amp; Running Containers</a></li>
-  <li><a href="#docker-compose---manage-multiple-containers" id="toc-docker-compose---manage-multiple-containers" class="nav-link" data-scroll-target="#docker-compose---manage-multiple-containers"><span class="toc-section-number">7.4.3</span>  Docker Compose - Manage Multiple Containers</a></li>
+  <li><a href="#dockerfiles" id="toc-dockerfiles" class="nav-link" data-scroll-target="#dockerfiles"><span class="header-section-number">7.4.1</span> DOCKERFILEs</a></li>
+  <li><a href="#building-and-running-containers" id="toc-building-and-running-containers" class="nav-link" data-scroll-target="#building-and-running-containers"><span class="header-section-number">7.4.2</span> Building and Running Containers</a></li>
+  <li><a href="#docker-compose-manage-multiple-containers" id="toc-docker-compose-manage-multiple-containers" class="nav-link" data-scroll-target="#docker-compose-manage-multiple-containers"><span class="header-section-number">7.4.3</span> Docker Compose – Manage Multiple Containers</a></li>
+  <li><a href="#a-little-docker-debugging-tip" id="toc-a-little-docker-debugging-tip" class="nav-link" data-scroll-target="#a-little-docker-debugging-tip"><span class="header-section-number">7.4.4</span> A Little Docker Debugging Tip</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -264,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></h1>
 </div>
 
 
@@ -277,35 +279,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
+
 </header>
 
-<p>Yes, there is a third area besides your research and carpentry level programming that I suppose you should get an idea of. Again, you do not have to master hosting servers or even clusters, but a decent overview and an idea of when to use what will help you tremendously to plan ahead.</p>
+
+<p>Yes, there is a third area besides your research and carpentry-level programming that I suppose you should get an idea about. Again, you do not have to master hosting servers or even clusters, but a decent overview and an idea of when to use what will help you tremendously to plan ahead. The figure <a href="#fig-schematic-web" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> shows a simple web application setup that would work well with virtual machines as well as with docker containers.</p>
+<div id="fig-schematic-web" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-scap="Web-based IDE and web application server">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schematic-web-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/server-setup3.jpg" class="img-fluid figure-img" data-fig-scap="Web-based IDE and web application server">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schematic-web-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Schematic illustration of a simple server setup for web-based IDE and web application server. (Source: own illustration.)
+</figcaption>
+</figure>
+</div>
 <section id="why-go-beyond-a-local-notebook" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="why-go-beyond-a-local-notebook"><span class="header-section-number">7.1</span> Why Go Beyond a Local Notebook?</h2>
-<p>Admittedly, unless just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as overhead. So, why leave the peaceful, well-known shire of our local environment for the uncharted, rocky territory of unwelcoming technical documentations and time-consuming rabbit holes?</p>
+<p>Admittedly, unless you just always had a knack for Arduinos, Raspberry Pis or the latest beta version of the software you use, infrastructure may be the one area you perceive as distracting, none-of-your-business overhead. So, why leave the peaceful, well-known shire of our local environment for the uncharted, rocky territory of unwelcoming technical documentations and time-consuming rabbit holes?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/server-thinking.jpg" class="img-fluid figure-img"></p>
+<figcaption>Though servers can provide access to massive computing resources, do not think of them as a data vault that looks like a fridge. (Source: own illustration.)</figcaption>
+</figure>
+</div>
 <p>Performance, particularly in terms of throughput, is one good reason to look beyond desktop computers. Data protection regulations that prohibit data downloads may simply force us to not work locally. Or we just do not want a crashing office application to bring down a computation that ran for hours or even days. Or we need a computer that is online 24/7 to publish a report, website or data visualization.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/listen.jpg" class="img-fluid figure-img" width="300"></p>
-<p></p><figcaption class="figure-caption">Thinking of a server as a ‘program that listens’ rather than a data vault that looks like a fridge is a good starting point. (source: own illustration)</figcaption><p></p>
+<figcaption>Think of a server as a “program that listens”. (Source: own illustration.)</figcaption>
 </figure>
 </div>
 </section>
 <section id="hosting-options" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="hosting-options"><span class="header-section-number">7.2</span> Hosting Options</h2>
 <p>So, where should we go with our project when it outgrows the local environment of our notebooks? This has actually become a tough question because of all the reasonable options out there. Technical advances, almost unparalleled scalability and large profits for the biggest players made modern infrastructure providers offer an incredible variety of products to choose from. Obviously, a description of product offerings in a vastly evolving field is not well suited for discussions in a book. Hence, <em>Research Software Engineering</em> intends to give an overview to classify the general options and common business models.</p>
-<section id="software-as-a-service-saas" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="software-as-a-service-saas"><span class="header-section-number">7.2.1</span> Software-as-a-Service (SaaS)</h3>
-<p>The simplest solution and fastest time-to-market is almost always to go for a SaaS product – particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus on doing one single thing well. The <a href="https://shinyapps.io">shinyapps.io</a> platform is a great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product because R developers who come from field-specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers, for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R shiny web application framework that uses R to generate HTML, CSS and JavaScript based applications. Still, those applications need to be hosted somewhere. This is precisely what shinyapps.io does. The service solely hosts web applications that were created with the shiny web application framework. This ease of use is also the biggest limitation of SaaS products. A website generated with another tool cannot be deployed easily. In addition, the mere bang-for-buck price is rather high compared to self-hosting as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many projects, especially at a proof of concept stage.</p>
-<blockquote class="blockquote">
-<p>In case you are interested in getting started with shiny, take a look at the shiny case study in this book. The study explains basic concepts of shiny to the user and walks readers through the creation and deployment of a simple app.</p>
-</blockquote>
-<p>SaaS, of course, is neither an R nor a data science idea. Modern providers offer databases, storage calendars, face recognition, location services among other things.</p>
+<section id="software-as-a-service" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="software-as-a-service"><span class="header-section-number">7.2.1</span> Software-as-a-Service</h3>
+<p>The simplest solution and fastest time-to-market is almost always to go for a Software-as-a-Service (SaaS) product – particularly if you are not experienced in hosting and just want to get started without thinking about which Linux to use and how to maintain your server. SaaS products abstract all of that away from the user and focus on doing one single thing well. The shinyapps.io<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> platform is a great example of such a service: users can sign up and deploy their web applications within minutes. The shinyapps.io platform is a particularly interesting example of a SaaS product because R developers who come from field-specific backgrounds other than programming are often not familiar with web development and hosting websites. Some of these developers, for whom R might be their first programming language, are suddenly empowered to develop and run online content thanks to the R Shiny web application framework that uses R to generate HTML, CSS and JavaScript based applications. Still, those applications need to be hosted somewhere. This is precisely what shinyapps.io does. The service solely hosts web applications that were created with the Shiny web application framework. This ease of use is also the biggest limitation of SaaS products. A website generated with another tool cannot be deployed easily. In addition, the mere bang-for-buck price is rather high compared to self-hosting as users pay for a highly, standardized, managed hosting product. Nevertheless, because of the low volume of most projects, SaaS is feasible for many projects, especially at a proof of concept stage.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>In case you are interested in getting started with Shiny, take a look at the Shiny case study in this book. The study explains basic concepts of Shiny to the user and walks readers through the creation and deployment of a simple app.</p>
+</div>
+</div>
+</div>
+<p>SaaS, of course, is neither an R nor a data science idea. Modern providers offer databases, storage calendars, face recognition and location services, among other things.</p>
 </section>
 <section id="self-hosted" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="self-hosted"><span class="header-section-number">7.2.2</span> Self Hosted</h3>
-<p>The alternative approach to buying multiple managed services, is to host your applications by yourself. Since – this applies to most users at least – you do not take your own hardware, connect to your home Wi-Fi and aim to start your own hosting provider, we need to look at different degrees of self-hosting. Larger organizations, e.g., universities, often like to host application on their own hardware, within their own network to have full control of their data. Yet, self-hosting exposes you to issues, such as attacks, that you would not need to worry about as much in a software as a service setting (as long as you trust the service).</p>
-<p>Self-hosting allows you to host all the applications you want on a dedicated machine. Self-hosters can configure their server depending on their access rights. Offerings range from root access that allows users to do anything to different shades of managed hosting with more moderated access. Backed by virtual infrastructure, modern cloud providers offer a very dynamic form of self-hosting: their clients can use a web GUIs and/or APIs to add, remove, reboot and shutdown nodes. Users can spin up anything from pre-configured nodes optimized for different use cases to containerized environments and entire Kubernetes (K8s) clusters in the cloud. Flexible pricing models allow paying based on usage in a very dynamic fashion.</p>
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="self-hosted"><span class="header-section-number">7.2.2</span> Self-Hosted</h3>
+<p>The alternative approach to buying multiple managed services, is to host your applications by yourself. Since – this applies to most users at least – you do not take your own hardware, connect to your home Wi-Fi and aim to start your own hosting provider, we need to look at different degrees of self-hosting. Larger organizations, e.g., universities, often like to host applications on their own hardware, within their own network to have full control of their data. Yet, self-hosting exposes you to issues, such as attacks, that you would not need to worry about as much in a software as a service setting (as long as you trust the service).</p>
+<p>Self-hosting allows you to host all the applications you want on a dedicated machine. Self-hosters can configure their server depending on their access rights. Offerings range from root access that allows users to do anything to different shades of managed hosting with more moderated access. Backed by virtual infrastructure, modern cloud providers offer a very dynamic form of self-hosting: their clients can use a web GUIs and/or APIs to add, remove, reboot and shut down nodes. Users can spin up anything from pre-configured nodes optimized for different use cases to containerized environments and entire Kubernetes (K8s) clusters in the cloud. Flexible pricing models allow paying based on usage in a very dynamic fashion.</p>
 </section>
 </section>
 <section id="building-blocks" class="level2" data-number="7.3">
@@ -314,140 +341,167 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="virtual-machines" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="virtual-machines"><span class="header-section-number">7.3.1</span> Virtual Machines</h3>
 <p>Virtual machines (VMs) remain the go-to building blocks for many set-ups. Hence, university IT, private sector IT, independent hosting providers and online giants all offer VMs. Virtual machines allow running a virtual computer that has its own operating system on some host machine. Running applications on such a virtual computer feels like running an application on a standalone computer dedicated to run this application.</p>
-<blockquote class="blockquote">
-<p>Oracle’s Virtual Box is great tool to use and try virtual machines locally. Virtual Box allows to run a Virtual Windows or Linux inside Mac OS and vice versa. Running a virtual box locally may not be the most performant solution but it allows to have several test environments without altering one’s main environment.</p>
-</blockquote>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Oracle’s Virtual Box is a great tool to use and try virtual machines locally. Virtual Box allows to run a Virtual Windows or Linux inside macOS and vice versa. Running a virtual box locally may not be the most performant solution, but it allows to have several test environments without altering one’s main environment.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="containers-images" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="containers-images"><span class="header-section-number">7.3.2</span> Containers &amp; Images</h3>
-<p>At the first glimpse, containers look very much like Virtual Machines to the practitioner. The difference is that every Virtual Machine has its own operating system, while containers use the host OS to run a container engine on top of the OS. By doing so, containers can be very lightweight and may take only a few seconds to spin up, while spinning up Virtual Machines can take up to a few minutes - just like booting physical computers. Hence, docker containers are often used as single purpose environments: Fire up a container, run a task in that environment, store the results outside the container and shut down the container again.</p>
-<p>Docker (<a href="https://www.docker.com/why-docker">Why docker?</a>) is the most popular containerized solution and quickly became synonymous to container environments configured in a file. So-called docker images are built layer by layer based on other less specific docker images. A DOCKERFILE is the recipe for a new image. Images are blueprints for containers, an image’s running instance. A docker runtime environment can build images from DOCKERFILEs and distribute these images to an image registry. The platform <a href="https://dockerhub.com">dockerhub</a> hosts a plethora of pre-built docker images from ready-to-go databases to Python ML environments or minimal Linux containers to run a simple shell script in a lab type environment.</p>
-<p>Containers run in a docker runtime environment and can either be used interactively or in batches which execute a single task in an environment specifically built for this task. One of the reasons why docker is attractive to researchers is its open character: Dockerfiles are a good way to share a configuration in a simple, reproducible file, making it easy to reproduce setups. Less experienced researchers can benefit from <a href="https://hub.docker.com/">Dockerhub</a> which shares images for a plethora of purposes, from mixed data science setups to database configuration. Side effect free working environments for all sorts of tasks can especially be appealing in exotic and/or dependency heavy cases.</p>
-<p>Beside simplification of system administration, <em>docker</em> is known for its ability to work in the cloud. All major cloud hosters offer docker environments and the ability to deploy docker containers that were previously developed and tested locally. You can also use docker to tackle <a href="appendix.html#glossary">throughput problems</a> using container orchestration tools like <a href="https://docs.docker.com/engine/swarm/swarm-tutorial/">Docker Swarm</a> or <a href="https://kubernetes.io/">K8s (say: Kubernetes)</a> to run hundreds of containers (depending on your virtual resources).</p>
+<section id="containers-and-images" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="containers-and-images"><span class="header-section-number">7.3.2</span> Containers and Images</h3>
+<p>At the first glance, containers look very much like Virtual Machines to the practitioner. The difference is that every Virtual Machine has its own operating system, while containers use the host OS to run a container engine on top of the OS. By doing so, containers can be very lightweight and may take only a few seconds to spin up, while spinning up Virtual Machines can take up to a few minutes – just like booting physical computers. Hence, Docker containers are often used as single-purpose environments: Fire up a container, run a task in that environment, store the results outside the container and shut down the container again.</p>
+<p>Docker (Why Docker?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>) is the most popular containerized solution and quickly became synonymous to container environments configured in a file. So-called Docker images are built layer-by-layer based on other less specific Docker images. A DOCKERFILE is the recipe for a new image. Images are blueprints for containers, an image’s running instance. A Docker runtime environment can build images from DOCKERFILEs and distribute these images to an image registry. The platform Docker Hub<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> hosts a plethora of pre-built Docker images from ready-to-go databases to Python ML environments or minimal Linux containers to run a simple shell script in a lab-type environment.</p>
+<p>Containers run in a Docker runtime environment and can either be used interactively or in batches which execute a single task in an environment specifically built for this task. One of the reasons why Docker is attractive to researchers is its open character: DOCKERFILEs are a good way to share a configuration in a simple, reproducible file, making it easy to reproduce setups. Less experienced researchers can benefit from <a href="https://hub.docker.com/">Docker Hub</a> which shares images for a plethora of purposes, from mixed data science setups to database configuration. Side effect free working environments for all sorts of tasks can especially be appealing in exotic and/or dependency heavy cases.</p>
+<p>Besides simplification of system administration, Docker is known for its ability to work in the cloud. All major cloud hosters offer Docker environments and the ability to deploy Docker containers that were previously developed and tested locally. You can also use Docker to tackle <a href="#glossary">throughput problems</a> using container orchestration tools like Docker Swarm<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> or K8s (say: Kubernetes)<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> to run hundreds of containers (depending on your virtual resources).</p>
 </section>
-<section id="kubernetes-k8s" class="level3" data-number="7.3.3">
-<h3 data-number="7.3.3" class="anchored" data-anchor-id="kubernetes-k8s"><span class="header-section-number">7.3.3</span> Kubernetes (K8s)</h3>
-<p>Though hosting Kubernetes is clearly beyond the scope of basic level DevOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.</p>
-<p>Because Kubernetes is quite some overhead to manage, the big three and their alternatives all offer services such as a container registry to support their clients in running Kubernetes. Without any support and/or pre-configured parts, it is…</p>
-<ul>
-<li>manage nodes in line with resource</li>
-<li>HA mode</li>
-<li>management features</li>
-<li>minikube</li>
-</ul>
+<section id="kubernetes" class="level3" data-number="7.3.3">
+<h3 data-number="7.3.3" class="anchored" data-anchor-id="kubernetes"><span class="header-section-number">7.3.3</span> Kubernetes</h3>
+<p>Though hosting Kubernetes (K8s) is clearly beyond the scope of basic level DevOps, the ubiquity of the term and technology as well as the touching points and similarities with the previously introduced concept of containers justify a brief positioning of Kubernetes. We cannot really see Kubernetes as a building block like the technologies introduced above. K8s is a complete cluster with plenty of features to manage the system and its applications. Kubernetes is designed to run on multiple virtual nodes and distribute processes running in so-called pods across its nodes.</p>
+<p>Because a plain vanilla Kubernetes cluster is not easy to set up and manage, the tech sector’s big three and some of their smaller alternatives offer their own flavors of cloud-based Kubernetes. The basic idea of these offerings is to standardize and to take some of the administrative burden from their clients through pre-configuration and automation support. Red Hat’s Openshift is a different approach that targets enterprises who want to set up a cluster on their own infrastructure (on premise).</p>
 </section>
 </section>
 <section id="applied-containerization-basics" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="applied-containerization-basics"><span class="header-section-number">7.4</span> Applied Containerization Basics</h2>
-<p>While the above <em>Building Blocks</em> contextualizes the container approaches, this section gives a simple 101 into the basics of containerization, enabling the reader to take their first steps in the container world. One of the beautiful things about containers is that due to their isolated nature, one can go along way trying out things as containers get destroyed and recreated all the time. Also, because containers run in a standardized runtime environment, locally developed images easily transfer to large remote machines and clusters.</p>
+<p>While the above <em>Building Blocks</em> section contextualizes the container approaches, this section gives a simple 101 into the basics of containerization, enabling the readers to take their first steps in the container world. One of the beautiful things about containers is that, due to their isolated nature, one can go a long way trying out things as containers get destroyed and recreated all the time. Also, because containers run in a standardized runtime environment, locally developed images easily transfer to large remote machines and clusters.</p>
 <section id="dockerfiles" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="dockerfiles"><span class="header-section-number">7.4.1</span> Dockerfiles</h3>
-<p><em>Dockerfile</em>s are text file recipes to create images, i.e., blueprints for containers. One great thing about container images is that they are layered. That is, one can stack images and benefit from previously created images. The below example Dockerfile uses a standard, publicly available image from dockerhub.com and adds some custom packages.</p>
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="dockerfiles"><span class="header-section-number">7.4.1</span> DOCKERFILEs</h3>
+<p><em>DOCKERFILE</em>s are text file recipes to create images, i.e., blueprints for containers. One great thing about container images is that they are layered. That is, one can stack images and benefit from previously created images. The below example DOCKERFILE uses a standard, publicly available image from dockerhub.com and adds some custom packages.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FROM</span> rocker/shiny:latest</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt-get update</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> apt-get install <span class="at">-qq</span> <span class="at">-y</span> libpq-dev</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">RUN</span> install2.r ggplot2 shiny shinydashboard  <span class="dt">\</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               shinydashboardPlus  <span class="dt">\</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>               dplyr RPostgres  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In this case, we make use of a pre-built image from the rocker project. The rocker project designs useful images around the R language ecosystem, builds them on regular basis and makes them available via dockerhub. Here, our image allows running the open source version of shiny server in a docker container. We add a Postgres driver at the operating system level before we install several R packages from CRAN.</p>
+<p>In this case, we make use of a pre-built image from the rocker project. The rocker project designs useful images around the R language ecosystem, builds them on a regular basis and makes them available via Docker Hub. Here, our image allows running the open source version of shiny server in a Docker container. We add a Postgres driver at the operating system level before we install several R packages from CRAN.</p>
 </section>
-<section id="building-running-containers" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="building-running-containers"><span class="header-section-number">7.4.2</span> Building &amp; Running Containers</h3>
+<section id="building-and-running-containers" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="building-and-running-containers"><span class="header-section-number">7.4.2</span> Building and Running Containers</h3>
 <p>There are plenty of ways to run and build containers. Online tools either offered as a service or self-hosted can build images server-side. Yet, the easiest way to get started with containers is to run and build them locally with Docker Desktop.<br>
-Even though Docker may not even be the best way to build containers to some, Docker is by far the most known way and therefore comes with the largest ecosystem and most community material.</p>
-<p>Docker Desktop is an easy-to-use application available on Windows and OSX. With Docker Desktop, one can execute Docker commands and build images, either in a GUI or using its CLI. The below table shows a few of the most basic docker commands.</p>
+Even though Docker may not even be the best way to build containers to some, Docker is by far the most known way and therefore comes with the largest ecosystem and most community material. Docker Desktop is an easy-to-use application available on Windows and OSX. With Docker Desktop, one can execute Docker commands and build images, either in a GUI or using its CLI. <a href="#tbl-dockerbasics" class="quarto-xref">Table&nbsp;<span>7.1</span></a> shows a few of the most basic Docker commands.</p>
 <div class="cell" data-warnings="false">
+<div id="tbl-dockerbasics" class="cell quarto-float anchored" data-warnings="false">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dockerbasics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.1: Basic Docker Commands
+</figcaption>
+<div aria-describedby="tbl-dockerbasics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> command </th>
-   <th style="text-align:left;"> description </th>
-  </tr>
- </thead>
+<div>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Command</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Description</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> docker run </td>
-   <td style="text-align:left;"> start application </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker ps </td>
-   <td style="text-align:left;"> list containers </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker images </td>
-   <td style="text-align:left;"> list docker images </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker pull </td>
-   <td style="text-align:left;"> pull images from registry, e.g., dockerhub.com </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker run </td>
-   <td style="text-align:left;"> run container based on image </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker kill </td>
-   <td style="text-align:left;"> kill container </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker build &lt;directory-with-docker-file&gt; </td>
-   <td style="text-align:left;"> build image based on Dockerfile </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> docker exec &lt;command&gt; &lt;container&gt; </td>
-   <td style="text-align:left;"> execute command inside container </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">docker run</td>
+<td style="text-align: left; width: 5.6cm;">starts application</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">docker ps</td>
+<td style="text-align: left; width: 5.6cm;">lists containers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">docker images</td>
+<td style="text-align: left; width: 5.6cm;">lists docker images</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">docker pull</td>
+<td style="text-align: left; width: 5.6cm;">pulls images from registry, e.g., dockerhub.com</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">docker run</td>
+<td style="text-align: left; width: 5.6cm;">runs container based on image</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">docker kill</td>
+<td style="text-align: left; width: 5.6cm;">kills container</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">docker build &lt;dir-with-docker-file&gt;</td>
+<td style="text-align: left; width: 5.6cm;">builds image based on DOCKERFILE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">docker exec &lt;command&gt; &lt;container&gt;</td>
+<td style="text-align: left; width: 5.6cm;">executes command inside container</td>
+</tr>
 </tbody>
 </table>
 
+
 </div>
 </div>
-<p>To learn what a container looks like, e.g., to find out how the container was affected by changes to the Dockerfile, it can be very illustrative to walk around inside. To do so with a container created from the above Dockerfile, start the container and execute a bash with the interactive flag <code>-it</code>.</p>
+</div>
+</figure>
+</div>
+</div>
+<p>To learn what a container looks like, e.g., to find out how the container was affected by changes to the DOCKERFILE, it can be very illustrative to walk around inside. To do so with a container created from the above DOCKERFILE, start the container and execute a bash with the interactive flag <code>-it</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-d</span> rocker/shiny</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> rocker/shiny /bin/bash</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># alternative you could start R right away</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># note that you need to know the location of the executable</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> rocker/shiny /usr/local/bin/R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># note that you need to know the location </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># of the executable</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> exec <span class="at">-it</span> rocker/shiny /usr/local/bin/R</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="docker-compose---manage-multiple-containers" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="docker-compose---manage-multiple-containers"><span class="header-section-number">7.4.3</span> Docker Compose - Manage Multiple Containers</h3>
-<p>Docker is a great way to give a new tool a spin without affecting one’s proven environment. So, even if you are a container beginner, the time when you would like to spin up multiple containers at once will come quickly. While you can start as many containers as your local resources allow for, running containers at once does not necessarily mean those containers are aware of each other, let alone could talk to each other.</p>
-<p>Modern applications often follow modular architecture patterns, i.e., they have a front end, some middle layer such as a REST API and a database backend. A web application may have a statically generated HTML front and simply expose HTML / CSS / JavaScript files and query a REST API. The REST API may use the express.io framework and is served using a node server which talks to a Postgres database backend. Each of these three parts could live in its own container. This is where docker could help to create a development environment locally that essentially mimics the production setup and therefore facilitates deployment to production.</p>
-<p>Docker compose allows defining how multiple containers play together. Consider the following example file that creates two containers: a shiny web server and a database which can be queried by the shiny server.</p>
+<section id="docker-compose-manage-multiple-containers" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="docker-compose-manage-multiple-containers"><span class="header-section-number">7.4.3</span> Docker Compose – Manage Multiple Containers</h3>
+<p>Docker is a great way to give a new tool a spin without affecting one’s proven environment. So, even if you are a container beginner, the time when you would like to spin up multiple containers at once will come quickly. While you can start as many containers as your local resources allow for, running containers at once does not necessarily mean those containers are aware of each other, let alone they could talk to each other.</p>
+<p>Modern applications often follow modular architecture patterns, i.e., they have a front end, some middle layer such as a REST API and a database backend. A web application may have a statically generated HTML front and simply expose HTML/CSS/JavaScript files and query a REST API. The REST API may use the express.io framework and is served using a node server which talks to a Postgres database backend. Each of these three parts could live in its own container. This is where docker could help to create a development environment locally that essentially mimics the production setup and therefore facilitates deployment to production.</p>
+<p>Docker Compose allows defining how multiple containers play together. Consider the following example file that creates two containers: a Shiny web server and a database which can be queried by the Shiny server.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">services:</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">postgres:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="co"># a name, e.g.,  db_container is instrumental to be</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="co"># called as host from the shiny app</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="ex">container_name:</span> db_container</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">build:</span> ./postgres</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">restart:</span> always</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="ex">environment:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> POSTGRES_USER=postgres</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> POSTGRES_PASSWORD=postgres</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      <span class="co"># This port mapping is only necessary to connect from the host, </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># not to let containers talk to each other. </span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"5432:5432"</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"./pgdata:/var/lib/postgresql/data"</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>   <span class="ex">shiny:</span> </span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      <span class="ex">container_name:</span> shiny</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="ex">depends_on:</span> </span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> postgres</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="ex">build:</span> ./shiny</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"./shiny-logs:/var/log/shiny-server"</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"./shiny-home:/srv/shiny-server"</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"3838:3838"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note how images are built from local directories <code>postgres</code> and <code>shiny</code> that contain Dockerfiles. It is also possible to pull images directly from a registry. To run such a system of multiple containers, simply use</p>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="co"># a name, e.g.,  db_container is </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="co"># instrumental to be</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="co"># called as host from the shiny app</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="ex">container_name:</span> db_container</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="ex">build:</span> ./postgres</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="ex">restart:</span> always</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="ex">environment:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> POSTGRES_USER=postgres</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> POSTGRES_PASSWORD=postgres</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># This port mapping is only necessary </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># to connect from the host, </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      <span class="co"># not to let containers talk to each other. </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"5432:5432"</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"./pgdata:/var/lib/postgresql/data"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>   <span class="ex">shiny:</span> </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      <span class="ex">container_name:</span> shiny</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      <span class="ex">depends_on:</span> </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> postgres</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      <span class="ex">build:</span> ./shiny</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      <span class="ex">volumes:</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"./shiny-logs:/var/log/shiny-server"</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"./shiny-home:/srv/shiny-server"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      <span class="ex">ports:</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>         <span class="ex">-</span> <span class="st">"3838:3838"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note how images are built from local directories <code>postgres</code> and <code>shiny</code> that contain DOCKERFILEs. It is also possible to pull images directly from a registry. To run such a system of multiple containers, simply use</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">--force-recreate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p>Note that docker compose does not replace an orchestrator and cannot provide cluster functionality like Docker Swarm or even Kubernetes. It should not be used in a production setup unless you know what you are doing.</p>
-</blockquote>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Note that <em>docker-compose</em> does not replace an orchestrator and cannot provide cluster functionality like Docker Swarm or even Kubernetes.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="a-little-docker-debugging-tip" class="level3" data-number="7.4.4">
+<h3 data-number="7.4.4" class="anchored" data-anchor-id="a-little-docker-debugging-tip"><span class="header-section-number">7.4.4</span> A Little Docker Debugging Tip</h3>
+<p>Sometimes containers keep crashing right after they start. This makes debugging a bit harder because we cannot simply use the <code>-it</code> flag to get inside and stroll around to find the issue. In such a case, even if you briefly log in, your container will shut down before you can even reach the location in question inside your container. Of course, there are log files</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> logs <span class="op">&lt;</span>container-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maybe though these logs are not verbose enough, or some permission issue may not be fully covered. Hence, adding `command: “sleep infinity” to your compose file prevents the service/container in question from running into the problem and crashing immediately.</p>
 <!--
 
 ## So Why Again Should a Practitioner Care? 
@@ -456,6 +510,16 @@ Even though Docker may not even be the best way to build containers to some, Doc
 
 
 </section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>https://shinyapps.io<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://www.docker.com/why-docker<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://dockerhub.com<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>https://docs.docker.com/engine/swarm/swarm-tutorial/<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>https://kubernetes.io/<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -486,9 +550,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -524,10 +602,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -537,8 +632,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -550,9 +654,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -594,17 +934,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data-management.html" class="pagination-link">
+      <a href="./data-management.html" class="pagination-link" aria-label="Data Management">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./automation.html" class="pagination-link">
+      <a href="./automation.html" class="pagination-link" aria-label="Automation">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

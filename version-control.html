@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -68,11 +76,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./version-control.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -80,110 +93,125 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Research Software Engineering</a> 
         <div class="sidebar-tools-main">
-    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="quarto-navigation-tool px-1" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack - A Developer’s Toolkit</span></a>
+  <a href="./stack-developer-toolkit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stack: A Developer’s Toolkit</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></a>
+  <a href="./programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming 101</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interaction.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></a>
+  <a href="./interaction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./version-control.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></a>
+  <a href="./version-control.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-management.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></a>
+  <a href="./data-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></a>
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Infrastructure</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></a>
+  <a href="./automation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Automation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./community.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></a>
+  <a href="./community.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Community</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./publishing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing &amp; Reporting</span></a>
+  <a href="./publishing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Publishing and Reporting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./case-studies.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></a>
+  <a href="./case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Case Studies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix.html" class="sidebar-item-text sidebar-link">Appendix</a>
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-git-version-control" id="toc-what-is-git-version-control" class="nav-link active" data-scroll-target="#what-is-git-version-control"><span class="toc-section-number">5.1</span>  What is Git Version Control?</a></li>
-  <li><a href="#why-use-version-control-in-research" id="toc-why-use-version-control-in-research" class="nav-link" data-scroll-target="#why-use-version-control-in-research"><span class="toc-section-number">5.2</span>  Why Use Version Control in Research?</a></li>
-  <li><a href="#how-does-git-work" id="toc-how-does-git-work" class="nav-link" data-scroll-target="#how-does-git-work"><span class="toc-section-number">5.3</span>  How Does Git Work?</a></li>
-  <li><a href="#moving-around" id="toc-moving-around" class="nav-link" data-scroll-target="#moving-around"><span class="toc-section-number">5.4</span>  Moving Around</a></li>
-  <li><a href="#collaboration-workflow" id="toc-collaboration-workflow" class="nav-link" data-scroll-target="#collaboration-workflow"><span class="toc-section-number">5.5</span>  Collaboration Workflow</a>
+  <li><a href="#what-is-git-version-control" id="toc-what-is-git-version-control" class="nav-link active" data-scroll-target="#what-is-git-version-control"><span class="header-section-number">5.1</span> What Is Git Version Control?</a></li>
+  <li><a href="#why-use-version-control-in-research" id="toc-why-use-version-control-in-research" class="nav-link" data-scroll-target="#why-use-version-control-in-research"><span class="header-section-number">5.2</span> Why Use Version Control in Research?</a></li>
+  <li><a href="#how-does-git-work" id="toc-how-does-git-work" class="nav-link" data-scroll-target="#how-does-git-work"><span class="header-section-number">5.3</span> How Does Git Work?</a></li>
+  <li><a href="#moving-around" id="toc-moving-around" class="nav-link" data-scroll-target="#moving-around"><span class="header-section-number">5.4</span> Moving Around</a></li>
+  <li><a href="#collaboration-workflow" id="toc-collaboration-workflow" class="nav-link" data-scroll-target="#collaboration-workflow"><span class="header-section-number">5.5</span> Collaboration Workflow</a>
   <ul class="collapse">
-  <li><a href="#feature-branches" id="toc-feature-branches" class="nav-link" data-scroll-target="#feature-branches"><span class="toc-section-number">5.5.1</span>  Feature Branches</a></li>
-  <li><a href="#pull-requests-from-forks" id="toc-pull-requests-from-forks" class="nav-link" data-scroll-target="#pull-requests-from-forks"><span class="toc-section-number">5.5.2</span>  Pull Requests from Forks</a></li>
-  <li><a href="#rebase-vs.-merge" id="toc-rebase-vs.-merge" class="nav-link" data-scroll-target="#rebase-vs.-merge"><span class="toc-section-number">5.5.3</span>  Rebase vs.&nbsp;Merge</a></li>
+  <li><a href="#feature-branches" id="toc-feature-branches" class="nav-link" data-scroll-target="#feature-branches"><span class="header-section-number">5.5.1</span> Feature Branches</a></li>
+  <li><a href="#pull-requests-from-forks" id="toc-pull-requests-from-forks" class="nav-link" data-scroll-target="#pull-requests-from-forks"><span class="header-section-number">5.5.2</span> Pull Requests from Forks</a></li>
+  <li><a href="#rebase-vs.-merge" id="toc-rebase-vs.-merge" class="nav-link" data-scroll-target="#rebase-vs.-merge"><span class="header-section-number">5.5.3</span> Rebase vs.&nbsp;Merge</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -193,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-git" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span></h1>
+<h1 class="title"><span id="sec-git" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git Version Control</span></span></h1>
 </div>
 
 
@@ -206,182 +234,120 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>As stated before, version control may be the single most important thing to take away from <em>Research Software Engineering</em> if you have not used it before. In this chapter about the way developers work and collaborate, I will stick to version control with <em>git</em>. The stack discussion of the previous chapter features a few more version control systems, but given git’s dominant position, we will stick solely to git in this introduction to version control.</p>
+
+<p>As stated before, may be the single most important thing to take away from <em>Research Software Engineering</em> if you have not used it before. In this chapter about the way developers work and collaborate, I will stick to with <em>git</em>. The stack discussion of the previous chapter features a few more systems, but given git’s dominant position, we will stick solely to git in this introduction to version control.</p>
 <section id="what-is-git-version-control" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="what-is-git-version-control"><span class="header-section-number">5.1</span> What is Git Version Control?</h2>
-<p>Git is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git program itself is a small console program that creates and manages a hidden folder inside the folder you put under version control (you know those folders with a leading dot in their folder name, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one.</p>
-<img src="images/commits.png" width="300px">
-<div class="caption-half">
-Meaningful commit messages help to make sense of a project’s history.
+<h2 data-number="5.1" class="anchored" data-anchor-id="what-is-git-version-control"><span class="header-section-number">5.1</span> What Is Git Version Control?</h2>
+<p>Git is a decentralized version control system. It manages different versions of your source code (and other text files) in a simple but efficient manner that has become the industry standard: The git program itself is a small console program that creates and manages a hidden folder inside the folder you put under (you know those folders with a leading dot in their folder name, like .myfolder). This folder keeps track of all differences between the current version and other versions before the current one.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/commits.png" class="img-fluid figure-img"></p>
+<figcaption>Meaningful commit messages help to make sense of a project’s history. Screenshot of a commit history on GitHub. (Source: own GitHub repository.)</figcaption>
+</figure>
 </div>
-<p>The key to appreciating the value of git is to appreciate the value of semantic versions. Git is <em>not</em> Dropbox nor Google Drive. It does <em>not</em> sync automagically (even if some Git GUI Tools suggest so). Because these GUIs tools<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> may be convenient but do not really help to improve your understanding of the workflow, we will use the git console throughout this book. As opposed to the sync approaches mentioned above, a version control system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, version control creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message ‘incorporated advice from Anna (discussion at XYZ Conference 2020)’.</p>
+<p>The key to appreciating the value of git is to appreciate the value of semantic versions. Git is <em>not</em> Dropbox nor Google Drive. It does <em>not</em> sync automagically (even if some Git GUI Tools suggest so). GUI tools GitHub Desktop<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, Atlassian’s Source Tree<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and Tortoise<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> are some of the most popular choices if you are not a console person. Though GUI tools may be convenient, we will use the git console throughout this book to improve our understanding. As opposed to the sync approaches mentioned above, a system allows summarizing a contribution across files and folders based on what this contribution is about. Assume you got a cool pointer from an econometrics professor at a conference, and you incorporated her advice in your work. That advice is likely to affect different parts of your work: your text and your code. As opposed to syncing each of these files based on the time you saved them, creates a version when you decide to bundle things together and to commit the change. That version could be identified easily by its commit message “incorporated advice from Anna (discussion at XYZ Conference 2020)”.</p>
 </section>
 <section id="why-use-version-control-in-research" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="why-use-version-control-in-research"><span class="header-section-number">5.2</span> Why Use Version Control in Research?</h2>
-<blockquote class="blockquote">
-<p>A version control based workflow is a path to your goals that rather consists of semantically relevant steps instead of semantically meaningless chunks based on the time you saved them.</p>
-</blockquote>
-<p>In other, more blatant, applied words: naming files like <code>final_version_your_name.R</code> or <code>final_final_correction_collaboratorX_20200114.R</code> is like naming your WiFi <code>dont_park_the_car_in_the_frontyard</code> or <code>be_quiet_at_night</code> to communicate with your neighbors. Information is supposed to be sent in a message, not a file name. With version control, it is immediately clear what the most current version is - no matter the file name. No room for interpretation. No need to start guessing about the delta between the current version and another version.</p>
-<p>Also, you can easily try out different scenarios on different branches and merge them back together if you need to. Version control is a well established industry standard in software development. And it is relatively easy to adopt. With datasets growing and complexity, it is only natural to improve management of the code that processes these data.</p>
-<p>Academia has probably been the only place that would allow you to dive into hacking at somewhat complex problems for several years w/o ever taking notice of version control. As a social scientist who rather collaborates in small groups and writes moderate amount of code, have you ever thought about how to collaborate with 100+ persons in a big software project? Or to manage ten thousand lines of code and beyond? Version control is an important reason why these things work. And it’s been around for decades. But enough about the rant…</p>
+<p>A based workflow is a path to your goals that rather consists of semantically relevant steps instead of semantically meaningless chunks based on the time you saved them.</p>
+<p>In other, more blatant, applied words: naming files like <code>final_version_your_name.R</code> or <code>final_final_correction_collaboratorX_20200114.R</code> is like naming your WiFi <code>dont_park_the_car_in_the_frontyard</code> or <code>be_quiet_at_night</code> to communicate with your neighbors. Information is supposed to be sent in a message, not a file name. With , it is immediately clear what the most current version is, no matter the file name. There is no room for interpretation. There is no need to start guessing about the delta between the current version and another version.</p>
+<p>Also, you can easily try out different scenarios on different branches and merge them back together if you need to. is a well-established industry standard in software development. And it is relatively easy to adopt. With datasets growing in complexity, it is only natural to improve management of the code that processes these data.</p>
+<p>Academia has probably been the only place that would allow you to dive into hacking at somewhat complex problems for several years without ever taking notice of . As a social scientist who rather collaborates in small groups and writes moderate amount of code, have you ever thought about how to collaborate with more 100 than persons in a big software project? Or to manage 10,000 lines of code and beyond? is an important reason these things work. And it’s been around for decades. But enough about the rant.</p>
 </section>
 <section id="how-does-git-work" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="how-does-git-work"><span class="header-section-number">5.3</span> How Does Git Work?</h2>
-<blockquote class="blockquote">
-<p>This introduction tries narrow things down to the commands that you’ll need if want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely Atlassian’s Bitbucket, GitHub and Gitlab offer comprehensive introductions as well as advanced articles or videos to learn git online.</p>
-</blockquote>
-<p>The first important implication of decentralized version control is that all versions are stored on the local machines of every collaborator, not just on a remote server (this is also a nice, natural backup of your work). So let’s consider a single local machine first.</p>
-<img src="images/decentralized.png" width="700px">
-<div class="caption-half">
-
+<p>This introduction tries to narrow things down to the commands that you’ll need if you want to use git in similar fashion to what you learn from this book. If you are looking for more comprehensive, general guides, three major git platforms, namely, Atlassian’s Bitbucket, GitHub and GitLab offer comprehensive introductions as well as advanced articles or videos to learn git online.</p>
+<p>The first important implication of decentralized is that all versions are stored on the local machines of every collaborator, not just on a remote server (this is also a nice, natural backup of your work). So let’s consider a single local machine first.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/decentralized.png" class="img-fluid figure-img"></p>
+<figcaption>Schematic illustration of an example git workflow including remote repositories. (Source: own illustation.)</figcaption>
+</figure>
 </div>
-<p>Locally, a git repository consists of a <em>checkout</em> which is also called current <em>working copy</em> soon. This is the status of the file that your file explorer or your editor will see when you use them to open a file. To check out a different version, one needs to call a commit by its unique commit hash and checkout that particular version.</p>
-<p>If you want to add new files to version control or bundle changes to some existing files into a new commit, add these files to the staging area, so they get committed next time a commit process is triggered. Finally, committing all these staged changes under another commit ID a new version is created.</p>
+<p>Locally, a git repository consists of a <em>checkout</em> which is also called current <em>working copy</em>. This is the status of the file that your file explorer or your editor will see when you use them to open a file. To check out a different version, one needs to call a commit by its unique commit hash and check out that particular version.</p>
+<p>If you want to add new files to or bundle changes to some existing files into a new commit, add these files to the staging area, so they get committed next time a commit process is triggered. Finally, committing all these staged changes under another commit ID, a new version is created.</p>
 </section>
 <section id="moving-around" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="moving-around"><span class="header-section-number">5.4</span> Moving Around</h2>
-<p>So let’s actually do it. Here’s a three-stage walk through of git commands that should have you covered in most use cases a researcher will face. Note that git has some pretty good error messages that guess what could have gone wrong. Make sure to read them carefully. Even if you can’t make sense of them, your online search will be a lot more efficient when you include these messages.</p>
+<p>So let’s actually do it. Here’s a three-stage walk-through of git commands that should have you covered in most use cases a researcher will face. Note that git has some pretty good error messages that guess what could have gone wrong. Make sure to read them carefully. Even if you can’t make sense of them, your online search will be a lot more efficient when you include these messages.</p>
 <p><strong>Stage 1: Working Locally</strong></p>
+<p><a href="#tbl-gitbasics" class="quarto-xref">Table&nbsp;<span>5.1</span></a> summarizes essential git commands to move around your local repository.</p>
 <div class="cell">
+<div id="tbl-gitbasics" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gitbasics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Basic Commands for Working with Git
+</figcaption>
+<div aria-describedby="tbl-gitbasics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Command </th>
-   <th style="text-align:left;"> Effect </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> git init </td>
-   <td style="text-align:left;"> put current directory and all its subdirs under version control. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git status </td>
-   <td style="text-align:left;"> shows status </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git add file_name.py </td>
-   <td style="text-align:left;"> adds file to tracked files </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git commit -m 'meaningful msg' </td>
-   <td style="text-align:left;"> creates a new version/commit out of all staged files </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git log </td>
-   <td style="text-align:left;"> show log of all commit messages on a branch </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git checkout some-commit-id </td>
-   <td style="text-align:left;"> go to commit, but in detached HEAD state </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git checkout main-branch-name </td>
-   <td style="text-align:left;"> leave temporary state, go back to last commit </td>
-  </tr>
-</tbody>
-</table>
-
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p><strong>Stage 2: Working with a Remote Repository</strong></p>
-<p>Though git can be tremendously useful even without collaborators, the real fun starts when working together. The first step en route to getting others involved is to add a remote repository.</p>
+<p>Though git can be tremendously useful even without collaborators, the real fun starts when working together. The first step en route to getting others involved is to add a remote repository. <a href="#tbl-gittable2" class="quarto-xref">Table&nbsp;<span>5.2</span></a> shows essential commands for working with a remote repository.</p>
 <div class="cell">
+<div id="tbl-gittable2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gittable2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.2: Commands for Working with a Remote Repository
+</figcaption>
+<div aria-describedby="tbl-gittable2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Command </th>
-   <th style="text-align:left;"> Effect </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> git clone </td>
-   <td style="text-align:left;"> creates a new repo based on a remote one </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git pull </td>
-   <td style="text-align:left;"> get all changes from a linked remote repo </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git push </td>
-   <td style="text-align:left;"> deploy all commit changes to the remote repo </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git fetch </td>
-   <td style="text-align:left;"> fetch branches that were created on remote </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git remote -v </td>
-   <td style="text-align:left;"> show remote repo URL </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git remote set-url origin https://some-url.com </td>
-   <td style="text-align:left;"> set URL to remote repo </td>
-  </tr>
-</tbody>
-</table>
-
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p><strong>Stage 3: Branches</strong></p>
-<p>Branches are derivatives from the main branch that allow to work on different features at the same time without stepping on someone else’s feet. Through branches, repositories can actively maintain different states.</p>
+<p>Branches are derivatives from the main branch that allow to work on different features at the same time without stepping on someone else’s feet. Through branches, repositories can actively maintain different states. <a href="#tbl-gitbranches" class="quarto-xref">Table&nbsp;<span>5.3</span></a> shows commands to navigate these states.</p>
 <div class="cell">
+<div id="tbl-gitbranches" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gitbranches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.3: Commands for for Handling Multiple Branches
+</figcaption>
+<div aria-describedby="tbl-gitbranches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Command </th>
-   <th style="text-align:left;"> Effect </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> git checkout -b branchname </td>
-   <td style="text-align:left;"> create new branch named branchname </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git branch </td>
-   <td style="text-align:left;"> show locally available branches </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git checkout branchname </td>
-   <td style="text-align:left;"> switch to branch named branchname </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> git merge branchname </td>
-   <td style="text-align:left;"> merge branch named branchname into current branch </td>
-  </tr>
-</tbody>
-</table>
-
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p><strong>Fixing Merge Conflicts</strong></p>
-<p>In most cases, <em>git</em> is quite clever and can figure out which is the desired state of a file when putting two versions of it together. When git’s <em>recursive strategy</em> is possible, git will merge versions automatically. When the same lines were affected in different versions, git cannot tell which line should be kept. Sometimes you would even want to keep both changes.</p>
-<p>But even in such scenario, fixing the conflict is easy. Git will tell you that your last command caused a merge conflict and which files are conflicted. Open these files and see all parts of the file that are in question.</p>
-<img src="images/merge_conflict.png">
-<div class="caption-left">
-Ouch! We created a conflict by editing the same line in the same file on different branches and trying to, but these branches back together.
+<p>In most cases, <em>git</em> is quite clever and can figure out which is the desired state of a file when putting two versions of it together. When git’s <em>recursive strategy</em> is possible, git will merge versions automatically. When the same lines were affected in different versions, git cannot tell which line should be kept. Sometimes, you would even want to keep both changes.</p>
+<p>But even in such scenario, fixing the conflict is easy. Git will tell you that your last command caused a merge conflict and which files are conflicted. Open these files and take a look at all parts of the files in question. <a href="#fig-merge-conflict" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> shows a situation in which trying merge a file that had changes across different branches caused a conflict.</p>
+<div id="fig-merge-conflict" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-scap="A merge conflict.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-merge-conflict-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/merge_conflict.png" class="img-fluid figure-img" data-fig-scap="A merge conflict.">
 </div>
-<p>Luckily, git marks the exact spot where the conflict happens. Good text editors / IDEs ship with cool colors to highlight all our options.</p>
-<img src="images/sublime_conflict.png">
-<div class="caption-left">
-go for the current status or take what’s coming in from the a2 branch?
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-merge-conflict-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Ouch! We created a conflict by editing the same line in the same file on different branches. (Source: screenshot of own GitHub repository.)
+</figcaption>
+</figure>
 </div>
-<p>Some of the fancier editors even have git conflict resolve plugins that let you walk through all conflict points.</p>
-<img src="images/vscode_conflict.png">
-<div class="caption-left">
-In VS Code, you can even click the option.
+<p>Luckily, git marks the exact spot where the conflict happens. Good text editors/IDEs ship with cool colors to highlight all our options. Some of the fancier editors even have git conflict resolve plugins that let you walk through all conflict points.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sublime_conflict.png" class="img-fluid figure-img"></p>
+<figcaption>Go for the current status or take what’s coming in from the a2 branch? (Source: screenshot of Sublime text editor.)</figcaption>
+</figure>
 </div>
-<p>At the end of the day, all do the same, i.e., remove the unwanted part, including all the marker gibberish. After you have done so, save, commit and push (if you are working with a remote repo) . Don’t forget to make sure you kinked out ALL conflicts.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/vscode_conflict.png" class="img-fluid figure-img"></p>
+<figcaption>In VS Code, you can even select the option by clicking. (Source: screenshot VS Code IDE.)</figcaption>
+</figure>
+</div>
+<p>At the end of the day, all do the same, i.e., remove the unwanted part, including all the marker gibberish. After you have done so, save, commit and push (if you are working with a remote repo). Don’t forget to make sure you kinked out all conflicts.</p>
 </section>
 <section id="collaboration-workflow" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="collaboration-workflow"><span class="header-section-number">5.5</span> Collaboration Workflow</h2>
@@ -389,44 +355,51 @@ In VS Code, you can even click the option.
 <section id="feature-branches" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="feature-branches"><span class="header-section-number">5.5.1</span> Feature Branches</h3>
 <p>This section discusses real-world collaboration workflows of modern open source software developers. Hence, the prerequisites to benefitting the most from this section are bit different. Make sure you are past the mere ability to describe and explain git basics, make sure you can create and handle your own repositories.</p>
-<p>If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each other’s feet. This is reasonable because, git aside, it is rarely efficient to work asynchronously on exact the same lines of code anyway. Nevertheless, there is a reason why <em>feature-branch-based</em> workflows became very popular among developers: Imagine you collaborating in asynchronous fashion, maybe with someone in another timezone. Or with a colleague, who works on your project, but in a totally different month during the year. Or, most obviously, with someone you have never met. Forks and <em>feature-branch-based</em> workflows are the way a lot of modern open source projects tackle the above situations.</p>
+<p>If you had only a handful of close collaborators so far, you may be fine with staying on the main branch and trying not to step on each other’s feet. This is reasonable because, git aside, it is rarely efficient to work asynchronously on exact the same lines of code anyway. Nevertheless, there is a reason why <em>feature-branch-based</em> workflows became very popular among developers: Imagine yourself collaborating in asynchronous fashion, maybe with someone in another time zone. Or with a colleague, who works on your project, but in a totally different month during the year. Or, most obviously, with someone you have never met. Forks and <em>feature-branch-based</em> workflows are the way a lot of modern open source projects tackle the above situations.</p>
 <p>Forks are just a way to contribute via feature branches, even in case you do not have write access to a repository. But let’s just have a look at the basic feature branch case, in which you are part of the team first with full access to the repository. Assume there is already some work done, some version of the project is already up on a some remote GitHub account. You join as a collaborator and are allowed to push changes now. It’s certainly not a good idea to simply add things without review to a project’s production. Like if you got access to modify the institute’s website, and you made your first changes and all your changes go straight to production. Like this:</p>
-<div class="yellow">
-&nbsp;
-</div>
-<div id="pink">
-<p>It used to be subtle and light gray. I swear!</p>
-</div>
+<p></p>
 <p>Bet everybody on the team took notice of the new team member by then. In a feature branch workflow, you would start from the latest production version. Remember, git is decentralized, and you have all versions of your team’s project on your local machine. Create a new branch named indicative of the feature you are looking to work on.</p>
 <pre><code>git checkout -b colorways</code></pre>
 <p>You are automatically being switched to the freshly created branch. Do your thing now. It could be just a single commit, or several commits by different persons. Once you are done, i.e., committed all changes, add your branch to the remote repository by pushing.</p>
 <pre><code>git push -u origin colorways</code></pre>
 <p>This will add your branch called <em>colorways</em> to the remote repository. If you are on any major git platform with your project, it will come with a decent web GUI. Such a GUI is the most straightforward way to do the next step: get your Pull Request (PR) out.</p>
-<img src="images/pr.png" width="700px">
-<div class="caption-left">
-GitHub pull request dialog: Select the <em>pull request</em>, choose which branch you merge into which target branch.
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pr.png" class="img-fluid figure-img"></p>
+<figcaption>GitHub Pull Request dialog: Select the <em>Pull Request</em>; choose which branch you merge into which target branch. (Source: own GitHub repository.)</figcaption>
+</figure>
 </div>
-<p>As you can see, git will check whether it is possible to merge automatically w/o interaction. Even if that is not possible, you can still issue the pull request. When you create the request, you can also assign reviewers, but you could also do so at a later stage.</p>
-<blockquote class="blockquote">
-<p>Even after a PR was issued you can continue to add commits to the branch about to be merged. As long as you do not merge the branch through the Pull Request, commits are added to the branch. In other words, your existing PR gets updated. This is a very natural way to account for reviewer comments.</p>
-</blockquote>
-<p><strong>Pro-Tipp</strong>: Use commit messages like ‘added join to SQL query, closes #3’. The key word ‘closes’ or ‘fixes’, will automatically close issues referred to when merged into the main branch.</p>
-<p>Once the merge is done, all your changes are in the main branch and you and everyone else can pull the main branch that now contains your new feature. Yay!</p>
+<p>As you can see, git will check whether it is possible to merge automatically without interaction. Even if that is not possible, you can still issue the pull request. When you create the request, you can also assign reviewers, but you could also do so at a later stage.</p>
+<p>Even after a PR was issued, you can continue to add commits to the branch about to be merged. As long as you do not merge the branch through the PR, commits are added to the branch. In other words, your existing PR gets updated. This is a very natural way to account for reviewer comments.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use commit messages like ‘added join to SQLquery, closes #3’. The keyword ‘closes’ or ‘fixes’, will automatically close issues referred to when merged into the main branch.</p>
+</div>
+</div>
+<p>Once the merge is done, all your changes are in the main branch, and you and everyone else can pull the main branch that now contains your new feature. Yay!</p>
 </section>
 <section id="pull-requests-from-forks" class="level3" data-number="5.5.2">
 <h3 data-number="5.5.2" class="anchored" data-anchor-id="pull-requests-from-forks"><span class="header-section-number">5.5.2</span> Pull Requests from Forks</h3>
-<p>Now, let’s assume you are using an open source software created by someone else. At some point, you miss a feature that you feel is not too hard to implement. After googling and reading up a bit, you realize others would like to have these features, too, but the original authors did not find the time to implement it yet. Hence, you get to work yourself. Luckily, the project is open source and up on GitHub, so you can simply get you version of, i.e., <em>fork</em> the project to your own GitHub account (just click the <em>fork</em> button and follow the instructions) .</p>
+<p>Now, let’s assume you are using an open source software created by someone else. At some point, you miss a feature that you feel is not too hard to implement. After googling and reading up a bit, you realize others would like to have these features, too, but the original authors did not find the time to implement it yet. Hence, you get to work. Luckily, the project is open source and up on GitHub, so you can simply get your version of it, i.e., <em>fork</em> the project to your own GitHub account (just click the <em>fork</em> button and follow the instructions) .</p>
 <p>Now that you have your own version of the software with all the access rights to modify it, you can implement your feature and push it to your own remote git repository. Because you forked the repository, your remote git platform will still remember where you got it from and allows you to issue a pull request to the original author. The original authors can now review the pull request, see the changes, and decide whether they are fine with the feature and its implementation.</p>
-<p>There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussions are very context aware and sooner or later, you will get your first pull request approved and merged. In that case, congratulations - you have turned yourself into a team-oriented open source collaborator!</p>
+<p>There may very well be some back and forth in the message board before the pull requests gets merged. But usually these discussions are very context-aware and sooner or later, you will get your first pull request approved and merged. In that case, congratulations – you have turned yourself into a team-oriented open source collaborator!</p>
 </section>
 <section id="rebase-vs.-merge" class="level3" data-number="5.5.3">
 <h3 data-number="5.5.3" class="anchored" data-anchor-id="rebase-vs.-merge"><span class="header-section-number">5.5.3</span> Rebase vs.&nbsp;Merge</h3>
 <p>Powerful systems often provide more than one way to achieve your goals. In the case of git, putting together two branches of work – a very vital task, is exactly such a case: We can either <em>merge</em> or <em>rebase</em> branches.</p>
-<p>While <em>merge</em> keeps the history intact, <em>rebase</em> is a history altering command. Though most people are happy with the more straightforward <em>merge</em> approach, a bit of context is certainly helpful.</p>
-<p>Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories becomes out of sync because someone else adds to the main branch while you keep adding to the feature branch, you can either merge or rebase to put the two together.</p>
+<p>While <em>merge</em> keeps the history intact, <em>rebase</em> is a history-altering command. Though most people are happy with the more straightforward <em>merge</em> approach, a bit of context is certainly helpful.</p>
+<p>Imagine the merge approach as a branch that goes away from the trunk at some point and then grows alongside the trunk in parallel. In case both histories become out of sync because someone else adds to the main branch while you keep adding to the feature branch, you can either merge or rebase to put the two together.</p>
 <p>Sitting on a checkout of the feature branch, a merge of the main branch would simply create an additional merge commit sequentially after the last commit of the feature branch. This merge commit contains the changes of both branches, no matter if they were automatically merged using the standard recursive strategy or through resolving a merge conflict.</p>
-<p>As opposed to that, rebase would move all changes to main to before the feature branch started, then sequentially add all commits of the feature branch. That way the remains linear, history looks cleaner and does not contain those artificial merge commits.</p>
-<p>So, when should we merge, and when should rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main because you would have a different main branch than other developers than. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. The following <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atlassian tutorial</a> offers more insights and illustrations to deepen your understanding of the matter.</p>
+<p>As opposed to that, rebase would move all changes to main to before the feature branch started, then sequentially add all commits of the feature branch. That way your history remains linear, looks cleaner and does not contain artificial merge commits.</p>
+<p>So, when should we merge, and when should we rebase? There is no clear rule to that other than to not use rebase on exposed branches such as main because you would have a different main branch than other developers. Rebase can ruin your collaborative workflow, yet it helps to clean up. In my opinion, merging feature branches is just fine for most people and teams. So unless you have too many people working on too many different features at once and are in danger of not being able to move through your history, simply go with the merge approach. The following Atlassian tutorial<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> offers more insights and illustrations to deepen your understanding of the matter.</p>
 
 
 </section>
@@ -434,7 +407,10 @@ GitHub pull request dialog: Select the <em>pull request</em>, choose which branc
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p><a href="https://desktop.github.com/">GitHub Desktop</a>, Atlassian’s <a href="https://www.sourcetreeapp.com/">Source Tree</a> and <a href="https://tortoisegit.org/">Tortoise</a> are some of the most popular choices if you are not a console person.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>https://desktop.github.com/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://www.sourcetreeapp.com/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://tortoisegit.org/<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>https://www.atlassian.com/git/tutorials/merging-vs-rebasing<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -466,9 +442,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -504,10 +494,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -517,8 +524,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -530,9 +546,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -574,17 +826,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./interaction.html" class="pagination-link">
+      <a href="./interaction.html" class="pagination-link" aria-label="Interaction Environment">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interaction Environment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-management.html" class="pagination-link">
+      <a href="./data-management.html" class="pagination-link" aria-label="Data Management">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Management</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
