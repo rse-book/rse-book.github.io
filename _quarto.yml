@@ -6,8 +6,8 @@ book:
   title: "Research Software Engineering"
   subtitle: "A Guide to the Open Source Ecosystem"
   author: "Matthias Bannert"
-  cover-image: images/wizardry.jpg
-  date: "7/17/2023"
+  cover-image: images/rse-book.jpeg
+  date: "9/16/2024"
   search: true
   sharing: [twitter]
   chapters:
@@ -28,29 +28,30 @@ book:
 execute: 
   freeze: true
 format:
-  # html:
-  #   theme: cosmo
-  pdf:
-    documentclass: krantz
-    toc: true
-    toc-title: Contents
-    keep-tex: true
-    lof: true
-    lot: true
-    fontsize: 12pt
-    hyperrefoptions: 
-      - linktoc=none
+  html:
+    theme: cosmo
     bibliography: references.bib
-    include-in-header: 
-      text: |
-        \usepackage{makeidx}
-        \makeindex
-    include-before-body: 
-      text: |
-        \addtocounter{page}{4}
-        \pagenumbering{roman}
-    include-after-body: 
-      text: |
-        \printindex
+  # pdf:
+  #   documentclass: krantz
+  #   toc: true
+  #   toc-title: Contents
+  #   keep-tex: true
+  #   lof: true
+  #   lot: true
+  #   fontsize: 12pt
+  #   hyperrefoptions: 
+  #     - linktoc=none
+  #   bibliography: references.bib
+  #   include-in-header: 
+  #     text: |
+  #       \usepackage{makeidx}
+  #       \makeindex
+  #   include-before-body: 
+  #     text: |
+  #       \pagenumbering{roman}
+  #       \addtocounter{page}{4}
+  #   include-after-body: 
+  #     text: |
+  #       \printindex
 
     

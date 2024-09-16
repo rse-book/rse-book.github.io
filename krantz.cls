@@ -112,7 +112,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\ExecuteOptions{letterpaper,10pt,twoside,onecolumn,final,openright}
+\ExecuteOptions{letterpaper,10pt,twoside,onecolumn,final,openany}
 \ProcessOptions
 
 %%%%%%%%%%%%%%%%%%%
@@ -709,7 +709,7 @@
 
 \newcommand\chapter{\if@mainmatter\clearpage\else\cleardoublepage\fi
   \make@cornermarks
-  \cleardoublepage
+%  \cleardoublepage
   \if@ChapterTOCs\if@filesw\immediate\closeout\@chaptoc\fi\fi
   \pagestyle{headings}%
   \thispagestyle{folio}%
@@ -1505,7 +1505,7 @@
     \@starttoc{lof}%
     \if@restonecol\twocolumn\fi
     }
-\newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
+\newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.8em}}
 \newcommand\listoftables{%
     \if@twocolumn
       \@restonecoltrue\onecolumn

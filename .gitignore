@@ -1,6 +1,9 @@
 # History files
 .Rhistory
 .Rapp.history
+.DS_Store
+
+_freeze/
 
 # Session Data files
 .RData
@@ -38,7 +41,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# Quarto 
-/.quarto/
+# Quarto\index{Quarto}
+/.Quarto\index{Quarto}/
 /_book/
 
+
+/.quarto/
