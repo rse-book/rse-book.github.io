@@ -141,7 +141,7 @@ search_met <- function(keyword){
 
 
 
-You can use these IDs with another [endpoint](glossary.qmd) to receive the pictures
+You can use these IDs with another endpoint to receive the pictures
 themselves^[Full URL used in the below code example: https://collectionapi.metmuseum.org/public/collection/v1/objects/%d].
 
 ```{r, eval=FALSE, warning=FALSE,message=FALSE}
@@ -630,8 +630,6 @@ Note that we can see all the output of the process from the GitHub\index{GitHub}
 
 ## Choropleth Map: Link Data to a GeoJSON\index{GeoJSON} Map File {#sec-map}
 
-![Screenshot of an interactive choropleth; for the actual, interactive visualization visit https://rse-book.github.io/case-studies.html#sec-map](images/case-choropleth.png){fig-scap="Choropleth example."}
-
 Data visualization is a big reason for researchers and data analysts to look into programming languages. Programming languages do not only provide unparalleled flexibility, but they also make data visualization reproducible and allow placing charts in different contexts, e.g., websites, printed outlets or social media. 
 
 One of the more popular types of plots that can be created smoothly using a programming language is the so-called *choropleth*\index{choropleth}. A *choropleth* maps values of a variable that is available by region to a given continuous color palette on a map. Let's break down the ingredients of the below map of Switzerland^[Full URL used in the below example https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson]. 
@@ -641,9 +639,9 @@ library(echarts4r)
 library(viridisLite)
 library(jsonlite)
 
-# json_ch <- jsonlite::read_json(
-#   "https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson"
-# )
+json_ch <- jsonlite::read_json(
+  "https://raw.githubusercontent.com/mbannert/maps/master/ch_bfs_regions.geojson"
+)
 
 
 
@@ -658,12 +656,12 @@ d <- data.frame(
   values = c(50,10,100,50,23,100,120)
 )
 
-# d |>
-#   e_charts(name) |>
-#   e_map_register("CH", json_ch) |>
-#   e_map(serie = values, map = "CH") |>
-#   e_visual_map(values,
-#                inRange = list(color = viridis(3)))
+d |>
+  e_charts(name) |>
+  e_map_register("CH", json_ch) |>
+  e_map(serie = values, map = "CH") |>
+  e_visual_map(values,
+               inRange = list(color = viridis(3)))
 
 ```
 
