@@ -283,7 +283,48 @@ Table&nbsp;5.1: Basic Commands for Working with Git
 </figcaption>
 <div aria-describedby="tbl-gitbasics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">git init</td>
+<td style="text-align: left;">puts current directory and all its subdirs under version control.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git status</td>
+<td style="text-align: left;">shows status</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git add filename.py</td>
+<td style="text-align: left;">adds file to tracked files</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git commit -m “meaningful msg”</td>
+<td style="text-align: left;">creates a new version/commit out of all staged files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git log</td>
+<td style="text-align: left;">shows log of all commit messages on a branch</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git checkout some-commit-id</td>
+<td style="text-align: left;">goes to commit, but in detached HEAD state</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git checkout main-branch-name</td>
+<td style="text-align: left;">leaves temporary state, goes back to last commit</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </figure>
@@ -299,7 +340,44 @@ Table&nbsp;5.2: Commands for Working with a Remote Repository
 </figcaption>
 <div aria-describedby="tbl-gittable2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">git clone</td>
+<td style="text-align: left;">creates a new repo based on a remote one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git pull</td>
+<td style="text-align: left;">gets all changes from a linked remote repo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git push</td>
+<td style="text-align: left;">deploys all commit changes to the remote repo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git fetch</td>
+<td style="text-align: left;">fetches branches that were created on remote</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git remote -v</td>
+<td style="text-align: left;">shows remote repo URL</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git remote set-url origin https://some-url.com</td>
+<td style="text-align: left;">sets URL to remote repo</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </figure>
@@ -315,7 +393,40 @@ Table&nbsp;5.3: Commands for for Handling Multiple Branches
 </figcaption>
 <div aria-describedby="tbl-gitbranches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-
+<table class="do-not-create-environment cell table table-sm table-striped small">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">git checkout -b branchname</td>
+<td style="text-align: left;">creates new branch named branchname</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git branch</td>
+<td style="text-align: left;">shows locally available branches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git checkout branchname</td>
+<td style="text-align: left;">switches to branch named branchname</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">git switch branchname</td>
+<td style="text-align: left;">switches to branch named branchname</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">git merge branchname</td>
+<td style="text-align: left;">merges branch named branchname into current branch</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </figure>
